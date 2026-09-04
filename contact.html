@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us &amp; Ground Directions | Cayman Super Kings</title>
+  <meta name="description" content="Get in touch with Cayman Super Kings executive committee, enquire about player trials, youth academy registration, or partnership decks.">
+  <link rel="icon" type="image/svg+xml" href="assets/placeholders/csk-crest.svg">
+  
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/pages.css">
+</head>
+<body>
+
+  <!-- Announcement Bar -->
+  <aside class="announcement-bar" aria-label="Latest match notification">
+    <div class="announcement-bar__inner">
+      <div style="display: flex; align-items: center; gap: 10px; overflow: hidden;">
+        <span class="announcement-tag">Result</span>
+        <span class="announcement-text">Loading latest fixture result...</span>
+      </div>
+      <a href="matches.html" class="announcement-link">Match Report ↗</a>
+    </div>
+  </aside>
+
+  <!-- Header -->
+  <header class="site-header">
+    <div class="site-header__inner">
+      <a href="index.html" class="logo-wrapper" aria-label="Cayman Super Kings Home">
+        <img src="assets/placeholders/csk-crest.svg" alt="CSK Crest" class="logo-crest">
+        <div class="logo-text">
+          <span class="logo-title">CAYMAN SUPER KINGS</span>
+          <span class="logo-subtitle">Cricket Club • Grand Cayman</span>
+        </div>
+      </a>
+
+      <button class="mobile-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+
+      <nav aria-label="Main Navigation">
+        <ul class="nav-menu">
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="matches.html" class="nav-link">Matches</a></li>
+          <li><a href="squad.html" class="nav-link">Squad</a></li>
+          <li><a href="youth.html" class="nav-link">Youth</a></li>
+          <li><a href="about.html" class="nav-link">About</a></li>
+          <li><a href="gallery.html" class="nav-link">Gallery</a></li>
+          <li><a href="news.html" class="nav-link">News</a></li>
+          <li><a href="partner.html" class="nav-link">Partner</a></li>
+          <li><a href="contact.html" class="nav-cta">Contact Us</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="section section--navy" style="padding-top: 56px; padding-bottom: 56px;">
+      <div class="container">
+        <span class="section-eyebrow">Get in Touch</span>
+        <h1 class="section-title" style="color: #fff;">Contact Cayman Super Kings</h1>
+        <p class="section-desc" style="color: var(--c-text-inverse-muted); max-width: 680px;">
+          Have questions regarding team trials, youth academy enrolment, or corporate partnerships? Send us a message below.
+        </p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="contact-grid">
+          <!-- Navy Info Panel -->
+          <div class="contact-info-panel">
+            <div>
+              <span class="section-eyebrow" style="color: var(--c-gold);">Club Secretariat</span>
+              <h2 style="color: #fff; font-size: 1.75rem; margin-top: 8px; margin-bottom: 24px;">We'd Love to Hear From You</h2>
+              <p style="color: var(--c-text-inverse-muted); font-size: 0.9375rem; line-height: 1.6; margin-bottom: 32px;">
+                Our committee members and coaching staff are active year-round across Grand Cayman. Reach out for any enquiries.
+              </p>
+
+              <div style="display: flex; flex-direction: column; gap: 20px; font-size: 0.9375rem;">
+                <div style="display: flex; align-items: flex-start; gap: 12px;">
+                  <span style="color: var(--c-gold); font-size: 1.25rem;">📍</span>
+                  <div>
+                    <strong style="color: #fff; display: block;">Home Ground &amp; Practice:</strong>
+                    <span style="color: var(--c-text-inverse-muted);">Jimmy Powell Oval, West Bay Rd, George Town, Grand Cayman</span>
+                  </div>
+                </div>
+
+                <div style="display: flex; align-items: flex-start; gap: 12px;">
+                  <span style="color: var(--c-teal); font-size: 1.25rem;">✉️</span>
+                  <div>
+                    <strong style="color: #fff; display: block;">Email:</strong>
+                    <span style="color: var(--c-text-inverse-muted);">info@caymansuperkings.ky</span>
+                  </div>
+                </div>
+
+                <div style="display: flex; align-items: flex-start; gap: 12px;">
+                  <span style="color: var(--c-gold); font-size: 1.25rem;">⏱️</span>
+                  <div>
+                    <strong style="color: #fff; display: block;">Response Standard:</strong>
+                    <span style="color: var(--c-text-inverse-muted);">We reply within two business days</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div style="margin-top: 40px; padding-top: 24px; border-top: 1px solid rgba(255, 255, 255, 0.1);">
+              <div style="font-size: 0.8125rem; color: var(--c-text-inverse-muted);">
+                Affiliated with Cayman Islands Cricket Association (CICA)
+              </div>
+            </div>
+          </div>
+
+          <!-- Form Panel with 2px Teal Focus Ring & Validation -->
+          <div class="contact-form-panel">
+            <h2 style="font-size: 1.5rem; margin-bottom: 8px;">Send a Message</h2>
+            <p style="font-size: 0.875rem; color: var(--c-text-muted); margin-bottom: 24px;">
+              Please fill out all required fields. All enquiries receive confirmation within two business days.
+            </p>
+
+            <!-- Success Message State -->
+            <div id="contact-success" class="contact-success-state" tabindex="-1">
+              <div style="width: 48px; height: 48px; background: #DCFCE7; color: #16A34A; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 16px;">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
+              </div>
+              <h3 style="color: #166534; font-size: 1.25rem; margin-bottom: 8px;">Message Sent Successfully!</h3>
+              <p style="color: #15803D; font-size: 0.9375rem; margin-bottom: 16px;">
+                Thank you for contacting Cayman Super Kings. A member of our committee has received your message and <strong>we reply within two business days</strong>.
+              </p>
+              <a href="index.html" class="btn btn-outline-navy btn-sm">Return to Home</a>
+            </div>
+
+            <form id="contact-form" novalidate>
+              <div class="form-group">
+                <label for="contact-name" class="form-label">Full Name *</label>
+                <input type="text" id="contact-name" class="form-input" placeholder="e.g. Marcus Campbell" required>
+              </div>
+
+              <div class="form-group">
+                <label for="contact-email" class="form-label">Email Address *</label>
+                <input type="email" id="contact-email" class="form-input" placeholder="e.g. marcus@example.ky" required>
+              </div>
+
+              <div class="form-group">
+                <label for="contact-subject" class="form-label">Enquiry Subject *</label>
+                <select id="contact-subject" class="form-select" required>
+                  <option value="">-- Please Select --</option>
+                  <option value="partner">Corporate Partnership / Request Deck</option>
+                  <option value="youth">Youth Academy Registration (Ages 10–18)</option>
+                  <option value="trials">Senior Squad Trials &amp; Recruitment</option>
+                  <option value="general">General Club Enquiry</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="contact-message" class="form-label">Your Message *</label>
+                <textarea id="contact-message" class="form-textarea" rows="4" placeholder="Tell us how we can help..." required></textarea>
+              </div>
+
+              <button type="submit" class="btn btn-primary btn-lg" style="width: 100%;">
+                Submit Message →
+              </button>
+            </form>
+          </div>
+        </div>
+
+        <!-- Ground Map Embed Section -->
+        <div id="ground" style="margin-top: 64px;">
+          <div class="section-header">
+            <div>
+              <span class="section-eyebrow">Location Guide</span>
+              <h2 class="section-title">Jimmy Powell Oval (Home Ground)</h2>
+              <p class="section-desc">Grand Cayman, Cayman Islands</p>
+            </div>
+          </div>
+
+          <div class="card" style="overflow: hidden; border: 2px solid var(--c-border); background: #fff;">
+            <!-- Interactive Stylized Ground Map View -->
+            <div style="background: #1E293B; color: #fff; padding: 32px; text-align: center; position: relative;">
+              <div style="max-width: 600px; margin: 0 auto;">
+                <div style="font-size: 2.5rem; margin-bottom: 8px;">📍</div>
+                <h3 style="color: #fff; margin-bottom: 8px;">Jimmy Powell Oval</h3>
+                <p style="color: var(--c-text-inverse-muted); font-size: 0.9375rem; margin-bottom: 16px;">
+                  West Bay Road, George Town, Grand Cayman (opposite Seven Mile Beach corridor)
+                </p>
+                <a href="https://maps.google.com/?q=Jimmy+Powell+Oval+Cayman" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm">
+                  Open in Google Maps ↗
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Site Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <div style="display: flex; align-items: center; gap: 10px;">
+            <img src="assets/placeholders/csk-crest.svg" alt="CSK" style="width: 36px; height: 36px;">
+            <span style="font-family: var(--font-display); font-weight: 900; color: #fff; font-size: 1.125rem;">CAYMAN SUPER KINGS</span>
+          </div>
+          <p>
+            Grand Cayman's premier cricket franchise affiliated with the Cayman Islands Cricket Association.
+          </p>
+        </div>
+
+        <div>
+          <h4 class="footer-heading">Club</h4>
+          <ul class="footer-links">
+            <li><a href="about.html">About &amp; History</a></li>
+            <li><a href="squad.html">2026 Squad</a></li>
+            <li><a href="matches.html">Fixtures &amp; Results</a></li>
+            <li><a href="youth.html">Youth Programme</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-heading">Media &amp; Fans</h4>
+          <ul class="footer-links">
+            <li><a href="news.html">Match Reports &amp; News</a></li>
+            <li><a href="gallery.html">Photo &amp; Video Gallery</a></li>
+            <li><a href="https://cricclubs.com/CaymanCricketAssociation" target="_blank" rel="noopener noreferrer">CricClubs Match Center ↗</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-heading">Partners &amp; Contact</h4>
+          <ul class="footer-links">
+            <li><a href="partner.html">Partner With Us</a></li>
+            <li><a href="contact.html">Contact Committee</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>© 2026 Cayman Super Kings Cricket Club. All rights reserved.</div>
+        <div class="cica-badge">
+          <span style="color: var(--c-gold);">★</span>
+          <span>Affiliated with Cayman Islands Cricket Association</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script type="module" src="js/app.js"></script>
+  <script type="module">
+    import { initContactForm } from './js/contact.js';
+    initContactForm();
+
+    // Auto-select subject from query param if present
+    const urlParams = new URLSearchParams(window.location.search);
+    const subjParam = urlParams.get('subject');
+    if (subjParam) {
+      const select = document.getElementById('contact-subject');
+      if (select) {
+        if (subjParam.includes('partner')) select.value = 'partner';
+        else if (subjParam.includes('youth')) select.value = 'youth';
+        else if (subjParam.includes('trial')) select.value = 'trials';
+      }
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,148 @@
+[
+  {
+    "id": "gal-01",
+    "year": "2026",
+    "type": "photo",
+    "title": "Derby Victory Celebrations at Jimmy Powell Oval",
+    "category": "Matches",
+    "count_or_duration": "12 Photos",
+    "cover_image": "assets/placeholders/action-match.svg",
+    "date": "August 30, 2026",
+    "description": "The team hoisting the Derby trophy following the 36-run win against George Town Tigers.",
+    "items": [
+      {
+        "src": "assets/placeholders/action-match.svg",
+        "alt": "Captain Rajesh Sharma lifting the match trophy",
+        "caption": "Captain Rajesh Sharma accepts the Derby Match Trophy"
+      },
+      {
+        "src": "assets/placeholders/hero-team.svg",
+        "alt": "Full team huddle celebration",
+        "caption": "CSK team celebrations at the boundary"
+      },
+      {
+        "src": "assets/placeholders/action-match.svg",
+        "alt": "Marcus Sterling hitting through midwicket",
+        "caption": "Marcus Sterling in full flow on his way to 104"
+      }
+    ]
+  },
+  {
+    "id": "gal-02",
+    "year": "2026",
+    "type": "photo",
+    "title": "40-Over Cup Semi-Final vs Seven Mile Strikers",
+    "category": "Matches",
+    "count_or_duration": "18 Photos",
+    "cover_image": "assets/placeholders/action-match.svg",
+    "date": "August 23, 2026",
+    "description": "Highlights from the high-scoring 40-over fixture at Smith Road Oval.",
+    "items": [
+      {
+        "src": "assets/placeholders/action-match.svg",
+        "alt": "Rohan Barrett delivery stride",
+        "caption": "Rohan Barrett bowling at 85mph+ at Smith Road"
+      },
+      {
+        "src": "assets/placeholders/action-match.svg",
+        "alt": "Karan Patel diving stumping",
+        "caption": "Karan Patel completing a sharp legside stumping"
+      }
+    ]
+  },
+  {
+    "id": "gal-03",
+    "year": "2026",
+    "type": "video",
+    "title": "Marcus Sterling 104 Highlights vs Strikers",
+    "category": "Highlights",
+    "count_or_duration": "03:45",
+    "cover_image": "assets/placeholders/action-match.svg",
+    "date": "August 24, 2026",
+    "description": "All 11 boundaries and 3 massive sixes from Marcus Sterlings masterclass.",
+    "items": [
+      {
+        "src": "assets/placeholders/action-match.svg",
+        "alt": "Video thumbnail - Sterling century",
+        "caption": "Video Highlight: Sterling reaches triple figures in 92 balls"
+      }
+    ]
+  },
+  {
+    "id": "gal-04",
+    "year": "2026",
+    "type": "photo",
+    "title": "Youth Academy Weekend Skills Camp",
+    "category": "Youth",
+    "count_or_duration": "24 Photos",
+    "cover_image": "assets/placeholders/youth-training.svg",
+    "date": "July 18, 2026",
+    "description": "Young cricketers aged 12-18 participating in fielding and batting masterclasses with senior CSK players.",
+    "items": [
+      {
+        "src": "assets/placeholders/youth-training.svg",
+        "alt": "Youth coaching drill session",
+        "caption": "Youth academy batting drills with head coaches"
+      },
+      {
+        "src": "assets/placeholders/youth-training.svg",
+        "alt": "Group fielding exercise",
+        "caption": "Fielding drills emphasizing agility and catching technique"
+      }
+    ]
+  },
+  {
+    "id": "gal-05",
+    "year": "2025",
+    "type": "photo",
+    "title": "CICA T20 Championship Trophy Ceremony",
+    "category": "Honours",
+    "count_or_duration": "15 Photos",
+    "cover_image": "assets/placeholders/hero-team.svg",
+    "date": "September 14, 2025",
+    "description": "Memories from our historic championship title win at the National Stadium grounds.",
+    "items": [
+      {
+        "src": "assets/placeholders/hero-team.svg",
+        "alt": "2025 Championship team photo",
+        "caption": "Cayman Super Kings crowned 2025 CICA Champions"
+      }
+    ]
+  },
+  {
+    "id": "gal-06",
+    "year": "2025",
+    "type": "video",
+    "title": "Rohan Barrett 5-Wicket Haul Final Over Thrills",
+    "category": "Highlights",
+    "count_or_duration": "04:12",
+    "cover_image": "assets/placeholders/action-match.svg",
+    "date": "August 28, 2025",
+    "description": "Relive the blistering fast bowling spell that sealed our postseason spot.",
+    "items": [
+      {
+        "src": "assets/placeholders/action-match.svg",
+        "alt": "Barrett bowling highlights",
+        "caption": "Fast bowling spell breakdown"
+      }
+    ]
+  },
+  {
+    "id": "gal-07",
+    "year": "2024",
+    "type": "photo",
+    "title": "Club Inaugural Gala & Jersey Launch",
+    "category": "Club Life",
+    "count_or_duration": "30 Photos",
+    "cover_image": "assets/placeholders/hero-team.svg",
+    "date": "April 12, 2024",
+    "description": "Unveiling the Navy, Gold and Flame kit with club founders, sponsors, and supporters.",
+    "items": [
+      {
+        "src": "assets/placeholders/hero-team.svg",
+        "alt": "Official 2024 Jersey Launch",
+        "caption": "Official club launch night in Grand Cayman"
+      }
+    ]
+  }
+]

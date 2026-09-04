@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="100%" height="100%">
+  <defs>
+    <linearGradient id="crestGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#101C3F"/>
+      <stop offset="100%" stop-color="#172754"/>
+    </linearGradient>
+  </defs>
+  <!-- Outer Shield -->
+  <path d="M100 10 L180 40 L180 120 Q180 180 100 195 Q20 180 20 120 L20 40 Z" fill="url(#crestGrad)" stroke="#F59E1B" stroke-width="4"/>
+  
+  <!-- Roaring Lion & Crown motif -->
+  <path d="M75 50 L100 35 L125 50 L115 65 L85 65 Z" fill="#F59E1B"/>
+  <circle cx="100" cy="95" r="32" fill="#F2600C" opacity="0.2"/>
+  
+  <!-- Monogram CSK -->
+  <text x="100" y="110" font-family="'Archivo', sans-serif" font-size="34" font-weight="900" fill="#F59E1B" text-anchor="middle" letter-spacing="1">CSK</text>
+  <text x="100" y="135" font-family="'Archivo', sans-serif" font-size="10" font-weight="800" fill="#38C6D9" text-anchor="middle" letter-spacing="2">CAYMAN</text>
+  
+  <!-- Stumps -->
+  <rect x="88" y="148" width="4" height="20" fill="#F59E1B"/>
+  <rect x="98" y="145" width="4" height="23" fill="#F59E1B"/>
+  <rect x="108" y="148" width="4" height="20" fill="#F59E1B"/>
+  <rect x="86" y="145" width="28" height="3" fill="#38C6D9"/>
+</svg>

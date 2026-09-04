@@ -1,0 +1,372 @@
+[
+  {
+    "id": "match-01",
+    "slug": "csk-vs-tigers-t20-final",
+    "competition": "CICA T20 Super League 2026",
+    "format": "T20",
+    "season": "2026",
+    "opponent": "George Town Tigers",
+    "opponent_short": "GTT",
+    "is_home": true,
+    "date": "2026-08-30",
+    "time": "14:00",
+    "venue": "Jimmy Powell Oval, George Town",
+    "status": "result",
+    "score_csk": "178/4",
+    "overs_csk": "20.0",
+    "score_opp": "142/9",
+    "overs_opp": "20.0",
+    "result_text": "Cayman Super Kings won by 36 runs",
+    "is_csk_win": true,
+    "cricclubs_url": "https://cricclubs.com/CaymanCricketAssociation/viewScorecard.do?matchId=10824&clubId=2849",
+    "report_slug": "super-kings-clinch-thrilling-t20-derby",
+    "player_of_match": "Rajesh Sharma (68* & 2/19)",
+    "summary": "A commanding all-round performance led by skipper Rajesh Sharma guided the Super Kings to an emphatic 36-run victory over rivals George Town Tigers in front of an electric crowd at Jimmy Powell Oval.",
+    "scorecard": {
+      "csk_batting": [
+        {
+          "player": "Arun Kumar",
+          "dismissal": "c Smith b Williams",
+          "runs": 42,
+          "balls": 31,
+          "fours": 5,
+          "sixes": 1,
+          "sr": "135.48"
+        },
+        {
+          "player": "Devon Campbell",
+          "dismissal": "b Johnson",
+          "runs": 24,
+          "balls": 18,
+          "fours": 3,
+          "sixes": 0,
+          "sr": "133.33"
+        },
+        {
+          "player": "Rajesh Sharma (C)",
+          "dismissal": "not out",
+          "runs": 68,
+          "balls": 44,
+          "fours": 6,
+          "sixes": 3,
+          "sr": "154.55"
+        },
+        {
+          "player": "Marcus Sterling",
+          "dismissal": "c & b Williams",
+          "runs": 18,
+          "balls": 14,
+          "fours": 1,
+          "sixes": 1,
+          "sr": "128.57"
+        },
+        {
+          "player": "Karan Patel (wk)",
+          "dismissal": "run out",
+          "runs": 12,
+          "balls": 8,
+          "fours": 1,
+          "sixes": 0,
+          "sr": "150.00"
+        },
+        {
+          "player": "Sanjay Wright",
+          "dismissal": "not out",
+          "runs": 9,
+          "balls": 5,
+          "fours": 1,
+          "sixes": 0,
+          "sr": "180.00"
+        }
+      ],
+      "csk_bowling": [
+        {
+          "bowler": "Rohan Barrett",
+          "overs": "4.0",
+          "maidens": 0,
+          "runs": 24,
+          "wickets": 3,
+          "econ": "6.00"
+        },
+        {
+          "bowler": "Tariq Al-Mansoor",
+          "overs": "4.0",
+          "maidens": 0,
+          "runs": 28,
+          "wickets": 2,
+          "econ": "7.00"
+        },
+        {
+          "bowler": "Rajesh Sharma",
+          "overs": "4.0",
+          "maidens": 0,
+          "runs": 19,
+          "wickets": 2,
+          "econ": "4.75"
+        },
+        {
+          "bowler": "Vikramaditya Rao",
+          "overs": "4.0",
+          "maidens": 1,
+          "runs": 31,
+          "wickets": 1,
+          "econ": "7.75"
+        },
+        {
+          "bowler": "Jason Ebanks",
+          "overs": "4.0",
+          "maidens": 0,
+          "runs": 38,
+          "wickets": 1,
+          "econ": "9.50"
+        }
+      ]
+    }
+  },
+  {
+    "id": "match-02",
+    "slug": "csk-vs-seven-mile-strikers-40over",
+    "competition": "CICA Division 1 40-Over Cup",
+    "format": "40-Over",
+    "season": "2026",
+    "opponent": "Seven Mile Strikers",
+    "opponent_short": "SMS",
+    "is_home": false,
+    "date": "2026-08-23",
+    "time": "10:30",
+    "venue": "Smith Road Oval, George Town",
+    "status": "result",
+    "score_csk": "248/7",
+    "overs_csk": "40.0",
+    "score_opp": "212/10",
+    "overs_opp": "37.4",
+    "result_text": "Cayman Super Kings won by 36 runs",
+    "is_csk_win": true,
+    "cricclubs_url": "https://cricclubs.com/CaymanCricketAssociation/viewScorecard.do?matchId=10819&clubId=2849",
+    "report_slug": "sterling-century-powers-csk-in-40-over-cup",
+    "player_of_match": "Marcus Sterling (104 off 92 balls)",
+    "summary": "Marcus Sterling posted a sublime 104 to anchor a daunting 248 total before Barrett ripped through the Strikers top order with 4/38.",
+    "scorecard": {
+      "csk_batting": [
+        {
+          "player": "Devon Campbell",
+          "dismissal": "lbw b Taylor",
+          "runs": 15,
+          "balls": 24,
+          "fours": 2,
+          "sixes": 0,
+          "sr": "62.50"
+        },
+        {
+          "player": "Marcus Sterling",
+          "dismissal": "c & b Miller",
+          "runs": 104,
+          "balls": 92,
+          "fours": 11,
+          "sixes": 3,
+          "sr": "113.04"
+        },
+        {
+          "player": "Arun Kumar",
+          "dismissal": "c Jackson b Taylor",
+          "runs": 38,
+          "balls": 45,
+          "fours": 4,
+          "sixes": 0,
+          "sr": "84.44"
+        },
+        {
+          "player": "Rajesh Sharma (C)",
+          "dismissal": "b Miller",
+          "runs": 41,
+          "balls": 36,
+          "fours": 4,
+          "sixes": 1,
+          "sr": "113.89"
+        },
+        {
+          "player": "Karan Patel (wk)",
+          "dismissal": "not out",
+          "runs": 26,
+          "balls": 22,
+          "fours": 2,
+          "sixes": 1,
+          "sr": "118.18"
+        }
+      ],
+      "csk_bowling": [
+        {
+          "bowler": "Rohan Barrett",
+          "overs": "8.0",
+          "maidens": 1,
+          "runs": 38,
+          "wickets": 4,
+          "econ": "4.75"
+        },
+        {
+          "bowler": "Jason Ebanks",
+          "overs": "8.0",
+          "maidens": 0,
+          "runs": 44,
+          "wickets": 2,
+          "econ": "5.50"
+        },
+        {
+          "bowler": "Tariq Al-Mansoor",
+          "overs": "7.4",
+          "maidens": 0,
+          "runs": 41,
+          "wickets": 3,
+          "econ": "5.35"
+        },
+        {
+          "bowler": "Vikramaditya Rao",
+          "overs": "8.0",
+          "maidens": 0,
+          "runs": 48,
+          "wickets": 1,
+          "econ": "6.00"
+        }
+      ]
+    }
+  },
+  {
+    "id": "match-03",
+    "slug": "csk-vs-bodden-town-cc",
+    "competition": "CICA T20 Super League 2026",
+    "format": "T20",
+    "season": "2026",
+    "opponent": "Bodden Town CC",
+    "opponent_short": "BTCC",
+    "is_home": true,
+    "date": "2026-08-16",
+    "time": "14:30",
+    "venue": "Jimmy Powell Oval, George Town",
+    "status": "result",
+    "score_csk": "164/5",
+    "overs_csk": "19.2",
+    "score_opp": "163/8",
+    "overs_opp": "20.0",
+    "result_text": "Cayman Super Kings won by 5 wickets",
+    "is_csk_win": true,
+    "cricclubs_url": "https://cricclubs.com/CaymanCricketAssociation/viewScorecard.do?matchId=10811&clubId=2849",
+    "report_slug": "last-over-thriller-against-bodden-town",
+    "player_of_match": "Karan Patel (48* off 26)",
+    "summary": "Chasing 164, wicketkeeper Karan Patel kept his cool with boundary blitz in the penultimate over to secure two vital points.",
+    "scorecard": {
+      "csk_batting": [
+        {
+          "player": "Arun Kumar",
+          "dismissal": "c Kelly b Brown",
+          "runs": 31,
+          "balls": 24,
+          "fours": 4,
+          "sixes": 0,
+          "sr": "129.17"
+        },
+        {
+          "player": "Rajesh Sharma (C)",
+          "dismissal": "b Kelly",
+          "runs": 35,
+          "balls": 28,
+          "fours": 3,
+          "sixes": 1,
+          "sr": "125.00"
+        },
+        {
+          "player": "Karan Patel (wk)",
+          "dismissal": "not out",
+          "runs": 48,
+          "balls": 26,
+          "fours": 5,
+          "sixes": 2,
+          "sr": "184.62"
+        },
+        {
+          "player": "David McLaughlin",
+          "dismissal": "not out",
+          "runs": 22,
+          "balls": 15,
+          "fours": 2,
+          "sixes": 1,
+          "sr": "146.67"
+        }
+      ],
+      "csk_bowling": [
+        {
+          "bowler": "Tariq Al-Mansoor",
+          "overs": "4.0",
+          "maidens": 0,
+          "runs": 26,
+          "wickets": 3,
+          "econ": "6.50"
+        },
+        {
+          "bowler": "Rohan Barrett",
+          "overs": "4.0",
+          "maidens": 0,
+          "runs": 34,
+          "wickets": 2,
+          "econ": "8.50"
+        }
+      ]
+    }
+  },
+  {
+    "id": "match-04",
+    "slug": "csk-vs-west-bay-warriors-t20",
+    "competition": "CICA T20 Super League 2026",
+    "format": "T20",
+    "season": "2026",
+    "opponent": "West Bay Warriors",
+    "opponent_short": "WBW",
+    "is_home": false,
+    "date": "2026-09-12",
+    "time": "14:30",
+    "venue": "Jimmy Powell Oval, George Town",
+    "status": "upcoming",
+    "score_csk": "",
+    "score_opp": "",
+    "result_text": "Match scheduled - 14:30 EST",
+    "cricclubs_url": "https://cricclubs.com/CaymanCricketAssociation/viewFixture.do?matchId=10830&clubId=2849",
+    "summary": "Top of the table clash as undefeated CSK take on reigning finalists West Bay Warriors in round 6."
+  },
+  {
+    "id": "match-05",
+    "slug": "csk-vs-cayman-islands-police-cc",
+    "competition": "CICA Division 1 40-Over Cup",
+    "format": "40-Over",
+    "season": "2026",
+    "opponent": "Police Cricket Club",
+    "opponent_short": "PCC",
+    "is_home": true,
+    "date": "2026-09-20",
+    "time": "10:00",
+    "venue": "Smith Road Oval, George Town",
+    "status": "upcoming",
+    "score_csk": "",
+    "score_opp": "",
+    "result_text": "Match scheduled - 10:00 EST",
+    "cricclubs_url": "https://cricclubs.com/CaymanCricketAssociation/viewFixture.do?matchId=10835&clubId=2849",
+    "summary": "Semi-final qualification fixture in the 40-over league format."
+  },
+  {
+    "id": "match-06",
+    "slug": "csk-vs-north-side-eleven",
+    "competition": "CICA T20 Super League 2026",
+    "format": "T20",
+    "season": "2026",
+    "opponent": "North Side XI",
+    "opponent_short": "NSXI",
+    "is_home": false,
+    "date": "2026-09-27",
+    "time": "14:00",
+    "venue": "North Side Playing Field",
+    "status": "upcoming",
+    "score_csk": "",
+    "score_opp": "",
+    "result_text": "Match scheduled - 14:00 EST",
+    "cricclubs_url": "https://cricclubs.com/CaymanCricketAssociation/viewFixture.do?matchId=10842&clubId=2849",
+    "summary": "Away derby at North Side with postseason seeding at stake."
+  }
+]

@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>404 Page Not Found | Cayman Super Kings</title>
+  <meta name="description" content="The page you are looking for does not exist on Cayman Super Kings website.">
+  <link rel="icon" type="image/svg+xml" href="assets/placeholders/csk-crest.svg">
+  
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/pages.css">
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="site-header">
+    <div class="site-header__inner">
+      <a href="index.html" class="logo-wrapper" aria-label="Cayman Super Kings Home">
+        <img src="assets/placeholders/csk-crest.svg" alt="CSK Crest" class="logo-crest">
+        <div class="logo-text">
+          <span class="logo-title">CAYMAN SUPER KINGS</span>
+          <span class="logo-subtitle">Cricket Club • Grand Cayman</span>
+        </div>
+      </a>
+
+      <button class="mobile-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+
+      <nav aria-label="Main Navigation">
+        <ul class="nav-menu">
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="matches.html" class="nav-link">Matches</a></li>
+          <li><a href="squad.html" class="nav-link">Squad</a></li>
+          <li><a href="youth.html" class="nav-link">Youth</a></li>
+          <li><a href="about.html" class="nav-link">About</a></li>
+          <li><a href="gallery.html" class="nav-link">Gallery</a></li>
+          <li><a href="news.html" class="nav-link">News</a></li>
+          <li><a href="partner.html" class="nav-link">Partner</a></li>
+          <li><a href="contact.html" class="nav-cta">Contact Us</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- 404 Hero Banner -->
+    <section class="section section--navy" style="padding-top: 80px; padding-bottom: 80px; text-align: center;">
+      <div class="container" style="max-width: 600px;">
+        <div style="font-family: var(--font-display); font-size: 6rem; font-weight: 900; color: var(--c-gold); line-height: 1;">
+          404
+        </div>
+        <h1 class="section-title" style="color: #fff; margin-top: 12px; margin-bottom: 16px;">Howzat?! Out of Bounds</h1>
+        <p class="section-desc" style="color: var(--c-text-inverse-muted); margin-bottom: 32px;">
+          The match, player profile, or page you were seeking has been retired or moved to another wicket.
+        </p>
+        <div style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;">
+          <a href="index.html" class="btn btn-primary btn-lg">Back to Home Pitch</a>
+          <a href="matches.html" class="btn btn-outline btn-lg">View Matches</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- REUSED EMPTY STATES SYSTEM PREVIEW -->
+    <section class="section">
+      <div class="container">
+        <div class="section-header section-header--center">
+          <span class="section-eyebrow">Design System Showcase</span>
+          <h2 class="section-title">Sitewide Empty State Patterns</h2>
+          <p class="section-desc">
+            Standardised empty-state components used across Matches (pre-season), Gallery (no media), News (pending editorial), and Squad profiles.
+          </p>
+        </div>
+
+        <div class="grid">
+          <!-- Pattern 1: Matches Pre-Season -->
+          <div class="col-6">
+            <div class="empty-state">
+              <div class="empty-state__icon">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="18" height="18" x="3" y="4" rx="2" ry="2"/><line x1="16" x2="16" y1="2" y2="6"/><line x1="8" x2="8" y1="2" y2="6"/><line x1="3" x2="21" y1="10" y2="10"/></svg>
+              </div>
+              <h3 class="empty-state__title">Fixtures Being Finalised</h3>
+              <p class="empty-state__desc">
+                Fixtures for the upcoming season are currently being finalised by the Cayman Islands Cricket Association.
+              </p>
+              <a href="matches.html" class="btn btn-outline-navy btn-sm">Matches Route →</a>
+            </div>
+          </div>
+
+          <!-- Pattern 2: Gallery Pending -->
+          <div class="col-6">
+            <div class="empty-state">
+              <div class="empty-state__icon">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="18" height="18" x="3" y="3" rx="2" ry="2"/><circle cx="9" cy="9" r="2"/><path d="m21 15-3.086-3.086a2 2 0 0 0-2.828 0L6 21"/></svg>
+              </div>
+              <h3 class="empty-state__title">No Media Found</h3>
+              <p class="empty-state__desc">
+                Photos and video albums for this category or year will appear immediately after post-match upload.
+              </p>
+              <a href="gallery.html" class="btn btn-outline-navy btn-sm">Gallery Route →</a>
+            </div>
+          </div>
+
+          <!-- Pattern 3: News Pending -->
+          <div class="col-6">
+            <div class="empty-state">
+              <div class="empty-state__icon">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 22h16a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v16a2 2 0 0 1-2 2Zm0 0a2 2 0 0 1-2-2v-9c0-1.1.9-2 2-2h2"/></svg>
+              </div>
+              <h3 class="empty-state__title">Editorial Underway</h3>
+              <p class="empty-state__desc">
+                Match reports and editorial bulletins are currently being compiled by the club media desk.
+              </p>
+              <a href="news.html" class="btn btn-outline-navy btn-sm">News Route →</a>
+            </div>
+          </div>
+
+          <!-- Pattern 4: Squad Bio Pending -->
+          <div class="col-6">
+            <div class="empty-state">
+              <div class="empty-state__icon">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+              </div>
+              <h3 class="empty-state__title">Player Bio In Progress</h3>
+              <p class="empty-state__desc">
+                Career statistics and biographical notes are currently pending league registrar verification.
+              </p>
+              <a href="squad.html" class="btn btn-outline-navy btn-sm">Squad Route →</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Site Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <div style="display: flex; align-items: center; gap: 10px;">
+            <img src="assets/placeholders/csk-crest.svg" alt="CSK" style="width: 36px; height: 36px;">
+            <span style="font-family: var(--font-display); font-weight: 900; color: #fff; font-size: 1.125rem;">CAYMAN SUPER KINGS</span>
+          </div>
+          <p>
+            Grand Cayman's premier cricket franchise affiliated with the Cayman Islands Cricket Association.
+          </p>
+        </div>
+
+        <div>
+          <h4 class="footer-heading">Club</h4>
+          <ul class="footer-links">
+            <li><a href="about.html">About &amp; History</a></li>
+            <li><a href="squad.html">2026 Squad</a></li>
+            <li><a href="matches.html">Fixtures &amp; Results</a></li>
+            <li><a href="youth.html">Youth Programme</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-heading">Media &amp; Fans</h4>
+          <ul class="footer-links">
+            <li><a href="news.html">Match Reports &amp; News</a></li>
+            <li><a href="gallery.html">Photo &amp; Video Gallery</a></li>
+            <li><a href="https://cricclubs.com/CaymanCricketAssociation" target="_blank" rel="noopener noreferrer">CricClubs Match Center ↗</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-heading">Partners &amp; Contact</h4>
+          <ul class="footer-links">
+            <li><a href="partner.html">Partner With Us</a></li>
+            <li><a href="contact.html">Contact Committee</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>© 2026 Cayman Super Kings Cricket Club. All rights reserved.</div>
+        <div class="cica-badge">
+          <span style="color: var(--c-gold);">★</span>
+          <span>Affiliated with Cayman Islands Cricket Association</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script type="module" src="js/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 500" width="100%" height="100%">
+  <defs>
+    <linearGradient id="sGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0e162f"/>
+      <stop offset="100%" stop-color="#101C3F"/>
+    </linearGradient>
+  </defs>
+  <rect width="400" height="500" fill="url(#sGrad)"/>
+  <circle cx="200" cy="180" r="65" fill="#1a2850" stroke="#38C6D9" stroke-width="1.5" stroke-dasharray="4 4"/>
+  <path d="M120 380 C120 290, 280 290, 280 380 Z" fill="#1a2850" stroke="#38C6D9" stroke-width="1.5" stroke-dasharray="4 4"/>
+  <g transform="translate(200, 420)" text-anchor="middle">
+    <text y="0" font-family="'Archivo', sans-serif" font-size="13" font-weight="700" fill="#38C6D9" letter-spacing="1">[ TEAM SILHOUETTE ]</text>
+    <text y="22" font-family="'IBM Plex Sans', sans-serif" font-size="11" fill="rgba(255,255,255,0.6)">Consent Protection Active</text>
+  </g>
+</svg>

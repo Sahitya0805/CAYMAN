@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Player Profile | Cayman Super Kings</title>
+  <meta name="description" content="Player profile, statistics, career achievements and match form for Cayman Super Kings.">
+  <link rel="icon" type="image/svg+xml" href="assets/placeholders/csk-crest.svg">
+  
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/pages.css">
+</head>
+<body>
+
+  <!-- Announcement Bar -->
+  <aside class="announcement-bar" aria-label="Latest match notification">
+    <div class="announcement-bar__inner">
+      <div style="display: flex; align-items: center; gap: 10px; overflow: hidden;">
+        <span class="announcement-tag">Result</span>
+        <span class="announcement-text">Loading latest fixture result...</span>
+      </div>
+      <a href="matches.html" class="announcement-link">Match Report ↗</a>
+    </div>
+  </aside>
+
+  <!-- Navigation Header -->
+  <header class="site-header">
+    <div class="site-header__inner">
+      <a href="index.html" class="logo-wrapper" aria-label="Cayman Super Kings Home">
+        <img src="assets/placeholders/csk-crest.svg" alt="CSK Crest" class="logo-crest">
+        <div class="logo-text">
+          <span class="logo-title">CAYMAN SUPER KINGS</span>
+          <span class="logo-subtitle">Cricket Club • Grand Cayman</span>
+        </div>
+      </a>
+
+      <button class="mobile-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+
+      <nav aria-label="Main Navigation">
+        <ul class="nav-menu">
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="matches.html" class="nav-link">Matches</a></li>
+          <li><a href="squad.html" class="nav-link active">Squad</a></li>
+          <li><a href="youth.html" class="nav-link">Youth</a></li>
+          <li><a href="about.html" class="nav-link">About</a></li>
+          <li><a href="gallery.html" class="nav-link">Gallery</a></li>
+          <li><a href="news.html" class="nav-link">News</a></li>
+          <li><a href="partner.html" class="nav-link">Partner</a></li>
+          <li><a href="contact.html" class="nav-cta">Contact Us</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="player-profile-content">
+    <!-- Populated dynamically via js/squad.js -> initPlayerProfile() -->
+  </main>
+
+  <!-- Site Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <div style="display: flex; align-items: center; gap: 10px;">
+            <img src="assets/placeholders/csk-crest.svg" alt="CSK" style="width: 36px; height: 36px;">
+            <span style="font-family: var(--font-display); font-weight: 900; color: #fff; font-size: 1.125rem;">CAYMAN SUPER KINGS</span>
+          </div>
+          <p>
+            Grand Cayman's premier cricket franchise affiliated with the Cayman Islands Cricket Association.
+          </p>
+        </div>
+
+        <div>
+          <h4 class="footer-heading">Club</h4>
+          <ul class="footer-links">
+            <li><a href="about.html">About &amp; History</a></li>
+            <li><a href="squad.html">2026 Squad</a></li>
+            <li><a href="matches.html">Fixtures &amp; Results</a></li>
+            <li><a href="youth.html">Youth Programme</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-heading">Media &amp; Fans</h4>
+          <ul class="footer-links">
+            <li><a href="news.html">Match Reports &amp; News</a></li>
+            <li><a href="gallery.html">Photo &amp; Video Gallery</a></li>
+            <li><a href="https://cricclubs.com/CaymanCricketAssociation" target="_blank" rel="noopener noreferrer">CricClubs Match Center ↗</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-heading">Partners &amp; Contact</h4>
+          <ul class="footer-links">
+            <li><a href="partner.html">Partner With Us</a></li>
+            <li><a href="contact.html">Contact Committee</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>© 2026 Cayman Super Kings Cricket Club. All rights reserved.</div>
+        <div class="cica-badge">
+          <span style="color: var(--c-gold);">★</span>
+          <span>Affiliated with Cayman Islands Cricket Association</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script type="module" src="js/app.js"></script>
+  <script type="module">
+    import { initPlayerProfile } from './js/squad.js';
+    initPlayerProfile();
+  </script>
+</body>
+</html>

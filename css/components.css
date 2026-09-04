@@ -1,0 +1,515 @@
+/* ─────────────────────────────────────────────────────────────
+   COMPONENTS SYSTEM (Cards, Buttons, Scorelines, Lightbox, etc.)
+   ───────────────────────────────────────────────────────────── */
+
+/* ── BUTTONS ── */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-family: var(--font-display);
+  font-size: 0.9375rem;
+  font-weight: 800;
+  text-decoration: none !important;
+  padding: 12px 24px;
+  border-radius: var(--radius-pill);
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  line-height: 1;
+}
+
+.btn-primary {
+  background-color: var(--c-gold);
+  color: var(--c-navy);
+}
+
+.btn-primary:hover {
+  background-color: var(--c-gold-hover);
+  box-shadow: 0 4px 12px rgba(245, 158, 27, 0.3);
+  transform: translateY(-2px);
+}
+
+.btn-outline {
+  background: transparent;
+  color: var(--c-text-inverse);
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+.btn-outline:hover {
+  border-color: var(--c-gold);
+  color: var(--c-gold);
+  background: rgba(245, 158, 27, 0.05);
+}
+
+.btn-outline-navy {
+  background: transparent;
+  color: var(--c-navy);
+  border-color: var(--c-border);
+}
+
+.btn-outline-navy:hover {
+  border-color: var(--c-navy);
+  background: var(--c-navy);
+  color: #fff;
+}
+
+.btn-flame {
+  background-color: var(--c-flame);
+  color: #fff;
+}
+
+.btn-flame:hover {
+  background-color: #d95105;
+  box-shadow: 0 4px 12px rgba(242, 96, 12, 0.3);
+}
+
+.btn-sm {
+  padding: 8px 16px;
+  font-size: 0.8125rem;
+}
+
+.btn-lg {
+  padding: 16px 32px;
+  font-size: 1.0625rem;
+}
+
+/* ── CARDS (12px Radius + Unified Hover Lift) ── */
+.card {
+  background-color: var(--c-card-bg);
+  border-radius: var(--radius-card);
+  border: 1px solid var(--c-border);
+  box-shadow: var(--shadow-card);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform var(--transition-normal), box-shadow var(--transition-normal), border-color var(--transition-fast);
+}
+
+.card--lift:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-hover-lift);
+  border-color: rgba(245, 158, 27, 0.4);
+}
+
+.card-body {
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.card--navy {
+  background-color: var(--c-navy-light);
+  border-color: rgba(255, 255, 255, 0.1);
+  color: var(--c-text-inverse);
+}
+
+/* ── PILLS & BADGES ── */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-family: var(--font-display);
+  font-size: 0.75rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 4px 10px;
+  border-radius: var(--radius-pill);
+}
+
+.badge--gold {
+  background-color: var(--c-gold);
+  color: var(--c-navy);
+}
+
+.badge--teal {
+  background-color: var(--c-teal);
+  color: var(--c-navy);
+}
+
+.badge--flame {
+  background-color: var(--c-flame-light);
+  color: var(--c-flame-text);
+  border: 1px solid rgba(242, 96, 12, 0.2);
+}
+
+.badge--navy {
+  background-color: rgba(16, 28, 63, 0.08);
+  color: var(--c-navy);
+}
+
+.badge--dark {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: var(--c-text-inverse);
+}
+
+/* Captain / Vice Captain role markers */
+.role-marker {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-display);
+  font-weight: 900;
+  font-size: 0.75rem;
+}
+.role-marker--c {
+  background-color: var(--c-gold);
+  color: var(--c-navy);
+}
+.role-marker--vc {
+  background-color: var(--c-teal);
+  color: var(--c-navy);
+}
+
+/* ── OVERSIZED TABULAR SCORELINES ── */
+/* Strictly for Result Cards and Match Headers per brief */
+.scoreline-oversized {
+  font-family: var(--font-display);
+  font-size: 2.5rem;
+  font-weight: 900;
+  letter-spacing: -0.03em;
+  color: var(--c-navy);
+  font-variant-numeric: tabular-nums;
+  line-height: 1.1;
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+}
+
+.scoreline-oversized--navy {
+  color: var(--c-text-inverse);
+}
+
+.scoreline-oversized .score-divider {
+  color: var(--c-gold);
+  font-weight: 600;
+  font-size: 2rem;
+}
+
+.scoreline-oversized .score-opp {
+  color: var(--c-text-muted);
+  font-size: 1.875rem;
+}
+
+/* ── TABS & FILTERS ── */
+.tabs-nav {
+  display: flex;
+  gap: 8px;
+  border-bottom: 2px solid var(--c-border);
+  margin-bottom: 32px;
+  overflow-x: auto;
+  padding-bottom: 2px;
+}
+
+.tab-btn {
+  background: none;
+  border: none;
+  font-family: var(--font-display);
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--c-text-muted);
+  padding: 12px 20px;
+  cursor: pointer;
+  position: relative;
+  transition: color var(--transition-fast);
+  white-space: nowrap;
+}
+
+.tab-btn:hover {
+  color: var(--c-navy);
+}
+
+.tab-btn.active {
+  color: var(--c-navy);
+}
+
+.tab-btn.active::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background-color: var(--c-gold);
+  border-radius: 3px;
+}
+
+.filter-group {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-bottom: 28px;
+}
+
+.filter-pill {
+  background: #fff;
+  border: 1px solid var(--c-border);
+  color: var(--c-text-main);
+  padding: 6px 16px;
+  border-radius: var(--radius-pill);
+  font-size: 0.875rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.filter-pill:hover,
+.filter-pill.active {
+  background-color: var(--c-navy);
+  color: #fff;
+  border-color: var(--c-navy);
+}
+
+/* ── TABLES (Tabular figures, clean lines) ── */
+.table-responsive {
+  width: 100%;
+  overflow-x: auto;
+  border: 1px solid var(--c-border);
+  border-radius: var(--radius-card);
+  background: #fff;
+}
+
+.data-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  font-size: 0.9375rem;
+}
+
+.data-table th {
+  background-color: var(--c-navy);
+  color: var(--c-text-inverse);
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 0.8125rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 12px 16px;
+}
+
+.data-table td {
+  padding: 12px 16px;
+  border-bottom: 1px solid var(--c-border-subtle);
+  color: var(--c-text-main);
+  font-variant-numeric: tabular-nums;
+}
+
+.data-table tbody tr:hover {
+  background-color: rgba(245, 158, 27, 0.04);
+}
+
+.data-table .highlight-col {
+  font-weight: 700;
+  color: var(--c-navy);
+}
+
+/* ── FORMS & INPUTS (2px Teal Focus) ── */
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-label {
+  display: block;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--c-navy);
+  margin-bottom: 6px;
+}
+
+.form-input,
+.form-select,
+.form-textarea {
+  width: 100%;
+  padding: 12px 16px;
+  border: 1.5px solid var(--c-border);
+  border-radius: 8px;
+  background-color: #fff;
+  color: var(--c-text-main);
+  font-size: 0.9375rem;
+  transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.form-input:focus,
+.form-select:focus,
+.form-textarea:focus {
+  outline: none;
+  border-color: var(--c-teal);
+  box-shadow: 0 0 0 2px var(--c-teal);
+}
+
+.form-input.error,
+.form-select.error,
+.form-textarea.error {
+  border-color: #E53E3E;
+}
+
+.form-error-msg {
+  color: #E53E3E;
+  font-size: 0.75rem;
+  margin-top: 4px;
+  display: none;
+}
+
+.form-input.error + .form-error-msg {
+  display: block;
+}
+
+/* ── CONSENT & SAFEGUARD NOTICES ── */
+.consent-notice {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  background: var(--c-teal-light);
+  border: 1px solid rgba(56, 198, 217, 0.4);
+  border-radius: var(--radius-card);
+  padding: 16px 20px;
+  color: var(--c-navy);
+  font-size: 0.875rem;
+  margin-top: 24px;
+}
+
+.consent-notice svg {
+  color: #0A8B9C;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+/* ── EMPTY STATES ── */
+.empty-state {
+  text-align: center;
+  padding: 64px 24px;
+  background: #fff;
+  border-radius: var(--radius-card);
+  border: 1px dashed var(--c-border);
+  max-width: 540px;
+  margin: 32px auto;
+}
+
+.empty-state__icon {
+  width: 64px;
+  height: 64px;
+  margin: 0 auto 16px;
+  color: var(--c-gold);
+  background: var(--c-gold-light);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.empty-state__title {
+  font-size: 1.25rem;
+  margin-bottom: 8px;
+}
+
+.empty-state__desc {
+  color: var(--c-text-muted);
+  font-size: 0.9375rem;
+  margin-bottom: 20px;
+}
+
+/* ── GALLERY LIGHTBOX MODAL ── */
+.lightbox-modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(10, 18, 40, 0.95);
+  backdrop-filter: blur(8px);
+  z-index: 999;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+}
+
+.lightbox-modal.is-active {
+  display: flex;
+}
+
+.lightbox-content {
+  position: relative;
+  max-width: 960px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.lightbox-image-wrapper {
+  max-height: 70vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  border-radius: 8px;
+}
+
+.lightbox-image-wrapper img {
+  max-height: 70vh;
+  width: auto;
+  object-fit: contain;
+}
+
+.lightbox-caption {
+  color: #fff;
+  margin-top: 16px;
+  text-align: center;
+  font-size: 1rem;
+}
+
+.lightbox-counter {
+  color: var(--c-gold);
+  font-family: var(--font-display);
+  font-size: 0.875rem;
+  font-weight: 700;
+  margin-top: 4px;
+}
+
+.lightbox-btn {
+  position: absolute;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: #fff;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all var(--transition-fast);
+}
+
+.lightbox-btn:hover {
+  background: var(--c-gold);
+  color: var(--c-navy);
+}
+
+.lightbox-close {
+  top: -48px;
+  right: 0;
+}
+
+.lightbox-prev {
+  left: -64px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.lightbox-next {
+  right: -64px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+@media (max-width: 900px) {
+  .lightbox-prev { left: 8px; top: auto; bottom: -60px; transform: none; }
+  .lightbox-next { right: 8px; top: auto; bottom: -60px; transform: none; }
+  .lightbox-close { top: -40px; right: 0; }
+}

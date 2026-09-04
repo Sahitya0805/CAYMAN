@@ -1,0 +1,81 @@
+{
+  "history": "Founded in 2023 by passionate cricket enthusiasts in George Town, Cayman Super Kings (CSK) was established to bring high-calibre, disciplined, and community-driven cricket to the Cayman Islands. In just four seasons, CSK has grown into one of the most respected amateur cricket clubs in the Caribbean region, competing at the pinnacle of Cayman Islands Cricket Association (CICA) sanctioned competitions.",
+  "honours": [
+    {
+      "year": "2025",
+      "title": "CICA T20 Super League Champions",
+      "description": "Undefeated postseason run culminating in a 7-wicket final victory."
+    },
+    {
+      "year": "2025",
+      "title": "Cayman Independence Cup Winners",
+      "description": "Inaugural invitational tournament victory against international touring sides."
+    },
+    {
+      "year": "2024",
+      "title": "CICA Division 1 40-Over Runners-Up",
+      "description": "First major final appearance in club history."
+    },
+    {
+      "year": "2024",
+      "title": "CICA Fair Play & Spirit of Cricket Award",
+      "description": "Recognised island-wide for sportsmanship and community engagement."
+    }
+  ],
+  "timeline": [
+    {
+      "year": "2023",
+      "tag": "Foundation",
+      "title": "Club Inception & First Squad",
+      "description": "Formed by Rajesh Sharma, Karan Patel, and local cricket patrons. Entered CICA Division 2 and won promotion in inaugural year."
+    },
+    {
+      "year": "2024",
+      "tag": "Growth",
+      "title": "First Major Final & Youth Clinic",
+      "description": "Reached Division 1 40-Over final and established grassroots academy for Under-15 Caymanian cricketers."
+    },
+    {
+      "year": "2025",
+      "tag": "Silverware",
+      "title": "T20 Championship Title",
+      "description": "Lifted the premier T20 trophy with an unforgettable campaign, establishing CSK as the gold standard of local cricket."
+    },
+    {
+      "year": "2026",
+      "tag": "Current Streak",
+      "is_streak": true,
+      "title": "8 Consecutive League Wins",
+      "description": "Undefeated across both T20 and 40-Over competitions in the 2026 season so far, expanding the academy to 22 squad members."
+    }
+  ],
+  "leadership": [
+    {
+      "role": "President & Club Patron",
+      "name": "Harish Patel",
+      "bio": "Veteran sports administrator and long-time supporter of Cayman athletics."
+    },
+    {
+      "role": "Club Captain",
+      "name": "Rajesh Sharma",
+      "bio": "Founding player and strategic captain with over 15 years of amateur cricket experience."
+    },
+    {
+      "role": "Head Coach",
+      "name": "Winston Davis",
+      "bio": "Former regional representative focusing on bowling mechanics and youth development."
+    },
+    {
+      "role": "Head of Youth Development",
+      "name": "Marcus Sterling",
+      "bio": "Leading academy coaching clinics and schools outreach programs."
+    }
+  ],
+  "ground": {
+    "name": "Jimmy Powell Oval",
+    "location": "West Bay Road / George Town, Grand Cayman",
+    "capacity": "1,200 Spectators",
+    "surface": "Natural Turf Pitch & Outfield",
+    "facilities": "Two-bay net practice enclosures, pavilion & clubhouse, spectator seating, floodlight training bays."
+  }
+}

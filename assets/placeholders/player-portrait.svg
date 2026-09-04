@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 500" width="100%" height="100%">
+  <defs>
+    <linearGradient id="pGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#172754"/>
+      <stop offset="100%" stop-color="#101C3F"/>
+    </linearGradient>
+  </defs>
+  <rect width="400" height="500" fill="url(#pGrad)"/>
+  <circle cx="200" cy="180" r="70" fill="#223770" stroke="#F59E1B" stroke-width="2"/>
+  <path d="M110 380 C110 280, 290 280, 290 380 Z" fill="#223770" stroke="#F59E1B" stroke-width="2"/>
+  <g transform="translate(200, 420)" text-anchor="middle">
+    <text y="0" font-family="'Archivo', sans-serif" font-size="14" font-weight="700" fill="#F59E1B" letter-spacing="1">[ DROP-IN PORTRAIT ]</text>
+    <text y="24" font-family="'IBM Plex Sans', sans-serif" font-size="12" fill="#38C6D9">400 × 500px cutout</text>
+  </g>
+</svg>
