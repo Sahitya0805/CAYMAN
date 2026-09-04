@@ -1,94 +1,90 @@
-# 🦁 Cayman Super Kings — Official Digital Platform & CMS
+# Cayman Super Kings Cricket Club 🏏
 
-> **One Team. One Dream. The Lion Roars Again.**  
-> The official website, live match centre, and administrative CMS for the **Cayman Super Kings (CSK)** cricket club in the Daniel Morris Super League T20.
-
----
-
-## 🌟 Overview & Features
-
-### 🏏 Fan Experience & Public Platform
-- **3-Window Sliding Video Hero**: Cinematic ambient video background with 3-window sliding video selector (62-run victory reel, upcoming fixture, VIP hospitality).
-- **Live Match Centre**: Real-time ball-by-ball scoreboard, run-rate gauge, win probability meter (82%), and active striker/non-striker/bowler tracker.
-- **Matchday Ticketing & Dynamic QR Gate Passes**: Interactive seat selection, ticket categories (General, Grandstand, VIP Lounge, Corporate), instant dynamic QR gate pass generation, and digital wallet downloads.
-- **Gate Pass QR Verifier (`/tickets/verify`)**: Real-time scanner tool for gate marshals to validate and check-in attendees.
-- **Squad & Player Profiles**: Comprehensive stats, bowling & batting styles, career records, match logs, and medal accolades (*Rahul Garg 53 off 42, Ravneet 3/16, Rajasekhara 3/6, Parthipan 43\**).
-- **Match Highlights & Media Theatre**: Playable video reels, photo galleries, and match replays.
-- **Official Merchandise Store**: 2026 match jerseys, snapbacks, and supporter apparel with size selectors, slide-out Cart Drawer, and checkout flow.
-- **VIP Hospitality**: Corporate suite packages and interactive booking request modal.
-- **Fan Zone & Polls**: Real-time interactive matchday voting polls and digital fan membership pass creator.
-
-### ⚙️ Administrative CMS & Live Scoring (`/admin`)
-- **Command Dashboard**: Real-time KPI widgets for matches, squad players, news reports, issued ticket passes, store orders, and revenue metrics.
-- **Dedicated Scorer Keypad (`/admin/live-scoring`)**: 1-click ball recording (`0`, `1`, `2`, `3`, `4`, `6`, `W`, `WD`, `NB`, `Bye / Leg Bye`, `Undo`) that synchronizes live scoreboards instantly across browser sessions without page refreshes.
-- **Player Squad CRUD**: Add, edit, and update player bios, photos, and career statistics.
-- **Match & Fixtures Manager**: Schedule upcoming games, toggle match statuses (`UPCOMING`, `LIVE`, `COMPLETED`), and publish scorecards.
-- **News & Articles CMS**: Rich markdown match report creator and draft/published controls.
-- **Media Library**: Upload and categorize photo and video assets.
-- **Store Inventory & Orders**: Product catalog controls and customer order fulfillment updates (`PAID`, `PROCESSING`, `SHIPPED`, `DELIVERED`).
-- **Homepage Builder**: Show, hide, and reorder all 15 modular homepage sections dynamically.
-- **Site Settings & Audit Trail**: Top announcement bar editor, club contact info, and SOC2 audit trail.
+Official content-led website for **Cayman Super Kings**, Grand Cayman's premier cricket franchise competing in the Cayman Islands Cricket Association (CICA) leagues.
 
 ---
 
-## 🚀 Tech Stack
+## 🌟 Overview & Architecture
 
-- **Framework**: Next.js 15 (App Router, Server & Client Components)
-- **Styling**: Tailwind CSS, CSS Custom Properties, Custom Glassmorphism & Gold Gradients
-- **Typography**: Montserrat (Display & Numbers), Oswald (Scoreboards & Badges), Plus Jakarta Sans (Body), Cinzel (Luxury Accents)
-- **Motion & Physics**: Framer Motion (Hardware-accelerated 60fps spring parallax and ambient floating cricket elements)
-- **State Management**: Reactive Context API with multi-tab storage synchronization and live scorer engine
-- **QR Engine**: `qrcode` (dynamic cryptographic verification hashes)
+- **Zero-Build Static Architecture**: Native HTML5, modern modular CSS3, and ES Modules.
+- **Centralized Content Layer**: Hand-maintained JSON files in `/content/` for easy seasonal updates without modifying code.
+- **Hard Automated Safeguards**: Privacy and safeguarding Consent Guard on Squad and Youth pathways.
+- **Design Tokens**:
+  - **Navy (Primary)**: `#101C3F`
+  - **Gold (Primary CTA / Captain Badge)**: `#F59E1B`
+  - **Flame (Accents / Fills)**: `#F2600C` *(Text-safe `#B8430A` on light backgrounds)*
+  - **Teal (Secondary / VC Badge / Focus Ring)**: `#38C6D9`
+  - **Page Background**: `#F7F8FA`
+  - **Typography**: Display in `Archivo` (tabular scorelines) & Body in `IBM Plex Sans`.
 
 ---
 
-## 📦 Getting Started
+## 📂 Project Structure
 
-### 1. Install Dependencies
+```
+.
+├── index.html                   # 1. Home
+├── matches.html                 # 2. Matches, Results & Standings
+├── match-detail.html            # 3. Match Scorecard & CricClubs Portal
+├── squad.html                   # 4. 2026 Squad Roster (5 Groups)
+├── player-detail.html           # 5. Dynamic Player Profile
+├── gallery.html                 # 6. Photos, Videos & Keyboard Lightbox
+├── news.html                    # 7. Match Reports & News Grid
+├── article.html                 # 8. Single Column Editorial Article
+├── youth.html                   # 9. Youth Academy 3-Step Pathway
+├── about.html                   # 10. History, Honours & 2023-2026 Timeline
+├── partner.html                 # 11. Corporate Sponsorship Tiers & FAQs
+├── contact.html                 # 12. Validated Contact Form & Ground Map
+├── 404.html                     # 13. 404 Error & Reusable Empty States
+├── css/
+│   ├── tokens.css               # Color variables, typography & resets
+│   ├── layout.css               # 12-column grid, header, nav & footer
+│   ├── components.css           # Cards, scoreboards, buttons, lightbox, tables
+│   └── pages.css                # Route-specific layouts & timeline
+├── js/
+│   ├── app.js                   # Header, mobile nav & announcement bar
+│   ├── consent-guard.js         # Automated youth safeguarding guard
+│   ├── content-store.js         # Centralized JSON store & fetch cache
+│   ├── matches.js               # Match filters, tabs & countdown timer
+│   ├── squad.js                 # Squad rendering & career stats calculator
+│   ├── gallery.js               # Lightbox modal with Esc & Arrow key nav
+│   ├── news.js                  # News filter & scoreline cards
+│   └── contact.js               # Accessible client-side validation
+├── content/
+│   ├── fixtures.json            # Match dates, scores, and CricClubs URLs
+│   ├── squad.json               # 22 player profiles with consent flags
+│   ├── gallery.json             # Photo/video metadata and tags
+│   ├── news.json                # Articles, match reports, and excerpts
+│   └── about.json               # Timeline, honours, leadership, and ground
+├── assets/
+│   ├── icons/                   # Branded cricket SVG icons
+│   └── placeholders/            # Drop-in SVG slots (portraits, hero, crest, logos)
+├── sitemap.xml                  # Search engine sitemap
+└── robots.txt                   # Web crawler configuration
+```
+
+---
+
+## 🚀 Running Locally
+
+Serve the static files with any local HTTP server:
+
 ```bash
-npm install
+# Using Python
+python3 -m http.server 8080
+
+# Using Node / npx
+npx serve .
 ```
 
-### 2. Run Development Server
-```bash
-npm run dev -- -p 3004
-```
-Open [http://localhost:3004](http://localhost:3004) in your browser.
-
-### 3. Build for Production
-```bash
-npm run build
-npm run start -- -p 3004
-```
+Open [http://localhost:8080](http://localhost:8080) in your browser.
 
 ---
 
-## 🏛️ Project Directory Structure
+## 🌐 Deployment Targets
 
-```
-├── src/
-│   ├── app/                    # Next.js App Router (Public & Admin routes)
-│   │   ├── admin/              # Complete CMS & Scorer Console suite
-│   │   ├── club/               # Club history & mission
-│   │   ├── contact/            # Contact & enquiries form
-│   │   ├── fan-zone/           # Fan polls & digital pass generator
-│   │   ├── hospitality/        # VIP suites & corporate packages
-│   │   ├── matches/            # Fixtures & Live Match Centre
-│   │   ├── media/              # Video vault & photo galleries
-│   │   ├── news/               # Match reports & editorial reader
-│   │   ├── players/[slug]/     # Individual player profiles & career stats
-│   │   ├── shop/               # E-commerce store & checkout
-│   │   ├── team/               # Squad roster
-│   │   ├── tickets/            # Ticketing flow & gate validator
-│   │   ├── layout.tsx          # Root layout
-│   │   └── page.tsx            # Modular dynamic homepage
-│   ├── components/             # Reusable UI & section components
-│   ├── context/                # StoreContext & CartContext
-│   ├── data/                   # Initial authentic seed datasets
-│   └── types/                  # TypeScript interface definitions
-└── tailwind.config.ts          # Brand palette & typography configuration
-```
-
----
-
-*Cayman Super Kings © 2026. All rights reserved.*
+Deployable instantly with zero configuration on:
+- **GitHub Pages**
+- **Netlify**
+- **Vercel**
+- **Cloudflare Pages**
