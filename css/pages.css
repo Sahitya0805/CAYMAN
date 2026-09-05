@@ -1716,5 +1716,268 @@ body.page--white-theme .contact-form-panel .form-textarea {
   }
 }
 
+/* ─────────────────────────────────────────────────────────────
+   JOIN THE YELLOW ARMY FAN PORTAL (Auth & Membership Card)
+   ───────────────────────────────────────────────────────────── */
+.join-section {
+  position: relative;
+  min-height: 85vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 60px 20px 80px;
+  background: radial-gradient(circle at center top, #102042 0%, #080E18 70%, #04080F 100%);
+  overflow: hidden;
+}
+
+.join-bg-watermark {
+  position: absolute;
+  top: 48%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: min(780px, 95vw);
+  height: auto;
+  opacity: 0.055;
+  pointer-events: none;
+  filter: drop-shadow(0 0 60px rgba(250, 184, 30, 0.4));
+  z-index: 0;
+}
+
+.join-container {
+  position: relative;
+  z-index: 1;
+  max-width: 520px;
+  width: 100%;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.join-header-title {
+  font-family: var(--font-display);
+  font-size: clamp(2.2rem, 5.5vw, 3.4rem);
+  font-weight: 900;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: #FAB81E;
+  margin: 0 0 8px;
+  line-height: 1.05;
+  text-shadow: 0 0 24px rgba(250, 184, 30, 0.45);
+}
+
+.join-header-subtitle {
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  font-weight: 800;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: #94A3B8;
+  margin: 0 0 32px;
+}
+
+.join-card {
+  background: rgba(16, 28, 63, 0.75);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1.5px solid rgba(250, 184, 30, 0.35);
+  border-radius: 20px;
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.6), 0 0 30px rgba(250, 184, 30, 0.15);
+  padding: 36px 32px 30px;
+  text-align: left;
+}
+
+.join-tabs {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 28px;
+  border-bottom: 1.5px solid rgba(255, 255, 255, 0.1);
+  padding-bottom: 12px;
+}
+
+.join-tab-btn {
+  background: transparent;
+  border: none;
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  font-weight: 800;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: #64748B;
+  cursor: pointer;
+  padding: 6px 14px;
+  position: relative;
+  transition: all 0.25s ease;
+}
+
+.join-tab-btn:hover {
+  color: #FFFFFF;
+}
+
+.join-tab-btn.active {
+  color: #FAB81E;
+}
+
+.join-tab-btn.active::after {
+  content: '';
+  position: absolute;
+  bottom: -13.5px;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: #FAB81E;
+  border-radius: 3px;
+  box-shadow: 0 0 10px #FAB81E;
+}
+
+.join-form-group {
+  margin-bottom: 20px;
+}
+
+.join-input {
+  width: 100%;
+  background: #080E18;
+  border: 1.5px solid rgba(255, 255, 255, 0.16);
+  border-radius: 10px;
+  padding: 14px 16px;
+  color: #FFFFFF;
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  transition: all 0.25s ease;
+  outline: none;
+}
+
+.join-input:focus {
+  border-color: #FAB81E;
+  box-shadow: 0 0 0 3px rgba(250, 184, 30, 0.25);
+}
+
+.join-input-hint {
+  display: block;
+  font-size: 0.75rem;
+  color: #64748B;
+  margin-top: 5px;
+  margin-left: 2px;
+}
+
+.join-password-wrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.join-password-wrap .join-input {
+  padding-right: 48px;
+}
+
+.join-eye-toggle {
+  position: absolute;
+  right: 12px;
+  background: transparent;
+  border: none;
+  color: #64748B;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 6px;
+  transition: color 0.2s ease;
+}
+
+.join-eye-toggle:hover {
+  color: #FAB81E;
+}
+
+.join-forgot-row {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: -6px;
+  margin-bottom: 22px;
+}
+
+.join-forgot-link {
+  font-size: 0.8rem;
+  color: #94A3B8;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.join-forgot-link:hover {
+  color: #FAB81E;
+  text-decoration: underline;
+}
+
+.join-submit-btn {
+  width: 100%;
+  background: linear-gradient(135deg, #FAB81E 0%, #F2600C 100%);
+  color: #080E18;
+  border: none;
+  border-radius: 10px;
+  padding: 15px 24px;
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  font-weight: 900;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  cursor: pointer;
+  box-shadow: 0 8px 24px rgba(242, 96, 12, 0.4);
+  transition: all 0.25s ease;
+}
+
+.join-submit-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 30px rgba(250, 184, 30, 0.6);
+  filter: brightness(1.08);
+}
+
+.join-switch-text {
+  text-align: center;
+  font-size: 0.875rem;
+  color: #94A3B8;
+  margin-top: 20px;
+}
+
+.join-switch-link {
+  color: #FAB81E;
+  font-weight: 700;
+  cursor: pointer;
+  text-decoration: underline;
+  transition: color 0.2s ease;
+}
+
+.join-switch-link:hover {
+  color: #F2600C;
+}
+
+.join-perks-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+  margin-top: 28px;
+  padding-top: 24px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.join-perk-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.775rem;
+  font-weight: 600;
+  color: #CBD5E1;
+}
+
+.join-perk-icon {
+  font-size: 1rem;
+}
+
+@media (max-width: 540px) {
+  .join-card {
+    padding: 28px 20px 24px;
+  }
+  .join-perks-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+
 
 

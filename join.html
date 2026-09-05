@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Join The Yellow Army | Cayman Super Kings Fan Club</title>
+  <meta name="description" content="Become an official member of the Cayman Super Kings Yellow Army. Access priority tickets, member merchandise, and exclusive club updates.">
+  <link rel="icon" type="image/png" href="assets/csk-official-logo.png">
+  
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/pages.css">
+</head>
+<body>
+  <!-- CSK Branded Splash & Transition Screen -->
+  <div id="csk-splash-screen" class="csk-splash-screen" aria-hidden="false">
+    <div class="csk-splash-screen__backdrop"></div>
+    <div class="csk-splash-screen__content">
+      <div class="csk-splash-screen__logo-wrap">
+        <img src="assets/csk-splash.png" alt="Cayman Super Kings" class="csk-splash-screen__image">
+      </div>
+      <div class="csk-splash-screen__progress">
+        <div class="csk-splash-screen__bar"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Top Accent Bar -->
+  <div class="site-header__top-bar"></div>
+
+  <!-- Sitewide Announcement Bar -->
+  <aside class="announcement-bar" aria-label="Latest match notification">
+    <div class="announcement-bar__inner">
+      <div style="display: flex; align-items: center; gap: 10px; overflow: hidden;">
+        <span class="announcement-tag">RESULT</span>
+        <span class="announcement-text">CSK (184/4) defeated Titans (122/9) — CSK win by 62 runs</span>
+      </div>
+      <a href="matches.html" class="announcement-link">Match Report ↗</a>
+    </div>
+  </aside>
+
+  <!-- Sticky Slanted Dark Blue Header -->
+  <header class="site-header">
+    <div class="site-header__container">
+      <!-- Main Slanted Dark Blue Bar -->
+      <div class="site-header__bar">
+        <!-- Breakout CSK Logo -->
+        <a href="index.html" class="navbar-logo-breakout" aria-label="Cayman Super Kings Home">
+          <img src="assets/csk-official-logo.png" alt="Cayman Super Kings Logo" class="navbar-logo-img">
+        </a>
+
+        <!-- Mobile Menu Toggle -->
+        <button class="mobile-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+
+        <!-- Navigation Links -->
+        <nav class="navbar-nav" aria-label="Main Navigation">
+          <ul class="nav-menu">
+            <li><a href="squad.html" class="nav-link">Squad</a></li>
+            <li><a href="matches.html" class="nav-link">Fixtures</a></li>
+            <li><a href="about.html" class="nav-link">Yellow Vault</a></li>
+            <li><a href="youth.html" class="nav-link">Fanzone</a></li>
+            <li><a href="partner.html" class="nav-link">Sponsors</a></li>
+            <li><a href="gallery.html" class="nav-link">Gallery</a></li>
+            <li><a href="news.html" class="nav-link">News</a></li>
+          </ul>
+        </nav>
+      </div>
+
+      <!-- Right Slanted User / Contact Action Pill -->
+      <a href="join.html" class="site-header__user-pill active" aria-label="Join The Yellow Army / Fan Portal" title="Join The Yellow Army">
+        <svg class="user-pill__icon" viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+          <circle cx="12" cy="7" r="4"></circle>
+        </svg>
+      </a>
+    </div>
+  </header>
+
+  <main>
+    <!-- JOIN SECTION -->
+    <section class="join-section">
+      <!-- Large Watermark Logo Aura -->
+      <img src="assets/csk-official-logo.png" alt="CSK Crest Watermark" class="join-bg-watermark">
+
+      <div class="join-container">
+        <h1 class="join-header-title">JOIN THE YELLOW ARMY</h1>
+        <p class="join-header-subtitle">WHISTLE PODU CAYMAN · OFFICIAL FAN &amp; MEMBERSHIP PORTAL</p>
+
+        <!-- Glassmorphic Portal Card -->
+        <div class="join-card">
+          <!-- Tab Switcher -->
+          <div class="join-tabs" role="tablist">
+            <button id="tab-signin" class="join-tab-btn active" role="tab" aria-selected="true">Sign In</button>
+            <button id="tab-signup" class="join-tab-btn" role="tab" aria-selected="false">Sign Up</button>
+          </div>
+
+          <!-- SIGN IN FORM -->
+          <form id="form-signin" class="join-form" onsubmit="event.preventDefault(); window.handleAuth('signin');">
+            <div class="join-form-group">
+              <input type="email" id="signin-email" class="join-input" placeholder="Email" required autocomplete="email">
+              <span class="join-input-hint">Enter email for sign in</span>
+            </div>
+
+            <div class="join-form-group">
+              <div class="join-password-wrap">
+                <input type="password" id="signin-password" class="join-input" placeholder="Password" required autocomplete="current-password">
+                <button type="button" class="join-eye-toggle" aria-label="Toggle password visibility" onclick="window.togglePassword('signin-password')">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+                </button>
+              </div>
+              <span class="join-input-hint">Enter password to continue</span>
+            </div>
+
+            <div class="join-forgot-row">
+              <a href="#" class="join-forgot-link" onclick="event.preventDefault(); alert('Password reset instructions have been sent to your registered email.');">Forgot Password?</a>
+            </div>
+
+            <button type="submit" class="join-submit-btn">
+              <span>Sign In</span>
+            </button>
+
+            <div class="join-switch-text">
+              New to CSK? <span class="join-switch-link" onclick="window.switchTab('signup')">Sign Up</span>
+            </div>
+          </form>
+
+          <!-- SIGN UP FORM (Initially Hidden) -->
+          <form id="form-signup" class="join-form" style="display: none;" onsubmit="event.preventDefault(); window.handleAuth('signup');">
+            <div class="join-form-group">
+              <input type="text" id="signup-name" class="join-input" placeholder="Full Name" required autocomplete="name">
+              <span class="join-input-hint">Enter your full name</span>
+            </div>
+
+            <div class="join-form-group">
+              <input type="email" id="signup-email" class="join-input" placeholder="Email Address" required autocomplete="email">
+              <span class="join-input-hint">Enter your email address</span>
+            </div>
+
+            <div class="join-form-group">
+              <div class="join-password-wrap">
+                <input type="password" id="signup-password" class="join-input" placeholder="Create Password" required autocomplete="new-password">
+                <button type="button" class="join-eye-toggle" aria-label="Toggle password visibility" onclick="window.togglePassword('signup-password')">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+                </button>
+              </div>
+              <span class="join-input-hint">At least 8 characters with numbers &amp; symbols</span>
+            </div>
+
+            <div class="join-form-group">
+              <select id="signup-tier" class="join-input" style="cursor: pointer;">
+                <option value="fan">💛 Official Whistle Podu Fan Pass (Free)</option>
+                <option value="gold">🏆 Yellow Army Gold Season Pass (KYD 25/yr)</option>
+                <option value="youth">🦁 Junior Super Kings Under-19 Academy</option>
+              </select>
+              <span class="join-input-hint">Select membership tier</span>
+            </div>
+
+            <button type="submit" class="join-submit-btn">
+              <span>Create Account &amp; Join</span>
+            </button>
+
+            <div class="join-switch-text">
+              Already a Member? <span class="join-switch-link" onclick="window.switchTab('signin')">Sign In</span>
+            </div>
+          </form>
+
+          <!-- Membership Perks Checklist -->
+          <div class="join-perks-grid">
+            <div class="join-perk-item">
+              <span class="join-perk-icon">🎟️</span>
+              <span>Priority Matchday Seating</span>
+            </div>
+            <div class="join-perk-item">
+              <span class="join-perk-icon">👕</span>
+              <span>15% Off Official CSK Kits</span>
+            </div>
+            <div class="join-perk-item">
+              <span class="join-perk-icon">🏏</span>
+              <span>Exclusive Meet &amp; Greets</span>
+            </div>
+            <div class="join-perk-item">
+              <span class="join-perk-icon">⚡</span>
+              <span>Early Team Lineup Access</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Site Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <div style="display: flex; align-items: center; gap: 10px;">
+            <img src="assets/csk-official-logo.png" alt="CSK Crest" style="width: 44px; height: 44px; object-fit: contain;">
+            <span style="font-family: var(--font-display); font-weight: 900; color: #fff; font-size: 1.125rem;">CAYMAN SUPER KINGS</span>
+          </div>
+          <p>
+            Grand Cayman's premier cricket franchise affiliated with the Cayman Islands Cricket Association. Dedicated to excellence, sportsmanship, and youth development.
+          </p>
+        </div>
+
+        <div>
+          <h4 class="footer-heading">Club</h4>
+          <ul class="footer-links">
+            <li><a href="about.html">About &amp; History</a></li>
+            <li><a href="squad.html">2026 Squad</a></li>
+            <li><a href="matches.html">Fixtures &amp; Results</a></li>
+            <li><a href="youth.html">Youth Programme</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-heading">Media &amp; Fans</h4>
+          <ul class="footer-links">
+            <li><a href="news.html">Match Reports &amp; News</a></li>
+            <li><a href="gallery.html">Photo &amp; Video Gallery</a></li>
+            <li><a href="https://cricclubs.com/CaymanCricketAssociation" target="_blank" rel="noopener noreferrer">CricClubs Match Center ↗</a></li>
+            <li><a href="join.html">Fan Portal &amp; Membership</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-heading">Partners &amp; Contact</h4>
+          <ul class="footer-links">
+            <li><a href="partner.html">Sponsors &amp; Partners</a></li>
+            <li><a href="contact.html">Contact Committee</a></li>
+            <li><a href="contact.html#ground">Ground Directions</a></li>
+            <li><a href="youth.html#consent">Safeguarding Policy</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>© 2026 Cayman Super Kings Cricket Club. All rights reserved.</div>
+        <div class="cica-badge">
+          <span style="color: var(--c-gold);">★</span>
+          <span>Affiliated with Cayman Islands Cricket Association (CICA)</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script type="module" src="js/app.js"></script>
+  <script>
+    window.switchTab = function(tab) {
+      const btnIn = document.getElementById('tab-signin');
+      const btnUp = document.getElementById('tab-signup');
+      const formIn = document.getElementById('form-signin');
+      const formUp = document.getElementById('form-signup');
+
+      if (tab === 'signup') {
+        btnIn.classList.remove('active');
+        btnIn.setAttribute('aria-selected', 'false');
+        btnUp.classList.add('active');
+        btnUp.setAttribute('aria-selected', 'true');
+        formIn.style.display = 'none';
+        formUp.style.display = 'block';
+      } else {
+        btnUp.classList.remove('active');
+        btnUp.setAttribute('aria-selected', 'false');
+        btnIn.classList.add('active');
+        btnIn.setAttribute('aria-selected', 'true');
+        formUp.style.display = 'none';
+        formIn.style.display = 'block';
+      }
+    };
+
+    document.getElementById('tab-signin').addEventListener('click', () => window.switchTab('signin'));
+    document.getElementById('tab-signup').addEventListener('click', () => window.switchTab('signup'));
+
+    window.togglePassword = function(id) {
+      const input = document.getElementById(id);
+      if (input.type === 'password') {
+        input.type = 'text';
+      } else {
+        input.type = 'password';
+      }
+    };
+
+    window.handleAuth = function(type) {
+      const action = type === 'signin' ? 'Signed in' : 'Welcome to the Yellow Army! Registration';
+      alert(`${action} successful! Welcome to Cayman Super Kings Official Fan Vault.`);
+      window.location.href = 'index.html';
+    };
+  </script>
+</body>
+</html>

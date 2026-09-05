@@ -107,7 +107,7 @@ function highlightActiveNav() {
   });
 
   const userPill = document.querySelector('.site-header__user-pill');
-  if (userPill && currentFile === 'contact') {
+  if (userPill && (currentFile === 'join' || currentFile === 'contact')) {
     userPill.classList.add('active');
   }
 }
