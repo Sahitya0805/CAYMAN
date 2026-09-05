@@ -11,7 +11,7 @@
 .editorial-home .announcement-link { color: #10141d; }
 .editorial-home .announcement-tag { background: transparent; color: #10141d; padding-left: 0; }
 .editorial-hero { min-height: 720px; position: relative; isolation: isolate; display: flex; align-items: flex-end; color: #fff; overflow: hidden; background: #07141d; }
-.hero-image-layer { position: absolute; inset: 0; z-index: -1; background: linear-gradient(90deg, rgba(3,10,17,.9) 0%, rgba(3,10,17,.35) 58%, rgba(3,10,17,.1)), linear-gradient(0deg, rgba(3,10,17,.85), transparent 52%), url('../assets/placeholders/action-match.svg') center/cover; filter: saturate(.75); }
+.hero-image-layer { position: absolute; inset: 0; z-index: -1; background: linear-gradient(90deg, rgba(3,10,17,.82) 0%, rgba(3,10,17,.28) 58%, rgba(3,10,17,.08)), linear-gradient(0deg, rgba(3,10,17,.72), transparent 52%), url('../assets/csk-hero.png') center/cover; filter: saturate(1.05) brightness(1.08); }
 .editorial-hero__content { padding-top: 150px; padding-bottom: 112px; }
 .editorial-hero h1 { color: #fff; font-size: clamp(3.8rem, 9vw, 8.4rem); line-height: .86; letter-spacing: -.07em; max-width: 850px; }
 .editorial-hero h1 em { color: #f8d999; font-style: normal; }
