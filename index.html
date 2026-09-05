@@ -3,318 +3,35 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Cayman Super Kings | Official Cricket Club Website</title>
-  <meta name="description" content="Official website of Cayman Super Kings Cricket Club playing in the Cayman Islands Cricket Association (CICA) leagues. Fixtures, live results, squad, and youth academy.">
+  <title>Cayman Super Kings | One Team. One Dream.</title>
+  <meta name="description" content="The official Cayman Super Kings cricket club: fixtures, squad, news, community and matchday stories from Grand Cayman.">
   <link rel="icon" type="image/svg+xml" href="assets/placeholders/csk-crest.svg">
-  
-  <!-- CSS Design System -->
   <link rel="stylesheet" href="css/tokens.css">
   <link rel="stylesheet" href="css/layout.css">
   <link rel="stylesheet" href="css/components.css">
   <link rel="stylesheet" href="css/pages.css">
 </head>
-<body>
-
-  <!-- Sitewide Announcement Bar (Latest Result) -->
+<body class="editorial-home">
   <aside class="announcement-bar" aria-label="Latest match notification">
-    <div class="announcement-bar__inner">
-      <div style="display: flex; align-items: center; gap: 10px; overflow: hidden;">
-        <span class="announcement-tag">Result</span>
-        <span class="announcement-text">Loading latest fixture result...</span>
-      </div>
-      <a href="matches.html" class="announcement-link">Match Report ↗</a>
-    </div>
+    <div class="announcement-bar__inner"><span class="announcement-tag">CSK WIN BY 62 RUNS</span><span class="announcement-text">Back-to-back wins for the Kings.</span><a href="matches.html" class="announcement-link">Match Report ↗</a></div>
   </aside>
-
-  <!-- Navigation Header -->
-  <header class="site-header">
+  <header class="site-header editorial-header">
     <div class="site-header__inner">
-      <a href="index.html" class="logo-wrapper" aria-label="Cayman Super Kings Home">
-        <img src="assets/placeholders/csk-crest.svg" alt="CSK Crest" class="logo-crest">
-        <div class="logo-text">
-          <span class="logo-title">CAYMAN SUPER KINGS</span>
-          <span class="logo-subtitle">Cricket Club • Grand Cayman</span>
-        </div>
-      </a>
-
-      <button class="mobile-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
-        <span></span><span></span><span></span>
-      </button>
-
-      <nav aria-label="Main Navigation">
-        <ul class="nav-menu">
-          <li><a href="index.html" class="nav-link">Home</a></li>
-          <li><a href="matches.html" class="nav-link">Matches</a></li>
-          <li><a href="squad.html" class="nav-link">Squad</a></li>
-          <li><a href="youth.html" class="nav-link">Youth</a></li>
-          <li><a href="about.html" class="nav-link">About</a></li>
-          <li><a href="gallery.html" class="nav-link">Gallery</a></li>
-          <li><a href="news.html" class="nav-link">News</a></li>
-          <li><a href="partner.html" class="nav-link">Partner</a></li>
-          <li><a href="contact.html" class="nav-cta">Contact Us</a></li>
-        </ul>
-      </nav>
+      <a href="index.html" class="logo-wrapper" aria-label="Cayman Super Kings home"><img src="assets/placeholders/csk-crest.svg" alt="Cayman Super Kings crest" class="logo-crest"><div class="logo-text"><span class="logo-title">CAYMAN SUPER KINGS</span><span class="logo-subtitle">Cricket Club · Grand Cayman</span></div></a>
+      <button class="mobile-toggle" aria-label="Toggle navigation menu" aria-expanded="false"><span></span><span></span><span></span></button>
+      <nav aria-label="Main Navigation"><ul class="nav-menu"><li><a href="index.html" class="nav-link">Home</a></li><li><a href="matches.html" class="nav-link">Matches</a></li><li><a href="squad.html" class="nav-link">Players</a></li><li><a href="news.html" class="nav-link">News</a></li><li><a href="gallery.html" class="nav-link">Media</a></li><li><a href="youth.html" class="nav-link">Academy</a></li><li><a href="partner.html" class="nav-link">Partners</a></li><li><a href="matches.html" class="nav-cta">Buy Tickets</a></li></ul></nav>
     </div>
   </header>
-
-  <!-- Main Content -->
   <main>
-    <!-- HERO SECTION -->
-    <section class="home-hero">
-      <div class="container">
-        <div class="hero-grid">
-          <div>
-            <span class="section-eyebrow">Cayman Islands Cricket Association</span>
-            <h1 class="hero-title">Defending Champions. <span>Relentless Spirit.</span></h1>
-            <p class="hero-subtitle">
-              Grand Cayman's premier amateur cricket club, competing across CICA T20 Super League and Division 1 40-Over Championships.
-            </p>
-            <div class="hero-actions">
-              <a href="matches.html" class="btn btn-primary btn-lg">View 2026 Fixtures</a>
-              <a href="squad.html" class="btn btn-outline btn-lg">Meet The Squad</a>
-            </div>
-          </div>
-
-          <div class="hero-image-slot">
-            <img src="assets/placeholders/hero-team.svg" alt="Cayman Super Kings Squad Placeholder" style="width: 100%; height: 100%; object-fit: cover;">
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- OVERLAPPING NEXT MATCH & COUNTDOWN STRIP -->
-    <section class="match-strip-section" aria-label="Upcoming Match Strip">
-      <div class="container">
-        <div class="match-strip-card">
-          <!-- Left: Next Opponent -->
-          <div class="strip-col">
-            <span class="badge badge--gold">Next Fixture</span>
-            <h3 style="font-size: 1.25rem; margin-top: 6px;">vs West Bay Warriors</h3>
-            <p style="font-size: 0.8125rem; color: var(--c-text-muted); margin-top: 4px;">
-              CICA T20 Super League • Round 7<br>
-              <strong>Jimmy Powell Oval</strong>
-            </p>
-          </div>
-
-          <!-- Middle: Countdown Box -->
-          <div class="strip-col strip-col--middle">
-            <span style="font-size: 0.75rem; font-weight: 700; text-transform: uppercase; color: var(--c-gold); letter-spacing: 0.1em;">Match Countdown</span>
-            <div class="countdown-timer">
-              <div class="countdown-item">
-                <span id="countdown-days" class="countdown-num">08</span>
-                <span class="countdown-label">Days</span>
-              </div>
-              <div class="countdown-item">
-                <span id="countdown-hours" class="countdown-num">04</span>
-                <span class="countdown-label">Hours</span>
-              </div>
-              <div class="countdown-item">
-                <span id="countdown-mins" class="countdown-num">18</span>
-                <span class="countdown-label">Mins</span>
-              </div>
-              <div class="countdown-item">
-                <span id="countdown-secs" class="countdown-num">45</span>
-                <span class="countdown-label">Secs</span>
-              </div>
-            </div>
-          </div>
-
-          <!-- Right: Last Result & Link -->
-          <div class="strip-col" style="text-align: right;">
-            <span class="badge badge--teal">Last Match Result</span>
-            <div class="scoreline-oversized" style="font-size: 1.75rem; justify-content: flex-end; margin-top: 4px;">
-              <span>178/4</span>
-              <span class="score-divider">—</span>
-              <span class="score-opp">142/9</span>
-            </div>
-            <p style="font-size: 0.8125rem; color: var(--c-flame-text); font-weight: 700; margin-top: 4px;">
-              CSK won by 36 runs vs Tigers
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- SEASON SNAPSHOT (Stats & Form) -->
-    <section class="section">
-      <div class="container">
-        <div class="section-header section-header--center">
-          <span class="section-eyebrow">2026 Campaign Record</span>
-          <h2 class="section-title">Dominating the Island Leagues</h2>
-          <p class="section-desc">
-            A flawless run in both the CICA T20 Super League and 40-Over Cup competitions.
-          </p>
-        </div>
-
-        <div class="grid">
-          <div class="col-3">
-            <div class="stat-box">
-              <div class="stat-num">8-0</div>
-              <div class="stat-label">Season Win Streak</div>
-            </div>
-          </div>
-          <div class="col-3">
-            <div class="stat-box">
-              <div class="stat-num tabular-nums">+1.84</div>
-              <div class="stat-label">Net Run Rate</div>
-            </div>
-          </div>
-          <div class="col-3">
-            <div class="stat-box">
-              <div class="stat-num">22</div>
-              <div class="stat-label">Squad Strength</div>
-            </div>
-          </div>
-          <div class="col-3">
-            <div class="stat-box">
-              <div class="stat-num">#1</div>
-              <div class="stat-label">League Table Pos</div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- YOUTH TEASER SECTION -->
-    <section class="section section--navy">
-      <div class="container">
-        <div class="grid" style="align-items: center;">
-          <div class="col-6">
-            <span class="section-eyebrow">Grassroots Pathways</span>
-            <h2 class="section-title" style="color: #fff;">Developing Cayman's Next Cricket Generation</h2>
-            <p class="section-desc" style="color: var(--c-text-inverse-muted); margin-bottom: 24px;">
-              Our youth development academy bridges local school programmes into competitive senior club cricket with structured coaching, sportsmanship ethics, and strict safeguarding.
-            </p>
-            <div style="display: flex; gap: 16px;">
-              <a href="youth.html" class="btn btn-primary">Youth Pathway Details</a>
-              <a href="contact.html" class="btn btn-outline">Register Player</a>
-            </div>
-          </div>
-
-          <div class="col-6">
-            <div style="border-radius: var(--radius-card); overflow: hidden; border: 2px solid rgba(56, 198, 217, 0.3);">
-              <img src="assets/placeholders/youth-training.svg" alt="Youth Academy Training Placeholder" style="width: 100%;">
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- INSTAGRAM GRID TEASER -->
-    <section class="section">
-      <div class="container">
-        <div class="section-header">
-          <div>
-            <span class="section-eyebrow">Social &amp; Community</span>
-            <h2 class="section-title">Follow the Whistle Podu Spirit</h2>
-          </div>
-          <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="btn btn-outline-navy">
-            @CaymanSuperKings on Instagram ↗
-          </a>
-        </div>
-
-        <div class="insta-grid">
-          <a href="gallery.html" class="insta-item" aria-label="View Match Photos in Gallery">
-            <img src="assets/placeholders/action-match.svg" alt="Match action teaser">
-            <div class="insta-overlay"><span>View Gallery ↗</span></div>
-          </a>
-          <a href="gallery.html" class="insta-item" aria-label="View Team Photos in Gallery">
-            <img src="assets/placeholders/hero-team.svg" alt="Team celebration teaser">
-            <div class="insta-overlay"><span>View Gallery ↗</span></div>
-          </a>
-          <a href="youth.html" class="insta-item" aria-label="View Youth Pathway">
-            <img src="assets/placeholders/youth-training.svg" alt="Youth training teaser">
-            <div class="insta-overlay"><span>Youth Academy ↗</span></div>
-          </a>
-          <a href="squad.html" class="insta-item" aria-label="Meet the Squad">
-            <img src="assets/placeholders/player-portrait.svg" alt="Player spotlight teaser">
-            <div class="insta-overlay"><span>Meet Squad ↗</span></div>
-          </a>
-        </div>
-      </div>
-    </section>
-
-    <!-- CORPORATE PARTNERS BANNER -->
-    <section class="section section--sm" style="background: #fff; border-top: 1px solid var(--c-border);">
-      <div class="container">
-        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 24px; flex-wrap: wrap; gap: 12px;">
-          <div>
-            <span class="section-eyebrow">Proud Club Partners</span>
-            <h3 style="font-size: 1.25rem;">Supported by Cayman Local Businesses</h3>
-          </div>
-          <a href="partner.html" class="btn btn-outline-navy btn-sm">Become a Partner →</a>
-        </div>
-
-        <div class="partner-logo-grid">
-          <div><img src="assets/placeholders/sponsor-placeholder.svg" alt="Partner Logo Slot 1"></div>
-          <div><img src="assets/placeholders/sponsor-placeholder.svg" alt="Partner Logo Slot 2"></div>
-          <div><img src="assets/placeholders/sponsor-placeholder.svg" alt="Partner Logo Slot 3"></div>
-          <div><img src="assets/placeholders/sponsor-placeholder.svg" alt="Partner Logo Slot 4"></div>
-        </div>
-      </div>
-    </section>
+    <section class="editorial-hero"><div class="hero-image-layer"></div><div class="container editorial-hero__content"><span class="section-eyebrow">The pride of Grand Cayman</span><h1>ONE TEAM.<br><em>ONE DREAM.</em></h1><p>The lion roars again.</p><div class="hero-actions"><a href="matches.html" class="btn btn-primary btn-lg">View Fixtures</a><a href="matches.html" class="btn btn-outline btn-lg">Buy Tickets</a></div></div><div class="hero-scroll">Scroll to explore <span>↓</span></div></section>
+    <section class="match-strip-section editorial-match"><div class="container"><div class="match-strip-card"><div class="strip-col"><span class="section-eyebrow">Next match</span><h3>Cayman Super Kings <small>vs</small> Greenies Too</h3><p>20 September 2026 · 18:00 EST</p></div><div class="strip-col strip-col--middle"><span class="badge badge--gold">Matchday 09</span><strong>18:00</strong><span>Jimmy Powell Oval</span></div><div class="strip-col strip-col--action"><a href="matches.html" class="btn btn-outline-navy btn-sm">Match Center ↗</a></div></div></div></section>
+    <section class="section editorial-section"><div class="container"><div class="section-header"><div><span class="section-eyebrow">The squad archive</span><h2 class="section-title">First XI Roster</h2></div><a href="squad.html" class="text-link">View full squad ↗</a></div><div class="roster-grid"><a href="player.html?slug=a-de-silva" class="roster-card"><img src="assets/placeholders/player-portrait.svg" alt="A. De Silva"><span class="badge badge--gold">Captain</span><div><small>ALL-ROUNDER · 07</small><h3>A. De Silva</h3><b>1420 runs <i>·</i> 36 wickets</b></div></a><a href="player.html?slug=m-sterling" class="roster-card"><img src="assets/placeholders/player-portrait.svg" alt="M. Sterling"><span class="badge badge--teal">Vice Captain</span><div><small>BATTER · 18</small><h3>M. Sterling</h3><b>42 avg <i>·</i> 4.84 SR</b></div></a><a href="player.html?slug=t-campbell" class="roster-card"><img src="assets/placeholders/action-match.svg" alt="T. Campbell"><span class="badge badge--dark">Pro Express</span><div><small>WICKETKEEPER · 03</small><h3>T. Campbell</h3><b>144 runs <i>·</i> 38 catches</b></div></a><a href="player.html?slug=k-richards" class="roster-card"><img src="assets/placeholders/player-portrait.svg" alt="K. Richards"><span class="badge badge--gold">All-rounder</span><div><small>BOWLER · 11</small><h3>K. Richards</h3><b>51 wkts <i>·</i> 116.5 SR</b></div></a></div></div></section>
+    <section class="section editorial-section editorial-dark"><div class="container"><div class="section-header"><div><span class="section-eyebrow">Dispatch & press</span><h2 class="section-title">Editorial Vault</h2></div><a href="news.html" class="text-link">All dispatches ↗</a></div><div class="editorial-news-grid"><article class="feature-story"><img src="assets/placeholders/action-match.svg" alt="Cayman Super Kings celebrating after a match"><div><small>MATCH REPORT · 06 SEP 2026</small><h3>Sterling’s 64 seals dramatic 8-run thriller against Bodden Town</h3><p>In front of a capacity crowd at Jimmy Powell Oval, M. Sterling led the charge with a fearless finish.</p><a href="news.html" class="text-link">Read full dispatch ↗</a></div></article><div class="news-stack"><a href="news.html" class="news-card"><img src="assets/placeholders/hero-team.svg" alt="Cayman Super Kings team"><span><small>FRANCHISE FILE</small><strong>Franchise expands elite high-performance programme</strong><em>Full dispatch ↗</em></span></a><a href="news.html" class="news-card"><img src="assets/placeholders/youth-training.svg" alt="Cricket training session"><span><small>COMMUNITY</small><strong>CSK grassroots initiative reaches 240 young players</strong><em>Full dispatch ↗</em></span></a></div></div></div></section>
+    <section class="section editorial-section"><div class="container"><div class="section-header"><div><span class="section-eyebrow">All access broadcast</span><h2 class="section-title">The Kings Media Vault</h2></div><a href="gallery.html" class="text-link">Open gallery ↗</a></div><div class="media-grid"><a href="gallery.html"><img src="assets/placeholders/action-match.svg" alt="Pre-season power protocols"><span>Pre-season power protocols</span></a><a href="gallery.html"><img src="assets/placeholders/hero-team.svg" alt="Dressing room victory anthem"><span>Dressing room victory anthem</span></a><a href="gallery.html"><img src="assets/placeholders/player-portrait.svg" alt="Decisive moments"><span>Decisive moments: round 03</span></a></div></div></section>
+    <section class="academy-banner"><div class="container academy-grid"><div><span class="section-eyebrow">Foundation & legacy</span><h2>\u200bCayman Grassroots<br>Cricket Academy</h2><p>Building the next generation of Caribbean cricket excellence through accessible coaching and competition.</p><div class="academy-meta"><strong>ICC Level 2</strong><span>U13 · U17 · U19<br>Pathways</span></div><a href="youth.html" class="btn btn-primary">Register for 2026 intake</a></div><img src="assets/placeholders/youth-training.svg" alt="Coach working with a young cricketer"></div></section>
+    <section class="partners-band"><div class="container"><span class="section-eyebrow">In it for all innings</span><h2>Official franchise partners</h2><div class="partner-logo-grid"><div>⌂ Cayman National Bank</div><div>Apex Sports Tech</div><div>Seven Mile Resorts</div><div>Island Broadband</div><div>Caribbean Airwaves</div></div></div></section>
   </main>
-
-  <!-- Site Footer -->
-  <footer class="site-footer">
-    <div class="container">
-      <div class="footer-top">
-        <div class="footer-brand">
-          <div style="display: flex; align-items: center; gap: 10px;">
-            <img src="assets/placeholders/csk-crest.svg" alt="CSK Crest" style="width: 36px; height: 36px;">
-            <span style="font-family: var(--font-display); font-weight: 900; color: #fff; font-size: 1.125rem;">CAYMAN SUPER KINGS</span>
-          </div>
-          <p>
-            Grand Cayman's premier cricket franchise affiliated with the Cayman Islands Cricket Association. Dedicated to excellence, sportsmanship, and youth development.
-          </p>
-        </div>
-
-        <div>
-          <h4 class="footer-heading">Club</h4>
-          <ul class="footer-links">
-            <li><a href="about.html">About &amp; History</a></li>
-            <li><a href="squad.html">2026 Squad</a></li>
-            <li><a href="matches.html">Fixtures &amp; Results</a></li>
-            <li><a href="youth.html">Youth Programme</a></li>
-          </ul>
-        </div>
-
-        <div>
-          <h4 class="footer-heading">Media &amp; Fans</h4>
-          <ul class="footer-links">
-            <li><a href="news.html">Match Reports &amp; News</a></li>
-            <li><a href="gallery.html">Photo &amp; Video Gallery</a></li>
-            <li><a href="https://cricclubs.com/CaymanCricketAssociation" target="_blank" rel="noopener noreferrer">CricClubs Match Center ↗</a></li>
-            <li><a href="404.html">Empty States Demo</a></li>
-          </ul>
-        </div>
-
-        <div>
-          <h4 class="footer-heading">Partners &amp; Contact</h4>
-          <ul class="footer-links">
-            <li><a href="partner.html">Partner With Us</a></li>
-            <li><a href="contact.html">Contact Committee</a></li>
-            <li><a href="contact.html#ground">Ground Directions</a></li>
-            <li><a href="youth.html#consent">Safeguarding Policy</a></li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="footer-bottom">
-        <div>© 2026 Cayman Super Kings Cricket Club. All rights reserved.</div>
-        <div class="cica-badge">
-          <span style="color: var(--c-gold);">★</span>
-          <span>Affiliated with Cayman Islands Cricket Association (CICA)</span>
-        </div>
-      </div>
-    </div>
-  </footer>
-
-  <!-- Scripts -->
+  <footer class="site-footer editorial-footer"><div class="container footer-top"><div class="footer-brand"><img src="assets/placeholders/csk-crest.svg" alt="CSK crest"><h3>ONE TEAM.<br>ONE DREAM.</h3><p>© 2026 Cayman Super Kings Cricket Club. All rights reserved.</p></div><div><h4 class="footer-heading">Cayman Super Kings</h4><ul class="footer-links"><li><a href="about.html">About the club</a></li><li><a href="squad.html">The squad</a></li><li><a href="matches.html">Fixtures & results</a></li><li><a href="youth.html">CSK Academy</a></li></ul></div><div><h4 class="footer-heading">Connect</h4><ul class="footer-links"><li><a href="news.html">Latest news</a></li><li><a href="gallery.html">Media vault</a></li><li><a href="partner.html">Partner with us</a></li><li><a href="contact.html">Contact committee</a></li></ul></div></div><div class="container footer-bottom"><span>Affiliated with Cayman Islands Cricket Association</span><span><a href="about.html">Privacy Policy</a> · <a href="about.html">Terms of Association</a></span></div></footer>
   <script type="module" src="js/app.js"></script>
-  <script type="module">
-    import { initCountdownTimer } from './js/matches.js';
-    initCountdownTimer();
-  </script>
 </body>
 </html>
