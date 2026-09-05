@@ -15,34 +15,97 @@
   <aside class="announcement-bar" aria-label="Latest match notification">
     <div class="announcement-bar__inner"><span class="announcement-tag">CSK WIN BY 62 RUNS</span><span class="announcement-text">Back-to-back wins for the Kings.</span><a href="matches.html" class="announcement-link">Match Report ↗</a></div>
   </aside>
-  <header class="site-header editorial-header">
+  <header class="site-header">
     <div class="site-header__inner">
-      <a href="index.html" class="logo-wrapper" aria-label="Cayman Super Kings home"><img src="assets/placeholders/csk-crest.svg" alt="Cayman Super Kings crest" class="logo-crest"><div class="logo-text"><span class="logo-title">CAYMAN SUPER KINGS</span><span class="logo-subtitle">Cricket Club · Grand Cayman</span></div></a>
+      <a href="index.html" class="logo-wrapper" aria-label="Cayman Super Kings home">
+        <img src="assets/placeholders/csk-crest.svg" alt="Cayman Super Kings crest" class="logo-crest">
+        <div class="logo-text">
+          <span class="logo-title">CAYMAN SUPER KINGS</span>
+          <span class="logo-subtitle">Cricket Club · Grand Cayman</span>
+        </div>
+      </a>
       <button class="mobile-toggle" aria-label="Toggle navigation menu" aria-expanded="false"><span></span><span></span><span></span></button>
-      <nav aria-label="Main Navigation"><ul class="nav-menu"><li><a href="index.html" class="nav-link">Home</a></li><li><a href="matches.html" class="nav-link">Matches</a></li><li><a href="squad.html" class="nav-link">Players</a></li><li><a href="news.html" class="nav-link">News</a></li><li><a href="gallery.html" class="nav-link">Media</a></li><li><a href="youth.html" class="nav-link">Academy</a></li><li><a href="partner.html" class="nav-link">Partners</a></li><li><a href="matches.html" class="nav-cta">Buy Tickets</a></li></ul></nav>
+      <nav aria-label="Main Navigation">
+        <ul class="nav-menu">
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="squad.html" class="nav-link">Squad</a></li>
+          <li><a href="matches.html" class="nav-link">Fixtures</a></li>
+          <li><a href="news.html" class="nav-link">News</a></li>
+          <li><a href="gallery.html" class="nav-link">Gallery</a></li>
+          <li><a href="youth.html" class="nav-link">Academy</a></li>
+          <li><a href="partner.html" class="nav-link">Sponsors</a></li>
+          <li><a href="matches.html" class="nav-cta">Buy Tickets</a></li>
+        </ul>
+      </nav>
     </div>
   </header>
   <main>
-    <section class="editorial-hero">
-      <div class="hero-video-container">
-        <video id="hero-video" class="hero-video-bg" autoplay muted loop playsinline poster="assets/csk-hero.png">
-          <source src="https://assets.mixkit.co/videos/preview/mixkit-cricket-player-hitting-a-ball-with-his-bat-42171-large.mp4" type="video/mp4">
-          <source src="https://assets.mixkit.co/videos/preview/mixkit-cricket-batsman-hitting-the-ball-42170-large.mp4" type="video/mp4">
-          <source src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4" type="video/mp4">
-        </video>
-        <div class="hero-video-overlay"></div>
-      </div>
-      <div class="container editorial-hero__content">
-        <span class="section-eyebrow">THE PRIDE OF GRAND CAYMAN</span>
-        <h1>ONE TEAM.<br><em>ONE DREAM.</em></h1>
-        <p>THE LION ROARS AGAIN.</p>
-        <div class="hero-actions">
-          <a href="matches.html" class="btn btn-primary btn-lg">View Fixtures</a>
-          <a href="matches.html" class="btn btn-outline-hero btn-lg">Buy Tickets</a>
+    <!-- 3-PHOTO HERO SLIDER -->
+    <section class="hero-slider-section" aria-label="Featured Highlights Slider">
+      <div class="hero-slider" id="hero-slider">
+        <!-- Slide 1: Night Floodlit Arena -->
+        <div class="hero-slide active">
+          <div class="hero-slide__bg" style="background-image: url('assets/slider-stadium-night.jpg');"></div>
+          <div class="hero-slide__overlay"></div>
+          <div class="container hero-slide__content">
+            <span class="section-eyebrow">THE PRIDE OF GRAND CAYMAN</span>
+            <h1 class="hero-slide__title">ONE TEAM.<br><em>ONE DREAM.</em></h1>
+            <p class="hero-slide__subtitle">THE LION ROARS AGAIN · CICA 2026</p>
+            <div class="hero-actions">
+              <a href="matches.html" class="btn btn-primary btn-lg">View Fixtures</a>
+              <a href="matches.html" class="btn btn-outline-hero btn-lg">Buy Tickets</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Slide 2: Sunset Matchday Stadium -->
+        <div class="hero-slide">
+          <div class="hero-slide__bg" style="background-image: url('assets/slider-stadium-sunset.jpg');"></div>
+          <div class="hero-slide__overlay"></div>
+          <div class="container hero-slide__content">
+            <span class="section-eyebrow">DEFENDING CICA CHAMPIONS</span>
+            <h1 class="hero-slide__title">WITNESS THE<br><em>FIRE LIVE.</em></h1>
+            <p class="hero-slide__subtitle">BACK-TO-BACK TITLE CONTENDERS · UNBEATEN FORM</p>
+            <div class="hero-actions">
+              <a href="matches.html" class="btn btn-primary btn-lg">Match Center</a>
+              <a href="squad.html" class="btn btn-outline-hero btn-lg">Meet The Squad</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Slide 3: Cricket Leather Ball & Bat -->
+        <div class="hero-slide">
+          <div class="hero-slide__bg" style="background-image: url('assets/slider-cricket-ball-bat.jpg');"></div>
+          <div class="hero-slide__overlay"></div>
+          <div class="container hero-slide__content">
+            <span class="section-eyebrow">EXCELLENCE IN EVERY INNINGS</span>
+            <h1 class="hero-slide__title">PASSION. POWER.<br><em>PURPOSE.</em></h1>
+            <p class="hero-slide__subtitle">CARIBBEAN ROOTS · GLOBAL CRICKET STANDARDS</p>
+            <div class="hero-actions">
+              <a href="youth.html" class="btn btn-primary btn-lg">Join Academy</a>
+              <a href="gallery.html" class="btn btn-outline-hero btn-lg">Media Vault</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Slider Controls: Arrows -->
+        <button class="slider-arrow slider-arrow--prev" id="slider-prev" aria-label="Previous Slide">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M15 18l-6-6 6-6"/></svg>
+        </button>
+        <button class="slider-arrow slider-arrow--next" id="slider-next" aria-label="Next Slide">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 18l6-6-6-6"/></svg>
+        </button>
+
+        <!-- Slider Pagination Dots -->
+        <div class="slider-dots" id="slider-dots">
+          <button class="slider-dot active" data-slide="0" aria-label="Slide 1"></button>
+          <button class="slider-dot" data-slide="1" aria-label="Slide 2"></button>
+          <button class="slider-dot" data-slide="2" aria-label="Slide 3"></button>
         </div>
       </div>
-      <div class="hero-scroll">SCROLL TO EXPLORE <span>↓</span></div>
     </section>
+
+    <!-- NEXT MATCH STRIP -->
     <section class="match-strip-section editorial-match">
       <div class="container">
         <div class="match-strip-card">
@@ -62,13 +125,190 @@
         </div>
       </div>
     </section>
-    <section class="section editorial-section"><div class="container"><div class="section-header"><div><span class="section-eyebrow">The squad archive</span><h2 class="section-title">First XI Roster</h2></div><a href="squad.html" class="text-link">View full squad ↗</a></div><div class="roster-grid"><a href="player.html?slug=a-de-silva" class="roster-card"><img src="assets/placeholders/player-portrait.svg" alt="A. De Silva"><span class="badge badge--gold">Captain</span><div><small>ALL-ROUNDER · 07</small><h3>A. De Silva</h3><b>1420 runs <i>·</i> 36 wickets</b></div></a><a href="player.html?slug=m-sterling" class="roster-card"><img src="assets/placeholders/player-portrait.svg" alt="M. Sterling"><span class="badge badge--teal">Vice Captain</span><div><small>BATTER · 18</small><h3>M. Sterling</h3><b>42 avg <i>·</i> 4.84 SR</b></div></a><a href="player.html?slug=t-campbell" class="roster-card"><img src="assets/csk-action.png" alt="T. Campbell"><span class="badge badge--dark">Pro Express</span><div><small>WICKETKEEPER · 03</small><h3>T. Campbell</h3><b>144 runs <i>·</i> 38 catches</b></div></a><a href="player.html?slug=k-richards" class="roster-card"><img src="assets/placeholders/player-portrait.svg" alt="K. Richards"><span class="badge badge--gold">All-rounder</span><div><small>BOWLER · 11</small><h3>K. Richards</h3><b>51 wkts <i>·</i> 116.5 SR</b></div></a></div></div></section>
-    <section class="section editorial-section editorial-dark"><div class="container"><div class="section-header"><div><span class="section-eyebrow">Dispatch & press</span><h2 class="section-title">Editorial Vault</h2></div><a href="news.html" class="text-link">All dispatches ↗</a></div><div class="editorial-news-grid"><article class="feature-story"><img src="assets/csk-action.png" alt="Cayman Super Kings celebrating after a match"><div><small>MATCH REPORT · 06 SEP 2026</small><h3>Sterling’s 64 seals dramatic 8-run thriller against Bodden Town</h3><p>In front of a capacity crowd at Jimmy Powell Oval, M. Sterling led the charge with a fearless finish.</p><a href="news.html" class="text-link">Read full dispatch ↗</a></div></article><div class="news-stack"><a href="news.html" class="news-card"><img src="assets/placeholders/hero-team.svg" alt="Cayman Super Kings team"><span><small>FRANCHISE FILE</small><strong>Franchise expands elite high-performance programme</strong><em>Full dispatch ↗</em></span></a><a href="news.html" class="news-card"><img src="assets/csk-academy.png" alt="Cricket training session"><span><small>COMMUNITY</small><strong>CSK grassroots initiative reaches 240 young players</strong><em>Full dispatch ↗</em></span></a></div></div></div></section>
-    <section class="section editorial-section"><div class="container"><div class="section-header"><div><span class="section-eyebrow">All access broadcast</span><h2 class="section-title">The Kings Media Vault</h2></div><a href="gallery.html" class="text-link">Open gallery ↗</a></div><div class="media-grid"><a href="gallery.html"><img src="assets/csk-action.png" alt="Pre-season power protocols"><span>Pre-season power protocols</span></a><a href="gallery.html"><img src="assets/placeholders/hero-team.svg" alt="Dressing room victory anthem"><span>Dressing room victory anthem</span></a><a href="gallery.html"><img src="assets/placeholders/player-portrait.svg" alt="Decisive moments"><span>Decisive moments: round 03</span></a></div></div></section>
-    <section class="academy-banner"><div class="container academy-grid"><div><span class="section-eyebrow">Foundation & legacy</span><h2>\u200bCayman Grassroots<br>Cricket Academy</h2><p>Building the next generation of Caribbean cricket excellence through accessible coaching and competition.</p><div class="academy-meta"><strong>ICC Level 2</strong><span>U13 · U17 · U19<br>Pathways</span></div><a href="youth.html" class="btn btn-primary">Register for 2026 intake</a></div><img src="assets/csk-academy.png" alt="Coach working with a young cricketer"></div></section>
-    <section class="partners-band"><div class="container"><span class="section-eyebrow">In it for all innings</span><h2>Official franchise partners</h2><div class="partner-logo-grid"><div>⌂ Cayman National Bank</div><div>Apex Sports Tech</div><div>Seven Mile Resorts</div><div>Island Broadband</div><div>Caribbean Airwaves</div></div></div></section>
+
+    <!-- SECTION 1: WHITE SECTION - SQUAD ROSTER -->
+    <section class="section section--white editorial-section">
+      <div class="container">
+        <div class="section-header">
+          <div>
+            <span class="section-eyebrow">WITNESS THE FIRE LIVE</span>
+            <h2 class="section-title">First XI Championship Squad</h2>
+          </div>
+          <a href="squad.html" class="text-link">View full squad ↗</a>
+        </div>
+        <div class="roster-grid">
+          <a href="player-detail.html?slug=a-de-silva" class="roster-card">
+            <img src="assets/placeholders/player-portrait.svg" alt="A. De Silva">
+            <span class="badge badge--gold">Captain</span>
+            <div>
+              <small>ALL-ROUNDER · 07</small>
+              <h3>A. De Silva</h3>
+              <b>1420 runs <i>·</i> 36 wickets</b>
+            </div>
+          </a>
+          <a href="player-detail.html?slug=m-sterling" class="roster-card">
+            <img src="assets/placeholders/player-portrait.svg" alt="M. Sterling">
+            <span class="badge badge--teal">Vice Captain</span>
+            <div>
+              <small>BATTER · 18</small>
+              <h3>M. Sterling</h3>
+              <b>42 avg <i>·</i> 4.84 SR</b>
+            </div>
+          </a>
+          <a href="player-detail.html?slug=t-campbell" class="roster-card">
+            <img src="assets/csk-action.png" alt="T. Campbell">
+            <span class="badge badge--dark">Pro Express</span>
+            <div>
+              <small>WICKETKEEPER · 03</small>
+              <h3>T. Campbell</h3>
+              <b>144 runs <i>·</i> 38 catches</b>
+            </div>
+          </a>
+          <a href="player-detail.html?slug=k-richards" class="roster-card">
+            <img src="assets/placeholders/player-portrait.svg" alt="K. Richards">
+            <span class="badge badge--gold">All-rounder</span>
+            <div>
+              <small>BOWLER · 11</small>
+              <h3>K. Richards</h3>
+              <b>51 wkts <i>·</i> 116.5 SR</b>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 2: DARK NAVY SECTION - DISPATCH & PRESS -->
+    <section class="section editorial-section editorial-dark">
+      <div class="container">
+        <div class="section-header">
+          <div>
+            <span class="section-eyebrow">Dispatch & press</span>
+            <h2 class="section-title">Editorial Vault</h2>
+          </div>
+          <a href="news.html" class="text-link">All dispatches ↗</a>
+        </div>
+        <div class="editorial-news-grid">
+          <article class="feature-story">
+            <img src="assets/csk-action.png" alt="Cayman Super Kings celebrating after a match">
+            <div>
+              <small>MATCH REPORT · 06 SEP 2026</small>
+              <h3>Sterling’s 64 seals dramatic 8-run thriller against Bodden Town</h3>
+              <p>In front of a capacity crowd at Jimmy Powell Oval, M. Sterling led the charge with a fearless finish.</p>
+              <a href="news.html" class="text-link">Read full dispatch ↗</a>
+            </div>
+          </article>
+          <div class="news-stack">
+            <a href="news.html" class="news-card">
+              <img src="assets/placeholders/hero-team.svg" alt="Cayman Super Kings team">
+              <span>
+                <small>FRANCHISE FILE</small>
+                <strong>Franchise expands elite high-performance programme</strong>
+                <em>Full dispatch ↗</em>
+              </span>
+            </a>
+            <a href="news.html" class="news-card">
+              <img src="assets/csk-academy.png" alt="Cricket training session">
+              <span>
+                <small>COMMUNITY</small>
+                <strong>CSK grassroots initiative reaches 240 young players</strong>
+                <em>Full dispatch ↗</em>
+              </span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 3: WHITE SECTION - KINGS MEDIA VAULT -->
+    <section class="section section--white editorial-section">
+      <div class="container">
+        <div class="section-header">
+          <div>
+            <span class="section-eyebrow">All access broadcast</span>
+            <h2 class="section-title">The Kings Media Vault</h2>
+          </div>
+          <a href="gallery.html" class="text-link">Open gallery ↗</a>
+        </div>
+        <div class="media-grid">
+          <a href="gallery.html">
+            <img src="assets/slider-stadium-night.jpg" alt="Night lights at Jimmy Powell Oval">
+            <span>Floodlit Arena Protocols</span>
+          </a>
+          <a href="gallery.html">
+            <img src="assets/slider-stadium-sunset.jpg" alt="Sunset cricket clash">
+            <span>Dressing Room Anthem & Sunset Match</span>
+          </a>
+          <a href="gallery.html">
+            <img src="assets/slider-cricket-ball-bat.jpg" alt="Match equipment close up">
+            <span>Matchday Gear & Seam Dynamics</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 4: DARK NAVY BANNER - GRASSROOTS ACADEMY -->
+    <section class="academy-banner">
+      <div class="container academy-grid">
+        <div>
+          <span class="section-eyebrow">Foundation & legacy</span>
+          <h2>Cayman Grassroots<br>Cricket Academy</h2>
+          <p>Building the next generation of Caribbean cricket excellence through accessible coaching, tournament pathways, and elite development.</p>
+          <div class="academy-meta">
+            <strong>ICC Level 2</strong>
+            <span>U13 · U17 · U19<br>Pathways</span>
+          </div>
+          <a href="youth.html" class="btn btn-primary">Register for 2026 intake</a>
+        </div>
+        <img src="assets/csk-academy.png" alt="Coach working with a young cricketer">
+      </div>
+    </section>
+
+    <!-- SECTION 5: WHITE SECTION - OFFICIAL FRANCHISE PARTNERS -->
+    <section class="section section--white partners-band">
+      <div class="container">
+        <span class="section-eyebrow">In it for all innings</span>
+        <h2 class="section-title">Official Franchise Partners</h2>
+        <div class="partner-logo-grid" style="margin-top: 28px;">
+          <div>⌂ Cayman National Bank</div>
+          <div>Apex Sports Tech</div>
+          <div>Seven Mile Resorts</div>
+          <div>Island Broadband</div>
+          <div>Caribbean Airwaves</div>
+        </div>
+      </div>
+    </section>
   </main>
-  <footer class="site-footer editorial-footer"><div class="container footer-top"><div class="footer-brand"><img src="assets/placeholders/csk-crest.svg" alt="CSK crest"><h3>ONE TEAM.<br>ONE DREAM.</h3><p>© 2026 Cayman Super Kings Cricket Club. All rights reserved.</p></div><div><h4 class="footer-heading">Cayman Super Kings</h4><ul class="footer-links"><li><a href="about.html">About the club</a></li><li><a href="squad.html">The squad</a></li><li><a href="matches.html">Fixtures & results</a></li><li><a href="youth.html">CSK Academy</a></li></ul></div><div><h4 class="footer-heading">Connect</h4><ul class="footer-links"><li><a href="news.html">Latest news</a></li><li><a href="gallery.html">Media vault</a></li><li><a href="partner.html">Partner with us</a></li><li><a href="contact.html">Contact committee</a></li></ul></div></div><div class="container footer-bottom"><span>Affiliated with Cayman Islands Cricket Association</span><span><a href="about.html">Privacy Policy</a> · <a href="about.html">Terms of Association</a></span></div></footer>
+  <footer class="site-footer editorial-footer">
+    <div class="container footer-top">
+      <div class="footer-brand">
+        <img src="assets/placeholders/csk-crest.svg" alt="CSK crest">
+        <h3>ONE TEAM.<br>ONE DREAM.</h3>
+        <p>© 2026 Cayman Super Kings Cricket Club. All rights reserved.</p>
+      </div>
+      <div>
+        <h4 class="footer-heading">Cayman Super Kings</h4>
+        <ul class="footer-links">
+          <li><a href="about.html">About the club</a></li>
+          <li><a href="squad.html">The squad</a></li>
+          <li><a href="matches.html">Fixtures & results</a></li>
+          <li><a href="youth.html">CSK Academy</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="footer-heading">Connect</h4>
+        <ul class="footer-links">
+          <li><a href="news.html">Latest news</a></li>
+          <li><a href="gallery.html">Media vault</a></li>
+          <li><a href="partner.html">Partner with us</a></li>
+          <li><a href="contact.html">Contact committee</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="container footer-bottom">
+      <span>Affiliated with Cayman Islands Cricket Association</span>
+      <span><a href="about.html">Privacy Policy</a> · <a href="about.html">Terms of Association</a></span>
+    </div>
+  </footer>
   <script type="module" src="js/app.js"></script>
 </body>
 </html>

@@ -6,12 +6,14 @@
  */
 
 import { store } from './content-store.js';
+import { initHeroSlider } from './hero-slider.js';
 
 document.addEventListener('DOMContentLoaded', async () => {
   initMobileNav();
   await initAnnouncementBar();
   highlightActiveNav();
   initSmoothScroll();
+  initHeroSlider();
 });
 
 function initMobileNav() {
