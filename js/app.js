@@ -7,6 +7,10 @@
 
 import { store } from './content-store.js';
 import { initHeroSlider } from './hero-slider.js';
+import { initSplashLoader } from './splash-loader.js';
+
+// Initialize splash loader immediately to handle smooth page entrance
+initSplashLoader();
 
 document.addEventListener('DOMContentLoaded', async () => {
   initMobileNav();
