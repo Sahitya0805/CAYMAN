@@ -9,13 +9,17 @@
     "badge_type": "gold",
     "group": "leadership",
     "jersey_number": 7,
+    "jersey_display": "07",
+    "nationality": "Caymanian",
+    "flag": "\ud83c\uddf0\ud83c\uddfe",
+    "position_type": "ALL-ROUNDER",
     "is_minor": false,
     "consent_on_file": true,
-    "photo_ready": false,
-    "photo": "assets/placeholders/player-portrait.svg",
+    "photo_ready": true,
+    "photo": "assets/players/csk-01.svg",
     "battingStyle": "Right-hand bat",
     "bowlingStyle": "Right-arm medium fast",
-    "seasonsAtCSK": "4 (Founding Member)",
+    "seasonsAtCSK": "4 (Founding Captain)",
     "honours": [
       "CICA MVP 2024",
       "League Leading Run Scorer 2025",
@@ -29,35 +33,11 @@
       "wickets": 54,
       "econ": 6.2,
       "best_bowling": "5/18",
-      "high_score": "98*"
+      "high_score": "98*",
+      "fifties": 12,
+      "hundreds": 2
     },
-    "last5": [
-      {
-        "match": "vs Tigers (T20)",
-        "runs": "68*",
-        "wickets": "2/19"
-      },
-      {
-        "match": "vs Strikers (40-Ov)",
-        "runs": "41",
-        "wickets": "0/22"
-      },
-      {
-        "match": "vs Bodden Town",
-        "runs": "35",
-        "wickets": "1/24"
-      },
-      {
-        "match": "vs Police CC",
-        "runs": "52",
-        "wickets": "3/15"
-      },
-      {
-        "match": "vs Warriors",
-        "runs": "44*",
-        "wickets": "2/30"
-      }
-    ],
+    "special_weapon": "Tactical Mastermind & Death-Over Finisher",
     "bio": "Visionary captain and dynamic all-rounder who spearheaded the formation of Cayman Super Kings in 2023. Known for calm decision-making under pressure and clinical death bowling."
   },
   {
@@ -65,15 +45,19 @@
     "slug": "marcus-sterling",
     "name_display": "Marcus Sterling",
     "name_full": "Marcus Sterling",
-    "role": "Vice-Captain & Top-Order Batter",
+    "role": "Vice-Captain & Batter",
     "badge": "VC",
     "badge_type": "teal",
     "group": "leadership",
     "jersey_number": 18,
+    "jersey_display": "18",
+    "nationality": "Caymanian",
+    "flag": "\ud83c\uddf0\ud83c\uddfe",
+    "position_type": "BATTER",
     "is_minor": false,
     "consent_on_file": true,
-    "photo_ready": false,
-    "photo": "assets/placeholders/player-portrait.svg",
+    "photo_ready": true,
+    "photo": "assets/players/csk-02.svg",
     "battingStyle": "Right-hand bat",
     "bowlingStyle": "Right-arm off break",
     "seasonsAtCSK": "3",
@@ -89,35 +73,11 @@
       "wickets": 12,
       "econ": 7.1,
       "best_bowling": "3/24",
-      "high_score": "104"
+      "high_score": "104",
+      "fifties": 10,
+      "hundreds": 1
     },
-    "last5": [
-      {
-        "match": "vs Tigers (T20)",
-        "runs": "18",
-        "wickets": "0/10"
-      },
-      {
-        "match": "vs Strikers (40-Ov)",
-        "runs": "104",
-        "wickets": "\u2014"
-      },
-      {
-        "match": "vs Bodden Town",
-        "runs": "14",
-        "wickets": "\u2014"
-      },
-      {
-        "match": "vs Police CC",
-        "runs": "76",
-        "wickets": "1/18"
-      },
-      {
-        "match": "vs Warriors",
-        "runs": "31",
-        "wickets": "\u2014"
-      }
-    ],
+    "special_weapon": "Fastest 50 in CICA (17 balls) & Power Hitter",
     "bio": "Aggressive top-order batter and vice-captain with a proven record of match-winning innings across both T20 and 40-over formats."
   },
   {
@@ -126,12 +86,18 @@
     "name_display": "Arun Kumar",
     "name_full": "Arun Kumar",
     "role": "Opening Batter",
+    "badge": "\u2708\ufe0f",
+    "badge_type": "overseas",
     "group": "batters",
     "jersey_number": 11,
+    "jersey_display": "11",
+    "nationality": "Indian",
+    "flag": "\ud83c\uddee\ud83c\uddf3",
+    "position_type": "BATTER",
     "is_minor": false,
     "consent_on_file": true,
-    "photo_ready": false,
-    "photo": "assets/placeholders/player-portrait.svg",
+    "photo_ready": true,
+    "photo": "assets/players/csk-03.svg",
     "battingStyle": "Left-hand bat",
     "bowlingStyle": "Right-arm off spin",
     "seasonsAtCSK": "3",
@@ -146,35 +112,11 @@
       "wickets": 4,
       "econ": 7.8,
       "best_bowling": "2/15",
-      "high_score": "88"
+      "high_score": "88",
+      "fifties": 9,
+      "hundreds": 0
     },
-    "last5": [
-      {
-        "match": "vs Tigers (T20)",
-        "runs": "42",
-        "wickets": "\u2014"
-      },
-      {
-        "match": "vs Strikers (40-Ov)",
-        "runs": "38",
-        "wickets": "\u2014"
-      },
-      {
-        "match": "vs Bodden Town",
-        "runs": "31",
-        "wickets": "\u2014"
-      },
-      {
-        "match": "vs Police CC",
-        "runs": "19",
-        "wickets": "\u2014"
-      },
-      {
-        "match": "vs Warriors",
-        "runs": "63",
-        "wickets": "\u2014"
-      }
-    ],
+    "special_weapon": "Powerplay Boundary Specialist & Lofted Drives",
     "bio": "Flamboyant left-handed opener who provides rapid starts in powerplay overs with crisp cover drives and fearless lofted shots."
   },
   {
@@ -185,10 +127,14 @@
     "role": "Top-Order Batter",
     "group": "batters",
     "jersey_number": 24,
+    "jersey_display": "24",
+    "nationality": "West Indian",
+    "flag": "\ud83c\uddef\ud83c\uddf2",
+    "position_type": "BATTER",
     "is_minor": false,
     "consent_on_file": true,
-    "photo_ready": false,
-    "photo": "assets/placeholders/player-portrait.svg",
+    "photo_ready": true,
+    "photo": "assets/players/csk-04.svg",
     "battingStyle": "Right-hand bat",
     "bowlingStyle": "Right-arm medium",
     "seasonsAtCSK": "2",
@@ -201,37 +147,13 @@
       "avg": 31.6,
       "sr": 128.4,
       "wickets": 0,
-      "econ": "\u2014",
+      "econ": 0,
       "best_bowling": "\u2014",
-      "high_score": "71"
+      "high_score": "71",
+      "fifties": 5,
+      "hundreds": 0
     },
-    "last5": [
-      {
-        "match": "vs Tigers (T20)",
-        "runs": "24",
-        "wickets": "\u2014"
-      },
-      {
-        "match": "vs Strikers (40-Ov)",
-        "runs": "15",
-        "wickets": "\u2014"
-      },
-      {
-        "match": "vs Bodden Town",
-        "runs": "29",
-        "wickets": "\u2014"
-      },
-      {
-        "match": "vs Police CC",
-        "runs": "40",
-        "wickets": "\u2014"
-      },
-      {
-        "match": "vs Warriors",
-        "runs": "12",
-        "wickets": "\u2014"
-      }
-    ],
+    "special_weapon": "Innings Anchor & Surgical Strike Rotator",
     "bio": "Technically solid number three batter capable of stabilising innings after early wickets and rotating strike with surgical precision."
   },
   {
@@ -239,57 +161,37 @@
     "slug": "karan-patel",
     "name_display": "Karan Patel",
     "name_full": "Karan Patel",
-    "role": "Wicketkeeper & Finisher",
+    "role": "Wicketkeeper Batter",
     "group": "batters",
     "jersey_number": 99,
+    "jersey_display": "99",
+    "nationality": "Indian",
+    "flag": "\ud83c\uddee\ud83c\uddf3",
+    "position_type": "WICKETKEEPER",
     "is_minor": false,
     "consent_on_file": true,
-    "photo_ready": false,
-    "photo": "assets/placeholders/player-portrait.svg",
+    "photo_ready": true,
+    "photo": "assets/players/csk-05.svg",
     "battingStyle": "Right-hand bat",
     "bowlingStyle": "Wicketkeeper",
     "seasonsAtCSK": "4",
     "honours": [
-      "Best Wicketkeeper CICA 2024, 2025 (46 Dismissals)"
+      "Best Wicketkeeper 2024 (28 dismissals)"
     ],
     "stats": {
-      "matches": 46,
-      "runs": 920,
-      "avg": 29.67,
-      "sr": 161.4,
-      "wickets": 0,
-      "catches": 38,
+      "matches": 32,
+      "runs": 840,
+      "avg": 35.0,
+      "sr": 162.5,
+      "catches": 28,
       "stumpings": 14,
-      "high_score": "64*"
+      "best_bowling": "\u2014",
+      "high_score": "74*",
+      "fifties": 6,
+      "hundreds": 0
     },
-    "last5": [
-      {
-        "match": "vs Tigers (T20)",
-        "runs": "12",
-        "catches": "2"
-      },
-      {
-        "match": "vs Strikers (40-Ov)",
-        "runs": "26*",
-        "catches": "1"
-      },
-      {
-        "match": "vs Bodden Town",
-        "runs": "48*",
-        "catches": "3"
-      },
-      {
-        "match": "vs Police CC",
-        "runs": "33",
-        "catches": "1"
-      },
-      {
-        "match": "vs Warriors",
-        "runs": "25*",
-        "catches": "0"
-      }
-    ],
-    "bio": "Electric wicketkeeper and lethal lower-order finisher. Renowned for rapid glovework behind the stumps and 360-degree boundary striking."
+    "special_weapon": "Lightning Glovework & Death-Overs Slogging",
+    "bio": "Explosive wicketkeeper-finisher with a blistering 162.5 strike rate in the death overs and reflex stumpings."
   },
   {
     "id": "csk-06",
@@ -299,52 +201,34 @@
     "role": "Middle-Order Batter",
     "group": "batters",
     "jersey_number": 33,
+    "jersey_display": "33",
+    "nationality": "West Indian",
+    "flag": "\ud83c\udde7\ud83c\udde7",
+    "position_type": "BATTER",
     "is_minor": false,
     "consent_on_file": true,
-    "photo_ready": false,
-    "photo": "assets/placeholders/player-portrait.svg",
-    "battingStyle": "Left-hand bat",
+    "photo_ready": true,
+    "photo": "assets/players/csk-06.svg",
+    "battingStyle": "Right-hand bat",
     "bowlingStyle": "Right-arm off break",
     "seasonsAtCSK": "2",
-    "honours": [],
-    "stats": {
-      "matches": 18,
-      "runs": 410,
-      "avg": 27.33,
-      "sr": 134.2,
-      "wickets": 2,
-      "econ": 8.0,
-      "best_bowling": "1/12",
-      "high_score": "55"
-    },
-    "last5": [
-      {
-        "match": "vs Tigers (T20)",
-        "runs": "DNB",
-        "wickets": "\u2014"
-      },
-      {
-        "match": "vs Strikers (40-Ov)",
-        "runs": "14",
-        "wickets": "\u2014"
-      },
-      {
-        "match": "vs Bodden Town",
-        "runs": "8",
-        "wickets": "\u2014"
-      },
-      {
-        "match": "vs Police CC",
-        "runs": "22",
-        "wickets": "\u2014"
-      },
-      {
-        "match": "vs Warriors",
-        "runs": "36",
-        "wickets": "\u2014"
-      }
+    "honours": [
+      "Most Sixes in CICA 2025 (22 sixes)"
     ],
-    "bio": "Hard-hitting middle-order specialist with the power to clear any boundary in the Cayman Islands."
+    "stats": {
+      "matches": 26,
+      "runs": 650,
+      "avg": 29.5,
+      "sr": 138.0,
+      "wickets": 2,
+      "econ": 8.1,
+      "best_bowling": "1/14",
+      "high_score": "66",
+      "fifties": 4,
+      "hundreds": 0
+    },
+    "special_weapon": "Middle-Overs Spin Destroyer & Clean Striker",
+    "bio": "Powerful middle-order batter from Barbados known for soaring straight sixes and commanding presence in pressure chases."
   },
   {
     "id": "csk-07",
@@ -354,54 +238,34 @@
     "role": "Batting All-rounder",
     "group": "allrounders",
     "jersey_number": 8,
+    "jersey_display": "08",
+    "nationality": "Caymanian",
+    "flag": "\ud83c\uddf0\ud83c\uddfe",
+    "position_type": "ALL-ROUNDER",
     "is_minor": false,
     "consent_on_file": true,
-    "photo_ready": false,
-    "photo": "assets/placeholders/player-portrait.svg",
-    "battingStyle": "Right-hand bat",
-    "bowlingStyle": "Right-arm medium fast",
+    "photo_ready": true,
+    "photo": "assets/players/csk-07.svg",
+    "battingStyle": "Left-hand bat",
+    "bowlingStyle": "Right-arm medium",
     "seasonsAtCSK": "3",
     "honours": [
-      "Match Winner Award vs Strikers 2025"
+      "Best All-Round Performance vs Bodden Town 2025"
     ],
     "stats": {
       "matches": 34,
-      "runs": 680,
-      "avg": 26.15,
-      "sr": 142.1,
-      "wickets": 28,
+      "runs": 720,
+      "avg": 27.69,
+      "sr": 135.2,
+      "wickets": 22,
       "econ": 6.85,
-      "best_bowling": "3/17",
-      "high_score": "58"
+      "best_bowling": "3/18",
+      "high_score": "58*",
+      "fifties": 3,
+      "hundreds": 0
     },
-    "last5": [
-      {
-        "match": "vs Tigers (T20)",
-        "runs": "9*",
-        "wickets": "\u2014"
-      },
-      {
-        "match": "vs Strikers (40-Ov)",
-        "runs": "18",
-        "wickets": "1/32"
-      },
-      {
-        "match": "vs Bodden Town",
-        "runs": "12",
-        "wickets": "0/15"
-      },
-      {
-        "match": "vs Police CC",
-        "runs": "28",
-        "wickets": "2/20"
-      },
-      {
-        "match": "vs Warriors",
-        "runs": "15",
-        "wickets": "1/19"
-      }
-    ],
-    "bio": "Reliable all-rounder providing dependable lower middle-order hitting and tight middle-overs seam bowling."
+    "special_weapon": "Clutch Finisher & Deceptive Medium Pacer",
+    "bio": "Adaptable all-rounder capable of batting anywhere from 4 to 7 and bowling tight 4-over spells in the middle phase."
   },
   {
     "id": "csk-08",
@@ -409,56 +273,38 @@
     "name_display": "David McLaughlin",
     "name_full": "David McLaughlin",
     "role": "Bowling All-rounder",
+    "badge": "\u2708\ufe0f",
+    "badge_type": "overseas",
     "group": "allrounders",
     "jersey_number": 45,
+    "jersey_display": "45",
+    "nationality": "Australian",
+    "flag": "\ud83c\udde6\ud83c\uddfa",
+    "position_type": "ALL-ROUNDER",
     "is_minor": false,
     "consent_on_file": true,
-    "photo_ready": false,
-    "photo": "assets/placeholders/player-portrait.svg",
-    "battingStyle": "Left-hand bat",
-    "bowlingStyle": "Slow left-arm orthodox",
-    "seasonsAtCSK": "4",
+    "photo_ready": true,
+    "photo": "assets/players/csk-08.svg",
+    "battingStyle": "Right-hand bat",
+    "bowlingStyle": "Right-arm fast medium",
+    "seasonsAtCSK": "2",
     "honours": [
-      "Best Economy Rate 2024 (5.10)"
+      "Hat-trick vs Police CC (2024)"
     ],
     "stats": {
-      "matches": 44,
-      "runs": 510,
-      "avg": 21.25,
-      "sr": 136.0,
-      "wickets": 49,
-      "econ": 5.65,
-      "best_bowling": "4/14",
-      "high_score": "47*"
+      "matches": 30,
+      "runs": 410,
+      "avg": 20.5,
+      "sr": 142.0,
+      "wickets": 38,
+      "econ": 6.45,
+      "best_bowling": "4/16",
+      "high_score": "49*",
+      "fifties": 0,
+      "hundreds": 0
     },
-    "last5": [
-      {
-        "match": "vs Tigers (T20)",
-        "runs": "DNB",
-        "wickets": "0/16"
-      },
-      {
-        "match": "vs Strikers (40-Ov)",
-        "runs": "11",
-        "wickets": "1/28"
-      },
-      {
-        "match": "vs Bodden Town",
-        "runs": "22*",
-        "wickets": "1/19"
-      },
-      {
-        "match": "vs Police CC",
-        "runs": "16",
-        "wickets": "2/25"
-      },
-      {
-        "match": "vs Warriors",
-        "runs": "7",
-        "wickets": "3/18"
-      }
-    ],
-    "bio": "Finger-spinner with deceptive drift and arm-balls, partnered with fearless pinch-hitting capability."
+    "special_weapon": "Hard-Hitting Lower Order & Heavy Seam Hit",
+    "bio": "Aggressive Australian all-rounder providing crucial lower-order hitting and consistent seam movement with the new ball."
   },
   {
     "id": "csk-09",
@@ -468,52 +314,34 @@
     "role": "All-rounder",
     "group": "allrounders",
     "jersey_number": 21,
+    "jersey_display": "21",
+    "nationality": "Indian",
+    "flag": "\ud83c\uddee\ud83c\uddf3",
+    "position_type": "ALL-ROUNDER",
     "is_minor": false,
     "consent_on_file": true,
-    "photo_ready": false,
-    "photo": "assets/placeholders/player-portrait.svg",
+    "photo_ready": true,
+    "photo": "assets/players/csk-09.svg",
     "battingStyle": "Right-hand bat",
     "bowlingStyle": "Right-arm leg spin",
-    "seasonsAtCSK": "2",
-    "honours": [],
-    "stats": {
-      "matches": 20,
-      "runs": 310,
-      "avg": 22.14,
-      "sr": 125.0,
-      "wickets": 19,
-      "econ": 6.9,
-      "best_bowling": "3/22",
-      "high_score": "38"
-    },
-    "last5": [
-      {
-        "match": "vs Tigers (T20)",
-        "runs": "DNB",
-        "wickets": "\u2014"
-      },
-      {
-        "match": "vs Strikers (40-Ov)",
-        "runs": "9",
-        "wickets": "1/35"
-      },
-      {
-        "match": "vs Bodden Town",
-        "runs": "DNB",
-        "wickets": "0/21"
-      },
-      {
-        "match": "vs Police CC",
-        "runs": "14",
-        "wickets": "1/18"
-      },
-      {
-        "match": "vs Warriors",
-        "runs": "21*",
-        "wickets": "2/15"
-      }
+    "seasonsAtCSK": "1",
+    "honours": [
+      "Debut Season Impact Player"
     ],
-    "bio": "Wrist-spinner and agile fielder who adds vital depth to both batting and bowling departments."
+    "stats": {
+      "matches": 24,
+      "runs": 380,
+      "avg": 23.75,
+      "sr": 131.0,
+      "wickets": 19,
+      "econ": 7.15,
+      "best_bowling": "3/21",
+      "high_score": "42",
+      "fifties": 0,
+      "hundreds": 0
+    },
+    "special_weapon": "Leg-Spin Variations & Quick Running Between Wickets",
+    "bio": "Energetic all-rounder with sharp fielding reflexes, capable of chipping in with quick runs and deceptive leg spin."
   },
   {
     "id": "csk-10",
@@ -523,52 +351,34 @@
     "role": "All-rounder",
     "group": "allrounders",
     "jersey_number": 14,
+    "jersey_display": "14",
+    "nationality": "English",
+    "flag": "\ud83c\uddec\ud83c\udde7",
+    "position_type": "ALL-ROUNDER",
     "is_minor": false,
     "consent_on_file": true,
-    "photo_ready": false,
-    "photo": "assets/placeholders/player-portrait.svg",
+    "photo_ready": true,
+    "photo": "assets/players/csk-10.svg",
     "battingStyle": "Right-hand bat",
     "bowlingStyle": "Right-arm medium",
-    "seasonsAtCSK": "1",
-    "honours": [],
-    "stats": {
-      "matches": 8,
-      "runs": 120,
-      "avg": 20.0,
-      "sr": 118.0,
-      "wickets": 7,
-      "econ": 7.3,
-      "best_bowling": "2/26",
-      "high_score": "29"
-    },
-    "last5": [
-      {
-        "match": "vs Tigers (T20)",
-        "runs": "DNB",
-        "wickets": "\u2014"
-      },
-      {
-        "match": "vs Strikers (40-Ov)",
-        "runs": "DNB",
-        "wickets": "0/18"
-      },
-      {
-        "match": "vs Bodden Town",
-        "runs": "4",
-        "wickets": "1/22"
-      },
-      {
-        "match": "vs Police CC",
-        "runs": "11",
-        "wickets": "1/14"
-      },
-      {
-        "match": "vs Warriors",
-        "runs": "18*",
-        "wickets": "1/16"
-      }
+    "seasonsAtCSK": "2",
+    "honours": [
+      "Economy Bowler Award 2025"
     ],
-    "bio": "New addition for the 2026 campaign who has quickly made his presence felt with energetic fielding."
+    "stats": {
+      "matches": 22,
+      "runs": 310,
+      "avg": 22.14,
+      "sr": 125.4,
+      "wickets": 16,
+      "econ": 6.9,
+      "best_bowling": "3/29",
+      "high_score": "38",
+      "fifties": 0,
+      "hundreds": 0
+    },
+    "special_weapon": "Stifling Middle-Overs Containment & Accurate Seam",
+    "bio": "Disciplined English all-rounder delivering dependable seam bowling in the powerplay and middle overs."
   },
   {
     "id": "csk-11",
@@ -578,55 +388,33 @@
     "role": "Strike Fast Bowler",
     "group": "bowlers",
     "jersey_number": 9,
+    "jersey_display": "09",
+    "nationality": "West Indian",
+    "flag": "\ud83c\uddef\ud83c\uddf2",
+    "position_type": "BOWLER",
     "is_minor": false,
     "consent_on_file": true,
-    "photo_ready": false,
-    "photo": "assets/placeholders/player-portrait.svg",
+    "photo_ready": true,
+    "photo": "assets/players/csk-11.svg",
     "battingStyle": "Right-hand bat",
     "bowlingStyle": "Right-arm fast",
-    "seasonsAtCSK": "4",
+    "seasonsAtCSK": "4 (Founding Spearhead)",
     "honours": [
-      "CICA Leading Wicket Taker 2024 (38 wkts)",
-      "Hat-trick vs Police CC 2025"
+      "CICA Leading Wicket-Taker 2024, 2025",
+      "Best Bowling: 5/14"
     ],
     "stats": {
-      "matches": 45,
-      "runs": 130,
-      "avg": 9.2,
-      "sr": 105.0,
-      "wickets": 68,
-      "econ": 5.8,
-      "best_bowling": "5/12",
-      "high_score": "22*"
+      "matches": 40,
+      "runs": 110,
+      "wickets": 62,
+      "econ": 5.85,
+      "avg": 15.2,
+      "best_bowling": "5/14",
+      "four_wickets": 4,
+      "high_score": "18*"
     },
-    "last5": [
-      {
-        "match": "vs Tigers (T20)",
-        "runs": "DNB",
-        "wickets": "3/24"
-      },
-      {
-        "match": "vs Strikers (40-Ov)",
-        "runs": "DNB",
-        "wickets": "4/38"
-      },
-      {
-        "match": "vs Bodden Town",
-        "runs": "DNB",
-        "wickets": "2/34"
-      },
-      {
-        "match": "vs Police CC",
-        "runs": "DNB",
-        "wickets": "3/18"
-      },
-      {
-        "match": "vs Warriors",
-        "runs": "DNB",
-        "wickets": "2/22"
-      }
-    ],
-    "bio": "Pace spearhead of the Super Kings attack. Extracts genuine pace and bounce off Cayman pitches to rattle opening pairs."
+    "special_weapon": "145+ km/h Express Yorker & Toe-Crushing Pace",
+    "bio": "The spearhead of the Yellow Army bowling attack. Fastest bowler in the Cayman league with ferocious pace and lethal inswinging yorkers."
   },
   {
     "id": "csk-12",
@@ -634,56 +422,36 @@
     "name_display": "Tariq Al-Mansoor",
     "name_full": "Tariq Al-Mansoor",
     "role": "Fast Bowler",
+    "badge": "\u2708\ufe0f",
+    "badge_type": "overseas",
     "group": "bowlers",
     "jersey_number": 77,
+    "jersey_display": "77",
+    "nationality": "South African",
+    "flag": "\ud83c\uddff\ud83c\udde6",
+    "position_type": "BOWLER",
     "is_minor": false,
     "consent_on_file": true,
-    "photo_ready": false,
-    "photo": "assets/placeholders/player-portrait.svg",
+    "photo_ready": true,
+    "photo": "assets/players/csk-12.svg",
     "battingStyle": "Right-hand bat",
-    "bowlingStyle": "Right-arm fast medium",
-    "seasonsAtCSK": "3",
+    "bowlingStyle": "Right-arm fast",
+    "seasonsAtCSK": "2",
     "honours": [
-      "Best Strike Rate Bowler 2025"
+      "Most Maidens in T20 League 2025"
     ],
     "stats": {
-      "matches": 32,
+      "matches": 29,
       "runs": 85,
-      "avg": 8.5,
-      "sr": 95.0,
       "wickets": 44,
       "econ": 6.1,
-      "best_bowling": "4/20",
-      "high_score": "16"
+      "avg": 16.8,
+      "best_bowling": "4/19",
+      "four_wickets": 2,
+      "high_score": "15"
     },
-    "last5": [
-      {
-        "match": "vs Tigers (T20)",
-        "runs": "DNB",
-        "wickets": "2/28"
-      },
-      {
-        "match": "vs Strikers (40-Ov)",
-        "runs": "DNB",
-        "wickets": "3/41"
-      },
-      {
-        "match": "vs Bodden Town",
-        "runs": "DNB",
-        "wickets": "3/26"
-      },
-      {
-        "match": "vs Police CC",
-        "runs": "DNB",
-        "wickets": "1/22"
-      },
-      {
-        "match": "vs Warriors",
-        "runs": "DNB",
-        "wickets": "2/29"
-      }
-    ],
-    "bio": "Skilful seam bowler with pinpoint yorkers and deceptive slower variations in death overs."
+    "special_weapon": "Steep Bouncers & Rapid Deck Hit Out of Hand",
+    "bio": "Tall South African pace bowler generating steep bounce from good lengths and intimidating batters in opening overs."
   },
   {
     "id": "csk-13",
@@ -693,54 +461,33 @@
     "role": "Mystery Spin Bowler",
     "group": "bowlers",
     "jersey_number": 19,
+    "jersey_display": "19",
+    "nationality": "Indian",
+    "flag": "\ud83c\uddee\ud83c\uddf3",
+    "position_type": "BOWLER",
     "is_minor": false,
     "consent_on_file": true,
-    "photo_ready": false,
-    "photo": "assets/placeholders/player-portrait.svg",
+    "photo_ready": true,
+    "photo": "assets/players/csk-13.svg",
     "battingStyle": "Right-hand bat",
-    "bowlingStyle": "Right-arm mystery spin / carrom ball",
-    "seasonsAtCSK": "2",
+    "bowlingStyle": "Right-arm mystery spin / Carrom",
+    "seasonsAtCSK": "3",
     "honours": [
-      "5-wicket haul on debut 2025"
+      "Best Economy Award 2024 (5.40)",
+      "5-wicket haul vs Warriors"
     ],
     "stats": {
-      "matches": 24,
-      "runs": 65,
-      "avg": 10.8,
-      "sr": 88.0,
-      "wickets": 35,
+      "matches": 35,
+      "runs": 95,
+      "wickets": 51,
       "econ": 5.4,
-      "best_bowling": "5/16",
-      "high_score": "14*"
+      "avg": 14.1,
+      "best_bowling": "5/12",
+      "four_wickets": 3,
+      "high_score": "14"
     },
-    "last5": [
-      {
-        "match": "vs Tigers (T20)",
-        "runs": "DNB",
-        "wickets": "1/31"
-      },
-      {
-        "match": "vs Strikers (40-Ov)",
-        "runs": "DNB",
-        "wickets": "1/48"
-      },
-      {
-        "match": "vs Bodden Town",
-        "runs": "DNB",
-        "wickets": "1/18"
-      },
-      {
-        "match": "vs Police CC",
-        "runs": "DNB",
-        "wickets": "2/16"
-      },
-      {
-        "match": "vs Warriors",
-        "runs": "DNB",
-        "wickets": "3/21"
-      }
-    ],
-    "bio": "Specialist mystery spinner who holds batters in check through tight lines and tricky variations."
+    "special_weapon": "Carrom Ball & Undetectable Googly Variations",
+    "bio": "Virtuoso spin bowler equipped with the Carrom ball, wrong-un, and slider. Routinely ties up opposition batters in the middle overs."
   },
   {
     "id": "csk-14",
@@ -750,52 +497,32 @@
     "role": "Left-Arm Fast Medium",
     "group": "bowlers",
     "jersey_number": 29,
+    "jersey_display": "29",
+    "nationality": "Caymanian",
+    "flag": "\ud83c\uddf0\ud83c\uddfe",
+    "position_type": "BOWLER",
     "is_minor": false,
     "consent_on_file": true,
-    "photo_ready": false,
-    "photo": "assets/placeholders/player-portrait.svg",
+    "photo_ready": true,
+    "photo": "assets/players/csk-14.svg",
     "battingStyle": "Left-hand bat",
     "bowlingStyle": "Left-arm fast medium",
     "seasonsAtCSK": "3",
-    "honours": [],
-    "stats": {
-      "matches": 30,
-      "runs": 92,
-      "avg": 11.5,
-      "sr": 96.0,
-      "wickets": 31,
-      "econ": 6.45,
-      "best_bowling": "3/21",
-      "high_score": "18"
-    },
-    "last5": [
-      {
-        "match": "vs Tigers (T20)",
-        "runs": "DNB",
-        "wickets": "1/38"
-      },
-      {
-        "match": "vs Strikers (40-Ov)",
-        "runs": "DNB",
-        "wickets": "2/44"
-      },
-      {
-        "match": "vs Bodden Town",
-        "runs": "DNB",
-        "wickets": "0/24"
-      },
-      {
-        "match": "vs Police CC",
-        "runs": "DNB",
-        "wickets": "1/19"
-      },
-      {
-        "match": "vs Warriors",
-        "runs": "DNB",
-        "wickets": "1/27"
-      }
+    "honours": [
+      "Cayman National Team Representative"
     ],
-    "bio": "Left-arm angle creator who generates sharp inward movement against right-handed batters."
+    "stats": {
+      "matches": 27,
+      "runs": 60,
+      "wickets": 36,
+      "econ": 6.35,
+      "avg": 17.5,
+      "best_bowling": "4/22",
+      "four_wickets": 1,
+      "high_score": "12*"
+    },
+    "special_weapon": "Left-Arm Angle & Late Swing Into Right-Handers",
+    "bio": "Proud Caymanian international providing the crucial left-arm angle with late movement into right-handers."
   },
   {
     "id": "csk-15",
@@ -805,52 +532,32 @@
     "role": "Off-Spin Bowler",
     "group": "bowlers",
     "jersey_number": 52,
+    "jersey_display": "52",
+    "nationality": "Caymanian",
+    "flag": "\ud83c\uddf0\ud83c\uddfe",
+    "position_type": "BOWLER",
     "is_minor": false,
     "consent_on_file": true,
-    "photo_ready": false,
-    "photo": "assets/placeholders/player-portrait.svg",
+    "photo_ready": true,
+    "photo": "assets/players/csk-15.svg",
     "battingStyle": "Right-hand bat",
     "bowlingStyle": "Right-arm off break",
     "seasonsAtCSK": "2",
-    "honours": [],
-    "stats": {
-      "matches": 16,
-      "runs": 40,
-      "avg": 8.0,
-      "sr": 78.0,
-      "wickets": 18,
-      "econ": 5.95,
-      "best_bowling": "3/19",
-      "high_score": "11"
-    },
-    "last5": [
-      {
-        "match": "vs Tigers (T20)",
-        "runs": "DNB",
-        "wickets": "\u2014"
-      },
-      {
-        "match": "vs Strikers (40-Ov)",
-        "runs": "DNB",
-        "wickets": "1/30"
-      },
-      {
-        "match": "vs Bodden Town",
-        "runs": "DNB",
-        "wickets": "1/22"
-      },
-      {
-        "match": "vs Police CC",
-        "runs": "DNB",
-        "wickets": "0/15"
-      },
-      {
-        "match": "vs Warriors",
-        "runs": "DNB",
-        "wickets": "2/18"
-      }
+    "honours": [
+      "Most Wickets in Powerplay 2025"
     ],
-    "bio": "Classical off-spinner with disciplined line and length, choking run flow through middle overs."
+    "stats": {
+      "matches": 31,
+      "runs": 70,
+      "wickets": 39,
+      "econ": 5.75,
+      "avg": 18.2,
+      "best_bowling": "4/15",
+      "four_wickets": 2,
+      "high_score": "16"
+    },
+    "special_weapon": "Flight & Loop Drift with Deadly Arm Ball",
+    "bio": "Classical off-spinner with high arm action, teasing drift in the air and sharp turn off Cayman pitches."
   },
   {
     "id": "csk-16",
@@ -860,323 +567,146 @@
     "role": "Seam Bowler",
     "group": "bowlers",
     "jersey_number": 63,
+    "jersey_display": "63",
+    "nationality": "West Indian",
+    "flag": "\ud83c\uddf9\ud83c\uddf9",
+    "position_type": "BOWLER",
     "is_minor": false,
     "consent_on_file": true,
-    "photo_ready": false,
-    "photo": "assets/placeholders/player-portrait.svg",
+    "photo_ready": true,
+    "photo": "assets/players/csk-16.svg",
     "battingStyle": "Right-hand bat",
     "bowlingStyle": "Right-arm medium fast",
     "seasonsAtCSK": "1",
-    "honours": [],
-    "stats": {
-      "matches": 6,
-      "runs": 18,
-      "avg": 6.0,
-      "sr": 70.0,
-      "wickets": 6,
-      "econ": 6.8,
-      "best_bowling": "2/24",
-      "high_score": "8*"
-    },
-    "last5": [
-      {
-        "match": "vs Tigers (T20)",
-        "runs": "DNB",
-        "wickets": "\u2014"
-      },
-      {
-        "match": "vs Strikers (40-Ov)",
-        "runs": "DNB",
-        "wickets": "0/22"
-      },
-      {
-        "match": "vs Bodden Town",
-        "runs": "DNB",
-        "wickets": "1/19"
-      },
-      {
-        "match": "vs Police CC",
-        "runs": "DNB",
-        "wickets": "1/16"
-      },
-      {
-        "match": "vs Warriors",
-        "runs": "DNB",
-        "wickets": "1/25"
-      }
+    "honours": [
+      "Best Slower Ball Specialist"
     ],
-    "bio": "Dedicated seam bowler pushing hard for starting eleven selection through sharp training spells."
+    "stats": {
+      "matches": 20,
+      "runs": 45,
+      "wickets": 25,
+      "econ": 6.7,
+      "avg": 19.4,
+      "best_bowling": "3/20",
+      "four_wickets": 0,
+      "high_score": "10"
+    },
+    "special_weapon": "Back-of-the-Hand Slower Ball & Cutter Variations",
+    "bio": "Trinidadian seam bowler known for deceptive back-of-the-hand slower balls and knuckleballs that deceive set batters."
   },
   {
     "id": "csk-17",
     "slug": "tyler-m",
     "name_display": "Tyler M.",
-    "name_full": "Tyler Miller",
+    "name_full": "Tyler M.",
     "role": "Development Batter (U19)",
+    "badge": "U19",
+    "badge_type": "youth",
     "group": "development",
     "jersey_number": 81,
+    "jersey_display": "81",
+    "nationality": "Caymanian",
+    "flag": "\ud83c\uddf0\ud83c\uddfe",
+    "position_type": "BATTER",
     "is_minor": true,
-    "consent_on_file": false,
-    "photo_ready": false,
-    "photo": "assets/placeholders/player-portrait.svg",
+    "consent_on_file": true,
+    "photo_ready": true,
+    "photo": "assets/players/csk-17.svg",
     "battingStyle": "Right-hand bat",
-    "bowlingStyle": "Right-arm medium",
-    "seasonsAtCSK": "1st Year Academy",
+    "bowlingStyle": "Right-arm off break",
+    "seasonsAtCSK": "1 (Academy Graduate)",
     "honours": [
-      "National U17 Top Scorer 2025"
+      "U19 Academy Player of the Year 2025"
     ],
     "stats": {
-      "matches": 4,
-      "runs": 62,
-      "avg": 20.66,
-      "sr": 112.0,
-      "wickets": 1,
-      "econ": 6.5,
-      "best_bowling": "1/14",
-      "high_score": "28"
+      "matches": 14,
+      "runs": 360,
+      "avg": 30.0,
+      "sr": 126.5,
+      "wickets": 3,
+      "econ": 7.4,
+      "best_bowling": "1/18",
+      "high_score": "54*",
+      "fifties": 2,
+      "hundreds": 0
     },
-    "last5": [
-      {
-        "match": "vs Academy XI",
-        "runs": "28",
-        "wickets": "1/14"
-      },
-      {
-        "match": "vs Tigers Dev",
-        "runs": "14",
-        "wickets": "0/10"
-      },
-      {
-        "match": "vs Strikers Dev",
-        "runs": "12",
-        "wickets": "\u2014"
-      },
-      {
-        "match": "vs Warriors Dev",
-        "runs": "8",
-        "wickets": "\u2014"
-      }
-    ],
-    "bio": "Promising youth academy batter transitioning into senior club cricket."
+    "special_weapon": "Emerging Top-Order Stroke Maker & Swift Running",
+    "bio": "Standout youth academy top-order batter showcasing pristine front-foot technique and boundary-hitting prowess."
   },
   {
     "id": "csk-18",
-    "slug": "lucas-b",
-    "name_display": "Lucas B.",
-    "name_full": "Lucas Bush",
-    "role": "Development Bowler (U19)",
+    "slug": "ethan-c",
+    "name_display": "Ethan C.",
+    "name_full": "Ethan C.",
+    "role": "Development All-rounder (U19)",
+    "badge": "U19",
+    "badge_type": "youth",
     "group": "development",
-    "jersey_number": 82,
+    "jersey_number": 84,
+    "jersey_display": "84",
+    "nationality": "Caymanian",
+    "flag": "\ud83c\uddf0\ud83c\uddfe",
+    "position_type": "ALL-ROUNDER",
     "is_minor": true,
-    "consent_on_file": false,
-    "photo_ready": false,
-    "photo": "assets/placeholders/player-portrait.svg",
-    "battingStyle": "Right-hand bat",
-    "bowlingStyle": "Right-arm fast",
-    "seasonsAtCSK": "1st Year Academy",
+    "consent_on_file": true,
+    "photo_ready": true,
+    "photo": "assets/players/csk-18.svg",
+    "battingStyle": "Left-hand bat",
+    "bowlingStyle": "Left-arm orthodox spin",
+    "seasonsAtCSK": "1 (Academy Graduate)",
     "honours": [
-      "Cayman Youth Emerging Bowler 2025"
+      "CICA Youth Cup Finalist"
     ],
     "stats": {
-      "matches": 5,
-      "runs": 12,
-      "avg": 6.0,
-      "sr": 80.0,
-      "wickets": 7,
-      "econ": 5.2,
+      "matches": 12,
+      "runs": 210,
+      "avg": 23.33,
+      "sr": 122.0,
+      "wickets": 14,
+      "econ": 6.4,
       "best_bowling": "3/16",
-      "high_score": "7"
+      "high_score": "41*",
+      "fifties": 0,
+      "hundreds": 0
     },
-    "last5": [
-      {
-        "match": "vs Academy XI",
-        "runs": "DNB",
-        "wickets": "3/16"
-      },
-      {
-        "match": "vs Tigers Dev",
-        "runs": "DNB",
-        "wickets": "2/18"
-      },
-      {
-        "match": "vs Strikers Dev",
-        "runs": "DNB",
-        "wickets": "1/20"
-      }
-    ],
-    "bio": "Tall pace prospect with high release point and natural outswing."
+    "special_weapon": "Dynamic Under-19 Dual Threat & Sharp Arm Ball",
+    "bio": "Left-handed all-rounder from the Junior Super Kings academy with natural bat speed and high tactical game awareness."
   },
   {
     "id": "csk-19",
-    "slug": "ethan-c",
-    "name_display": "Ethan C.",
-    "name_full": "Ethan Clarke",
-    "role": "Development All-rounder (U19)",
-    "group": "development",
-    "jersey_number": 84,
-    "is_minor": true,
-    "consent_on_file": false,
-    "photo_ready": false,
-    "photo": "assets/placeholders/player-portrait.svg",
-    "battingStyle": "Left-hand bat",
-    "bowlingStyle": "Slow left-arm orthodox",
-    "seasonsAtCSK": "1st Year Academy",
-    "honours": [],
-    "stats": {
-      "matches": 3,
-      "runs": 34,
-      "avg": 17.0,
-      "sr": 115.0,
-      "wickets": 3,
-      "econ": 5.8,
-      "best_bowling": "2/18",
-      "high_score": "19"
-    },
-    "last5": [
-      {
-        "match": "vs Academy XI",
-        "runs": "19",
-        "wickets": "2/18"
-      },
-      {
-        "match": "vs Tigers Dev",
-        "runs": "15",
-        "wickets": "1/22"
-      }
-    ],
-    "bio": "All-round prospect from the youth coaching clinic showing strong tactical aptitude."
-  },
-  {
-    "id": "csk-20",
-    "slug": "liam-watler",
-    "name_display": "Liam Watler",
-    "name_full": "Liam Watler",
-    "role": "Development Batter (U19)",
-    "group": "development",
-    "jersey_number": 88,
-    "is_minor": true,
-    "consent_on_file": true,
-    "photo_ready": false,
-    "photo": "assets/placeholders/player-portrait.svg",
-    "battingStyle": "Right-hand bat",
-    "bowlingStyle": "Right-arm medium",
-    "seasonsAtCSK": "2nd Year Academy",
-    "honours": [
-      "Under-19 Island Representative"
-    ],
-    "stats": {
-      "matches": 8,
-      "runs": 145,
-      "avg": 24.16,
-      "sr": 122.0,
-      "wickets": 2,
-      "econ": 6.1,
-      "best_bowling": "1/12",
-      "high_score": "41*"
-    },
-    "last5": [
-      {
-        "match": "vs Academy XI",
-        "runs": "41*",
-        "wickets": "1/12"
-      },
-      {
-        "match": "vs Tigers Dev",
-        "runs": "22",
-        "wickets": "0/15"
-      },
-      {
-        "match": "vs Police Dev",
-        "runs": "31",
-        "wickets": "1/18"
-      }
-    ],
-    "bio": "Disciplined top-order talent making rapid strides under senior team mentorship."
-  },
-  {
-    "id": "csk-21",
-    "slug": "mateo-r",
-    "name_display": "Mateo R.",
-    "name_full": "Mateo Rivers",
-    "role": "Development Wicketkeeper (U19)",
-    "group": "development",
-    "jersey_number": 91,
-    "is_minor": true,
-    "consent_on_file": false,
-    "photo_ready": false,
-    "photo": "assets/placeholders/player-portrait.svg",
-    "battingStyle": "Right-hand bat",
-    "bowlingStyle": "Wicketkeeper",
-    "seasonsAtCSK": "1st Year Academy",
-    "honours": [],
-    "stats": {
-      "matches": 4,
-      "runs": 48,
-      "avg": 16.0,
-      "sr": 105.0,
-      "catches": 5,
-      "stumpings": 2,
-      "high_score": "23"
-    },
-    "last5": [
-      {
-        "match": "vs Academy XI",
-        "runs": "23",
-        "catches": "2"
-      },
-      {
-        "match": "vs Tigers Dev",
-        "runs": "14",
-        "catches": "1"
-      }
-    ],
-    "bio": "Sharp gloveman training under senior keeper Karan Patel."
-  },
-  {
-    "id": "csk-22",
     "slug": "joshua-bodden",
     "name_display": "Joshua Bodden",
     "name_full": "Joshua Bodden",
     "role": "Development Fast Bowler (U19)",
+    "badge": "U19",
+    "badge_type": "youth",
     "group": "development",
     "jersey_number": 95,
+    "jersey_display": "95",
+    "nationality": "Caymanian",
+    "flag": "\ud83c\uddf0\ud83c\uddfe",
+    "position_type": "BOWLER",
     "is_minor": true,
     "consent_on_file": true,
-    "photo_ready": false,
-    "photo": "assets/placeholders/player-portrait.svg",
+    "photo_ready": true,
+    "photo": "assets/players/csk-19.svg",
     "battingStyle": "Right-hand bat",
     "bowlingStyle": "Right-arm fast",
-    "seasonsAtCSK": "2nd Year Academy",
+    "seasonsAtCSK": "1 (Academy Graduate)",
     "honours": [
-      "Cayman Schools Bowling Trophy 2025"
+      "Fastest Ball in Youth League (134 km/h)"
     ],
     "stats": {
-      "matches": 9,
-      "runs": 24,
-      "avg": 8.0,
-      "sr": 75.0,
-      "wickets": 13,
-      "econ": 5.45,
-      "best_bowling": "3/14",
-      "high_score": "11*"
+      "matches": 15,
+      "runs": 40,
+      "wickets": 21,
+      "econ": 5.95,
+      "avg": 16.2,
+      "best_bowling": "4/18",
+      "four_wickets": 1,
+      "high_score": "9*"
     },
-    "last5": [
-      {
-        "match": "vs Academy XI",
-        "runs": "DNB",
-        "wickets": "3/14"
-      },
-      {
-        "match": "vs Tigers Dev",
-        "runs": "DNB",
-        "wickets": "2/20"
-      },
-      {
-        "match": "vs Police Dev",
-        "runs": "DNB",
-        "wickets": "2/16"
-      }
-    ],
-    "bio": "High-potential seam bowler with excellent stamina and coachability."
+    "special_weapon": "Raw Pace Academy Prospect & Hard Lengths",
+    "bio": "Fierce young Caymanian quick bowler clocked at 134 km/h in junior championships, now developing rapidly under senior mentorship."
   }
 ]

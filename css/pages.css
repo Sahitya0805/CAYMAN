@@ -1978,6 +1978,499 @@ body.page--white-theme .contact-form-panel .form-textarea {
   }
 }
 
+/* ─────────────────────────────────────────────────────────────
+   2026 OFFICIAL SQUAD SHOWCASE (19 PLAYERS STADIUM STAGE)
+   ───────────────────────────────────────────────────────────── */
+.squad-stadium-hero {
+  position: relative;
+  background: linear-gradient(180deg, #E69A08 0%, #FAB81E 65%, #EE9409 100%);
+  padding: 56px 20px 28px;
+  text-align: center;
+  overflow: hidden;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.25);
+}
+
+.squad-floodlight {
+  position: absolute;
+  top: 0;
+  width: 380px;
+  height: 520px;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.squad-floodlight--left {
+  left: -60px;
+  background: radial-gradient(ellipse at 15% 0%, rgba(255, 255, 255, 0.85) 0%, rgba(255, 255, 255, 0.35) 30%, transparent 70%);
+  transform: rotate(-24deg);
+  filter: blur(10px);
+}
+
+.squad-floodlight--right {
+  right: -60px;
+  background: radial-gradient(ellipse at 85% 0%, rgba(255, 255, 255, 0.85) 0%, rgba(255, 255, 255, 0.35) 30%, transparent 70%);
+  transform: rotate(24deg);
+  filter: blur(10px);
+}
+
+.squad-hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 1080px;
+  margin: 0 auto;
+}
+
+.squad-hero-main-title {
+  font-family: var(--font-display);
+  font-size: clamp(2.4rem, 6.2vw, 4.4rem);
+  font-weight: 900;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: #FFFFFF;
+  margin: 0 0 16px;
+  line-height: 1;
+  text-shadow: 0 4px 24px rgba(8, 14, 24, 0.35);
+}
+
+.squad-hero-pill-wrap {
+  display: flex;
+  justify-content: center;
+}
+
+.squad-hero-badge-pill {
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  color: #080E18;
+  background: #FFFFFF;
+  padding: 4px 28px;
+  border-radius: 999px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.18);
+  border: 2px solid #FAB81E;
+  display: inline-block;
+}
+
+.squad-stage-section {
+  background: linear-gradient(180deg, #EE9409 0%, #FAB81E 30%, #E8950B 100%);
+  padding: 36px 0 80px;
+  min-height: 80vh;
+}
+
+.squad-stage-section .container {
+  max-width: 1240px;
+}
+
+/* Squad Category Filter Bar */
+.squad-filter-bar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 36px;
+}
+
+.squad-filter-btn {
+  background: #09152B;
+  color: #FAB81E;
+  border: 1.5px solid rgba(250, 184, 30, 0.4);
+  font-family: var(--font-display);
+  font-size: 0.925rem;
+  font-weight: 900;
+  letter-spacing: 0.05em;
+  padding: 8px 20px;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  box-shadow: 0 4px 12px rgba(8, 14, 24, 0.25);
+}
+
+.squad-filter-btn:hover {
+  background: #10244C;
+  color: #FFFFFF;
+  border-color: #FAB81E;
+  transform: translateY(-2px);
+}
+
+.squad-filter-btn.active {
+  background: #FFFFFF;
+  color: #080E18;
+  border-color: #FFFFFF;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+  transform: translateY(-2px);
+}
+
+/* 3-Column Squad Stage Grid */
+.squad-stage-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5px;
+  background-color: rgba(217, 119, 6, 0.55);
+  border: 1.5px solid rgba(217, 119, 6, 0.55);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 20px 50px rgba(8, 14, 24, 0.25);
+}
+
+/* Individual Player Card */
+.squad-player-stage-card {
+  position: relative;
+  background: linear-gradient(180deg, rgba(250, 184, 30, 0.96) 0%, rgba(238, 148, 9, 0.98) 100%);
+  min-height: 480px;
+  height: 520px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  overflow: hidden;
+  cursor: pointer;
+  outline: none;
+}
+
+.squad-card-front {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+/* Badges */
+.squad-card-badge {
+  position: absolute;
+  top: 18px;
+  left: 18px;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-display);
+  font-weight: 900;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  z-index: 5;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+}
+
+.squad-card-badge--c {
+  background: #F2600C;
+  color: #FFFFFF;
+  border: 2px solid #FAB81E;
+}
+
+.squad-card-badge--vc {
+  background: #09152B;
+  color: #FAB81E;
+  border: 2px solid #FAB81E;
+}
+
+.squad-card-badge--overseas {
+  background: #0E7490;
+  color: #FFFFFF;
+  border: 2px solid #FFFFFF;
+  font-size: 0.95rem;
+}
+
+.squad-card-badge--u19 {
+  background: #09152B;
+  color: #38BDF8;
+  border: 2px solid #38BDF8;
+  font-size: 0.75rem;
+}
+
+/* Giant Block Jersey Number in Background */
+.squad-jersey-bg-num {
+  position: absolute;
+  top: 6%;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: var(--font-display);
+  font-size: clamp(8rem, 14vw, 12.5rem);
+  font-weight: 900;
+  line-height: 0.85;
+  color: #FFFFFF;
+  opacity: 0.98;
+  pointer-events: none;
+  z-index: 1;
+  user-select: none;
+  letter-spacing: -0.04em;
+  text-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+}
+
+/* Cutout Figure */
+.squad-player-figure-wrap {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  height: 410px;
+  margin-top: auto;
+  pointer-events: none;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.squad-player-cutout-img {
+  max-height: 100%;
+  width: auto;
+  object-fit: contain;
+  filter: drop-shadow(0 14px 24px rgba(8, 14, 24, 0.35));
+  transition: transform 0.4s ease;
+}
+
+.squad-player-stage-card:hover .squad-player-cutout-img {
+  transform: scale(1.04);
+}
+
+/* Bottom Strip */
+.squad-card-bottom-strip {
+  position: relative;
+  z-index: 3;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  padding: 16px 20px 18px;
+  background: linear-gradient(0deg, rgba(8, 14, 24, 0.35) 0%, transparent 100%);
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.squad-card-role-col {
+  display: flex;
+  flex-direction: column;
+}
+
+.squad-card-num-small {
+  font-family: var(--font-display);
+  font-weight: 900;
+  font-size: 1.05rem;
+  color: #FFFFFF;
+  line-height: 1;
+  margin-bottom: 3px;
+  text-shadow: 0 2px 6px rgba(0,0,0,0.3);
+}
+
+.squad-card-pos-text {
+  font-family: var(--font-body);
+  font-weight: 800;
+  font-size: 0.725rem;
+  color: #FFFFFF;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-shadow: 0 2px 6px rgba(0,0,0,0.3);
+}
+
+.squad-card-name-col {
+  text-align: right;
+}
+
+.squad-card-player-name {
+  font-family: var(--font-display);
+  font-weight: 900;
+  font-size: clamp(1.2rem, 2.2vw, 1.65rem);
+  color: #FFFFFF;
+  line-height: 1;
+  text-transform: uppercase;
+  margin: 0;
+  letter-spacing: 0.02em;
+  text-shadow: 0 3px 10px rgba(0, 0, 0, 0.4);
+}
+
+/* ─────────────────────────────────────────────────────────────
+   UNIQUE INTERACTIVE HOVER CARD (Floating Holographic HUD)
+   ───────────────────────────────────────────────────────────── */
+.squad-card-hover-hud {
+  position: absolute;
+  inset: 14px;
+  background: rgba(255, 255, 255, 0.97);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-radius: 14px;
+  z-index: 10;
+  padding: 20px 18px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  opacity: 0;
+  transform: translateY(16px) scale(0.96);
+  pointer-events: none;
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 20px 48px rgba(8, 14, 24, 0.4), 0 0 0 1.5px rgba(250, 184, 30, 0.65);
+}
+
+.squad-player-stage-card:hover .squad-card-hover-hud,
+.squad-player-stage-card:focus-within .squad-card-hover-hud {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  pointer-events: auto;
+}
+
+.hud-top-meta {
+  margin-bottom: 10px;
+}
+
+.hud-nationality-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 6px;
+}
+
+.hud-flag {
+  font-size: 1.35rem;
+}
+
+.hud-nat-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.hud-sub-label {
+  font-size: 0.625rem;
+  color: #64748B;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  line-height: 1;
+}
+
+.hud-nat-title {
+  font-size: 0.825rem;
+  color: #080E18;
+  font-weight: 900;
+  line-height: 1.2;
+}
+
+.hud-position-pill {
+  font-size: 0.725rem;
+  color: #475569;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.hud-position-pill strong {
+  color: #080E18;
+  font-weight: 900;
+}
+
+/* 2x3 Stat Grid */
+.hud-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  border-top: 1px solid #CBD5E1;
+  border-left: 1px solid #CBD5E1;
+  margin-bottom: 10px;
+  background: #FFFFFF;
+}
+
+.hud-stat-cell {
+  padding: 8px 10px;
+  border-bottom: 1px solid #CBD5E1;
+  border-right: 1px solid #CBD5E1;
+}
+
+.hud-stat-label {
+  font-size: 0.625rem;
+  font-weight: 800;
+  color: #64748B;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  display: block;
+}
+
+.hud-stat-val {
+  font-family: var(--font-display);
+  font-size: 1.3rem;
+  font-weight: 900;
+  color: #080E18;
+  line-height: 1.1;
+  margin-top: 2px;
+  display: block;
+}
+
+.hud-trait-pill {
+  background: rgba(250, 184, 30, 0.2);
+  border: 1px solid rgba(250, 184, 30, 0.7);
+  padding: 5px 8px;
+  border-radius: 6px;
+  font-size: 0.725rem;
+  font-weight: 800;
+  color: #080E18;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  line-height: 1.25;
+  max-width: 78%;
+  margin-bottom: 8px;
+}
+
+.hud-trait-icon {
+  font-size: 0.85rem;
+  color: #F2600C;
+}
+
+/* Mini Cutout Tucked in Bottom Right */
+.hud-mini-cutout-wrap {
+  position: absolute;
+  right: 6px;
+  bottom: 6px;
+  width: 95px;
+  height: 125px;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.hud-mini-cutout-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  filter: drop-shadow(0 6px 14px rgba(0, 0, 0, 0.25));
+}
+
+.hud-bottom-cta {
+  margin-top: auto;
+  position: relative;
+  z-index: 3;
+}
+
+.hud-read-more-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-family: var(--font-display);
+  font-size: 0.85rem;
+  font-weight: 900;
+  color: #080E18;
+  text-decoration: none;
+  text-transform: uppercase;
+  border-bottom: 2px solid #FAB81E;
+  padding-bottom: 2px;
+  transition: all 0.2s ease;
+}
+
+.hud-read-more-link:hover {
+  color: #F2600C;
+  border-color: #F2600C;
+  transform: translateX(3px);
+}
+
+@media (max-width: 960px) {
+  .squad-stage-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .squad-stage-grid {
+    grid-template-columns: 1fr;
+  }
+  .squad-player-stage-card {
+    height: 480px;
+  }
+}
+
+
 
 
 
