@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100" height="100">
+  <circle cx="50" cy="50" r="46" fill="#4A0E17" stroke="#FAB81E" stroke-width="4"/>
+  <circle cx="50" cy="50" r="38" fill="#7A1C28"/>
+  <text x="50" y="58" font-family="'Impact', Arial, sans-serif" font-weight="900" font-size="26" fill="#FFFFFF" text-anchor="middle" letter-spacing="1">BTCC</text>
+  <text x="50" y="74" font-family="sans-serif" font-weight="800" font-size="8" fill="#FAB81E" text-anchor="middle" letter-spacing="1">BODDEN TOWN</text>
+</svg>
