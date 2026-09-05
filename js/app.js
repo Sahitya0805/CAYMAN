@@ -87,16 +87,29 @@ async function initAnnouncementBar() {
 }
 
 function highlightActiveNav() {
-  const currentPath = window.location.pathname.split('/').pop().replace('.html', '') || 'index';
-  const links = document.querySelectorAll('.nav-link, .nav-cta');
+  const currentFile = window.location.pathname.split('/').pop().replace('.html', '') || 'index';
+  let targetNav = currentFile;
+  
+  if (currentFile === 'match-detail') targetNav = 'matches';
+  if (currentFile === 'player-detail') targetNav = 'squad';
+  if (currentFile === 'article') targetNav = 'news';
+
+  const links = document.querySelectorAll('.nav-link');
   links.forEach(link => {
     const href = link.getAttribute('href');
     if (!href) return;
-    const cleanHref = href.split('/').pop().replace('.html', '') || 'index';
-    if (cleanHref === currentPath || (currentPath === 'index' && cleanHref === '')) {
+    const cleanHref = href.split('/').pop().replace('.html', '');
+    if (cleanHref === targetNav) {
       link.classList.add('active');
+    } else {
+      link.classList.remove('active');
     }
   });
+
+  const userPill = document.querySelector('.site-header__user-pill');
+  if (userPill && currentFile === 'contact') {
+    userPill.classList.add('active');
+  }
 }
 
 function initSmoothScroll() {

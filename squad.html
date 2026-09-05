@@ -24,48 +24,56 @@
         <div class="csk-splash-screen__bar"></div>
       </div>
     </div>
-  </div>
+  </div>  <!-- Top Accent Bar -->
+  <div class="site-header__top-bar"></div>
 
-
-  <!-- Announcement Bar -->
+  <!-- Sitewide Announcement Bar -->
   <aside class="announcement-bar" aria-label="Latest match notification">
     <div class="announcement-bar__inner">
       <div style="display: flex; align-items: center; gap: 10px; overflow: hidden;">
-        <span class="announcement-tag">Result</span>
-        <span class="announcement-text">Loading latest fixture result...</span>
+        <span class="announcement-tag">RESULT</span>
+        <span class="announcement-text">CSK (184/4) defeated Titans (122/9) — CSK win by 62 runs</span>
       </div>
       <a href="matches.html" class="announcement-link">Match Report ↗</a>
     </div>
   </aside>
 
-  <!-- Navigation Header -->
+  <!-- Sticky Slanted Dark Blue Header -->
   <header class="site-header">
-    <div class="site-header__inner">
-      <a href="index.html" class="logo-wrapper" aria-label="Cayman Super Kings Home">
-        <img src="assets/placeholders/csk-crest.svg" alt="CSK Crest" class="logo-crest">
-        <div class="logo-text">
-          <span class="logo-title">CAYMAN SUPER KINGS</span>
-          <span class="logo-subtitle">Cricket Club • Grand Cayman</span>
-        </div>
+    <div class="site-header__container">
+      <!-- Main Slanted Dark Blue Bar -->
+      <div class="site-header__bar">
+        <!-- Breakout CSK Logo -->
+        <a href="index.html" class="navbar-logo-breakout" aria-label="Cayman Super Kings Home">
+          <img src="assets/csk-navbar-logo.svg" alt="Cayman Super Kings" class="navbar-logo-img">
+        </a>
+
+        <!-- Mobile Menu Toggle -->
+        <button class="mobile-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+
+        <!-- Navigation Links -->
+        <nav class="navbar-nav" aria-label="Main Navigation">
+          <ul class="nav-menu">
+            <li><a href="squad.html" class="nav-link">Squad</a></li>
+            <li><a href="matches.html" class="nav-link">Fixtures</a></li>
+            <li><a href="about.html" class="nav-link">Yellow Vault</a></li>
+            <li><a href="youth.html" class="nav-link">Fanzone</a></li>
+            <li><a href="partner.html" class="nav-link">Sponsors</a></li>
+            <li><a href="gallery.html" class="nav-link">Gallery</a></li>
+            <li><a href="news.html" class="nav-link">News</a></li>
+          </ul>
+        </nav>
+      </div>
+
+      <!-- Right Slanted User / Contact Action Pill -->
+      <a href="contact.html" class="site-header__user-pill" aria-label="Contact &amp; Fan Portal" title="Contact &amp; Fan Portal">
+        <svg class="user-pill__icon" viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+          <circle cx="12" cy="7" r="4"></circle>
+        </svg>
       </a>
-
-      <button class="mobile-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
-        <span></span><span></span><span></span>
-      </button>
-
-      <nav aria-label="Main Navigation">
-        <ul class="nav-menu">
-          <li><a href="index.html" class="nav-link">Home</a></li>
-          <li><a href="matches.html" class="nav-link">Matches</a></li>
-          <li><a href="squad.html" class="nav-link active">Squad</a></li>
-          <li><a href="youth.html" class="nav-link">Youth</a></li>
-          <li><a href="about.html" class="nav-link">About</a></li>
-          <li><a href="gallery.html" class="nav-link">Gallery</a></li>
-          <li><a href="news.html" class="nav-link">News</a></li>
-          <li><a href="partner.html" class="nav-link">Sponsors</a></li>
-          <li><a href="contact.html" class="nav-cta">Contact Us</a></li>
-        </ul>
-      </nav>
     </div>
   </header>
 
