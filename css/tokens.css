@@ -6,33 +6,38 @@
 @import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;600;700;800;900&family=Manrope:wght@400;500;600;700;800&display=swap');
 
 :root {
-  /* Brand Colours */
-  --c-navy: #101C3F;
-  --c-navy-light: #182855;
-  --c-navy-dark: #0A1228;
-  --c-navy-surface: #152248;
+  /* Brand Colours - Cayman Super Kings Premium Dark Navy & Gold */
+  --c-navy: #080E18;
+  --c-navy-light: #101C3F;
+  --c-navy-surface: #142338;
+  --c-navy-dark: #05080F;
+  --c-navy-card: #0D192C;
   
-  --c-gold: #F59E1B;
-  --c-gold-hover: #D98810;
-  --c-gold-light: rgba(245, 158, 27, 0.15);
+  --c-gold: #FAB81E;
+  --c-gold-hover: #E09C0D;
+  --c-gold-light: rgba(250, 184, 30, 0.15);
+  --c-gold-subtle: rgba(250, 184, 30, 0.08);
+  --c-gold-muted: #F8D999;
   
-  --c-flame: #F2600C;           /* For fills, gradients, hovers ONLY */
-  --c-flame-text: #B8430A;      /* Contrast-safe 4.9+:1 on white/light backgrounds */
-  --c-flame-light: rgba(242, 96, 12, 0.12);
+  --c-flame: #F2600C;           /* Accent fills / match alerts */
+  --c-flame-text: #FF7A30;      /* Contrast safe text on dark backgrounds */
+  --c-flame-light: rgba(242, 96, 12, 0.18);
   
-  --c-teal: #38C6D9;            /* Secondary accent — consent notes, badges, focus */
+  --c-teal: #38C6D9;            /* Secondary accent — badges & details */
   --c-teal-hover: #29AEC0;
-  --c-teal-light: rgba(56, 198, 217, 0.12);
+  --c-teal-light: rgba(56, 198, 217, 0.18);
   
-  --c-page-bg: #F7F8FA;
-  --c-card-bg: #FFFFFF;
-  --c-border: #E2E8F0;
-  --c-border-subtle: #EDF2F7;
+  --c-page-bg: #080E18;
+  --c-card-bg: #101C3F;
+  --c-card-bg-elevated: #15254D;
+  --c-border: rgba(255, 255, 255, 0.1);
+  --c-border-subtle: rgba(255, 255, 255, 0.06);
+  --c-border-gold: rgba(250, 184, 30, 0.25);
   
-  --c-text-main: #101C3F;
-  --c-text-muted: #42536a;
-  --c-text-light: #94A3B8;
-  --c-text-inverse: #FFFFFF;
+  --c-text-main: #FFFFFF;
+  --c-text-muted: #94A3B8;
+  --c-text-light: #64748B;
+  --c-text-inverse: #080E18;
   --c-text-inverse-muted: #CBD5E1;
 
   /* Typography */
@@ -41,8 +46,8 @@
 
   /* Grid & Dimensions */
   --max-width: 1180px;
-  --section-pad-desktop: 96px;
-  --section-pad-mobile: 48px;
+  --section-pad-desktop: 80px;
+  --section-pad-mobile: 44px;
 
   /* Radii */
   --radius-card: 12px;
@@ -50,8 +55,8 @@
   --radius-badge: 6px;
 
   /* Elevation (Unified Hover Lift) */
-  --shadow-card: 0 4px 12px rgba(16, 28, 63, 0.05), 0 1px 3px rgba(16, 28, 63, 0.04);
-  --shadow-hover-lift: 0 16px 32px -4px rgba(16, 28, 63, 0.12), 0 6px 12px -4px rgba(16, 28, 63, 0.08);
+  --shadow-card: 0 8px 24px rgba(0, 0, 0, 0.4), 0 2px 6px rgba(0, 0, 0, 0.2);
+  --shadow-hover-lift: 0 16px 36px rgba(0, 0, 0, 0.6), 0 0 20px rgba(250, 184, 30, 0.12);
 
   /* Transitions */
   --transition-fast: 0.15s ease;
@@ -88,7 +93,7 @@ h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-display);
   font-weight: 800;
   line-height: 1.15;
-  color: var(--c-navy);
+  color: #FFFFFF;
   letter-spacing: -0.02em;
 }
 
@@ -105,13 +110,13 @@ p:last-child {
 }
 
 a {
-  color: var(--c-flame-text);
+  color: var(--c-gold);
   text-decoration: none;
   transition: color var(--transition-fast);
 }
 
 a:hover {
-  color: var(--c-flame);
+  color: #FFFFFF;
   text-decoration: underline;
 }
 
