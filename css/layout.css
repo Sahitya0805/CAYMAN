@@ -93,7 +93,7 @@ input, select, textarea { color: #FFFFFF; background: #0F1B2C; border: 1px solid
 .col-2  { grid-column: span 2; }
 
 .section--white {
-  background-color: #FFFFFF !important;
+  background: #FFFFFF url('../assets/cricket-white-bg.png') center / cover no-repeat !important;
   color: #080E18 !important;
 }
 
