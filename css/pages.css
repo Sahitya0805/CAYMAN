@@ -292,31 +292,98 @@ body.page--white-theme main {
   background: transparent !important;
 }
 
-body.page--white-theme .page-hero {
-  background: linear-gradient(180deg, rgba(8, 14, 24, 0.95) 0%, rgba(16, 28, 63, 0.9) 100%), url('../assets/cricket-white-bg.png') center/cover !important;
+/* Ensure ALL Navy / Dark Hero Banners, Headers and Sections have crisp WHITE text */
+.page-hero,
+.section--navy,
+.section--dark,
+body.page--white-theme .page-hero,
+body.page--white-theme .section--navy,
+body.page--white-theme .section--dark {
+  background: linear-gradient(180deg, rgba(8, 14, 24, 0.96) 0%, rgba(16, 28, 63, 0.94) 100%), url('../assets/cricket-white-bg.png') center/cover !important;
   color: #FFFFFF !important;
 }
 
-body.page--white-theme .page-hero h1,
-body.page--white-theme .page-hero h2,
-body.page--white-theme .page-hero h3 {
+.page-hero h1, .page-hero h2, .page-hero h3, .page-hero h4, .page-hero .section-title,
+.section--navy h1, .section--navy h2, .section--navy h3, .section--navy h4, .section--navy .section-title,
+.section--dark h1, .section--dark h2, .section--dark h3, .section--dark h4, .section--dark .section-title,
+body.page--white-theme .page-hero h1, body.page--white-theme .page-hero h2, body.page--white-theme .page-hero h3, body.page--white-theme .page-hero .section-title,
+body.page--white-theme .section--navy h1, body.page--white-theme .section--navy h2, body.page--white-theme .section--navy h3, body.page--white-theme .section--navy .section-title,
+body.page--white-theme .section--dark h1, body.page--white-theme .section--dark h2, body.page--white-theme .section--dark h3, body.page--white-theme .section--dark .section-title {
+  color: #FFFFFF !important;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5) !important;
+}
+
+.page-hero p, .page-hero .section-desc,
+.section--navy p, .section--navy .section-desc,
+.section--dark p, .section--dark .section-desc,
+body.page--white-theme .page-hero p, body.page--white-theme .page-hero .section-desc,
+body.page--white-theme .section--navy p, body.page--white-theme .section--navy .section-desc,
+body.page--white-theme .section--dark p, body.page--white-theme .section--dark .section-desc {
+  color: #CBD5E1 !important;
+}
+
+.page-hero .section-eyebrow,
+.section--navy .section-eyebrow,
+.section--dark .section-eyebrow,
+body.page--white-theme .page-hero .section-eyebrow,
+body.page--white-theme .section--navy .section-eyebrow,
+body.page--white-theme .section--dark .section-eyebrow {
+  color: #FAB81E !important;
+}
+
+/* Navy & Dark Cards (e.g. FAQs on partner.html, Map card on contact.html) */
+.card--navy, .card--dark,
+body.page--white-theme .card--navy, body.page--white-theme .card--dark,
+body.page--white-theme .card.card--navy, body.page--white-theme .card.card--dark,
+body.page--white-theme .card-body.card--navy, body.page--white-theme .card-body.card--dark {
+  background: rgba(16, 28, 63, 0.95) !important;
+  border: 1.5px solid rgba(250, 184, 30, 0.3) !important;
   color: #FFFFFF !important;
 }
 
+.card--navy h3, .card--navy h4, .card--navy .card-title,
+.card--dark h3, .card--dark h4, .card--dark .card-title,
+body.page--white-theme .card--navy h3, body.page--white-theme .card--navy h4, body.page--white-theme .card--navy .card-title,
+body.page--white-theme .card--dark h3, body.page--white-theme .card--dark h4, body.page--white-theme .card--dark .card-title,
+body.page--white-theme .card.card--navy h3, body.page--white-theme .card.card--navy h4,
+body.page--white-theme .card-body.card--navy h3, body.page--white-theme .card-body.card--navy h4 {
+  color: #FAB81E !important;
+  text-shadow: 0 1px 8px rgba(0, 0, 0, 0.5) !important;
+}
+
+.card--navy p, .card--dark p,
+body.page--white-theme .card--navy p, body.page--white-theme .card--dark p,
+body.page--white-theme .card.card--navy p, body.page--white-theme .card-body.card--navy p {
+  color: #E2E8F0 !important;
+}
+
+/* Jimmy Powell Oval Map Card on contact.html */
+#ground .card {
+  border: 1.5px solid rgba(250, 184, 30, 0.3) !important;
+}
+#ground .card h3 {
+  color: #FFFFFF !important;
+  font-size: 1.5rem !important;
+}
+#ground .card p {
+  color: #CBD5E1 !important;
+}
+
+/* Scoped ONLY to White Sections / Light Cards */
 body.page--white-theme .section:not(.section--navy):not(.section--dark) {
   background: transparent !important;
   color: #080E18 !important;
 }
 
-body.page--white-theme .section-title {
+body.page--white-theme .section:not(.section--navy):not(.section--dark) .section-title {
   color: #080E18 !important;
 }
 
-body.page--white-theme .section-eyebrow {
+body.page--white-theme .section:not(.section--navy):not(.section--dark) .section-eyebrow {
   color: #B8430A !important;
 }
 
-body.page--white-theme .section-desc {
+body.page--white-theme .section:not(.section--navy):not(.section--dark) .section-desc {
   color: #4B5D70 !important;
 }
 
@@ -329,17 +396,17 @@ body.page--white-theme .card:not(.card--navy):not(.card--dark) {
   color: #080E18 !important;
 }
 
-body.page--white-theme .card-body {
+body.page--white-theme .card:not(.card--navy):not(.card--dark) .card-body {
   color: #080E18 !important;
 }
 
-body.page--white-theme .card-body p {
+body.page--white-theme .card:not(.card--navy):not(.card--dark) .card-body p {
   color: #4B5D70 !important;
 }
 
-body.page--white-theme .card-title,
-body.page--white-theme .card h3,
-body.page--white-theme .card h4 {
+body.page--white-theme .card:not(.card--navy):not(.card--dark) .card-title,
+body.page--white-theme .card:not(.card--navy):not(.card--dark) h3,
+body.page--white-theme .card:not(.card--navy):not(.card--dark) h4 {
   color: #080E18 !important;
 }
 
