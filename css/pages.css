@@ -1570,4 +1570,151 @@ body.page--white-theme .contact-form-panel .form-textarea {
   }
 }
 
+/* ─────────────────────────────────────────────────────────────
+   CIRCULAR PHOTOS GALLERY (Moments That Roar Showcase)
+   ───────────────────────────────────────────────────────────── */
+.circular-gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 48px 32px;
+  width: 100%;
+  margin-top: 36px;
+}
+
+.circular-gallery-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  cursor: pointer;
+  text-decoration: none;
+  transition: transform 0.3s ease;
+}
+
+.circular-gallery-card:hover {
+  transform: translateY(-6px);
+}
+
+.circular-photo-wrapper {
+  position: relative;
+  width: 240px;
+  height: 240px;
+  max-width: 78vw;
+  max-height: 78vw;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 4px solid #FAB81E;
+  box-shadow: 0 12px 32px rgba(8, 14, 24, 0.18), 0 0 20px rgba(250, 184, 30, 0.3);
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  background: #080E18;
+  margin-bottom: 16px;
+}
+
+.circular-gallery-card:hover .circular-photo-wrapper {
+  border-color: #F2600C;
+  transform: scale(1.05);
+  box-shadow: 0 18px 44px rgba(8, 14, 24, 0.28), 0 0 32px rgba(250, 184, 30, 0.65);
+}
+
+.circular-photo-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease, filter 0.35s ease;
+}
+
+.circular-gallery-card:hover .circular-photo-img {
+  transform: scale(1.1);
+  filter: brightness(1.05);
+}
+
+.circular-photo-overlay {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background: radial-gradient(circle at center, transparent 35%, rgba(8, 14, 24, 0.7) 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.circular-gallery-card:hover .circular-photo-overlay {
+  opacity: 1;
+}
+
+.circular-zoom-icon {
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  background: #FAB81E;
+  color: #080E18;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.6);
+  transform: scale(0.85);
+  transition: transform 0.25s ease;
+}
+
+.circular-gallery-card:hover .circular-zoom-icon {
+  transform: scale(1);
+}
+
+.circular-card-title {
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  font-weight: 900;
+  color: #080E18 !important;
+  text-transform: uppercase;
+  margin: 0 0 4px;
+  letter-spacing: 0.03em;
+  line-height: 1.2;
+}
+
+.circular-card-subtitle {
+  font-family: var(--font-body);
+  font-size: 0.775rem;
+  font-weight: 800;
+  color: #5A6A7E !important;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin: 0 0 8px;
+}
+
+.circular-badge-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-family: var(--font-display);
+  font-size: 0.725rem;
+  font-weight: 800;
+  background: #080E18;
+  color: #FAB81E;
+  padding: 3px 12px;
+  border-radius: 999px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  border: 1px solid rgba(250, 184, 30, 0.35);
+}
+
+@media (max-width: 900px) {
+  .circular-gallery-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px 24px;
+  }
+}
+
+@media (max-width: 580px) {
+  .circular-gallery-grid {
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
+  .circular-photo-wrapper {
+    width: 210px;
+    height: 210px;
+  }
+}
+
+
 

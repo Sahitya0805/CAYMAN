@@ -72,23 +72,23 @@ export async function initGalleryPage() {
     });
 
     container.innerHTML = filtered.map((a, idx) => `
-      <div class="col-4">
-        <div class="card card--lift" style="cursor: pointer;" data-album-index="${idx}">
-          <div style="position: relative; aspect-ratio: 16/10; overflow: hidden; background: var(--c-navy);">
-            <img src="${a.cover_image}" alt="${a.title}" style="width: 100%; height: 100%; object-fit: cover;" loading="lazy">
-            <span class="badge badge--gold" style="position: absolute; top: 12px; left: 12px;">
-              ${a.type === 'video' ? '▶ Video' : '📷 Photos'}
-            </span>
-            <span class="badge badge--dark" style="position: absolute; bottom: 12px; right: 12px;">
-              ${a.count_or_duration}
-            </span>
-          </div>
-          <div class="card-body">
-            <span style="font-size: 0.75rem; font-weight: 700; color: var(--c-flame-text); text-transform: uppercase;">${a.category} • ${a.year}</span>
-            <h3 style="font-size: 1.125rem; margin-top: 4px; margin-bottom: 8px;">${a.title}</h3>
-            <p style="font-size: 0.875rem; color: var(--c-text-muted);">${a.description}</p>
+      <div class="circular-gallery-card" data-album-index="${idx}" role="button" tabindex="0" aria-label="View photo album: ${a.title}">
+        <!-- Circular Photo Frame with Gold Ring -->
+        <div class="circular-photo-wrapper">
+          <img src="${a.cover_image}" alt="${a.title}" class="circular-photo-img" loading="lazy">
+          <div class="circular-photo-overlay">
+            <div class="circular-zoom-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg>
+            </div>
           </div>
         </div>
+
+        <!-- Details below circular photo -->
+        <h3 class="circular-card-title">${a.title}</h3>
+        <span class="circular-card-subtitle">${a.category}</span>
+        <span class="circular-badge-pill">
+          ${a.type === 'video' ? '▶ Video Highlight' : '📷 ' + a.count_or_duration}
+        </span>
       </div>
     `).join('');
 

@@ -80,10 +80,10 @@
   <main>
     <section class="section section--navy" style="padding-top: 56px; padding-bottom: 56px;">
       <div class="container">
-        <span class="section-eyebrow">Visual Archives</span>
-        <h1 class="section-title" style="color: #fff;">Media &amp; Match Highlights</h1>
-        <p class="section-desc" style="color: var(--c-text-inverse-muted); max-width: 650px;">
-          Explore photo galleries, matchday albums, youth clinic sessions, and video highlights from our 2024–2026 seasons.
+        <span class="section-eyebrow">Matchday Visual Archives</span>
+        <h1 class="section-title">MOMENTS THAT ROAR</h1>
+        <p class="section-desc" style="max-width: 650px;">
+          Explore official circular matchday photo albums, victory celebrations, player masterclasses, and championship moments.
         </p>
       </div>
     </section>
@@ -91,31 +91,31 @@
     <section class="section">
       <div class="container">
         <!-- Filter Controls -->
-        <div class="filter-group" style="justify-content: space-between;">
+        <div class="filter-group" style="justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px;">
           <div style="display: flex; gap: 12px; align-items: center; flex-wrap: wrap;">
-            <label for="gallery-year-filter" style="font-size: 0.875rem; font-weight: 700; color: var(--c-navy);">Year:</label>
-            <select id="gallery-year-filter" class="form-select" style="width: auto; padding: 6px 16px;">
+            <label for="gallery-year-filter" style="font-size: 0.875rem; font-weight: 700; color: #080E18;">Year:</label>
+            <select id="gallery-year-filter" class="form-select" style="width: auto; padding: 8px 18px; color: #080E18; background: #FFFFFF; border: 1.5px solid #CBD5E1;">
               <option value="all">All Years</option>
               <option value="2026">2026 Season</option>
               <option value="2025">2025 Season</option>
               <option value="2024">2024 Season</option>
             </select>
 
-            <label for="gallery-type-filter" style="font-size: 0.875rem; font-weight: 700; color: var(--c-navy); margin-left: 12px;">Type:</label>
-            <select id="gallery-type-filter" class="form-select" style="width: auto; padding: 6px 16px;">
+            <label for="gallery-type-filter" style="font-size: 0.875rem; font-weight: 700; color: #080E18; margin-left: 12px;">Type:</label>
+            <select id="gallery-type-filter" class="form-select" style="width: auto; padding: 8px 18px; color: #080E18; background: #FFFFFF; border: 1.5px solid #CBD5E1;">
               <option value="all">All Media</option>
               <option value="photo">Photos Only</option>
               <option value="video">Videos Only</option>
             </select>
           </div>
 
-          <div style="font-size: 0.8125rem; color: var(--c-text-muted);">
-            Tip: Click any album to open lightbox (supports <kbd>←</kbd> <kbd>→</kbd> and <kbd>Esc</kbd>)
+          <div style="font-size: 0.8125rem; color: #5A6A7E; font-weight: 600;">
+            Tip: Click any circular album to open high-res lightbox (<kbd>←</kbd> <kbd>→</kbd> and <kbd>Esc</kbd>)
           </div>
         </div>
 
-        <!-- Gallery Grid -->
-        <div id="gallery-grid" class="grid">
+        <!-- Circular Gallery Grid -->
+        <div id="gallery-grid" class="circular-gallery-grid">
           <!-- Populated by js/gallery.js -->
         </div>
 

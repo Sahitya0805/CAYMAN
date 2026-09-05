@@ -3,26 +3,26 @@
     "id": "gal-01",
     "year": "2026",
     "type": "photo",
-    "title": "Derby Victory Celebrations at Jimmy Powell Oval",
-    "category": "Matches",
+    "title": "1ST MATCH - CSK VS GTT",
+    "category": "CICA T20 SUPER LEAGUE 2026",
     "count_or_duration": "12 Photos",
-    "cover_image": "assets/placeholders/action-match.svg",
+    "cover_image": "assets/slider-stadium-night.jpg",
     "date": "August 30, 2026",
-    "description": "The team hoisting the Derby trophy following the 36-run win against George Town Tigers.",
+    "description": "The team hoisting the Derby trophy following the 36-run victory against George Town Tigers under the lights.",
     "items": [
       {
-        "src": "assets/placeholders/action-match.svg",
+        "src": "assets/slider-stadium-night.jpg",
         "alt": "Captain Rajesh Sharma lifting the match trophy",
         "caption": "Captain Rajesh Sharma accepts the Derby Match Trophy"
       },
       {
-        "src": "assets/placeholders/hero-team.svg",
-        "alt": "Full team huddle celebration",
-        "caption": "CSK team celebrations at the boundary"
+        "src": "assets/csk-hero.png",
+        "alt": "Full team celebration",
+        "caption": "CSK squad celebrations on the outfield"
       },
       {
-        "src": "assets/placeholders/action-match.svg",
-        "alt": "Marcus Sterling hitting through midwicket",
+        "src": "assets/csk-action.png",
+        "alt": "Marcus Sterling match action",
         "caption": "Marcus Sterling in full flow on his way to 104"
       }
     ]
@@ -31,20 +31,20 @@
     "id": "gal-02",
     "year": "2026",
     "type": "photo",
-    "title": "40-Over Cup Semi-Final vs Seven Mile Strikers",
-    "category": "Matches",
+    "title": "6TH MATCH - CSK VS SMS",
+    "category": "CICA T20 SUPER LEAGUE 2026",
     "count_or_duration": "18 Photos",
-    "cover_image": "assets/placeholders/action-match.svg",
+    "cover_image": "assets/slider-stadium-sunset.jpg",
     "date": "August 23, 2026",
     "description": "Highlights from the high-scoring 40-over fixture at Smith Road Oval.",
     "items": [
       {
-        "src": "assets/placeholders/action-match.svg",
+        "src": "assets/slider-stadium-sunset.jpg",
         "alt": "Rohan Barrett delivery stride",
         "caption": "Rohan Barrett bowling at 85mph+ at Smith Road"
       },
       {
-        "src": "assets/placeholders/action-match.svg",
+        "src": "assets/csk-action.png",
         "alt": "Karan Patel diving stumping",
         "caption": "Karan Patel completing a sharp legside stumping"
       }
@@ -54,16 +54,16 @@
     "id": "gal-03",
     "year": "2026",
     "type": "video",
-    "title": "Marcus Sterling 104 Highlights vs Strikers",
-    "category": "Highlights",
+    "title": "10TH MATCH - CSK VS WBW",
+    "category": "CICA T20 SUPER LEAGUE 2026",
     "count_or_duration": "03:45",
-    "cover_image": "assets/placeholders/action-match.svg",
+    "cover_image": "assets/csk-action.png",
     "date": "August 24, 2026",
-    "description": "All 11 boundaries and 3 massive sixes from Marcus Sterlings masterclass.",
+    "description": "All 11 boundaries and 3 massive sixes from Marcus Sterling's masterclass.",
     "items": [
       {
-        "src": "assets/placeholders/action-match.svg",
-        "alt": "Video thumbnail - Sterling century",
+        "src": "assets/csk-action.png",
+        "alt": "Sterling century highlights",
         "caption": "Video Highlight: Sterling reaches triple figures in 92 balls"
       }
     ]
@@ -72,20 +72,20 @@
     "id": "gal-04",
     "year": "2026",
     "type": "photo",
-    "title": "Youth Academy Weekend Skills Camp",
-    "category": "Youth",
+    "title": "17TH MATCH - CSK VS BTCC",
+    "category": "CICA T20 SUPER LEAGUE 2026",
     "count_or_duration": "24 Photos",
-    "cover_image": "assets/placeholders/youth-training.svg",
+    "cover_image": "assets/csk-academy.png",
     "date": "July 18, 2026",
     "description": "Young cricketers aged 12-18 participating in fielding and batting masterclasses with senior CSK players.",
     "items": [
       {
-        "src": "assets/placeholders/youth-training.svg",
+        "src": "assets/csk-academy.png",
         "alt": "Youth coaching drill session",
         "caption": "Youth academy batting drills with head coaches"
       },
       {
-        "src": "assets/placeholders/youth-training.svg",
+        "src": "assets/csk-action.png",
         "alt": "Group fielding exercise",
         "caption": "Fielding drills emphasizing agility and catching technique"
       }
@@ -95,53 +95,45 @@
     "id": "gal-05",
     "year": "2025",
     "type": "photo",
-    "title": "CICA T20 Championship Trophy Ceremony",
-    "category": "Honours",
+    "title": "21ST MATCH - CSK VS PCC",
+    "category": "CICA T20 SUPER LEAGUE 2025",
     "count_or_duration": "15 Photos",
-    "cover_image": "assets/placeholders/hero-team.svg",
-    "date": "September 14, 2025",
-    "description": "Memories from our historic championship title win at the National Stadium grounds.",
+    "cover_image": "assets/slider-cricket-ball-bat.jpg",
+    "date": "December 14, 2025",
+    "description": "Official awards ceremony and championship trophy presentation at Jimmy Powell Oval pavilion.",
     "items": [
       {
-        "src": "assets/placeholders/hero-team.svg",
-        "alt": "2025 Championship team photo",
-        "caption": "Cayman Super Kings crowned 2025 CICA Champions"
+        "src": "assets/slider-cricket-ball-bat.jpg",
+        "alt": "CICA Championship Trophy",
+        "caption": "CSK squad hoisting the 2025 CICA T20 Trophy"
+      },
+      {
+        "src": "assets/csk-hero.png",
+        "alt": "Medal presentation",
+        "caption": "Gold medal presentation to squad members"
       }
     ]
   },
   {
     "id": "gal-06",
     "year": "2025",
-    "type": "video",
-    "title": "Rohan Barrett 5-Wicket Haul Final Over Thrills",
-    "category": "Highlights",
-    "count_or_duration": "04:12",
-    "cover_image": "assets/placeholders/action-match.svg",
-    "date": "August 28, 2025",
-    "description": "Relive the blistering fast bowling spell that sealed our postseason spot.",
-    "items": [
-      {
-        "src": "assets/placeholders/action-match.svg",
-        "alt": "Barrett bowling highlights",
-        "caption": "Fast bowling spell breakdown"
-      }
-    ]
-  },
-  {
-    "id": "gal-07",
-    "year": "2024",
     "type": "photo",
-    "title": "Club Inaugural Gala & Jersey Launch",
-    "category": "Club Life",
-    "count_or_duration": "30 Photos",
-    "cover_image": "assets/placeholders/hero-team.svg",
-    "date": "April 12, 2024",
-    "description": "Unveiling the Navy, Gold and Flame kit with club founders, sponsors, and supporters.",
+    "title": "27TH MATCH - CSK VS NSXI",
+    "category": "CICA T20 SUPER LEAGUE 2025",
+    "count_or_duration": "20 Photos",
+    "cover_image": "assets/csk-hero.png",
+    "date": "November 08, 2025",
+    "description": "Intensive fitness drills, bowling speed tracking, and net sessions ahead of the championship season.",
     "items": [
       {
-        "src": "assets/placeholders/hero-team.svg",
-        "alt": "Official 2024 Jersey Launch",
-        "caption": "Official club launch night in Grand Cayman"
+        "src": "assets/csk-hero.png",
+        "alt": "Strength and conditioning session",
+        "caption": "Strength and conditioning drills at Truman Bodden Track"
+      },
+      {
+        "src": "assets/slider-stadium-night.jpg",
+        "alt": "Night net bowling practice",
+        "caption": "Fast bowling drills under floodlights"
       }
     ]
   }
