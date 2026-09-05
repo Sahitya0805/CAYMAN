@@ -84,6 +84,40 @@
 
 /* ───────────────────────────────────────────────────────────── */
 
+/* ── SHARED NAV + BEIGE PAGE SYSTEM ── */
+body:not(.editorial-home) {
+  background: #eee8dc;
+  color: #17213c;
+  position: relative;
+}
+body:not(.editorial-home)::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  opacity: .46;
+  background:
+    radial-gradient(ellipse 70% 24% at 12% 12%, transparent 58%, rgba(16,28,63,.09) 59%, transparent 60%),
+    radial-gradient(ellipse 70% 24% at 88% 31%, transparent 58%, rgba(245,158,27,.13) 59%, transparent 60%),
+    radial-gradient(ellipse 80% 28% at 22% 61%, transparent 58%, rgba(16,28,63,.07) 59%, transparent 60%),
+    repeating-linear-gradient(118deg, rgba(255,255,255,.16) 0 2px, transparent 2px 13px);
+  background-size: 900px 520px, 1100px 620px, 1000px 680px, 100% 100%;
+  mix-blend-mode: multiply;
+}
+body:not(.editorial-home) .site-header { background: #090f15; }
+body:not(.editorial-home) .announcement-bar { background: #f8d999; color: #10141d; border-bottom-color: rgba(16,28,63,.16); }
+body:not(.editorial-home) .announcement-link { color: #10141d; }
+body:not(.editorial-home) .announcement-tag { background: transparent; color: #10141d; }
+body:not(.editorial-home) main { background: transparent; }
+body:not(.editorial-home) .page-hero { background: linear-gradient(135deg, #101c3f 0%, #182855 72%, #263b67 100%); position: relative; overflow: hidden; }
+body:not(.editorial-home) .page-hero::after { content: ''; position: absolute; inset: 0; pointer-events: none; opacity: .3; background: repeating-radial-gradient(ellipse at 80% 20%, transparent 0 42px, rgba(248,217,153,.32) 43px 45px, transparent 46px 86px); }
+body:not(.editorial-home) .page-hero > * { position: relative; z-index: 1; }
+body:not(.editorial-home) .section:not(.section--navy), body:not(.editorial-home) .content-section { background-color: rgba(238,232,220,.78); }
+body:not(.editorial-home) .section--navy, body:not(.editorial-home) .section--dark { background-color: #101c3f; }
+body:not(.editorial-home) .card:not(.card--navy):not(.card--dark) { background: rgba(255,255,255,.92); border-color: rgba(16,28,63,.12); box-shadow: 0 10px 26px rgba(16,28,63,.09); }
+body:not(.editorial-home) .site-footer { background: #090f15; }
+
 /* ── 1. HOME PAGE ── */
 .home-hero {
   background: linear-gradient(180deg, var(--c-navy) 0%, var(--c-navy-dark) 100%);
