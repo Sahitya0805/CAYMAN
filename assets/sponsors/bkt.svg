@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 80" width="200" height="80">
+  <rect x="15" y="10" width="170" height="60" rx="8" fill="#138808"/>
+  <text x="100" y="47" font-family="'Arial Black', Impact, sans-serif" font-weight="900" font-style="italic" font-size="34" fill="#FFFFFF" text-anchor="middle" letter-spacing="2px">BKT</text>
+  <rect x="25" y="52" width="150" height="12" fill="#FFFFFF" rx="2"/>
+  <text x="100" y="62" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-weight="900" font-size="11" fill="#138808" text-anchor="middle" letter-spacing="4px">TYRES</text>
+</svg>

@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 80" width="200" height="80">
+  <rect x="20" y="8" width="160" height="64" rx="6" fill="#163777"/>
+  <text x="100" y="46" font-family="Georgia, serif" font-weight="900" font-size="34" fill="#FFFFFF" text-anchor="middle" letter-spacing="1px">Kühl</text>
+  <text x="100" y="62" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-weight="700" font-size="10" fill="#E2E8F0" text-anchor="middle" letter-spacing="3px">BLDC FANS</text>
+</svg>

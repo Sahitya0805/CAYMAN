@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 100" width="320" height="100">
+  <g transform="translate(10, 8)">
+    <!-- Red Emblem -->
+    <path d="M 28 8 C 22 8 16 14 16 22 C 16 28 20 34 26 38 C 21 44 14 54 14 64 C 14 74 20 80 28 80 C 35 80 40 75 42 70 C 44 76 50 80 58 80 C 64 80 68 76 70 70 L 70 12 C 70 9 67 8 64 8 L 52 8 C 49 8 46 9 46 12 L 46 56 C 44 58 40 60 36 60 C 31 60 28 56 28 50 C 28 42 36 32 44 26 C 42 16 36 8 28 8 Z" fill="#E31E24"/>
+    <path d="M 18 68 C 12 73 6 78 2 80 C 1 80 0 81 2 82 C 6 84 14 84 22 78 C 25 76 26 73 26 70 C 24 69 20 68 18 68 Z" fill="#E31E24"/>
+    
+    <!-- Shree Cement Text -->
+    <text x="85" y="42" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-weight="900" font-size="40" fill="#111111" letter-spacing="-0.5px">Shree</text>
+    <text x="85" y="80" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-weight="900" font-size="40" fill="#111111" letter-spacing="-0.5px">Cement</text>
+  </g>
+</svg>

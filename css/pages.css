@@ -1054,3 +1054,148 @@ body.page--white-theme .contact-form-panel .form-textarea {
     font-size: 2rem;
   }
 }
+
+/* ─────────────────────────────────────────────────────────────
+   OUR SPONSORS BOARD (Exact Tiered Showcase Design)
+   ───────────────────────────────────────────────────────────── */
+.sponsors-board-section {
+  background: #F4F3F0 url('../assets/cricket-white-bg.png') center top / cover fixed no-repeat;
+  color: #080E18;
+  padding: 56px 0 72px;
+  position: relative;
+}
+
+.sponsors-board-section::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(244, 243, 240, 0.76);
+  pointer-events: none;
+}
+
+.sponsors-board-section .container {
+  position: relative;
+  z-index: 1;
+  max-width: 1120px;
+}
+
+.sponsors-board-title {
+  text-align: center;
+  font-family: var(--font-display);
+  font-size: clamp(2.5rem, 6vw, 4.4rem);
+  font-weight: 900;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: #080E18;
+  margin: 0 auto 36px;
+  line-height: 1;
+}
+
+.sponsors-divider {
+  width: 100%;
+  height: 1.5px;
+  background-color: #D6D9DE;
+  border: none;
+  margin: 0;
+}
+
+.sponsors-row {
+  border-bottom: 1.5px solid #D6D9DE;
+  padding: 44px 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.sponsors-row--title {
+  padding: 52px 16px;
+}
+
+.sponsors-row-grid-2 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 48px;
+  max-width: 820px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.sponsors-row-grid-4 {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 32px;
+  width: 100%;
+}
+
+.sponsor-unit {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  text-decoration: none;
+}
+
+.sponsor-unit__label {
+  font-family: var(--font-body);
+  font-size: 0.725rem;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #556270;
+  margin-bottom: 18px;
+}
+
+.sponsor-unit__logo-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 80px;
+  transition: transform 0.25s ease, filter 0.25s ease;
+}
+
+.sponsor-unit:hover .sponsor-unit__logo-wrapper {
+  transform: translateY(-3px) scale(1.03);
+}
+
+.sponsor-unit__img {
+  max-width: 100%;
+  height: auto;
+  object-fit: contain;
+  filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.04));
+}
+
+.sponsor-unit--title .sponsor-unit__img {
+  max-width: 360px;
+  max-height: 115px;
+}
+
+.sponsor-unit--principal .sponsor-unit__img {
+  max-width: 230px;
+  max-height: 85px;
+}
+
+.sponsor-unit--official .sponsor-unit__img {
+  max-width: 180px;
+  max-height: 75px;
+}
+
+@media (max-width: 860px) {
+  .sponsors-row-grid-2 {
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
+  .sponsors-row-grid-4 {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 36px;
+  }
+}
+
+@media (max-width: 520px) {
+  .sponsors-row-grid-4 {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+}
+
