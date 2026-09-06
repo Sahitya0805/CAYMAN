@@ -638,7 +638,7 @@
 }
 
 .csk-splash-screen__bar {
-  width: 100%;
+  width: 0%;
   height: 100%;
   border-radius: 1px;
   background: repeating-linear-gradient(
@@ -650,7 +650,7 @@
   );
   background-size: 16px 100%;
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.4);
-  animation: splashStripesMove 0.65s linear infinite, splashFill 1.8s cubic-bezier(0.3, 0, 0.2, 1) infinite;
+  animation: splashStripesMove 0.65s linear infinite, splashFillOneGo 0.85s cubic-bezier(0.22, 1, 0.36, 1) forwards;
 }
 
 @keyframes splashPulse {
@@ -673,14 +673,17 @@
   }
 }
 
-@keyframes splashFill {
+@keyframes splashFillOneGo {
   0% {
     width: 0%;
   }
-  50% {
-    width: 75%;
+  35% {
+    width: 50%;
   }
-  90%, 100% {
+  75% {
+    width: 88%;
+  }
+  100% {
     width: 100%;
   }
 }

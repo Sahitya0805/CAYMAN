@@ -2,7 +2,7 @@
  * ─────────────────────────────────────────────────────────────
  * CSK SPLASH & PAGE TRANSITION LOADER
  * Displays branded full-screen splash animation on initial load
- * and during inter-page navigation transitions.
+ * and dismisses smoothly in 1 clean go.
  * ─────────────────────────────────────────────────────────────
  */
 
@@ -32,21 +32,21 @@ export function initSplashLoader() {
     document.body.prepend(splash);
   }
 
-  // Handle initial page load dismissal
+  // Handle initial page load dismissal in 1 clean go
   const hideSplash = () => {
     setTimeout(() => {
       splash.classList.add('is-hidden');
       splash.classList.remove('is-active');
       splash.setAttribute('aria-hidden', 'true');
-    }, 750);
+    }, 850);
   };
 
   if (document.readyState === 'complete') {
     hideSplash();
   } else {
-    window.addEventListener('load', hideSplash);
+    window.addEventListener('load', hideSplash, { once: true });
     // Fallback safety timeout
-    setTimeout(hideSplash, 1200);
+    setTimeout(hideSplash, 1100);
   }
 
   // Handle browser back/forward history cache (pageshow)
@@ -57,55 +57,5 @@ export function initSplashLoader() {
       splash.setAttribute('aria-hidden', 'true');
     }
   });
-
-  // Intercept internal navigation clicks (Navbar, CTAs, page links)
-  document.addEventListener('click', (e) => {
-    const link = e.target.closest('a');
-    if (!link) return;
-
-    const href = link.getAttribute('href');
-    if (!href) return;
-
-    // Ignore in-page hash anchors, protocols, download, new tabs
-    if (
-      href.startsWith('#') ||
-      href.startsWith('mailto:') ||
-      href.startsWith('tel:') ||
-      href.startsWith('javascript:') ||
-      link.getAttribute('target') === '_blank' ||
-      link.hasAttribute('download')
-    ) {
-      return;
-    }
-
-    // Check external urls
-    if (href.startsWith('http://') || href.startsWith('https://')) {
-      try {
-        const url = new URL(href, window.location.origin);
-        if (url.origin !== window.location.origin) return;
-      } catch (err) {
-        return;
-      }
-    }
-
-    // Check current page comparison
-    const currentPath = window.location.pathname.split('/').pop() || 'index.html';
-    const targetClean = href.split('?')[0].split('#')[0].split('/').pop() || 'index.html';
-
-    // If clicking same page anchor without changing page
-    if (currentPath === targetClean && (href.includes('#') || href === currentPath)) {
-      return;
-    }
-
-    // Trigger splash transition
-    e.preventDefault();
-    splash.classList.remove('is-hidden');
-    splash.classList.add('is-active');
-    splash.setAttribute('aria-hidden', 'false');
-
-    // Smooth navigation delay
-    setTimeout(() => {
-      window.location.href = href;
-    }, 480);
-  });
 }
+
