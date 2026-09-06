@@ -5,10 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Cayman Super Kings | One Team. One Dream.</title>
   <meta name="description" content="The official Cayman Super Kings cricket club: fixtures, squad, news, community and matchday stories from Grand Cayman.">
-  <link rel="stylesheet" href="css/tokens.css?v=20260906_4">
-  <link rel="stylesheet" href="css/layout.css?v=20260906_4">
-  <link rel="stylesheet" href="css/components.css?v=20260906_4">
-  <link rel="stylesheet" href="css/pages.css?v=20260906_4">
+  <link rel="stylesheet" href="css/tokens.css?v=20260906_12">
+  <link rel="stylesheet" href="css/layout.css?v=20260906_12">
+  <link rel="stylesheet" href="css/components.css?v=20260906_12">
+  <link rel="stylesheet" href="css/pages.css?v=20260906_12">
   <style>
     .sponsors-board-section {
       padding-top: 100px !important;
@@ -271,12 +271,9 @@
         <!-- Bat Handle (Right Extension) -->
         <div class="bat-handle" aria-hidden="true"></div>
 
-        <!-- Bat Pommel / Circular User Profile Button (Far Right) -->
-        <a href="join.html" class="bat-pommel-btn site-header__user-pill" aria-label="Join CSK / Fan Portal" title="Join CSK">
-          <svg class="user-pill__icon" viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
-            <circle cx="12" cy="7" r="4"></circle>
-          </svg>
+        <!-- Bat Pommel / Official Cayman Super Kings Crest (Far Right) -->
+        <a href="join.html" class="bat-pommel-btn site-header__user-pill" aria-label="Join CSK / Fan Portal" title="Cayman Super Kings">
+          <img src="assets/csk-official-logo.png" alt="Cayman Super Kings Crest" class="pommel-logo-img">
         </a>
       </div>
     </div>
@@ -300,23 +297,66 @@
       </div>
     </section>
 
-    <!-- NEXT MATCH STRIP -->
+    <!-- NEXT MATCH STRIP (Dynamic Visual Match Strip) -->
     <section class="match-strip-section editorial-match">
       <div class="container">
-        <div class="match-strip-card">
-          <div class="strip-col">
-            <span class="section-eyebrow">NEXT MATCH</span>
-            <h3>Cayman Super Kings <small>vs</small> Greenies Too</h3>
-            <p>20 September 2026 · 18:00 EST</p>
+        <div class="match-strip-card match-strip-hero">
+          
+          <!-- Match Teams & Crests -->
+          <div class="strip-col strip-col--teams">
+            <div class="strip-eyebrow-row">
+              <span class="strip-live-dot"></span>
+              <span class="section-eyebrow">NEXT MATCH</span>
+              <span class="strip-league-tag">CICA T20 SUPER LEAGUE 2026</span>
+            </div>
+            
+            <div class="strip-matchup-row">
+              <div class="strip-team-item">
+                <div class="strip-team-crest-wrap">
+                  <img src="assets/csk-official-logo.png" alt="Cayman Super Kings" class="strip-team-crest">
+                </div>
+                <span class="strip-team-name">Cayman Super Kings</span>
+              </div>
+              
+              <div class="strip-vs-badge">
+                <span>VS</span>
+              </div>
+
+              <div class="strip-team-item">
+                <div class="strip-team-crest-wrap">
+                  <img src="assets/teams/wbw.svg" alt="Greenies Too" class="strip-team-crest">
+                </div>
+                <span class="strip-team-name">Greenies Too</span>
+              </div>
+            </div>
+
+            <p class="strip-date-text">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="18" height="18" x="3" y="4" rx="2" ry="2"/><line x1="16" x2="16" y1="2" y2="6"/><line x1="8" x2="8" y1="2" y2="6"/><line x1="3" x2="21" y1="10" y2="10"/></svg>
+              <span>20 September 2026 · 18:00 EST</span>
+            </p>
           </div>
+
+          <!-- Match Details Center -->
           <div class="strip-col strip-col--middle">
-            <span class="badge badge--gold">Matchday 08</span>
-            <strong>18:00</strong>
-            <span>Jimmy Powell Oval</span>
+            <span class="badge badge--gold strip-pill-gold">MATCHDAY 08</span>
+            <div class="strip-time-display">
+              <strong>18:00</strong>
+              <span class="strip-time-zone">EST</span>
+            </div>
+            <div class="strip-venue-display">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#FAB81E" stroke-width="2.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+              <span>Jimmy Powell Oval</span>
+            </div>
           </div>
+
+          <!-- Action Button -->
           <div class="strip-col strip-col--action">
-            <a href="matches.html" class="btn btn-outline-navy btn-sm">Match Center ↗</a>
+            <a href="matches.html" class="btn btn-primary strip-action-btn">
+              <span>MATCH CENTER</span>
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
+            </a>
           </div>
+
         </div>
       </div>
     </section>
