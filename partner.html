@@ -7,211 +7,172 @@
   <meta name="description" content="Sponsorship opportunities and brand partnerships with Cayman Super Kings Cricket Club. Reach local Cayman audiences and support grassroots youth athletics.">
   <link rel="icon" type="image/png" href="assets/csk-official-logo.png">
   
-  <link rel="stylesheet" href="css/tokens.css?v=20260906_4">
-  <link rel="stylesheet" href="css/layout.css?v=20260906_4">
-  <link rel="stylesheet" href="css/components.css?v=20260906_4">
-  <link rel="stylesheet" href="css/pages.css?v=20260906_4">
+  <link rel="stylesheet" href="css/tokens.css?v=20260906_12">
+  <link rel="stylesheet" href="css/layout.css?v=20260906_12">
+  <link rel="stylesheet" href="css/components.css?v=20260906_12">
+  <link rel="stylesheet" href="css/pages.css?v=20260906_12">
   <style>
-    .sponsors-board-section {
-      padding-top: 100px !important;
-      padding-bottom: 80px !important;
-      background: #FFFFFF;
-    }
-    .sponsors-board-section .container {
+    /* ── Short & Attractive Sponsors Showcase ── */
+    .sponsors-compact-section {
+      padding: 64px 0 72px !important;
+      background: #FFFFFF !important;
       position: relative;
-      z-index: 1;
-      max-width: 1360px !important;
-      width: 100% !important;
-      margin: 0 auto !important;
-      padding: 0 20px !important;
     }
-    .sponsors-board-title {
-      text-align: center;
+    .sponsors-compact-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      margin-bottom: 28px;
+      padding-bottom: 18px;
+      border-bottom: 2px solid rgba(8, 14, 24, 0.08);
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+    .sponsors-badge-row {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 4px;
+    }
+    .sponsors-gold-star {
+      color: #FAB81E;
+      font-size: 0.95rem;
+    }
+    .sponsors-compact-title {
       font-family: var(--font-display);
-      font-size: clamp(2.2rem, 5vw, 3.8rem);
+      font-size: clamp(2rem, 3.8vw, 2.8rem);
       font-weight: 900;
+      color: #080E18;
+      letter-spacing: 0.05em;
+      margin: 0;
+      line-height: 1.1;
+      text-transform: uppercase;
+    }
+    
+    /* Tier 1: Principal Partners Grid (3 Cards) */
+    .sponsors-principal-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      margin-bottom: 20px;
+    }
+    .sponsor-card {
+      text-decoration: none;
+      transition: all 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+    }
+    .sponsor-card--principal {
+      background: linear-gradient(180deg, #FFFFFF 0%, #FFFDF5 100%);
+      border: 2px solid #FAB81E;
+      border-radius: 14px;
+      padding: 18px 22px 24px;
+      text-align: center;
+      box-shadow: 0 8px 24px rgba(8, 14, 24, 0.06), 0 0 16px rgba(250, 184, 30, 0.15);
+    }
+    .sponsor-card--principal:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 14px 34px rgba(8, 14, 24, 0.14), 0 0 28px rgba(250, 184, 30, 0.4);
+      border-color: #F2600C;
+    }
+    .sponsor-card__tag {
+      font-family: var(--font-body);
+      font-size: 0.76rem;
+      font-weight: 800;
+      color: #B8430A;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+      background: rgba(242, 96, 12, 0.08);
+      padding: 3px 12px;
+      border-radius: 999px;
+    }
+    .sponsor-card__logo-wrap {
+      height: 64px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+    }
+    .sponsor-card--principal .sponsor-card__img {
+      max-height: 56px;
+      max-width: 160px;
+      object-fit: contain;
+      filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.05));
+      transition: transform 0.25s ease;
+    }
+    .sponsor-card--principal:hover .sponsor-card__img {
+      transform: scale(1.06);
+    }
+
+    /* Tier 2: Official Partners Grid (6 Cards) */
+    .sponsors-official-grid {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      gap: 14px;
+    }
+    .sponsor-card--official {
+      background: #F8FAFC;
+      border: 1.5px solid #E2E8F0;
+      border-radius: 12px;
+      padding: 12px 14px 14px;
+      text-align: center;
+    }
+    .sponsor-card--official:hover {
+      transform: translateY(-3px);
+      border-color: #FAB81E;
+      background: #FFFFFF;
+      box-shadow: 0 8px 22px rgba(8, 14, 24, 0.09), 0 0 14px rgba(250, 184, 30, 0.2);
+    }
+    .sponsor-card__subtag {
+      font-size: 0.64rem;
+      font-weight: 800;
+      color: #64748B;
       letter-spacing: 0.06em;
       text-transform: uppercase;
-      color: #080E18;
-      margin: 0 auto 40px;
-      line-height: 1;
+      margin-bottom: 6px;
+      display: block;
     }
-    .sponsors-pyramid-wrap {
-      position: relative !important;
-      width: 100% !important;
-      max-width: 1320px !important;
-      margin: 0 auto !important;
-      padding: 0 !important;
-      display: flex !important;
-      flex-direction: column !important;
-      min-height: 1040px !important;
+    .sponsor-card--official .sponsor-card__logo-wrap {
+      height: 46px;
     }
-    .sponsors-triangle-svg {
-      position: absolute !important;
-      top: 0 !important;
-      left: 0 !important;
-      width: 100% !important;
-      height: 100% !important;
-      pointer-events: none !important;
-      z-index: 0 !important;
+    .sponsor-card--official .sponsor-card__img {
+      max-height: 38px;
+      max-width: 110px;
+      object-fit: contain;
+      transition: transform 0.25s ease, filter 0.25s ease;
     }
-    .sponsors-row {
-      position: relative !important;
-      z-index: 1 !important;
-      display: flex !important;
-      flex-direction: column !important;
-      align-items: center !important;
-      justify-content: center !important;
-      border: none !important;
-      box-sizing: border-box !important;
-      padding: 10px 16px !important;
-    }
-    .sponsors-row--t1 {
-      height: 360px !important;
-      min-height: 360px !important;
-      padding-top: 120px !important;
-      justify-content: flex-end !important;
-      padding-bottom: 28px !important;
-    }
-    .sponsors-row--t2 {
-      height: 320px !important;
-      min-height: 320px !important;
-      justify-content: center !important;
-      padding-top: 15px !important;
-      padding-bottom: 15px !important;
-    }
-    .sponsors-row--t3 {
-      height: 360px !important;
-      min-height: 360px !important;
-      justify-content: center !important;
-      padding-top: 15px !important;
-      padding-bottom: 40px !important;
-    }
-    .sponsors-row-grid-1 {
-      display: flex !important;
-      justify-content: center !important;
-      align-items: center !important;
-      max-width: 320px !important;
-      width: 100% !important;
-      margin: 0 auto !important;
-    }
-    .sponsors-row-grid-2 {
-      display: grid !important;
-      grid-template-columns: repeat(2, 1fr) !important;
-      gap: 48px !important;
-      max-width: 640px !important;
-      width: 90% !important;
-      margin: 0 auto !important;
-    }
-    .sponsors-row-grid-3 {
-      display: grid !important;
-      grid-template-columns: repeat(3, 1fr) !important;
-      gap: 40px !important;
-      max-width: 980px !important;
-      width: 94% !important;
-      margin: 0 auto !important;
-    }
-    .sponsor-unit {
-      display: flex !important;
-      flex-direction: column !important;
-      align-items: center !important;
-      justify-content: center !important;
-      text-align: center !important;
-      text-decoration: none !important;
-      width: 100% !important;
-    }
-    .sponsor-unit__label {
-      font-family: var(--font-body) !important;
-      font-weight: 800 !important;
-      text-transform: uppercase !important;
-      color: #09152B !important;
-      white-space: normal !important;
-      text-align: center !important;
-      line-height: 1.25 !important;
-    }
-    .sponsors-row--t1 .sponsor-unit__label {
-      font-size: 1.15rem !important;
-      font-weight: 900 !important;
-      letter-spacing: 0.09em !important;
-      margin-bottom: 12px !important;
-    }
-    .sponsors-row--t2 .sponsor-unit__label {
-      font-size: 1.02rem !important;
-      font-weight: 800 !important;
-      letter-spacing: 0.08em !important;
-      margin-bottom: 10px !important;
-    }
-    .sponsors-row--t3 .sponsor-unit__label {
-      font-size: 0.98rem !important;
-      font-weight: 800 !important;
-      letter-spacing: 0.08em !important;
-      margin-bottom: 10px !important;
-    }
-    .sponsor-unit__logo-wrapper {
-      display: flex !important;
-      align-items: center !important;
-      justify-content: center !important;
-      min-height: 78px !important;
-      transition: transform 0.28s cubic-bezier(0.16, 1, 0.3, 1), filter 0.28s ease !important;
-    }
-    .sponsor-unit:hover .sponsor-unit__logo-wrapper {
-      transform: translateY(-4px) scale(1.08) !important;
-      filter: drop-shadow(0 8px 18px rgba(7, 31, 70, 0.22)) !important;
-    }
-    .sponsor-unit__img {
-      max-width: 100% !important;
-      height: auto !important;
-      object-fit: contain !important;
-      filter: drop-shadow(0 2px 5px rgba(0, 0, 0, 0.08)) !important;
-    }
-    .sponsors-row--t1 .sponsor-unit--principal .sponsor-unit__img {
-      max-width: 220px !important;
-      max-height: 85px !important;
-    }
-    .sponsors-row--t2 .sponsor-unit--principal .sponsor-unit__img,
-    .sponsors-row--t2 .sponsor-unit--official .sponsor-unit__img {
-      max-width: 195px !important;
-      max-height: 75px !important;
-    }
-    .sponsors-row--t3 .sponsor-unit--official .sponsor-unit__img {
-      max-width: 215px !important;
-      max-height: 75px !important;
+    .sponsor-card--official:hover .sponsor-card__img {
+      transform: scale(1.08);
     }
 
-    @media (max-width: 900px) {
-      .sponsors-board-section { padding-top: 80px !important; padding-bottom: 60px !important; }
-      .sponsors-pyramid-wrap { min-height: 840px !important; }
-      .sponsors-row--t1 { height: 280px !important; min-height: 280px !important; padding-top: 95px !important; padding-bottom: 18px !important; }
-      .sponsors-row--t2 { height: 260px !important; min-height: 260px !important; }
-      .sponsors-row--t3 { height: 300px !important; min-height: 300px !important; padding-bottom: 25px !important; }
-      .sponsors-row-grid-1 { max-width: 240px !important; }
-      .sponsors-row-grid-2 { max-width: 480px !important; gap: 28px !important; }
-      .sponsors-row-grid-3 { max-width: 720px !important; gap: 24px !important; }
-      .sponsors-row--t1 .sponsor-unit__label { font-size: 0.90rem !important; }
-      .sponsors-row--t2 .sponsor-unit__label { font-size: 0.82rem !important; }
-      .sponsors-row--t3 .sponsor-unit__label { font-size: 0.78rem !important; }
-      .sponsor-unit__logo-wrapper { min-height: 58px !important; }
-      .sponsors-row--t1 .sponsor-unit--principal .sponsor-unit__img { max-width: 160px !important; max-height: 60px !important; }
-      .sponsors-row--t2 .sponsor-unit__img { max-width: 145px !important; max-height: 54px !important; }
-      .sponsors-row--t3 .sponsor-unit__img { max-width: 155px !important; max-height: 56px !important; }
+    @media (max-width: 992px) {
+      .sponsors-principal-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 12px;
+      }
+      .sponsors-official-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 10px;
+      }
     }
 
-    @media (max-width: 600px) {
-      .sponsors-board-section { padding-top: 70px !important; padding-bottom: 50px !important; }
-      .sponsors-pyramid-wrap { min-height: 660px !important; }
-      .sponsors-row--t1 { height: 210px !important; min-height: 210px !important; padding-top: 70px !important; padding-bottom: 10px !important; }
-      .sponsors-row--t2 { height: 210px !important; min-height: 210px !important; }
-      .sponsors-row--t3 { height: 240px !important; min-height: 240px !important; padding-bottom: 15px !important; }
-      .sponsors-row-grid-1 { max-width: 170px !important; }
-      .sponsors-row-grid-2 { max-width: 300px !important; gap: 14px !important; }
-      .sponsors-row-grid-3 { max-width: 380px !important; gap: 10px !important; }
-      .sponsors-row--t1 .sponsor-unit__label { font-size: 0.65rem !important; letter-spacing: 0.03em !important; margin-bottom: 4px !important; }
-      .sponsors-row--t2 .sponsor-unit__label { font-size: 0.58rem !important; letter-spacing: 0.02em !important; margin-bottom: 3px !important; }
-      .sponsors-row--t3 .sponsor-unit__label { font-size: 0.55rem !important; letter-spacing: 0.02em !important; margin-bottom: 3px !important; }
-      .sponsor-unit__logo-wrapper { min-height: 40px !important; }
-      .sponsors-row--t1 .sponsor-unit--principal .sponsor-unit__img { max-width: 110px !important; max-height: 42px !important; }
-      .sponsors-row--t2 .sponsor-unit__img { max-width: 95px !important; max-height: 38px !important; }
-      .sponsors-row--t3 .sponsor-unit__img { max-width: 100px !important; max-height: 38px !important; }
+    @media (max-width: 680px) {
+      .sponsors-compact-header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .sponsors-principal-grid {
+        grid-template-columns: 1fr;
+        gap: 12px;
+      }
+      .sponsors-official-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 8px;
+      }
     }
   </style>
 </head>
@@ -288,147 +249,94 @@
   </header>
 
   <main>
-    <!-- ── OUR SPONSORS BOARD (Exact Reference Tiered Layout) ── -->
-    <section class="sponsors-board-section">
+    <!-- ── OUR SPONSORS BOARD (Short, Compact & Attractive Showcase) ── -->
+    <section class="sponsors-compact-section">
       <div class="container">
-        <h1 class="sponsors-board-title">OUR SPONSORS</h1>
         
-        <!-- ── SPONSORS PYRAMID WITH ORNATE 3-TIER DECORATIVE TRIANGLE OUTLINE ── -->
-        <div class="sponsors-pyramid-wrap">
-          <svg class="sponsors-triangle-svg" viewBox="0 0 1400 1000" preserveAspectRatio="none" aria-hidden="true">
-            <defs>
-              <linearGradient id="cskGoldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-                <stop offset="0%" stop-color="#FAB81E" />
-                <stop offset="50%" stop-color="#FFE082" />
-                <stop offset="100%" stop-color="#F2600C" />
-              </linearGradient>
-              <linearGradient id="cskNavyGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-                <stop offset="0%" stop-color="#081A38" />
-                <stop offset="50%" stop-color="#114B96" />
-                <stop offset="100%" stop-color="#081A38" />
-              </linearGradient>
-              <filter id="goldGlow" x="-20%" y="-20%" width="140%" height="140%">
-                <feGaussianBlur stdDeviation="6" result="blur" />
-                <feComposite in="SourceGraphic" in2="blur" operator="over" />
-              </filter>
-            </defs>
+        <!-- Header Row -->
+        <div class="sponsors-compact-header">
+          <div>
+            <div class="sponsors-badge-row">
+              <span class="sponsors-gold-star">★</span>
+              <span class="section-eyebrow" style="color: #B8430A; margin: 0;">OFFICIAL PARTNERSHIPS</span>
+              <span class="sponsors-gold-star">★</span>
+            </div>
+            <h1 class="sponsors-compact-title">OUR SPONSORS</h1>
+          </div>
+        </div>
 
-            <!-- Ambient Glow Perimeter Filter -->
-            <polygon points="700,20 1370,975 30,975" fill="rgba(250, 184, 30, 0.02)" stroke="rgba(250, 184, 30, 0.35)" stroke-width="8" stroke-linejoin="round" vector-effect="non-scaling-stroke" />
-
-            <!-- Main Structural Navy Polygon -->
-            <polygon points="700,20 1370,975 30,975" fill="none" stroke="#09152B" stroke-width="4.5" stroke-linejoin="round" vector-effect="non-scaling-stroke" />
-
-            <!-- Inset Golden Tech-Dashed Inner Accent Line -->
-            <polygon points="700,38 1350,960 50,960" fill="none" stroke="url(#cskGoldGrad)" stroke-width="2" stroke-linejoin="round" stroke-dasharray="24 10" opacity="0.9" vector-effect="non-scaling-stroke" />
-
-            <!-- Outer Thin Gold Framing Line -->
-            <polygon points="700,10 1385,985 15,985" fill="none" stroke="#FAB81E" stroke-width="1.5" stroke-linejoin="round" opacity="0.65" vector-effect="non-scaling-stroke" />
-
-            <!-- ── APEX CROWN & CHEVRON ORNAMENTS (Top Vertex) ── -->
-            <path d="M660,65 L700,18 L740,65 L725,65 L700,32 L675,65 Z" fill="url(#cskGoldGrad)" />
-            <polygon points="700,6 710,18 700,30 690,18" fill="#FAB81E" stroke="#09152B" stroke-width="2" />
-            <circle cx="700" cy="18" r="3" fill="#FFFFFF" />
-            <line x1="700" y1="0" x2="700" y2="6" stroke="#FAB81E" stroke-width="2" />
-
-            <!-- ── TIER 1 / TIER 2 HORIZONTAL DIVIDER (at y = 350) ── -->
-            <line x1="470" y1="350" x2="930" y2="350" stroke="#09152B" stroke-width="4" vector-effect="non-scaling-stroke" />
-            <line x1="485" y1="350" x2="915" y2="350" stroke="url(#cskGoldGrad)" stroke-width="2" vector-effect="non-scaling-stroke" />
-            <!-- Joint Diamond Brackets -->
-            <polygon points="470,350 480,342 490,350 480,358" fill="#FAB81E" stroke="#09152B" stroke-width="1.8" />
-            <polygon points="930,350 920,342 910,350 920,358" fill="#FAB81E" stroke="#09152B" stroke-width="1.8" />
-            <!-- Center Trophy Diamond Badge -->
-            <polygon points="700,340 710,350 700,360 690,350" fill="url(#cskGoldGrad)" stroke="#09152B" stroke-width="2" />
-            <circle cx="700" cy="350" r="2.5" fill="#FFFFFF" />
-
-            <!-- ── TIER 2 / TIER 3 HORIZONTAL DIVIDER (at y = 675) ── -->
-            <line x1="240" y1="675" x2="1160" y2="675" stroke="#09152B" stroke-width="4" vector-effect="non-scaling-stroke" />
-            <line x1="260" y1="675" x2="1140" y2="675" stroke="url(#cskGoldGrad)" stroke-width="2" vector-effect="non-scaling-stroke" />
-            <!-- Joint Diamond Brackets -->
-            <polygon points="240,675 250,667 260,675 250,683" fill="#FAB81E" stroke="#09152B" stroke-width="1.8" />
-            <polygon points="1160,675 1150,667 1140,675 1150,683" fill="#FAB81E" stroke="#09152B" stroke-width="1.8" />
-            <!-- Center Trophy Diamond Badge -->
-            <polygon points="700,665 710,675 700,685 690,675" fill="url(#cskGoldGrad)" stroke="#09152B" stroke-width="2" />
-            <circle cx="700" cy="675" r="2.5" fill="#FFFFFF" />
-
-            <!-- ── SLOPED EDGE CHEVRON TICKS ── -->
-            <!-- Left Side Ticks -->
-            <polyline points="576,170 588,180 576,190" fill="none" stroke="#FAB81E" stroke-width="2.5" stroke-linecap="round" />
-            <polyline points="343,502 355,512 343,522" fill="none" stroke="#FAB81E" stroke-width="2.5" stroke-linecap="round" />
-            <polyline points="123,815 135,825 123,835" fill="none" stroke="#FAB81E" stroke-width="2.5" stroke-linecap="round" />
-            <!-- Right Side Ticks -->
-            <polyline points="824,170 812,180 824,190" fill="none" stroke="#FAB81E" stroke-width="2.5" stroke-linecap="round" />
-            <polyline points="1057,502 1045,512 1057,522" fill="none" stroke="#FAB81E" stroke-width="2.5" stroke-linecap="round" />
-            <polyline points="1277,815 1265,825 1277,835" fill="none" stroke="#FAB81E" stroke-width="2.5" stroke-linecap="round" />
-
-            <!-- ── BOTTOM LEFT CORNER DECORATION ── -->
-            <path d="M16,915 L16,985 L85,985" fill="none" stroke="url(#cskGoldGrad)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
-            <polygon points="30,975 39,966 48,975 39,984" fill="#FAB81E" stroke="#09152B" stroke-width="1.8" />
-            <line x1="22" y1="945" x2="62" y2="985" stroke="#FAB81E" stroke-width="2" opacity="0.8" />
-
-            <!-- ── BOTTOM RIGHT CORNER DECORATION ── -->
-            <path d="M1384,915 L1384,985 L1315,985" fill="none" stroke="url(#cskGoldGrad)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
-            <polygon points="1370,975 1361,966 1352,975 1361,984" fill="#FAB81E" stroke="#09152B" stroke-width="1.8" />
-            <line x1="1378" y1="945" x2="1338" y2="985" stroke="#FAB81E" stroke-width="2" opacity="0.8" />
-          </svg>
-
-          <!-- TIER 1: 1 PRINCIPAL SPONSOR (Top Apex Section - Centered) -->
-          <div class="sponsors-row sponsors-row--t1">
-            <div class="sponsors-row-grid-1">
-              <div class="sponsor-unit sponsor-unit--principal">
-                <span class="sponsor-unit__label">PRINCIPAL SPONSOR</span>
-                <div class="sponsor-unit__logo-wrapper">
-                  <img src="assets/sponsors/kuhl.svg" alt="Kühl BLDC Fans" class="sponsor-unit__img">
-                </div>
-              </div>
+        <!-- Tier 1: Principal Partners (3 Featured Luxury Cards) -->
+        <div class="sponsors-principal-grid">
+          <!-- Card 1 -->
+          <div class="sponsor-card sponsor-card--principal">
+            <span class="sponsor-card__tag">TITLE PARTNER</span>
+            <div class="sponsor-card__logo-wrap">
+              <img src="assets/sponsors/kuhl.svg" alt="Kühl BLDC Fans" class="sponsor-card__img">
             </div>
           </div>
 
-          <!-- TIER 2: 2 OFFICIAL & PRINCIPAL PARTNERS (Middle Section) -->
-          <div class="sponsors-row sponsors-row--t2">
-            <div class="sponsors-row-grid-2">
-              <div class="sponsor-unit sponsor-unit--principal">
-                <span class="sponsor-unit__label">OFFICIAL TYRE PARTNER</span>
-                <div class="sponsor-unit__logo-wrapper">
-                  <img src="assets/sponsors/bkt.svg" alt="BKT Tyres" class="sponsor-unit__img">
-                </div>
-              </div>
-
-              <div class="sponsor-unit sponsor-unit--principal">
-                <span class="sponsor-unit__label">PRINCIPAL SPONSOR</span>
-                <div class="sponsor-unit__logo-wrapper">
-                  <img src="assets/sponsors/lubi.svg" alt="Lubi" class="sponsor-unit__img">
-                </div>
-              </div>
+          <!-- Card 2 -->
+          <div class="sponsor-card sponsor-card--principal">
+            <span class="sponsor-card__tag">OFFICIAL TYRE PARTNER</span>
+            <div class="sponsor-card__logo-wrap">
+              <img src="assets/sponsors/bkt.svg" alt="BKT Tyres" class="sponsor-card__img">
             </div>
           </div>
 
-          <!-- TIER 3: 3 OFFICIAL & REGIONAL PARTNERS (Bottom Section) -->
-          <div class="sponsors-row sponsors-row--t3">
-            <div class="sponsors-row-grid-3">
-              <div class="sponsor-unit sponsor-unit--official">
-                <span class="sponsor-unit__label">OFFICIAL TELECOM PARTNER</span>
-                <div class="sponsor-unit__logo-wrapper">
-                  <img src="assets/sponsors/jio.svg" alt="Jio" class="sponsor-unit__img">
-                </div>
-              </div>
-
-              <div class="sponsor-unit sponsor-unit--official">
-                <span class="sponsor-unit__label">OFFICIAL AIRLINE PARTNER</span>
-                <div class="sponsor-unit__logo-wrapper">
-                  <img src="assets/sponsors/airasia.svg" alt="AirAsia" class="sponsor-unit__img">
-                </div>
-              </div>
-
-              <div class="sponsor-unit sponsor-unit--official">
-                <span class="sponsor-unit__label">OFFICIAL BANKING PARTNER</span>
-                <div class="sponsor-unit__logo-wrapper">
-                  <img src="assets/sponsors/cayman-national.svg" alt="Cayman National Bank" class="sponsor-unit__img">
-                </div>
-              </div>
+          <!-- Card 3 -->
+          <div class="sponsor-card sponsor-card--principal">
+            <span class="sponsor-card__tag">PRINCIPAL SPONSOR</span>
+            <div class="sponsor-card__logo-wrap">
+              <img src="assets/sponsors/lubi.svg" alt="Lubi" class="sponsor-card__img">
             </div>
           </div>
         </div>
+
+        <!-- Tier 2: Official & Regional Partners (Clean Horizontal 6-Item Grid) -->
+        <div class="sponsors-official-grid">
+          <div class="sponsor-card sponsor-card--official" title="Official Telecom Partner">
+            <span class="sponsor-card__subtag">TELECOM</span>
+            <div class="sponsor-card__logo-wrap">
+              <img src="assets/sponsors/jio.svg" alt="Jio" class="sponsor-card__img">
+            </div>
+          </div>
+
+          <div class="sponsor-card sponsor-card--official" title="Official Airline Partner">
+            <span class="sponsor-card__subtag">AIRLINE</span>
+            <div class="sponsor-card__logo-wrap">
+              <img src="assets/sponsors/airasia.svg" alt="AirAsia" class="sponsor-card__img">
+            </div>
+          </div>
+
+          <div class="sponsor-card sponsor-card--official" title="Official Banking Partner">
+            <span class="sponsor-card__subtag">BANKING</span>
+            <div class="sponsor-card__logo-wrap">
+              <img src="assets/sponsors/cayman-national.svg" alt="Cayman National Bank" class="sponsor-card__img">
+            </div>
+          </div>
+
+          <div class="sponsor-card sponsor-card--official" title="Official Travel Partner">
+            <span class="sponsor-card__subtag">TRAVEL</span>
+            <div class="sponsor-card__logo-wrap">
+              <img src="assets/sponsors/cayman-airways.svg" alt="Cayman Airways" class="sponsor-card__img">
+            </div>
+          </div>
+
+          <div class="sponsor-card sponsor-card--official" title="Connectivity Partner">
+            <span class="sponsor-card__subtag">CONNECTIVITY</span>
+            <div class="sponsor-card__logo-wrap">
+              <img src="assets/sponsors/flow.svg" alt="Flow" class="sponsor-card__img">
+            </div>
+          </div>
+
+          <div class="sponsor-card sponsor-card--official" title="Infrastructure Partner">
+            <span class="sponsor-card__subtag">INFRASTRUCTURE</span>
+            <div class="sponsor-card__logo-wrap">
+              <img src="assets/sponsors/shree-cement.svg" alt="Shree Cement" class="sponsor-card__img">
+            </div>
+          </div>
+        </div>
+
       </div>
     </section>
 
