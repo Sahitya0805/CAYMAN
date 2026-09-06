@@ -161,7 +161,7 @@
       </div>
     </section>
 
-    <!-- SECTION 1: WHITE SECTION - SQUAD ROSTER -->
+    <!-- SECTION 1: WHITE SECTION - SQUAD ROSTER WITH INTERACTIVE HOVER STATS -->
     <section class="section section--white editorial-section">
       <div class="container">
         <div class="section-header">
@@ -172,42 +172,301 @@
           <a href="squad.html" class="text-link">View full squad ↗</a>
         </div>
         <div class="roster-grid">
-          <a href="player-detail.html?id=csk-01" class="roster-card">
-            <img src="assets/players/csk-01.svg" alt="Rajesh Sharma">
-            <span class="badge badge--gold">Captain</span>
-            <div>
-              <small>ALL-ROUNDER · #07</small>
-              <h3>Rajesh Sharma</h3>
-              <b>1640 runs <i>·</i> 54 wickets</b>
+          <!-- Card 1: Rajesh Sharma -->
+          <article class="squad-player-stage-card roster-stage-card" tabindex="0" aria-label="Rajesh Sharma - Captain & All-rounder">
+            <div class="squad-card-front">
+              <div class="squad-card-badge squad-card-badge--c" title="Team Captain">C</div>
+              <div class="squad-jersey-bg-num">07</div>
+              <div class="squad-player-figure-wrap">
+                <img src="assets/players/csk-01.svg" alt="Rajesh Sharma" class="squad-player-cutout-img" loading="lazy">
+              </div>
+              <div class="squad-card-bottom-strip">
+                <div class="squad-card-role-col">
+                  <span class="squad-card-num-small">07</span>
+                  <span class="squad-card-pos-text">ALL-ROUNDER</span>
+                </div>
+                <div class="squad-card-name-col">
+                  <h3 class="squad-card-player-name">Rajesh Sharma</h3>
+                </div>
+              </div>
             </div>
-          </a>
-          <a href="player-detail.html?id=csk-02" class="roster-card">
-            <img src="assets/players/csk-02.svg" alt="Marcus Sterling">
-            <span class="badge badge--teal">Vice Captain</span>
-            <div>
-              <small>BATTER · #18</small>
-              <h3>Marcus Sterling</h3>
-              <b>1420 runs <i>·</i> 152.6 SR</b>
+            <!-- Interactive Hover HUD -->
+            <div class="squad-card-hover-hud">
+              <div class="hud-top-meta">
+                <div class="hud-nationality-row">
+                  <span class="hud-flag">🇰🇾</span>
+                  <div class="hud-nat-text">
+                    <span class="hud-sub-label">NATIONALITY</span>
+                    <strong class="hud-nat-title">CAYMANIAN</strong>
+                  </div>
+                </div>
+                <div class="hud-position-pill">
+                  <span>POSITION: <strong>ALL-ROUNDER</strong></span>
+                </div>
+              </div>
+              <div class="hud-stats-grid">
+                <div class="hud-stat-cell">
+                  <span class="hud-stat-label">STRIKE RATE</span>
+                  <span class="hud-stat-val">148.2</span>
+                </div>
+                <div class="hud-stat-cell">
+                  <span class="hud-stat-label">MATCHES</span>
+                  <span class="hud-stat-val">48</span>
+                </div>
+                <div class="hud-stat-cell">
+                  <span class="hud-stat-label">RUNS</span>
+                  <span class="hud-stat-val">1640</span>
+                </div>
+                <div class="hud-stat-cell">
+                  <span class="hud-stat-label">WICKETS</span>
+                  <span class="hud-stat-val">54</span>
+                </div>
+                <div class="hud-stat-cell">
+                  <span class="hud-stat-label">BATTING AVG</span>
+                  <span class="hud-stat-val">42.05</span>
+                </div>
+                <div class="hud-stat-cell">
+                  <span class="hud-stat-label">BEST FIGURES</span>
+                  <span class="hud-stat-val">5/18</span>
+                </div>
+              </div>
+              <div class="hud-trait-pill">
+                <span class="hud-trait-icon">⚡</span>
+                <span>Tactical Mastermind & Death-Over Finisher</span>
+              </div>
+              <div class="hud-mini-cutout-wrap">
+                <img src="assets/players/csk-01.svg" alt="Rajesh Sharma" class="hud-mini-cutout-img" loading="lazy">
+              </div>
+              <div class="hud-bottom-cta">
+                <a href="player-detail.html?id=csk-01" class="hud-read-more-link">
+                  <span>Read More</span>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                </a>
+              </div>
             </div>
-          </a>
-          <a href="player-detail.html?id=csk-03" class="roster-card">
-            <img src="assets/players/csk-03.svg" alt="Arun Kumar">
-            <span class="badge badge--gold">Overseas</span>
-            <div>
-              <small>OPENER · #11</small>
-              <h3>Arun Kumar</h3>
-              <b>1180 runs <i>·</i> 149.8 SR</b>
+          </article>
+
+          <!-- Card 2: Marcus Sterling -->
+          <article class="squad-player-stage-card roster-stage-card" tabindex="0" aria-label="Marcus Sterling - Vice-Captain & Batter">
+            <div class="squad-card-front">
+              <div class="squad-card-badge squad-card-badge--vc" title="Vice-Captain">VC</div>
+              <div class="squad-jersey-bg-num">18</div>
+              <div class="squad-player-figure-wrap">
+                <img src="assets/players/csk-02.svg" alt="Marcus Sterling" class="squad-player-cutout-img" loading="lazy">
+              </div>
+              <div class="squad-card-bottom-strip">
+                <div class="squad-card-role-col">
+                  <span class="squad-card-num-small">18</span>
+                  <span class="squad-card-pos-text">BATTER</span>
+                </div>
+                <div class="squad-card-name-col">
+                  <h3 class="squad-card-player-name">Marcus Sterling</h3>
+                </div>
+              </div>
             </div>
-          </a>
-          <a href="player-detail.html?id=csk-11" class="roster-card">
-            <img src="assets/players/csk-11.svg" alt="Rohan Barrett">
-            <span class="badge badge--flame">Spearhead</span>
-            <div>
-              <small>FAST BOWLER · #09</small>
-              <h3>Rohan Barrett</h3>
-              <b>62 wkts <i>·</i> 5.85 Econ</b>
+            <!-- Interactive Hover HUD -->
+            <div class="squad-card-hover-hud">
+              <div class="hud-top-meta">
+                <div class="hud-nationality-row">
+                  <span class="hud-flag">🇰🇾</span>
+                  <div class="hud-nat-text">
+                    <span class="hud-sub-label">NATIONALITY</span>
+                    <strong class="hud-nat-title">CAYMANIAN</strong>
+                  </div>
+                </div>
+                <div class="hud-position-pill">
+                  <span>POSITION: <strong>BATTER</strong></span>
+                </div>
+              </div>
+              <div class="hud-stats-grid">
+                <div class="hud-stat-cell">
+                  <span class="hud-stat-label">STRIKE RATE</span>
+                  <span class="hud-stat-val">152.6</span>
+                </div>
+                <div class="hud-stat-cell">
+                  <span class="hud-stat-label">MATCHES</span>
+                  <span class="hud-stat-val">42</span>
+                </div>
+                <div class="hud-stat-cell">
+                  <span class="hud-stat-label">RUNS</span>
+                  <span class="hud-stat-val">1420</span>
+                </div>
+                <div class="hud-stat-cell">
+                  <span class="hud-stat-label">HIGH SCORE</span>
+                  <span class="hud-stat-val">104</span>
+                </div>
+                <div class="hud-stat-cell">
+                  <span class="hud-stat-label">BATTING AVG</span>
+                  <span class="hud-stat-val">38.37</span>
+                </div>
+                <div class="hud-stat-cell">
+                  <span class="hud-stat-label">50s / 100s</span>
+                  <span class="hud-stat-val">10 / 1</span>
+                </div>
+              </div>
+              <div class="hud-trait-pill">
+                <span class="hud-trait-icon">⚡</span>
+                <span>Fastest 50 in CICA (17 balls)</span>
+              </div>
+              <div class="hud-mini-cutout-wrap">
+                <img src="assets/players/csk-02.svg" alt="Marcus Sterling" class="hud-mini-cutout-img" loading="lazy">
+              </div>
+              <div class="hud-bottom-cta">
+                <a href="player-detail.html?id=csk-02" class="hud-read-more-link">
+                  <span>Read More</span>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                </a>
+              </div>
             </div>
-          </a>
+          </article>
+
+          <!-- Card 3: Arun Kumar -->
+          <article class="squad-player-stage-card roster-stage-card" tabindex="0" aria-label="Arun Kumar - Opening Batter">
+            <div class="squad-card-front">
+              <div class="squad-card-badge squad-card-badge--overseas" title="Overseas International Player">✈️</div>
+              <div class="squad-jersey-bg-num">11</div>
+              <div class="squad-player-figure-wrap">
+                <img src="assets/players/csk-03.svg" alt="Arun Kumar" class="squad-player-cutout-img" loading="lazy">
+              </div>
+              <div class="squad-card-bottom-strip">
+                <div class="squad-card-role-col">
+                  <span class="squad-card-num-small">11</span>
+                  <span class="squad-card-pos-text">BATTER</span>
+                </div>
+                <div class="squad-card-name-col">
+                  <h3 class="squad-card-player-name">Arun Kumar</h3>
+                </div>
+              </div>
+            </div>
+            <!-- Interactive Hover HUD -->
+            <div class="squad-card-hover-hud">
+              <div class="hud-top-meta">
+                <div class="hud-nationality-row">
+                  <span class="hud-flag">🇮🇳</span>
+                  <div class="hud-nat-text">
+                    <span class="hud-sub-label">NATIONALITY</span>
+                    <strong class="hud-nat-title">INDIAN</strong>
+                  </div>
+                </div>
+                <div class="hud-position-pill">
+                  <span>POSITION: <strong>OPENER</strong></span>
+                </div>
+              </div>
+              <div class="hud-stats-grid">
+                <div class="hud-stat-cell">
+                  <span class="hud-stat-label">STRIKE RATE</span>
+                  <span class="hud-stat-val">149.8</span>
+                </div>
+                <div class="hud-stat-cell">
+                  <span class="hud-stat-label">MATCHES</span>
+                  <span class="hud-stat-val">36</span>
+                </div>
+                <div class="hud-stat-cell">
+                  <span class="hud-stat-label">RUNS</span>
+                  <span class="hud-stat-val">1180</span>
+                </div>
+                <div class="hud-stat-cell">
+                  <span class="hud-stat-label">HIGH SCORE</span>
+                  <span class="hud-stat-val">88</span>
+                </div>
+                <div class="hud-stat-cell">
+                  <span class="hud-stat-label">BATTING AVG</span>
+                  <span class="hud-stat-val">34.70</span>
+                </div>
+                <div class="hud-stat-cell">
+                  <span class="hud-stat-label">50s / 100s</span>
+                  <span class="hud-stat-val">9 / 0</span>
+                </div>
+              </div>
+              <div class="hud-trait-pill">
+                <span class="hud-trait-icon">⚡</span>
+                <span>Powerplay Boundary Specialist</span>
+              </div>
+              <div class="hud-mini-cutout-wrap">
+                <img src="assets/players/csk-03.svg" alt="Arun Kumar" class="hud-mini-cutout-img" loading="lazy">
+              </div>
+              <div class="hud-bottom-cta">
+                <a href="player-detail.html?id=csk-03" class="hud-read-more-link">
+                  <span>Read More</span>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Card 4: Rohan Barrett -->
+          <article class="squad-player-stage-card roster-stage-card" tabindex="0" aria-label="Rohan Barrett - Strike Fast Bowler">
+            <div class="squad-card-front">
+              <div class="squad-card-badge squad-card-badge--c" title="Strike Spearhead" style="background: #F2600C;">⚡</div>
+              <div class="squad-jersey-bg-num">09</div>
+              <div class="squad-player-figure-wrap">
+                <img src="assets/players/csk-11.svg" alt="Rohan Barrett" class="squad-player-cutout-img" loading="lazy">
+              </div>
+              <div class="squad-card-bottom-strip">
+                <div class="squad-card-role-col">
+                  <span class="squad-card-num-small">09</span>
+                  <span class="squad-card-pos-text">BOWLER</span>
+                </div>
+                <div class="squad-card-name-col">
+                  <h3 class="squad-card-player-name">Rohan Barrett</h3>
+                </div>
+              </div>
+            </div>
+            <!-- Interactive Hover HUD -->
+            <div class="squad-card-hover-hud">
+              <div class="hud-top-meta">
+                <div class="hud-nationality-row">
+                  <span class="hud-flag">🇯🇲</span>
+                  <div class="hud-nat-text">
+                    <span class="hud-sub-label">NATIONALITY</span>
+                    <strong class="hud-nat-title">WEST INDIAN</strong>
+                  </div>
+                </div>
+                <div class="hud-position-pill">
+                  <span>POSITION: <strong>FAST BOWLER</strong></span>
+                </div>
+              </div>
+              <div class="hud-stats-grid">
+                <div class="hud-stat-cell">
+                  <span class="hud-stat-label">ECONOMY</span>
+                  <span class="hud-stat-val">5.85</span>
+                </div>
+                <div class="hud-stat-cell">
+                  <span class="hud-stat-label">MATCHES</span>
+                  <span class="hud-stat-val">40</span>
+                </div>
+                <div class="hud-stat-cell">
+                  <span class="hud-stat-label">WICKETS</span>
+                  <span class="hud-stat-val">62</span>
+                </div>
+                <div class="hud-stat-cell">
+                  <span class="hud-stat-label">BEST FIGURES</span>
+                  <span class="hud-stat-val">5/14</span>
+                </div>
+                <div class="hud-stat-cell">
+                  <span class="hud-stat-label">4W HAULS</span>
+                  <span class="hud-stat-val">4</span>
+                </div>
+                <div class="hud-stat-cell">
+                  <span class="hud-stat-label">BOWLING AVG</span>
+                  <span class="hud-stat-val">15.20</span>
+                </div>
+              </div>
+              <div class="hud-trait-pill">
+                <span class="hud-trait-icon">⚡</span>
+                <span>145+ km/h Express Yorker Specialist</span>
+              </div>
+              <div class="hud-mini-cutout-wrap">
+                <img src="assets/players/csk-11.svg" alt="Rohan Barrett" class="hud-mini-cutout-img" loading="lazy">
+              </div>
+              <div class="hud-bottom-cta">
+                <a href="player-detail.html?id=csk-11" class="hud-read-more-link">
+                  <span>Read More</span>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                </a>
+              </div>
+            </div>
+          </article>
         </div>
       </div>
     </section>
@@ -254,7 +513,91 @@
       </div>
     </section>
 
-    <!-- SECTION 3: WHITE SECTION - KINGS MEDIA VAULT -->
+    <!-- SECTION 3: SPOTLIGHT SOCIAL FEED (Exact Instagram Showcase) -->
+    <section class="section spotlight-section">
+      <div class="container">
+        <!-- Spotlight Header -->
+        <div class="spotlight-header">
+          <h2 class="spotlight-title">SPOTLIGHT</h2>
+          <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="spotlight-handle">
+            <svg class="spotlight-insta-icon" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+              <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+              <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+            </svg>
+            <span>caymansuperkings</span>
+          </a>
+        </div>
+
+        <!-- 4-Card Spotlight Grid -->
+        <div class="spotlight-grid">
+          <!-- Card 1 -->
+          <a href="gallery.html" class="spotlight-card">
+            <div class="spotlight-img-wrap">
+              <img src="assets/slider-cricket-ball-bat.jpg" alt="Matchday diving reflex" class="spotlight-img" loading="lazy">
+              <div class="spotlight-badge-top">
+                <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#FFFFFF" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+              </div>
+              <img src="assets/csk-official-logo.png" alt="CSK crest" class="spotlight-crest-top">
+            </div>
+            <p class="spotlight-caption">
+              His reflex story never changes 💛🧤
+              <span>[Play With Fire | CSK vs Bodden Town]</span>
+            </p>
+          </a>
+
+          <!-- Card 2 -->
+          <a href="gallery.html" class="spotlight-card">
+            <div class="spotlight-img-wrap">
+              <img src="assets/csk-action.png" alt="Marcus Sterling century celebration" class="spotlight-img" loading="lazy">
+              <div class="spotlight-badge-top">
+                <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#FFFFFF" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+              </div>
+              <img src="assets/csk-official-logo.png" alt="CSK crest" class="spotlight-crest-top">
+              <div class="spotlight-overlay-text">
+                <span>FIRST<br>OF<br>MANY</span>
+              </div>
+            </div>
+            <p class="spotlight-caption">
+              Youngest to score a CICA Premier fifty 🏆🔥
+              <span>[M. Sterling 64* | Play With Fire]</span>
+            </p>
+          </a>
+
+          <!-- Card 3 -->
+          <a href="gallery.html" class="spotlight-card">
+            <div class="spotlight-img-wrap">
+              <img src="assets/slider-stadium-sunset.jpg" alt="Team victory huddle" class="spotlight-img" loading="lazy">
+              <div class="spotlight-badge-top">
+                <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#FFFFFF" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+              </div>
+              <img src="assets/csk-official-logo.png" alt="CSK crest" class="spotlight-crest-top">
+            </div>
+            <p class="spotlight-caption">
+              Started the championship series with a BIG W 💯🔥
+              <span>[Yellow Army Dominance | CSK vs Tigers]</span>
+            </p>
+          </a>
+
+          <!-- Card 4 -->
+          <a href="gallery.html" class="spotlight-card">
+            <div class="spotlight-img-wrap">
+              <img src="assets/slider-stadium-night.jpg" alt="Roaring matchday moment" class="spotlight-img" loading="lazy">
+              <div class="spotlight-badge-top">
+                <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#FFFFFF" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+              </div>
+              <img src="assets/csk-official-logo.png" alt="CSK crest" class="spotlight-crest-top">
+            </div>
+            <p class="spotlight-caption">
+              To more of these roaring matchday moments 🦁💛
+              <span>[Rohan Barrett | Strike Spearhead]</span>
+            </p>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 4: WHITE SECTION - KINGS MEDIA VAULT -->
     <section class="section section--white editorial-section">
       <div class="container">
         <div class="section-header">
@@ -277,38 +620,6 @@
             <img src="assets/slider-cricket-ball-bat.jpg" alt="Match equipment close up">
             <span>Matchday Gear & Seam Dynamics</span>
           </a>
-        </div>
-      </div>
-    </section>
-
-    <!-- SECTION 4: DARK NAVY BANNER - GRASSROOTS ACADEMY -->
-    <section class="academy-banner">
-      <div class="container academy-grid">
-        <div>
-          <span class="section-eyebrow">Foundation & legacy</span>
-          <h2>Cayman Grassroots<br>Cricket Academy</h2>
-          <p>Building the next generation of Caribbean cricket excellence through accessible coaching, tournament pathways, and elite development.</p>
-          <div class="academy-meta">
-            <strong>ICC Level 2</strong>
-            <span>U13 · U17 · U19<br>Pathways</span>
-          </div>
-          <a href="youth.html" class="btn btn-primary">Register for 2026 intake</a>
-        </div>
-        <img src="assets/csk-academy.png" alt="Coach working with a young cricketer">
-      </div>
-    </section>
-
-    <!-- SECTION 5: WHITE SECTION - OFFICIAL FRANCHISE PARTNERS -->
-    <section class="section section--white partners-band">
-      <div class="container">
-        <span class="section-eyebrow">In it for all innings</span>
-        <h2 class="section-title">Official Franchise Partners</h2>
-        <div class="partner-logo-grid" style="margin-top: 28px;">
-          <div>⌂ Cayman National Bank</div>
-          <div>Apex Sports Tech</div>
-          <div>Seven Mile Resorts</div>
-          <div>Island Broadband</div>
-          <div>Caribbean Airwaves</div>
         </div>
       </div>
     </section>

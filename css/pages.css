@@ -2471,6 +2471,219 @@ body.page--white-theme .contact-form-panel .form-textarea {
   }
 }
 
+/* ─────────────────────────────────────────────────────────────
+   HOME PAGE ROSTER STAGE CARDS
+   ───────────────────────────────────────────────────────────── */
+.roster-stage-card {
+  border-radius: 16px !important;
+  border: 1.5px solid rgba(250, 184, 30, 0.45);
+  box-shadow: 0 12px 32px rgba(8, 14, 24, 0.18);
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease;
+}
+
+.roster-stage-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 48px rgba(8, 14, 24, 0.28), 0 0 24px rgba(250, 184, 30, 0.35);
+  border-color: #FAB81E;
+}
+
+@media (max-width: 900px) {
+  .roster-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 16px;
+  }
+}
+
+@media (max-width: 580px) {
+  .roster-grid {
+    grid-template-columns: 1fr !important;
+    gap: 20px;
+  }
+  .roster-stage-card {
+    height: 490px;
+  }
+}
+
+/* ─────────────────────────────────────────────────────────────
+   SPOTLIGHT SOCIAL FEED (Instagram Style Showcase)
+   ───────────────────────────────────────────────────────────── */
+.spotlight-section {
+  background: linear-gradient(180deg, #E69A08 0%, #FAB81E 60%, #EE9409 100%);
+  padding: 64px 0 72px;
+  position: relative;
+  overflow: hidden;
+  border-top: 2px solid rgba(255, 255, 255, 0.25);
+  border-bottom: 2px solid rgba(255, 255, 255, 0.25);
+}
+
+.spotlight-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.spotlight-title {
+  font-family: var(--font-display);
+  font-size: clamp(2.6rem, 6.2vw, 4.4rem);
+  font-weight: 900;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: #FFFFFF;
+  margin: 0 0 10px;
+  line-height: 1;
+  text-shadow: 0 4px 20px rgba(8, 14, 24, 0.35);
+}
+
+.spotlight-handle {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-body);
+  font-size: 1.125rem;
+  font-weight: 800;
+  color: #FFFFFF;
+  text-decoration: none;
+  transition: all 0.25s ease;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.2);
+}
+
+.spotlight-handle:hover {
+  color: #080E18;
+  transform: translateY(-2px);
+}
+
+.spotlight-insta-icon {
+  stroke: #FFFFFF;
+  transition: stroke 0.25s ease;
+}
+
+.spotlight-handle:hover .spotlight-insta-icon {
+  stroke: #080E18;
+}
+
+.spotlight-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+
+.spotlight-card {
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  color: inherit;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.spotlight-card:hover {
+  transform: translateY(-6px);
+}
+
+.spotlight-img-wrap {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1 / 1.15;
+  border-radius: 16px;
+  overflow: hidden;
+  border: 2.5px solid rgba(255, 255, 255, 0.7);
+  box-shadow: 0 12px 30px rgba(8, 14, 24, 0.28);
+  background: #080E18;
+  margin-bottom: 14px;
+}
+
+.spotlight-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease, filter 0.3s ease;
+}
+
+.spotlight-card:hover .spotlight-img {
+  transform: scale(1.06);
+  filter: brightness(1.05);
+}
+
+.spotlight-badge-top {
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  width: 32px;
+  height: 32px;
+  background: rgba(8, 14, 24, 0.65);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.spotlight-crest-top {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  width: 34px;
+  height: 34px;
+  object-fit: contain;
+  filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.5));
+  z-index: 2;
+}
+
+.spotlight-overlay-text {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(8, 14, 24, 0.35);
+  pointer-events: none;
+}
+
+.spotlight-overlay-text span {
+  font-family: var(--font-display);
+  font-size: 2.4rem;
+  font-weight: 900;
+  color: #FFFFFF;
+  line-height: 0.95;
+  text-align: center;
+  letter-spacing: 0.05em;
+  text-shadow: 0 4px 16px rgba(0, 0, 0, 0.85);
+}
+
+.spotlight-caption {
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #FFFFFF;
+  line-height: 1.4;
+  margin: 0;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.25);
+}
+
+.spotlight-caption span {
+  font-size: 0.775rem;
+  color: rgba(255, 255, 255, 0.85);
+  font-weight: 600;
+  display: block;
+  margin-top: 3px;
+}
+
+@media (max-width: 960px) {
+  .spotlight-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+}
+
+@media (max-width: 540px) {
+  .spotlight-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+}
+
+
 
 
 

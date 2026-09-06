@@ -18,7 +18,28 @@ document.addEventListener('DOMContentLoaded', async () => {
   highlightActiveNav();
   initSmoothScroll();
   initHeroSlider();
+  initRosterCardInteractions();
 });
+
+function initRosterCardInteractions() {
+  document.addEventListener('click', (e) => {
+    // Read more click - allow normal navigation
+    if (e.target.closest('.hud-read-more-link')) {
+      return;
+    }
+
+    const card = e.target.closest('.roster-stage-card');
+    if (card) {
+      const isAlreadyActive = card.classList.contains('is-active');
+      document.querySelectorAll('.roster-stage-card.is-active').forEach(c => c.classList.remove('is-active'));
+      if (!isAlreadyActive) {
+        card.classList.add('is-active');
+      }
+    } else if (!e.target.closest('.squad-player-stage-card')) {
+      document.querySelectorAll('.roster-stage-card.is-active').forEach(c => c.classList.remove('is-active'));
+    }
+  });
+}
 
 function initMobileNav() {
   const toggle = document.querySelector('.mobile-toggle');
