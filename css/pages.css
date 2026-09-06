@@ -147,6 +147,257 @@
   transform: translateY(-2px);
 }
 
+.hero-particles-canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  pointer-events: none;
+}
+
+/* Live Stadium Matchday Radar Pill */
+.hero-live-badge-wrap {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: rgba(8, 14, 24, 0.75);
+  border: 1.5px solid rgba(250, 184, 30, 0.6);
+  padding: 6px 16px;
+  border-radius: 30px;
+  margin-bottom: 16px;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6), 0 0 16px rgba(250, 184, 30, 0.3);
+}
+
+.hero-radar-pulse {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #FF334B;
+  box-shadow: 0 0 0 0 rgba(255, 51, 75, 0.7);
+  animation: heroRadarPulse 1.6s infinite cubic-bezier(0.66, 0, 0, 1);
+}
+
+@keyframes heroRadarPulse {
+  0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(255, 51, 75, 0.8); }
+  70% { transform: scale(1.1); box-shadow: 0 0 0 10px rgba(255, 51, 75, 0); }
+  100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(255, 51, 75, 0); }
+}
+
+.hero-live-badge-text {
+  font-family: var(--font-display);
+  font-size: 0.82rem;
+  font-weight: 800;
+  color: #FAB81E;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+/* Fan Interactive Roar Button */
+.btn-roar-fan {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 24px;
+  background: linear-gradient(135deg, #FAB81E 0%, #E69500 100%);
+  color: #041022 !important;
+  font-family: var(--font-display);
+  font-weight: 900;
+  font-size: 0.95rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  border-radius: var(--radius-pill);
+  border: 2px solid #FFFFFF;
+  cursor: pointer;
+  box-shadow: 0 8px 24px rgba(250, 184, 30, 0.5), 0 4px 12px rgba(0, 0, 0, 0.4);
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-roar-fan:hover {
+  transform: translateY(-3px) scale(1.03);
+  box-shadow: 0 12px 32px rgba(250, 184, 30, 0.75), 0 0 24px rgba(255, 255, 255, 0.6);
+  background: linear-gradient(135deg, #FFE082 0%, #FAB81E 100%);
+}
+
+.btn-roar-fan.roar-active {
+  animation: roarShake 0.5s ease-in-out;
+  background: #FFFFFF;
+  color: #0B2C62 !important;
+}
+
+@keyframes roarShake {
+  0%, 100% { transform: scale(1); }
+  20% { transform: scale(1.15) rotate(-4deg); }
+  40% { transform: scale(1.15) rotate(4deg); }
+  60% { transform: scale(1.1) rotate(-2deg); }
+  80% { transform: scale(1.05) rotate(2deg); }
+}
+
+.roar-badge {
+  background: #0B2C62;
+  color: #FAB81E;
+  padding: 3px 8px;
+  border-radius: 12px;
+  font-size: 0.75rem;
+  font-weight: 900;
+  border: 1px solid rgba(250, 184, 30, 0.4);
+}
+
+.csk-roar-toast {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background: #080E18;
+  border: 2px solid #FAB81E;
+  color: #FFFFFF;
+  padding: 14px 22px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-family: var(--font-display);
+  font-size: 0.95rem;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.8), 0 0 24px rgba(250, 184, 30, 0.5);
+  z-index: 999999;
+  transform: translateY(100px);
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.csk-roar-toast.is-visible {
+  transform: translateY(0);
+  opacity: 1;
+  visibility: visible;
+}
+
+.csk-roar-toast strong {
+  color: #FAB81E;
+  letter-spacing: 0.05em;
+}
+
+/* Championship Stats Live Marquee / Ticker Strip */
+.championship-stats-ticker {
+  background: radial-gradient(circle at 50% 50%, #10264A 0%, #081224 80%, #040A14 100%);
+  border-top: 2px solid #FAB81E;
+  border-bottom: 2px solid rgba(250, 184, 30, 0.3);
+  padding: 24px 0;
+  position: relative;
+  z-index: 4;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7), inset 0 1px 0 rgba(255, 255, 255, 0.15);
+}
+
+.stats-ticker-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.stat-ticker-item {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex: 1;
+  min-width: 170px;
+  justify-content: center;
+}
+
+.stat-ticker-icon {
+  font-size: 1.8rem;
+  filter: drop-shadow(0 2px 8px rgba(250, 184, 30, 0.5));
+}
+
+.stat-ticker-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.stat-ticker-num {
+  font-family: var(--font-display);
+  font-size: 2rem;
+  font-weight: 900;
+  color: #FFFFFF;
+  line-height: 1;
+  letter-spacing: -0.02em;
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.8), 0 0 16px rgba(250, 184, 30, 0.5);
+}
+
+.stat-ticker-label {
+  font-family: var(--font-display);
+  font-size: 0.74rem;
+  font-weight: 800;
+  color: #FAB81E;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin-top: 4px;
+}
+
+.stat-ticker-divider {
+  width: 1px;
+  height: 38px;
+  background: linear-gradient(180deg, transparent 0%, rgba(250, 184, 30, 0.5) 50%, transparent 100%);
+}
+
+/* Match Countdown Timer Widget */
+.match-countdown-widget {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 10px;
+  background: rgba(0, 0, 0, 0.4);
+  padding: 6px 12px;
+  border-radius: 8px;
+  border: 1px solid rgba(250, 184, 30, 0.3);
+}
+
+.countdown-unit {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 32px;
+}
+
+.countdown-num {
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  font-weight: 900;
+  color: #FAB81E;
+  line-height: 1;
+  text-shadow: 0 0 10px rgba(250, 184, 30, 0.6);
+}
+
+.countdown-tag {
+  font-size: 0.6rem;
+  font-weight: 800;
+  color: rgba(255, 255, 255, 0.6);
+  letter-spacing: 0.08em;
+  margin-top: 2px;
+}
+
+.countdown-colon {
+  font-family: var(--font-display);
+  font-weight: 900;
+  color: #FFFFFF;
+  font-size: 1rem;
+  margin-top: -6px;
+}
+
+@media (max-width: 860px) {
+  .stat-ticker-divider {
+    display: none;
+  }
+  .stat-ticker-item {
+    min-width: 45%;
+    justify-content: flex-start;
+  }
+}
+
 /* ── WHITE SECTIONS & ALTERNATE WHITE PAGES (Embossed Cricket Papercut Asset) ── */
 .section--white {
   background: #FFFFFF url('../assets/cricket-white-bg.png') center / cover no-repeat !important;

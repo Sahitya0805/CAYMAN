@@ -8,6 +8,7 @@
 import { store } from './content-store.js';
 import { initHeroSlider } from './hero-slider.js';
 import { initSplashLoader } from './splash-loader.js';
+import { initCricketCrazy } from './cricket-crazy.js';
 
 // Initialize splash loader immediately to handle smooth page entrance
 initSplashLoader();
@@ -19,6 +20,7 @@ document.addEventListener('DOMContentLoaded', async () => {
   initSmoothScroll();
   initHeroSlider();
   initRosterCardInteractions();
+  initCricketCrazy();
 });
 
 function initRosterCardInteractions() {
