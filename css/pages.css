@@ -2618,59 +2618,126 @@ body.page--white-theme .contact-form-panel .form-textarea {
 }
 
 /* ─────────────────────────────────────────────────────────────
-   SPOTLIGHT SOCIAL FEED (Instagram Style Showcase)
+   FOLLOW US / SPOTLIGHT SOCIAL FEED (Official Instagram Hub)
    ───────────────────────────────────────────────────────────── */
+.follow-us-section,
 .spotlight-section {
   background: linear-gradient(180deg, #E69A08 0%, #FAB81E 60%, #EE9409 100%);
-  padding: 64px 0 72px;
+  padding: 68px 0 76px;
   position: relative;
   overflow: hidden;
   border-top: 2px solid rgba(255, 255, 255, 0.25);
   border-bottom: 2px solid rgba(255, 255, 255, 0.25);
 }
 
+.follow-us-header,
 .spotlight-header {
   text-align: center;
   margin-bottom: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
 }
 
+.follow-us-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: #09152B;
+  color: #FAB81E;
+  font-family: var(--font-display);
+  font-size: 0.78rem;
+  font-weight: 900;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  padding: 4px 14px;
+  border-radius: 999px;
+  border: 1px solid rgba(250, 184, 30, 0.5);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+}
+
+.follow-us-title,
 .spotlight-title {
   font-family: var(--font-display);
-  font-size: clamp(2.6rem, 6.2vw, 4.4rem);
+  font-size: clamp(2.8rem, 6.5vw, 4.5rem);
   font-weight: 900;
   letter-spacing: 0.05em;
   text-transform: uppercase;
   color: #FFFFFF;
-  margin: 0 0 10px;
+  margin: 0;
   line-height: 1;
   text-shadow: 0 4px 20px rgba(8, 14, 24, 0.35);
 }
 
+.follow-us-handle-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-top: 4px;
+}
+
+.follow-us-handle,
 .spotlight-handle {
   display: inline-flex;
   align-items: center;
   gap: 8px;
   font-family: var(--font-body);
-  font-size: 1.125rem;
+  font-size: 1.1rem;
   font-weight: 800;
   color: #FFFFFF;
   text-decoration: none;
-  transition: all 0.25s ease;
-  text-shadow: 0 2px 8px rgba(0,0,0,0.2);
+  background: rgba(9, 21, 43, 0.55);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  padding: 8px 20px;
+  border-radius: 999px;
+  border: 1.5px solid rgba(255, 255, 255, 0.4);
+  transition: all 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
 }
 
+.follow-us-handle:hover,
 .spotlight-handle:hover {
-  color: #080E18;
+  background: #09152B;
+  color: #FAB81E;
+  border-color: #FAB81E;
   transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+}
+
+.follow-us-cta-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-display);
+  font-size: 0.92rem;
+  font-weight: 900;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #09152B;
+  background: #FFFFFF;
+  text-decoration: none;
+  padding: 8px 22px;
+  border-radius: 999px;
+  border: 2px solid #FFFFFF;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
+}
+
+.follow-us-cta-btn:hover {
+  background: #09152B;
+  color: #FAB81E;
+  border-color: #09152B;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.4);
 }
 
 .spotlight-insta-icon {
-  stroke: #FFFFFF;
-  transition: stroke 0.25s ease;
-}
-
-.spotlight-handle:hover .spotlight-insta-icon {
-  stroke: #080E18;
+  stroke: currentColor;
+  flex-shrink: 0;
 }
 
 .spotlight-grid {
@@ -3769,6 +3836,25 @@ body.page--white-theme .contact-form-panel .form-textarea {
     gap: 14px;
   }
 }
+
+/* ── Site & Editorial Footer Heading Styles (Crisp White) ── */
+.site-footer .footer-heading,
+.editorial-footer .footer-heading,
+.footer-top .footer-heading {
+  color: #FFFFFF !important;
+  font-family: var(--font-display) !important;
+  font-size: 0.95rem !important;
+  font-weight: 800 !important;
+  letter-spacing: 0.08em !important;
+  text-transform: uppercase !important;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5) !important;
+}
+
+.site-footer .footer-brand h3,
+.editorial-footer .footer-brand h3 {
+  color: #FFFFFF !important;
+}
+
 
 
 
