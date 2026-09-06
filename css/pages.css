@@ -1244,7 +1244,7 @@ body.page--white-theme .contact-form-panel .form-textarea {
   display: flex !important;
   justify-content: center !important;
   align-items: center !important;
-  max-width: 240px !important;
+  max-width: 320px !important;
   width: 100% !important;
   margin: 0 auto !important;
 }
@@ -1252,8 +1252,8 @@ body.page--white-theme .contact-form-panel .form-textarea {
 .sponsors-row-grid-2 {
   display: grid !important;
   grid-template-columns: repeat(2, 1fr) !important;
-  gap: 32px !important;
-  max-width: 480px !important;
+  gap: 48px !important;
+  max-width: 640px !important;
   width: 90% !important;
   margin: 0 auto !important;
 }
@@ -1261,9 +1261,9 @@ body.page--white-theme .contact-form-panel .form-textarea {
 .sponsors-row-grid-3 {
   display: grid !important;
   grid-template-columns: repeat(3, 1fr) !important;
-  gap: 28px !important;
-  max-width: 780px !important;
-  width: 92% !important;
+  gap: 40px !important;
+  max-width: 980px !important;
+  width: 94% !important;
   margin: 0 auto !important;
 }
 
@@ -1288,57 +1288,60 @@ body.page--white-theme .contact-form-panel .form-textarea {
 }
 
 .sponsors-row--t1 .sponsor-unit__label {
-  font-size: 0.82rem !important;
+  font-size: 1.15rem !important;
+  font-weight: 900 !important;
+  letter-spacing: 0.09em !important;
+  margin-bottom: 12px !important;
+}
+
+.sponsors-row--t2 .sponsor-unit__label {
+  font-size: 1.02rem !important;
+  font-weight: 800 !important;
   letter-spacing: 0.08em !important;
   margin-bottom: 10px !important;
 }
 
-.sponsors-row--t2 .sponsor-unit__label {
-  font-size: 0.74rem !important;
-  letter-spacing: 0.06em !important;
-  margin-bottom: 8px !important;
-}
-
 .sponsors-row--t3 .sponsor-unit__label {
-  font-size: 0.72rem !important;
-  letter-spacing: 0.06em !important;
-  margin-bottom: 8px !important;
+  font-size: 0.98rem !important;
+  font-weight: 800 !important;
+  letter-spacing: 0.08em !important;
+  margin-bottom: 10px !important;
 }
 
 .sponsor-unit__logo-wrapper {
   display: flex !important;
   align-items: center !important;
   justify-content: center !important;
-  min-height: 56px !important;
+  min-height: 78px !important;
   transition: transform 0.28s cubic-bezier(0.16, 1, 0.3, 1), filter 0.28s ease !important;
 }
 
 .sponsor-unit:hover .sponsor-unit__logo-wrapper {
-  transform: translateY(-3px) scale(1.06) !important;
-  filter: drop-shadow(0 6px 14px rgba(7, 31, 70, 0.16)) !important;
+  transform: translateY(-4px) scale(1.08) !important;
+  filter: drop-shadow(0 8px 18px rgba(7, 31, 70, 0.22)) !important;
 }
 
 .sponsor-unit__img {
   max-width: 100% !important;
   height: auto !important;
   object-fit: contain !important;
-  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.06)) !important;
+  filter: drop-shadow(0 2px 5px rgba(0, 0, 0, 0.08)) !important;
 }
 
 .sponsors-row--t1 .sponsor-unit--principal .sponsor-unit__img {
-  max-width: 155px !important;
-  max-height: 60px !important;
+  max-width: 220px !important;
+  max-height: 85px !important;
 }
 
 .sponsors-row--t2 .sponsor-unit--principal .sponsor-unit__img,
 .sponsors-row--t2 .sponsor-unit--official .sponsor-unit__img {
-  max-width: 135px !important;
-  max-height: 52px !important;
+  max-width: 195px !important;
+  max-height: 75px !important;
 }
 
 .sponsors-row--t3 .sponsor-unit--official .sponsor-unit__img {
-  max-width: 150px !important;
-  max-height: 54px !important;
+  max-width: 215px !important;
+  max-height: 75px !important;
 }
 
 @media (max-width: 900px) {
@@ -1347,16 +1350,16 @@ body.page--white-theme .contact-form-panel .form-textarea {
   .sponsors-row--t1 { height: 280px !important; min-height: 280px !important; padding-top: 95px !important; padding-bottom: 18px !important; }
   .sponsors-row--t2 { height: 260px !important; min-height: 260px !important; }
   .sponsors-row--t3 { height: 300px !important; min-height: 300px !important; padding-bottom: 25px !important; }
-  .sponsors-row-grid-1 { max-width: 180px !important; }
-  .sponsors-row-grid-2 { max-width: 360px !important; gap: 20px !important; }
-  .sponsors-row-grid-3 { max-width: 560px !important; gap: 16px !important; }
-  .sponsors-row--t1 .sponsor-unit__label { font-size: 0.70rem !important; }
-  .sponsors-row--t2 .sponsor-unit__label { font-size: 0.62rem !important; }
-  .sponsors-row--t3 .sponsor-unit__label { font-size: 0.58rem !important; }
-  .sponsor-unit__logo-wrapper { min-height: 44px !important; }
-  .sponsors-row--t1 .sponsor-unit--principal .sponsor-unit__img { max-width: 120px !important; max-height: 48px !important; }
-  .sponsors-row--t2 .sponsor-unit__img { max-width: 105px !important; max-height: 42px !important; }
-  .sponsors-row--t3 .sponsor-unit__img { max-width: 115px !important; max-height: 44px !important; }
+  .sponsors-row-grid-1 { max-width: 240px !important; }
+  .sponsors-row-grid-2 { max-width: 480px !important; gap: 28px !important; }
+  .sponsors-row-grid-3 { max-width: 720px !important; gap: 24px !important; }
+  .sponsors-row--t1 .sponsor-unit__label { font-size: 0.90rem !important; }
+  .sponsors-row--t2 .sponsor-unit__label { font-size: 0.82rem !important; }
+  .sponsors-row--t3 .sponsor-unit__label { font-size: 0.78rem !important; }
+  .sponsor-unit__logo-wrapper { min-height: 58px !important; }
+  .sponsors-row--t1 .sponsor-unit--principal .sponsor-unit__img { max-width: 160px !important; max-height: 60px !important; }
+  .sponsors-row--t2 .sponsor-unit__img { max-width: 145px !important; max-height: 54px !important; }
+  .sponsors-row--t3 .sponsor-unit__img { max-width: 155px !important; max-height: 56px !important; }
 }
 
 @media (max-width: 600px) {
@@ -1365,16 +1368,16 @@ body.page--white-theme .contact-form-panel .form-textarea {
   .sponsors-row--t1 { height: 210px !important; min-height: 210px !important; padding-top: 70px !important; padding-bottom: 10px !important; }
   .sponsors-row--t2 { height: 210px !important; min-height: 210px !important; }
   .sponsors-row--t3 { height: 240px !important; min-height: 240px !important; padding-bottom: 15px !important; }
-  .sponsors-row-grid-1 { max-width: 140px !important; }
-  .sponsors-row-grid-2 { max-width: 250px !important; gap: 10px !important; }
-  .sponsors-row-grid-3 { max-width: 330px !important; gap: 6px !important; }
-  .sponsors-row--t1 .sponsor-unit__label { font-size: 0.50rem !important; letter-spacing: 0.02em !important; margin-bottom: 3px !important; }
-  .sponsors-row--t2 .sponsor-unit__label { font-size: 0.44rem !important; letter-spacing: 0.01em !important; margin-bottom: 2px !important; }
-  .sponsors-row--t3 .sponsor-unit__label { font-size: 0.42rem !important; letter-spacing: 0.01em !important; margin-bottom: 2px !important; }
-  .sponsor-unit__logo-wrapper { min-height: 32px !important; }
-  .sponsors-row--t1 .sponsor-unit--principal .sponsor-unit__img { max-width: 85px !important; max-height: 34px !important; }
-  .sponsors-row--t2 .sponsor-unit__img { max-width: 72px !important; max-height: 30px !important; }
-  .sponsors-row--t3 .sponsor-unit__img { max-width: 75px !important; max-height: 30px !important; }
+  .sponsors-row-grid-1 { max-width: 170px !important; }
+  .sponsors-row-grid-2 { max-width: 300px !important; gap: 14px !important; }
+  .sponsors-row-grid-3 { max-width: 380px !important; gap: 10px !important; }
+  .sponsors-row--t1 .sponsor-unit__label { font-size: 0.65rem !important; letter-spacing: 0.03em !important; margin-bottom: 4px !important; }
+  .sponsors-row--t2 .sponsor-unit__label { font-size: 0.58rem !important; letter-spacing: 0.02em !important; margin-bottom: 3px !important; }
+  .sponsors-row--t3 .sponsor-unit__label { font-size: 0.55rem !important; letter-spacing: 0.02em !important; margin-bottom: 3px !important; }
+  .sponsor-unit__logo-wrapper { min-height: 40px !important; }
+  .sponsors-row--t1 .sponsor-unit--principal .sponsor-unit__img { max-width: 110px !important; max-height: 42px !important; }
+  .sponsors-row--t2 .sponsor-unit__img { max-width: 95px !important; max-height: 38px !important; }
+  .sponsors-row--t3 .sponsor-unit__img { max-width: 100px !important; max-height: 38px !important; }
 }
   .sponsors-row--t3 .sponsor-unit--official .sponsor-unit__img { max-width: 78px !important; max-height: 32px !important; }
 }

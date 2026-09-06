@@ -233,18 +233,18 @@ input, select, textarea { color: #FFFFFF; background: #0F1B2C; border: 1px solid
 .bat-blade,
 .site-header__bar {
   flex: 1;
-  height: 62px;
+  height: 66px;
   background: 
     radial-gradient(ellipse 80% 50% at 20% -10%, rgba(95, 175, 255, 0.32) 0%, transparent 65%),
     linear-gradient(180deg, #175CB8 0%, #0E3E82 38%, #08244E 76%, #03132B 100%);
   border: 2px solid #FAB81E;
   border-right: none;
-  border-top-left-radius: 32px;
-  border-bottom-left-radius: 32px;
+  border-top-left-radius: 34px;
+  border-bottom-left-radius: 34px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 24px 0 10px;
+  padding: 0 26px 0 12px;
   position: relative;
   box-shadow: 
     0 14px 34px rgba(1, 8, 20, 0.65),
@@ -282,12 +282,12 @@ input, select, textarea { color: #FFFFFF; background: #0F1B2C; border: 1px solid
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 46px;
-  height: 46px;
+  width: 50px;
+  height: 50px;
   border-radius: 50%;
   background: radial-gradient(circle at 35% 30%, #153C78 0%, #061836 100%);
   border: 1.8px solid #FAB81E;
-  box-shadow: 0 0 14px rgba(250, 184, 30, 0.45), inset 0 1px 2px rgba(255, 255, 255, 0.35);
+  box-shadow: 0 0 16px rgba(250, 184, 30, 0.55), inset 0 1px 2px rgba(255, 255, 255, 0.35);
   text-decoration: none;
   z-index: 5;
   margin-left: 2px;
@@ -298,13 +298,13 @@ input, select, textarea { color: #FFFFFF; background: #0F1B2C; border: 1px solid
 .bat-logo-link:hover,
 .navbar-logo-breakout:hover {
   transform: scale(1.1);
-  box-shadow: 0 0 22px rgba(250, 184, 30, 0.85);
+  box-shadow: 0 0 24px rgba(250, 184, 30, 0.9);
 }
 
 .bat-logo-img,
 .navbar-logo-img {
-  height: 34px;
-  width: 34px;
+  height: 38px;
+  width: 38px;
   object-fit: contain;
   filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.5));
 }
@@ -315,7 +315,7 @@ input, select, textarea { color: #FFFFFF; background: #0F1B2C; border: 1px solid
   align-items: center;
   justify-content: flex-end;
   flex: 1;
-  margin-right: 42px; /* space before shoulder splice */
+  margin-right: 44px; /* space before shoulder splice */
   z-index: 5;
   transform: none;
 }
@@ -323,7 +323,7 @@ input, select, textarea { color: #FFFFFF; background: #0F1B2C; border: 1px solid
 .nav-menu {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 10px;
   list-style: none;
   margin: 0;
   padding: 0;
@@ -331,7 +331,7 @@ input, select, textarea { color: #FFFFFF; background: #0F1B2C; border: 1px solid
 
 .nav-divider {
   color: rgba(250, 184, 30, 0.4);
-  font-size: 0.72rem;
+  font-size: 0.75rem;
   font-weight: 300;
   user-select: none;
   margin: 0 2px;
@@ -343,15 +343,15 @@ input, select, textarea { color: #FFFFFF; background: #0F1B2C; border: 1px solid
 
 .nav-link {
   font-family: var(--font-nav);
-  font-size: 0.84rem;
-  font-weight: 700;
+  font-size: 0.92rem;
+  font-weight: 800;
   letter-spacing: 0.12em;
   text-transform: uppercase;
   color: #FFFFFF;
   text-decoration: none;
-  padding: 6px 14px;
+  padding: 7px 15px;
   display: inline-block;
-  border-radius: 16px;
+  border-radius: 18px;
   border: 1px solid transparent;
   transition: all 0.22s cubic-bezier(0.16, 1, 0.3, 1);
   text-shadow: 0 2px 6px rgba(0, 0, 0, 0.5);
