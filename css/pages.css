@@ -2695,10 +2695,12 @@ body.page--white-theme .contact-form-panel .form-textarea {
    IN THE NEWS SECTION (Exact Reference Layout in CSK Theme)
    ───────────────────────────────────────────────────────────── */
 .in-the-news-section {
-  background: linear-gradient(135deg, #EB3A14 0%, #FA6B1E 50%, #FAB81E 100%);
+  background: linear-gradient(180deg, #E69A08 0%, #FAB81E 60%, #EE9409 100%);
   padding: 68px 0 54px;
   position: relative;
   overflow: hidden;
+  border-top: 2px solid rgba(255, 255, 255, 0.25);
+  border-bottom: 2px solid rgba(255, 255, 255, 0.25);
 }
 
 .in-the-news-title {
