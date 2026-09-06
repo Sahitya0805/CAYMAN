@@ -1,6 +1,7 @@
 /**
  * Cayman Super Kings — Our Journey 3D Book Controller
- * Realistic 5-page interactive book with turning animations, chapter tabs, and touch swipe.
+ * Realistic 5-page interactive book with realistic turning animations, Web Audio page flip sounds,
+ * 3D parallax tilt, chapter tabs, corner curling, and touch swipe.
  */
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -9,6 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 function initJourneyBook() {
   const book = document.getElementById('journey-book');
+  const wrapper = document.querySelector('.book-perspective-wrapper');
   if (!book) return;
 
   const pages = book.querySelectorAll('.book-page');
@@ -20,10 +22,56 @@ function initJourneyBook() {
   const totalPages = pages.length; // 5 pages (0 to 4)
 
   let currentPage = 0;
+  let isTurning = false;
 
-  function updateBookState() {
+  // Web Audio API Realistic Paper Rustle Synthesizer
+  function playPageFlipSound() {
+    try {
+      const AudioCtx = window.AudioContext || window.webkitAudioContext;
+      if (!AudioCtx) return;
+      const ctx = new AudioCtx();
+      if (ctx.state === 'suspended') {
+        ctx.resume();
+      }
+      
+      const bufferSize = Math.floor(ctx.sampleRate * 0.18); // 180ms
+      const buffer = ctx.createBuffer(1, bufferSize, ctx.sampleRate);
+      const data = buffer.getChannelData(0);
+      for (let i = 0; i < bufferSize; i++) {
+        // Exponential decay white noise with micro flutter
+        const envelope = Math.exp(-i / (bufferSize * 0.35));
+        const flutter = 1 + 0.3 * Math.sin((i / bufferSize) * 30);
+        data[i] = (Math.random() * 2 - 1) * envelope * flutter;
+      }
+      
+      const noise = ctx.createBufferSource();
+      noise.buffer = buffer;
+      
+      const filter = ctx.createBiquadFilter();
+      filter.type = 'bandpass';
+      filter.frequency.setValueAtTime(1600, ctx.currentTime);
+      filter.frequency.exponentialRampToValueAtTime(320, ctx.currentTime + 0.16);
+      filter.Q.value = 1.4;
+      
+      const gain = ctx.createGain();
+      gain.gain.setValueAtTime(0.09, ctx.currentTime);
+      gain.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + 0.17);
+      
+      noise.connect(filter);
+      filter.connect(gain);
+      gain.connect(ctx.destination);
+      
+      noise.start();
+      noise.stop(ctx.currentTime + 0.18);
+    } catch (e) {
+      // Audio autoplay policy fallback
+    }
+  }
+
+  function updateBookState(direction = 'none') {
     pages.forEach((page, index) => {
-      page.classList.remove('page-active', 'page-turned', 'page-incoming');
+      // Clear all active/transitional classes
+      page.classList.remove('page-active', 'page-turned', 'page-incoming', 'flipping-forward', 'flipping-backward');
       
       if (index < currentPage) {
         // Already turned to the left
@@ -33,6 +81,11 @@ function initJourneyBook() {
       } else if (index === currentPage) {
         // Currently active / visible page
         page.classList.add('page-active');
+        if (direction === 'forward') {
+          page.classList.add('flipping-forward');
+        } else if (direction === 'backward') {
+          page.classList.add('flipping-backward');
+        }
         page.style.zIndex = 10;
         page.setAttribute('aria-hidden', 'false');
       } else {
@@ -74,26 +127,37 @@ function initJourneyBook() {
         tab.setAttribute('aria-selected', 'false');
       }
     });
+
+    // Unlock transition after animation completes
+    setTimeout(() => {
+      isTurning = false;
+      pages.forEach(p => p.classList.remove('flipping-forward', 'flipping-backward'));
+    }, 750);
   }
 
   function turnToPage(index) {
-    if (index < 0 || index >= totalPages || index === currentPage) return;
+    if (isTurning || index < 0 || index >= totalPages || index === currentPage) return;
+    isTurning = true;
+    const direction = index > currentPage ? 'forward' : 'backward';
     currentPage = index;
-    updateBookState();
+    playPageFlipSound();
+    updateBookState(direction);
   }
 
   function nextPage() {
-    if (currentPage < totalPages - 1) {
-      currentPage++;
-      updateBookState();
-    }
+    if (isTurning || currentPage >= totalPages - 1) return;
+    isTurning = true;
+    currentPage++;
+    playPageFlipSound();
+    updateBookState('forward');
   }
 
   function prevPage() {
-    if (currentPage > 0) {
-      currentPage--;
-      updateBookState();
-    }
+    if (isTurning || currentPage <= 0) return;
+    isTurning = true;
+    currentPage--;
+    playPageFlipSound();
+    updateBookState('backward');
   }
 
   // Button Listeners
@@ -110,11 +174,25 @@ function initJourneyBook() {
     });
   });
 
+  // Corner Curl Listeners
+  document.querySelectorAll('.page-corner-curl').forEach(curl => {
+    curl.addEventListener('click', (e) => {
+      e.stopPropagation();
+      nextPage();
+    });
+  });
+
+  document.querySelectorAll('.page-corner-curl-prev').forEach(curl => {
+    curl.addEventListener('click', (e) => {
+      e.stopPropagation();
+      prevPage();
+    });
+  });
+
   // Click on Page to Flip Forward or Backward
   pages.forEach((page, index) => {
     page.addEventListener('click', (e) => {
-      // Don't flip if clicking interactive link/button inside page
-      if (e.target.closest('a, button, input')) return;
+      if (e.target.closest('a, button, input, .page-corner-curl, .page-corner-curl-prev')) return;
 
       const rect = page.getBoundingClientRect();
       const clickX = e.clientX - rect.left;
@@ -144,7 +222,7 @@ function initJourneyBook() {
 
   function handleSwipe() {
     const swipeDistance = touchEndX - touchStartX;
-    if (Math.abs(swipeDistance) > 45) {
+    if (Math.abs(swipeDistance) > 40) {
       if (swipeDistance < 0) {
         nextPage(); // Swipe Left -> Next Page
       } else {
@@ -164,6 +242,29 @@ function initJourneyBook() {
     }
   });
 
+  // 3D Parallax Tilt Effect on Book Wrapper
+  if (wrapper && window.innerWidth > 900) {
+    wrapper.addEventListener('mousemove', (e) => {
+      const rect = wrapper.getBoundingClientRect();
+      const x = (e.clientX - rect.left) / rect.width - 0.5;
+      const y = (e.clientY - rect.top) / rect.height - 0.5;
+      
+      const tiltX = -y * 8; // deg
+      const tiltY = x * 10; // deg
+      
+      book.style.transform = `rotateX(${tiltX}deg) rotateY(${tiltY}deg)`;
+    });
+
+    wrapper.addEventListener('mouseleave', () => {
+      book.style.transform = 'rotateX(0deg) rotateY(0deg)';
+      book.style.transition = 'transform 0.6s cubic-bezier(0.16, 1, 0.3, 1)';
+    });
+
+    wrapper.addEventListener('mouseenter', () => {
+      book.style.transition = 'transform 0.15s ease-out';
+    });
+  }
+
   // Initialize first state
-  updateBookState();
+  updateBookState('none');
 }
