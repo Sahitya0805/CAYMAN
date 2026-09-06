@@ -54,7 +54,7 @@ export async function initMatchesPage() {
 
     if (emptyState) emptyState.style.display = 'none';
     container.style.display = 'grid';
-    container.innerHTML = filtered.map(m => createMatchCardHTML(m)).join('');
+    container.innerHTML = filtered.map((m, index) => createMatchCardHTML(m, index)).join('');
   }
 
   function renderStandings() {
@@ -159,6 +159,14 @@ export async function initMatchesPage() {
   function createMatchCardHTML(m, index) {
     const isResult = m.status === 'result';
 
+    // Parse date for ticket stub
+    const dateObj = new Date(m.date + 'T00:00:00');
+    const monthNames = ['JAN', 'FEB', 'MAR', 'APR', 'MAY', 'JUN', 'JUL', 'AUG', 'SEP', 'OCT', 'NOV', 'DEC'];
+    const month = !isNaN(dateObj.getTime()) ? monthNames[dateObj.getMonth()] : 'SEP';
+    const day = !isNaN(dateObj.getTime()) ? String(dateObj.getDate()).padStart(2, '0') : '12';
+
+    const matchNum = `${index + 1}${getOrdinalSuffix(index + 1)} Match`;
+
     // Opponent Logo mapper
     const oppKey = (m.opponent_short || '').toLowerCase();
     const oppLogoMap = {
@@ -173,14 +181,14 @@ export async function initMatchesPage() {
     const cskLogo = 'assets/csk-official-logo.png';
 
     // Time formatting
-    let timeDisplay = m.time || '14:30';
+    let timeDisplay = m.time || '02:30pm';
     if (timeDisplay && !timeDisplay.toLowerCase().includes('m')) {
       const parts = timeDisplay.split(':');
       if (parts.length >= 2) {
         const hour = parseInt(parts[0], 10);
         const ampm = hour >= 12 ? 'pm' : 'am';
         const formattedHour = hour % 12 || 12;
-        timeDisplay = `${formattedHour}:${parts[1]} ${ampm.toUpperCase()}`;
+        timeDisplay = `${String(formattedHour).padStart(2, '0')}:${parts[1]}${ampm}`;
       }
     }
 
@@ -188,104 +196,74 @@ export async function initMatchesPage() {
     const team1Name = isHome ? 'Cayman Super Kings' : m.opponent;
     const team1Logo = isHome ? cskLogo : oppLogo;
     const team1Score = isHome ? m.score_csk : m.score_opp;
-    const team1Overs = isHome ? m.overs_csk : m.overs_opp;
 
     const team2Name = isHome ? m.opponent : 'Cayman Super Kings';
     const team2Logo = isHome ? oppLogo : cskLogo;
     const team2Score = isHome ? m.score_opp : m.score_csk;
-    const team2Overs = isHome ? m.overs_opp : m.overs_csk;
 
-    const detailUrl = `match-detail.html?slug=${m.slug}`;
+    const detailUrl = isResult ? `match-detail.html?slug=${m.slug}` : (m.cricclubs_url || `match-detail.html?slug=${m.slug}`);
 
     return `
-      <div class="card card--lift match-grid-card col-6">
-        <div class="card-body match-grid-card__body">
-          <!-- Top Row: Competition Badge & Date -->
-          <div class="match-grid-card__header">
-            <span class="badge ${m.format === 'T20' ? 'badge--gold' : 'badge--teal'}">${m.competition}</span>
-            <span class="match-grid-card__date">${formatDate(m.date)}</span>
+      <div class="fixture-ticket">
+        <!-- Left Ticket Date Stub -->
+        <div class="ticket-stub">
+          <span class="ticket-notch-top"></span>
+          <span class="ticket-month">${month}</span>
+          <span class="ticket-day">${day}</span>
+          <span class="ticket-match-num">${matchNum}</span>
+          <span class="ticket-notch-bottom"></span>
+        </div>
+
+        <!-- Right Main Ticket Body -->
+        <div class="ticket-body">
+          <!-- Slanted Yellow Time Pill -->
+          <div class="ticket-time-pill">
+            <span>${timeDisplay}</span>
+            <span class="ticket-time-stripes">///</span>
           </div>
-          
-          <!-- Matchup Row with Logos & VS -->
-          <div class="match-grid-card__matchup">
+
+          <!-- Teams Matchup -->
+          <div class="ticket-matchup">
             <!-- Team 1 -->
-            <div class="match-team-box">
-              <div class="match-team-logo-wrap">
-                <img src="${team1Logo}" alt="${team1Name}" class="match-team-logo">
-              </div>
-              <div class="match-team-info">
-                <span class="match-team-name">${team1Name}</span>
-                ${isResult && team1Score ? `
-                  <div class="match-team-score-line">
-                    <span class="match-team-score">${team1Score}</span>
-                    ${team1Overs ? `<span class="match-team-overs">(${team1Overs} ov)</span>` : ''}
-                  </div>
-                ` : ''}
-              </div>
+            <div class="ticket-team">
+              <img src="${team1Logo}" alt="${team1Name}" class="ticket-team-crest">
+              <span class="ticket-team-name">${team1Name}</span>
+              ${isResult && team1Score ? `<span class="ticket-team-score">${team1Score}</span>` : ''}
             </div>
 
             <!-- VS Center -->
-            <div class="match-vs-box">
-              <span class="match-vs-badge">VS</span>
-              ${isResult ? `
-                <span class="match-status-tag ${m.is_csk_win ? 'status--win' : 'status--done'}">
-                  ${m.is_csk_win ? 'CSK WON' : 'FINAL'}
-                </span>
-              ` : `
-                <span class="match-status-tag status--upcoming">UPCOMING</span>
-              `}
+            <div class="ticket-vs">
+              <span class="ticket-vs-text">VS</span>
+              ${isResult ? `<span class="ticket-vs-result">${m.is_csk_win ? 'CSK WON' : 'COMPLETED'}</span>` : ''}
             </div>
 
             <!-- Team 2 -->
-            <div class="match-team-box team-box--opp">
-              <div class="match-team-logo-wrap">
-                <img src="${team2Logo}" alt="${team2Name}" class="match-team-logo">
-              </div>
-              <div class="match-team-info">
-                <span class="match-team-name">${team2Name}</span>
-                ${isResult && team2Score ? `
-                  <div class="match-team-score-line">
-                    <span class="match-team-score">${team2Score}</span>
-                    ${team2Overs ? `<span class="match-team-overs">(${team2Overs} ov)</span>` : ''}
-                  </div>
-                ` : ''}
-              </div>
+            <div class="ticket-team">
+              <img src="${team2Logo}" alt="${team2Name}" class="ticket-team-crest">
+              <span class="ticket-team-name">${team2Name}</span>
+              ${isResult && team2Score ? `<span class="ticket-team-score">${team2Score}</span>` : ''}
             </div>
           </div>
 
-          <!-- Result banner or Timing/Venue -->
-          ${isResult ? `
-            <div class="match-result-banner">
-              <span class="match-result-icon">🏆</span>
-              <span class="match-result-text">${m.result_text}</span>
-            </div>
-          ` : `
-            <div class="match-venue-row">
-              <div class="venue-item">
-                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-                <span>${timeDisplay} EST</span>
-              </div>
-              <div class="venue-item">
-                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-                <span>${m.venue}</span>
-              </div>
-            </div>
-          `}
-
-          <!-- Footer Actions -->
-          <div class="match-grid-card__footer">
-            ${isResult ? `
-              <a href="${detailUrl}" class="btn btn-outline-navy btn-sm">Match Center ↗</a>
-            ` : `
-              <a href="${m.cricclubs_url}" target="_blank" rel="noopener noreferrer" class="btn btn-outline-navy btn-sm">Fixture Info ↗</a>
-            `}
-            <a href="${m.cricclubs_url}" target="_blank" rel="noopener noreferrer" class="match-scorecard-link">
-              Scorecard ↗
-            </a>
+          <!-- Venue -->
+          <div class="ticket-venue">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+            <span>${m.venue || 'Jimmy Powell Oval, George Town'}</span>
           </div>
+
+          <!-- Overlapping Bottom Match Center Pill -->
+          <a href="${detailUrl}" class="ticket-btn-pill" ${!isResult && m.cricclubs_url ? 'target="_blank" rel="noopener noreferrer"' : ''}>
+            <span>MATCH CENTER</span>
+          </a>
         </div>
       </div>
     `;
+  }
+
+  function getOrdinalSuffix(n) {
+    const s = ['th', 'st', 'nd', 'rd'];
+    const v = n % 100;
+    return s[(v - 20) % 10] || s[v] || s[0];
   }
 
   // Event Listeners
