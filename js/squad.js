@@ -64,13 +64,37 @@ function setupFilterListeners() {
   if (!container) return;
 
   container.addEventListener('click', (e) => {
+    // 1. Filter buttons
     const btn = e.target.closest('.squad-filter-btn');
-    if (!btn) return;
+    if (btn) {
+      const filter = btn.getAttribute('data-filter');
+      if (filter && filter !== currentFilter) {
+        currentFilter = filter;
+        renderSquadShowcase(container);
+      }
+      return;
+    }
 
-    const filter = btn.getAttribute('data-filter');
-    if (filter && filter !== currentFilter) {
-      currentFilter = filter;
-      renderSquadShowcase(container);
+    // 2. Read more link click - allow direct navigation
+    if (e.target.closest('.hud-read-more-link')) {
+      return;
+    }
+
+    // 3. Touch/Mobile card tap toggle
+    const card = e.target.closest('.squad-player-stage-card');
+    if (card) {
+      const isAlreadyActive = card.classList.contains('is-active');
+      document.querySelectorAll('.squad-player-stage-card.is-active').forEach(c => c.classList.remove('is-active'));
+      if (!isAlreadyActive) {
+        card.classList.add('is-active');
+      }
+    }
+  });
+
+  // Close active card when clicking outside
+  document.addEventListener('click', (e) => {
+    if (!e.target.closest('.squad-player-stage-card')) {
+      document.querySelectorAll('.squad-player-stage-card.is-active').forEach(c => c.classList.remove('is-active'));
     }
   });
 }

@@ -2301,7 +2301,8 @@ body.page--white-theme .contact-form-panel .form-textarea {
 }
 
 .squad-player-stage-card:hover .squad-card-hover-hud,
-.squad-player-stage-card:focus-within .squad-card-hover-hud {
+.squad-player-stage-card:focus-within .squad-card-hover-hud,
+.squad-player-stage-card.is-active .squad-card-hover-hud {
   opacity: 1;
   transform: translateY(0) scale(1);
   pointer-events: auto;
