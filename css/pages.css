@@ -4032,26 +4032,31 @@ body.page--white-theme .contact-form-panel .form-textarea {
   }
 }
 
-/* ── Site & Editorial Footer Heading Styles (Crisp White) ── */
+/* ── Site & Editorial Footer Heading Styles (Crisp Bold White) ── */
 footer h4,
+footer h3,
 footer .footer-heading,
 .site-footer h4,
+.site-footer h3,
 .site-footer .footer-heading,
 .editorial-footer h4,
+.editorial-footer h3,
 .editorial-footer .footer-heading,
 .footer-top h4,
+.footer-top h3,
 .footer-top .footer-heading,
 body.page--white-theme footer h4,
 body.page--white-theme footer .footer-heading,
 body.page--white-theme .site-footer .footer-heading,
 body.page--white-theme .editorial-footer .footer-heading {
   color: #FFFFFF !important;
-  font-family: var(--font-display) !important;
-  font-size: 0.95rem !important;
-  font-weight: 800 !important;
-  letter-spacing: 0.08em !important;
+  font-family: var(--font-display), 'Archivo', sans-serif !important;
+  font-size: 1.02rem !important;
+  font-weight: 900 !important;
+  letter-spacing: 0.09em !important;
   text-transform: uppercase !important;
-  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5) !important;
+  opacity: 1 !important;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.7) !important;
 }
 
 footer .footer-brand h3,

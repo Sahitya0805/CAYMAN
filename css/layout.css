@@ -676,14 +676,15 @@ input, select, textarea { color: #FFFFFF; background: #0F1B2C; border: 1px solid
 }
 
 .footer-heading {
-  font-family: var(--font-display);
-  font-size: 0.92rem;
-  font-weight: 800;
+  font-family: var(--font-display), 'Archivo', sans-serif !important;
+  font-size: 1.02rem !important;
+  font-weight: 900 !important;
   color: #FFFFFF !important;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  margin-bottom: 16px;
-  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+  text-transform: uppercase !important;
+  letter-spacing: 0.09em !important;
+  margin-bottom: 18px !important;
+  opacity: 1 !important;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.6) !important;
 }
 
 .footer-links {
