@@ -220,7 +220,7 @@ input, select, textarea { color: #FFFFFF; background: #0F1B2C; border: 1px solid
   align-items: center;
   width: 100%;
   position: relative;
-  filter: drop-shadow(0 14px 28px rgba(7, 31, 70, 0.45));
+  filter: drop-shadow(0 16px 32px rgba(4, 18, 48, 0.55));
 }
 
 /* 1. Bat Blade (Main Nav Body) */
@@ -228,7 +228,9 @@ input, select, textarea { color: #FFFFFF; background: #0F1B2C; border: 1px solid
 .site-header__bar {
   flex: 1;
   height: 68px;
-  background: linear-gradient(180deg, #1C6AC8 0%, #114B96 45%, #0A2E64 85%, #08214A 100%);
+  background: 
+    radial-gradient(ellipse 90% 70% at 20% 0%, rgba(70, 160, 255, 0.35) 0%, transparent 60%),
+    linear-gradient(180deg, #1B67C5 0%, #11468C 35%, #0A2F68 70%, #061C3F 100%);
   border: 2px solid #FAB81E;
   border-right: none;
   border-top-left-radius: 36px;
@@ -236,16 +238,36 @@ input, select, textarea { color: #FFFFFF; background: #0F1B2C; border: 1px solid
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 24px 0 14px;
+  padding: 0 26px 0 14px;
   position: relative;
-  box-shadow: inset 0 2px 2px rgba(255, 255, 255, 0.4), inset 0 -3px 6px rgba(0, 0, 0, 0.5);
-  transition: all var(--transition-normal);
+  box-shadow: 
+    0 12px 28px rgba(4, 18, 48, 0.45),
+    0 0 22px rgba(250, 184, 30, 0.22),
+    inset 0 2px 2px rgba(255, 255, 255, 0.45),
+    inset 0 -3px 6px rgba(0, 0, 0, 0.55);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
   transform: none;
+}
+
+.bat-blade::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 36px;
+  right: 0;
+  height: 1.5px;
+  background: linear-gradient(90deg, #FAB81E 0%, #FFE885 30%, rgba(255, 255, 255, 0.8) 60%, #FAB81E 100%);
+  opacity: 0.85;
+  pointer-events: none;
 }
 
 .bat-blade:hover,
 .site-header__bar:hover {
-  box-shadow: inset 0 2px 3px rgba(255, 255, 255, 0.5), inset 0 -3px 6px rgba(0, 0, 0, 0.5), 0 0 24px rgba(250, 184, 30, 0.4);
+  box-shadow: 
+    0 16px 36px rgba(4, 18, 48, 0.6),
+    0 0 30px rgba(250, 184, 30, 0.4),
+    inset 0 2px 4px rgba(255, 255, 255, 0.6),
+    inset 0 -3px 6px rgba(0, 0, 0, 0.55);
 }
 
 /* Bat Logo / Crest on Toe */
@@ -260,12 +282,14 @@ input, select, textarea { color: #FFFFFF; background: #0F1B2C; border: 1px solid
   margin-top: 0;
   margin-bottom: 0;
   transform: none;
-  transition: transform 0.25s ease;
+  transition: transform 0.28s cubic-bezier(0.16, 1, 0.3, 1), filter 0.28s ease;
+  filter: drop-shadow(0 0 10px rgba(250, 184, 30, 0.35)) drop-shadow(0 4px 10px rgba(0, 0, 0, 0.65));
 }
 
 .bat-logo-link:hover,
 .navbar-logo-breakout:hover {
-  transform: scale(1.08);
+  transform: scale(1.08) translateY(-1px);
+  filter: drop-shadow(0 0 16px rgba(250, 184, 30, 0.65)) drop-shadow(0 6px 14px rgba(0, 0, 0, 0.75));
 }
 
 .bat-logo-img,
@@ -274,7 +298,7 @@ input, select, textarea { color: #FFFFFF; background: #0F1B2C; border: 1px solid
   width: auto;
   max-height: 58px;
   object-fit: contain;
-  filter: drop-shadow(0 2px 10px rgba(0, 0, 0, 0.65));
+  filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.5));
 }
 
 /* Navigation Links Container */
@@ -283,7 +307,7 @@ input, select, textarea { color: #FFFFFF; background: #0F1B2C; border: 1px solid
   align-items: center;
   justify-content: flex-end;
   flex: 1;
-  margin-right: 50px; /* space before shoulder splice */
+  margin-right: 48px; /* space before shoulder splice */
   z-index: 5;
   transform: none;
 }
@@ -291,17 +315,18 @@ input, select, textarea { color: #FFFFFF; background: #0F1B2C; border: 1px solid
 .nav-menu {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 10px;
   list-style: none;
   margin: 0;
   padding: 0;
 }
 
 .nav-divider {
-  color: rgba(250, 184, 30, 0.45);
+  color: rgba(250, 184, 30, 0.5);
   font-size: 0.95rem;
-  font-weight: 300;
+  font-weight: 400;
   user-select: none;
+  text-shadow: 0 0 8px rgba(250, 184, 30, 0.4);
 }
 
 .nav-menu li {
@@ -310,30 +335,41 @@ input, select, textarea { color: #FFFFFF; background: #0F1B2C; border: 1px solid
 
 .nav-link {
   font-family: var(--font-display);
-  font-size: 1.05rem;
+  font-size: 1.02rem;
   font-weight: 800;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.06em;
   color: #FFFFFF;
   text-decoration: none;
   padding: 7px 16px;
   display: inline-block;
   border-radius: 20px;
-  transition: all 0.2s ease;
+  border: 1px solid transparent;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
   text-transform: capitalize;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
 }
 
 .nav-link:hover {
   color: #FAB81E;
-  background: rgba(8, 24, 56, 0.55);
-  text-shadow: 0 0 12px rgba(250, 184, 30, 0.8);
+  background: rgba(8, 26, 62, 0.65);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border-color: rgba(250, 184, 30, 0.4);
+  text-shadow: 0 0 14px rgba(250, 184, 30, 0.85);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  transform: translateY(-1px);
 }
 
 .nav-link.active {
-  background: #09152B;
+  background: linear-gradient(180deg, #0B1C38 0%, #040D1B 100%);
   color: #FAB81E;
   font-weight: 900;
   border: 1.8px solid #FAB81E;
-  box-shadow: 0 0 15px rgba(250, 184, 30, 0.55);
+  box-shadow: 
+    0 0 16px rgba(250, 184, 30, 0.55),
+    inset 0 1px 1px rgba(255, 255, 255, 0.35),
+    inset 0 -1px 2px rgba(0, 0, 0, 0.5);
+  text-shadow: 0 0 10px rgba(250, 184, 30, 0.6);
 }
 
 .nav-link.active::after {
@@ -360,10 +396,13 @@ input, select, textarea { color: #FFFFFF; background: #0F1B2C; border: 1px solid
 .bat-handle {
   width: 130px;
   height: 24px;
-  background: repeating-linear-gradient(115deg, #09152B 0px, #09152B 5px, #15346A 5px, #15346A 10px);
-  border-top: 1.5px solid rgba(250, 184, 30, 0.55);
-  border-bottom: 1.5px solid #060E1D;
-  box-shadow: inset 0 2px 2px rgba(255, 255, 255, 0.25), inset 0 -2px 3px rgba(0, 0, 0, 0.6);
+  background: repeating-linear-gradient(115deg, #051020 0px, #051020 6px, #123366 6px, #123366 12px);
+  border-top: 1.8px solid #FAB81E;
+  border-bottom: 1.8px solid #040A15;
+  box-shadow: 
+    0 4px 10px rgba(0, 0, 0, 0.4),
+    inset 0 2px 2px rgba(255, 255, 255, 0.3),
+    inset 0 -2px 3px rgba(0, 0, 0, 0.7);
   position: relative;
   flex-shrink: 0;
 }
@@ -372,11 +411,12 @@ input, select, textarea { color: #FFFFFF; background: #0F1B2C; border: 1px solid
 .bat-handle::after {
   content: '';
   position: absolute;
-  top: -2px;
-  bottom: -2px;
-  width: 4px;
-  background: #FAB81E;
-  box-shadow: 0 0 6px #FAB81E;
+  top: -3px;
+  bottom: -3px;
+  width: 5px;
+  background: linear-gradient(180deg, #FFE082 0%, #FAB81E 50%, #D49200 100%);
+  box-shadow: 0 0 8px rgba(250, 184, 30, 0.8);
+  border-radius: 1px;
 }
 
 .bat-handle::before { left: 0; }
@@ -388,31 +428,49 @@ input, select, textarea { color: #FFFFFF; background: #0F1B2C; border: 1px solid
   width: 58px;
   height: 58px;
   border-radius: 50%;
-  background: radial-gradient(circle at 35% 35%, #164684 0%, #09152B 65%, #050C18 100%);
+  background: radial-gradient(circle at 32% 30%, #2570C8 0%, #104284 45%, #051329 85%, #030A17 100%);
   border: 2.5px solid #FAB81E;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.6), 0 0 16px rgba(250, 184, 30, 0.4), inset 0 2px 3px rgba(255, 255, 255, 0.35);
+  box-shadow: 
+    0 10px 28px rgba(0, 0, 0, 0.65),
+    0 0 20px rgba(250, 184, 30, 0.45),
+    inset 0 2px 3px rgba(255, 255, 255, 0.5),
+    inset 0 -2px 4px rgba(0, 0, 0, 0.6);
   display: flex;
   align-items: center;
   justify-content: center;
   color: #FAB81E;
   text-decoration: none;
   flex-shrink: 0;
-  transition: all 0.25s ease;
+  transition: all 0.28s cubic-bezier(0.16, 1, 0.3, 1);
   z-index: 5;
   transform: none;
+  position: relative;
+}
+
+.bat-pommel-btn::before {
+  content: '';
+  position: absolute;
+  inset: 2px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  pointer-events: none;
 }
 
 .bat-pommel-btn:hover,
 .site-header__user-pill:hover {
-  background: #FAB81E;
-  color: #080E18;
+  background: radial-gradient(circle at 35% 35%, #FFE082 0%, #FAB81E 60%, #D49200 100%);
+  color: #061122;
   border-color: #FFFFFF;
-  box-shadow: 0 0 24px rgba(250, 184, 30, 0.85);
-  transform: scale(1.08);
+  box-shadow: 
+    0 12px 32px rgba(0, 0, 0, 0.7),
+    0 0 28px rgba(250, 184, 30, 0.95),
+    inset 0 2px 3px rgba(255, 255, 255, 0.7);
+  transform: scale(1.1) translateY(-1px);
 }
 
 .user-pill__icon {
   transform: none;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.5));
 }
 
 /* Mobile Responsive */
@@ -427,8 +485,8 @@ input, select, textarea { color: #FFFFFF; background: #0F1B2C; border: 1px solid
     gap: 6px;
   }
   .nav-link {
-    font-size: 0.88rem;
-    padding: 5px 8px;
+    font-size: 0.92rem;
+    padding: 5px 10px;
   }
 }
 
