@@ -54,6 +54,8 @@ export async function initMatchesPage() {
 
     if (emptyState) emptyState.style.display = 'none';
     container.style.display = 'grid';
+    container.style.gridTemplateColumns = 'repeat(2, 1fr)';
+    container.style.gap = '24px';
     container.innerHTML = filtered.map((m, index) => createMatchCardHTML(m, index)).join('');
   }
 

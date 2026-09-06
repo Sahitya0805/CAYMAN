@@ -131,7 +131,7 @@
         </div>
 
         <!-- Dynamic Matches Container -->
-        <div id="matches-list" class="grid">
+        <div id="matches-list" class="grid" style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px;">
           <!-- Populated by js/matches.js -->
         </div>
 
@@ -208,7 +208,7 @@
 
   <script type="module" src="js/app.js?v=20260906_4"></script>
   <script type="module">
-    import { initMatchesPage } from './js/matches.js?v=20260906_10';
+    import { initMatchesPage } from './js/matches.js?v=20260906_11';
     initMatchesPage();
   </script>
 </body>
