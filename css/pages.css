@@ -15,9 +15,10 @@
   position: relative;
   overflow: hidden;
   background: #07141D;
-  min-height: 85vh;
+  min-height: 94vh;
   margin-top: -85px; /* Pull behind floating navbar */
-  padding-top: 85px;
+  padding-top: 115px;
+  padding-bottom: 75px;
   display: flex;
   align-items: center;
 }
@@ -25,25 +26,25 @@
 .hero-single__bg {
   position: absolute;
   inset: 0;
-  background-position: center;
+  background-position: center center;
   background-size: cover;
   background-repeat: no-repeat;
-  filter: saturate(1.1) brightness(1.02);
+  filter: saturate(1.15) brightness(1.06);
   transform: scale(1.02);
-  animation: heroBgGentleZoom 14s ease-out infinite alternate;
+  animation: heroBgGentleZoom 16s ease-out infinite alternate;
 }
 
 @keyframes heroBgGentleZoom {
   0% { transform: scale(1.02); }
-  100% { transform: scale(1.08); }
+  100% { transform: scale(1.06); }
 }
 
 .hero-single__overlay {
   position: absolute;
   inset: 0;
   background:
-    linear-gradient(90deg, rgba(8, 14, 24, 0.92) 0%, rgba(8, 14, 24, 0.55) 55%, rgba(8, 14, 24, 0.25) 100%),
-    linear-gradient(0deg, rgba(8, 14, 24, 0.95) 0%, rgba(8, 14, 24, 0.1) 50%, rgba(8, 14, 24, 0.4) 100%);
+    linear-gradient(90deg, rgba(7, 18, 32, 0.52) 0%, rgba(7, 18, 32, 0.22) 50%, rgba(7, 18, 32, 0.08) 100%),
+    linear-gradient(0deg, rgba(7, 18, 32, 0.6) 0%, transparent 40%, rgba(7, 18, 32, 0.25) 100%);
   z-index: 1;
 }
 
@@ -65,13 +66,13 @@
   text-transform: uppercase;
   font-family: var(--font-display);
   margin-bottom: 0;
-  text-shadow: 0 4px 24px rgba(0, 0, 0, 0.8);
+  text-shadow: 0 4px 28px rgba(0, 0, 0, 0.95), 0 2px 10px rgba(0, 0, 0, 0.9);
 }
 
 .hero-single__title em {
   color: #FAB81E;
   font-style: normal;
-  text-shadow: 0 0 30px rgba(250, 184, 30, 0.5);
+  text-shadow: 0 0 32px rgba(250, 184, 30, 0.6), 0 4px 28px rgba(0, 0, 0, 0.95);
 }
 
 .hero-single__subtitle {
@@ -82,7 +83,7 @@
   font-size: 1.2rem;
   font-weight: 800;
   margin: 24px 0 32px;
-  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.7);
+  text-shadow: 0 2px 16px rgba(0, 0, 0, 0.95), 0 1px 6px rgba(0, 0, 0, 0.9);
 }
 
 /* Automatic Entrance Animations for Hero Text */
