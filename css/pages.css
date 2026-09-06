@@ -2878,6 +2878,180 @@ body.page--white-theme .contact-form-panel .form-textarea {
   }
 }
 
+/* ─────────────────────────────────────────────────────────────
+   CIRCULAR NEWS CARDS (News Page Grid)
+   ───────────────────────────────────────────────────────────── */
+.news-card-circular {
+  background: #FFFFFF;
+  border-radius: 14px;
+  border: 1.5px solid #E2E8F0;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(9, 21, 43, 0.08);
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.news-card-circular:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 42px rgba(9, 21, 43, 0.16);
+  border-color: #FAB81E;
+}
+
+.news-circular-header {
+  background: linear-gradient(135deg, #09152B 0%, #122245 100%);
+  padding: 32px 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  border-bottom: 2px solid rgba(250, 184, 30, 0.3);
+}
+
+.news-circular-photo-wrap {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  border: 4px solid #FAB81E;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4), 0 0 20px rgba(250, 184, 30, 0.35);
+  overflow: hidden;
+  position: relative;
+  background: #080E18;
+  transition: all 0.35s ease;
+}
+
+.news-card-circular:hover .news-circular-photo-wrap {
+  border-color: #F2600C;
+  transform: scale(1.06);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.5), 0 0 30px rgba(250, 184, 30, 0.6);
+}
+
+.news-circular-photo-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.news-card-circular:hover .news-circular-photo-img {
+  transform: scale(1.1);
+}
+
+/* ─────────────────────────────────────────────────────────────
+   CSK ABOUT PAGE - EMAIL / MESSAGE DISPATCH MEMO CARD & WHITE BG
+   ───────────────────────────────────────────────────────────── */
+.csk-about-page-wrap {
+  background: #F4F6F9 url('../assets/cricket-white-bg.png') center top / cover fixed no-repeat !important;
+  min-height: 80vh;
+}
+
+.csk-email-memo-card {
+  background: #FFFFFF;
+  border: 2px solid #09152B;
+  border-radius: 12px;
+  box-shadow: 0 16px 40px rgba(9, 21, 43, 0.1), 0 0 0 4px rgba(250, 184, 30, 0.3);
+  overflow: hidden;
+  position: relative;
+  margin-top: 12px;
+}
+
+.csk-email-memo-header {
+  background: #09152B;
+  padding: 14px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 2px solid #FAB81E;
+}
+
+.csk-email-memo-dots {
+  display: flex;
+  gap: 6px;
+}
+
+.csk-email-memo-dots span {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.csk-email-memo-dots span:nth-child(1) { background: #FF5F56; }
+.csk-email-memo-dots span:nth-child(2) { background: #FFBD2E; }
+.csk-email-memo-dots span:nth-child(3) { background: #27C93F; }
+
+.csk-email-memo-tag {
+  font-family: var(--font-display);
+  font-size: 0.75rem;
+  font-weight: 800;
+  color: #FAB81E;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.csk-email-fields-table {
+  background: #F8FAFC;
+  border-bottom: 1.5px solid #E2E8F0;
+  padding: 14px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  font-size: 0.85rem;
+}
+
+.csk-email-field-row {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+}
+
+.csk-email-field-label {
+  font-weight: 800;
+  color: #64748B;
+  width: 65px;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  letter-spacing: 0.05em;
+  flex-shrink: 0;
+}
+
+.csk-email-field-val {
+  color: #09152B;
+  font-weight: 600;
+  word-break: break-word;
+}
+
+.csk-email-memo-body {
+  padding: 24px 20px;
+  color: #1E293B;
+  font-size: 1rem;
+  line-height: 1.65;
+  position: relative;
+}
+
+.csk-email-values-box {
+  margin-top: 18px;
+  padding: 14px 18px;
+  background: #FFFDF5;
+  border: 1px solid #FEF08A;
+  border-left: 4px solid #FAB81E;
+  border-radius: 6px;
+}
+
+.csk-email-memo-footer {
+  margin-top: 20px;
+  padding-top: 16px;
+  border-top: 1px dashed #CBD5E1;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.85rem;
+  color: #475569;
+}
+
+
+
 
 
 

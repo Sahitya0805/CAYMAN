@@ -33,20 +33,22 @@ export async function initNewsPage() {
 
     container.innerHTML = filtered.map(item => `
       <div class="col-4">
-        <a href="article.html?slug=${item.slug}" class="card card--lift" style="text-decoration: none; color: inherit;">
-          <div style="aspect-ratio: 16/9; background: var(--c-navy); overflow: hidden;">
-            <img src="${item.cover_image}" alt="${item.title}" style="width: 100%; height: 100%; object-fit: cover;" loading="lazy">
-          </div>
-          <div class="card-body">
-            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
-              <span class="badge badge--flame">${item.category}</span>
-              <span style="font-size: 0.8125rem; color: var(--c-text-muted);">${item.date}</span>
+        <a href="article.html?slug=${item.slug}" class="news-card-circular" style="text-decoration: none; color: inherit;">
+          <div class="news-circular-header">
+            <div class="news-circular-photo-wrap">
+              <img src="${item.cover_image}" alt="${item.title}" class="news-circular-photo-img" loading="lazy">
             </div>
-            <h3 style="font-size: 1.125rem; margin-bottom: 8px; line-height: 1.3;">${item.title}</h3>
-            <p style="font-size: 0.875rem; color: var(--c-text-muted); margin-bottom: 16px;">${item.excerpt}</p>
-            <div style="margin-top: auto; display: flex; justify-content: space-between; align-items: center; border-top: 1px solid var(--c-border-subtle); padding-top: 12px; font-size: 0.8125rem;">
-              <span style="color: var(--c-text-muted);">${item.read_time || '3 min read'}</span>
-              <span style="color: var(--c-flame-text); font-weight: 700;">Read Article →</span>
+          </div>
+          <div class="card-body" style="padding: 20px; display: flex; flex-direction: column; flex: 1;">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
+              <span class="badge badge--flame">${item.category}</span>
+              <span style="font-size: 0.8125rem; color: #64748B; font-weight: 600;">${item.date}</span>
+            </div>
+            <h3 style="font-size: 1.125rem; margin-bottom: 10px; line-height: 1.35; color: #09152B; font-weight: 800;">${item.title}</h3>
+            <p style="font-size: 0.875rem; color: #475569; margin-bottom: 18px; line-height: 1.55;">${item.excerpt}</p>
+            <div style="margin-top: auto; display: flex; justify-content: space-between; align-items: center; border-top: 1px solid #E2E8F0; padding-top: 14px; font-size: 0.8125rem;">
+              <span style="color: #64748B; font-weight: 600;">${item.read_time || '3 min read'}</span>
+              <span style="color: #F2600C; font-weight: 800;">Read Article →</span>
             </div>
           </div>
         </a>
