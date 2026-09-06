@@ -4099,9 +4099,18 @@ body.page--white-theme .contact-form-panel .form-textarea {
 }
 
 /* ── Site & Editorial Footer Heading Styles (Crisp White) ── */
+footer h4,
+footer .footer-heading,
+.site-footer h4,
 .site-footer .footer-heading,
+.editorial-footer h4,
 .editorial-footer .footer-heading,
-.footer-top .footer-heading {
+.footer-top h4,
+.footer-top .footer-heading,
+body.page--white-theme footer h4,
+body.page--white-theme footer .footer-heading,
+body.page--white-theme .site-footer .footer-heading,
+body.page--white-theme .editorial-footer .footer-heading {
   color: #FFFFFF !important;
   font-family: var(--font-display) !important;
   font-size: 0.95rem !important;
@@ -4111,9 +4120,33 @@ body.page--white-theme .contact-form-panel .form-textarea {
   text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5) !important;
 }
 
+footer .footer-brand h3,
 .site-footer .footer-brand h3,
 .editorial-footer .footer-brand h3 {
   color: #FFFFFF !important;
+}
+
+/* ── Fixtures & Results (Strict 2 Cards per Row Grid) ── */
+#matches-list,
+#matches-list.grid {
+  display: grid !important;
+  grid-template-columns: repeat(2, 1fr) !important;
+  gap: 24px !important;
+  width: 100% !important;
+}
+
+#matches-list > .card,
+#matches-list > .col-6,
+#matches-list > div {
+  grid-column: span 1 !important;
+  width: 100% !important;
+}
+
+@media (max-width: 820px) {
+  #matches-list,
+  #matches-list.grid {
+    grid-template-columns: 1fr !important;
+  }
 }
 
 
