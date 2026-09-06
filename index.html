@@ -471,49 +471,135 @@
       </div>
     </section>
 
-    <!-- SECTION 2: DARK NAVY SECTION - DISPATCH & PRESS -->
-    <section class="section editorial-section editorial-dark">
+    <!-- ── SECTION 2: IN THE NEWS (Exact Reference Layout in CSK Theme) ── -->
+    <section class="section in-the-news-section" aria-label="CSK Latest News and Press">
       <div class="container">
-        <div class="section-header">
-          <div>
-            <span class="section-eyebrow">Dispatch & press</span>
-            <h2 class="section-title">Editorial Vault</h2>
-          </div>
-          <a href="news.html" class="text-link">All dispatches ↗</a>
-        </div>
-        <div class="editorial-news-grid">
-          <article class="feature-story">
-            <img src="assets/csk-action.png" alt="Cayman Super Kings celebrating after a match">
-            <div>
-              <small>MATCH REPORT · 06 SEP 2026</small>
-              <h3>Sterling’s 64 seals dramatic 8-run thriller against Bodden Town</h3>
-              <p>In front of a capacity crowd at Jimmy Powell Oval, M. Sterling led the charge with a fearless finish.</p>
-              <a href="news.html" class="text-link">Read full dispatch ↗</a>
-            </div>
+        <h2 class="in-the-news-title">IN THE NEWS</h2>
+
+        <div class="in-the-news-grid">
+          <!-- Card 1 -->
+          <article class="in-the-news-card">
+            <a href="news.html" class="in-the-news-card__link">
+              <div class="in-the-news-card__thumb">
+                <img src="assets/placeholders/hero-team.svg" alt="Cayman Super Kings Squad Campaign" class="in-the-news-card__img" loading="lazy">
+              </div>
+              <div class="in-the-news-card__meta">
+                <span class="in-the-news-card__date">MAY 2026</span>
+                <h3 class="in-the-news-card__headline">A memorable campaign for our Kings ends in Championship Glory</h3>
+              </div>
+            </a>
           </article>
-          <div class="news-stack">
-            <a href="news.html" class="news-card">
-              <img src="assets/placeholders/hero-team.svg" alt="Cayman Super Kings team">
-              <span>
-                <small>FRANCHISE FILE</small>
-                <strong>Franchise expands elite high-performance programme</strong>
-                <em>Full dispatch ↗</em>
-              </span>
+
+          <!-- Card 2 (With MATCH PREVIEW Badge) -->
+          <article class="in-the-news-card">
+            <a href="news.html" class="in-the-news-card__link">
+              <div class="in-the-news-card__thumb">
+                <img src="assets/csk-action.png" alt="CSK vs Tigers Match Preview" class="in-the-news-card__img" loading="lazy">
+                <div class="in-the-news-card__badge-overlay">
+                  <span class="preview-badge-pill">MATCH PREVIEW</span>
+                  <span class="preview-sub-badge">DIVISION 1 FINAL</span>
+                </div>
+              </div>
+              <div class="in-the-news-card__meta">
+                <span class="in-the-news-card__date">MAY 2026</span>
+                <h3 class="in-the-news-card__headline">CICA T20 2026: Cayman Super Kings vs George Town Tigers - Preview</h3>
+              </div>
             </a>
-            <a href="news.html" class="news-card">
-              <img src="assets/csk-academy.png" alt="Cricket training session">
-              <span>
-                <small>COMMUNITY</small>
-                <strong>CSK grassroots initiative reaches 240 young players</strong>
-                <em>Full dispatch ↗</em>
-              </span>
+          </article>
+
+          <!-- Card 3 -->
+          <article class="in-the-news-card">
+            <a href="news.html" class="in-the-news-card__link">
+              <div class="in-the-news-card__thumb">
+                <img src="assets/slider-cricket-ball-bat.jpg" alt="CSK Batters show" class="in-the-news-card__img" loading="lazy">
+              </div>
+              <div class="in-the-news-card__meta">
+                <span class="in-the-news-card__date">MAY 2026</span>
+                <h3 class="in-the-news-card__headline">Batters put on a stellar show; CSK finish league stage with commanding win</h3>
+              </div>
             </a>
+          </article>
+
+          <!-- Card 4 (With MATCH PREVIEW Badge) -->
+          <article class="in-the-news-card">
+            <a href="news.html" class="in-the-news-card__link">
+              <div class="in-the-news-card__thumb">
+                <img src="assets/slider-stadium-night.jpg" alt="CSK vs Titans Match Preview" class="in-the-news-card__img" loading="lazy">
+                <div class="in-the-news-card__badge-overlay">
+                  <span class="preview-badge-pill">MATCH PREVIEW</span>
+                  <span class="preview-sub-badge">SUPER 4 CLASH</span>
+                </div>
+              </div>
+              <div class="in-the-news-card__meta">
+                <span class="in-the-news-card__date">MAY 2026</span>
+                <h3 class="in-the-news-card__headline">T20 Super League 2026: Cayman Super Kings vs Bodden Town Titans - Preview</h3>
+              </div>
+            </a>
+          </article>
+        </div>
+
+        <!-- Slider Bar Indicator & Centered "View All" Button -->
+        <div class="in-the-news-footer">
+          <div class="in-the-news-progress-bar">
+            <div class="in-the-news-progress-fill"></div>
           </div>
+          <a href="news.html" class="in-the-news-view-all-btn">View All</a>
         </div>
       </div>
     </section>
 
-    <!-- SECTION 3: SPOTLIGHT SOCIAL FEED (Exact Instagram Showcase) -->
+    <!-- ── SECTION 3: THE KINGS MEDIA VAULT (Circular Photos on White Background) ── -->
+    <section class="section section--white editorial-section" aria-label="Media Vault Highlights">
+      <div class="container">
+        <div class="section-header" style="justify-content: space-between; align-items: flex-end; margin-bottom: 24px;">
+          <div>
+            <span class="section-eyebrow">ALL ACCESS BROADCAST</span>
+            <h2 class="section-title" style="color: #09152B;">The Kings Media Vault</h2>
+          </div>
+          <a href="gallery.html" class="text-link" style="color: #09152B; font-weight: 700;">Open gallery ↗</a>
+        </div>
+
+        <div class="circular-gallery-grid" style="margin-top: 20px;">
+          <!-- Circular Item 1 -->
+          <a href="gallery.html" class="circular-gallery-card">
+            <div class="circular-photo-wrapper">
+              <img src="assets/slider-stadium-night.jpg" alt="Floodlit Arena Protocols" class="circular-photo-img" loading="lazy">
+              <div class="circular-photo-overlay">
+                <span class="circular-photo-count">12 PHOTOS</span>
+              </div>
+            </div>
+            <h3 class="circular-card-title" style="color: #09152B; font-family: var(--font-display); font-size: 1.15rem; font-weight: 800; margin-top: 6px;">Floodlit Arena Protocols</h3>
+            <span class="circular-card-tag" style="color: #64748B; font-size: 0.85rem; font-weight: 600;">Matchday Live</span>
+          </a>
+
+          <!-- Circular Item 2 -->
+          <a href="gallery.html" class="circular-gallery-card">
+            <div class="circular-photo-wrapper">
+              <img src="assets/slider-stadium-sunset.jpg" alt="Dressing Room Anthem & Sunset Match" class="circular-photo-img" loading="lazy">
+              <div class="circular-photo-overlay">
+                <span class="circular-photo-count">18 PHOTOS</span>
+              </div>
+            </div>
+            <h3 class="circular-card-title" style="color: #09152B; font-family: var(--font-display); font-size: 1.15rem; font-weight: 800; margin-top: 6px;">Dressing Room &amp; Sunset Clash</h3>
+            <span class="circular-card-tag" style="color: #64748B; font-size: 0.85rem; font-weight: 600;">Behind The Scenes</span>
+          </a>
+
+          <!-- Circular Item 3 -->
+          <a href="gallery.html" class="circular-gallery-card">
+            <div class="circular-photo-wrapper">
+              <img src="assets/slider-cricket-ball-bat.jpg" alt="Matchday Gear & Seam Dynamics" class="circular-photo-img" loading="lazy">
+              <div class="circular-photo-overlay">
+                <span class="circular-photo-count">8 PHOTOS</span>
+              </div>
+            </div>
+            <h3 class="circular-card-title" style="color: #09152B; font-family: var(--font-display); font-size: 1.15rem; font-weight: 800; margin-top: 6px;">Matchday Gear &amp; Seam Dynamics</h3>
+            <span class="circular-card-tag" style="color: #64748B; font-size: 0.85rem; font-weight: 600;">Equipment</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── SECTION 4: SPOTLIGHT SOCIAL FEED (Instagram Showcase) ── -->
     <section class="section spotlight-section">
       <div class="container">
         <!-- Spotlight Header -->
@@ -597,29 +683,73 @@
       </div>
     </section>
 
-    <!-- SECTION 4: WHITE SECTION - KINGS MEDIA VAULT -->
-    <section class="section section--white editorial-section">
+    <!-- ── SECTION 5: OUR SPONSORS (Exact Reference Tiered Layout on White Background) ── -->
+    <section class="section section--white sponsors-board-section" aria-label="Official Franchise Sponsors" style="padding-top: 64px; padding-bottom: 72px;">
       <div class="container">
-        <div class="section-header">
-          <div>
-            <span class="section-eyebrow">All access broadcast</span>
-            <h2 class="section-title">The Kings Media Vault</h2>
+        <h2 class="sponsors-board-title" style="text-align: center; margin-bottom: 24px; color: #09152B; font-family: var(--font-display); font-size: clamp(2rem, 4vw, 2.75rem); font-weight: 900; letter-spacing: 0.06em;">OUR SPONSORS</h2>
+        
+        <hr class="sponsors-divider" style="border: 0; border-top: 1.5px solid #E2E8F0; margin-bottom: 40px;">
+
+        <!-- TIER 1: TITLE SPONSOR -->
+        <div class="sponsors-row sponsors-row--title">
+          <div class="sponsor-unit sponsor-unit--title">
+            <span class="sponsor-unit__label" style="letter-spacing: 0.12em;">TITLE SPONSOR</span>
+            <div class="sponsor-unit__logo-wrapper">
+              <img src="assets/sponsors/shree-cement.svg" alt="Shree Cement" class="sponsor-unit__img">
+            </div>
           </div>
-          <a href="gallery.html" class="text-link">Open gallery ↗</a>
         </div>
-        <div class="media-grid">
-          <a href="gallery.html">
-            <img src="assets/slider-stadium-night.jpg" alt="Night lights at Jimmy Powell Oval">
-            <span>Floodlit Arena Protocols</span>
-          </a>
-          <a href="gallery.html">
-            <img src="assets/slider-stadium-sunset.jpg" alt="Sunset cricket clash">
-            <span>Dressing Room Anthem & Sunset Match</span>
-          </a>
-          <a href="gallery.html">
-            <img src="assets/slider-cricket-ball-bat.jpg" alt="Match equipment close up">
-            <span>Matchday Gear & Seam Dynamics</span>
-          </a>
+
+        <!-- TIER 2: 2 PRINCIPAL / OFFICIAL PARTNERS -->
+        <div class="sponsors-row" style="border-top: 1.5px solid #E2E8F0; padding-top: 36px;">
+          <div class="sponsors-row-grid-2">
+            <div class="sponsor-unit sponsor-unit--principal">
+              <span class="sponsor-unit__label" style="letter-spacing: 0.12em;">OFFICIAL TYRE PARTNER</span>
+              <div class="sponsor-unit__logo-wrapper">
+                <img src="assets/sponsors/bkt.svg" alt="BKT Tyres" class="sponsor-unit__img">
+              </div>
+            </div>
+
+            <div class="sponsor-unit sponsor-unit--principal">
+              <span class="sponsor-unit__label" style="letter-spacing: 0.12em;">PRINCIPAL SPONSOR</span>
+              <div class="sponsor-unit__logo-wrapper">
+                <img src="assets/sponsors/kuhl.svg" alt="Kühl BLDC Fans" class="sponsor-unit__img">
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- TIER 3: 4 OFFICIAL SPONSORS -->
+        <div class="sponsors-row" style="border-top: 1.5px solid #E2E8F0; padding-top: 36px;">
+          <div class="sponsors-row-grid-4">
+            <div class="sponsor-unit sponsor-unit--official">
+              <span class="sponsor-unit__label" style="letter-spacing: 0.1em;">OFFICIAL TELECOM PARTNER</span>
+              <div class="sponsor-unit__logo-wrapper">
+                <img src="assets/sponsors/jio.svg" alt="Jio" class="sponsor-unit__img">
+              </div>
+            </div>
+
+            <div class="sponsor-unit sponsor-unit--official">
+              <span class="sponsor-unit__label" style="letter-spacing: 0.1em;">OFFICIAL AIRLINE PARTNER</span>
+              <div class="sponsor-unit__logo-wrapper">
+                <img src="assets/sponsors/airasia.svg" alt="AirAsia" class="sponsor-unit__img">
+              </div>
+            </div>
+
+            <div class="sponsor-unit sponsor-unit--official">
+              <span class="sponsor-unit__label" style="letter-spacing: 0.1em;">PRINCIPAL SPONSOR</span>
+              <div class="sponsor-unit__logo-wrapper">
+                <img src="assets/sponsors/lubi.svg" alt="Lubi" class="sponsor-unit__img">
+              </div>
+            </div>
+
+            <div class="sponsor-unit sponsor-unit--official">
+              <span class="sponsor-unit__label" style="letter-spacing: 0.1em;">OFFICIAL SPONSOR</span>
+              <div class="sponsor-unit__logo-wrapper">
+                <img src="assets/sponsors/ecolink.svg" alt="ECOLINK" class="sponsor-unit__img">
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
