@@ -21,8 +21,11 @@ export function initSplashLoader() {
         <div class="csk-splash-screen__logo-wrap">
           <img src="assets/csk-splash.png" alt="Cayman Super Kings" class="csk-splash-screen__image">
         </div>
-        <div class="csk-splash-screen__progress">
-          <div class="csk-splash-screen__bar"></div>
+        <div class="csk-splash-screen__loader-wrap">
+          <span class="csk-splash-screen__loader-text">Loading ...</span>
+          <div class="csk-splash-screen__progress">
+            <div class="csk-splash-screen__bar"></div>
+          </div>
         </div>
       </div>
     `;
