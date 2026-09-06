@@ -5,13 +5,10 @@
    HOMEPAGE & GLOBAL THEME
 */
 .editorial-home, body { background: #080E18; color: #FFFFFF; }
-.editorial-header, .site-header { background: #080E18; }
-.editorial-header .site-header__inner { max-width: 1320px; }
+.editorial-header, .site-header { background: transparent !important; background-color: transparent !important; box-shadow: none !important; border: none !important; }
+.editorial-header .site-header__inner { max-width: 1320px; background: transparent !important; }
 
-.announcement-bar { background: #FAB81E; color: #080E18; border: 0; }
-.announcement-link { color: #080E18; font-weight: 800; }
-.announcement-tag { background: #080E18; color: #FAB81E; }
-.announcement-text { color: #080E18; font-weight: 700; }
+.announcement-bar { display: none !important; }
 
 /* ── HERO SLIDER (3 Featured Photos in Sliding Format) ── */
 .hero-slider-section {
