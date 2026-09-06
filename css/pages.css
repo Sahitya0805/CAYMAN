@@ -4065,21 +4065,40 @@ footer .footer-brand h3,
   color: #FFFFFF !important;
 }
 
-/* ── Fixtures & Results (2 Ticket Pass Cards per Row Grid - Half Size) ── */
+/* ── Fixtures & Results (News Box Card 2-Column Grid) ── */
 #matches-list,
 #matches-list.grid {
   display: grid !important;
   grid-template-columns: repeat(2, 1fr) !important;
-  gap: 36px 24px !important;
+  gap: 28px 24px !important;
   width: 100% !important;
   margin-top: 20px !important;
   padding-bottom: 24px !important;
 }
 
-#matches-list > .fixture-ticket,
+#matches-list > .col-6,
 #matches-list > div {
   grid-column: span 1 !important;
   width: 100% !important;
+}
+
+.match-news-box-card {
+  border-radius: 14px !important;
+  border: 1.5px solid #CBD5E1 !important;
+  box-shadow: 0 4px 18px rgba(8, 14, 24, 0.06) !important;
+  background: #FFFFFF !important;
+  overflow: hidden !important;
+  transition: transform 0.28s ease, box-shadow 0.28s ease, border-color 0.28s ease !important;
+}
+
+.match-news-box-card:hover {
+  transform: translateY(-4px) !important;
+  box-shadow: 0 14px 34px rgba(8, 14, 24, 0.12), 0 0 20px rgba(250, 184, 30, 0.25) !important;
+  border-color: #FAB81E !important;
+}
+
+.match-news-box-card:hover img {
+  transform: scale(1.04) !important;
 }
 
 .fixture-ticket {
