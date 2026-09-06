@@ -12,15 +12,39 @@
   <link rel="stylesheet" href="css/components.css?v=20260906d">
   <link rel="stylesheet" href="css/pages.css?v=20260906d">
   <style>
+    .sponsors-board-section {
+      padding-top: 100px !important;
+      padding-bottom: 80px !important;
+      background: #FFFFFF;
+    }
+    .sponsors-board-section .container {
+      position: relative;
+      z-index: 1;
+      max-width: 1360px !important;
+      width: 100% !important;
+      margin: 0 auto !important;
+      padding: 0 20px !important;
+    }
+    .sponsors-board-title {
+      text-align: center;
+      font-family: var(--font-display);
+      font-size: clamp(2.2rem, 5vw, 3.8rem);
+      font-weight: 900;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: #080E18;
+      margin: 0 auto 40px;
+      line-height: 1;
+    }
     .sponsors-pyramid-wrap {
       position: relative !important;
       width: 100% !important;
-      max-width: 1380px !important;
+      max-width: 1320px !important;
       margin: 0 auto !important;
       padding: 0 !important;
       display: flex !important;
       flex-direction: column !important;
-      min-height: 1080px !important;
+      min-height: 1040px !important;
     }
     .sponsors-triangle-svg {
       position: absolute !important;
@@ -40,51 +64,51 @@
       justify-content: center !important;
       border: none !important;
       box-sizing: border-box !important;
-      padding: 16px 20px !important;
+      padding: 10px 16px !important;
     }
     .sponsors-row--t1 {
       height: 360px !important;
       min-height: 360px !important;
-      padding-top: 105px !important;
+      padding-top: 120px !important;
       justify-content: flex-end !important;
-      padding-bottom: 35px !important;
+      padding-bottom: 28px !important;
     }
     .sponsors-row--t2 {
-      height: 340px !important;
-      min-height: 340px !important;
+      height: 320px !important;
+      min-height: 320px !important;
       justify-content: center !important;
-      padding-top: 20px !important;
-      padding-bottom: 20px !important;
+      padding-top: 15px !important;
+      padding-bottom: 15px !important;
     }
     .sponsors-row--t3 {
       height: 360px !important;
       min-height: 360px !important;
       justify-content: center !important;
-      padding-top: 20px !important;
-      padding-bottom: 45px !important;
+      padding-top: 15px !important;
+      padding-bottom: 40px !important;
     }
     .sponsors-row-grid-2 {
       display: grid !important;
       grid-template-columns: repeat(2, 1fr) !important;
-      gap: 48px !important;
-      max-width: 500px !important;
-      width: 100% !important;
+      gap: 16px !important;
+      max-width: 320px !important;
+      width: 90% !important;
       margin: 0 auto !important;
     }
     .sponsors-row--t2 .sponsors-row-grid-4 {
       display: grid !important;
       grid-template-columns: repeat(4, 1fr) !important;
-      gap: 32px !important;
-      max-width: 860px !important;
-      width: 100% !important;
+      gap: 12px !important;
+      max-width: 580px !important;
+      width: 92% !important;
       margin: 0 auto !important;
     }
     .sponsors-row--t3 .sponsors-row-grid-4 {
       display: grid !important;
       grid-template-columns: repeat(4, 1fr) !important;
-      gap: 36px !important;
-      max-width: 1120px !important;
-      width: 100% !important;
+      gap: 20px !important;
+      max-width: 880px !important;
+      width: 94% !important;
       margin: 0 auto !important;
     }
     .sponsor-unit {
@@ -98,74 +122,92 @@
     }
     .sponsor-unit__label {
       font-family: var(--font-body) !important;
-      font-size: 0.88rem !important;
       font-weight: 800 !important;
-      letter-spacing: 0.12em !important;
       text-transform: uppercase !important;
       color: #09152B !important;
-      margin-bottom: 12px !important;
       white-space: normal !important;
       text-align: center !important;
-      line-height: 1.25 !important;
+      line-height: 1.2 !important;
+    }
+    .sponsors-row--t1 .sponsor-unit__label {
+      font-size: 0.78rem !important;
+      letter-spacing: 0.08em !important;
+      margin-bottom: 8px !important;
+    }
+    .sponsors-row--t2 .sponsor-unit__label {
+      font-size: 0.66rem !important;
+      letter-spacing: 0.05em !important;
+      margin-bottom: 6px !important;
+    }
+    .sponsors-row--t3 .sponsor-unit__label {
+      font-size: 0.76rem !important;
+      letter-spacing: 0.07em !important;
+      margin-bottom: 8px !important;
     }
     .sponsor-unit__logo-wrapper {
       display: flex !important;
       align-items: center !important;
       justify-content: center !important;
-      min-height: 70px !important;
+      min-height: 54px !important;
       transition: transform 0.28s cubic-bezier(0.16, 1, 0.3, 1), filter 0.28s ease !important;
     }
     .sponsor-unit:hover .sponsor-unit__logo-wrapper {
-      transform: translateY(-4px) scale(1.08) !important;
-      filter: drop-shadow(0 8px 18px rgba(7, 31, 70, 0.18)) !important;
+      transform: translateY(-3px) scale(1.06) !important;
+      filter: drop-shadow(0 6px 14px rgba(7, 31, 70, 0.16)) !important;
     }
     .sponsor-unit__img {
       max-width: 100% !important;
       height: auto !important;
       object-fit: contain !important;
-      filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.08)) !important;
+      filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.06)) !important;
     }
     .sponsor-unit--principal .sponsor-unit__img {
-      max-width: 220px !important;
-      max-height: 80px !important;
+      max-width: 140px !important;
+      max-height: 55px !important;
     }
     .sponsors-row--t2 .sponsor-unit--official .sponsor-unit__img {
-      max-width: 175px !important;
-      max-height: 68px !important;
+      max-width: 115px !important;
+      max-height: 48px !important;
     }
     .sponsors-row--t3 .sponsor-unit--official .sponsor-unit__img {
-      max-width: 200px !important;
-      max-height: 75px !important;
+      max-width: 165px !important;
+      max-height: 60px !important;
     }
 
     @media (max-width: 900px) {
-      .sponsors-pyramid-wrap { min-height: 880px !important; }
-      .sponsors-row--t1 { height: 290px !important; min-height: 290px !important; padding-top: 80px !important; padding-bottom: 24px !important; }
-      .sponsors-row--t2 { height: 280px !important; min-height: 280px !important; }
-      .sponsors-row--t3 { height: 290px !important; min-height: 290px !important; padding-bottom: 30px !important; }
-      .sponsors-row-grid-2 { max-width: 380px !important; gap: 24px !important; }
-      .sponsors-row--t2 .sponsors-row-grid-4 { max-width: 650px !important; gap: 16px !important; }
-      .sponsors-row--t3 .sponsors-row-grid-4 { max-width: 780px !important; gap: 18px !important; }
-      .sponsor-unit__label { font-size: 0.72rem !important; margin-bottom: 8px !important; }
-      .sponsor-unit__logo-wrapper { min-height: 52px !important; }
-      .sponsor-unit--principal .sponsor-unit__img { max-width: 160px !important; max-height: 60px !important; }
-      .sponsors-row--t2 .sponsor-unit--official .sponsor-unit__img { max-width: 130px !important; max-height: 52px !important; }
-      .sponsors-row--t3 .sponsor-unit--official .sponsor-unit__img { max-width: 145px !important; max-height: 55px !important; }
+      .sponsors-board-section { padding-top: 80px !important; padding-bottom: 60px !important; }
+      .sponsors-pyramid-wrap { min-height: 840px !important; }
+      .sponsors-row--t1 { height: 280px !important; min-height: 280px !important; padding-top: 90px !important; padding-bottom: 18px !important; }
+      .sponsors-row--t2 { height: 260px !important; min-height: 260px !important; }
+      .sponsors-row--t3 { height: 300px !important; min-height: 300px !important; padding-bottom: 25px !important; }
+      .sponsors-row-grid-2 { max-width: 260px !important; gap: 10px !important; }
+      .sponsors-row--t2 .sponsors-row-grid-4 { max-width: 460px !important; gap: 8px !important; }
+      .sponsors-row--t3 .sponsors-row-grid-4 { max-width: 660px !important; gap: 14px !important; }
+      .sponsors-row--t1 .sponsor-unit__label { font-size: 0.66rem !important; }
+      .sponsors-row--t2 .sponsor-unit__label { font-size: 0.54rem !important; }
+      .sponsors-row--t3 .sponsor-unit__label { font-size: 0.62rem !important; }
+      .sponsor-unit__logo-wrapper { min-height: 42px !important; }
+      .sponsor-unit--principal .sponsor-unit__img { max-width: 110px !important; max-height: 44px !important; }
+      .sponsors-row--t2 .sponsor-unit--official .sponsor-unit__img { max-width: 90px !important; max-height: 38px !important; }
+      .sponsors-row--t3 .sponsor-unit--official .sponsor-unit__img { max-width: 125px !important; max-height: 46px !important; }
     }
 
     @media (max-width: 600px) {
-      .sponsors-pyramid-wrap { min-height: 720px !important; }
-      .sponsors-row--t1 { height: 230px !important; min-height: 230px !important; padding-top: 55px !important; padding-bottom: 15px !important; }
-      .sponsors-row--t2 { height: 230px !important; min-height: 230px !important; }
-      .sponsors-row--t3 { height: 250px !important; min-height: 250px !important; padding-bottom: 20px !important; }
-      .sponsors-row-grid-2 { max-width: 250px !important; gap: 12px !important; }
-      .sponsors-row--t2 .sponsors-row-grid-4 { max-width: 380px !important; gap: 8px !important; }
-      .sponsors-row--t3 .sponsors-row-grid-4 { max-width: 440px !important; gap: 10px !important; }
-      .sponsor-unit__label { font-size: 0.52rem !important; letter-spacing: 0.04em !important; margin-bottom: 4px !important; }
-      .sponsor-unit__logo-wrapper { min-height: 38px !important; }
-      .sponsor-unit--principal .sponsor-unit__img { max-width: 110px !important; max-height: 42px !important; }
-      .sponsors-row--t2 .sponsor-unit--official .sponsor-unit__img { max-width: 85px !important; max-height: 36px !important; }
-      .sponsors-row--t3 .sponsor-unit--official .sponsor-unit__img { max-width: 95px !important; max-height: 38px !important; }
+      .sponsors-board-section { padding-top: 70px !important; padding-bottom: 50px !important; }
+      .sponsors-pyramid-wrap { min-height: 660px !important; }
+      .sponsors-row--t1 { height: 210px !important; min-height: 210px !important; padding-top: 65px !important; padding-bottom: 10px !important; }
+      .sponsors-row--t2 { height: 210px !important; min-height: 210px !important; }
+      .sponsors-row--t3 { height: 240px !important; min-height: 240px !important; padding-bottom: 15px !important; }
+      .sponsors-row-grid-2 { max-width: 190px !important; gap: 6px !important; }
+      .sponsors-row--t2 .sponsors-row-grid-4 { max-width: 310px !important; gap: 4px !important; }
+      .sponsors-row--t3 .sponsors-row-grid-4 { max-width: 380px !important; gap: 6px !important; }
+      .sponsors-row--t1 .sponsor-unit__label { font-size: 0.48rem !important; letter-spacing: 0.02em !important; margin-bottom: 3px !important; }
+      .sponsors-row--t2 .sponsor-unit__label { font-size: 0.40rem !important; letter-spacing: 0.01em !important; margin-bottom: 2px !important; }
+      .sponsors-row--t3 .sponsor-unit__label { font-size: 0.46rem !important; letter-spacing: 0.02em !important; margin-bottom: 3px !important; }
+      .sponsor-unit__logo-wrapper { min-height: 30px !important; }
+      .sponsor-unit--principal .sponsor-unit__img { max-width: 80px !important; max-height: 32px !important; }
+      .sponsors-row--t2 .sponsor-unit--official .sponsor-unit__img { max-width: 60px !important; max-height: 28px !important; }
+      .sponsors-row--t3 .sponsor-unit--official .sponsor-unit__img { max-width: 78px !important; max-height: 32px !important; }
     }
   </style>
 </head>
