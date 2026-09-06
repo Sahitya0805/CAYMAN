@@ -691,65 +691,84 @@
       <div class="container">
         <h2 class="sponsors-board-title" style="text-align: center; margin-bottom: 24px; color: #09152B; font-family: var(--font-display); font-size: clamp(2rem, 4vw, 2.75rem); font-weight: 900; letter-spacing: 0.06em;">OUR SPONSORS</h2>
         
-        <hr class="sponsors-divider" style="border: 0; border-top: 1.5px solid #E2E8F0; margin-bottom: 40px;">
+        <!-- ── SPONSORS PYRAMID WITH TRIANGLE OUTLINE ── -->
+        <div class="sponsors-pyramid-wrap">
+          <svg class="sponsors-triangle-svg" viewBox="0 0 1000 680" preserveAspectRatio="none" aria-hidden="true">
+            <defs>
+              <linearGradient id="cskHomeTriangleGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#FAB81E" stop-opacity="0.95" />
+                <stop offset="50%" stop-color="#F2600C" stop-opacity="0.8" />
+                <stop offset="100%" stop-color="#FAB81E" stop-opacity="0.95" />
+              </linearGradient>
+            </defs>
+            <!-- Outer Geometric Triangle Frame -->
+            <polygon points="500,10 985,670 15,670" fill="rgba(250, 184, 30, 0.02)" stroke="url(#cskHomeTriangleGrad)" stroke-width="2.5" stroke-linejoin="round" />
+            <!-- Inner Inset Dashed Outline -->
+            <polygon points="500,28 966,654 34,654" fill="none" stroke="rgba(9, 21, 43, 0.15)" stroke-width="1.5" stroke-dasharray="10 6" stroke-linejoin="round" />
+            <!-- Golden Corner Accents / Vertices -->
+            <circle cx="500" cy="10" r="5.5" fill="#FAB81E" stroke="#09152B" stroke-width="2" />
+            <circle cx="985" cy="670" r="5.5" fill="#FAB81E" stroke="#09152B" stroke-width="2" />
+            <circle cx="15" cy="670" r="5.5" fill="#FAB81E" stroke="#09152B" stroke-width="2" />
+          </svg>
 
-        <!-- TIER 1: TITLE SPONSOR -->
-        <div class="sponsors-row sponsors-row--title">
-          <div class="sponsor-unit sponsor-unit--title">
-            <span class="sponsor-unit__label" style="letter-spacing: 0.12em;">TITLE SPONSOR</span>
-            <div class="sponsor-unit__logo-wrapper">
-              <img src="assets/sponsors/shree-cement.svg" alt="Shree Cement" class="sponsor-unit__img">
+          <!-- TIER 1: TITLE SPONSOR -->
+          <div class="sponsors-row sponsors-row--title">
+            <div class="sponsor-unit sponsor-unit--title">
+              <span class="sponsor-unit__label" style="letter-spacing: 0.12em;">TITLE SPONSOR</span>
+              <div class="sponsor-unit__logo-wrapper">
+                <img src="assets/sponsors/shree-cement.svg" alt="Shree Cement" class="sponsor-unit__img">
+              </div>
             </div>
           </div>
-        </div>
 
-        <!-- TIER 2: 2 PRINCIPAL / OFFICIAL PARTNERS -->
-        <div class="sponsors-row" style="border-top: 1.5px solid #E2E8F0; padding-top: 36px;">
-          <div class="sponsors-row-grid-2">
-            <div class="sponsor-unit sponsor-unit--principal">
-              <span class="sponsor-unit__label" style="letter-spacing: 0.12em;">OFFICIAL TYRE PARTNER</span>
-              <div class="sponsor-unit__logo-wrapper">
-                <img src="assets/sponsors/bkt.svg" alt="BKT Tyres" class="sponsor-unit__img">
+          <!-- TIER 2: 2 PRINCIPAL / OFFICIAL PARTNERS -->
+          <div class="sponsors-row" style="border-top: 1.5px solid #E2E8F0; padding-top: 36px;">
+            <div class="sponsors-row-grid-2">
+              <div class="sponsor-unit sponsor-unit--principal">
+                <span class="sponsor-unit__label" style="letter-spacing: 0.12em;">OFFICIAL TYRE PARTNER</span>
+                <div class="sponsor-unit__logo-wrapper">
+                  <img src="assets/sponsors/bkt.svg" alt="BKT Tyres" class="sponsor-unit__img">
+                </div>
               </div>
-            </div>
 
-            <div class="sponsor-unit sponsor-unit--principal">
-              <span class="sponsor-unit__label" style="letter-spacing: 0.12em;">PRINCIPAL SPONSOR</span>
-              <div class="sponsor-unit__logo-wrapper">
-                <img src="assets/sponsors/kuhl.svg" alt="Kühl BLDC Fans" class="sponsor-unit__img">
+              <div class="sponsor-unit sponsor-unit--principal">
+                <span class="sponsor-unit__label" style="letter-spacing: 0.12em;">PRINCIPAL SPONSOR</span>
+                <div class="sponsor-unit__logo-wrapper">
+                  <img src="assets/sponsors/kuhl.svg" alt="Kühl BLDC Fans" class="sponsor-unit__img">
+                </div>
               </div>
             </div>
           </div>
-        </div>
 
-        <!-- TIER 3: 4 OFFICIAL SPONSORS -->
-        <div class="sponsors-row" style="border-top: 1.5px solid #E2E8F0; padding-top: 36px;">
-          <div class="sponsors-row-grid-4">
-            <div class="sponsor-unit sponsor-unit--official">
-              <span class="sponsor-unit__label" style="letter-spacing: 0.1em;">OFFICIAL TELECOM PARTNER</span>
-              <div class="sponsor-unit__logo-wrapper">
-                <img src="assets/sponsors/jio.svg" alt="Jio" class="sponsor-unit__img">
+          <!-- TIER 3: 4 OFFICIAL SPONSORS -->
+          <div class="sponsors-row" style="border-top: 1.5px solid #E2E8F0; padding-top: 36px; border-bottom: none;">
+            <div class="sponsors-row-grid-4">
+              <div class="sponsor-unit sponsor-unit--official">
+                <span class="sponsor-unit__label" style="letter-spacing: 0.1em;">OFFICIAL TELECOM PARTNER</span>
+                <div class="sponsor-unit__logo-wrapper">
+                  <img src="assets/sponsors/jio.svg" alt="Jio" class="sponsor-unit__img">
+                </div>
               </div>
-            </div>
 
-            <div class="sponsor-unit sponsor-unit--official">
-              <span class="sponsor-unit__label" style="letter-spacing: 0.1em;">OFFICIAL AIRLINE PARTNER</span>
-              <div class="sponsor-unit__logo-wrapper">
-                <img src="assets/sponsors/airasia.svg" alt="AirAsia" class="sponsor-unit__img">
+              <div class="sponsor-unit sponsor-unit--official">
+                <span class="sponsor-unit__label" style="letter-spacing: 0.1em;">OFFICIAL AIRLINE PARTNER</span>
+                <div class="sponsor-unit__logo-wrapper">
+                  <img src="assets/sponsors/airasia.svg" alt="AirAsia" class="sponsor-unit__img">
+                </div>
               </div>
-            </div>
 
-            <div class="sponsor-unit sponsor-unit--official">
-              <span class="sponsor-unit__label" style="letter-spacing: 0.1em;">PRINCIPAL SPONSOR</span>
-              <div class="sponsor-unit__logo-wrapper">
-                <img src="assets/sponsors/lubi.svg" alt="Lubi" class="sponsor-unit__img">
+              <div class="sponsor-unit sponsor-unit--official">
+                <span class="sponsor-unit__label" style="letter-spacing: 0.1em;">PRINCIPAL SPONSOR</span>
+                <div class="sponsor-unit__logo-wrapper">
+                  <img src="assets/sponsors/lubi.svg" alt="Lubi" class="sponsor-unit__img">
+                </div>
               </div>
-            </div>
 
-            <div class="sponsor-unit sponsor-unit--official">
-              <span class="sponsor-unit__label" style="letter-spacing: 0.1em;">OFFICIAL SPONSOR</span>
-              <div class="sponsor-unit__logo-wrapper">
-                <img src="assets/sponsors/ecolink.svg" alt="ECOLINK" class="sponsor-unit__img">
+              <div class="sponsor-unit sponsor-unit--official">
+                <span class="sponsor-unit__label" style="letter-spacing: 0.1em;">OFFICIAL SPONSOR</span>
+                <div class="sponsor-unit__logo-wrapper">
+                  <img src="assets/sponsors/ecolink.svg" alt="ECOLINK" class="sponsor-unit__img">
+                </div>
               </div>
             </div>
           </div>

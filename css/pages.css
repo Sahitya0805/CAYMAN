@@ -1174,7 +1174,28 @@ body.page--white-theme .contact-form-panel .form-textarea {
   margin: 0;
 }
 
+.sponsors-pyramid-wrap {
+  position: relative;
+  width: 100%;
+  max-width: 1060px;
+  margin: 0 auto;
+  padding: 30px 24px 36px;
+}
+
+.sponsors-triangle-svg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 0;
+  overflow: visible;
+}
+
 .sponsors-row {
+  position: relative;
+  z-index: 1;
   border-bottom: 1.5px solid #D6D9DE;
   padding: 44px 16px;
   display: flex;
