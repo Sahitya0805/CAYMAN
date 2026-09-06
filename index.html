@@ -8,10 +8,10 @@
   <link rel="icon" type="image/png" href="assets/csk-official-logo.png">
   <link rel="shortcut icon" href="favicon.ico">
   <link rel="apple-touch-icon" href="assets/csk-official-logo.png">
-  <link rel="stylesheet" href="css/tokens.css?v=20260906_18">
-  <link rel="stylesheet" href="css/layout.css?v=20260906_18">
-  <link rel="stylesheet" href="css/components.css?v=20260906_18">
-  <link rel="stylesheet" href="css/pages.css?v=20260906_18">
+  <link rel="stylesheet" href="css/tokens.css?v=20260906_19">
+  <link rel="stylesheet" href="css/layout.css?v=20260906_19">
+  <link rel="stylesheet" href="css/components.css?v=20260906_19">
+  <link rel="stylesheet" href="css/pages.css?v=20260906_19">
   <style>
     /* ── Short & Attractive Sponsors Showcase ── */
     .sponsors-compact-section {
@@ -250,32 +250,81 @@
     </div>
   </header>
   <main>
-    <!-- SINGLE CINEMATIC HERO SECTION (1 Photo, Automatic Text, No Slider) -->
-    <section class="hero-single-section" aria-label="Official Cayman Super Kings Club">
-      <div class="hero-single__bg" style="background-image: url('assets/hero-montage.jpg?v=20260906_18');"></div>
-      <div class="hero-single__overlay"></div>
+    <!-- STADIUM 4K TV FRAME DISPLAY (Below Navbar, Above Next Match) -->
+    <section class="stadium-tv-section" aria-label="Official Cayman Super Kings Live Jumbotron">
+      <!-- Atmospheric Backdrop & Particle Spark Canvas -->
+      <div class="stadium-tv-backdrop"></div>
       <canvas id="csk-hero-particles" class="hero-particles-canvas" aria-hidden="true"></canvas>
 
-      <div class="container hero-single__content">
-        <div class="hero-live-badge-wrap hero-anim-eyebrow">
-          <span class="hero-radar-pulse"></span>
-          <span class="hero-live-badge-text">⚡ 2026 CICA T20 CAMPAIGN · LIVE AT GRAND CAYMAN</span>
+      <div class="container stadium-tv-container">
+        <!-- Stadium TV Frame / Jumbotron Device -->
+        <div class="stadium-tv-bezel">
+          <!-- TV Ambient Backlight Glow -->
+          <div class="stadium-tv-glow" aria-hidden="true"></div>
+
+          <!-- TV Top Housing Bar (Live Broadcast Controls) -->
+          <div class="stadium-tv-topbar">
+            <div class="tv-topbar-left">
+              <span class="tv-live-pill"><span class="tv-live-dot"></span> LIVE 4K HDR</span>
+              <span class="tv-broadcast-tag">FEED 01 · JIMMY POWELL OVAL</span>
+            </div>
+            <div class="tv-topbar-center">
+              <span class="tv-brand-title">CAYMAN SUPER KINGS · MATCHDAY VISION</span>
+            </div>
+            <div class="tv-topbar-right">
+              <span class="tv-rec-badge">REC ●</span>
+              <span class="tv-res-badge">3840×2160 60FPS</span>
+            </div>
+          </div>
+
+          <!-- TV Display Screen (Houses the 12-Photo Cricket Montage Photo Feed) -->
+          <div class="stadium-tv-screen">
+            <!-- The 12-Photo Cricket Montage Background Feed -->
+            <div class="stadium-tv-feed" style="background-image: url('assets/hero-montage.jpg?v=20260906_19');"></div>
+            <!-- Broadcast Glass Reflection -->
+            <div class="stadium-tv-glass"></div>
+
+            <!-- TV Screen On-Air Content -->
+            <div class="stadium-tv-content">
+              <div class="hero-live-badge-wrap hero-anim-eyebrow">
+                <span class="hero-radar-pulse"></span>
+                <span class="hero-live-badge-text">⚡ 2026 CICA T20 CAMPAIGN · LIVE AT GRAND CAYMAN</span>
+              </div>
+
+              <h1 class="hero-single__title hero-anim-title">
+                ONE TEAM.<br>
+                <em>ONE DREAM.</em>
+              </h1>
+              <p class="hero-single__subtitle hero-anim-subtitle">THE LION ROARS AGAIN · CICA 2026</p>
+
+              <div class="hero-actions hero-anim-actions">
+                <a href="matches.html" class="btn btn-primary btn-lg">View Fixtures</a>
+                <a href="squad.html" class="btn btn-outline-hero btn-lg">Meet The Squad</a>
+                <button class="btn btn-roar-fan" id="hero-roar-btn" aria-label="Tap to Roar for Cayman Super Kings">
+                  <span class="roar-icon">🦁</span>
+                  <span class="roar-label">ROAR FOR CSK</span>
+                  <span class="roar-badge" id="hero-roar-count">14.8K</span>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- TV Bottom Frame Housing (Embossed Lion Crest & Status LEDs) -->
+          <div class="stadium-tv-bottombar">
+            <div class="tv-speaker-grille"></div>
+            <div class="tv-crest-badge">
+              <img src="assets/csk-official-logo.png" alt="CSK Crest" class="tv-crest-img">
+              <span>CSK CINEMA STADIUM VISION</span>
+            </div>
+            <div class="tv-led-cluster">
+              <span class="tv-led tv-led--power" title="System Active"></span>
+              <span class="tv-led tv-led--signal" title="Live Satellite Signal"></span>
+            </div>
+          </div>
         </div>
 
-        <h1 class="hero-single__title hero-anim-title">
-          ONE TEAM.<br>
-          <em>ONE DREAM.</em>
-        </h1>
-        <p class="hero-single__subtitle hero-anim-subtitle">THE LION ROARS AGAIN · CICA 2026</p>
-        <div class="hero-actions hero-anim-actions">
-          <a href="matches.html" class="btn btn-primary btn-lg">View Fixtures</a>
-          <a href="squad.html" class="btn btn-outline-hero btn-lg">Meet The Squad</a>
-          <button class="btn btn-roar-fan" id="hero-roar-btn" aria-label="Tap to Roar for Cayman Super Kings">
-            <span class="roar-icon">🦁</span>
-            <span class="roar-label">ROAR FOR CSK</span>
-            <span class="roar-badge" id="hero-roar-count">14.8K</span>
-          </button>
-        </div>
+        <!-- TV Stand Base Ambient Glow -->
+        <div class="stadium-tv-stand-base"></div>
       </div>
     </section>
 
