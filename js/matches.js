@@ -156,45 +156,130 @@ export async function initMatchesPage() {
     `;
   }
 
-  function createMatchCardHTML(m) {
+  function createMatchCardHTML(m, index) {
     const isResult = m.status === 'result';
+
+    // Opponent Logo mapper
+    const oppKey = (m.opponent_short || '').toLowerCase();
+    const oppLogoMap = {
+      gtt: 'assets/teams/gtt.svg',
+      sms: 'assets/teams/sms.svg',
+      btcc: 'assets/teams/btcc.svg',
+      wbw: 'assets/teams/wbw.svg',
+      pcc: 'assets/teams/pcc.svg',
+      nsxi: 'assets/teams/nsxi.svg'
+    };
+    const oppLogo = oppLogoMap[oppKey] || 'assets/teams/gtt.svg';
+    const cskLogo = 'assets/csk-official-logo.png';
+
+    // Time formatting
+    let timeDisplay = m.time || '14:30';
+    if (timeDisplay && !timeDisplay.toLowerCase().includes('m')) {
+      const parts = timeDisplay.split(':');
+      if (parts.length >= 2) {
+        const hour = parseInt(parts[0], 10);
+        const ampm = hour >= 12 ? 'pm' : 'am';
+        const formattedHour = hour % 12 || 12;
+        timeDisplay = `${formattedHour}:${parts[1]} ${ampm.toUpperCase()}`;
+      }
+    }
+
+    const isHome = m.is_home !== false;
+    const team1Name = isHome ? 'Cayman Super Kings' : m.opponent;
+    const team1Logo = isHome ? cskLogo : oppLogo;
+    const team1Score = isHome ? m.score_csk : m.score_opp;
+    const team1Overs = isHome ? m.overs_csk : m.overs_opp;
+
+    const team2Name = isHome ? m.opponent : 'Cayman Super Kings';
+    const team2Logo = isHome ? oppLogo : cskLogo;
+    const team2Score = isHome ? m.score_opp : m.score_csk;
+    const team2Overs = isHome ? m.overs_opp : m.overs_csk;
+
+    const detailUrl = `match-detail.html?slug=${m.slug}`;
+
     return `
-      <div class="card card--lift col-6">
-        <div class="card-body">
-          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px;">
+      <div class="card card--lift match-grid-card col-6">
+        <div class="card-body match-grid-card__body">
+          <!-- Top Row: Competition Badge & Date -->
+          <div class="match-grid-card__header">
             <span class="badge ${m.format === 'T20' ? 'badge--gold' : 'badge--teal'}">${m.competition}</span>
-            <span style="font-size: 0.8125rem; font-weight: 600; color: var(--c-text-muted);">${formatDate(m.date)}</span>
+            <span class="match-grid-card__date">${formatDate(m.date)}</span>
           </div>
           
-          <div style="margin-bottom: 20px;">
-            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
-              <span style="font-family: var(--font-display); font-weight: 800; font-size: 1.125rem;">Cayman Super Kings</span>
-              ${isResult ? `<span class="tabular-nums" style="font-family: var(--font-display); font-weight: 900; font-size: 1.25rem; color: var(--c-navy);">${m.score_csk}</span>` : ''}
+          <!-- Matchup Row with Logos & VS -->
+          <div class="match-grid-card__matchup">
+            <!-- Team 1 -->
+            <div class="match-team-box">
+              <div class="match-team-logo-wrap">
+                <img src="${team1Logo}" alt="${team1Name}" class="match-team-logo">
+              </div>
+              <div class="match-team-info">
+                <span class="match-team-name">${team1Name}</span>
+                ${isResult && team1Score ? `
+                  <div class="match-team-score-line">
+                    <span class="match-team-score">${team1Score}</span>
+                    ${team1Overs ? `<span class="match-team-overs">(${team1Overs} ov)</span>` : ''}
+                  </div>
+                ` : ''}
+              </div>
             </div>
-            <div style="display: flex; justify-content: space-between; align-items: center;">
-              <span style="font-family: var(--font-display); font-weight: 800; font-size: 1.125rem; color: var(--c-text-muted);">${m.opponent}</span>
-              ${isResult ? `<span class="tabular-nums" style="font-family: var(--font-display); font-weight: 900; font-size: 1.25rem; color: var(--c-text-muted);">${m.score_opp}</span>` : ''}
+
+            <!-- VS Center -->
+            <div class="match-vs-box">
+              <span class="match-vs-badge">VS</span>
+              ${isResult ? `
+                <span class="match-status-tag ${m.is_csk_win ? 'status--win' : 'status--done'}">
+                  ${m.is_csk_win ? 'CSK WON' : 'FINAL'}
+                </span>
+              ` : `
+                <span class="match-status-tag status--upcoming">UPCOMING</span>
+              `}
+            </div>
+
+            <!-- Team 2 -->
+            <div class="match-team-box team-box--opp">
+              <div class="match-team-logo-wrap">
+                <img src="${team2Logo}" alt="${team2Name}" class="match-team-logo">
+              </div>
+              <div class="match-team-info">
+                <span class="match-team-name">${team2Name}</span>
+                ${isResult && team2Score ? `
+                  <div class="match-team-score-line">
+                    <span class="match-team-score">${team2Score}</span>
+                    ${team2Overs ? `<span class="match-team-overs">(${team2Overs} ov)</span>` : ''}
+                  </div>
+                ` : ''}
+              </div>
             </div>
           </div>
 
+          <!-- Result banner or Timing/Venue -->
           ${isResult ? `
-            <div style="background: rgba(245, 158, 27, 0.1); border-left: 4px solid var(--c-gold); padding: 10px 14px; border-radius: 4px; margin-bottom: 16px;">
-              <span style="font-size: 0.875rem; font-weight: 700; color: var(--c-navy);">${m.result_text}</span>
+            <div class="match-result-banner">
+              <span class="match-result-icon">🏆</span>
+              <span class="match-result-text">${m.result_text}</span>
             </div>
           ` : `
-            <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 16px; color: var(--c-text-muted); font-size: 0.875rem;">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-              <span>${m.time} EST • ${m.venue}</span>
+            <div class="match-venue-row">
+              <div class="venue-item">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                <span>${timeDisplay} EST</span>
+              </div>
+              <div class="venue-item">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                <span>${m.venue}</span>
+              </div>
             </div>
           `}
 
-          <div style="display: flex; justify-content: space-between; align-items: center; margin-top: auto; padding-top: 16px; border-top: 1px solid var(--c-border-subtle);">
+          <!-- Footer Actions -->
+          <div class="match-grid-card__footer">
             ${isResult ? `
-              <a href="match-detail.html?slug=${m.slug}" class="btn btn-outline-navy btn-sm">Match Center ↗</a>
+              <a href="${detailUrl}" class="btn btn-outline-navy btn-sm">Match Center ↗</a>
             ` : `
-              <a href="${m.cricclubs_url}" target="_blank" rel="noopener noreferrer" class="btn btn-outline-navy btn-sm">Fixture on CricClubs ↗</a>
+              <a href="${m.cricclubs_url}" target="_blank" rel="noopener noreferrer" class="btn btn-outline-navy btn-sm">Fixture Info ↗</a>
             `}
-            <a href="${m.cricclubs_url}" target="_blank" rel="noopener noreferrer" style="font-size: 0.8125rem; color: var(--c-flame-text); font-weight: 600;">
+            <a href="${m.cricclubs_url}" target="_blank" rel="noopener noreferrer" class="match-scorecard-link">
               Scorecard ↗
             </a>
           </div>
