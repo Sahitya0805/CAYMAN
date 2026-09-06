@@ -85,28 +85,31 @@
       <div class="container">
         <h1 class="sponsors-board-title">OUR SPONSORS</h1>
         
-        <!-- ── SPONSORS PYRAMID WITH TRIANGLE OUTLINE ── -->
+        <!-- ── SPONSORS PYRAMID WITH 4-TIER ENCLOSED TRIANGLE OUTLINE ── -->
         <div class="sponsors-pyramid-wrap">
-          <svg class="sponsors-triangle-svg" viewBox="0 0 1000 680" preserveAspectRatio="none" aria-hidden="true">
+          <svg class="sponsors-triangle-svg" viewBox="0 0 1000 1000" preserveAspectRatio="none" aria-hidden="true">
             <defs>
-              <linearGradient id="cskSponsorTriangleGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-                <stop offset="0%" stop-color="#FAB81E" stop-opacity="0.95" />
-                <stop offset="50%" stop-color="#F2600C" stop-opacity="0.8" />
-                <stop offset="100%" stop-color="#FAB81E" stop-opacity="0.95" />
+              <linearGradient id="cskSponsorGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#09152B" />
+                <stop offset="50%" stop-color="#142A52" />
+                <stop offset="100%" stop-color="#09152B" />
               </linearGradient>
             </defs>
-            <!-- Outer Geometric Triangle Frame -->
-            <polygon points="500,10 985,670 15,670" fill="rgba(250, 184, 30, 0.02)" stroke="url(#cskSponsorTriangleGrad)" stroke-width="2.5" stroke-linejoin="round" />
-            <!-- Inner Inset Dashed Outline -->
-            <polygon points="500,28 966,654 34,654" fill="none" stroke="rgba(9, 21, 43, 0.15)" stroke-width="1.5" stroke-dasharray="10 6" stroke-linejoin="round" />
-            <!-- Golden Corner Accents / Vertices -->
-            <circle cx="500" cy="10" r="5.5" fill="#FAB81E" stroke="#09152B" stroke-width="2" />
-            <circle cx="985" cy="670" r="5.5" fill="#FAB81E" stroke="#09152B" stroke-width="2" />
-            <circle cx="15" cy="670" r="5.5" fill="#FAB81E" stroke="#09152B" stroke-width="2" />
+            <!-- Outer 4-Tier Geometric Pyramid Triangle -->
+            <polygon points="500,6 994,994 6,994" fill="rgba(250, 184, 30, 0.015)" stroke="#09152B" stroke-width="3.5" stroke-linejoin="round" vector-effect="non-scaling-stroke" />
+            
+            <!-- Tier 1 / Tier 2 Horizontal Divider -->
+            <line x1="378" y1="250" x2="622" y2="250" stroke="#09152B" stroke-width="2.5" vector-effect="non-scaling-stroke" />
+            
+            <!-- Tier 2 / Tier 3 Horizontal Divider -->
+            <line x1="254" y1="500" x2="746" y2="500" stroke="#09152B" stroke-width="2.5" vector-effect="non-scaling-stroke" />
+            
+            <!-- Tier 3 / Tier 4 Horizontal Divider -->
+            <line x1="129" y1="750" x2="871" y2="750" stroke="#09152B" stroke-width="2.5" vector-effect="non-scaling-stroke" />
           </svg>
 
           <!-- TIER 1: TITLE SPONSOR -->
-          <div class="sponsors-row sponsors-row--title">
+          <div class="sponsors-row sponsors-row--t1">
             <div class="sponsor-unit sponsor-unit--title">
               <span class="sponsor-unit__label">TITLE SPONSOR</span>
               <div class="sponsor-unit__logo-wrapper">
@@ -116,7 +119,7 @@
           </div>
 
           <!-- TIER 2: 2 PRINCIPAL / OFFICIAL PARTNERS -->
-          <div class="sponsors-row">
+          <div class="sponsors-row sponsors-row--t2">
             <div class="sponsors-row-grid-2">
               <div class="sponsor-unit sponsor-unit--principal">
                 <span class="sponsor-unit__label">OFFICIAL TYRE PARTNER</span>
@@ -135,7 +138,7 @@
           </div>
 
           <!-- TIER 3: 4 OFFICIAL SPONSORS -->
-          <div class="sponsors-row" style="border-bottom: none;">
+          <div class="sponsors-row sponsors-row--t3">
             <div class="sponsors-row-grid-4">
               <div class="sponsor-unit sponsor-unit--official">
                 <span class="sponsor-unit__label">OFFICIAL TELECOM PARTNER</span>
@@ -166,36 +169,36 @@
               </div>
             </div>
           </div>
-        </div>
 
-        <!-- TIER 4: OFFICIAL & CAYMAN REGIONAL PARTNERS -->
-        <div class="sponsors-row" style="border-bottom: 1.5px solid #D6D9DE;">
-          <div class="sponsors-row-grid-4">
-            <div class="sponsor-unit sponsor-unit--official">
-              <span class="sponsor-unit__label">OFFICIAL BANKING PARTNER</span>
-              <div class="sponsor-unit__logo-wrapper">
-                <img src="assets/sponsors/cayman-national.svg" alt="Cayman National Bank" class="sponsor-unit__img">
+          <!-- TIER 4: OFFICIAL & CAYMAN REGIONAL PARTNERS -->
+          <div class="sponsors-row sponsors-row--t4">
+            <div class="sponsors-row-grid-4">
+              <div class="sponsor-unit sponsor-unit--official">
+                <span class="sponsor-unit__label">OFFICIAL BANKING PARTNER</span>
+                <div class="sponsor-unit__logo-wrapper">
+                  <img src="assets/sponsors/cayman-national.svg" alt="Cayman National Bank" class="sponsor-unit__img">
+                </div>
               </div>
-            </div>
 
-            <div class="sponsor-unit sponsor-unit--official">
-              <span class="sponsor-unit__label">OFFICIAL CONNECTIVITY PARTNER</span>
-              <div class="sponsor-unit__logo-wrapper">
-                <img src="assets/sponsors/flow.svg" alt="Flow Cayman" class="sponsor-unit__img">
+              <div class="sponsor-unit sponsor-unit--official">
+                <span class="sponsor-unit__label">OFFICIAL CONNECTIVITY PARTNER</span>
+                <div class="sponsor-unit__logo-wrapper">
+                  <img src="assets/sponsors/flow.svg" alt="Flow Cayman" class="sponsor-unit__img">
+                </div>
               </div>
-            </div>
 
-            <div class="sponsor-unit sponsor-unit--official">
-              <span class="sponsor-unit__label">OFFICIAL TRAVEL PARTNER</span>
-              <div class="sponsor-unit__logo-wrapper">
-                <img src="assets/sponsors/cayman-airways.svg" alt="Cayman Airways" class="sponsor-unit__img">
+              <div class="sponsor-unit sponsor-unit--official">
+                <span class="sponsor-unit__label">OFFICIAL TRAVEL PARTNER</span>
+                <div class="sponsor-unit__logo-wrapper">
+                  <img src="assets/sponsors/cayman-airways.svg" alt="Cayman Airways" class="sponsor-unit__img">
+                </div>
               </div>
-            </div>
 
-            <div class="sponsor-unit sponsor-unit--official">
-              <span class="sponsor-unit__label">OFFICIAL CRICKET BODY</span>
-              <div class="sponsor-unit__logo-wrapper">
-                <img src="assets/csk-official-logo.png" alt="CICA Official Club" class="sponsor-unit__img" style="max-height: 52px;">
+              <div class="sponsor-unit sponsor-unit--official">
+                <span class="sponsor-unit__label">OFFICIAL CRICKET BODY</span>
+                <div class="sponsor-unit__logo-wrapper">
+                  <img src="assets/csk-official-logo.png" alt="CICA Official Club" class="sponsor-unit__img" style="max-height: 52px;">
+                </div>
               </div>
             </div>
           </div>
