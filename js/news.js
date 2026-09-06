@@ -33,7 +33,7 @@ export async function initNewsPage() {
 
     container.innerHTML = filtered.map(item => `
       <div class="col-4">
-        <a href="article.html?slug=${item.slug}" class="card card--lift" style="text-decoration: none; color: inherit;">
+        <a href="article.html?slug=${item.slug}" class="card card--lift speech-bubble-card" style="text-decoration: none; color: inherit;">
           <div style="aspect-ratio: 16/9; background: var(--c-navy); overflow: hidden;">
             <img src="${item.cover_image}" alt="${item.title}" style="width: 100%; height: 100%; object-fit: cover;" loading="lazy">
           </div>

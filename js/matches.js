@@ -208,7 +208,7 @@ export async function initMatchesPage() {
 
     return `
       <div class="col-6">
-        <a href="${detailUrl}" class="card card--lift match-news-box-card" ${!isResult && m.cricclubs_url ? 'target="_blank" rel="noopener noreferrer"' : ''} style="text-decoration: none; color: inherit; display: flex; flex-direction: column; height: 100%;">
+        <a href="${detailUrl}" class="card card--lift match-news-box-card speech-bubble-card" ${!isResult && m.cricclubs_url ? 'target="_blank" rel="noopener noreferrer"' : ''} style="text-decoration: none; color: inherit; display: flex; flex-direction: column; height: 100%;">
           
           <!-- Top Visual Image with Team Crests & VS Overlay -->
           <div style="aspect-ratio: 16/9; background: #09152B; overflow: hidden; position: relative;">
