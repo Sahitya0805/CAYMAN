@@ -492,12 +492,17 @@ input, select, textarea { color: #FFFFFF; background: #0F1B2C; border: 1px solid
    SITE FOOTER
    ───────────────────────────────────────────────────────────── */
 .site-footer {
-  background-color: var(--c-navy-dark);
+  background-color: #09152B;
+  background-image: 
+    radial-gradient(ellipse at 50% 0%, rgba(250, 184, 30, 0.08) 0%, transparent 60%),
+    url("data:image/svg+xml,%3Csvg width='160' height='60' viewBox='0 0 160 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 30 C 40 10, 80 50, 120 30 C 140 20, 150 25, 160 30' fill='none' stroke='rgba(255, 255, 255, 0.09)' stroke-width='1.5' stroke-linecap='round'/%3E%3Cpath d='M0 45 C 40 25, 80 65, 120 45 C 140 35, 150 40, 160 45' fill='none' stroke='rgba(255, 255, 255, 0.05)' stroke-width='1.2' stroke-linecap='round'/%3E%3Cpath d='M0 15 C 40 -5, 80 35, 120 15 C 140 5, 150 10, 160 15' fill='none' stroke='rgba(255, 255, 255, 0.05)' stroke-width='1.2' stroke-linecap='round'/%3E%3C/svg%3E");
+  background-repeat: repeat;
   color: var(--c-text-inverse-muted);
   margin-top: auto;
-  border-top: 2px solid rgba(245, 158, 27, 0.2);
+  border-top: 2px solid rgba(250, 184, 30, 0.35);
   padding-top: 64px;
   padding-bottom: 32px;
+  position: relative;
 }
 
 .site-footer a {

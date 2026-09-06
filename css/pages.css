@@ -582,10 +582,18 @@ body.page--white-theme .contact-form-panel .form-textarea {
 .partner-logo-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 14px; }
 .partner-logo-grid div { padding: 17px 8px; background: #101C3F; border: 1px solid rgba(255,255,255,0.1); border-radius: 6px; font: 800 .75rem var(--font-display); text-transform: uppercase; color: #FFFFFF; }
 
-.editorial-footer { background: #05080F; border-top: 1px solid rgba(255,255,255,0.08); padding-top: 65px; }
+.editorial-footer { 
+  background-color: #09152B; 
+  background-image: 
+    radial-gradient(ellipse at 50% 0%, rgba(250, 184, 30, 0.08) 0%, transparent 60%),
+    url("data:image/svg+xml,%3Csvg width='160' height='60' viewBox='0 0 160 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 30 C 40 10, 80 50, 120 30 C 140 20, 150 25, 160 30' fill='none' stroke='rgba(255, 255, 255, 0.09)' stroke-width='1.5' stroke-linecap='round'/%3E%3Cpath d='M0 45 C 40 25, 80 65, 120 45 C 140 35, 150 40, 160 45' fill='none' stroke='rgba(255, 255, 255, 0.05)' stroke-width='1.2' stroke-linecap='round'/%3E%3Cpath d='M0 15 C 40 -5, 80 35, 120 15 C 140 5, 150 10, 160 15' fill='none' stroke='rgba(255, 255, 255, 0.05)' stroke-width='1.2' stroke-linecap='round'/%3E%3C/svg%3E");
+  background-repeat: repeat;
+  border-top: 2px solid rgba(250, 184, 30, 0.35); 
+  padding-top: 65px; 
+}
 .editorial-footer .footer-brand img { width: 42px; margin-bottom: 18px; }
 .editorial-footer .footer-brand h3 { color: #fff; font-size: 1.4rem; }
-.editorial-footer .footer-brand p { color: #94A3B8; font-size: .75rem; margin-top: 22px; }
+.editorial-footer .footer-brand p { color: #E2E8F0; font-size: .85rem; margin-top: 22px; }
 .editorial-footer .footer-bottom { border-top-color: rgba(255,255,255,.08); }
 @media (max-width: 800px) { .editorial-hero { min-height: 620px; } .editorial-hero__content { padding-bottom: 78px; } .roster-grid { grid-template-columns: repeat(2, 1fr); } .editorial-match .match-strip-card, .editorial-news-grid, .academy-grid { grid-template-columns: 1fr; } .editorial-match .strip-col--middle { justify-content: space-between; } .editorial-match .strip-col--action { justify-content: flex-start; } .media-grid { grid-template-columns: 1fr; } .partner-logo-grid { grid-template-columns: repeat(2, 1fr); } }
 @media (max-width: 520px) { .editorial-hero h1 { font-size: 3.45rem; } .roster-grid { gap: 10px; } .roster-card { min-height: 300px; } .editorial-section { padding-top: 62px; padding-bottom: 62px; } .section-header { align-items: flex-start; } }
