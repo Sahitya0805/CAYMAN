@@ -183,6 +183,9 @@ input, select, textarea { color: #FFFFFF; background: #0F1B2C; border: 1px solid
 /* ─────────────────────────────────────────────────────────────
    TOP ACCENT STRIPE & STICKY SLANTED DARK BLUE NAVBAR
    ───────────────────────────────────────────────────────────── */
+/* ─────────────────────────────────────────────────────────────
+   TOP ACCENT STRIPE & CRICKET BAT NAVBAR (CSK Blue & Yellow)
+   ───────────────────────────────────────────────────────────── */
 .site-header__top-bar {
   width: 100%;
   height: 4px;
@@ -197,7 +200,7 @@ input, select, textarea { color: #FFFFFF; background: #0F1B2C; border: 1px solid
   left: 0;
   right: 0;
   z-index: 1000;
-  padding: 0 0 16px;
+  padding: 8px 0 16px;
   background: transparent;
   pointer-events: none;
 }
@@ -205,77 +208,100 @@ input, select, textarea { color: #FFFFFF; background: #0F1B2C; border: 1px solid
 .site-header__container {
   pointer-events: auto;
   max-width: 1340px;
-  margin: 12px auto 0;
-  padding: 0 20px;
+  margin: 4px auto 0;
+  padding: 0 16px;
   display: flex;
   align-items: center;
-  gap: 14px;
 }
 
-/* Main Slanted Dark Blue Bar */
+/* Full Cricket Bat Navbar Container */
+.cricket-bat-navbar {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  position: relative;
+  filter: drop-shadow(0 14px 28px rgba(7, 31, 70, 0.45));
+}
+
+/* 1. Bat Blade (Main Nav Body) */
+.bat-blade,
 .site-header__bar {
   flex: 1;
+  height: 68px;
+  background: linear-gradient(180deg, #1C6AC8 0%, #114B96 45%, #0A2E64 85%, #08214A 100%);
+  border: 2px solid #FAB81E;
+  border-right: none;
+  border-top-left-radius: 36px;
+  border-bottom-left-radius: 36px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background: linear-gradient(135deg, #09152B 0%, #0F2044 50%, #081226 100%);
-  border: 1.5px solid rgba(250, 184, 30, 0.45);
-  border-radius: 6px;
-  transform: skewX(-14deg);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6), 0 0 24px rgba(16, 32, 68, 0.5), inset 0 1px 1px rgba(255, 255, 255, 0.15);
-  height: 60px;
-  padding: 0 28px 0 20px;
+  padding: 0 24px 0 14px;
   position: relative;
+  box-shadow: inset 0 2px 2px rgba(255, 255, 255, 0.4), inset 0 -3px 6px rgba(0, 0, 0, 0.5);
   transition: all var(--transition-normal);
+  transform: none;
 }
 
+.bat-blade:hover,
 .site-header__bar:hover {
-  border-color: rgba(250, 184, 30, 0.7);
-  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.7), 0 0 30px rgba(250, 184, 30, 0.2);
+  box-shadow: inset 0 2px 3px rgba(255, 255, 255, 0.5), inset 0 -3px 6px rgba(0, 0, 0, 0.5), 0 0 24px rgba(250, 184, 30, 0.4);
 }
 
-/* Overhanging Breakout CSK Logo on Left */
+/* Bat Logo / Crest on Toe */
+.bat-logo-link,
 .navbar-logo-breakout {
-  transform: skewX(14deg); /* Counter-skew */
   display: flex;
   align-items: center;
-  margin-top: -18px;
-  margin-bottom: -18px;
-  margin-left: -6px;
-  position: relative;
-  z-index: 10;
+  gap: 10px;
   text-decoration: none;
+  z-index: 5;
+  margin-left: 2px;
+  margin-top: 0;
+  margin-bottom: 0;
+  transform: none;
   transition: transform 0.25s ease;
 }
 
+.bat-logo-link:hover,
 .navbar-logo-breakout:hover {
-  transform: skewX(14deg) scale(1.06);
+  transform: scale(1.08);
 }
 
+.bat-logo-img,
 .navbar-logo-img {
+  height: 58px;
   width: auto;
-  height: 84px;
-  max-height: 84px;
+  max-height: 58px;
   object-fit: contain;
-  filter: drop-shadow(0 4px 14px rgba(0, 0, 0, 0.85));
+  filter: drop-shadow(0 2px 10px rgba(0, 0, 0, 0.65));
 }
 
 /* Navigation Links Container */
 .navbar-nav {
-  transform: skewX(14deg); /* Counter-skew links */
   display: flex;
   align-items: center;
   justify-content: flex-end;
   flex: 1;
+  margin-right: 50px; /* space before shoulder splice */
+  z-index: 5;
+  transform: none;
 }
 
 .nav-menu {
   display: flex;
   align-items: center;
-  gap: 22px;
+  gap: 12px;
   list-style: none;
   margin: 0;
   padding: 0;
+}
+
+.nav-divider {
+  color: rgba(250, 184, 30, 0.45);
+  font-size: 0.95rem;
+  font-weight: 300;
+  user-select: none;
 }
 
 .nav-menu li {
@@ -286,81 +312,123 @@ input, select, textarea { color: #FFFFFF; background: #0F1B2C; border: 1px solid
   font-family: var(--font-display);
   font-size: 1.05rem;
   font-weight: 800;
-  letter-spacing: 0.04em;
+  letter-spacing: 0.05em;
   color: #FFFFFF;
   text-decoration: none;
-  padding: 8px 10px;
+  padding: 7px 16px;
   display: inline-block;
-  transition: all var(--transition-fast);
+  border-radius: 20px;
+  transition: all 0.2s ease;
   text-transform: capitalize;
 }
 
 .nav-link:hover {
   color: #FAB81E;
-  text-shadow: 0 0 12px rgba(250, 184, 30, 0.7);
+  background: rgba(8, 24, 56, 0.55);
+  text-shadow: 0 0 12px rgba(250, 184, 30, 0.8);
 }
 
 .nav-link.active {
+  background: #09152B;
   color: #FAB81E;
   font-weight: 900;
+  border: 1.8px solid #FAB81E;
+  box-shadow: 0 0 15px rgba(250, 184, 30, 0.55);
 }
 
 .nav-link.active::after {
-  content: '';
-  position: absolute;
-  bottom: 0px;
-  left: 10px;
-  right: 10px;
-  height: 3px;
-  background: #FAB81E;
-  border-radius: 2px;
-  box-shadow: 0 0 8px #FAB81E;
+  display: none;
 }
 
-/* Separate Right Slanted Action / User Pill */
-.site-header__user-pill {
-  width: 58px;
-  height: 60px;
-  background: linear-gradient(135deg, #09152B 0%, #0F2044 50%, #081226 100%);
-  border: 1.5px solid rgba(250, 184, 30, 0.45);
-  border-radius: 6px;
-  transform: skewX(-14deg);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #FFFFFF;
-  text-decoration: none;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6), inset 0 1px 1px rgba(255, 255, 255, 0.15);
-  transition: all var(--transition-normal);
+/* 2. Bat Shoulder & Chevron Splice */
+.bat-shoulder-splice {
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: 48px;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.bat-splice-svg {
+  width: 100%;
+  height: 100%;
+}
+
+/* 3. Bat Handle (Right Extension) */
+.bat-handle {
+  width: 130px;
+  height: 24px;
+  background: repeating-linear-gradient(115deg, #09152B 0px, #09152B 5px, #15346A 5px, #15346A 10px);
+  border-top: 1.5px solid rgba(250, 184, 30, 0.55);
+  border-bottom: 1.5px solid #060E1D;
+  box-shadow: inset 0 2px 2px rgba(255, 255, 255, 0.25), inset 0 -2px 3px rgba(0, 0, 0, 0.6);
+  position: relative;
   flex-shrink: 0;
 }
 
+.bat-handle::before,
+.bat-handle::after {
+  content: '';
+  position: absolute;
+  top: -2px;
+  bottom: -2px;
+  width: 4px;
+  background: #FAB81E;
+  box-shadow: 0 0 6px #FAB81E;
+}
+
+.bat-handle::before { left: 0; }
+.bat-handle::after { right: 0; }
+
+/* 4. Circular Pommel / Profile Ball Button (Far Right) */
+.bat-pommel-btn,
+.site-header__user-pill {
+  width: 58px;
+  height: 58px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 35%, #164684 0%, #09152B 65%, #050C18 100%);
+  border: 2.5px solid #FAB81E;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.6), 0 0 16px rgba(250, 184, 30, 0.4), inset 0 2px 3px rgba(255, 255, 255, 0.35);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #FAB81E;
+  text-decoration: none;
+  flex-shrink: 0;
+  transition: all 0.25s ease;
+  z-index: 5;
+  transform: none;
+}
+
+.bat-pommel-btn:hover,
 .site-header__user-pill:hover {
   background: #FAB81E;
   color: #080E18;
-  border-color: #FAB81E;
-  box-shadow: 0 0 20px rgba(250, 184, 30, 0.6);
-  transform: skewX(-14deg) translateY(-2px);
+  border-color: #FFFFFF;
+  box-shadow: 0 0 24px rgba(250, 184, 30, 0.85);
+  transform: scale(1.08);
 }
 
 .user-pill__icon {
-  transform: skewX(14deg); /* Counter-skew icon */
+  transform: none;
 }
 
 /* Mobile Responsive */
-@media (max-width: 1060px) {
-  .site-header__bar {
-    padding: 0 14px;
+@media (max-width: 1080px) {
+  .bat-handle {
+    width: 70px;
+  }
+  .navbar-nav {
+    margin-right: 32px;
   }
   .nav-menu {
-    gap: 12px;
+    gap: 6px;
   }
   .nav-link {
-    font-size: 0.92rem;
-    padding: 6px 6px;
-  }
-  .navbar-logo-img {
-    height: 74px;
+    font-size: 0.88rem;
+    padding: 5px 8px;
   }
 }
 
@@ -369,29 +437,42 @@ input, select, textarea { color: #FFFFFF; background: #0F1B2C; border: 1px solid
     top: 8px;
   }
   .site-header__container {
-    gap: 8px;
     padding: 0 8px;
+    gap: 8px;
   }
+  .cricket-bat-navbar {
+    width: 100%;
+  }
+  .bat-blade,
   .site-header__bar {
-    height: 52px;
-    padding: 0 10px;
+    height: 54px;
+    padding: 0 12px;
+    border-right: 2px solid #FAB81E;
+    border-radius: 28px;
   }
+  .bat-logo-img,
   .navbar-logo-img {
-    height: 60px;
+    height: 44px;
   }
-  .navbar-logo-breakout {
-    top: -6px;
-    left: 6px;
+  .bat-shoulder-splice {
+    display: none;
   }
+  .bat-handle {
+    display: none;
+  }
+  .bat-pommel-btn,
   .site-header__user-pill {
     width: 48px;
-    height: 52px;
+    height: 48px;
+    margin-left: 6px;
   }
-  
   .navbar-nav {
     display: block;
+    margin-right: 0;
   }
-  
+  .nav-divider {
+    display: none;
+  }
   .nav-menu {
     display: none;
     position: fixed;
@@ -408,51 +489,41 @@ input, select, textarea { color: #FFFFFF; background: #0F1B2C; border: 1px solid
     box-shadow: 0 20px 60px rgba(0, 0, 0, 0.85), 0 0 25px rgba(250, 184, 30, 0.25);
     transform: none !important;
   }
-  
   .nav-menu.is-open {
     display: flex;
     animation: menuFadeIn 0.25s cubic-bezier(0.16, 1, 0.3, 1) forwards;
   }
-  
   .nav-menu li {
     width: 100%;
     text-align: center;
   }
-  
   .nav-link {
-    font-size: 1.15rem;
-    font-weight: 800;
+    font-size: 1.1rem;
     padding: 12px 16px;
     width: 100%;
     display: block;
     border-radius: 8px;
     color: #FFFFFF;
-    transition: background 0.2s ease, color 0.2s ease;
   }
-  
   .nav-link:hover,
   .nav-link.active {
     background: rgba(250, 184, 30, 0.18);
     color: #FAB81E;
+    border-color: transparent;
   }
-  
-  .nav-link.active::after {
-    display: none;
-  }
-  
   .mobile-toggle {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 44px;
-    height: 44px;
-    transform: skewX(14deg);
+    width: 40px;
     margin-left: auto;
     background: transparent;
     border: none;
     cursor: pointer;
-    z-index: 10;
+    z-index: 20;
+    padding: 0;
+    transform: none;
   }
   
   .mobile-toggle span {

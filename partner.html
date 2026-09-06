@@ -7,20 +7,20 @@
   <meta name="description" content="Sponsorship opportunities and brand partnerships with Cayman Super Kings Cricket Club. Reach local Cayman audiences and support grassroots youth athletics.">
   <link rel="icon" type="image/png" href="assets/csk-official-logo.png">
   
-  <link rel="stylesheet" href="css/tokens.css?v=20260906c">
-  <link rel="stylesheet" href="css/layout.css?v=20260906c">
-  <link rel="stylesheet" href="css/components.css?v=20260906c">
-  <link rel="stylesheet" href="css/pages.css?v=20260906c">
+  <link rel="stylesheet" href="css/tokens.css?v=20260906d">
+  <link rel="stylesheet" href="css/layout.css?v=20260906d">
+  <link rel="stylesheet" href="css/components.css?v=20260906d">
+  <link rel="stylesheet" href="css/pages.css?v=20260906d">
   <style>
     .sponsors-pyramid-wrap {
       position: relative !important;
       width: 100% !important;
-      max-width: 1360px !important;
+      max-width: 1380px !important;
       margin: 0 auto !important;
       padding: 0 !important;
       display: flex !important;
       flex-direction: column !important;
-      min-height: 1040px !important;
+      min-height: 1080px !important;
     }
     .sponsors-triangle-svg {
       position: absolute !important;
@@ -39,47 +39,51 @@
       align-items: center !important;
       justify-content: center !important;
       border: none !important;
-      height: 260px !important;
-      min-height: 260px !important;
       box-sizing: border-box !important;
-      padding: 10px 16px !important;
+      padding: 16px 20px !important;
     }
     .sponsors-row--t1 {
-      padding-top: 60px !important;
+      height: 360px !important;
+      min-height: 360px !important;
+      padding-top: 105px !important;
       justify-content: flex-end !important;
-      padding-bottom: 24px !important;
+      padding-bottom: 35px !important;
     }
     .sponsors-row--t2 {
+      height: 340px !important;
+      min-height: 340px !important;
       justify-content: center !important;
+      padding-top: 20px !important;
+      padding-bottom: 20px !important;
     }
     .sponsors-row--t3 {
+      height: 360px !important;
+      min-height: 360px !important;
       justify-content: center !important;
-    }
-    .sponsors-row--t4 {
-      justify-content: center !important;
-      padding-bottom: 30px !important;
+      padding-top: 20px !important;
+      padding-bottom: 45px !important;
     }
     .sponsors-row-grid-2 {
       display: grid !important;
       grid-template-columns: repeat(2, 1fr) !important;
-      gap: 24px !important;
-      max-width: 360px !important;
+      gap: 48px !important;
+      max-width: 500px !important;
+      width: 100% !important;
+      margin: 0 auto !important;
+    }
+    .sponsors-row--t2 .sponsors-row-grid-4 {
+      display: grid !important;
+      grid-template-columns: repeat(4, 1fr) !important;
+      gap: 32px !important;
+      max-width: 860px !important;
       width: 100% !important;
       margin: 0 auto !important;
     }
     .sponsors-row--t3 .sponsors-row-grid-4 {
       display: grid !important;
       grid-template-columns: repeat(4, 1fr) !important;
-      gap: 16px !important;
-      max-width: 600px !important;
-      width: 100% !important;
-      margin: 0 auto !important;
-    }
-    .sponsors-row--t4 .sponsors-row-grid-4 {
-      display: grid !important;
-      grid-template-columns: repeat(4, 1fr) !important;
-      gap: 20px !important;
-      max-width: 860px !important;
+      gap: 36px !important;
+      max-width: 1120px !important;
       width: 100% !important;
       margin: 0 auto !important;
     }
@@ -94,75 +98,74 @@
     }
     .sponsor-unit__label {
       font-family: var(--font-body) !important;
-      font-size: 0.625rem !important;
+      font-size: 0.88rem !important;
       font-weight: 800 !important;
-      letter-spacing: 0.08em !important;
+      letter-spacing: 0.12em !important;
       text-transform: uppercase !important;
-      color: #556270 !important;
-      margin-bottom: 8px !important;
+      color: #09152B !important;
+      margin-bottom: 12px !important;
       white-space: normal !important;
       text-align: center !important;
-      line-height: 1.2 !important;
+      line-height: 1.25 !important;
     }
     .sponsor-unit__logo-wrapper {
       display: flex !important;
       align-items: center !important;
       justify-content: center !important;
-      min-height: 48px !important;
-      transition: transform 0.25s ease, filter 0.25s ease !important;
+      min-height: 70px !important;
+      transition: transform 0.28s cubic-bezier(0.16, 1, 0.3, 1), filter 0.28s ease !important;
     }
     .sponsor-unit:hover .sponsor-unit__logo-wrapper {
-      transform: translateY(-2px) scale(1.03) !important;
+      transform: translateY(-4px) scale(1.08) !important;
+      filter: drop-shadow(0 8px 18px rgba(7, 31, 70, 0.18)) !important;
     }
     .sponsor-unit__img {
       max-width: 100% !important;
       height: auto !important;
       object-fit: contain !important;
-    }
-    .sponsor-unit--title .sponsor-unit__img {
-      max-width: 175px !important;
-      max-height: 56px !important;
+      filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.08)) !important;
     }
     .sponsor-unit--principal .sponsor-unit__img {
-      max-width: 120px !important;
-      max-height: 44px !important;
+      max-width: 220px !important;
+      max-height: 80px !important;
     }
-    .sponsor-unit--official .sponsor-unit__img {
-      max-width: 95px !important;
-      max-height: 38px !important;
+    .sponsors-row--t2 .sponsor-unit--official .sponsor-unit__img {
+      max-width: 175px !important;
+      max-height: 68px !important;
     }
-    .sponsors-row--t4 .sponsor-unit__img {
-      max-width: 120px !important;
-      max-height: 44px !important;
+    .sponsors-row--t3 .sponsor-unit--official .sponsor-unit__img {
+      max-width: 200px !important;
+      max-height: 75px !important;
     }
 
     @media (max-width: 900px) {
-      .sponsors-pyramid-wrap { min-height: 840px !important; }
-      .sponsors-row { height: 210px !important; min-height: 210px !important; }
-      .sponsors-row--t1 { padding-top: 48px !important; padding-bottom: 18px !important; }
-      .sponsors-row-grid-2 { max-width: 300px !important; gap: 14px !important; }
-      .sponsors-row--t3 .sponsors-row-grid-4 { max-width: 480px !important; gap: 10px !important; }
-      .sponsors-row--t4 .sponsors-row-grid-4 { max-width: 660px !important; gap: 14px !important; }
-      .sponsor-unit__label { font-size: 0.54rem !important; margin-bottom: 6px !important; }
-      .sponsor-unit--title .sponsor-unit__img { max-width: 140px !important; max-height: 46px !important; }
-      .sponsor-unit--principal .sponsor-unit__img { max-width: 95px !important; max-height: 36px !important; }
-      .sponsor-unit--official .sponsor-unit__img { max-width: 75px !important; max-height: 32px !important; }
-      .sponsors-row--t4 .sponsor-unit__img { max-width: 95px !important; max-height: 34px !important; }
+      .sponsors-pyramid-wrap { min-height: 880px !important; }
+      .sponsors-row--t1 { height: 290px !important; min-height: 290px !important; padding-top: 80px !important; padding-bottom: 24px !important; }
+      .sponsors-row--t2 { height: 280px !important; min-height: 280px !important; }
+      .sponsors-row--t3 { height: 290px !important; min-height: 290px !important; padding-bottom: 30px !important; }
+      .sponsors-row-grid-2 { max-width: 380px !important; gap: 24px !important; }
+      .sponsors-row--t2 .sponsors-row-grid-4 { max-width: 650px !important; gap: 16px !important; }
+      .sponsors-row--t3 .sponsors-row-grid-4 { max-width: 780px !important; gap: 18px !important; }
+      .sponsor-unit__label { font-size: 0.72rem !important; margin-bottom: 8px !important; }
+      .sponsor-unit__logo-wrapper { min-height: 52px !important; }
+      .sponsor-unit--principal .sponsor-unit__img { max-width: 160px !important; max-height: 60px !important; }
+      .sponsors-row--t2 .sponsor-unit--official .sponsor-unit__img { max-width: 130px !important; max-height: 52px !important; }
+      .sponsors-row--t3 .sponsor-unit--official .sponsor-unit__img { max-width: 145px !important; max-height: 55px !important; }
     }
 
     @media (max-width: 600px) {
-      .sponsors-pyramid-wrap { min-height: 680px !important; }
-      .sponsors-row { height: 170px !important; min-height: 170px !important; }
-      .sponsors-row--t1 { padding-top: 36px !important; padding-bottom: 12px !important; }
-      .sponsors-row-grid-2 { max-width: 220px !important; gap: 8px !important; }
-      .sponsors-row--t3 .sponsors-row-grid-4 { max-width: 320px !important; gap: 4px !important; }
-      .sponsors-row--t4 .sponsors-row-grid-4 { max-width: 400px !important; gap: 6px !important; }
-      .sponsor-unit__label { font-size: 0.44rem !important; letter-spacing: 0.01em !important; margin-bottom: 3px !important; }
-      .sponsor-unit__logo-wrapper { min-height: 30px !important; }
-      .sponsor-unit--title .sponsor-unit__img { max-width: 100px !important; max-height: 32px !important; }
-      .sponsor-unit--principal .sponsor-unit__img { max-width: 70px !important; max-height: 26px !important; }
-      .sponsor-unit--official .sponsor-unit__img { max-width: 50px !important; max-height: 22px !important; }
-      .sponsors-row--t4 .sponsor-unit__img { max-width: 62px !important; max-height: 24px !important; }
+      .sponsors-pyramid-wrap { min-height: 720px !important; }
+      .sponsors-row--t1 { height: 230px !important; min-height: 230px !important; padding-top: 55px !important; padding-bottom: 15px !important; }
+      .sponsors-row--t2 { height: 230px !important; min-height: 230px !important; }
+      .sponsors-row--t3 { height: 250px !important; min-height: 250px !important; padding-bottom: 20px !important; }
+      .sponsors-row-grid-2 { max-width: 250px !important; gap: 12px !important; }
+      .sponsors-row--t2 .sponsors-row-grid-4 { max-width: 380px !important; gap: 8px !important; }
+      .sponsors-row--t3 .sponsors-row-grid-4 { max-width: 440px !important; gap: 10px !important; }
+      .sponsor-unit__label { font-size: 0.52rem !important; letter-spacing: 0.04em !important; margin-bottom: 4px !important; }
+      .sponsor-unit__logo-wrapper { min-height: 38px !important; }
+      .sponsor-unit--principal .sponsor-unit__img { max-width: 110px !important; max-height: 42px !important; }
+      .sponsors-row--t2 .sponsor-unit--official .sponsor-unit__img { max-width: 85px !important; max-height: 36px !important; }
+      .sponsors-row--t3 .sponsor-unit--official .sponsor-unit__img { max-width: 95px !important; max-height: 38px !important; }
     }
   </style>
 </head>
@@ -195,41 +198,59 @@
     </div>
   </aside>
 
-  <!-- Sticky Slanted Dark Blue Header -->
+  <!-- Sticky Cricket Bat Header (CSK Blue & Yellow) -->
   <header class="site-header">
     <div class="site-header__container">
-      <!-- Main Slanted Dark Blue Bar -->
-      <div class="site-header__bar">
-        <!-- Breakout CSK Logo -->
-        <a href="index.html" class="navbar-logo-breakout" aria-label="Cayman Super Kings Home">
-          <img src="assets/csk-official-logo.png" alt="Cayman Super Kings Logo" class="navbar-logo-img">
+      <div class="cricket-bat-navbar">
+        <!-- Bat Blade Body -->
+        <div class="bat-blade">
+          <!-- Bat Toe Logo (Left) -->
+          <a href="index.html" class="bat-logo-link" aria-label="Cayman Super Kings Home">
+            <img src="assets/csk-official-logo.png" alt="Cayman Super Kings Logo" class="bat-logo-img">
+          </a>
+
+          <!-- Mobile Menu Toggle -->
+          <button class="mobile-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+            <span></span><span></span><span></span>
+          </button>
+
+          <!-- Navigation Links -->
+          <nav class="navbar-nav" aria-label="Main Navigation">
+            <ul class="nav-menu">
+              <li><a href="squad.html" class="nav-link">Squad</a></li>
+              <li class="nav-divider" aria-hidden="true">|</li>
+              <li><a href="matches.html" class="nav-link">Fixtures</a></li>
+              <li class="nav-divider" aria-hidden="true">|</li>
+              <li><a href="about.html" class="nav-link">CSK</a></li>
+              <li class="nav-divider" aria-hidden="true">|</li>
+              <li><a href="partner.html" class="nav-link active">Sponsors</a></li>
+              <li class="nav-divider" aria-hidden="true">|</li>
+              <li><a href="gallery.html" class="nav-link">Gallery</a></li>
+              <li class="nav-divider" aria-hidden="true">|</li>
+              <li><a href="news.html" class="nav-link">News</a></li>
+            </ul>
+          </nav>
+
+          <!-- Bat Shoulder Chevron Splice -->
+          <div class="bat-shoulder-splice" aria-hidden="true">
+            <svg viewBox="0 0 48 62" preserveAspectRatio="none" class="bat-splice-svg">
+              <path d="M0,0 L28,31 L0,62 L18,62 L46,31 L18,0 Z" fill="#081A38" opacity="0.7"/>
+              <path d="M18,0 L46,31 L18,62 L28,62 L48,40 L48,22 L28,0 Z" fill="#FAB81E" opacity="0.9"/>
+            </svg>
+          </div>
+        </div>
+
+        <!-- Bat Handle (Right Extension) -->
+        <div class="bat-handle" aria-hidden="true"></div>
+
+        <!-- Bat Pommel / Circular User Profile Button (Far Right) -->
+        <a href="join.html" class="bat-pommel-btn site-header__user-pill" aria-label="Join CSK / Fan Portal" title="Join CSK">
+          <svg class="user-pill__icon" viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+            <circle cx="12" cy="7" r="4"></circle>
+          </svg>
         </a>
-
-        <!-- Mobile Menu Toggle -->
-        <button class="mobile-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
-          <span></span><span></span><span></span>
-        </button>
-
-        <!-- Navigation Links -->
-        <nav class="navbar-nav" aria-label="Main Navigation">
-          <ul class="nav-menu">
-            <li><a href="squad.html" class="nav-link">Squad</a></li>
-            <li><a href="matches.html" class="nav-link">Fixtures</a></li>
-            <li><a href="about.html" class="nav-link">CSK</a></li>
-            <li><a href="partner.html" class="nav-link">Sponsors</a></li>
-            <li><a href="gallery.html" class="nav-link">Gallery</a></li>
-            <li><a href="news.html" class="nav-link">News</a></li>
-          </ul>
-        </nav>
       </div>
-
-      <!-- Right Slanted User / Contact Action Pill -->
-      <a href="join.html" class="site-header__user-pill" aria-label="Join CSK / Fan Portal" title="Join CSK">
-        <svg class="user-pill__icon" viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
-          <circle cx="12" cy="7" r="4"></circle>
-        </svg>
-      </a>
     </div>
   </header>
 
@@ -239,41 +260,87 @@
       <div class="container">
         <h1 class="sponsors-board-title">OUR SPONSORS</h1>
         
-        <!-- ── SPONSORS PYRAMID WITH 4-TIER ENCLOSED TRIANGLE OUTLINE ── -->
+        <!-- ── SPONSORS PYRAMID WITH ORNATE 3-TIER DECORATIVE TRIANGLE OUTLINE ── -->
         <div class="sponsors-pyramid-wrap">
           <svg class="sponsors-triangle-svg" viewBox="0 0 1400 1000" preserveAspectRatio="none" aria-hidden="true">
             <defs>
-              <linearGradient id="cskSponsorGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-                <stop offset="0%" stop-color="#09152B" />
-                <stop offset="50%" stop-color="#142A52" />
-                <stop offset="100%" stop-color="#09152B" />
+              <linearGradient id="cskGoldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#FAB81E" />
+                <stop offset="50%" stop-color="#FFE082" />
+                <stop offset="100%" stop-color="#F2600C" />
               </linearGradient>
+              <linearGradient id="cskNavyGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#081A38" />
+                <stop offset="50%" stop-color="#114B96" />
+                <stop offset="100%" stop-color="#081A38" />
+              </linearGradient>
+              <filter id="goldGlow" x="-20%" y="-20%" width="140%" height="140%">
+                <feGaussianBlur stdDeviation="6" result="blur" />
+                <feComposite in="SourceGraphic" in2="blur" operator="over" />
+              </filter>
             </defs>
-            <!-- Outer 4-Tier Geometric Pyramid Triangle -->
-            <polygon points="700,4 1394,996 6,996" fill="rgba(250, 184, 30, 0.015)" stroke="#09152B" stroke-width="3.5" stroke-linejoin="round" vector-effect="non-scaling-stroke" />
-            
-            <!-- Tier 1 / Tier 2 Horizontal Divider at 25% height -->
-            <line x1="527" y1="250" x2="873" y2="250" stroke="#09152B" stroke-width="2.5" vector-effect="non-scaling-stroke" />
-            
-            <!-- Tier 2 / Tier 3 Horizontal Divider at 50% height -->
-            <line x1="353" y1="500" x2="1047" y2="500" stroke="#09152B" stroke-width="2.5" vector-effect="non-scaling-stroke" />
-            
-            <!-- Tier 3 / Tier 4 Horizontal Divider at 75% height -->
-            <line x1="179" y1="750" x2="1221" y2="750" stroke="#09152B" stroke-width="2.5" vector-effect="non-scaling-stroke" />
+
+            <!-- Ambient Glow Perimeter Filter -->
+            <polygon points="700,20 1370,975 30,975" fill="rgba(250, 184, 30, 0.02)" stroke="rgba(250, 184, 30, 0.35)" stroke-width="8" stroke-linejoin="round" vector-effect="non-scaling-stroke" />
+
+            <!-- Main Structural Navy Polygon -->
+            <polygon points="700,20 1370,975 30,975" fill="none" stroke="#09152B" stroke-width="4.5" stroke-linejoin="round" vector-effect="non-scaling-stroke" />
+
+            <!-- Inset Golden Tech-Dashed Inner Accent Line -->
+            <polygon points="700,38 1350,960 50,960" fill="none" stroke="url(#cskGoldGrad)" stroke-width="2" stroke-linejoin="round" stroke-dasharray="24 10" opacity="0.9" vector-effect="non-scaling-stroke" />
+
+            <!-- Outer Thin Gold Framing Line -->
+            <polygon points="700,10 1385,985 15,985" fill="none" stroke="#FAB81E" stroke-width="1.5" stroke-linejoin="round" opacity="0.65" vector-effect="non-scaling-stroke" />
+
+            <!-- ── APEX CROWN & CHEVRON ORNAMENTS (Top Vertex) ── -->
+            <path d="M660,65 L700,18 L740,65 L725,65 L700,32 L675,65 Z" fill="url(#cskGoldGrad)" />
+            <polygon points="700,6 710,18 700,30 690,18" fill="#FAB81E" stroke="#09152B" stroke-width="2" />
+            <circle cx="700" cy="18" r="3" fill="#FFFFFF" />
+            <line x1="700" y1="0" x2="700" y2="6" stroke="#FAB81E" stroke-width="2" />
+
+            <!-- ── TIER 1 / TIER 2 HORIZONTAL DIVIDER (at y = 350) ── -->
+            <line x1="470" y1="350" x2="930" y2="350" stroke="#09152B" stroke-width="4" vector-effect="non-scaling-stroke" />
+            <line x1="485" y1="350" x2="915" y2="350" stroke="url(#cskGoldGrad)" stroke-width="2" vector-effect="non-scaling-stroke" />
+            <!-- Joint Diamond Brackets -->
+            <polygon points="470,350 480,342 490,350 480,358" fill="#FAB81E" stroke="#09152B" stroke-width="1.8" />
+            <polygon points="930,350 920,342 910,350 920,358" fill="#FAB81E" stroke="#09152B" stroke-width="1.8" />
+            <!-- Center Trophy Diamond Badge -->
+            <polygon points="700,340 710,350 700,360 690,350" fill="url(#cskGoldGrad)" stroke="#09152B" stroke-width="2" />
+            <circle cx="700" cy="350" r="2.5" fill="#FFFFFF" />
+
+            <!-- ── TIER 2 / TIER 3 HORIZONTAL DIVIDER (at y = 675) ── -->
+            <line x1="240" y1="675" x2="1160" y2="675" stroke="#09152B" stroke-width="4" vector-effect="non-scaling-stroke" />
+            <line x1="260" y1="675" x2="1140" y2="675" stroke="url(#cskGoldGrad)" stroke-width="2" vector-effect="non-scaling-stroke" />
+            <!-- Joint Diamond Brackets -->
+            <polygon points="240,675 250,667 260,675 250,683" fill="#FAB81E" stroke="#09152B" stroke-width="1.8" />
+            <polygon points="1160,675 1150,667 1140,675 1150,683" fill="#FAB81E" stroke="#09152B" stroke-width="1.8" />
+            <!-- Center Trophy Diamond Badge -->
+            <polygon points="700,665 710,675 700,685 690,675" fill="url(#cskGoldGrad)" stroke="#09152B" stroke-width="2" />
+            <circle cx="700" cy="675" r="2.5" fill="#FFFFFF" />
+
+            <!-- ── SLOPED EDGE CHEVRON TICKS ── -->
+            <!-- Left Side Ticks -->
+            <polyline points="576,170 588,180 576,190" fill="none" stroke="#FAB81E" stroke-width="2.5" stroke-linecap="round" />
+            <polyline points="343,502 355,512 343,522" fill="none" stroke="#FAB81E" stroke-width="2.5" stroke-linecap="round" />
+            <polyline points="123,815 135,825 123,835" fill="none" stroke="#FAB81E" stroke-width="2.5" stroke-linecap="round" />
+            <!-- Right Side Ticks -->
+            <polyline points="824,170 812,180 824,190" fill="none" stroke="#FAB81E" stroke-width="2.5" stroke-linecap="round" />
+            <polyline points="1057,502 1045,512 1057,522" fill="none" stroke="#FAB81E" stroke-width="2.5" stroke-linecap="round" />
+            <polyline points="1277,815 1265,825 1277,835" fill="none" stroke="#FAB81E" stroke-width="2.5" stroke-linecap="round" />
+
+            <!-- ── BOTTOM LEFT CORNER DECORATION ── -->
+            <path d="M16,915 L16,985 L85,985" fill="none" stroke="url(#cskGoldGrad)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
+            <polygon points="30,975 39,966 48,975 39,984" fill="#FAB81E" stroke="#09152B" stroke-width="1.8" />
+            <line x1="22" y1="945" x2="62" y2="985" stroke="#FAB81E" stroke-width="2" opacity="0.8" />
+
+            <!-- ── BOTTOM RIGHT CORNER DECORATION ── -->
+            <path d="M1384,915 L1384,985 L1315,985" fill="none" stroke="url(#cskGoldGrad)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
+            <polygon points="1370,975 1361,966 1352,975 1361,984" fill="#FAB81E" stroke="#09152B" stroke-width="1.8" />
+            <line x1="1378" y1="945" x2="1338" y2="985" stroke="#FAB81E" stroke-width="2" opacity="0.8" />
           </svg>
 
-          <!-- TIER 1: TITLE SPONSOR -->
+          <!-- TIER 1: 2 PRINCIPAL / OFFICIAL PARTNERS (Top Apex Section) -->
           <div class="sponsors-row sponsors-row--t1">
-            <div class="sponsor-unit sponsor-unit--title">
-              <span class="sponsor-unit__label">TITLE SPONSOR</span>
-              <div class="sponsor-unit__logo-wrapper">
-                <img src="assets/sponsors/shree-cement.svg" alt="Shree Cement" class="sponsor-unit__img">
-              </div>
-            </div>
-          </div>
-
-          <!-- TIER 2: 2 PRINCIPAL / OFFICIAL PARTNERS -->
-          <div class="sponsors-row sponsors-row--t2">
             <div class="sponsors-row-grid-2">
               <div class="sponsor-unit sponsor-unit--principal">
                 <span class="sponsor-unit__label">OFFICIAL TYRE PARTNER</span>
@@ -291,8 +358,8 @@
             </div>
           </div>
 
-          <!-- TIER 3: 4 OFFICIAL SPONSORS -->
-          <div class="sponsors-row sponsors-row--t3">
+          <!-- TIER 2: 4 OFFICIAL SPONSORS (Middle Section) -->
+          <div class="sponsors-row sponsors-row--t2">
             <div class="sponsors-row-grid-4">
               <div class="sponsor-unit sponsor-unit--official">
                 <span class="sponsor-unit__label">OFFICIAL TELECOM PARTNER</span>
@@ -324,8 +391,8 @@
             </div>
           </div>
 
-          <!-- TIER 4: OFFICIAL & CAYMAN REGIONAL PARTNERS -->
-          <div class="sponsors-row sponsors-row--t4">
+          <!-- TIER 3: 4 OFFICIAL & CAYMAN REGIONAL PARTNERS (Bottom Section) -->
+          <div class="sponsors-row sponsors-row--t3">
             <div class="sponsors-row-grid-4">
               <div class="sponsor-unit sponsor-unit--official">
                 <span class="sponsor-unit__label">OFFICIAL BANKING PARTNER</span>
@@ -351,7 +418,7 @@
               <div class="sponsor-unit sponsor-unit--official">
                 <span class="sponsor-unit__label">OFFICIAL CRICKET BODY</span>
                 <div class="sponsor-unit__logo-wrapper">
-                  <img src="assets/csk-official-logo.png" alt="CICA Official Club" class="sponsor-unit__img" style="max-height: 52px;">
+                  <img src="assets/csk-official-logo.png" alt="CICA Official Club" class="sponsor-unit__img" style="max-height: 64px;">
                 </div>
               </div>
             </div>
