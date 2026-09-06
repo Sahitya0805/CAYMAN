@@ -54,7 +54,7 @@ export async function initMatchesPage() {
 
     if (emptyState) emptyState.style.display = 'none';
     container.style.display = 'grid';
-    container.innerHTML = filtered.map((m, i) => createMatchCardHTML(m, i)).join('');
+    container.innerHTML = filtered.map(m => createMatchCardHTML(m)).join('');
   }
 
   function renderStandings() {
@@ -156,112 +156,51 @@ export async function initMatchesPage() {
     `;
   }
 
-  function createMatchCardHTML(m, index) {
+  function createMatchCardHTML(m) {
     const isResult = m.status === 'result';
-    
-    // Parse date for ticket stub
-    const dateObj = new Date(m.date + 'T00:00:00');
-    const monthNames = ['JAN', 'FEB', 'MAR', 'APR', 'MAY', 'JUN', 'JUL', 'AUG', 'SEP', 'OCT', 'NOV', 'DEC'];
-    const month = !isNaN(dateObj.getTime()) ? monthNames[dateObj.getMonth()] : 'AUG';
-    const day = !isNaN(dateObj.getTime()) ? String(dateObj.getDate()).padStart(2, '0') : '28';
-    
-    const matchNum = `${index + 1}${getOrdinalSuffix(index + 1)} Match`;
-
-    // Opponent Logo mapper
-    const oppKey = (m.opponent_short || '').toLowerCase();
-    const oppLogoMap = {
-      gtt: 'assets/teams/gtt.svg',
-      sms: 'assets/teams/sms.svg',
-      btcc: 'assets/teams/btcc.svg',
-      wbw: 'assets/teams/wbw.svg',
-      pcc: 'assets/teams/pcc.svg',
-      nsxi: 'assets/teams/nsxi.svg'
-    };
-    const oppLogo = oppLogoMap[oppKey] || 'assets/teams/gtt.svg';
-    const cskLogo = 'assets/csk-official-logo.png';
-
-    // Time formatting
-    let timeDisplay = m.time || '03:30pm';
-    if (timeDisplay.includes(':') && !timeDisplay.toLowerCase().includes('m')) {
-      const [hh, mm] = timeDisplay.split(':');
-      const hour = parseInt(hh, 10);
-      const ampm = hour >= 12 ? 'pm' : 'am';
-      const formattedHour = hour % 12 || 12;
-      timeDisplay = `${String(formattedHour).padStart(2, '0')}:${mm}${ampm}`;
-    }
-
-    const isHome = m.is_home !== false;
-    const team1Name = isHome ? 'Cayman Super Kings' : m.opponent;
-    const team1Logo = isHome ? cskLogo : oppLogo;
-    const team1Score = isHome ? m.score_csk : m.score_opp;
-
-    const team2Name = isHome ? m.opponent : 'Cayman Super Kings';
-    const team2Logo = isHome ? oppLogo : cskLogo;
-    const team2Score = isHome ? m.score_opp : m.score_csk;
-
-    const detailUrl = `match-detail.html?slug=${m.slug}`;
-
     return `
-      <div class="fixture-ticket">
-        <!-- Left Ticket Date Stub -->
-        <div class="ticket-stub">
-          <span class="ticket-notch-top"></span>
-          <span class="ticket-month">${month}</span>
-          <span class="ticket-day">${day}</span>
-          <span class="ticket-match-num">${matchNum}</span>
-          <span class="ticket-notch-bottom"></span>
-        </div>
-
-        <!-- Right Main Ticket Body -->
-        <div class="ticket-body">
-          <!-- Slanted Yellow Time Pill -->
-          <div class="ticket-time-pill">
-            <span>${timeDisplay}</span>
-            <span class="ticket-time-stripes">///</span>
+      <div class="card card--lift col-6">
+        <div class="card-body">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px;">
+            <span class="badge ${m.format === 'T20' ? 'badge--gold' : 'badge--teal'}">${m.competition}</span>
+            <span style="font-size: 0.8125rem; font-weight: 600; color: var(--c-text-muted);">${formatDate(m.date)}</span>
           </div>
-
-          <!-- Teams Matchup -->
-          <div class="ticket-matchup">
-            <!-- Team 1 -->
-            <div class="ticket-team">
-              <img src="${team1Logo}" alt="${team1Name}" class="ticket-team-crest">
-              <span class="ticket-team-name">${team1Name}</span>
-              ${isResult && team1Score ? `<span class="ticket-team-score">${team1Score}</span>` : ''}
+          
+          <div style="margin-bottom: 20px;">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+              <span style="font-family: var(--font-display); font-weight: 800; font-size: 1.125rem;">Cayman Super Kings</span>
+              ${isResult ? `<span class="tabular-nums" style="font-family: var(--font-display); font-weight: 900; font-size: 1.25rem; color: var(--c-navy);">${m.score_csk}</span>` : ''}
             </div>
-
-            <!-- VS Center -->
-            <div class="ticket-vs">
-              <span class="ticket-vs-text">VS</span>
-              ${isResult ? `<span class="ticket-vs-result">${m.is_csk_win ? 'CSK WON' : 'COMPLETED'}</span>` : ''}
-            </div>
-
-            <!-- Team 2 -->
-            <div class="ticket-team">
-              <img src="${team2Logo}" alt="${team2Name}" class="ticket-team-crest">
-              <span class="ticket-team-name">${team2Name}</span>
-              ${isResult && team2Score ? `<span class="ticket-team-score">${team2Score}</span>` : ''}
+            <div style="display: flex; justify-content: space-between; align-items: center;">
+              <span style="font-family: var(--font-display); font-weight: 800; font-size: 1.125rem; color: var(--c-text-muted);">${m.opponent}</span>
+              ${isResult ? `<span class="tabular-nums" style="font-family: var(--font-display); font-weight: 900; font-size: 1.25rem; color: var(--c-text-muted);">${m.score_opp}</span>` : ''}
             </div>
           </div>
 
-          <!-- Venue -->
-          <div class="ticket-venue">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
-            <span>${m.venue || 'Jimmy Powell Oval, George Town'}</span>
-          </div>
+          ${isResult ? `
+            <div style="background: rgba(245, 158, 27, 0.1); border-left: 4px solid var(--c-gold); padding: 10px 14px; border-radius: 4px; margin-bottom: 16px;">
+              <span style="font-size: 0.875rem; font-weight: 700; color: var(--c-navy);">${m.result_text}</span>
+            </div>
+          ` : `
+            <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 16px; color: var(--c-text-muted); font-size: 0.875rem;">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+              <span>${m.time} EST • ${m.venue}</span>
+            </div>
+          `}
 
-          <!-- Overlapping Bottom Match Center Pill -->
-          <a href="${detailUrl}" class="ticket-btn-pill">
-            <span>Match Center</span>
-          </a>
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-top: auto; padding-top: 16px; border-top: 1px solid var(--c-border-subtle);">
+            ${isResult ? `
+              <a href="match-detail.html?slug=${m.slug}" class="btn btn-outline-navy btn-sm">Match Center ↗</a>
+            ` : `
+              <a href="${m.cricclubs_url}" target="_blank" rel="noopener noreferrer" class="btn btn-outline-navy btn-sm">Fixture on CricClubs ↗</a>
+            `}
+            <a href="${m.cricclubs_url}" target="_blank" rel="noopener noreferrer" style="font-size: 0.8125rem; color: var(--c-flame-text); font-weight: 600;">
+              Scorecard ↗
+            </a>
+          </div>
         </div>
       </div>
     `;
-  }
-
-  function getOrdinalSuffix(n) {
-    const s = ['th', 'st', 'nd', 'rd'];
-    const v = n % 100;
-    return s[(v - 20) % 10] || s[v] || s[0];
   }
 
   // Event Listeners
