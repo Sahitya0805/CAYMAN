@@ -3,7 +3,7 @@
    Strict adherence to brief design tokens & typography
    ───────────────────────────────────────────────────────────── */
 
-@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;600;700;800;900&family=Manrope:wght@400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Barlow+Condensed:wght@400;500;600;700;800;900&family=Manrope:wght@400;500;600;700;800&display=swap');
 
 :root {
   /* Brand Colours - Cayman Super Kings Premium Dark Navy & Gold */
@@ -42,6 +42,7 @@
 
   /* Typography */
   --font-display: 'Barlow Condensed', Impact, Haettenschweiler, sans-serif;
+  --font-nav: 'Outfit', 'Plus Jakarta Sans', -apple-system, sans-serif;
   --font-body: 'Manrope', -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
 
   /* Grid & Dimensions */

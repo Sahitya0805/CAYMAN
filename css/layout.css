@@ -186,65 +186,71 @@ input, select, textarea { color: #FFFFFF; background: #0F1B2C; border: 1px solid
 /* ─────────────────────────────────────────────────────────────
    TOP ACCENT STRIPE & CRICKET BAT NAVBAR (CSK Blue & Yellow)
    ───────────────────────────────────────────────────────────── */
+/* ─────────────────────────────────────────────────────────────
+   FLOATING CRICKET BAT & BALL NAVBAR (CSK Blue & 24K Gold)
+   No background, pure floating cricket bat + stitched cricket ball
+   ───────────────────────────────────────────────────────────── */
 .site-header__top-bar {
-  width: 100%;
-  height: 4px;
-  background: linear-gradient(90deg, #FAB81E 0%, #F2600C 50%, #FAB81E 100%);
-  position: relative;
-  z-index: 120;
+  display: none !important;
 }
 
 .site-header {
   position: sticky;
-  top: 0;
+  top: 12px;
   left: 0;
   right: 0;
   z-index: 1000;
-  padding: 8px 0 16px;
-  background: transparent;
+  padding: 0;
+  background: transparent !important;
+  box-shadow: none !important;
+  border: none !important;
   pointer-events: none;
 }
 
 .site-header__container {
   pointer-events: auto;
-  max-width: 1340px;
-  margin: 4px auto 0;
+  max-width: 1300px;
+  margin: 0 auto;
   padding: 0 16px;
   display: flex;
   align-items: center;
+  justify-content: center;
+  background: transparent !important;
+  box-shadow: none !important;
+  border: none !important;
 }
 
-/* Full Cricket Bat Navbar Container */
+/* Full Floating Cricket Bat Navbar Container */
 .cricket-bat-navbar {
   display: flex;
   align-items: center;
   width: 100%;
   position: relative;
-  filter: drop-shadow(0 16px 32px rgba(4, 18, 48, 0.55));
+  filter: drop-shadow(0 18px 36px rgba(2, 8, 22, 0.6));
 }
 
 /* 1. Bat Blade (Main Nav Body) */
 .bat-blade,
 .site-header__bar {
   flex: 1;
-  height: 68px;
+  height: 62px;
   background: 
-    radial-gradient(ellipse 90% 70% at 20% 0%, rgba(70, 160, 255, 0.35) 0%, transparent 60%),
-    linear-gradient(180deg, #1B67C5 0%, #11468C 35%, #0A2F68 70%, #061C3F 100%);
+    radial-gradient(ellipse 80% 50% at 20% -10%, rgba(95, 175, 255, 0.32) 0%, transparent 65%),
+    linear-gradient(180deg, #175CB8 0%, #0E3E82 38%, #08244E 76%, #03132B 100%);
   border: 2px solid #FAB81E;
   border-right: none;
-  border-top-left-radius: 36px;
-  border-bottom-left-radius: 36px;
+  border-top-left-radius: 32px;
+  border-bottom-left-radius: 32px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 26px 0 14px;
+  padding: 0 24px 0 10px;
   position: relative;
   box-shadow: 
-    0 12px 28px rgba(4, 18, 48, 0.45),
-    0 0 22px rgba(250, 184, 30, 0.22),
-    inset 0 2px 2px rgba(255, 255, 255, 0.45),
-    inset 0 -3px 6px rgba(0, 0, 0, 0.55);
+    0 14px 34px rgba(1, 8, 20, 0.65),
+    0 0 24px rgba(250, 184, 30, 0.22),
+    inset 0 1.5px 1.5px rgba(255, 255, 255, 0.5),
+    inset 0 -2.5px 5px rgba(0, 0, 0, 0.65);
   transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
   transform: none;
 }
@@ -253,21 +259,21 @@ input, select, textarea { color: #FFFFFF; background: #0F1B2C; border: 1px solid
   content: '';
   position: absolute;
   top: 0;
-  left: 36px;
+  left: 32px;
   right: 0;
   height: 1.5px;
-  background: linear-gradient(90deg, #FAB81E 0%, #FFE885 30%, rgba(255, 255, 255, 0.8) 60%, #FAB81E 100%);
-  opacity: 0.85;
+  background: linear-gradient(90deg, #FAB81E 0%, #FFF3B0 30%, rgba(255, 255, 255, 0.9) 60%, #FAB81E 100%);
+  opacity: 0.9;
   pointer-events: none;
 }
 
 .bat-blade:hover,
 .site-header__bar:hover {
   box-shadow: 
-    0 16px 36px rgba(4, 18, 48, 0.6),
-    0 0 30px rgba(250, 184, 30, 0.4),
-    inset 0 2px 4px rgba(255, 255, 255, 0.6),
-    inset 0 -3px 6px rgba(0, 0, 0, 0.55);
+    0 18px 40px rgba(1, 8, 20, 0.75),
+    0 0 32px rgba(250, 184, 30, 0.4),
+    inset 0 2px 3px rgba(255, 255, 255, 0.65),
+    inset 0 -3px 6px rgba(0, 0, 0, 0.7);
 }
 
 /* Bat Logo / Crest on Toe */
@@ -275,30 +281,32 @@ input, select, textarea { color: #FFFFFF; background: #0F1B2C; border: 1px solid
 .navbar-logo-breakout {
   display: flex;
   align-items: center;
-  gap: 10px;
+  justify-content: center;
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 30%, #153C78 0%, #061836 100%);
+  border: 1.8px solid #FAB81E;
+  box-shadow: 0 0 14px rgba(250, 184, 30, 0.45), inset 0 1px 2px rgba(255, 255, 255, 0.35);
   text-decoration: none;
   z-index: 5;
   margin-left: 2px;
-  margin-top: 0;
-  margin-bottom: 0;
-  transform: none;
-  transition: transform 0.28s cubic-bezier(0.16, 1, 0.3, 1), filter 0.28s ease;
-  filter: drop-shadow(0 0 10px rgba(250, 184, 30, 0.35)) drop-shadow(0 4px 10px rgba(0, 0, 0, 0.65));
+  flex-shrink: 0;
+  transition: transform 0.28s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.28s ease;
 }
 
 .bat-logo-link:hover,
 .navbar-logo-breakout:hover {
-  transform: scale(1.08) translateY(-1px);
-  filter: drop-shadow(0 0 16px rgba(250, 184, 30, 0.65)) drop-shadow(0 6px 14px rgba(0, 0, 0, 0.75));
+  transform: scale(1.1);
+  box-shadow: 0 0 22px rgba(250, 184, 30, 0.85);
 }
 
 .bat-logo-img,
 .navbar-logo-img {
-  height: 58px;
-  width: auto;
-  max-height: 58px;
+  height: 34px;
+  width: 34px;
   object-fit: contain;
-  filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.5));
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.5));
 }
 
 /* Navigation Links Container */
@@ -307,7 +315,7 @@ input, select, textarea { color: #FFFFFF; background: #0F1B2C; border: 1px solid
   align-items: center;
   justify-content: flex-end;
   flex: 1;
-  margin-right: 48px; /* space before shoulder splice */
+  margin-right: 42px; /* space before shoulder splice */
   z-index: 5;
   transform: none;
 }
@@ -315,18 +323,18 @@ input, select, textarea { color: #FFFFFF; background: #0F1B2C; border: 1px solid
 .nav-menu {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 8px;
   list-style: none;
   margin: 0;
   padding: 0;
 }
 
 .nav-divider {
-  color: rgba(250, 184, 30, 0.5);
-  font-size: 0.95rem;
-  font-weight: 400;
+  color: rgba(250, 184, 30, 0.4);
+  font-size: 0.72rem;
+  font-weight: 300;
   user-select: none;
-  text-shadow: 0 0 8px rgba(250, 184, 30, 0.4);
+  margin: 0 2px;
 }
 
 .nav-menu li {
@@ -334,42 +342,37 @@ input, select, textarea { color: #FFFFFF; background: #0F1B2C; border: 1px solid
 }
 
 .nav-link {
-  font-family: var(--font-display);
-  font-size: 1.02rem;
-  font-weight: 800;
-  letter-spacing: 0.06em;
+  font-family: var(--font-nav);
+  font-size: 0.84rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
   color: #FFFFFF;
   text-decoration: none;
-  padding: 7px 16px;
+  padding: 6px 14px;
   display: inline-block;
-  border-radius: 20px;
+  border-radius: 16px;
   border: 1px solid transparent;
-  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
-  text-transform: capitalize;
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+  transition: all 0.22s cubic-bezier(0.16, 1, 0.3, 1);
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.5);
 }
 
 .nav-link:hover {
   color: #FAB81E;
-  background: rgba(8, 26, 62, 0.65);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-  border-color: rgba(250, 184, 30, 0.4);
-  text-shadow: 0 0 14px rgba(250, 184, 30, 0.85);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  background: rgba(3, 14, 34, 0.6);
+  border-color: rgba(250, 184, 30, 0.5);
+  text-shadow: 0 0 14px rgba(250, 184, 30, 0.9);
+  box-shadow: 0 0 16px rgba(250, 184, 30, 0.25);
   transform: translateY(-1px);
 }
 
 .nav-link.active {
-  background: linear-gradient(180deg, #0B1C38 0%, #040D1B 100%);
   color: #FAB81E;
-  font-weight: 900;
-  border: 1.8px solid #FAB81E;
-  box-shadow: 
-    0 0 16px rgba(250, 184, 30, 0.55),
-    inset 0 1px 1px rgba(255, 255, 255, 0.35),
-    inset 0 -1px 2px rgba(0, 0, 0, 0.5);
-  text-shadow: 0 0 10px rgba(250, 184, 30, 0.6);
+  background: linear-gradient(180deg, rgba(250, 184, 30, 0.22) 0%, rgba(250, 184, 30, 0.08) 100%);
+  font-weight: 800;
+  border: 1.5px solid #FAB81E;
+  box-shadow: 0 0 16px rgba(250, 184, 30, 0.5), inset 0 1px 1px rgba(255, 255, 255, 0.4);
+  text-shadow: 0 0 10px rgba(250, 184, 30, 0.85);
 }
 
 .nav-link.active::after {
@@ -382,7 +385,7 @@ input, select, textarea { color: #FFFFFF; background: #0F1B2C; border: 1px solid
   right: 0;
   top: 0;
   bottom: 0;
-  width: 48px;
+  width: 44px;
   pointer-events: none;
   overflow: hidden;
 }
@@ -394,15 +397,15 @@ input, select, textarea { color: #FFFFFF; background: #0F1B2C; border: 1px solid
 
 /* 3. Bat Handle (Right Extension) */
 .bat-handle {
-  width: 130px;
-  height: 24px;
-  background: repeating-linear-gradient(115deg, #051020 0px, #051020 6px, #123366 6px, #123366 12px);
+  width: 110px;
+  height: 22px;
+  background: repeating-linear-gradient(115deg, #040D1A 0px, #040D1A 5px, #102E5C 5px, #102E5C 10px);
   border-top: 1.8px solid #FAB81E;
-  border-bottom: 1.8px solid #040A15;
+  border-bottom: 1.8px solid #030810;
   box-shadow: 
-    0 4px 10px rgba(0, 0, 0, 0.4),
-    inset 0 2px 2px rgba(255, 255, 255, 0.3),
-    inset 0 -2px 3px rgba(0, 0, 0, 0.7);
+    0 4px 10px rgba(0, 0, 0, 0.5),
+    inset 0 2px 2px rgba(255, 255, 255, 0.25),
+    inset 0 -2px 3px rgba(0, 0, 0, 0.8);
   position: relative;
   flex-shrink: 0;
 }
@@ -414,7 +417,7 @@ input, select, textarea { color: #FFFFFF; background: #0F1B2C; border: 1px solid
   top: -3px;
   bottom: -3px;
   width: 5px;
-  background: linear-gradient(180deg, #FFE082 0%, #FAB81E 50%, #D49200 100%);
+  background: linear-gradient(180deg, #FFE082 0%, #FAB81E 50%, #C48500 100%);
   box-shadow: 0 0 8px rgba(250, 184, 30, 0.8);
   border-radius: 1px;
 }
@@ -422,55 +425,74 @@ input, select, textarea { color: #FFFFFF; background: #0F1B2C; border: 1px solid
 .bat-handle::before { left: 0; }
 .bat-handle::after { right: 0; }
 
-/* 4. Circular Pommel / Profile Ball Button (Far Right) */
+/* 4. Circular Pommel / Stitched Cricket Ball (Far Right) */
 .bat-pommel-btn,
 .site-header__user-pill {
-  width: 58px;
-  height: 58px;
+  width: 54px;
+  height: 54px;
   border-radius: 50%;
-  background: radial-gradient(circle at 32% 30%, #2570C8 0%, #104284 45%, #051329 85%, #030A17 100%);
+  background: radial-gradient(circle at 32% 28%, #2A79E2 0%, #154AA0 38%, #0B2C62 72%, #030F24 100%);
   border: 2.5px solid #FAB81E;
   box-shadow: 
-    0 10px 28px rgba(0, 0, 0, 0.65),
-    0 0 20px rgba(250, 184, 30, 0.45),
-    inset 0 2px 3px rgba(255, 255, 255, 0.5),
-    inset 0 -2px 4px rgba(0, 0, 0, 0.6);
+    0 10px 28px rgba(0, 0, 0, 0.7),
+    0 0 22px rgba(250, 184, 30, 0.5),
+    inset 0 2.5px 3px rgba(255, 255, 255, 0.55),
+    inset 0 -3px 5px rgba(0, 0, 0, 0.7);
   display: flex;
   align-items: center;
   justify-content: center;
   color: #FAB81E;
   text-decoration: none;
   flex-shrink: 0;
-  transition: all 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
   z-index: 5;
   transform: none;
   position: relative;
+  overflow: hidden;
 }
 
+/* Authentic Cricket Ball Seam Stitching */
 .bat-pommel-btn::before {
   content: '';
   position: absolute;
-  inset: 2px;
+  inset: 0;
   border-radius: 50%;
-  border: 1px solid rgba(255, 255, 255, 0.25);
+  border: 1.8px dashed rgba(250, 184, 30, 0.55);
   pointer-events: none;
+  transform: scale(0.8) rotate(45deg);
+  opacity: 0.85;
+}
+
+.bat-pommel-btn::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 1.5px;
+  background: linear-gradient(90deg, transparent 0%, rgba(255, 255, 255, 0.8) 50%, transparent 100%);
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%) rotate(45deg);
+  pointer-events: none;
+  opacity: 0.65;
 }
 
 .bat-pommel-btn:hover,
 .site-header__user-pill:hover {
-  background: radial-gradient(circle at 35% 35%, #FFE082 0%, #FAB81E 60%, #D49200 100%);
-  color: #061122;
+  background: radial-gradient(circle at 35% 30%, #FFE082 0%, #FAB81E 55%, #C48500 100%);
+  color: #041022;
   border-color: #FFFFFF;
   box-shadow: 
-    0 12px 32px rgba(0, 0, 0, 0.7),
-    0 0 28px rgba(250, 184, 30, 0.95),
-    inset 0 2px 3px rgba(255, 255, 255, 0.7);
-  transform: scale(1.1) translateY(-1px);
+    0 14px 34px rgba(0, 0, 0, 0.8),
+    0 0 30px rgba(250, 184, 30, 0.95),
+    inset 0 2px 4px rgba(255, 255, 255, 0.8);
+  transform: scale(1.12) rotate(15deg);
 }
 
 .user-pill__icon {
   transform: none;
   filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.5));
+  position: relative;
+  z-index: 2;
 }
 
 /* Mobile Responsive */
