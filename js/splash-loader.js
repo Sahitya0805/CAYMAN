@@ -1,12 +1,12 @@
 /**
  * ─────────────────────────────────────────────────────────────
- * CSK PROFESSIONAL BRANDED SPLASH & PAGE TRANSITION LOADER
- * Displays official crest, clean brand typography, and
- * professional candy-striped loading progress bar.
+ * CSK ARENA TECH BRANDED SPLASH & TRANSITION LOADER
+ * Features dark blue arena backdrop, live status telemetry,
+ * candy-striped capsule hazard bar, and sub-step checklist.
  * ─────────────────────────────────────────────────────────────
  */
 
-const PROFESSIONAL_SPLASH_TEMPLATE = `
+const ARENA_SPLASH_TEMPLATE = `
   <div class="csk-splash-screen__backdrop"></div>
   <div class="csk-splash-screen__content">
     <!-- Official Crest -->
@@ -20,11 +20,21 @@ const PROFESSIONAL_SPLASH_TEMPLATE = `
       <p class="csk-splash-motto">★ ONE TEAM • ONE DREAM ★</p>
     </div>
 
-    <!-- Clean Professional Loader -->
-    <div class="csk-splash-screen__loader-wrap">
-      <span class="csk-splash-screen__loader-text">LOADING ...</span>
-      <div class="csk-splash-screen__progress">
-        <div class="csk-splash-screen__bar" id="csk-splash-bar"></div>
+    <!-- Arena Tech Loader (Exact Reference Match) -->
+    <div class="csk-arena-loader">
+      <div class="arena-loader-header">
+        <span class="arena-loader-status" id="arena-loader-status">INITIALIZING SYSTEM...</span>
+        <span class="arena-loader-pct tabular-nums" id="arena-loader-pct">0%</span>
+      </div>
+
+      <div class="arena-loader-track">
+        <div class="arena-loader-fill" id="arena-loader-fill"></div>
+      </div>
+
+      <div class="arena-loader-steps">
+        <span class="arena-step" id="arena-step-1"><span class="step-dot" id="step-dot-1">●</span> ASSETS VERIFIED</span>
+        <span class="arena-step" id="arena-step-2"><span class="step-dot" id="step-dot-2">○</span> SYNCING ROSTER</span>
+        <span class="arena-step" id="arena-step-3"><span class="step-dot" id="step-dot-3">○</span> CONNECTING ARENA</span>
       </div>
     </div>
   </div>
@@ -38,17 +48,24 @@ export function initSplashLoader() {
     splash.id = 'csk-splash-screen';
     splash.className = 'csk-splash-screen';
     splash.setAttribute('aria-hidden', 'false');
-    splash.innerHTML = PROFESSIONAL_SPLASH_TEMPLATE;
+    splash.innerHTML = ARENA_SPLASH_TEMPLATE;
     document.body.prepend(splash);
   } else {
-    splash.innerHTML = PROFESSIONAL_SPLASH_TEMPLATE;
+    splash.innerHTML = ARENA_SPLASH_TEMPLATE;
   }
 
-  const barEl = document.getElementById('csk-splash-bar');
+  const fillEl = document.getElementById('arena-loader-fill');
+  const pctEl = document.getElementById('arena-loader-pct');
+  const statusEl = document.getElementById('arena-loader-status');
+  const step1 = document.getElementById('arena-step-1');
+  const step2 = document.getElementById('arena-step-2');
+  const step3 = document.getElementById('arena-step-3');
+  const dot1 = document.getElementById('step-dot-1');
+  const dot2 = document.getElementById('step-dot-2');
+  const dot3 = document.getElementById('step-dot-3');
 
-  // Smooth linear progress bar fill
   let progress = 0;
-  const durationMs = 700;
+  const durationMs = 800;
   const startTime = performance.now();
 
   function updateProgress(currentTime) {
@@ -57,8 +74,31 @@ export function initSplashLoader() {
     
     progress = Math.floor(rawProgress * 100);
 
-    if (barEl) {
-      barEl.style.width = `${progress}%`;
+    if (fillEl) fillEl.style.width = `${progress}%`;
+    if (pctEl) pctEl.textContent = `${progress}%`;
+
+    // Telemetry Status & Sub-step progression
+    if (progress < 35) {
+      if (statusEl) statusEl.textContent = 'LOADING ASSETS...';
+      if (step1) step1.className = 'arena-step is-active';
+      if (dot1) dot1.textContent = '●';
+    } else if (progress < 75) {
+      if (statusEl) statusEl.textContent = 'SYNCING ROSTER...';
+      if (step1) step1.className = 'arena-step is-complete';
+      if (step2) step2.className = 'arena-step is-active';
+      if (dot2) dot2.textContent = '●';
+    } else if (progress < 96) {
+      if (statusEl) statusEl.textContent = 'CONNECTING ARENA...';
+      if (step1) step1.className = 'arena-step is-complete';
+      if (step2) step2.className = 'arena-step is-complete';
+      if (step3) step3.className = 'arena-step is-active';
+      if (dot3) dot3.textContent = '●';
+    } else {
+      if (statusEl) statusEl.textContent = 'WELCOME TO THE ARENA!';
+      if (step1) step1.className = 'arena-step is-complete';
+      if (step2) step2.className = 'arena-step is-complete';
+      if (step3) step3.className = 'arena-step is-complete';
+      if (dot3) dot3.textContent = '●';
     }
 
     if (rawProgress < 1) {
@@ -68,7 +108,7 @@ export function initSplashLoader() {
         splash.classList.add('is-hidden');
         splash.classList.remove('is-active');
         splash.setAttribute('aria-hidden', 'true');
-      }, 120);
+      }, 150);
     }
   }
 
@@ -83,6 +123,7 @@ export function initSplashLoader() {
     }
   });
 }
+
 
 
 

@@ -533,7 +533,7 @@
 }
 
 /* ─────────────────────────────────────────────────────────────
-   CSK PROFESSIONAL BRANDED SPLASH & PAGE TRANSITION LOADER
+   CSK ARENA TECH BRANDED SPLASH LOADER (DARK BLUE EDITION)
    ───────────────────────────────────────────────────────────── */
 .csk-splash-screen {
   position: fixed;
@@ -542,7 +542,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background: #080E18 radial-gradient(circle at 50% 45%, #101E38 0%, #080E18 70%, #040810 100%);
+  background: #081120 radial-gradient(circle at 50% 45%, #0e1d38 0%, #081120 70%, #040912 100%);
   opacity: 1;
   visibility: visible;
   transition: opacity 0.45s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.45s;
@@ -564,7 +564,7 @@
 .csk-splash-screen__backdrop {
   position: absolute;
   inset: 0;
-  background: radial-gradient(circle at center, rgba(250, 184, 30, 0.08) 0%, transparent 65%);
+  background: radial-gradient(circle at center, rgba(14, 29, 56, 0.6) 0%, transparent 80%);
   pointer-events: none;
 }
 
@@ -577,8 +577,8 @@
   justify-content: center;
   text-align: center;
   padding: 24px;
-  max-width: 520px;
-  width: 90vw;
+  max-width: 540px;
+  width: 92vw;
 }
 
 .csk-splash-screen__logo-wrap {
@@ -586,16 +586,16 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 140px;
-  height: 140px;
-  margin-bottom: 20px;
+  width: 135px;
+  height: 135px;
+  margin-bottom: 16px;
 }
 
 .csk-splash-screen__image {
   width: 100%;
   height: 100%;
   object-fit: contain;
-  filter: drop-shadow(0 12px 28px rgba(0, 0, 0, 0.85)) drop-shadow(0 0 20px rgba(250, 184, 30, 0.35));
+  filter: drop-shadow(0 10px 25px rgba(0, 0, 0, 0.85)) drop-shadow(0 0 20px rgba(250, 184, 30, 0.3));
   user-select: none;
   -webkit-user-drag: none;
 }
@@ -606,7 +606,7 @@
 
 .csk-splash-brand-title {
   font-family: var(--font-display), -apple-system, sans-serif;
-  font-size: clamp(1.4rem, 4.5vw, 1.9rem);
+  font-size: clamp(1.4rem, 4.5vw, 1.85rem);
   font-weight: 900;
   letter-spacing: 0.12em;
   text-transform: uppercase;
@@ -617,7 +617,7 @@
 
 .csk-splash-motto {
   font-family: var(--font-body), sans-serif;
-  font-size: 0.78rem;
+  font-size: 0.75rem;
   font-weight: 800;
   letter-spacing: 0.22em;
   color: #FAB81E;
@@ -626,63 +626,124 @@
   text-shadow: 0 0 8px rgba(250, 184, 30, 0.35);
 }
 
-.csk-splash-screen__loader-wrap {
+/* Arena Tech Loader Box */
+.csk-arena-loader {
+  width: 100%;
+  max-width: 440px;
   display: flex;
   flex-direction: column;
+  gap: 8px;
+  margin-top: 4px;
+}
+
+/* Header: Status + Percentage */
+.arena-loader-header {
+  display: flex;
+  justify-content: space-between;
   align-items: center;
-  justify-content: center;
-  margin-top: 8px;
+  font-family: "SF Mono", Monaco, "Cascadia Code", "Courier New", monospace;
+  font-size: 0.8125rem;
+  letter-spacing: 0.12em;
+  padding: 0 2px;
 }
 
-.csk-splash-screen__loader-text {
-  font-family: var(--font-display), -apple-system, sans-serif;
-  font-size: 0.875rem;
-  font-weight: 800;
-  color: #FFFFFF;
-  letter-spacing: 0.16em;
+.arena-loader-status {
+  color: #E2E8F0;
+  font-weight: 600;
   text-transform: uppercase;
-  margin-bottom: 12px;
-  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.8), 0 0 12px rgba(250, 184, 30, 0.3);
+  text-shadow: 0 0 8px rgba(255, 255, 255, 0.2);
 }
 
-.csk-splash-screen__progress {
-  width: 290px;
-  height: 26px;
-  max-width: 82vw;
-  background: #FFFFFF;
-  border: 3px solid #000000;
-  border-radius: 4px;
-  padding: 2.5px;
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.6), 0 0 20px rgba(250, 184, 30, 0.25);
+.arena-loader-pct {
+  color: #FAB81E;
+  font-weight: 800;
+  text-shadow: 0 0 10px rgba(250, 184, 30, 0.6);
+}
+
+/* Pill Capsule Track */
+.arena-loader-track {
+  width: 100%;
+  height: 22px;
+  background: #040914;
+  border: 2px solid #1e293b;
+  border-radius: 999px;
+  padding: 2px;
+  box-shadow: 0 0 20px rgba(250, 184, 30, 0.12), inset 0 2px 5px rgba(0, 0, 0, 0.9);
   position: relative;
   overflow: hidden;
   display: flex;
   align-items: center;
 }
 
-.csk-splash-screen__bar {
+/* Candy Hazard Diagonal Stripes Fill */
+.arena-loader-fill {
   width: 0%;
   height: 100%;
-  border-radius: 2px;
+  border-radius: 999px;
   background: repeating-linear-gradient(
-    -70deg,
+    -45deg,
     #FAB81E 0px,
-    #FAB81E 13px,
-    #FFFFFF 13px,
-    #FFFFFF 16px
+    #FAB81E 12px,
+    #E08700 12px,
+    #E08700 24px
   );
-  background-size: 16px 100%;
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.4);
-  animation: splashStripesMove 0.65s linear infinite;
+  background-size: 34px 100%;
+  box-shadow: 0 0 12px rgba(250, 184, 30, 0.6), inset 0 1px 0 rgba(255, 255, 255, 0.35);
+  animation: arenaStripesMove 0.75s linear infinite;
   transition: width 0.05s linear;
 }
 
-@keyframes splashStripesMove {
+/* Sub-steps Footer Row */
+.arena-loader-steps {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: "SF Mono", Monaco, "Cascadia Code", "Courier New", monospace;
+  font-size: 0.6875rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-top: 4px;
+  padding: 0 2px;
+}
+
+.arena-step {
+  color: #64748b;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  transition: color 0.2s ease;
+}
+
+.arena-step .step-dot {
+  font-size: 0.75rem;
+  line-height: 1;
+}
+
+.arena-step.is-active,
+.arena-step.is-complete {
+  color: #FAB81E;
+  text-shadow: 0 0 8px rgba(250, 184, 30, 0.4);
+}
+
+@keyframes arenaStripesMove {
   0% {
     background-position: 0 0;
   }
   100% {
-    background-position: 16px 0;
+    background-position: 34px 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .csk-arena-loader {
+    max-width: 90vw;
+  }
+  .arena-loader-header {
+    font-size: 0.75rem;
+  }
+  .arena-loader-steps {
+    font-size: 0.6rem;
+    gap: 4px;
   }
 }
 
