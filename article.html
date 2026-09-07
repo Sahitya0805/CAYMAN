@@ -9,25 +9,31 @@
   <link rel="shortcut icon" href="favicon.ico">
   <link rel="apple-touch-icon" href="assets/csk-official-logo.png">
   
-  <link rel="stylesheet" href="css/tokens.css?v=20260907_2">
-  <link rel="stylesheet" href="css/layout.css?v=20260907_2">
-  <link rel="stylesheet" href="css/components.css?v=20260907_2">
-  <link rel="stylesheet" href="css/pages.css?v=20260907_2">
+  <link rel="stylesheet" href="css/tokens.css?v=20260907_3">
+  <link rel="stylesheet" href="css/layout.css?v=20260907_3">
+  <link rel="stylesheet" href="css/components.css?v=20260907_3">
+  <link rel="stylesheet" href="css/pages.css?v=20260907_3">
 </head>
 <body>
-      <!-- CSK Branded Splash & Transition Screen (Professional Edition) -->
+        <!-- CSK Branded Splash & Transition Screen (Professional Edition) -->
   <div id="csk-splash-screen" class="csk-splash-screen" aria-hidden="false">
+    <canvas id="csk-splash-canvas" class="csk-splash-canvas"></canvas>
     <div class="csk-splash-screen__backdrop"></div>
     <div class="csk-splash-screen__content">
-      <!-- Official Crest -->
+      <!-- Official Crest with Ambient Glow -->
       <div class="csk-splash-screen__logo-wrap">
+        <div class="csk-splash-crest-glow"></div>
         <img src="assets/csk-official-logo.png" alt="Cayman Super Kings" class="csk-splash-screen__image">
       </div>
 
       <!-- Professional Brand Heading -->
       <div class="csk-splash-brand-wrap">
         <h1 class="csk-splash-brand-title">CAYMAN SUPER KINGS</h1>
-        <p class="csk-splash-motto">★ ONE TEAM • ONE DREAM ★</p>
+        <div class="csk-splash-motto-row">
+          <span class="splash-star">★</span>
+          <p class="csk-splash-motto">ONE TEAM • ONE DREAM</p>
+          <span class="splash-star">★</span>
+        </div>
       </div>
 
       <!-- Clean Professional Loader -->
@@ -102,99 +108,7 @@
         <!-- Rendered by js/news.js -> initArticlePage() -->
       </div>
     </section>
-      <!-- ── SHORT & ATTRACTIVE SPONSORS SHOWCASE ── -->
-    <section class="section section--white sponsors-compact-section" aria-label="Official Franchise Sponsors">
-      <div class="container">
-        
-        <!-- Header Row -->
-        <div class="sponsors-compact-header">
-          <div>
-            <div class="sponsors-badge-row">
-              <span class="sponsors-gold-star">★</span>
-              <span class="section-eyebrow" style="color: #B8430A; margin: 0;">PARTNERS OF THE PRIDE</span>
-              <span class="sponsors-gold-star">★</span>
-            </div>
-            <h2 class="sponsors-compact-title">OUR OFFICIAL SPONSORS</h2>
-          </div>
-          <div>
-            <a href="partner.html" class="btn btn-outline-navy btn-sm" style="font-weight: 800; border-width: 2px;">All Partnerships ↗</a>
-          </div>
-        </div>
-
-        <!-- Tier 1: Principal Partners (3 Featured Luxury Cards) -->
-        <div class="sponsors-principal-grid">
-          <!-- Card 1 -->
-          <a href="partner.html" class="sponsor-card sponsor-card--principal">
-            <span class="sponsor-card__tag">TITLE PARTNER</span>
-            <div class="sponsor-card__logo-wrap">
-              <img src="assets/sponsors/kuhl.svg" alt="Kühl BLDC Fans" class="sponsor-card__img">
-            </div>
-          </a>
-
-          <!-- Card 2 -->
-          <a href="partner.html" class="sponsor-card sponsor-card--principal">
-            <span class="sponsor-card__tag">OFFICIAL TYRE PARTNER</span>
-            <div class="sponsor-card__logo-wrap">
-              <img src="assets/sponsors/bkt.svg" alt="BKT Tyres" class="sponsor-card__img">
-            </div>
-          </a>
-
-          <!-- Card 3 -->
-          <a href="partner.html" class="sponsor-card sponsor-card--principal">
-            <span class="sponsor-card__tag">PRINCIPAL SPONSOR</span>
-            <div class="sponsor-card__logo-wrap">
-              <img src="assets/sponsors/lubi.svg" alt="Lubi" class="sponsor-card__img">
-            </div>
-          </a>
-        </div>
-
-        <!-- Tier 2: Official & Regional Partners (Clean Horizontal 6-Item Grid) -->
-        <div class="sponsors-official-grid">
-          <a href="partner.html" class="sponsor-card sponsor-card--official" title="Official Telecom Partner">
-            <span class="sponsor-card__subtag">TELECOM</span>
-            <div class="sponsor-card__logo-wrap">
-              <img src="assets/sponsors/jio.svg" alt="Jio" class="sponsor-card__img">
-            </div>
-          </a>
-
-          <a href="partner.html" class="sponsor-card sponsor-card--official" title="Official Airline Partner">
-            <span class="sponsor-card__subtag">AIRLINE</span>
-            <div class="sponsor-card__logo-wrap">
-              <img src="assets/sponsors/airasia.svg" alt="AirAsia" class="sponsor-card__img">
-            </div>
-          </a>
-
-          <a href="partner.html" class="sponsor-card sponsor-card--official" title="Official Banking Partner">
-            <span class="sponsor-card__subtag">BANKING</span>
-            <div class="sponsor-card__logo-wrap">
-              <img src="assets/sponsors/cayman-national.svg" alt="Cayman National Bank" class="sponsor-card__img">
-            </div>
-          </a>
-
-          <a href="partner.html" class="sponsor-card sponsor-card--official" title="Official Travel Partner">
-            <span class="sponsor-card__subtag">TRAVEL</span>
-            <div class="sponsor-card__logo-wrap">
-              <img src="assets/sponsors/cayman-airways.svg" alt="Cayman Airways" class="sponsor-card__img">
-            </div>
-          </a>
-
-          <a href="partner.html" class="sponsor-card sponsor-card--official" title="Connectivity Partner">
-            <span class="sponsor-card__subtag">CONNECTIVITY</span>
-            <div class="sponsor-card__logo-wrap">
-              <img src="assets/sponsors/flow.svg" alt="Flow" class="sponsor-card__img">
-            </div>
-          </a>
-
-          <a href="partner.html" class="sponsor-card sponsor-card--official" title="Infrastructure Partner">
-            <span class="sponsor-card__subtag">INFRASTRUCTURE</span>
-            <div class="sponsor-card__logo-wrap">
-              <img src="assets/sponsors/shree-cement.svg" alt="Shree Cement" class="sponsor-card__img">
-            </div>
-          </a>
-        </div>
-
-      </div>
-    </section>
+      
   </main>
 
   <!-- Site Footer -->
@@ -231,7 +145,7 @@
     </div>
   </footer>
 
-  <script type="module" src="js/app.js?v=20260907_2"></script>
+  <script type="module" src="js/app.js?v=20260907_3"></script>
   <script type="module">
     import { initArticlePage } from './js/news.js';
     initArticlePage();
