@@ -614,7 +614,191 @@ input, select, textarea { color: #FFFFFF; background: #0F1B2C; border: 1px solid
 }
 
 /* ─────────────────────────────────────────────────────────────
-   SITE FOOTER
+   UNIVERSAL SHORT & ATTRACTIVE SPONSORS SHOWCASE
+   ───────────────────────────────────────────────────────────── */
+.sponsors-compact-section {
+  padding: 56px 0 64px !important;
+  background: #FFFFFF !important;
+  position: relative;
+  z-index: 2;
+  border-top: 1px solid rgba(8, 14, 24, 0.08);
+}
+
+.sponsors-compact-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 24px;
+  padding-bottom: 16px;
+  border-bottom: 2px solid rgba(8, 14, 24, 0.08);
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.sponsors-badge-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 4px;
+}
+
+.sponsors-gold-star {
+  color: #FAB81E;
+  font-size: 0.95rem;
+}
+
+.sponsors-compact-title {
+  font-family: var(--font-display);
+  font-size: clamp(1.8rem, 3.4vw, 2.4rem);
+  font-weight: 900;
+  color: #080E18;
+  letter-spacing: 0.05em;
+  margin: 0;
+  line-height: 1.1;
+  text-transform: uppercase;
+}
+
+/* Tier 1: Principal Partners Grid (3 Cards with Gold Outlines) */
+.sponsors-principal-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+  margin-bottom: 18px;
+}
+
+.sponsor-card {
+  text-decoration: none;
+  transition: all 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.sponsor-card--principal {
+  background: linear-gradient(180deg, #FFFFFF 0%, #FFFDF5 100%);
+  border: 2px solid #FAB81E;
+  border-radius: 14px;
+  padding: 16px 20px 20px;
+  text-align: center;
+  box-shadow: 0 6px 20px rgba(8, 14, 24, 0.06), 0 0 14px rgba(250, 184, 30, 0.15);
+}
+
+.sponsor-card--principal:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 30px rgba(8, 14, 24, 0.14), 0 0 24px rgba(250, 184, 30, 0.4);
+  border-color: #F2600C;
+}
+
+.sponsor-card__tag {
+  font-family: var(--font-body);
+  font-size: 0.72rem;
+  font-weight: 800;
+  color: #B8430A;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+  background: rgba(242, 96, 12, 0.08);
+  padding: 2px 10px;
+  border-radius: 999px;
+}
+
+.sponsor-card__logo-wrap {
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.sponsor-card--principal .sponsor-card__img {
+  max-height: 52px;
+  max-width: 150px;
+  object-fit: contain;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.05));
+  transition: transform 0.25s ease;
+}
+
+.sponsor-card--principal:hover .sponsor-card__img {
+  transform: scale(1.06);
+}
+
+/* Tier 2: Official Partners Grid (6 Cards) */
+.sponsors-official-grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 12px;
+}
+
+.sponsor-card--official {
+  background: #F8FAFC;
+  border: 1.5px solid #E2E8F0;
+  border-radius: 10px;
+  padding: 10px 12px 12px;
+  text-align: center;
+}
+
+.sponsor-card--official:hover {
+  transform: translateY(-3px);
+  border-color: #FAB81E;
+  background: #FFFFFF;
+  box-shadow: 0 8px 20px rgba(8, 14, 24, 0.09), 0 0 12px rgba(250, 184, 30, 0.2);
+}
+
+.sponsor-card__subtag {
+  font-size: 0.62rem;
+  font-weight: 800;
+  color: #64748B;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  margin-bottom: 6px;
+  display: block;
+}
+
+.sponsor-card--official .sponsor-card__logo-wrap {
+  height: 42px;
+}
+
+.sponsor-card--official .sponsor-card__img {
+  max-height: 34px;
+  max-width: 100px;
+  object-fit: contain;
+  transition: transform 0.25s ease, filter 0.25s ease;
+}
+
+.sponsor-card--official:hover .sponsor-card__img {
+  transform: scale(1.08);
+}
+
+@media (max-width: 992px) {
+  .sponsors-principal-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+  }
+  .sponsors-official-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+  }
+}
+
+@media (max-width: 680px) {
+  .sponsors-compact-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .sponsors-principal-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+  .sponsors-official-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+  }
+}
+
+/* ─────────────────────────────────────────────────────────────
+   SITE FOOTER (Dark Navy with Wavy Lines Pattern)
    ───────────────────────────────────────────────────────────── */
 .site-footer {
   background-color: #09152B;
@@ -633,26 +817,46 @@ input, select, textarea { color: #FFFFFF; background: #0F1B2C; border: 1px solid
 .site-footer a {
   color: var(--c-text-inverse-muted);
   text-decoration: none;
+  transition: color 0.2s ease;
 }
 
 .site-footer a:hover {
   color: var(--c-gold);
-  text-decoration: underline;
+  text-decoration: none;
 }
 
 .footer-top {
   display: grid;
-  grid-template-columns: 2fr 1fr 1fr 1fr;
-  gap: 40px;
+  grid-template-columns: 1.8fr 1fr 1.2fr;
+  gap: 48px;
   padding-bottom: 48px;
   border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 }
 
+.footer-brand img {
+  width: 48px;
+  height: auto;
+  filter: drop-shadow(0 2px 8px rgba(250, 184, 30, 0.45));
+}
+
+.footer-brand h3 {
+  font-family: var(--font-display);
+  font-weight: 900;
+  font-size: 1.25rem;
+  color: #FFFFFF;
+  line-height: 1.15;
+  letter-spacing: -0.01em;
+  margin-top: 14px;
+  margin-bottom: 8px;
+  text-transform: uppercase;
+}
+
 .footer-brand p {
-  margin-top: 16px;
+  margin-top: 12px;
   font-size: 0.875rem;
   line-height: 1.6;
   max-width: 320px;
+  color: rgba(255, 255, 255, 0.65);
 }
 
 .footer-heading {
@@ -673,6 +877,8 @@ input, select, textarea { color: #FFFFFF; background: #0F1B2C; border: 1px solid
   flex-direction: column;
   gap: 10px;
   font-size: 0.875rem;
+  padding: 0;
+  margin: 0;
 }
 
 .footer-bottom {
@@ -683,16 +889,15 @@ input, select, textarea { color: #FFFFFF; background: #0F1B2C; border: 1px solid
   flex-wrap: wrap;
   gap: 16px;
   font-size: 0.8125rem;
+  color: rgba(255, 255, 255, 0.6);
 }
 
-.cica-badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  background: rgba(255, 255, 255, 0.05);
-  padding: 6px 12px;
-  border-radius: var(--radius-badge);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+.footer-bottom a {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.footer-bottom a:hover {
+  color: #FAB81E;
 }
 
 /* ─────────────────────────────────────────────────────────────
