@@ -9,29 +9,55 @@
   <link rel="shortcut icon" href="favicon.ico">
   <link rel="apple-touch-icon" href="assets/csk-official-logo.png">
   
-  <link rel="stylesheet" href="css/tokens.css?v=20260906_4">
-  <link rel="stylesheet" href="css/layout.css?v=20260906_4">
-  <link rel="stylesheet" href="css/components.css?v=20260906_4">
-  <link rel="stylesheet" href="css/pages.css?v=20260906_4">
+  <link rel="stylesheet" href="css/tokens.css?v=20260907_1">
+  <link rel="stylesheet" href="css/layout.css?v=20260907_1">
+  <link rel="stylesheet" href="css/components.css?v=20260907_1">
+  <link rel="stylesheet" href="css/pages.css?v=20260907_1">
 </head>
 <body class="page--white-theme">
-  <!-- CSK Branded Splash & Transition Screen -->
+    <!-- CSK Branded Splash & Transition Screen (Ultra Dynamic Crazy Stadium Loader) -->
   <div id="csk-splash-screen" class="csk-splash-screen" aria-hidden="false">
+    <canvas id="csk-splash-canvas" class="csk-splash-canvas"></canvas>
+    <div class="csk-splash-screen__sunburst"></div>
     <div class="csk-splash-screen__backdrop"></div>
     <div class="csk-splash-screen__content">
-      <div class="csk-splash-screen__logo-wrap">
-        <img src="assets/csk-splash.png" alt="Cayman Super Kings" class="csk-splash-screen__image">
+      <!-- Concentric Shockwave Rings -->
+      <div class="csk-splash-rings" aria-hidden="true">
+        <div class="csk-splash-ring csk-splash-ring--1"></div>
+        <div class="csk-splash-ring csk-splash-ring--2"></div>
+        <div class="csk-splash-ring csk-splash-ring--3"></div>
       </div>
+
+      <!-- 3D Floating Crest -->
+      <div class="csk-splash-screen__logo-wrap">
+        <div class="csk-splash-crest-glow"></div>
+        <img src="assets/csk-official-logo.png" alt="Cayman Super Kings Crest" class="csk-splash-screen__image">
+      </div>
+
+      <!-- Shimmer Brand Title & Motto -->
+      <div class="csk-splash-brand-wrap">
+        <h1 class="csk-splash-brand-title">CAYMAN SUPER KINGS</h1>
+        <div class="csk-splash-motto-row">
+          <span class="splash-star">★</span>
+          <span class="csk-splash-motto">WHISTLE PODU • THE PRIDE OF CAYMAN</span>
+          <span class="splash-star">★</span>
+        </div>
+      </div>
+
+      <!-- Tactical Live HUD Progress & Laser Bar -->
       <div class="csk-splash-screen__loader-wrap">
-        <span class="csk-splash-screen__loader-text">Loading ...</span>
+        <div class="csk-splash-status-row">
+          <span class="csk-splash-status-text" id="csk-splash-status">⚡ IGNITING THE LION'S ROAR...</span>
+          <span class="csk-splash-pct tabular-nums" id="csk-splash-pct">0%</span>
+        </div>
         <div class="csk-splash-screen__progress">
-          <div class="csk-splash-screen__bar"></div>
+          <div class="csk-splash-screen__bar" id="csk-splash-bar">
+            <span class="csk-splash-ball-spark"></span>
+          </div>
         </div>
       </div>
     </div>
-  </div>  
-
-  
+  </div>
 
   <!-- Sticky Cricket Bat Header (CSK Blue & Yellow) -->
   <header class="site-header">
@@ -356,7 +382,7 @@
     </div>
   </footer>
 
-  <script type="module" src="js/app.js?v=20260906_4"></script>
+  <script type="module" src="js/app.js?v=20260907_1"></script>
   <script type="module">
     import { initContactForm } from './js/contact.js';
     initContactForm();
