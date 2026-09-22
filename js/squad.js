@@ -1,11 +1,10 @@
 /**
  * ─────────────────────────────────────────────────────────────
- * 2026 OFFICIAL CSK SQUAD MODULE (19-PLAYER STADIUM SHOWCASE)
+ * 2026 OFFICIAL CSK SQUAD MODULE (AUTHENTIC SQUAD ROSTER)
  * ─────────────────────────────────────────────────────────────
  */
 
 import { store } from './content-store.js';
-import { ConsentGuard } from './consent-guard.js';
 
 let allSquadMembers = [];
 let currentFilter = 'all';
@@ -14,8 +13,7 @@ export async function initSquadPage() {
   const container = document.getElementById('squad-container');
   if (!container) return;
 
-  const rawSquad = await store.getSquad();
-  allSquadMembers = ConsentGuard.sanitizeList(rawSquad);
+  allSquadMembers = await store.getSquad();
 
   renderSquadShowcase(container);
   setupFilterListeners();
@@ -33,9 +31,6 @@ function renderSquadShowcase(container) {
       <button class="squad-filter-btn ${currentFilter === 'all' ? 'active' : ''}" data-filter="all">
         ALL (${allSquadMembers.length})
       </button>
-      <button class="squad-filter-btn ${currentFilter === 'leadership' ? 'active' : ''}" data-filter="leadership">
-        LEADERSHIP
-      </button>
       <button class="squad-filter-btn ${currentFilter === 'batters' ? 'active' : ''}" data-filter="batters">
         BATTERS
       </button>
@@ -44,9 +39,6 @@ function renderSquadShowcase(container) {
       </button>
       <button class="squad-filter-btn ${currentFilter === 'bowlers' ? 'active' : ''}" data-filter="bowlers">
         BOWLERS
-      </button>
-      <button class="squad-filter-btn ${currentFilter === 'development' ? 'active' : ''}" data-filter="development">
-        ACADEMY (U19)
       </button>
     </div>
 
@@ -76,7 +68,7 @@ function setupFilterListeners() {
     }
 
     // 2. Read more link click - allow direct navigation
-    if (e.target.closest('.hud-read-more-link')) {
+    if (e.target.closest('.hud-read-more-link') || e.target.closest('a')) {
       return;
     }
 
@@ -100,145 +92,85 @@ function setupFilterListeners() {
 }
 
 function createStadiumPlayerCard(p) {
-  const isBowler = p.position_type === 'BOWLER' || p.role.toLowerCase().includes('bowler') || (p.stats && p.stats.wickets > 30);
-  const stats = p.stats || {};
-  const jerseyNum = p.jersey_display || (p.jersey_number < 10 ? `0${p.jersey_number}` : `${p.jersey_number}`);
-  
-  // Badge Rendering
-  let badgeHtml = '';
-  if (p.badge === 'C') {
-    badgeHtml = `<div class="squad-card-badge squad-card-badge--c" title="Team Captain">C</div>`;
-  } else if (p.badge === 'VC') {
-    badgeHtml = `<div class="squad-card-badge squad-card-badge--vc" title="Vice-Captain">VC</div>`;
-  } else if (p.badge === '✈️' || p.badge_type === 'overseas') {
-    badgeHtml = `<div class="squad-card-badge squad-card-badge--overseas" title="Overseas International Player">✈️</div>`;
-  } else if (p.badge === 'U19' || p.is_minor) {
-    badgeHtml = `<div class="squad-card-badge squad-card-badge--u19" title="Under-19 Academy Star">U19</div>`;
-  }
-
-  // Stat Matrix Rows based on Role
-  let statsMatrixHtml = '';
-  if (isBowler) {
-    statsMatrixHtml = `
-      <div class="hud-stat-cell">
-        <span class="hud-stat-label">ECONOMY</span>
-        <span class="hud-stat-val">${stats.econ ? Number(stats.econ).toFixed(2) : '6.20'}</span>
-      </div>
-      <div class="hud-stat-cell">
-        <span class="hud-stat-label">MATCHES</span>
-        <span class="hud-stat-val">${stats.matches || 28}</span>
-      </div>
-      <div class="hud-stat-cell">
-        <span class="hud-stat-label">WICKETS</span>
-        <span class="hud-stat-val">${stats.wickets || 35}</span>
-      </div>
-      <div class="hud-stat-cell">
-        <span class="hud-stat-label">BEST FIGURES</span>
-        <span class="hud-stat-val">${stats.best_bowling || '4/18'}</span>
-      </div>
-      <div class="hud-stat-cell">
-        <span class="hud-stat-label">4W HAULS</span>
-        <span class="hud-stat-val">${stats.four_wickets !== undefined ? stats.four_wickets : 2}</span>
-      </div>
-      <div class="hud-stat-cell">
-        <span class="hud-stat-label">BOWLING AVG</span>
-        <span class="hud-stat-val">${stats.avg ? Number(stats.avg).toFixed(1) : '16.5'}</span>
-      </div>
-    `;
-  } else {
-    statsMatrixHtml = `
-      <div class="hud-stat-cell">
-        <span class="hud-stat-label">STRIKE RATE</span>
-        <span class="hud-stat-val">${stats.sr ? Number(stats.sr).toFixed(1) : '145.0'}</span>
-      </div>
-      <div class="hud-stat-cell">
-        <span class="hud-stat-label">MATCHES</span>
-        <span class="hud-stat-val">${stats.matches || 30}</span>
-      </div>
-      <div class="hud-stat-cell">
-        <span class="hud-stat-label">RUNS</span>
-        <span class="hud-stat-val">${stats.runs || 850}</span>
-      </div>
-      <div class="hud-stat-cell">
-        <span class="hud-stat-label">HIGH SCORE</span>
-        <span class="hud-stat-val">${stats.high_score || '78*'}</span>
-      </div>
-      <div class="hud-stat-cell">
-        <span class="hud-stat-label">BATTING AVG</span>
-        <span class="hud-stat-val">${stats.avg ? Number(stats.avg).toFixed(1) : '34.2'}</span>
-      </div>
-      <div class="hud-stat-cell">
-        <span class="hud-stat-label">50s / 100s</span>
-        <span class="hud-stat-val">${(stats.fifties !== undefined ? stats.fifties : 4)} / ${(stats.hundreds || 0)}</span>
-      </div>
-    `;
-  }
+  const jerseyNum = p.jersey_display || '—';
+  const playerName = p.name_full || p.name_display;
+  const photoSrc = p.photo || 'assets/players/csk-01.svg';
+  const hasDidYouKnow = p.didYouKnow && p.didYouKnow.trim().toUpperCase() !== 'NA' && p.didYouKnow.trim().toUpperCase() !== 'N/A';
 
   return `
-    <article class="squad-player-stage-card" tabindex="0" aria-label="${p.renderedName} - ${p.role}">
+    <article class="squad-player-stage-card" tabindex="0" aria-label="${playerName} - ${p.role}">
       <!-- Front Showcase Layer -->
       <div class="squad-card-front">
-        ${badgeHtml}
-
         <!-- Huge Oversized Block Jersey Number -->
         <div class="squad-jersey-bg-num">${jerseyNum}</div>
 
         <!-- Standing Player Cutout -->
         <div class="squad-player-figure-wrap">
-          <img src="${p.renderedPhoto}" alt="${p.renderedName}" class="squad-player-cutout-img" loading="lazy">
+          <img src="${photoSrc}" alt="${playerName}" class="squad-player-cutout-img" loading="lazy">
         </div>
 
         <!-- Bottom Role & Name Strip -->
         <div class="squad-card-bottom-strip">
           <div class="squad-card-role-col">
             <span class="squad-card-num-small">${jerseyNum}</span>
-            <span class="squad-card-pos-text">${p.position_type || p.role}</span>
+            <span class="squad-card-pos-text">${p.role}</span>
           </div>
           <div class="squad-card-name-col">
-            <h3 class="squad-card-player-name">${p.renderedName}</h3>
+            <h3 class="squad-card-player-name">${playerName}</h3>
           </div>
         </div>
       </div>
 
-      <!-- Unique Interactive Hover Detail Card (Floating Holographic HUD) -->
+      <!-- Interactive Hover Detail Card -->
       <div class="squad-card-hover-hud">
         <div class="hud-top-meta">
-          <div class="hud-nationality-row">
-            <span class="hud-flag">${p.flag || '🇰🇾'}</span>
-            <div class="hud-nat-text">
-              <span class="hud-sub-label">NATIONALITY</span>
-              <strong class="hud-nat-title">${(p.nationality || 'CAYMANIAN').toUpperCase()}</strong>
-            </div>
-          </div>
           <div class="hud-position-pill">
-            <span>POSITION: <strong>${p.position_type || p.role}</strong></span>
+            <span>ROLE: <strong>${p.role}</strong></span>
+          </div>
+          <div style="font-size: 0.8125rem; color: #FAB81E; font-weight: 700;">
+            Age: ${p.age} (${p.birthday})
           </div>
         </div>
 
-        <!-- 2x3 Stat Grid -->
-        <div class="hud-stats-grid">
-          ${statsMatrixHtml}
+        <!-- Details Grid -->
+        <div class="hud-stats-grid" style="grid-template-columns: 1fr 1fr; gap: 8px;">
+          <div class="hud-stat-cell" style="padding: 6px 10px;">
+            <span class="hud-stat-label">BATTING STYLE</span>
+            <span class="hud-stat-val" style="font-size: 0.875rem;">${p.battingStyle || '—'}</span>
+          </div>
+          <div class="hud-stat-cell" style="padding: 6px 10px;">
+            <span class="hud-stat-label">BOWLING STYLE</span>
+            <span class="hud-stat-val" style="font-size: 0.875rem;">${p.bowlingStyle || '—'}</span>
+          </div>
+          <div class="hud-stat-cell" style="grid-column: span 2; padding: 6px 10px;">
+            <span class="hud-stat-label">CAYMAN NATIONAL TEAM</span>
+            <span class="hud-stat-val" style="font-size: 0.8125rem; font-weight: 600;">${p.national_team_experience || 'No'}</span>
+          </div>
         </div>
 
-        <!-- Special Weapon / Trait Pill -->
-        ${p.special_weapon ? `
-          <div class="hud-trait-pill">
-            <span class="hud-trait-icon">⚡</span>
-            <span>${p.special_weapon}</span>
+        <!-- Description Snippet -->
+        ${p.description ? `
+          <div style="font-size: 0.8125rem; color: #E2E8F0; line-height: 1.45; max-height: 75px; overflow-y: auto; margin-top: 4px; padding-right: 4px;">
+            ${p.description}
           </div>
         ` : ''}
 
         <!-- Mini Cutout Silhouette tucked in bottom right -->
         <div class="hud-mini-cutout-wrap">
-          <img src="${p.renderedPhoto}" alt="${p.renderedName}" class="hud-mini-cutout-img" loading="lazy">
+          <img src="${photoSrc}" alt="${playerName}" class="hud-mini-cutout-img" loading="lazy">
         </div>
 
         <!-- Bottom Action CTA -->
-        <div class="hud-bottom-cta">
+        <div class="hud-bottom-cta" style="display: flex; gap: 10px; align-items: center; justify-content: space-between;">
           <a href="player-detail.html?id=${p.id}" class="hud-read-more-link">
-            <span>Read More</span>
+            <span>View Profile</span>
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
           </a>
+          ${p.photo_drive ? `
+            <a href="${p.photo_drive}" target="_blank" rel="noopener noreferrer" style="color: #FAB81E; font-size: 0.75rem; font-weight: 700; text-decoration: underline;">
+              Drive Photo ↗
+            </a>
+          ` : ''}
         </div>
       </div>
     </article>
@@ -254,113 +186,93 @@ export async function initPlayerProfile() {
 
   const rawSquad = await store.getSquad();
   const playerIndex = rawSquad.findIndex(p => p.id === id);
-  const rawPlayer = rawSquad[playerIndex] || rawSquad[0];
+  const player = rawSquad[playerIndex] || rawSquad[0];
 
-  const player = ConsentGuard.sanitizePlayer(rawPlayer);
-  const prevPlayer = playerIndex > 0 ? ConsentGuard.sanitizePlayer(rawSquad[playerIndex - 1]) : null;
-  const nextPlayer = playerIndex < rawSquad.length - 1 ? ConsentGuard.sanitizePlayer(rawSquad[playerIndex + 1]) : null;
+  const prevPlayer = playerIndex > 0 ? rawSquad[playerIndex - 1] : null;
+  const nextPlayer = playerIndex < rawSquad.length - 1 ? rawSquad[playerIndex + 1] : null;
 
-  document.title = `${player.renderedName} | Cayman Super Kings Squad`;
+  const playerName = player.name_full || player.name_display;
+  const photoSrc = player.photo || 'assets/players/csk-01.svg';
+  const hasDidYouKnow = player.didYouKnow && player.didYouKnow.trim().toUpperCase() !== 'NA' && player.didYouKnow.trim().toUpperCase() !== 'N/A';
+
+  document.title = `${playerName} | Cayman Super Kings Squad`;
 
   container.innerHTML = `
-    <section class="section" style="background: #F4F3F0 url('assets/cricket-white-bg.png') center top / cover fixed no-repeat; min-height: 80vh;">
+    <section class="section" style="background: #F4F3F0 url('assets/cricket-white-bg.png') center top / cover fixed no-repeat; min-height: 80vh; padding: 40px 0;">
       <div class="container" style="position: relative; z-index: 1;">
         <!-- Breadcrumbs -->
         <div style="margin-bottom: 24px; font-size: 0.875rem; color: #5A6A7E;">
-          <a href="index.html" style="color: #080E18; font-weight: 700;">Home</a> / <a href="squad.html" style="color: #080E18; font-weight: 700;">Squad</a> / <span style="color: #F2600C; font-weight: 800;">${player.renderedName}</span>
+          <a href="index.html" style="color: #080E18; font-weight: 700;">Home</a> / <a href="squad.html" style="color: #080E18; font-weight: 700;">Squad</a> / <span style="color: #F2600C; font-weight: 800;">${playerName}</span>
         </div>
 
         <div class="profile-header-grid" style="background: #101C3F; border-radius: 16px; padding: 40px; border: 1.5px solid rgba(250, 184, 30, 0.4); box-shadow: 0 16px 40px rgba(0,0,0,0.4); color: #fff;">
-          <!-- Portrait & Bio box -->
+          <!-- Left Column: Portrait & Key Fields -->
           <div>
             <div class="profile-portrait" style="background: radial-gradient(circle at center, #FAB81E 0%, #D97706 70%, #09152B 100%); border-radius: 14px; overflow: hidden; border: 3px solid #FAB81E; box-shadow: 0 10px 30px rgba(0,0,0,0.5);">
-              <img src="${player.renderedPhoto}" alt="${player.renderedName}" style="width: 100%; display: block;">
+              <img src="${photoSrc}" alt="${playerName}" style="width: 100%; display: block;">
             </div>
 
             <div class="card card-body" style="margin-top: 20px; background: #080E18; border: 1px solid rgba(250, 184, 30, 0.3); border-radius: 12px; padding: 20px; color: #fff;">
-              <h4 style="margin-bottom: 12px; color: #FAB81E; font-family: var(--font-display); font-size: 1.2rem;">Player Details</h4>
-              <ul style="list-style: none; display: flex; flex-direction: column; gap: 10px; font-size: 0.9rem; color: #CBD5E1;">
-                <li><strong style="color: #fff;">Jersey:</strong> #${player.jersey_display || player.jersey_number || '—'}</li>
-                <li><strong style="color: #fff;">Nationality:</strong> ${player.flag || ''} ${player.nationality || 'Caymanian'}</li>
-                <li><strong style="color: #fff;">Role:</strong> ${player.position_type || player.role}</li>
+              <h4 style="margin-bottom: 14px; color: #FAB81E; font-family: var(--font-display); font-size: 1.15rem; text-transform: uppercase; letter-spacing: 0.05em;">Squad Profile</h4>
+              <ul style="list-style: none; display: flex; flex-direction: column; gap: 10px; font-size: 0.9375rem; color: #CBD5E1; padding: 0; margin: 0;">
+                <li><strong style="color: #fff;">Full Name:</strong> ${playerName}</li>
+                <li><strong style="color: #fff;">Birthday:</strong> ${player.birthday || '—'}</li>
+                <li><strong style="color: #fff;">Age:</strong> ${player.age || '—'}</li>
+                <li><strong style="color: #fff;">Role:</strong> ${player.role || '—'}</li>
                 <li><strong style="color: #fff;">Batting Style:</strong> ${player.battingStyle || '—'}</li>
                 <li><strong style="color: #fff;">Bowling Style:</strong> ${player.bowlingStyle || '—'}</li>
-                <li><strong style="color: #fff;">Seasons at CSK:</strong> ${player.seasonsAtCSK || '1'}</li>
+                <li><strong style="color: #fff;">Cayman National Team:</strong> ${player.national_team_experience || 'No'}</li>
               </ul>
+              ${player.photo_drive ? `
+                <div style="margin-top: 16px; padding-top: 14px; border-top: 1px solid rgba(255,255,255,0.1);">
+                  <a href="${player.photo_drive}" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm" style="width: 100%; text-align: center; justify-content: center;">
+                    View Photo on Google Drive ↗
+                  </a>
+                </div>
+              ` : ''}
             </div>
           </div>
 
-          <!-- Main Stats & Info -->
+          <!-- Right Column: Description & Did You Know -->
           <div>
-            <div style="display: flex; gap: 10px; align-items: center; margin-bottom: 8px;">
-              <p>${player.bio || 'Core squad member representing Cayman Super Kings in CICA league competition.'}</p>
+            <div style="margin-bottom: 24px;">
+              <span class="badge badge--gold" style="font-size: 0.875rem; padding: 4px 12px; margin-bottom: 8px; display: inline-block;">${player.role}</span>
+              <h1 style="font-family: var(--font-display); font-size: 2.2rem; font-weight: 900; color: #FFFFFF; text-transform: uppercase; margin: 4px 0 16px 0;">${playerName}</h1>
             </div>
 
-            <!-- Tabular Career Statistics -->
-            <h3 style="margin-bottom: 16px;">Career Statistics (CICA League &amp; Cups)</h3>
-            <div class="profile-stats-grid">
-              <div class="stat-cell">
-                <div class="stat-cell-num tabular-nums">${player.stats?.matches || '0'}</div>
-                <div class="stat-cell-label">Matches</div>
-              </div>
-              <div class="stat-cell">
-                <div class="stat-cell-num tabular-nums">${player.stats?.runs || '0'}</div>
-                <div class="stat-cell-label">Runs</div>
-              </div>
-              <div class="stat-cell">
-                <div class="stat-cell-num tabular-nums">${player.stats?.avg || '—'}</div>
-                <div class="stat-cell-label">Bat Avg</div>
-              </div>
-              <div class="stat-cell">
-                <div class="stat-cell-num tabular-nums">${player.stats?.wickets ?? '—'}</div>
-                <div class="stat-cell-label">Wickets</div>
-              </div>
+            <!-- Description -->
+            <div style="background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(250, 184, 30, 0.25); border-radius: 12px; padding: 24px; margin-bottom: 24px;">
+              <h3 style="color: #FAB81E; font-family: var(--font-display); font-size: 1.2rem; margin-bottom: 12px; text-transform: uppercase; letter-spacing: 0.04em;">Description</h3>
+              <p style="font-size: 1.05rem; line-height: 1.7; color: #E2E8F0; margin: 0; white-space: pre-line;">
+                ${player.description || 'No description provided.'}
+              </p>
             </div>
 
-            <!-- Last 5 Matches -->
-            ${player.last5 && player.last5.length > 0 ? `
-              <h3 style="margin-top: 32px; margin-bottom: 16px;">Recent Form (Last 5 Matches)</h3>
-              <div class="table-responsive" style="margin-bottom: 32px;">
-                <table class="data-table">
-                  <thead>
-                    <tr>
-                      <th>Match</th>
-                      <th>Runs</th>
-                      <th>Wickets / Catches</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    ${player.last5.map(m => `
-                      <tr>
-                        <td><strong>${m.match}</strong></td>
-                        <td class="highlight-col tabular-nums">${m.runs}</td>
-                        <td class="tabular-nums">${m.wickets || m.catches ? (m.wickets || (m.catches + ' ct')) : '—'}</td>
-                      </tr>
-                    `).join('')}
-                  </tbody>
-                </table>
+            <!-- Did You Know -->
+            ${hasDidYouKnow ? `
+              <div style="background: rgba(250, 184, 30, 0.1); border: 1.5px solid #FAB81E; border-radius: 12px; padding: 24px; margin-bottom: 24px;">
+                <h3 style="color: #FAB81E; font-family: var(--font-display); font-size: 1.2rem; margin-bottom: 12px; text-transform: uppercase; letter-spacing: 0.04em; display: flex; align-items: center; gap: 8px;">
+                  <span>★</span> Did you know ? (Unique about you)
+                </h3>
+                <p style="font-size: 1.025rem; line-height: 1.7; color: #FFFFFF; margin: 0; white-space: pre-line;">
+                  ${player.didYouKnow}
+                </p>
               </div>
             ` : ''}
 
-            <!-- Honours -->
-            ${player.honours && player.honours.length > 0 ? `
-              <h3 style="margin-bottom: 16px;">Honours &amp; Awards</h3>
-              <div style="display: flex; gap: 8px; flex-wrap: wrap;">
-                ${player.honours.map(h => `
-                  <span class="badge badge--gold" style="padding: 6px 12px; font-size: 0.8125rem;">
-                    🏆 ${h}
-                  </span>
-                `).join('')}
-              </div>
-            ` : ''}
+            <!-- Cayman National Team Experience -->
+            <div style="background: rgba(8, 14, 24, 0.6); border: 1px solid rgba(255, 255, 255, 0.12); border-radius: 12px; padding: 20px;">
+              <h4 style="color: #FAB81E; font-size: 0.95rem; text-transform: uppercase; margin-bottom: 6px;">Cayman National Team Experience</h4>
+              <p style="font-size: 1rem; color: #CBD5E1; margin: 0;">${player.national_team_experience || 'No'}</p>
+            </div>
           </div>
         </div>
 
         <!-- Prev / Next Player Footer -->
-        <div class="match-nav-footer">
+        <div class="match-nav-footer" style="margin-top: 32px;">
           ${prevPlayer ? `
             <a href="player-detail.html?id=${prevPlayer.id}" class="btn btn-outline-navy btn-sm">
-              ← ${prevPlayer.renderedName}
+              ← ${prevPlayer.name_full || prevPlayer.name_display}
             </a>
           ` : '<div></div>'}
 
@@ -368,7 +280,7 @@ export async function initPlayerProfile() {
 
           ${nextPlayer ? `
             <a href="player-detail.html?id=${nextPlayer.id}" class="btn btn-outline-navy btn-sm">
-              ${nextPlayer.renderedName} →
+              ${nextPlayer.name_full || nextPlayer.name_display} →
             </a>
           ` : '<div></div>'}
         </div>
