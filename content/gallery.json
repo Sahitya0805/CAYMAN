@@ -7,23 +7,24 @@
     "category": "CICA T20 SUPER LEAGUE 2026",
     "count_or_duration": "12 Photos",
     "cover_image": "assets/slider-stadium-night.jpg",
+    "drive_folder": "https://drive.google.com/drive/folders/1rYNaOJZCnTV7RrFFjOI08XvzURHpywHH",
     "date": "August 30, 2026",
-    "description": "The team hoisting the Derby trophy following the 36-run victory against George Town Tigers under the lights.",
+    "description": "Captain Rahul Garg and the squad celebrating following a clinical victory under the lights at Jimmy Powell Oval.",
     "items": [
       {
         "src": "assets/slider-stadium-night.jpg",
-        "alt": "Captain Rajesh Sharma lifting the match trophy",
-        "caption": "Captain Rajesh Sharma accepts the Derby Match Trophy"
+        "alt": "Captain Rahul Garg celebrating team performance",
+        "caption": "Captain Rahul Garg celebrating victory under the lights"
       },
       {
         "src": "assets/csk-hero.png",
-        "alt": "Full team celebration",
+        "alt": "Full CSK team celebration",
         "caption": "CSK squad celebrations on the outfield"
       },
       {
         "src": "assets/csk-action.png",
-        "alt": "Marcus Sterling match action",
-        "caption": "Marcus Sterling in full flow on his way to 104"
+        "alt": "Rahul Garg batting strokeplay",
+        "caption": "Rahul Garg in full flow during the powerplay"
       }
     ]
   },
@@ -35,18 +36,19 @@
     "category": "CICA T20 SUPER LEAGUE 2026",
     "count_or_duration": "18 Photos",
     "cover_image": "assets/slider-stadium-sunset.jpg",
+    "drive_folder": "https://drive.google.com/drive/folders/1rYNaOJZCnTV7RrFFjOI08XvzURHpywHH",
     "date": "August 23, 2026",
-    "description": "Highlights from the high-scoring 40-over fixture at Smith Road Oval.",
+    "description": "Highlights from the high-scoring clash featuring Chris Balraj's leg-spin variations and Sahil Singh's pace.",
     "items": [
       {
         "src": "assets/slider-stadium-sunset.jpg",
-        "alt": "Rohan Barrett delivery stride",
-        "caption": "Rohan Barrett bowling at 85mph+ at Smith Road"
+        "alt": "Sahil Singh pace bowling delivery stride",
+        "caption": "Sahil Singh bowling with relentless speed and seam movement"
       },
       {
         "src": "assets/csk-action.png",
-        "alt": "Karan Patel diving stumping",
-        "caption": "Karan Patel completing a sharp legside stumping"
+        "alt": "Gokul Krishnan sharp stumping behind wickets",
+        "caption": "Gokul Krishnan completing a sharp stumping behind the stumps"
       }
     ]
   },
@@ -58,13 +60,14 @@
     "category": "CICA T20 SUPER LEAGUE 2026",
     "count_or_duration": "03:45",
     "cover_image": "assets/csk-action.png",
+    "drive_folder": "https://drive.google.com/drive/folders/1rYNaOJZCnTV7RrFFjOI08XvzURHpywHH",
     "date": "August 24, 2026",
-    "description": "All 11 boundaries and 3 massive sixes from Marcus Sterling's masterclass.",
+    "description": "Boundaries and match-turning bowling spells from Rahul Garg and Christopher Balraj.",
     "items": [
       {
         "src": "assets/csk-action.png",
-        "alt": "Sterling century highlights",
-        "caption": "Video Highlight: Sterling reaches triple figures in 92 balls"
+        "alt": "Match highlights action",
+        "caption": "Video Highlight: Rahul Garg powerplay boundaries and sixes"
       }
     ]
   },
@@ -72,22 +75,23 @@
     "id": "gal-04",
     "year": "2026",
     "type": "photo",
-    "title": "17TH MATCH - CSK VS BTCC",
-    "category": "CICA T20 SUPER LEAGUE 2026",
+    "title": "NEXT GEN - YOUTH CLINIC",
+    "category": "CSK YOUTH PATHWAY",
     "count_or_duration": "24 Photos",
     "cover_image": "assets/csk-academy.png",
+    "drive_folder": "https://drive.google.com/drive/folders/1rYNaOJZCnTV7RrFFjOI08XvzURHpywHH",
     "date": "July 18, 2026",
-    "description": "Young cricketers aged 12-18 participating in fielding and batting masterclasses with senior CSK players.",
+    "description": "Young school cricketers developing skills, discipline, and playing alongside senior CSK players.",
     "items": [
       {
         "src": "assets/csk-academy.png",
         "alt": "Youth coaching drill session",
-        "caption": "Youth academy batting drills with head coaches"
+        "caption": "Developing the next generation: Youth batting and bowling drills"
       },
       {
         "src": "assets/csk-action.png",
         "alt": "Group fielding exercise",
-        "caption": "Fielding drills emphasizing agility and catching technique"
+        "caption": "Fielding and agility exercises with senior CSK squad mentors"
       }
     ]
   },
@@ -95,22 +99,23 @@
     "id": "gal-05",
     "year": "2025",
     "type": "photo",
-    "title": "21ST MATCH - CSK VS PCC",
-    "category": "CICA T20 SUPER LEAGUE 2025",
+    "title": "T10 TOURNAMENT KNOCKOUTS",
+    "category": "T10 CHAMPIONSHIP 2025",
     "count_or_duration": "15 Photos",
     "cover_image": "assets/slider-cricket-ball-bat.jpg",
+    "drive_folder": "https://drive.google.com/drive/folders/1rYNaOJZCnTV7RrFFjOI08XvzURHpywHH",
     "date": "December 14, 2025",
-    "description": "Official awards ceremony and championship trophy presentation at Jimmy Powell Oval pavilion.",
+    "description": "Historic milestone celebration as CSK qualifies for the knockout stages of the T10 tournament.",
     "items": [
       {
         "src": "assets/slider-cricket-ball-bat.jpg",
-        "alt": "CICA Championship Trophy",
-        "caption": "CSK squad hoisting the 2025 CICA T20 Trophy"
+        "alt": "CSK Knockout Celebration",
+        "caption": "CSK squad celebrating qualification for the T10 knockouts"
       },
       {
         "src": "assets/csk-hero.png",
-        "alt": "Medal presentation",
-        "caption": "Gold medal presentation to squad members"
+        "alt": "Squad presentation",
+        "caption": "Rahul Garg and Majin Paul with the squad after the knockout qualification"
       }
     ]
   },
@@ -118,22 +123,23 @@
     "id": "gal-06",
     "year": "2025",
     "type": "photo",
-    "title": "27TH MATCH - CSK VS NSXI",
-    "category": "CICA T20 SUPER LEAGUE 2025",
+    "title": "TRAINING CAMP & NETS",
+    "category": "HIGH PERFORMANCE 2025",
     "count_or_duration": "20 Photos",
     "cover_image": "assets/csk-hero.png",
+    "drive_folder": "https://drive.google.com/drive/folders/1rYNaOJZCnTV7RrFFjOI08XvzURHpywHH",
     "date": "November 08, 2025",
-    "description": "Intensive fitness drills, bowling speed tracking, and net sessions ahead of the championship season.",
+    "description": "Fitness drills, bowling speed tracking, and net sessions with Muthukumar, Ravneet, and Rajasekhara.",
     "items": [
       {
         "src": "assets/csk-hero.png",
         "alt": "Strength and conditioning session",
-        "caption": "Strength and conditioning drills at Truman Bodden Track"
+        "caption": "Conditioning drills and athletic fitness at Jimmy Powell Oval"
       },
       {
         "src": "assets/slider-stadium-night.jpg",
         "alt": "Night net bowling practice",
-        "caption": "Fast bowling drills under floodlights"
+        "caption": "Muthukumar inswing bowling drills under floodlights"
       }
     ]
   }

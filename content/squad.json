@@ -20,10 +20,10 @@
     "photo_ready": true,
     "photo": "assets/players/csk-01.svg",
     "photo_drive": "https://drive.google.com/file/d/1xdI7M2cpiq5qK1VQx252zj5MWqQJ7eHR/view?usp=drivesdk",
-    "battingStyle": "Right-hand bat (Opening Batsman)",
-    "bowlingStyle": "Right-arm medium pacer",
+    "battingStyle": "Right handed",
+    "bowlingStyle": "Right arm medium pacer",
     "seasonsAtCSK": "4 (Captain)",
-    "national_team_experience": "Cayman Islands National Team Training Squad",
+    "national_team_experience": "No",
     "honours": [
       "CSK Captain (2024–Present)",
       "International T10 League Representative (Under David Warner)",
@@ -52,7 +52,7 @@
     "slug": "christopher-balraj",
     "name_display": "Christopher Balraj",
     "name_full": "Christopher Balraj",
-    "role": "All-rounder & Co-Founder",
+    "role": "All Rounder & Co-Founder",
     "badge": "FOUNDER",
     "badge_type": "gold",
     "group": "leadership",
@@ -68,7 +68,7 @@
     "photo_ready": true,
     "photo": "assets/players/csk-02.svg",
     "photo_drive": "https://drive.google.com/drive/folders/1rYNaOJZCnTV7RrFFjOI08XvzURHpywHH",
-    "battingStyle": "Right-hand bat",
+    "battingStyle": "Right Handed",
     "bowlingStyle": "Right arm - Leg break spinner",
     "seasonsAtCSK": "Founding Member (2022–Present)",
     "national_team_experience": "Represented team in a 2023 world cup qualifier - Bermuda",
@@ -91,8 +91,8 @@
       "hundreds": 0
     },
     "special_weapon": "Flamboyant Leg-Spin Variations & Clutch Finishing",
-    "description": "An aggressive right-handed batsman with the ability to dominate bowling attacks and accelerate the scoring rate when it matters most. A wicket-taking leg-spinner who combines attacking variations with an impressive economy rate. A reliable outfielder. A proven game finisher and all-round match-winner, capable of changing the course of a match with bat, ball, or in the field.",
-    "didYouKnow": "A foundational team builder and leader who built the team from the ground up, developing its structure, identity, and competitive spirit. Led the team during its first two formative years, taking responsibility for guiding, motivating, and developing the players. Played a key role in training team members and developing their cricketing skills, helping transform a new group into a competitive unit. Selected in 2025 to play in the international T10 league under the captaincy of Shahbaz Nadeem.",
+    "description": "An aggressive right-handed batsman with the ability to dominate bowling attacks and accelerate the scoring rate when it matters most. A wicket-taking leg-spinner who combines attacking variations with an impressive economy rate. A reliable outfielder A proven game finisher and all-round match-winner, capable of changing the course of a match with bat, ball, or in the field.",
+    "didYouKnow": "A foundational team builder and leader who built the team from the ground up, developing its structure, identity, and competitive spirit. Led the team during its first two formative years, taking responsibility for guiding, motivating, and developing the players. Played a key role in training team members and developing their cricketing skills, helping transform a new group into a competitive unit.",
     "bio": "Foundational team builder, leader, and leg-spin all-rounder. Represented Cayman Islands in the 2023 Bermuda World Cup Qualifiers and selected in the 2025 international T10 league under Shahbaz Nadeem."
   },
   {
@@ -100,7 +100,7 @@
     "slug": "majin-paul",
     "name_display": "Majin Paul",
     "name_full": "Majin Paul",
-    "role": "All-rounder (Manager & Co-Founder)",
+    "role": "All Rounder (Manager & Co-Founder)",
     "badge": "BACKBONE",
     "badge_type": "gold",
     "group": "leadership",
@@ -116,8 +116,8 @@
     "photo_ready": true,
     "photo": "assets/players/csk-03.svg",
     "photo_drive": "https://drive.google.com/drive/folders/1rYNaOJZCnTV7RrFFjOI08XvzURHpywHH",
-    "battingStyle": "Right-hand bat",
-    "bowlingStyle": "Right Hand - Med Pace",
+    "battingStyle": "Right Handed",
+    "bowlingStyle": "Right Hand - Med Pase",
     "seasonsAtCSK": "Founding Member (2022–Present)",
     "national_team_experience": "N/A",
     "honours": [
@@ -138,8 +138,8 @@
       "hundreds": 0
     },
     "special_weapon": "Strategic Match Management & Team Backbone",
-    "description": "All Rounder, Co-founder of CSK & Team Manager. Often described as the backbone of CSK, he has played a major role in keeping the players together, maintaining team spirit, and ensuring that the bond between teammates extends well beyond the cricket field.",
-    "didYouKnow": "Co-founder of CSK & Team Manager who has steered the club since pre-COVID, ensuring brotherhood, team discipline, and operations excellence.",
+    "description": "All Rounder",
+    "didYouKnow": "Co-founder of CSk & Team Manager",
     "bio": "Co-founder of CSK and Team Manager. Often described as the backbone of CSK, keeping the players together and maintaining team spirit on and off the field."
   },
   {
@@ -147,7 +147,7 @@
     "slug": "gokul-krishnan",
     "name_display": "Gokul Krishnan",
     "name_full": "Gokul Krishnan",
-    "role": "Batsman / Wicketkeeper",
+    "role": "Batsman / Wicket Keeper",
     "badge": "WK",
     "badge_type": "gold",
     "group": "batters",
@@ -163,10 +163,10 @@
     "photo_ready": true,
     "photo": "assets/players/csk-04.svg",
     "photo_drive": "https://drive.google.com/drive/folders/1rYNaOJZCnTV7RrFFjOI08XvzURHpywHH",
-    "battingStyle": "Left-hand bat",
-    "bowlingStyle": "N/A",
+    "battingStyle": "Left Handed",
+    "bowlingStyle": "NA",
     "seasonsAtCSK": "3",
-    "national_team_experience": "Cayman Islands National Team Training Squad",
+    "national_team_experience": "National team training squad",
     "honours": [
       "Cayman Islands National Team Training Squad",
       "Top-Order Anchor of the Season 2025"
@@ -184,8 +184,8 @@
       "hundreds": 0
     },
     "special_weapon": "Left-Handed Cover Drives & Sharp Glovework",
-    "description": "Top order Batsman and wicketkeeper who brings stability, rapid strike rotation, and sharp glovework to the CSK lineup.",
-    "didYouKnow": "Part of the Cayman Islands national team training squad working towards international representation for Cayman.",
+    "description": "Top order Batsman",
+    "didYouKnow": "Part of the Cayman Islands national team training squad.",
     "bio": "Top order Batsman and wicketkeeper. Part of the Cayman Islands national team training squad working towards international representation."
   },
   {
@@ -193,7 +193,7 @@
     "slug": "praisewin-vincent",
     "name_display": "Praisewin Vincent",
     "name_full": "Praisewin Vincent",
-    "role": "All-rounder",
+    "role": "Allrounder",
     "group": "allrounders",
     "jersey_number": 15,
     "jersey_display": "15",
@@ -207,7 +207,7 @@
     "photo_ready": true,
     "photo": "assets/players/csk-05.svg",
     "photo_drive": "https://drive.google.com/drive/folders/1rYNaOJZCnTV7RrFFjOI08XvzURHpywHH",
-    "battingStyle": "Right-hand bat",
+    "battingStyle": "Right handed",
     "bowlingStyle": "Medium speed (right handed)",
     "seasonsAtCSK": "3",
     "national_team_experience": "No",
@@ -228,8 +228,8 @@
       "hundreds": 0
     },
     "special_weapon": "Electric Boundary Fielding & Middle-Order Power",
-    "description": "I’m an all-rounder who can contribute with both bat and ball, providing middle-overs stability and timely boundary hitting.",
-    "didYouKnow": "N/A",
+    "description": "I’m an all-rounder who can contribute with both bat and ball.",
+    "didYouKnow": "NA",
     "bio": "Dynamic all-rounder who can contribute effectively with both bat and ball in middle and death overs."
   },
   {
@@ -237,7 +237,7 @@
     "slug": "jason-edwards",
     "name_display": "Jason Edwards",
     "name_full": "Jason Edwards",
-    "role": "All-rounder",
+    "role": "Allrounder",
     "group": "allrounders",
     "jersey_number": 5,
     "jersey_display": "05",
@@ -251,7 +251,7 @@
     "photo_ready": true,
     "photo": "assets/players/csk-06.svg",
     "photo_drive": "https://drive.google.com/drive/folders/1rYNaOJZCnTV7RrFFjOI08XvzURHpywHH",
-    "battingStyle": "Right-hand bat",
+    "battingStyle": "Right Handed",
     "bowlingStyle": "Spinner",
     "seasonsAtCSK": "2",
     "national_team_experience": "No",
@@ -271,8 +271,8 @@
       "hundreds": 0
     },
     "special_weapon": "Veteran Composure & Tight Middle-Over Containment",
-    "description": "Allrounder can support with both bat and ball, bringing valuable veteran composure and tactical match awareness.",
-    "didYouKnow": "N/A",
+    "description": "Allrounder can support with both bat and ball",
+    "didYouKnow": "NA",
     "bio": "Experienced spinning all-rounder capable of supporting the team with both bat and ball."
   },
   {
@@ -280,7 +280,7 @@
     "slug": "rajasekhara-kalagotla",
     "name_display": "Rajasekhara Kalagotla",
     "name_full": "Rajasekhara Kalagotla",
-    "role": "All-rounder",
+    "role": "Allrounder",
     "group": "allrounders",
     "jersey_number": 12,
     "jersey_display": "12",
@@ -294,7 +294,7 @@
     "photo_ready": true,
     "photo": "assets/players/csk-07.svg",
     "photo_drive": "https://drive.google.com/drive/folders/1rYNaOJZCnTV7RrFFjOI08XvzURHpywHH",
-    "battingStyle": "Right-hand bat",
+    "battingStyle": "Right Handed",
     "bowlingStyle": "Spinner",
     "seasonsAtCSK": "3",
     "national_team_experience": "No",
@@ -315,8 +315,8 @@
       "hundreds": 0
     },
     "special_weapon": "Flighted Spin Turn & Clutch Match-Winning Spells",
-    "description": "Consistent with Fielding, batting, and have ability to do Keeping when team needed. A true utility player who rises to the occasion in pressure games.",
-    "didYouKnow": "N/A",
+    "description": "Consistent with Feidling, batting, Feidling and have ability to do Keeping when team needed",
+    "didYouKnow": "NA",
     "bio": "Consistent with fielding and batting, with the ability to keep wickets when needed. Celebrated for a match-winning 3/6 spell against CYA."
   },
   {
@@ -324,7 +324,7 @@
     "slug": "sakthivel-shanmugasundaram",
     "name_display": "Sakthivel Shanmugasundaram",
     "name_full": "Sakthivel Shanmugasundaram",
-    "role": "All-rounder",
+    "role": "All rounder",
     "group": "allrounders",
     "jersey_number": 17,
     "jersey_display": "17",
@@ -338,7 +338,7 @@
     "photo_ready": true,
     "photo": "assets/players/csk-08.svg",
     "photo_drive": "https://drive.google.com/drive/folders/1rYNaOJZCnTV7RrFFjOI08XvzURHpywHH",
-    "battingStyle": "Right-hand bat",
+    "battingStyle": "Right Handed",
     "bowlingStyle": "Medium speed (right handed)",
     "seasonsAtCSK": "2",
     "national_team_experience": "No",
@@ -356,7 +356,7 @@
       "hundreds": 0
     },
     "special_weapon": "Disciplined Line & Length Seam",
-    "description": "Allrounder can support with both bat and ball, maintaining disciplined line and length and building vital partnerships down the order.",
+    "description": "Allrounder can support with both bat and ball",
     "didYouKnow": "N/A",
     "bio": "All-rounder who can support the team with both bat and ball, maintaining disciplined line and length."
   },
@@ -379,7 +379,7 @@
     "photo_ready": true,
     "photo": "assets/players/csk-09.svg",
     "photo_drive": "https://drive.google.com/drive/folders/1rYNaOJZCnTV7RrFFjOI08XvzURHpywHH",
-    "battingStyle": "Right-hand bat",
+    "battingStyle": "Right Handed",
     "bowlingStyle": "Medium Speed (Right Handed)",
     "seasonsAtCSK": "3",
     "national_team_experience": "No",
@@ -400,7 +400,7 @@
     },
     "special_weapon": "Relentless Pace & Seam Movement from Both Ends",
     "description": "A decent fast bowler who can bowl at both ends with equal guile and relentless speed.",
-    "didYouKnow": "N/A",
+    "didYouKnow": "NA",
     "bio": "A decent fast bowler who can bowl at both ends with equal guile and relentless speed."
   },
   {
@@ -422,8 +422,8 @@
     "photo_ready": true,
     "photo": "assets/players/csk-10.svg",
     "photo_drive": "https://drive.google.com/drive/folders/1rYNaOJZCnTV7RrFFjOI08XvzURHpywHH",
-    "battingStyle": "Right-hand bat",
-    "bowlingStyle": "Spinner (Legspin)",
+    "battingStyle": "Right Handed",
+    "bowlingStyle": "Spinner",
     "seasonsAtCSK": "3",
     "national_team_experience": "No",
     "honours": [
@@ -444,7 +444,7 @@
     },
     "special_weapon": "Googly Variations & Fiery Wicket-Taking Spells",
     "description": "Student of the art of legspin. Wish to contribute with the bat.",
-    "didYouKnow": "N/A",
+    "didYouKnow": "NA",
     "bio": "Student of the art of legspin who delivers match-turning spells and wishes to contribute with the bat."
   },
   {
@@ -452,7 +452,7 @@
     "slug": "muthukumar-rajenderan",
     "name_display": "Muthukumar Rajenderan",
     "name_full": "Muthukumar Rajenderan",
-    "role": "Bowler & All-rounder",
+    "role": "Bowler",
     "group": "bowlers",
     "jersey_number": 6,
     "jersey_display": "06",
@@ -466,8 +466,8 @@
     "photo_ready": true,
     "photo": "assets/players/csk-11.svg",
     "photo_drive": "https://drive.google.com/drive/folders/1rYNaOJZCnTV7RrFFjOI08XvzURHpywHH",
-    "battingStyle": "Left-hand bat",
-    "bowlingStyle": "Left-arm bowler (Opening In-swing)",
+    "battingStyle": "Left Handed",
+    "bowlingStyle": "Left-arm bowler",
     "seasonsAtCSK": "3",
     "national_team_experience": "No",
     "honours": [
@@ -496,7 +496,7 @@
     "slug": "ein-majin",
     "name_display": "Ein Majin",
     "name_full": "Ein Majin",
-    "role": "Bowler (Youth Pathway)",
+    "role": "Bowler",
     "badge": "U19",
     "badge_type": "cyan",
     "group": "development",
@@ -512,7 +512,7 @@
     "photo_ready": true,
     "photo": "assets/players/csk-12.svg",
     "photo_drive": "https://drive.google.com/drive/folders/1rYNaOJZCnTV7RrFFjOI08XvzURHpywHH",
-    "battingStyle": "Right-hand bat",
+    "battingStyle": "Right Handed",
     "bowlingStyle": "Right Hand - Fast",
     "seasonsAtCSK": "Youth Academy (2024–Present)",
     "national_team_experience": "No",
@@ -531,9 +531,9 @@
       "fifties": 0,
       "hundreds": 0
     },
-    "special_weapon": "Youthful Pace & Stumper Precision",
-    "description": "Exciting young fast bowler developing through the CSK youth academy pathway, training and playing alongside senior players to build match sharpness and pace.",
-    "didYouKnow": "At 16 years of age, represents the next generation of young cricketers in the Cayman Islands taking the step from school cricket to competitive league cricket.",
+    "special_weapon": "Youthful Pace & Accurate Stumper Precision",
+    "description": "Bowler",
+    "didYouKnow": "Emerging youth pace talent representing the next generation of CSK bowling.",
     "bio": "Exciting 16-year-old fast bowler developing through the CSK youth academy and training alongside senior players."
   }
 ]
