@@ -135,7 +135,7 @@ export async function initGalleryPage() {
 
     modalImg.src = item.src;
     modalImg.alt = item.alt;
-    modalCaption.innerHTML = `${item.caption} &nbsp;·&nbsp; <a href="https://drive.google.com/drive/folders/1rYNaOJZCnTV7RrFFjOI08XvzURHpywHH" target="_blank" rel="noopener noreferrer" style="color: #FAB81E; font-weight: 700; text-decoration: underline;">View on Google Drive ↗</a>`;
+    modalCaption.innerHTML = `${item.caption} &nbsp;·&nbsp; <a href="https://drive.google.com/drive/folders/1rYNaOJZCnTV7RrFFjOI08XvzURHpywHH" target="_blank" rel="noopener noreferrer" style="color: #38BDF8; font-weight: 700; text-decoration: underline;">View on Google Drive ↗</a>`;
     modalCounter.textContent = `${currentIndex + 1} of ${flatItems.length}`;
   }
 

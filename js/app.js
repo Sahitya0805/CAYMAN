@@ -14,13 +14,13 @@ import { initCricketCrazy } from './cricket-crazy.js';
 initSplashLoader();
 
 document.addEventListener('DOMContentLoaded', async () => {
+  initHeroSlider();
   initMobileNav();
-  await initAnnouncementBar();
   highlightActiveNav();
   initSmoothScroll();
-  initHeroSlider();
   initRosterCardInteractions();
   initCricketCrazy();
+  await initAnnouncementBar();
 });
 
 function initRosterCardInteractions() {

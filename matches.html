@@ -15,50 +15,121 @@
   <link rel="stylesheet" href="css/pages.css?v=20260907_6">
 </head>
 <body class="page--white-theme">
-            <!-- CSK Branded Splash & Transition Screen (Arena Tech Edition) -->
+    <!-- CSK CRICKET MATCHDAY POWERPLAY LOADER (CRICKET VIBES EDITION) -->
   <div id="csk-splash-screen" class="csk-splash-screen" aria-hidden="false">
     <div class="csk-splash-screen__backdrop"></div>
+
     <div class="csk-splash-screen__content">
-      <!-- Official Crest -->
+      <!-- Stadium Lion Crest & Cricket Seam Orbit -->
       <div class="csk-splash-screen__logo-wrap">
+        <div class="csk-splash-seam-ring">
+          <svg viewBox="0 0 160 160" class="seam-svg">
+            <circle cx="80" cy="80" r="74" fill="none" stroke="rgba(56, 189, 248, 0.25)" stroke-width="1.5" />
+            <circle cx="80" cy="80" r="74" fill="none" stroke="#38BDF8" stroke-width="2.5" stroke-dasharray="6 8" class="seam-spin-circle" />
+            <circle cx="80" cy="80" r="68" fill="none" stroke="rgba(239, 68, 68, 0.5)" stroke-width="1.5" stroke-dasharray="4 6" class="seam-spin-reverse" />
+          </svg>
+        </div>
         <img src="assets/csk-official-logo.png?v=20260907_6" alt="Cayman Super Kings" class="csk-splash-screen__image">
       </div>
 
-      <!-- Professional Brand Heading -->
+      <!-- Cricket Franchise Heading -->
       <div class="csk-splash-brand-wrap">
         <h1 class="csk-splash-brand-title">CAYMAN SUPER KINGS</h1>
-        <p class="csk-splash-motto">★ ONE TEAM • ONE DREAM ★</p>
+        <div class="csk-splash-cricket-pill">
+          <span class="cricket-live-beacon"></span>
+          <span class="csk-splash-motto">🏏 MATCHDAY POWERPLAY // 22-YARD ARENA</span>
+        </div>
       </div>
 
-      <!-- Arena Tech Loader (Exact Reference Match) -->
-      <div class="csk-arena-loader">
-        <div class="arena-loader-header">
-          <span class="arena-loader-status" id="arena-loader-status">INITIALIZING SYSTEM...</span>
-          <span class="arena-loader-pct tabular-nums" id="arena-loader-pct">0%</span>
+      <!-- 22-YARD CRICKET PITCH ARENA & BAT-BALL STRIKE LOADER -->
+      <div class="csk-cricket-pitch-loader">
+        <!-- Top Scoreboard HUD: Speed Gun & Live Match Commentary -->
+        <div class="pitch-loader-hud">
+          <div class="pitch-commentary" id="arena-loader-status">🏏 POLISHING THE LEATHER SEAM...</div>
+          <div class="pitch-speed-readout">
+            <span class="speed-label">SPEED:</span>
+            <span class="speed-val" id="arena-loader-speed">138.4</span> <span class="speed-unit">KM/H</span>
+            <span class="pitch-pct tabular-nums" id="arena-loader-pct">0%</span>
+          </div>
         </div>
 
-        <div class="arena-loader-track">
-          <div class="arena-loader-fill" id="arena-loader-fill"></div>
+        <!-- 22-Yard Stadium Pitch Corridor -->
+        <div class="pitch-corridor">
+          <!-- English Willow Cricket Bat at Bowler/Crease End -->
+          <div class="pitch-bat-wrap" id="pitch-bat-wrap">
+            <svg viewBox="0 0 32 64" class="cricket-bat-svg" width="24" height="48">
+              <!-- Rubber Grip Handle -->
+              <rect x="14" y="2" width="4" height="18" rx="2" fill="#E2E8F0" stroke="#0F172A" stroke-width="1" />
+              <line x1="14" y1="6" x2="18" y2="6" stroke="#EF4444" stroke-width="1.2" />
+              <line x1="14" y1="10" x2="18" y2="10" stroke="#EF4444" stroke-width="1.2" />
+              <line x1="14" y1="14" x2="18" y2="14" stroke="#EF4444" stroke-width="1.2" />
+              <!-- English Willow Blade with Wood Grain -->
+              <path d="M12 20 L20 20 L21 54 C21 58 19 60 16 60 C13 60 11 58 11 54 Z" fill="#FBBF24" stroke="#D97706" stroke-width="1" />
+              <!-- CSK Flame Accent on Blade -->
+              <path d="M14 26 L18 26 L17 44 L15 44 Z" fill="#EF4444" />
+            </svg>
+          </div>
+
+          <!-- Bowling Crease Line -->
+          <div class="pitch-crease-mark pitch-crease--bowler">
+            <span class="crease-label">BOWLER</span>
+          </div>
+          
+          <!-- 22-Yard Turf Surface Track (Green Grass Gradient) -->
+          <div class="pitch-mat">
+            <!-- Pitch Grass Texture Stripes -->
+            <div class="pitch-turf-stripes"></div>
+            
+            <!-- Hawk-Eye Trajectory Trail -->
+            <div class="pitch-fill-trail" id="arena-loader-fill"></div>
+            
+            <!-- High Velocity Moving Red Leather Cricket Ball -->
+            <div class="pitch-ball-runner" id="pitch-ball-runner">
+              <div class="pitch-cricket-ball">
+                <span class="seam-stitch"></span>
+              </div>
+              <div class="ball-heat-tail"></div>
+            </div>
+          </div>
+
+          <!-- Popping Crease & Target: LED Zing Stumps -->
+          <div class="pitch-stumps-target" id="pitch-stumps-target">
+            <div class="zing-bails">
+              <span class="bail-led bail-left"></span>
+              <span class="bail-led bail-right"></span>
+            </div>
+            <div class="zing-wickets">
+              <span class="wicket-led off-stump"></span>
+              <span class="wicket-led middle-stump"></span>
+              <span class="wicket-led leg-stump"></span>
+            </div>
+          </div>
+
+          <!-- Explosive Impact Flash Badge (Triggers at 95%+) -->
+          <div class="pitch-impact-burst" id="pitch-impact-burst">
+            <span>⚡ TIMBER! CLEAN BOWLED!</span>
+          </div>
         </div>
 
+        <!-- Matchday Status Sub-steps -->
         <div class="arena-loader-steps">
-          <span class="arena-step is-active" id="arena-step-1"><span class="step-dot" id="step-dot-1">●</span> ASSETS VERIFIED</span>
-          <span class="arena-step" id="arena-step-2"><span class="step-dot" id="step-dot-2">○</span> SYNCING ROSTER</span>
-          <span class="arena-step" id="arena-step-3"><span class="step-dot" id="step-dot-3">○</span> CONNECTING ARENA</span>
+          <span class="arena-step is-active" id="arena-step-1"><span class="step-dot" id="step-dot-1">●</span> 🏏 LEATHER SEAM</span>
+          <span class="arena-step" id="arena-step-2"><span class="step-dot" id="step-dot-2">○</span> 📐 HAWK-EYE READY</span>
+          <span class="arena-step" id="arena-step-3"><span class="step-dot" id="step-dot-3">○</span> 🏟️ FORTRESS LIT</span>
         </div>
       </div>
     </div>
   </div>
 
-  <!-- Sticky Cricket Bat Header (CSK Blue & Yellow) -->
+    <!-- Professional Franchise Sports Navbar -->
   <header class="site-header">
     <div class="site-header__container">
-      <div class="cricket-bat-navbar">
-        <!-- Bat Blade Body -->
-        <div class="bat-blade">
-          <!-- Bat Toe Logo (Left) -->
-          <a href="index.html" class="bat-logo-link" aria-label="Cayman Super Kings Home">
-            <img src="assets/csk-official-logo.png?v=20260907_6" alt="Cayman Super Kings Logo" class="bat-logo-img">
+      <div class="franchise-navbar-wrap">
+        <!-- Main Angled Navigation Bar -->
+        <div class="franchise-nav-bar">
+          <!-- Breakout Franchise Crest -->
+          <a href="index.html" class="franchise-logo-link" aria-label="Cayman Super Kings Home">
+            <img src="assets/csk-official-logo.png?v=20260907_6" alt="Cayman Super Kings Logo" class="franchise-logo-img">
           </a>
 
           <!-- Mobile Menu Toggle -->
@@ -70,34 +141,18 @@
           <nav class="navbar-nav" aria-label="Main Navigation">
             <ul class="nav-menu">
               <li><a href="squad.html" class="nav-link">Squad</a></li>
-              <li class="nav-divider" aria-hidden="true">|</li>
               <li><a href="matches.html" class="nav-link active">Fixtures</a></li>
-              <li class="nav-divider" aria-hidden="true">|</li>
               <li><a href="about.html" class="nav-link">CSK</a></li>
-              <li class="nav-divider" aria-hidden="true">|</li>
               <li><a href="partner.html" class="nav-link">Sponsors</a></li>
-              <li class="nav-divider" aria-hidden="true">|</li>
               <li><a href="gallery.html" class="nav-link">Gallery</a></li>
-              <li class="nav-divider" aria-hidden="true">|</li>
               <li><a href="news.html" class="nav-link">News</a></li>
             </ul>
           </nav>
-
-          <!-- Bat Shoulder Chevron Splice -->
-          <div class="bat-shoulder-splice" aria-hidden="true">
-            <svg viewBox="0 0 48 62" preserveAspectRatio="none" class="bat-splice-svg">
-              <path d="M0,0 L28,31 L0,62 L18,62 L46,31 L18,0 Z" fill="#081A38" opacity="0.7"/>
-              <path d="M18,0 L46,31 L18,62 L28,62 L48,40 L48,22 L28,0 Z" fill="#FAB81E" opacity="0.9"/>
-            </svg>
-          </div>
         </div>
 
-        <!-- Bat Handle (Right Extension) -->
-        <div class="bat-handle" aria-hidden="true"></div>
-
-        <!-- Bat Pommel / Fan Login Portal (Far Right) -->
-        <a href="join.html" class="bat-pommel-btn site-header__user-pill" aria-label="Join CSK / Fan Portal" title="Join CSK">
-          <svg class="user-pill__icon" viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+        <!-- Separate Angled Fan Portal Button (Right) -->
+        <a href="join.html" class="franchise-user-btn site-header__user-pill" aria-label="Join CSK / Fan Portal" title="Join CSK / Fan Portal">
+          <svg class="user-pill__icon" viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
             <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
             <circle cx="12" cy="7" r="4"></circle>
           </svg>
@@ -107,47 +162,83 @@
   </header>
 
   <main>
-    <!-- Page Hero Banner -->
-    <section class="section section--navy" style="padding-top: 56px; padding-bottom: 56px;">
-      <div class="container">
-        <span class="section-eyebrow">Match Center</span>
-        <h1 class="section-title">WITNESS THE ROAR LIVE</h1>
-        <p class="section-desc" style="max-width: 650px;">
-          Official matchday schedule, live scores, match reports, and standings for CICA T20 Super League and 40-Over Cup campaigns.
+    <!-- Premium Stadium Page Hero Banner -->
+    <section class="section section--navy matches-hero-banner" style="padding-top: 60px; padding-bottom: 50px; background: linear-gradient(135deg, #050E20 0%, #0A1E42 55%, #030814 100%); border-bottom: 1.5px solid rgba(255, 255, 255, 0.1); position: relative; overflow: hidden;">
+      <!-- Subtle Floodlight Glows -->
+      <div style="position: absolute; top: -50px; left: 15%; width: 300px; height: 300px; background: radial-gradient(circle, rgba(56, 198, 217, 0.18) 0%, transparent 70%); filter: blur(50px); pointer-events: none;"></div>
+      <div style="position: absolute; bottom: -50px; right: 15%; width: 300px; height: 300px; background: radial-gradient(circle, rgba(242, 96, 12, 0.14) 0%, transparent 70%); filter: blur(50px); pointer-events: none;"></div>
+
+      <div class="container" style="position: relative; z-index: 2;">
+        <div class="sponsors-badge-row" style="margin-bottom: 8px;">
+          <span style="color: #38BDF8; font-size: 0.9rem;">⚡</span>
+          <span class="section-eyebrow" style="color: #38BDF8; margin: 0; font-weight: 800; letter-spacing: 0.12em;">2026 CICA T20 CHAMPIONSHIP CAMPAIGN</span>
+        </div>
+        <h1 class="section-title" style="font-size: clamp(2.4rem, 5vw, 3.8rem); font-weight: 900; letter-spacing: 0.03em; color: #FFFFFF; text-shadow: 0 4px 20px rgba(0,0,0,0.6); margin-bottom: 12px;">
+          WITNESS THE ROAR LIVE
+        </h1>
+        <p class="section-desc" style="max-width: 680px; color: #CBD5E1; font-size: 1.05rem; line-height: 1.6; margin-bottom: 24px;">
+          Official matchday schedule, live scorecards, match analyses, and league standings for Cayman Super Kings across the CICA Super League.
         </p>
+
+        <!-- 3 Quick Stadium Status Pills -->
+        <div style="display: flex; gap: 12px; flex-wrap: wrap; align-items: center;">
+          <div style="display: inline-flex; align-items: center; gap: 8px; background: rgba(255, 255, 255, 0.08); border: 1px solid rgba(255, 255, 255, 0.16); padding: 7px 16px; border-radius: 999px; backdrop-filter: blur(8px);">
+            <span style="font-size: 0.95rem;">🏟️</span>
+            <span style="font-size: 0.8125rem; font-weight: 800; color: #FFFFFF; text-transform: uppercase; letter-spacing: 0.04em;">Home Fortress: Jimmy Powell Oval</span>
+          </div>
+          <div style="display: inline-flex; align-items: center; gap: 8px; background: rgba(56, 189, 248, 0.12); border: 1px solid rgba(56, 189, 248, 0.3); padding: 7px 16px; border-radius: 999px; backdrop-filter: blur(8px);">
+            <span style="font-size: 0.95rem;">🏆</span>
+            <span style="font-size: 0.8125rem; font-weight: 800; color: #38BDF8; text-transform: uppercase; letter-spacing: 0.04em;">CICA T20 Championship Finalists</span>
+          </div>
+          <div style="display: inline-flex; align-items: center; gap: 8px; background: rgba(255, 255, 255, 0.08); border: 1px solid rgba(255, 255, 255, 0.16); padding: 7px 16px; border-radius: 999px; backdrop-filter: blur(8px);">
+            <span style="font-size: 0.95rem;">🔥</span>
+            <span style="font-size: 0.8125rem; font-weight: 800; color: #FFFFFF; text-transform: uppercase; letter-spacing: 0.04em;">Next Clash: Sep 12 vs Warriors</span>
+          </div>
+        </div>
       </div>
     </section>
 
-    <!-- Main Matches Section -->
-    <section class="section">
+    <!-- Main Matches Section (Embossed White Cricket Asset) -->
+    <section class="section" style="padding-top: 40px; padding-bottom: 80px;">
       <div class="container">
-        <!-- Tabs Navigator -->
-        <div class="tabs-nav" role="tablist">
-          <button class="tab-btn active" data-match-tab="upcoming" role="tab">Upcoming Fixtures</button>
-          <button class="tab-btn" data-match-tab="results" role="tab">Match Results</button>
-          <button class="tab-btn" data-match-tab="standings" role="tab">League Standings</button>
+        <!-- Luxury Segmented Tabs Navigator -->
+        <div class="matches-segmented-tabs" role="tablist" style="display: flex; gap: 10px; background: #FFFFFF; padding: 6px; border-radius: 999px; border: 1.5px solid #CBD5E1; box-shadow: 0 4px 16px rgba(9, 21, 43, 0.06); width: fit-content; margin-bottom: 28px; flex-wrap: wrap;">
+          <button class="matches-tab-btn active" data-match-tab="upcoming" role="tab">
+            <span>📅 Upcoming Fixtures</span>
+          </button>
+          <button class="matches-tab-btn" data-match-tab="results" role="tab">
+            <span>🏆 Match Results</span>
+          </button>
+          <button class="matches-tab-btn" data-match-tab="standings" role="tab">
+            <span>📊 League Standings</span>
+          </button>
         </div>
 
-        <!-- Filter Controls -->
-        <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; margin-bottom: 32px;">
-          <div class="filter-group" style="margin-bottom: 0;">
-            <label for="format-filter" style="font-size: 0.875rem; font-weight: 700; color: #080E18;">Format:</label>
-            <select id="format-filter" class="form-select" style="width: auto; padding: 8px 18px; color: #080E18; background: #FFFFFF; border: 1.5px solid #CBD5E1;">
-              <option value="all">All Formats</option>
-              <option value="T20">T20 Super League</option>
-              <option value="40-Over">40-Over Cup</option>
-            </select>
+        <!-- Filter Controls Bar -->
+        <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; margin-bottom: 36px; background: rgba(255, 255, 255, 0.8); padding: 14px 20px; border-radius: 14px; border: 1.5px solid #E2E8F0; box-shadow: 0 2px 8px rgba(9, 21, 43, 0.04);">
+          <div class="filter-group" style="margin-bottom: 0; display: flex; align-items: center; gap: 16px; flex-wrap: wrap;">
+            <div style="display: flex; align-items: center; gap: 8px;">
+              <label for="format-filter" style="font-size: 0.875rem; font-weight: 800; color: #09152B; text-transform: uppercase; letter-spacing: 0.04em;">Format:</label>
+              <select id="format-filter" class="matches-filter-select">
+                <option value="all">All Formats</option>
+                <option value="T20">T20 Super League</option>
+                <option value="40-Over">40-Over Cup</option>
+              </select>
+            </div>
 
-            <label for="season-filter" style="font-size: 0.875rem; font-weight: 700; color: #080E18; margin-left: 12px;">Season:</label>
-            <select id="season-filter" class="form-select" style="width: auto; padding: 8px 18px; color: #080E18; background: #FFFFFF; border: 1.5px solid #CBD5E1;">
-              <option value="2026">2026 (Current)</option>
-              <option value="2025">2025</option>
-              <option value="all">All Seasons</option>
-            </select>
+            <div style="display: flex; align-items: center; gap: 8px;">
+              <label for="season-filter" style="font-size: 0.875rem; font-weight: 800; color: #09152B; text-transform: uppercase; letter-spacing: 0.04em;">Season:</label>
+              <select id="season-filter" class="matches-filter-select">
+                <option value="2026">2026 (Current)</option>
+                <option value="2025">2025</option>
+                <option value="all">All Seasons</option>
+              </select>
+            </div>
           </div>
 
-          <a href="https://cricclubs.com/CaymanCricketAssociation" target="_blank" rel="noopener noreferrer" class="btn btn-outline-navy btn-sm">
-            Official CricClubs Portal ↗
+          <a href="https://cricclubs.com/CaymanCricketAssociation" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm" style="font-weight: 800; padding: 10px 22px; display: inline-flex; align-items: center; gap: 8px; border-radius: 999px;">
+            <span>Official CricClubs Portal</span>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="21" y1="3" x2="10" y2="14"></line></svg>
           </a>
         </div>
 
@@ -171,36 +262,74 @@
     </section>
     
   </main>
-  <footer class="site-footer editorial-footer">
-    <div class="container footer-top">
-      <div class="footer-brand">
-        <img src="assets/csk-official-logo.png?v=20260907_6" alt="CSK crest">
-        <h3>ONE TEAM.<br>ONE DREAM.</h3>
-        <p>© 2026 Cayman Super Kings Cricket Club. All rights reserved.</p>
+    <footer class="site-footer editorial-footer">
+    <div class="container">
+      <!-- Horizontal Brand & Action Hero Bar -->
+      <div class="footer-horizontal-hero">
+        <div class="footer-hero-brand">
+          <img src="assets/csk-official-logo.png?v=20260907_6" alt="CSK Official Crest">
+          <div class="footer-hero-titles">
+            <h3>CAYMAN SUPER KINGS</h3>
+            <span>ONE TEAM • ONE DREAM // EST. 2022</span>
+          </div>
+        </div>
+        <div class="footer-hero-actions">
+          <a href="join.html" class="footer-action-btn footer-action-btn--primary">
+            <span>🦁 Join Fan Vault</span>
+          </a>
+          <a href="https://www.instagram.com/caymansuperkings?igsi=aXBpaHY2azlxNGF1" target="_blank" rel="noopener noreferrer" class="footer-action-btn footer-action-btn--secondary">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+            <span>@caymansuperkings ↗</span>
+          </a>
+        </div>
       </div>
-      <div>
-        <h4 class="footer-heading" style="color: #FFFFFF !important; font-weight: 900 !important;">Cayman Super Kings</h4>
-        <ul class="footer-links">
-          <li><a href="about.html">About the club</a></li>
-          <li><a href="squad.html">The squad</a></li>
-          <li><a href="matches.html">Fixtures & results</a></li>
-          <li><a href="youth.html">CSK Academy</a></li>
-        </ul>
+
+      <!-- 4-Column Horizontal Layout -->
+      <div class="footer-top">
+        <div class="footer-col">
+          <h4 class="footer-heading">Club &amp; Heritage</h4>
+          <ul class="footer-links">
+            <li><a href="about.html">About the Club</a></li>
+            <li><a href="about.html#tab-history">Origins &amp; Timeline</a></li>
+            <li><a href="about.html#tab-honours">Silverware &amp; Honours</a></li>
+            <li><a href="about.html#tab-ground">Home Fortress</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4 class="footer-heading">Squad &amp; Matches</h4>
+          <ul class="footer-links">
+            <li><a href="squad.html">Men's Senior Squad</a></li>
+            <li><a href="matches.html">Fixtures &amp; Live Scores</a></li>
+            <li><a href="youth.html">CSK Youth Academy</a></li>
+            <li><a href="matches.html">Results &amp; Match Reports</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4 class="footer-heading">Media &amp; Community</h4>
+          <ul class="footer-links">
+            <li><a href="news.html">Latest News &amp; Recaps</a></li>
+            <li><a href="gallery.html">Official Media Vault</a></li>
+            <li><a href="join.html">Official Fan Portal</a></li>
+            <li><a href="index.html#social">Yellow Army Fan Zone</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4 class="footer-heading">Commercial &amp; Contact</h4>
+          <ul class="footer-links">
+            <li><a href="partner.html">Partner With CSK</a></li>
+            <li><a href="partner.html#deck">Sponsorship Opportunities</a></li>
+            <li><a href="contact.html">Contact Committee</a></li>
+            <li><a href="contact.html#join">Player Registration</a></li>
+          </ul>
+        </div>
       </div>
-      <div>
-        <h4 class="footer-heading" style="color: #FFFFFF !important; font-weight: 900 !important;">Connect</h4>
-        <ul class="footer-links">
-          <li><a href="https://www.instagram.com/caymansuperkings?igsi=aXBpaHY2azlxNGF1" target="_blank" rel="noopener noreferrer" style="color: #FAB81E; font-weight: 700;">Instagram @caymansuperkings ↗</a></li>
-          <li><a href="news.html">Latest news</a></li>
-          <li><a href="gallery.html">Media vault</a></li>
-          <li><a href="partner.html">Partner with us</a></li>
-          <li><a href="contact.html">Contact committee</a></li>
-        </ul>
+
+      <!-- Horizontal Bottom Bar -->
+      <div class="footer-bottom">
+        <span>© 2026 Cayman Super Kings Cricket Club. All rights reserved.</span>
+        <span>Affiliated with Cayman Islands Cricket Association (CICA)</span>
+        <span><a href="about.html">Privacy Policy</a> · <a href="about.html">Terms of Association</a></span>
       </div>
-    </div>
-    <div class="container footer-bottom">
-      <span>Affiliated with Cayman Islands Cricket Association</span>
-      <span><a href="about.html">Privacy Policy</a> · <a href="about.html">Terms of Association</a></span>
     </div>
   </footer>
 

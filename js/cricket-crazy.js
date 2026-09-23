@@ -11,7 +11,7 @@
  */
 
 export function initCricketCrazy() {
-  initHeroSparksCanvas();
+  // Floating snow/sparks effect disabled per user request
   initHeroParallax();
   initRoarButton();
   initMatchCountdown();
@@ -19,11 +19,14 @@ export function initCricketCrazy() {
 }
 
 /**
- * 1. FLOATING STADIUM SPARK PARTICLES (Lightweight 60fps Canvas)
+ * 1. FLOATING STADIUM SPARK PARTICLES (Disabled)
  */
 function initHeroSparksCanvas() {
   const canvas = document.getElementById('csk-hero-particles');
-  if (!canvas) return;
+  if (canvas) {
+    canvas.remove();
+  }
+}
 
   const ctx = canvas.getContext('2d');
   let width = (canvas.width = canvas.parentElement.offsetWidth);
@@ -40,7 +43,7 @@ function initHeroSparksCanvas() {
       speedX: (Math.random() - 0.5) * 0.4,
       speedY: -Math.random() * 0.6 - 0.2,
       opacity: Math.random() * 0.7 + 0.3,
-      hue: Math.random() > 0.4 ? '#FAB81E' : '#FFFFFF',
+      hue: Math.random() > 0.5 ? '#38BDF8' : (Math.random() > 0.3 ? '#00E5FF' : '#FFFFFF'),
       pulse: Math.random() * 0.05
     });
   }
@@ -180,7 +183,7 @@ function createCelebrationSparks(originX, originY) {
   container.className = 'csk-confetti-container';
   document.body.appendChild(container);
 
-  const colors = ['#FAB81E', '#FFE082', '#FFFFFF', '#0B2C62', '#FF6B00'];
+  const colors = ['#38BDF8', '#00E5FF', '#FFFFFF', '#0B2C62', '#3B82F6'];
   const count = 35;
 
   for (let i = 0; i < count; i++) {
@@ -227,7 +230,7 @@ function showRoarToast() {
     toast.className = 'csk-roar-toast';
     document.body.appendChild(toast);
   }
-  toast.innerHTML = `<span>🦁</span> <strong>WHISTLE PODU!</strong> <span>Your roar joined the Yellow Army!</span>`;
+  toast.innerHTML = `<span>🦁</span> <strong>ONE TEAM. ONE DREAM!</strong> <span>Your roar joined the Yellow Army!</span>`;
   toast.classList.add('is-visible');
 
   clearTimeout(toast._timeout);

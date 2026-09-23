@@ -7,32 +7,32 @@
 
 :root {
   /* Brand Colours - Cayman Super Kings Premium Dark Navy & Gold */
-  --c-navy: #080E18;
-  --c-navy-light: #101C3F;
-  --c-navy-surface: #142338;
-  --c-navy-dark: #05080F;
-  --c-navy-card: #0D192C;
+  --c-navy: #040914;
+  --c-navy-light: #0A1630;
+  --c-navy-surface: #0E1F3D;
+  --c-navy-dark: #020408;
+  --c-navy-card: #08142A;
   
-  --c-gold: #FAB81E;
-  --c-gold-hover: #E09C0D;
-  --c-gold-light: rgba(250, 184, 30, 0.15);
-  --c-gold-subtle: rgba(250, 184, 30, 0.08);
-  --c-gold-muted: #F8D999;
+  --c-gold: #FFFFFF;
+  --c-gold-hover: #E2E8F0;
+  --c-gold-light: rgba(255, 255, 255, 0.1);
+  --c-gold-subtle: rgba(255, 255, 255, 0.05);
+  --c-gold-muted: #94A3B8;
   
-  --c-flame: #F2600C;           /* Accent fills / match alerts */
-  --c-flame-text: #FF7A30;      /* Contrast safe text on dark backgrounds */
-  --c-flame-light: rgba(242, 96, 12, 0.18);
+  --c-flame: #38BDF8;           /* Accent fills / match alerts */
+  --c-flame-text: #38BDF8;      /* Contrast safe text on dark backgrounds */
+  --c-flame-light: rgba(56, 189, 248, 0.14);
   
   --c-teal: #38C6D9;            /* Secondary accent — badges & details */
   --c-teal-hover: #29AEC0;
   --c-teal-light: rgba(56, 198, 217, 0.18);
   
-  --c-page-bg: #080E18;
-  --c-card-bg: #101C3F;
-  --c-card-bg-elevated: #15254D;
-  --c-border: rgba(255, 255, 255, 0.1);
-  --c-border-subtle: rgba(255, 255, 255, 0.06);
-  --c-border-gold: rgba(250, 184, 30, 0.25);
+  --c-page-bg: #02050C;
+  --c-card-bg: #08142A;
+  --c-card-bg-elevated: #0E1F3D;
+  --c-border: rgba(255, 255, 255, 0.08);
+  --c-border-subtle: rgba(255, 255, 255, 0.05);
+  --c-border-gold: rgba(255, 255, 255, 0.12);
   
   --c-text-main: #FFFFFF;
   --c-text-muted: #94A3B8;
@@ -51,13 +51,13 @@
   --section-pad-mobile: 44px;
 
   /* Radii */
-  --radius-card: 12px;
+  --radius-card: 14px;
   --radius-pill: 999px;
   --radius-badge: 6px;
 
   /* Elevation (Unified Hover Lift) */
-  --shadow-card: 0 8px 24px rgba(0, 0, 0, 0.4), 0 2px 6px rgba(0, 0, 0, 0.2);
-  --shadow-hover-lift: 0 16px 36px rgba(0, 0, 0, 0.6), 0 0 20px rgba(250, 184, 30, 0.12);
+  --shadow-card: 0 8px 24px rgba(0, 0, 0, 0.35);
+  --shadow-hover-lift: 0 16px 36px rgba(0, 0, 0, 0.5);
 
   /* Transitions */
   --transition-fast: 0.15s ease;
