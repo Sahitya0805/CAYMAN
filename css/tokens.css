@@ -85,7 +85,14 @@ body {
   font-size: 1rem;
   line-height: 1.5;
   color: var(--c-text-main);
-  background-color: var(--c-page-bg);
+  background-color: #020610;
+  background-image: 
+    radial-gradient(ellipse 90% 70% at 50% 0%, rgba(14, 60, 130, 0.45) 0%, transparent 70%),
+    radial-gradient(ellipse 70% 50% at 85% 100%, rgba(245, 158, 11, 0.08) 0%, transparent 60%),
+    radial-gradient(circle at 1.5px 1.5px, rgba(56, 189, 248, 0.12) 1.2px, transparent 0),
+    linear-gradient(180deg, #071530 0%, #040D1E 48%, #020610 100%);
+  background-size: 100% 100%, 100% 100%, 20px 20px, 100% 100%;
+  background-attachment: fixed;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
