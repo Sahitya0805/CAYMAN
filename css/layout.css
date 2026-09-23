@@ -93,36 +93,31 @@ input, select, textarea { color: #FFFFFF; background: #0F1B2C; border: 1px solid
 .col-2  { grid-column: span 2; }
 
 .section--white {
-  background-color: #020610 !important;
-  background-image: 
-    radial-gradient(ellipse 90% 70% at 50% 0%, rgba(14, 60, 130, 0.45) 0%, transparent 70%),
-    radial-gradient(ellipse 70% 50% at 85% 100%, rgba(245, 158, 11, 0.08) 0%, transparent 60%),
-    radial-gradient(circle at 1.5px 1.5px, rgba(56, 189, 248, 0.12) 1.2px, transparent 0),
-    linear-gradient(180deg, #071530 0%, #040D1E 48%, #020610 100%) !important;
-  background-size: 100% 100%, 100% 100%, 20px 20px, 100% 100% !important;
-  color: #FFFFFF !important;
+  background: 
+    radial-gradient(ellipse 80% 50% at 50% 0%, rgba(2, 132, 199, 0.04) 0%, transparent 70%),
+    linear-gradient(180deg, #FFFFFF 0%, #F8FAFC 50%, #F1F5F9 100%) !important;
+  color: #0F172A !important;
 }
 
 .section--white .section-title {
-  color: #FFFFFF !important;
-  text-shadow: 0 2px 14px rgba(0, 0, 0, 0.6) !important;
+  color: #09152B !important;
 }
 
 .section--white .section-eyebrow {
-  color: #38BDF8 !important;
+  color: #0284C7 !important;
 }
 
 .section--white .section-desc {
-  color: #CBD5E1 !important;
+  color: #475569 !important;
 }
 
 .section--white .text-link {
-  color: #38BDF8 !important;
-  border-bottom: 2px solid #38BDF8 !important;
+  color: #080E18 !important;
+  border-bottom: 2px solid #080E18 !important;
 }
 .section--white .text-link:hover {
-  color: #FCD34D !important;
-  border-color: #FCD34D !important;
+  color: #FFFFFF !important;
+  border-color: #FFFFFF !important;
 }
 
 /* ─────────────────────────────────────────────────────────────
