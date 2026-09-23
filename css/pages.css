@@ -4081,24 +4081,28 @@ body.page--white-theme .about-tab-panel .card li {
 .journey-book-section {
   position: relative;
   background: 
-    radial-gradient(ellipse 80% 50% at 50% 10%, rgba(28, 106, 200, 0.18) 0%, transparent 70%),
-    linear-gradient(180deg, #09172E 0%, #061122 50%, #030A14 100%);
+    radial-gradient(ellipse 90% 70% at 50% 0%, rgba(14, 60, 130, 0.45) 0%, transparent 70%),
+    radial-gradient(ellipse 70% 50% at 85% 100%, rgba(245, 158, 11, 0.08) 0%, transparent 60%),
+    radial-gradient(circle at 1.5px 1.5px, rgba(56, 189, 248, 0.12) 1.2px, transparent 0),
+    linear-gradient(180deg, #071530 0%, #040D1E 48%, #020610 100%) !important;
+  background-size: 100% 100%, 100% 100%, 20px 20px, 100% 100% !important;
   padding: 88px 0 100px;
   color: #FFFFFF;
   overflow: hidden;
-  border-top: 1px solid rgba(255, 255, 255, 0.08);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  border-top: 1px solid rgba(56, 189, 248, 0.35) !important;
+  border-bottom: 1px solid rgba(56, 189, 248, 0.35) !important;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1), 0 -12px 36px rgba(3, 10, 24, 0.7) !important;
 }
 
 .journey-book-section::before {
   content: '';
   position: absolute;
-  inset: 0;
-  background-image: 
-    radial-gradient(rgba(255, 255, 255, 0.04) 1px, transparent 1px);
-  background-size: 32px 32px;
-  background-position: 0 0;
-  opacity: 0.5;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent 0%, rgba(245, 158, 11, 0.6) 20%, #38BDF8 50%, rgba(245, 158, 11, 0.6) 80%, transparent 100%) !important;
+  box-shadow: 0 0 14px rgba(56, 189, 248, 0.6) !important;
   pointer-events: none;
 }
 
@@ -4343,9 +4347,12 @@ body.page--white-theme .about-tab-panel .card li {
   width: 100%;
   height: 100%;
   background: 
-    radial-gradient(circle at 95% 5%, rgba(56, 189, 248, 0.08) 0%, transparent 60%),
-    linear-gradient(135deg, #091938 0%, #06132D 60%, #030B1C 100%);
-  color: #F8FAFC;
+    radial-gradient(circle at 95% 5%, rgba(56, 189, 248, 0.12) 0%, transparent 60%),
+    radial-gradient(circle at 5% 95%, rgba(245, 158, 11, 0.06) 0%, transparent 60%),
+    radial-gradient(circle at 1.5px 1.5px, rgba(56, 189, 248, 0.08) 1.2px, transparent 0),
+    linear-gradient(135deg, #0A1C3E 0%, #061228 55%, #030916 100%) !important;
+  background-size: 100% 100%, 100% 100%, 18px 18px, 100% 100% !important;
+  color: #F8FAFC !important;
   padding: 40px 48px 28px 48px;
   display: flex;
   flex-direction: column;
@@ -4354,7 +4361,8 @@ body.page--white-theme .about-tab-panel .card li {
   transition: transform 0.75s cubic-bezier(0.25, 1, 0.5, 1), opacity 0.4s ease, box-shadow 0.75s ease;
   backface-visibility: hidden;
   -webkit-backface-visibility: hidden;
-  border-left: 2px solid rgba(255, 255, 255, 0.08);
+  border-left: 2px solid rgba(56, 189, 248, 0.25) !important;
+  border: 1px solid rgba(56, 189, 248, 0.25) !important;
   box-sizing: border-box;
   user-select: none;
 }
