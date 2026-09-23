@@ -2005,11 +2005,11 @@ body.page--white-theme .contact-form-panel .form-textarea {
   position: absolute;
   width: 18px;
   height: 18px;
-  background: #F8FAFC;
+  background: #040D1E;
   border-radius: 50%;
   left: 121px;
   z-index: 5;
-  box-shadow: inset 0 0 3px rgba(0, 0, 0, 0.15);
+  box-shadow: inset 0 0 3px rgba(0, 0, 0, 0.4);
 }
 
 .ticket-notch-top {
@@ -3224,17 +3224,18 @@ body.page--white-theme .circular-card-subtitle {
    ───────────────────────────────────────────────────────────── */
 .follow-us-section,
 .spotlight-section {
-  background-color: #F8FAFC !important;
+  background-color: #020610 !important;
   background-image: 
-    radial-gradient(ellipse 80% 50% at 50% 0%, rgba(2, 132, 199, 0.10) 0%, transparent 70%),
-    radial-gradient(circle at 1.5px 1.5px, rgba(9, 21, 43, 0.105) 1.5px, transparent 0),
-    linear-gradient(180deg, #FFFFFF 0%, #F8FAFC 40%, #F1F5F9 100%) !important;
-  background-size: 100% 100%, 20px 20px, 100% 100% !important;
+    radial-gradient(ellipse 90% 70% at 50% 0%, rgba(14, 60, 130, 0.45) 0%, transparent 70%),
+    radial-gradient(ellipse 70% 50% at 85% 100%, rgba(245, 158, 11, 0.08) 0%, transparent 60%),
+    radial-gradient(circle at 1.5px 1.5px, rgba(56, 189, 248, 0.12) 1.2px, transparent 0),
+    linear-gradient(180deg, #071530 0%, #040D1E 48%, #020610 100%) !important;
+  background-size: 100% 100%, 100% 100%, 20px 20px, 100% 100% !important;
   padding: 80px 0 88px;
   position: relative;
   overflow: hidden;
-  border-top: 1.5px solid #E2E8F0;
-  border-bottom: 1.5px solid #E2E8F0;
+  border-top: 1px solid rgba(56, 189, 248, 0.2);
+  border-bottom: 1px solid rgba(56, 189, 248, 0.2);
 }
 
 .follow-us-header,
@@ -3251,8 +3252,8 @@ body.page--white-theme .circular-card-subtitle {
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  background: rgba(9, 21, 43, 0.08);
-  color: #09152B;
+  background: rgba(56, 189, 248, 0.12);
+  color: #38BDF8;
   font-family: var(--font-display);
   font-size: 0.8rem;
   font-weight: 800;
@@ -3260,8 +3261,8 @@ body.page--white-theme .circular-card-subtitle {
   text-transform: uppercase;
   padding: 6px 16px;
   border-radius: 999px;
-  border: 1px solid rgba(9, 21, 43, 0.15);
-  box-shadow: 0 2px 8px rgba(9, 21, 43, 0.06);
+  border: 1px solid rgba(56, 189, 248, 0.3);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
 }
 
 .follow-us-title,
@@ -3271,10 +3272,10 @@ body.page--white-theme .circular-card-subtitle {
   font-weight: 900;
   letter-spacing: 0.05em;
   text-transform: uppercase;
-  color: #09152B !important;
+  color: #FFFFFF !important;
   margin: 0;
   line-height: 1;
-  text-shadow: none;
+  text-shadow: 0 2px 16px rgba(0, 0, 0, 0.7);
 }
 
 .follow-us-handle-wrap {
@@ -3294,23 +3295,23 @@ body.page--white-theme .circular-card-subtitle {
   font-family: var(--font-body);
   font-size: 1rem;
   font-weight: 800;
-  color: #09152B;
+  color: #FFFFFF;
   text-decoration: none;
-  background: #FFFFFF;
+  background: rgba(8, 20, 44, 0.95);
   padding: 9px 22px;
   border-radius: 999px;
-  border: 1.5px solid #CBD5E1;
+  border: 1.5px solid rgba(56, 189, 248, 0.3);
   transition: all 0.28s cubic-bezier(0.16, 1, 0.3, 1);
-  box-shadow: 0 4px 14px rgba(9, 21, 43, 0.08);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.4);
 }
 
 .follow-us-handle:hover,
 .spotlight-handle:hover {
-  background: #09152B;
+  background: #0284C7;
   color: #FFFFFF;
-  border-color: #09152B;
+  border-color: #38BDF8;
   transform: translateY(-2px);
-  box-shadow: 0 8px 24px rgba(9, 21, 43, 0.2);
+  box-shadow: 0 8px 24px rgba(56, 189, 248, 0.3);
 }
 
 .follow-us-cta-btn {
@@ -3322,22 +3323,22 @@ body.page--white-theme .circular-card-subtitle {
   font-weight: 900;
   letter-spacing: 0.06em;
   text-transform: uppercase;
-  color: #FFFFFF;
-  background: #09152B;
+  color: #071530 !important;
+  background: linear-gradient(135deg, #FDE68A 0%, #FCD34D 50%, #F59E0B 100%);
   text-decoration: none;
   padding: 11px 26px;
   border-radius: 999px;
-  border: 1.5px solid #09152B;
+  border: 1.5px solid #FCD34D;
   transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
-  box-shadow: 0 4px 16px rgba(9, 21, 43, 0.16);
+  box-shadow: 0 4px 16px rgba(245, 158, 11, 0.3);
 }
 
 .follow-us-cta-btn:hover {
-  background: #0284C7;
-  border-color: #0284C7;
-  color: #FFFFFF;
+  background: #FFFFFF;
+  border-color: #FFFFFF;
+  color: #071530 !important;
   transform: translateY(-2px);
-  box-shadow: 0 10px 28px rgba(9, 21, 43, 0.28);
+  box-shadow: 0 10px 28px rgba(255, 255, 255, 0.3);
 }
 
 .spotlight-insta-icon {
@@ -3355,7 +3356,7 @@ body.page--white-theme .circular-card-subtitle {
   display: flex;
   flex-direction: column;
   text-decoration: none;
-  color: #09152B;
+  color: #FFFFFF;
   transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
@@ -3369,16 +3370,16 @@ body.page--white-theme .circular-card-subtitle {
   aspect-ratio: 1 / 1.15;
   border-radius: 16px;
   overflow: hidden;
-  border: 1.5px solid #E2E8F0;
-  box-shadow: 0 10px 28px rgba(9, 21, 43, 0.08);
+  border: 1.5px solid rgba(56, 189, 248, 0.25);
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.5);
   background: #080E18;
   margin-bottom: 14px;
   transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 .spotlight-card:hover .spotlight-img-wrap {
-  border-color: #0284C7;
-  box-shadow: 0 16px 36px rgba(9, 21, 43, 0.16);
+  border-color: #38BDF8;
+  box-shadow: 0 16px 36px rgba(56, 189, 248, 0.25);
 }
 
 .spotlight-img {
@@ -3399,7 +3400,7 @@ body.page--white-theme .circular-card-subtitle {
   left: 14px;
   width: 32px;
   height: 32px;
-  background: rgba(8, 14, 24, 0.65);
+  background: rgba(8, 14, 24, 0.75);
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
   border-radius: 8px;
@@ -3446,7 +3447,7 @@ body.page--white-theme .circular-card-subtitle {
   font-family: var(--font-body);
   font-size: 0.925rem;
   font-weight: 800;
-  color: #09152B !important;
+  color: #CBD5E1 !important;
   line-height: 1.45;
   margin: 0;
   display: -webkit-box;
@@ -3458,7 +3459,7 @@ body.page--white-theme .circular-card-subtitle {
 .spotlight-caption span {
   display: block;
   font-size: 0.8rem;
-  color: #0284C7 !important;
+  color: #38BDF8 !important;
   font-weight: 700;
   margin-top: 4px;
 }
@@ -3478,33 +3479,33 @@ body.page--white-theme .circular-card-subtitle {
 }
 
 /* ─────────────────────────────────────────────────────────────
-   IN THE NEWS SECTION (Embossed Cricket Asset White Theme)
+   IN THE NEWS SECTION (Textured Midnight Navy Theme)
    ───────────────────────────────────────────────────────────── */
 .in-the-news-section {
-  background-color: #F8FAFC !important;
+  background-color: #020610 !important;
   background-image: 
-    radial-gradient(ellipse 80% 50% at 50% 0%, rgba(2, 132, 199, 0.10) 0%, transparent 70%),
-    radial-gradient(ellipse 60% 50% at 90% 85%, rgba(245, 158, 11, 0.08) 0%, transparent 55%),
-    radial-gradient(circle at 1.5px 1.5px, rgba(9, 21, 43, 0.105) 1.5px, transparent 0),
-    linear-gradient(180deg, #FFFFFF 0%, #F8FAFC 40%, #F1F5F9 100%) !important;
+    radial-gradient(ellipse 90% 70% at 50% 0%, rgba(14, 60, 130, 0.45) 0%, transparent 70%),
+    radial-gradient(ellipse 70% 50% at 85% 100%, rgba(245, 158, 11, 0.08) 0%, transparent 60%),
+    radial-gradient(circle at 1.5px 1.5px, rgba(56, 189, 248, 0.12) 1.2px, transparent 0),
+    linear-gradient(180deg, #071530 0%, #040D1E 48%, #020610 100%) !important;
   background-size: 100% 100%, 100% 100%, 20px 20px, 100% 100% !important;
   padding: 76px 0 64px;
   position: relative;
   overflow: hidden;
-  border-top: 1.5px solid #E2E8F0;
-  border-bottom: 1.5px solid #E2E8F0;
+  border-top: 1px solid rgba(56, 189, 248, 0.2);
+  border-bottom: 1px solid rgba(56, 189, 248, 0.2);
 }
 
 .in-the-news-title {
   font-family: var(--font-display);
   font-size: clamp(2.2rem, 4.5vw, 3rem);
   font-weight: 900;
-  color: #09152B !important;
+  color: #FFFFFF !important;
   text-align: center;
   text-transform: uppercase;
   letter-spacing: 0.06em;
   margin-bottom: 38px;
-  text-shadow: none;
+  text-shadow: 0 2px 16px rgba(0, 0, 0, 0.7);
 }
 
 .in-the-news-grid {
@@ -3517,18 +3518,18 @@ body.page--white-theme .circular-card-subtitle {
 .in-the-news-card {
   display: flex;
   flex-direction: column;
-  background: #FFFFFF;
-  border: 1.5px solid #E2E8F0;
+  background: rgba(8, 20, 44, 0.95);
+  border: 1.5px solid rgba(56, 189, 248, 0.25);
   border-radius: 14px;
   overflow: hidden;
-  box-shadow: 0 8px 24px rgba(9, 21, 43, 0.06);
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.5);
   transition: transform 0.28s ease, box-shadow 0.28s ease, border-color 0.28s ease;
 }
 
 .in-the-news-card:hover {
   transform: translateY(-6px);
-  box-shadow: 0 16px 36px rgba(9, 21, 43, 0.14);
-  border-color: #0284C7;
+  box-shadow: 0 16px 36px rgba(56, 189, 248, 0.25);
+  border-color: #38BDF8;
 }
 
 .in-the-news-card__link {
@@ -3602,7 +3603,7 @@ body.page--white-theme .circular-card-subtitle {
 .in-the-news-card__date {
   font-size: 0.78rem;
   font-weight: 800;
-  color: #0284C7;
+  color: #38BDF8;
   text-transform: uppercase;
   letter-spacing: 0.08em;
 }
@@ -3610,7 +3611,7 @@ body.page--white-theme .circular-card-subtitle {
 .in-the-news-card__headline {
   font-size: 0.975rem;
   font-weight: 800;
-  color: #FFFFFF !important;
+  color: #F8FAFC !important;
   line-height: 1.5;
   margin: 0;
   display: -webkit-box;
