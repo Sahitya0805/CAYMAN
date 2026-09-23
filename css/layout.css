@@ -766,8 +766,10 @@ ul.footer-links {
   .col-8, .col-6, .col-4, .col-3 {
     grid-column: span 6;
   }
-  .footer-top {
-    grid-template-columns: 1fr 1fr;
+  .footer-top,
+  .footer-grid-horizontal {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 32px 20px !important;
   }
 }
 
@@ -785,12 +787,23 @@ ul.footer-links {
   .col-8, .col-6, .col-4, .col-3, .col-2 {
     grid-column: span 12;
   }
-  .footer-top {
-    grid-template-columns: 1fr;
-    gap: 32px;
+  .footer-top,
+  .footer-grid-horizontal {
+    grid-template-columns: 1fr !important;
+    gap: 28px !important;
+  }
+  .footer-horizontal-hero {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 16px !important;
+  }
+  .footer-hero-actions {
+    width: 100% !important;
+    justify-content: flex-start !important;
   }
   .footer-bottom {
-    flex-direction: column;
-    text-align: center;
+    flex-direction: column !important;
+    text-align: center !important;
+    gap: 12px !important;
   }
 }
