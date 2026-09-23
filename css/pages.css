@@ -544,24 +544,24 @@ body.editorial-home {
   }
 }
 
-/* ── ULTRA-PREMIUM GRADIENT WHITE THEME (Clean Satin Studio with Texture) ── */
+/* ── ULTRA-PREMIUM MIDNIGHT NAVY THEME (PREVIOUSLY WHITE THEME) ── */
 .section--white {
-  background-color: #F8FAFC !important;
+  background-color: #020610 !important;
   background-image: 
-    radial-gradient(ellipse 80% 50% at 50% 0%, rgba(2, 132, 199, 0.10) 0%, transparent 70%),
-    radial-gradient(ellipse 60% 50% at 90% 85%, rgba(245, 158, 11, 0.08) 0%, transparent 55%),
-    radial-gradient(circle at 1.5px 1.5px, rgba(9, 21, 43, 0.105) 1.5px, transparent 0),
-    linear-gradient(180deg, #FFFFFF 0%, #F8FAFC 40%, #F1F5F9 100%) !important;
+    radial-gradient(ellipse 90% 70% at 50% 0%, rgba(14, 60, 130, 0.45) 0%, transparent 70%),
+    radial-gradient(ellipse 70% 50% at 85% 100%, rgba(245, 158, 11, 0.08) 0%, transparent 60%),
+    radial-gradient(circle at 1.5px 1.5px, rgba(56, 189, 248, 0.12) 1.2px, transparent 0),
+    linear-gradient(180deg, #071530 0%, #040D1E 48%, #020610 100%) !important;
   background-size: 100% 100%, 100% 100%, 20px 20px, 100% 100% !important;
-  color: #0F172A !important;
+  color: #FFFFFF !important;
   position: relative;
 }
 
 .section--white .roster-card {
-  background: #FFFFFF;
-  border: 1px solid #E2E8F0;
-  box-shadow: 0 10px 28px rgba(16, 28, 63, 0.06);
-  color: #0F172A;
+  background: rgba(8, 20, 44, 0.95) !important;
+  border: 1px solid rgba(56, 189, 248, 0.25) !important;
+  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.6) !important;
+  color: #FFFFFF !important;
 }
 
 .section--white .roster-card:after {
@@ -569,28 +569,28 @@ body.editorial-home {
 }
 
 .section--white .roster-card h3 {
-  color: #FFFFFF;
+  color: #FFFFFF !important;
 }
 
 .section--white .roster-card b {
-  color: #CBD5E1;
+  color: #CBD5E1 !important;
 }
 
 .section--white .media-grid a {
-  background: #FFFFFF;
-  border: 1px solid #E2E8F0;
-  box-shadow: 0 10px 26px rgba(16, 28, 63, 0.06);
+  background: rgba(8, 20, 44, 0.95) !important;
+  border: 1px solid rgba(56, 189, 248, 0.25) !important;
+  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.6) !important;
 }
 
 .section--white .partner-logo-grid div {
-  background: #FFFFFF;
-  border: 1px solid #E2E8F0;
-  color: #0F172A;
-  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.04);
+  background: rgba(16, 28, 63, 0.95) !important;
+  border: 1px solid rgba(56, 189, 248, 0.3) !important;
+  color: #FFFFFF !important;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.4) !important;
 }
 .section--white .partner-logo-grid div:hover {
-  border-color: #38BDF8;
-  background: #FFFFFF;
+  border-color: #38BDF8 !important;
+  background: rgba(2, 132, 199, 0.25) !important;
   transform: translateY(-2px);
 }
 
