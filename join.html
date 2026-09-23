@@ -3,101 +3,708 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Join CSK | Cayman Super Kings Fan Club</title>
-  <meta name="description" content="Become an official member of the Cayman Super Kings. Access priority tickets, member merchandise, and exclusive club updates.">
-  <link rel="icon" type="image/png" href="assets/csk-official-logo.png?v=20260907_6">
+  <title>Official Fan Vault | Cayman Super Kings</title>
+  <meta name="description" content="Join the Cayman Super Kings Lions Brigade. Get your official 2026 digital fan pass, matchday perks, 15% kit discount, and exclusive squad dispatches.">
+  <link rel="icon" type="image/png" href="assets/csk-official-logo.png?v=20260907_9">
   <link rel="shortcut icon" href="favicon.ico">
-  <link rel="apple-touch-icon" href="assets/csk-official-logo.png?v=20260907_6">
+  <link rel="apple-touch-icon" href="assets/csk-official-logo.png?v=20260907_9">
   
-  <link rel="stylesheet" href="css/tokens.css?v=20260907_6">
-  <link rel="stylesheet" href="css/layout.css?v=20260907_6">
-  <link rel="stylesheet" href="css/components.css?v=20260907_6">
-  <link rel="stylesheet" href="css/pages.css?v=20260907_6">
+  <link rel="stylesheet" href="css/tokens.css?v=20260907_9">
+  <link rel="stylesheet" href="css/layout.css?v=20260907_9">
+  <link rel="stylesheet" href="css/components.css?v=20260907_9">
+  <link rel="stylesheet" href="css/pages.css?v=20260907_9">
+  
+  <style>
+    /* ── Bespoke Luxury Fan Vault Portal ── */
+    .fan-portal-viewport {
+      min-height: calc(100vh - 120px);
+      padding: 64px 20px 96px;
+      position: relative;
+      background: 
+        radial-gradient(ellipse 90% 60% at 50% 10%, rgba(2, 132, 199, 0.14) 0%, transparent 65%),
+        radial-gradient(ellipse 70% 50% at 85% 80%, rgba(245, 158, 11, 0.08) 0%, transparent 55%),
+        radial-gradient(circle at 1px 1px, rgba(56, 189, 248, 0.08) 1.2px, transparent 0),
+        linear-gradient(180deg, #040B18 0%, #061226 50%, #02060E 100%);
+      background-size: 100% 100%, 100% 100%, 24px 24px, 100% 100%;
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+    }
+
+    .fan-portal-viewport::before {
+      content: '';
+      position: absolute;
+      top: -150px;
+      left: 10%;
+      width: 500px;
+      height: 500px;
+      background: radial-gradient(circle, rgba(2, 132, 199, 0.18) 0%, transparent 70%);
+      filter: blur(60px);
+      pointer-events: none;
+    }
+
+    .fan-portal-container {
+      max-width: 1240px;
+      margin: 0 auto;
+      width: 100%;
+      position: relative;
+      z-index: 2;
+    }
+
+    .fan-portal-grid {
+      display: grid;
+      grid-template-columns: 1.18fr 0.88fr;
+      gap: 56px;
+      align-items: center;
+    }
+
+    /* ── Left Showcase: Heritage & Digital VIP Pass ── */
+    .portal-hero-showcase {
+      color: #FFFFFF;
+      display: flex;
+      flex-direction: column;
+      gap: 28px;
+    }
+
+    .portal-badge-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(11, 37, 88, 0.7);
+      border: 1px solid rgba(56, 189, 248, 0.4);
+      color: #38BDF8;
+      font-family: var(--font-display, 'Rajdhani', sans-serif);
+      font-size: 0.82rem;
+      font-weight: 800;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      padding: 6px 18px;
+      border-radius: 999px;
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.3);
+      width: fit-content;
+      backdrop-filter: blur(8px);
+    }
+
+    .portal-badge-pill .pill-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: #FCD34D;
+      box-shadow: 0 0 8px #FCD34D;
+    }
+
+    .portal-hero-title {
+      font-family: var(--font-display, 'Rajdhani', sans-serif);
+      font-size: clamp(2.5rem, 4.8vw, 3.8rem);
+      font-weight: 900;
+      line-height: 1.05;
+      letter-spacing: 0.02em;
+      text-transform: uppercase;
+      color: #FFFFFF;
+      margin: 0;
+      text-shadow: 0 4px 24px rgba(0, 0, 0, 0.6);
+    }
+
+    .portal-hero-title .gold-accent {
+      background: linear-gradient(135deg, #FFFFFF 0%, #FDE68A 45%, #F59E0B 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .portal-hero-desc {
+      font-size: 1.05rem;
+      color: #CBD5E1;
+      line-height: 1.65;
+      margin: 0;
+      max-width: 580px;
+    }
+
+    /* ── Holographic 3D Digital Member Pass ── */
+    .portal-card-preview-wrap {
+      perspective: 1200px;
+      max-width: 480px;
+      margin-top: 4px;
+    }
+
+    .vip-fan-pass {
+      background: 
+        radial-gradient(circle at 90% 10%, rgba(252, 211, 77, 0.22) 0%, transparent 50%),
+        radial-gradient(circle at 10% 90%, rgba(56, 189, 248, 0.18) 0%, transparent 50%),
+        linear-gradient(135deg, #0B1D40 0%, #061126 50%, #030814 100%);
+      border: 1.5px solid rgba(252, 211, 77, 0.45);
+      border-radius: 18px;
+      padding: 24px 28px;
+      box-shadow: 
+        0 24px 50px rgba(0, 0, 0, 0.7),
+        inset 0 1px 2px rgba(255, 255, 255, 0.25),
+        0 0 28px rgba(2, 132, 199, 0.15);
+      position: relative;
+      overflow: hidden;
+      transition: transform 0.4s ease, box-shadow 0.4s ease;
+    }
+
+    .vip-fan-pass:hover {
+      transform: translateY(-4px) rotateX(2deg) rotateY(-2deg);
+      box-shadow: 
+        0 30px 60px rgba(0, 0, 0, 0.8),
+        0 0 35px rgba(252, 211, 77, 0.25);
+    }
+
+    .vip-fan-pass::after {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: linear-gradient(
+        45deg,
+        transparent 45%,
+        rgba(255, 255, 255, 0.08) 50%,
+        transparent 55%
+      );
+      transform: rotate(35deg);
+      pointer-events: none;
+    }
+
+    .pass-header-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+
+    .pass-brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .pass-crest-img {
+      width: 44px;
+      height: 44px;
+      object-fit: contain;
+      filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.5));
+    }
+
+    .pass-brand-text h5 {
+      font-family: var(--font-display, 'Rajdhani', sans-serif);
+      font-size: 1.15rem;
+      font-weight: 900;
+      color: #FFFFFF;
+      margin: 0;
+      letter-spacing: 0.04em;
+    }
+
+    .pass-brand-text span {
+      font-family: "SF Mono", monospace;
+      font-size: 0.68rem;
+      color: #FCD34D;
+      font-weight: 800;
+      letter-spacing: 0.1em;
+    }
+
+    .pass-chip-wrap {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .emv-gold-chip {
+      width: 34px;
+      height: 26px;
+      background: linear-gradient(135deg, #FDE68A 0%, #D97706 60%, #92400E 100%);
+      border-radius: 5px;
+      border: 1px solid #FCD34D;
+      box-shadow: inset 0 1px 2px rgba(255, 255, 255, 0.6), 0 2px 6px rgba(0, 0, 0, 0.4);
+      position: relative;
+    }
+
+    .emv-gold-chip::before {
+      content: '';
+      position: absolute;
+      inset: 4px;
+      border: 1px solid rgba(0, 0, 0, 0.25);
+      border-radius: 3px;
+    }
+
+    .nfc-wave-icon {
+      color: rgba(255, 255, 255, 0.5);
+    }
+
+    .pass-mid-row {
+      margin-bottom: 22px;
+    }
+
+    .pass-number {
+      font-family: "SF Mono", monospace;
+      font-size: 1.1rem;
+      font-weight: 700;
+      letter-spacing: 0.16em;
+      color: #F8FAFC;
+      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
+      margin-bottom: 4px;
+    }
+
+    .pass-holder-label {
+      font-size: 0.65rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: #94A3B8;
+      font-weight: 700;
+    }
+
+    .pass-footer-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      padding-top: 14px;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .pass-holder-name {
+      font-family: var(--font-display, 'Rajdhani', sans-serif);
+      font-size: 1.05rem;
+      font-weight: 900;
+      color: #FFFFFF;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .pass-tier-badge {
+      background: rgba(252, 211, 77, 0.15);
+      border: 1px solid rgba(252, 211, 77, 0.5);
+      color: #FCD34D;
+      font-family: var(--font-display, 'Rajdhani', sans-serif);
+      font-size: 0.72rem;
+      font-weight: 900;
+      padding: 3px 10px;
+      border-radius: 6px;
+      letter-spacing: 0.08em;
+    }
+
+    /* ── Prestige Perks Grid (Clean Vector Cards) ── */
+    .portal-perks-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+
+    .prestige-perk-card {
+      background: rgba(7, 20, 44, 0.65);
+      border: 1px solid rgba(56, 189, 248, 0.2);
+      border-radius: 12px;
+      padding: 16px 18px;
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      backdrop-filter: blur(10px);
+      transition: all 0.25s ease;
+    }
+
+    .prestige-perk-card:hover {
+      border-color: rgba(56, 189, 248, 0.5);
+      background: rgba(11, 28, 62, 0.85);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.35);
+    }
+
+    .perk-svg-wrap {
+      width: 36px;
+      height: 36px;
+      border-radius: 10px;
+      background: rgba(2, 132, 199, 0.15);
+      border: 1px solid rgba(56, 189, 248, 0.3);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #38BDF8;
+      flex-shrink: 0;
+    }
+
+    .perk-info h4 {
+      font-family: var(--font-display, 'Rajdhani', sans-serif);
+      font-size: 0.96rem;
+      font-weight: 800;
+      color: #FFFFFF;
+      margin: 0 0 3px;
+      letter-spacing: 0.02em;
+    }
+
+    .perk-info p {
+      font-size: 0.82rem;
+      color: #94A3B8;
+      line-height: 1.4;
+      margin: 0;
+    }
+
+    /* ── Social Proof Strip ── */
+    .portal-proof-strip {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      padding-top: 4px;
+    }
+
+    .proof-avatar-stack {
+      display: flex;
+      align-items: center;
+    }
+
+    .proof-avatar {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      border: 2px solid #061226;
+      margin-left: -8px;
+      background-size: cover;
+      background-position: center;
+    }
+
+    .proof-avatar:first-child {
+      margin-left: 0;
+    }
+
+    .proof-text {
+      font-size: 0.86rem;
+      color: #CBD5E1;
+      font-weight: 600;
+    }
+
+    .proof-text strong {
+      color: #FCD34D;
+      font-weight: 800;
+    }
+
+    /* ── Right Column: Obsidian Glass Auth Terminal ── */
+    .vault-auth-terminal {
+      background: rgba(6, 16, 36, 0.82);
+      border: 1.5px solid rgba(56, 189, 248, 0.3);
+      border-radius: 22px;
+      padding: 38px 34px;
+      box-shadow: 
+        0 30px 70px rgba(0, 0, 0, 0.7),
+        0 0 30px rgba(2, 132, 199, 0.15),
+        inset 0 1px 1px rgba(255, 255, 255, 0.15);
+      backdrop-filter: blur(24px);
+      -webkit-backdrop-filter: blur(24px);
+      position: relative;
+    }
+
+    .vault-auth-terminal::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 15%;
+      right: 15%;
+      height: 1.5px;
+      background: linear-gradient(90deg, transparent 0%, #38BDF8 50%, transparent 100%);
+    }
+
+    .vault-tabs-header {
+      display: flex;
+      background: rgba(3, 8, 18, 0.75);
+      padding: 5px;
+      border-radius: 12px;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      margin-bottom: 28px;
+    }
+
+    .vault-tab-trigger {
+      flex: 1;
+      padding: 11px 16px;
+      text-align: center;
+      background: transparent;
+      border: none;
+      color: #94A3B8;
+      font-family: var(--font-display, 'Rajdhani', sans-serif);
+      font-size: 0.95rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      border-radius: 9px;
+      cursor: pointer;
+      transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .vault-tab-trigger.active {
+      background: linear-gradient(135deg, #0284C7 0%, #0F3B78 100%);
+      color: #FFFFFF;
+      box-shadow: 0 4px 16px rgba(2, 132, 199, 0.4), inset 0 1px 1px rgba(255, 255, 255, 0.3);
+    }
+
+    .vault-input-group {
+      margin-bottom: 20px;
+    }
+
+    .vault-label-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 8px;
+    }
+
+    .vault-label {
+      font-family: var(--font-display, 'Rajdhani', sans-serif);
+      font-size: 0.85rem;
+      font-weight: 800;
+      color: #CBD5E1;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+
+    .vault-forgot-link {
+      font-size: 0.8rem;
+      color: #38BDF8;
+      text-decoration: none;
+      font-weight: 700;
+      transition: color 0.2s ease;
+    }
+
+    .vault-forgot-link:hover {
+      color: #7DD3FC;
+      text-decoration: underline;
+    }
+
+    .vault-input-wrapper {
+      position: relative;
+      display: flex;
+      align-items: center;
+    }
+
+    .vault-input-icon {
+      position: absolute;
+      left: 14px;
+      color: #64748B;
+      pointer-events: none;
+      display: flex;
+    }
+
+    .vault-input-field {
+      width: 100%;
+      background: #030814;
+      border: 1.5px solid rgba(56, 189, 248, 0.25);
+      border-radius: 11px;
+      padding: 14px 16px 14px 44px;
+      color: #FFFFFF;
+      font-family: var(--font-body);
+      font-size: 0.95rem;
+      transition: all 0.25s ease;
+      outline: none;
+    }
+
+    .vault-input-field:focus {
+      border-color: #38BDF8;
+      box-shadow: 0 0 0 3px rgba(56, 189, 248, 0.25), 0 0 16px rgba(56, 189, 248, 0.2);
+      background: #050E20;
+    }
+
+    .vault-pwd-toggle {
+      position: absolute;
+      right: 12px;
+      background: transparent;
+      border: none;
+      color: #64748B;
+      cursor: pointer;
+      display: flex;
+      padding: 4px;
+      transition: color 0.2s ease;
+    }
+
+    .vault-pwd-toggle:hover {
+      color: #38BDF8;
+    }
+
+    .vault-select-field {
+      width: 100%;
+      background: #030814;
+      border: 1.5px solid rgba(56, 189, 248, 0.25);
+      border-radius: 11px;
+      padding: 14px 16px 14px 44px;
+      color: #FFFFFF;
+      font-family: var(--font-body);
+      font-size: 0.92rem;
+      cursor: pointer;
+      outline: none;
+      transition: all 0.25s ease;
+    }
+
+    .vault-select-field:focus {
+      border-color: #38BDF8;
+      box-shadow: 0 0 0 3px rgba(56, 189, 248, 0.25);
+    }
+
+    .vault-cta-btn {
+      width: 100%;
+      background: linear-gradient(135deg, #FCD34D 0%, #F59E0B 50%, #D97706 100%);
+      color: #09152B;
+      border: none;
+      border-radius: 11px;
+      padding: 16px 24px;
+      font-family: var(--font-display, 'Rajdhani', sans-serif);
+      font-size: 1.08rem;
+      font-weight: 900;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      cursor: pointer;
+      box-shadow: 0 8px 24px rgba(245, 158, 11, 0.4), inset 0 1px 1px rgba(255, 255, 255, 0.6);
+      transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+      margin-top: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+    }
+
+    .vault-cta-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 32px rgba(245, 158, 11, 0.55), 0 0 20px rgba(252, 211, 77, 0.4);
+      background: linear-gradient(135deg, #FFEAA7 0%, #FCD34D 50%, #F59E0B 100%);
+    }
+
+    .vault-social-divider {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin: 22px 0 16px;
+      color: #64748B;
+      font-size: 0.78rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    .vault-social-divider::before,
+    .vault-social-divider::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: rgba(255, 255, 255, 0.1);
+    }
+
+    .vault-social-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin-bottom: 20px;
+    }
+
+    .vault-social-pill {
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: 10px;
+      padding: 10px 14px;
+      color: #E2E8F0;
+      font-family: var(--font-display, 'Rajdhani', sans-serif);
+      font-size: 0.88rem;
+      font-weight: 800;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      text-decoration: none;
+    }
+
+    .vault-social-pill:hover {
+      background: rgba(255, 255, 255, 0.08);
+      border-color: rgba(56, 189, 248, 0.4);
+      color: #FFFFFF;
+      transform: translateY(-1px);
+    }
+
+    .vault-switch-prompt {
+      text-align: center;
+      margin-top: 14px;
+      font-size: 0.88rem;
+      color: #94A3B8;
+    }
+
+    .vault-switch-link {
+      color: #38BDF8;
+      font-weight: 800;
+      text-decoration: none;
+      cursor: pointer;
+      margin-left: 4px;
+    }
+
+    .vault-switch-link:hover {
+      text-decoration: underline;
+      color: #7DD3FC;
+    }
+
+    .vault-security-strip {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 7px;
+      margin-top: 22px;
+      padding-top: 16px;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      color: #64748B;
+      font-size: 0.78rem;
+      font-weight: 600;
+    }
+
+    .vault-security-strip svg {
+      color: #22C55E;
+    }
+
+    @media (max-width: 1040px) {
+      .fan-portal-grid {
+        grid-template-columns: 1fr;
+        gap: 48px;
+      }
+      .portal-card-preview-wrap {
+        max-width: 100%;
+      }
+    }
+
+    @media (max-width: 580px) {
+      .portal-perks-grid {
+        grid-template-columns: 1fr;
+      }
+      .vault-auth-terminal {
+        padding: 28px 20px;
+      }
+      .pass-number {
+        font-size: 0.95rem;
+      }
+    }
+  </style>
 </head>
 <body>
-            <!-- CSK Branded Splash & Transition Screen (Arena Tech Edition) -->
-  <div id="csk-splash-screen" class="csk-splash-screen" aria-hidden="false">
-    <div class="csk-splash-screen__backdrop"></div>
-    <div class="csk-splash-screen__content">
-      <!-- Official Crest -->
-      <div class="csk-splash-screen__logo-wrap">
-        <img src="assets/csk-official-logo.png?v=20260907_6" alt="Cayman Super Kings" class="csk-splash-screen__image">
-      </div>
+  <!-- CSK CRICKET MATCHDAY POWERPLAY LOADER -->
+  <div id="csk-splash-screen" class="csk-splash-screen" aria-hidden="false"></div>
 
-      <!-- Professional Brand Heading -->
-      <div class="csk-splash-brand-wrap">
-        <h1 class="csk-splash-brand-title">CAYMAN SUPER KINGS</h1>
-        <p class="csk-splash-motto">★ ONE TEAM • ONE DREAM ★</p>
-      </div>
-
-      <!-- Arena Tech Loader (Exact Reference Match) -->
-      <div class="csk-arena-loader">
-        <div class="arena-loader-header">
-          <span class="arena-loader-status" id="arena-loader-status">INITIALIZING SYSTEM...</span>
-          <span class="arena-loader-pct tabular-nums" id="arena-loader-pct">0%</span>
-        </div>
-
-        <div class="arena-loader-track">
-          <div class="arena-loader-fill" id="arena-loader-fill"></div>
-        </div>
-
-        <div class="arena-loader-steps">
-          <span class="arena-step is-active" id="arena-step-1"><span class="step-dot" id="step-dot-1">●</span> ASSETS VERIFIED</span>
-          <span class="arena-step" id="arena-step-2"><span class="step-dot" id="step-dot-2">○</span> SYNCING ROSTER</span>
-          <span class="arena-step" id="arena-step-3"><span class="step-dot" id="step-dot-3">○</span> CONNECTING ARENA</span>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- Sticky Cricket Bat Header (CSK Blue & Yellow) -->
+  <!-- Professional Franchise Sports Navbar -->
   <header class="site-header">
     <div class="site-header__container">
-      <div class="cricket-bat-navbar">
-        <!-- Bat Blade Body -->
-        <div class="bat-blade">
-          <!-- Bat Toe Logo (Left) -->
-          <a href="index.html" class="bat-logo-link" aria-label="Cayman Super Kings Home">
-            <img src="assets/csk-official-logo.png?v=20260907_6" alt="Cayman Super Kings Logo" class="bat-logo-img">
+      <div class="franchise-navbar-wrap">
+        <div class="franchise-nav-bar">
+          <a href="index.html" class="franchise-logo-link" aria-label="Cayman Super Kings Home">
+            <img src="assets/csk-official-logo.png?v=20260907_9" alt="Cayman Super Kings Logo" class="franchise-logo-img">
           </a>
 
-          <!-- Mobile Menu Toggle -->
           <button class="mobile-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
             <span></span><span></span><span></span>
           </button>
 
-          <!-- Navigation Links -->
           <nav class="navbar-nav" aria-label="Main Navigation">
             <ul class="nav-menu">
               <li><a href="squad.html" class="nav-link">Squad</a></li>
-              <li class="nav-divider" aria-hidden="true">|</li>
               <li><a href="matches.html" class="nav-link">Fixtures</a></li>
-              <li class="nav-divider" aria-hidden="true">|</li>
               <li><a href="about.html" class="nav-link">CSK</a></li>
-              <li class="nav-divider" aria-hidden="true">|</li>
               <li><a href="partner.html" class="nav-link">Sponsors</a></li>
-              <li class="nav-divider" aria-hidden="true">|</li>
               <li><a href="gallery.html" class="nav-link">Gallery</a></li>
-              <li class="nav-divider" aria-hidden="true">|</li>
               <li><a href="news.html" class="nav-link">News</a></li>
             </ul>
           </nav>
-
-          <!-- Bat Shoulder Chevron Splice -->
-          <div class="bat-shoulder-splice" aria-hidden="true">
-            <svg viewBox="0 0 48 62" preserveAspectRatio="none" class="bat-splice-svg">
-              <path d="M0,0 L28,31 L0,62 L18,62 L46,31 L18,0 Z" fill="#081A38" opacity="0.7"/>
-              <path d="M18,0 L46,31 L18,62 L28,62 L48,40 L48,22 L28,0 Z" fill="#FAB81E" opacity="0.9"/>
-            </svg>
-          </div>
         </div>
 
-        <!-- Bat Handle (Right Extension) -->
-        <div class="bat-handle" aria-hidden="true"></div>
-
-        <!-- Bat Pommel / Fan Login Portal (Far Right) -->
-        <a href="join.html" class="bat-pommel-btn site-header__user-pill active" aria-label="Join CSK / Fan Portal" title="Join CSK">
-          <svg class="user-pill__icon" viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+        <a href="join.html" class="franchise-user-btn site-header__user-pill active" aria-label="Join CSK / Fan Portal" title="Join CSK / Fan Portal">
+          <svg class="user-pill__icon" viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
             <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
             <circle cx="12" cy="7" r="4"></circle>
           </svg>
@@ -107,153 +714,325 @@
   </header>
 
   <main>
-    <!-- JOIN SECTION -->
-    <section class="join-section">
-      <!-- Large Watermark Logo Aura -->
-      <img src="assets/csk-official-logo.png?v=20260907_6" alt="CSK Crest Watermark" class="join-bg-watermark">
+    <section class="fan-portal-viewport">
+      <div class="fan-portal-container">
+        <div class="fan-portal-grid">
+          
+          <!-- Left Column: Official Franchise Membership Showcase -->
+          <div class="portal-hero-showcase">
+            <div class="portal-badge-pill">
+              <span class="pill-dot"></span>
+              <span>OFFICIAL LIONS BRIGADE // 2026 SEASON</span>
+            </div>
 
-      <div class="join-container">
-        <h1 class="join-header-title">JOIN CSK</h1>
-        <p class="join-header-subtitle">WHISTLE PODU CAYMAN · OFFICIAL FAN &amp; MEMBERSHIP PORTAL</p>
+            <h1 class="portal-hero-title">
+              CLAIM YOUR OFFICIAL <br><span class="gold-accent">CSK DIGITAL FAN PASS</span>
+            </h1>
 
-        <!-- Glassmorphic Portal Card -->
-        <div class="join-card">
-          <!-- Tab Switcher -->
-          <div class="join-tabs" role="tablist">
-            <button id="tab-signin" class="join-tab-btn active" role="tab" aria-selected="true">Sign In</button>
-            <button id="tab-signup" class="join-tab-btn" role="tab" aria-selected="false">Sign Up</button>
+            <p class="portal-hero-desc">
+              Join Grand Cayman's premier cricket collective. Unlock matchday pavilion perks, 15% discount on official team merchandise, and exclusive dressing room dispatches.
+            </p>
+
+            <!-- Holographic VIP Fan Pass Mockup -->
+            <div class="portal-card-preview-wrap">
+              <div class="vip-fan-pass" id="interactive-fan-card">
+                <div class="pass-header-row">
+                  <div class="pass-brand">
+                    <img src="assets/csk-official-logo.png?v=20260907_9" alt="CSK Crest" class="pass-crest-img">
+                    <div class="pass-brand-text">
+                      <h5>CAYMAN SUPER KINGS</h5>
+                      <span>LIONS BRIGADE VIP</span>
+                    </div>
+                  </div>
+                  <div class="pass-chip-wrap">
+                    <div class="emv-gold-chip"></div>
+                    <svg class="nfc-wave-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M8.5 16.5a5 5 0 0 1 0-9"/><path d="M12 19a8.5 8.5 0 0 0 0-14"/><path d="M15.5 21.5a12 12 0 0 0 0-19"/></svg>
+                  </div>
+                </div>
+
+                <div class="pass-mid-row">
+                  <div class="pass-number">CSK • 2026 • 8841 • 0922</div>
+                  <div class="pass-holder-label">OFFICIAL MEMBER ID // GRAND CAYMAN</div>
+                </div>
+
+                <div class="pass-footer-row">
+                  <div>
+                    <div class="pass-holder-name" id="card-display-name">YELLOW ARMY SUPPORTER</div>
+                    <div class="pass-holder-label">VALID THRU: 12/2026</div>
+                  </div>
+                  <div class="pass-tier-badge">FOUNDING SUPPORTER</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- 4 Prestige Perks with Clean SVG Vector Icons -->
+            <div class="portal-perks-grid">
+              <div class="prestige-perk-card">
+                <div class="perk-svg-wrap">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M2 9a3 3 0 0 1 0 6v2a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-2a3 3 0 0 1 0-6V7a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2Z"/><path d="M13 5v2"/><path d="M13 17v2"/><path d="M13 11v2"/></svg>
+                </div>
+                <div class="perk-info">
+                  <h4>Pavilion Match Seating</h4>
+                  <p>Reserved front-row seating &amp; hospitality at Jimmy Powell Oval.</p>
+                </div>
+              </div>
+
+              <div class="prestige-perk-card">
+                <div class="perk-svg-wrap">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M20.38 3.46 16 2a4 4 0 0 1-8 0L3.62 3.46a2 2 0 0 0-1.34 2.23l.58 3.47a1 1 0 0 0 .99.84H6v10c0 1.1.9 2 2 2h8a2 2 0 0 0 2-2V10h2.15a1 1 0 0 0 .99-.84l.58-3.47a2 2 0 0 0-1.34-2.23z"/></svg>
+                </div>
+                <div class="perk-info">
+                  <h4>15% Off Official Kits</h4>
+                  <p>Privilege pricing on official match jerseys, caps, and training wear.</p>
+                </div>
+              </div>
+
+              <div class="prestige-perk-card">
+                <div class="perk-svg-wrap">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+                </div>
+                <div class="perk-info">
+                  <h4>Live Lineup &amp; Toss Intel</h4>
+                  <p>Instant Playing XI and pitch reports sent straight to your phone.</p>
+                </div>
+              </div>
+
+              <div class="prestige-perk-card">
+                <div class="perk-svg-wrap">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                </div>
+                <div class="perk-info">
+                  <h4>Captain Meet &amp; Greets</h4>
+                  <p>Exclusive squad sessions with Captain Rahul Garg and coaching staff.</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Social Proof Bar -->
+            <div class="portal-proof-strip">
+              <div class="proof-avatar-stack">
+                <div class="proof-avatar" style="background-image: url('assets/csk-rahul-garg.png');"></div>
+                <div class="proof-avatar" style="background-image: url('assets/csk-christopher.png');"></div>
+                <div class="proof-avatar" style="background-image: url('assets/csk-action.png');"></div>
+                <div class="proof-avatar" style="background-image: url('assets/csk-hero.png');"></div>
+              </div>
+              <span class="proof-text">
+                Join <strong>1,480+ Supporters</strong> across the Cayman Islands
+              </span>
+            </div>
           </div>
 
-          <!-- SIGN IN FORM -->
-          <form id="form-signin" class="join-form" onsubmit="event.preventDefault(); window.handleAuth('signin');">
-            <div class="join-form-group">
-              <input type="email" id="signin-email" class="join-input" placeholder="Email" required autocomplete="email">
-              <span class="join-input-hint">Enter email for sign in</span>
+          <!-- Right Column: Obsidian Glass Auth Terminal -->
+          <div class="vault-auth-terminal">
+            <div class="vault-tabs-header" role="tablist">
+              <button id="tab-signin" class="vault-tab-trigger active" role="tab" aria-selected="true">Sign In</button>
+              <button id="tab-signup" class="vault-tab-trigger" role="tab" aria-selected="false">Claim Fan Pass</button>
             </div>
 
-            <div class="join-form-group">
-              <div class="join-password-wrap">
-                <input type="password" id="signin-password" class="join-input" placeholder="Password" required autocomplete="current-password">
-                <button type="button" class="join-eye-toggle" aria-label="Toggle password visibility" onclick="window.togglePassword('signin-password')">
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+            <!-- SIGN IN FORM -->
+            <form id="form-signin" onsubmit="event.preventDefault(); window.handleAuth('signin');">
+              <div class="vault-input-group">
+                <div class="vault-label-row">
+                  <label for="signin-email" class="vault-label">Official Fan ID / Email</label>
+                </div>
+                <div class="vault-input-wrapper">
+                  <span class="vault-input-icon">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                  </span>
+                  <input type="email" id="signin-email" class="vault-input-field" placeholder="name@example.com" required autocomplete="email">
+                </div>
+              </div>
+
+              <div class="vault-input-group">
+                <div class="vault-label-row">
+                  <label for="signin-password" class="vault-label">Password</label>
+                  <a href="#" class="vault-forgot-link" onclick="event.preventDefault(); alert('Password reset verification link has been sent to your email.');">Forgot Password?</a>
+                </div>
+                <div class="vault-input-wrapper">
+                  <span class="vault-input-icon">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+                  </span>
+                  <input type="password" id="signin-password" class="vault-input-field" style="padding-right: 44px;" placeholder="••••••••" required autocomplete="current-password">
+                  <button type="button" class="vault-pwd-toggle" onclick="window.togglePassword('signin-password')" aria-label="Toggle password visibility">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+                  </button>
+                </div>
+              </div>
+
+              <button type="submit" class="vault-cta-btn">
+                <span>Enter Fan Vault</span>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+              </button>
+
+              <div class="vault-social-divider">Or Quick Access With</div>
+
+              <div class="vault-social-grid">
+                <button type="button" class="vault-social-pill" onclick="window.handleAuth('google')">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12.48 10.92v3.28h7.84c-.24 1.84-.853 3.187-1.787 4.133-1.147 1.147-2.933 2.4-6.053 2.4-4.827 0-8.6-3.893-8.6-8.72s3.773-8.72 8.6-8.72c2.6 0 4.507 1.027 5.907 2.347l2.307-2.307C18.747 1.44 16.053 0 12.48 0 5.867 0 .307 5.387.307 12s5.56 12 12.173 12c3.573 0 6.267-1.173 8.373-3.36 2.16-2.16 2.84-5.213 2.84-7.667 0-.76-.053-1.467-.173-2.053H12.48z"/></svg>
+                  <span>Google</span>
+                </button>
+                <button type="button" class="vault-social-pill" onclick="window.handleAuth('apple')">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M15.97 6.37c.61-.75 1.04-1.8 1.01-2.85-.96.04-2.11.64-2.79 1.43-.59.68-1.1 1.76-1.03 2.8.07.01.14.02.21.02.99 0 2-.65 2.6-1.4z"/></svg>
+                  <span>Apple ID</span>
                 </button>
               </div>
-              <span class="join-input-hint">Enter password to continue</span>
-            </div>
 
-            <div class="join-forgot-row">
-              <a href="#" class="join-forgot-link" onclick="event.preventDefault(); alert('Password reset instructions have been sent to your registered email.');">Forgot Password?</a>
-            </div>
-
-            <button type="submit" class="join-submit-btn">
-              <span>Sign In</span>
-            </button>
-
-            <div class="join-switch-text">
-              New to CSK? <span class="join-switch-link" onclick="window.switchTab('signup')">Sign Up</span>
-            </div>
-          </form>
-
-          <!-- SIGN UP FORM (Initially Hidden) -->
-          <form id="form-signup" class="join-form" style="display: none;" onsubmit="event.preventDefault(); window.handleAuth('signup');">
-            <div class="join-form-group">
-              <input type="text" id="signup-name" class="join-input" placeholder="Full Name" required autocomplete="name">
-              <span class="join-input-hint">Enter your full name</span>
-            </div>
-
-            <div class="join-form-group">
-              <input type="email" id="signup-email" class="join-input" placeholder="Email Address" required autocomplete="email">
-              <span class="join-input-hint">Enter your email address</span>
-            </div>
-
-            <div class="join-form-group">
-              <div class="join-password-wrap">
-                <input type="password" id="signup-password" class="join-input" placeholder="Create Password" required autocomplete="new-password">
-                <button type="button" class="join-eye-toggle" aria-label="Toggle password visibility" onclick="window.togglePassword('signup-password')">
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
-                </button>
+              <div class="vault-switch-prompt">
+                Not registered yet? <a class="vault-switch-link" onclick="window.switchTab('signup')">Claim Free Fan Pass ➔</a>
               </div>
-              <span class="join-input-hint">At least 8 characters with numbers &amp; symbols</span>
-            </div>
+            </form>
 
-            <div class="join-form-group">
-              <select id="signup-tier" class="join-input" style="cursor: pointer;">
-                <option value="fan">💛 Official Whistle Podu Fan Pass (Free)</option>
-                <option value="gold">🏆 CSK Gold Season Pass (KYD 25/yr)</option>
-                <option value="youth">🦁 Junior Super Kings Under-19 Academy</option>
-              </select>
-              <span class="join-input-hint">Select membership tier</span>
-            </div>
+            <!-- SIGN UP / CLAIM FAN PASS FORM -->
+            <form id="form-signup" style="display: none;" onsubmit="event.preventDefault(); window.handleAuth('signup');">
+              <div class="vault-input-group">
+                <div class="vault-label-row">
+                  <label for="signup-name" class="vault-label">Full Name</label>
+                </div>
+                <div class="vault-input-wrapper">
+                  <span class="vault-input-icon">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                  </span>
+                  <input type="text" id="signup-name" class="vault-input-field" placeholder="e.g. Sahitya Singh" required autocomplete="name" oninput="window.updateCardName(this.value)">
+                </div>
+              </div>
 
-            <button type="submit" class="join-submit-btn">
-              <span>Create Account &amp; Join</span>
-            </button>
+              <div class="vault-input-group">
+                <div class="vault-label-row">
+                  <label for="signup-email" class="vault-label">Email Address</label>
+                </div>
+                <div class="vault-input-wrapper">
+                  <span class="vault-input-icon">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                  </span>
+                  <input type="email" id="signup-email" class="vault-input-field" placeholder="name@example.com" required autocomplete="email">
+                </div>
+              </div>
 
-            <div class="join-switch-text">
-              Already a Member? <span class="join-switch-link" onclick="window.switchTab('signin')">Sign In</span>
-            </div>
-          </form>
+              <div class="vault-input-group">
+                <div class="vault-label-row">
+                  <label for="signup-password" class="vault-label">Create Vault Password</label>
+                </div>
+                <div class="vault-input-wrapper">
+                  <span class="vault-input-icon">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+                  </span>
+                  <input type="password" id="signup-password" class="vault-input-field" style="padding-right: 44px;" placeholder="Min. 8 characters" required autocomplete="new-password">
+                  <button type="button" class="vault-pwd-toggle" onclick="window.togglePassword('signup-password')" aria-label="Toggle password visibility">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+                  </button>
+                </div>
+              </div>
 
-          <!-- Membership Perks Checklist -->
-          <div class="join-perks-grid">
-            <div class="join-perk-item">
-              <span class="join-perk-icon">🎟️</span>
-              <span>Priority Matchday Seating</span>
-            </div>
-            <div class="join-perk-item">
-              <span class="join-perk-icon">👕</span>
-              <span>15% Off Official CSK Kits</span>
-            </div>
-            <div class="join-perk-item">
-              <span class="join-perk-icon">🏏</span>
-              <span>Exclusive Meet &amp; Greets</span>
-            </div>
-            <div class="join-perk-item">
-              <span class="join-perk-icon">⚡</span>
-              <span>Early Team Lineup Access</span>
+              <div class="vault-input-group">
+                <div class="vault-label-row">
+                  <label for="signup-tier" class="vault-label">Membership Category</label>
+                </div>
+                <div class="vault-input-wrapper">
+                  <span class="vault-input-icon">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="7"/><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"/></svg>
+                  </span>
+                  <select id="signup-tier" class="vault-select-field">
+                    <option value="fan">💛 Official CSK Fan Pass (Complimentary)</option>
+                    <option value="gold">🏆 CSK Gold Season Pass (KYD 25/yr)</option>
+                    <option value="youth">🦁 Junior Super Kings Under-19 Academy</option>
+                  </select>
+                </div>
+              </div>
+
+              <button type="submit" class="vault-cta-btn">
+                <span>Activate Official Fan Pass</span>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+              </button>
+
+              <div class="vault-switch-prompt">
+                Already have a pass? <a class="vault-switch-link" onclick="window.switchTab('signin')">Sign In ➔</a>
+              </div>
+            </form>
+
+            <div class="vault-security-strip">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+              <span>Verified Official CICA Member Portal · 256-Bit TLS Encryption</span>
             </div>
           </div>
+
         </div>
       </div>
     </section>
-      
   </main>
 
   <!-- Site Footer -->
-    <footer class="site-footer editorial-footer">
-    <div class="container footer-top">
-      <div class="footer-brand">
-        <img src="assets/csk-official-logo.png?v=20260907_6" alt="CSK crest">
-        <h3>ONE TEAM.<br>ONE DREAM.</h3>
-        <p>© 2026 Cayman Super Kings Cricket Club. All rights reserved.</p>
+  <footer class="site-footer editorial-footer">
+    <div class="container">
+      <!-- Horizontal Brand & Action Hero Bar -->
+      <div class="footer-horizontal-hero">
+        <div class="footer-hero-brand">
+          <img src="assets/csk-official-logo.png?v=20260907_9" alt="CSK Official Crest">
+          <div class="footer-hero-titles">
+            <h3>CAYMAN SUPER KINGS</h3>
+            <span>ONE TEAM • ONE DREAM // EST. 2022</span>
+          </div>
+        </div>
+        <div class="footer-hero-actions">
+          <a href="join.html" class="footer-action-btn footer-action-btn--primary">
+            <span>🦁 Join Fan Vault</span>
+          </a>
+          <a href="https://www.instagram.com/caymansuperkings?igsi=aXBpaHY2azlxNGF1" target="_blank" rel="noopener noreferrer" class="footer-action-btn footer-action-btn--secondary">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+            <span>@caymansuperkings ↗</span>
+          </a>
+        </div>
       </div>
-      <div>
-        <h4 class="footer-heading" style="color: #FFFFFF !important; font-weight: 900 !important;">Cayman Super Kings</h4>
-        <ul class="footer-links">
-          <li><a href="about.html">About the club</a></li>
-          <li><a href="squad.html">The squad</a></li>
-          <li><a href="matches.html">Fixtures & results</a></li>
-          <li><a href="youth.html">CSK Academy</a></li>
-        </ul>
+
+      <!-- 4-Column Horizontal Layout -->
+      <div class="footer-top">
+        <div class="footer-col">
+          <h4 class="footer-heading">Club &amp; Heritage</h4>
+          <ul class="footer-links">
+            <li><a href="about.html">About the Club</a></li>
+            <li><a href="about.html#tab-history">Origins &amp; Timeline</a></li>
+            <li><a href="about.html#tab-honours">Silverware &amp; Honours</a></li>
+            <li><a href="about.html#tab-ground">Home Fortress</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4 class="footer-heading">Squad &amp; Matches</h4>
+          <ul class="footer-links">
+            <li><a href="squad.html">Men's Senior Squad</a></li>
+            <li><a href="matches.html">Fixtures &amp; Live Scores</a></li>
+            <li><a href="youth.html">CSK Youth Academy</a></li>
+            <li><a href="matches.html">Results &amp; Match Reports</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4 class="footer-heading">Media &amp; Community</h4>
+          <ul class="footer-links">
+            <li><a href="news.html">Latest News &amp; Recaps</a></li>
+            <li><a href="gallery.html">Official Media Vault</a></li>
+            <li><a href="join.html">Official Fan Portal</a></li>
+            <li><a href="index.html#social">Yellow Army Fan Zone</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4 class="footer-heading">Commercial &amp; Contact</h4>
+          <ul class="footer-links">
+            <li><a href="partner.html">Partner With CSK</a></li>
+            <li><a href="partner.html#deck">Sponsorship Opportunities</a></li>
+            <li><a href="contact.html">Contact Committee</a></li>
+            <li><a href="contact.html#join">Player Registration</a></li>
+          </ul>
+        </div>
       </div>
-      <div>
-        <h4 class="footer-heading" style="color: #FFFFFF !important; font-weight: 900 !important;">Connect</h4>
-        <ul class="footer-links">
-          <li><a href="https://www.instagram.com/caymansuperkings?igsi=aXBpaHY2azlxNGF1" target="_blank" rel="noopener noreferrer" style="color: #FAB81E; font-weight: 700;">Instagram @caymansuperkings ↗</a></li>
-          <li><a href="news.html">Latest news</a></li>
-          <li><a href="gallery.html">Media vault</a></li>
-          <li><a href="partner.html">Partner with us</a></li>
-          <li><a href="contact.html">Contact committee</a></li>
-        </ul>
+
+      <!-- Horizontal Bottom Bar -->
+      <div class="footer-bottom">
+        <span>© 2026 Cayman Super Kings Cricket Club. All rights reserved.</span>
+        <span>Affiliated with Cayman Islands Cricket Association (CICA)</span>
+        <span><a href="about.html">Privacy Policy</a> · <a href="about.html">Terms of Association</a></span>
       </div>
-    </div>
-    <div class="container footer-bottom">
-      <span>Affiliated with Cayman Islands Cricket Association</span>
-      <span><a href="about.html">Privacy Policy</a> · <a href="about.html">Terms of Association</a></span>
     </div>
   </footer>
 
-  <script type="module" src="js/app.js?v=20260907_6"></script>
+  <script type="module" src="js/app.js?v=20260907_9"></script>
   <script>
     window.switchTab = function(tab) {
       const btnIn = document.getElementById('tab-signin');
@@ -290,9 +1069,22 @@
       }
     };
 
+    window.updateCardName = function(name) {
+      const display = document.getElementById('card-display-name');
+      if (display) {
+        display.textContent = name.trim() ? name.toUpperCase() : 'YELLOW ARMY SUPPORTER';
+      }
+    };
+
     window.handleAuth = function(type) {
-      const action = type === 'signin' ? 'Signed in' : 'Welcome to CSK! Registration';
-      alert(`${action} successful! Welcome to Cayman Super Kings Official Fan Vault.`);
+      const name = document.getElementById('signup-name') ? document.getElementById('signup-name').value : '';
+      const action = type === 'signup' 
+        ? `🎉 Welcome to the Yellow Army${name ? ', ' + name : ''}! Your Official 2026 CSK Fan Pass is now active.`
+        : (type === 'google' || type === 'apple' 
+          ? `Authenticated via ${type === 'google' ? 'Google' : 'Apple ID'}! Welcome back to Cayman Super Kings Fan Vault.`
+          : 'Signed in successfully! Welcome back to Cayman Super Kings Official Fan Vault.');
+      
+      alert(action);
       window.location.href = 'index.html';
     };
   </script>

@@ -1,93 +1,127 @@
 /**
  * ─────────────────────────────────────────────────────────────
- * HERO IMAGE SLIDER MODULE (3 Featured Photos)
+ * HERO IMAGE SLIDER MODULE (3 Featured Matchday Photos)
+ * Automatically cycles through hero photos with smooth
+ * crossfade transitions and interactive dot indicators.
  * ─────────────────────────────────────────────────────────────
  */
 
-export function initHeroSlider() {
-  const slider = document.getElementById('hero-slider');
-  if (!slider) return;
+let heroSliderAutoplayTimer = null;
+let currentSlideIndex = 0;
+let isHeroSliderBound = false;
 
-  const slides = slider.querySelectorAll('.hero-slide');
+export function initHeroSlider() {
+  const container = document.getElementById('hero-cinematic') || document.getElementById('hero-slider');
+  if (!container) return;
+
+  const slides = container.querySelectorAll('.hero-slide');
+  const dots = container.querySelectorAll('.slide-indicator-dot, .slider-dot');
   const prevBtn = document.getElementById('slider-prev');
   const nextBtn = document.getElementById('slider-next');
-  const dots = slider.querySelectorAll('.slider-dot');
 
-  if (!slides.length) return;
+  if (!slides || slides.length === 0) return;
 
-  let currentIndex = 0;
-  let autoplayTimer = null;
   const slideCount = slides.length;
-  const interval = 5500; // 5.5s autoplay
+  const interval = 3500; // 3.5s smooth auto crossfade
 
-  function goToSlide(index) {
-    slides[currentIndex].classList.remove('active');
-    if (dots[currentIndex]) dots[currentIndex].classList.remove('active');
+  function renderSlide(targetIndex) {
+    currentSlideIndex = (targetIndex + slideCount) % slideCount;
 
-    currentIndex = (index + slideCount) % slideCount;
+    slides.forEach((slide, idx) => {
+      const isActive = idx === currentSlideIndex;
+      slide.classList.toggle('active', isActive);
+      slide.style.opacity = isActive ? '1' : '0';
+      slide.style.zIndex = isActive ? '3' : '1';
+      slide.style.pointerEvents = isActive ? 'auto' : 'none';
+    });
 
-    slides[currentIndex].classList.add('active');
-    if (dots[currentIndex]) dots[currentIndex].classList.add('active');
+    dots.forEach((dot, idx) => {
+      dot.classList.toggle('active', idx === currentSlideIndex);
+    });
   }
 
   function nextSlide() {
-    goToSlide(currentIndex + 1);
+    renderSlide(currentSlideIndex + 1);
   }
 
   function prevSlide() {
-    goToSlide(currentIndex - 1);
+    renderSlide(currentSlideIndex - 1);
   }
 
   function startAutoplay() {
     stopAutoplay();
-    autoplayTimer = setInterval(nextSlide, interval);
+    heroSliderAutoplayTimer = setInterval(nextSlide, interval);
   }
 
   function stopAutoplay() {
-    if (autoplayTimer) {
-      clearInterval(autoplayTimer);
-      autoplayTimer = null;
+    if (heroSliderAutoplayTimer) {
+      clearInterval(heroSliderAutoplayTimer);
+      heroSliderAutoplayTimer = null;
     }
   }
 
-  if (prevBtn) {
-    prevBtn.addEventListener('click', (e) => {
-      e.preventDefault();
-      prevSlide();
-      startAutoplay();
-    });
-  }
+  // Initial render
+  renderSlide(currentSlideIndex);
 
-  if (nextBtn) {
-    nextBtn.addEventListener('click', (e) => {
-      e.preventDefault();
-      nextSlide();
-      startAutoplay();
-    });
-  }
+  // Bind event listeners only once
+  if (!isHeroSliderBound) {
+    isHeroSliderBound = true;
 
-  dots.forEach((dot, idx) => {
-    dot.addEventListener('click', () => {
-      goToSlide(idx);
-      startAutoplay();
-    });
-  });
-
-  // Pause on hover
-  slider.addEventListener('mouseenter', stopAutoplay);
-  slider.addEventListener('mouseleave', startAutoplay);
-
-  // Keyboard navigation
-  slider.addEventListener('keydown', (e) => {
-    if (e.key === 'ArrowLeft') {
-      prevSlide();
-      startAutoplay();
-    } else if (e.key === 'ArrowRight') {
-      nextSlide();
-      startAutoplay();
+    if (prevBtn) {
+      prevBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        prevSlide();
+        startAutoplay();
+      });
     }
-  });
+
+    if (nextBtn) {
+      nextBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        nextSlide();
+        startAutoplay();
+      });
+    }
+
+    dots.forEach((dot, idx) => {
+      dot.addEventListener('click', (e) => {
+        e.preventDefault();
+        renderSlide(idx);
+        startAutoplay();
+      });
+    });
+
+    // Handle tab visibility so it resumes cleanly when tab is focused
+    document.addEventListener('visibilitychange', () => {
+      if (document.hidden) {
+        stopAutoplay();
+      } else {
+        startAutoplay();
+      }
+    });
+
+    // Keyboard navigation
+    window.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowLeft') {
+        prevSlide();
+        startAutoplay();
+      } else if (e.key === 'ArrowRight') {
+        nextSlide();
+        startAutoplay();
+      }
+    });
+  }
 
   // Start autoplay
   startAutoplay();
 }
+
+// Auto-run when DOM is ready
+if (typeof document !== 'undefined') {
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initHeroSlider);
+  } else {
+    initHeroSlider();
+  }
+}
+

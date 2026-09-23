@@ -63,96 +63,126 @@ export async function initMatchesPage() {
     if (emptyState) emptyState.style.display = 'none';
     container.style.display = 'block';
     container.innerHTML = `
-      <div class="card card-body">
-        <div class="section-header" style="margin-bottom: 20px;">
+      <div class="card card-body" style="background: #FFFFFF; border: 1.5px solid #CBD5E1; border-radius: 16px; box-shadow: 0 12px 36px rgba(9, 21, 43, 0.08); padding: 32px;">
+        <div class="section-header" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 24px; flex-wrap: wrap; gap: 16px;">
           <div>
-            <span class="badge badge--gold">Official Table</span>
-            <h3 style="margin-top: 8px;">CICA T20 Super League 2026 Standings</h3>
+            <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 6px;">
+              <span class="badge badge--gold" style="background: #09152B; color: #FFFFFF; font-weight: 900; letter-spacing: 0.08em; padding: 4px 12px; border-radius: 999px;">OFFICIAL CICA TABLE</span>
+              <span style="font-size: 0.8125rem; font-weight: 800; color: #0284C7;">2026 SUPER LEAGUE</span>
+            </div>
+            <h2 style="color: #09152B; font-family: var(--font-display); font-size: 1.75rem; font-weight: 900; margin: 0; text-transform: uppercase; letter-spacing: 0.02em;">
+              CICA T20 Super League Standings
+            </h2>
           </div>
-          <a href="https://cricclubs.com/CaymanCricketAssociation" target="_blank" rel="noopener noreferrer" class="btn btn-outline-navy btn-sm">
-            Full Table on CricClubs ↗
+          <a href="https://cricclubs.com/CaymanCricketAssociation" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm" style="border-radius: 999px; font-weight: 800; padding: 10px 20px;">
+            <span>Live CricClubs Table ↗</span>
           </a>
         </div>
-        <div class="table-responsive">
-          <table class="data-table">
+        <div class="table-responsive" style="border: 1.5px solid #E2E8F0; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 14px rgba(9, 21, 43, 0.04);">
+          <table class="data-table" style="width: 100%; border-collapse: collapse; text-align: left;">
             <thead>
-              <tr>
-                <th>Pos</th>
-                <th>Team</th>
-                <th>P</th>
-                <th>W</th>
-                <th>L</th>
-                <th>NR</th>
-                <th>Pts</th>
-                <th>NRR</th>
+              <tr style="background: #09152B; color: #FFFFFF;">
+                <th style="padding: 14px 16px; font-family: var(--font-display); font-size: 0.95rem; letter-spacing: 0.06em; text-transform: uppercase;">Pos</th>
+                <th style="padding: 14px 16px; font-family: var(--font-display); font-size: 0.95rem; letter-spacing: 0.06em; text-transform: uppercase;">Franchise Team</th>
+                <th style="padding: 14px 16px; font-family: var(--font-display); font-size: 0.95rem; text-align: center;">P</th>
+                <th style="padding: 14px 16px; font-family: var(--font-display); font-size: 0.95rem; text-align: center;">W</th>
+                <th style="padding: 14px 16px; font-family: var(--font-display); font-size: 0.95rem; text-align: center;">L</th>
+                <th style="padding: 14px 16px; font-family: var(--font-display); font-size: 0.95rem; text-align: center;">NR</th>
+                <th style="padding: 14px 16px; font-family: var(--font-display); font-size: 0.95rem; text-align: center; color: #38BDF8;">Pts</th>
+                <th style="padding: 14px 16px; font-family: var(--font-display); font-size: 0.95rem; text-align: right;">NRR</th>
               </tr>
             </thead>
             <tbody>
-              <tr style="background-color: rgba(245, 158, 27, 0.08); font-weight: 700;">
-                <td class="highlight-col">1</td>
-                <td><strong>Cayman Super Kings (CSK)</strong></td>
-                <td>6</td>
-                <td>6</td>
-                <td>0</td>
-                <td>0</td>
-                <td class="highlight-col">12</td>
-                <td>+1.842</td>
+              <!-- 1. CSK (Leader) -->
+              <tr style="background: rgba(56, 189, 248, 0.08); font-weight: 800; border-bottom: 1.5px solid #E2E8F0;">
+                <td style="padding: 14px 16px;"><span style="display: inline-flex; align-items: center; justify-content: center; width: 26px; height: 26px; background: #09152B; color: #FFFFFF; border-radius: 50%; font-size: 0.8rem; font-weight: 900;">1</span></td>
+                <td style="padding: 14px 16px; display: flex; align-items: center; gap: 10px;">
+                  <img src="assets/csk-official-logo.png" alt="CSK" style="width: 28px; height: 28px; object-fit: contain;">
+                  <span style="color: #09152B; font-size: 1rem;">Cayman Super Kings (CSK)</span>
+                  <span style="background: #09152B; color: #38BDF8; font-size: 0.68rem; font-weight: 900; padding: 2px 8px; border-radius: 999px; text-transform: uppercase;">LEADERS</span>
+                </td>
+                <td style="padding: 14px 16px; text-align: center; color: #09152B;">6</td>
+                <td style="padding: 14px 16px; text-align: center; color: #16A34A; font-weight: 900;">6</td>
+                <td style="padding: 14px 16px; text-align: center; color: #64748B;">0</td>
+                <td style="padding: 14px 16px; text-align: center; color: #64748B;">0</td>
+                <td style="padding: 14px 16px; text-align: center; color: #09152B; font-size: 1.15rem; font-weight: 900;">12</td>
+                <td style="padding: 14px 16px; text-align: right; color: #16A34A; font-weight: 900;">+1.842</td>
               </tr>
-              <tr>
-                <td>2</td>
-                <td>West Bay Warriors</td>
-                <td>6</td>
-                <td>4</td>
-                <td>2</td>
-                <td>0</td>
-                <td>8</td>
-                <td>+0.920</td>
+              <!-- 2. WBW -->
+              <tr style="border-bottom: 1px solid #E2E8F0;">
+                <td style="padding: 14px 16px; font-weight: 700; color: #09152B;">2</td>
+                <td style="padding: 14px 16px; display: flex; align-items: center; gap: 10px;">
+                  <img src="assets/teams/wbw.svg" alt="WBW" style="width: 24px; height: 24px; object-fit: contain;">
+                  <span style="color: #1E293B; font-weight: 700;">West Bay Warriors</span>
+                </td>
+                <td style="padding: 14px 16px; text-align: center; color: #1E293B;">6</td>
+                <td style="padding: 14px 16px; text-align: center; color: #16A34A; font-weight: 800;">4</td>
+                <td style="padding: 14px 16px; text-align: center; color: #64748B;">2</td>
+                <td style="padding: 14px 16px; text-align: center; color: #64748B;">0</td>
+                <td style="padding: 14px 16px; text-align: center; color: #09152B; font-weight: 800;">8</td>
+                <td style="padding: 14px 16px; text-align: right; color: #16A34A; font-weight: 800;">+0.920</td>
               </tr>
-              <tr>
-                <td>3</td>
-                <td>George Town Tigers</td>
-                <td>6</td>
-                <td>3</td>
-                <td>3</td>
-                <td>0</td>
-                <td>6</td>
-                <td>+0.140</td>
+              <!-- 3. GTT -->
+              <tr style="border-bottom: 1px solid #E2E8F0;">
+                <td style="padding: 14px 16px; font-weight: 700; color: #09152B;">3</td>
+                <td style="padding: 14px 16px; display: flex; align-items: center; gap: 10px;">
+                  <img src="assets/teams/gtt.svg" alt="GTT" style="width: 24px; height: 24px; object-fit: contain;">
+                  <span style="color: #1E293B; font-weight: 700;">George Town Tigers</span>
+                </td>
+                <td style="padding: 14px 16px; text-align: center; color: #1E293B;">6</td>
+                <td style="padding: 14px 16px; text-align: center; color: #16A34A; font-weight: 800;">3</td>
+                <td style="padding: 14px 16px; text-align: center; color: #64748B;">3</td>
+                <td style="padding: 14px 16px; text-align: center; color: #64748B;">0</td>
+                <td style="padding: 14px 16px; text-align: center; color: #09152B; font-weight: 800;">6</td>
+                <td style="padding: 14px 16px; text-align: right; color: #16A34A; font-weight: 800;">+0.140</td>
               </tr>
-              <tr>
-                <td>4</td>
-                <td>Seven Mile Strikers</td>
-                <td>6</td>
-                <td>2</td>
-                <td>4</td>
-                <td>0</td>
-                <td>4</td>
-                <td>-0.450</td>
+              <!-- 4. SMS -->
+              <tr style="border-bottom: 1px solid #E2E8F0;">
+                <td style="padding: 14px 16px; font-weight: 700; color: #09152B;">4</td>
+                <td style="padding: 14px 16px; display: flex; align-items: center; gap: 10px;">
+                  <img src="assets/teams/sms.svg" alt="SMS" style="width: 24px; height: 24px; object-fit: contain;">
+                  <span style="color: #1E293B; font-weight: 700;">Seven Mile Strikers</span>
+                </td>
+                <td style="padding: 14px 16px; text-align: center; color: #1E293B;">6</td>
+                <td style="padding: 14px 16px; text-align: center; color: #16A34A; font-weight: 800;">2</td>
+                <td style="padding: 14px 16px; text-align: center; color: #64748B;">4</td>
+                <td style="padding: 14px 16px; text-align: center; color: #64748B;">0</td>
+                <td style="padding: 14px 16px; text-align: center; color: #09152B; font-weight: 800;">4</td>
+                <td style="padding: 14px 16px; text-align: right; color: #DC2626; font-weight: 800;">-0.450</td>
               </tr>
-              <tr>
-                <td>5</td>
-                <td>Bodden Town CC</td>
-                <td>6</td>
-                <td>2</td>
-                <td>4</td>
-                <td>0</td>
-                <td>4</td>
-                <td>-0.890</td>
+              <!-- 5. BTCC -->
+              <tr style="border-bottom: 1px solid #E2E8F0;">
+                <td style="padding: 14px 16px; font-weight: 700; color: #09152B;">5</td>
+                <td style="padding: 14px 16px; display: flex; align-items: center; gap: 10px;">
+                  <img src="assets/teams/btcc.svg" alt="BTCC" style="width: 24px; height: 24px; object-fit: contain;">
+                  <span style="color: #64748B; font-weight: 600;">Bodden Town CC</span>
+                </td>
+                <td style="padding: 14px 16px; text-align: center; color: #64748B;">6</td>
+                <td style="padding: 14px 16px; text-align: center; color: #64748B;">2</td>
+                <td style="padding: 14px 16px; text-align: center; color: #64748B;">4</td>
+                <td style="padding: 14px 16px; text-align: center; color: #64748B;">0</td>
+                <td style="padding: 14px 16px; text-align: center; color: #64748B; font-weight: 700;">4</td>
+                <td style="padding: 14px 16px; text-align: right; color: #DC2626; font-weight: 700;">-0.890</td>
               </tr>
+              <!-- 6. PCC -->
               <tr>
-                <td>6</td>
-                <td>Police Cricket Club</td>
-                <td>6</td>
-                <td>1</td>
-                <td>5</td>
-                <td>0</td>
-                <td>2</td>
-                <td>-1.540</td>
+                <td style="padding: 14px 16px; font-weight: 700; color: #09152B;">6</td>
+                <td style="padding: 14px 16px; display: flex; align-items: center; gap: 10px;">
+                  <img src="assets/teams/pcc.svg" alt="PCC" style="width: 24px; height: 24px; object-fit: contain;">
+                  <span style="color: #64748B; font-weight: 600;">Police Cricket Club</span>
+                </td>
+                <td style="padding: 14px 16px; text-align: center; color: #64748B;">6</td>
+                <td style="padding: 14px 16px; text-align: center; color: #64748B;">1</td>
+                <td style="padding: 14px 16px; text-align: center; color: #64748B;">5</td>
+                <td style="padding: 14px 16px; text-align: center; color: #64748B;">0</td>
+                <td style="padding: 14px 16px; text-align: center; color: #64748B; font-weight: 700;">2</td>
+                <td style="padding: 14px 16px; text-align: right; color: #DC2626; font-weight: 700;">-1.540</td>
               </tr>
             </tbody>
           </table>
         </div>
-        <p style="font-size: 0.8125rem; color: var(--c-text-muted); margin-top: 16px;">
-          * Standings updated following Round 6 matchday results. Top 4 teams qualify for the Championship Play-offs.
+        <p style="font-size: 0.8125rem; color: #64748B; margin-top: 18px; font-weight: 600;">
+          * Standings updated following Round 6 matchday results. Top 4 teams qualify for the Championship Play-offs at Jimmy Powell Oval.
         </p>
       </div>
     `;
@@ -218,17 +248,27 @@ export async function initMatchesPage() {
 
         <!-- Right Main Ticket Body -->
         <div class="ticket-body">
-          <!-- Slanted Yellow Time Pill -->
-          <div class="ticket-time-pill">
-            <span>${timeDisplay}</span>
-            <span class="ticket-time-stripes">///</span>
+          <!-- Top Tags Row -->
+          <div style="display: flex; justify-content: space-between; align-items: center; width: 100%; margin-bottom: 6px;">
+            <div style="display: flex; gap: 6px; align-items: center;">
+              <span class="ticket-competition-tag">${m.competition || 'CICA T20'}</span>
+              <span class="ticket-format-tag">${m.format || 'T20'}</span>
+            </div>
+
+            <!-- Slanted Time Pill -->
+            <div class="ticket-time-pill">
+              <span>${timeDisplay}</span>
+              <span class="ticket-time-stripes">///</span>
+            </div>
           </div>
 
           <!-- Teams Matchup -->
           <div class="ticket-matchup">
             <!-- Team 1 -->
             <div class="ticket-team">
-              <img src="${team1Logo}" alt="${team1Name}" class="ticket-team-crest">
+              <div class="ticket-crest-aura">
+                <img src="${team1Logo}" alt="${team1Name}" class="ticket-team-crest">
+              </div>
               <span class="ticket-team-name">${team1Name}</span>
               ${isResult && team1Score ? `<span class="ticket-team-score">${team1Score}</span>` : ''}
             </div>
@@ -236,18 +276,20 @@ export async function initMatchesPage() {
             <!-- VS Center -->
             <div class="ticket-vs">
               <span class="ticket-vs-text">VS</span>
-              ${isResult ? `<span class="ticket-vs-result">${m.is_csk_win ? 'CSK WON' : 'COMPLETED'}</span>` : ''}
+              ${isResult ? `<span class="ticket-vs-result">${m.is_csk_win ? 'CSK WON' : 'COMPLETED'}</span>` : '<span class="ticket-vs-sub">MATCHDAY</span>'}
             </div>
 
             <!-- Team 2 -->
             <div class="ticket-team">
-              <img src="${team2Logo}" alt="${team2Name}" class="ticket-team-crest">
+              <div class="ticket-crest-aura">
+                <img src="${team2Logo}" alt="${team2Name}" class="ticket-team-crest">
+              </div>
               <span class="ticket-team-name">${team2Name}</span>
               ${isResult && team2Score ? `<span class="ticket-team-score">${team2Score}</span>` : ''}
             </div>
           </div>
 
-          <!-- Venue -->
+          <!-- Venue & Pitch -->
           <div class="ticket-venue">
             <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
             <span>${m.venue || 'Jimmy Powell Oval, George Town'}</span>
@@ -255,7 +297,8 @@ export async function initMatchesPage() {
 
           <!-- Overlapping Bottom Match Center Pill -->
           <a href="${detailUrl}" class="ticket-btn-pill" ${!isResult && m.cricclubs_url ? 'target="_blank" rel="noopener noreferrer"' : ''}>
-            <span>MATCH CENTER</span>
+            <span>${isResult ? 'MATCH REPORT & SCORECARD' : 'MATCH CENTER'}</span>
+            <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
           </a>
         </div>
       </div>
@@ -355,7 +398,7 @@ export async function initMatchDetail() {
           <div class="col-8">
             <h2 style="margin-bottom: 24px;">Match Report &amp; Analysis</h2>
             <div style="font-size: 1.125rem; line-height: 1.7; margin-bottom: 40px;">
-              <p class="lead" style="font-size: 1.25rem; font-weight: 500; color: var(--c-navy);">${match.summary || ''}</p>
+              <p class="lead" style="font-size: 1.25rem; font-weight: 500; color: #FFFFFF !important;">${match.summary || ''}</p>
             </div>
 
             <!-- Scorecard Tables -->
