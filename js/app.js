@@ -130,7 +130,7 @@ function highlightActiveNav() {
   });
 
   const userPill = document.querySelector('.site-header__user-pill');
-  if (userPill && (currentFile === 'join' || currentFile === 'contact')) {
+  if (userPill && currentFile === 'contact') {
     userPill.classList.add('active');
   }
 }
