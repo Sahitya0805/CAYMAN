@@ -13,7 +13,8 @@ class ContentStore {
   async fetchJSON(path) {
     if (this.cache[path]) return this.cache[path];
     try {
-      const res = await fetch(path);
+      const url = path.includes('?') ? path : `${path}?v=20261009_02`;
+      const res = await fetch(url);
       if (!res.ok) throw new Error(`HTTP error! status: ${res.status}`);
       const data = await res.json();
       this.cache[path] = data;
