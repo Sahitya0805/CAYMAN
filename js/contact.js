@@ -53,12 +53,20 @@ export function initContactForm() {
     }
 
     if (isValid) {
-      // Simulate successful submission
-      form.style.display = 'none';
-      if (successState) {
-        successState.classList.add('is-visible');
-        successState.focus();
+      const submitBtn = form.querySelector('button[type="submit"]');
+      const originalBtnText = submitBtn ? submitBtn.innerHTML : 'Submit Message →';
+      if (submitBtn) {
+        submitBtn.disabled = true;
+        submitBtn.innerHTML = 'Sending Message...';
       }
+
+      setTimeout(() => {
+        form.style.display = 'none';
+        if (successState) {
+          successState.classList.add('is-visible');
+          successState.focus();
+        }
+      }, 500);
     }
   });
 
