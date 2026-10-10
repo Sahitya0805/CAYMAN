@@ -7,33 +7,51 @@
     "date": "September 01, 2026",
     "author": "CSK Media & Youth Staff",
     "read_time": "3 min read",
-    "cover_image": "assets/csk-academy.png",
     "excerpt": "Young players from local schools have started training and playing alongside CSK players, giving them the opportunity to experience a competitive cricket environment from an early age.",
     "content": "\n<p class=\"lead\">As Cayman Super Kings continues to grow, the club is also committed to developing the next generation of cricketers.</p>\n\n<p>Young players from local schools have started training and playing alongside CSK players, giving them the opportunity to experience a competitive cricket environment from an early age.</p>\n\n<h3>Pathway to Competitive Leather-Ball Cricket</h3>\n<p>Through regular training, match experience, and interaction with experienced players, these young cricketers are able to develop their skills, confidence, discipline, and understanding of the game.</p>\n\n<p>CSK is proud to provide a pathway for aspiring young players to learn, grow, and pursue their ambitions in cricket, with the hope of helping them progress towards playing competitive and professional cricket in the future.</p>\n"
   },
   {
     "id": "news-02",
     "slug": "csk-qualifies-for-t10-knockouts",
-    "category": "Match Reports",
+    "category": "Tournament Milestones",
     "title": "CSK Qualifies for Knockout Stages in Historic T10 Tournament Campaign",
     "date": "August 28, 2026",
     "author": "CSK Media Team",
     "read_time": "3 min read",
-    "cover_image": "assets/csk-action.png",
     "excerpt": "Captain Rahul Garg leads CSK to the knockout stages of the T10 tournament in one of the club's biggest milestones.",
-    "related_match_slug": "csk-vs-greenies-t20",
     "content": "\n<p class=\"lead\">Year after year, Cayman Super Kings continued to develop skills and fight hard regardless of opposition, producing one of the club's biggest moments: qualifying for the knockout stages of the T10 tournament under skipper Rahul Garg.</p>\n\n<p>For a team built largely through development, determination, and a shared love for cricket, reaching the knockouts represents an important milestone—and a sign of how far the club has come.</p>\n\n<p>Co-founders Majin Paul and Christopher Balraj praised the squad's dedication: 'Being the underdog became part of the CSK identity, but reaching the knockouts proves that our belief and teamwork can overcome any obstacle.'</p>\n"
   },
   {
     "id": "news-03",
     "slug": "taking-csk-to-international-stage",
-    "category": "Club News",
+    "category": "International Representation",
     "title": "Taking CSK to the International Stage",
     "date": "August 18, 2026",
     "author": "CSK Media Team",
     "read_time": "4 min read",
-    "cover_image": "assets/slider-stadium-sunset.jpg",
-    "excerpt": "Christopher Balraj and Rahul Garg represent Cayman Super Kings in international T10 leagues and World Cup Qualifiers.",
-    "content": "\n<p class=\"lead\">The growth of CSK has also been reflected in the individual journeys of its players.</p>\n\n<p>Christopher Balraj reached a major milestone representing the Cayman Islands national team in Bermuda for the Sub-Regional World Cup Qualifiers. Rahul Garg took the next step in his cricketing journey playing in the 2024 international T10 league alongside legends David Warner, Carlos Brathwaite, Alex Hales, Thisara Perera, Beau Webster, and Shakib Al Hasan.</p>\n\n<p>In 2025, Christopher Balraj was also selected to play in the international T10 league under Shabaz Nadeem alongside Rahul Garg. Furthermore, Rahul Garg and Gokul Krishnan are part of the Cayman Islands national team training squad, working towards representing Cayman internationally.</p>\n"
+    "excerpt": "Christopher Balraj and Rahul Garg represent Cayman Super Kings in international T10 leagues and ICC World Cup Qualifiers.",
+    "content": "\n<p class=\"lead\">The growth of CSK has also been reflected in the individual journeys of its players.</p>\n\n<p>Christopher Balraj reached a major milestone representing the Cayman Islands national team in Bermuda for the Sub-Regional World Cup Qualifiers.</p>\n\n<p>Rahul Garg took the next step in his cricketing journey playing in the international T10 league under the captaincy of cricket legend David Warner, sharing the dressing room and pitch with Carlos Brathwaite, Alex Hales, Thisara Perera, Beau Webster, and Shakib Al Hasan.</p>\n\n<p>In 2025, Christopher Balraj was also selected to play in the international T10 league under Shabaz Nadeem alongside Rahul Garg. Furthermore, Rahul Garg and Gokul Krishnan are part of the Cayman Islands national team training squad, working towards representing Cayman internationally.</p>\n"
+  },
+  {
+    "id": "news-04",
+    "slug": "a-vision-that-started-before-covid",
+    "category": "Club Heritage",
+    "title": "A Vision That Started Before COVID: The Founding Story",
+    "date": "August 10, 2026",
+    "author": "Executive Committee",
+    "read_time": "4 min read",
+    "excerpt": "The story of Cayman Super Kings began with a vision shared by passionate individuals who believed that cricket could unite a community on the Cayman Islands.",
+    "content": "\n<p class=\"lead\">The story of Cayman Super Kings began with a vision shared by a few passionate individuals who believed that cricket could bring together a unique community on the Cayman Islands.</p>\n\n<p>Before COVID-19 changed the world, Gopal, Majin Paul, Christopher Balraj and Kiruba had already envisioned building a team made up of individuals who had moved to the Cayman Islands to pursue careers, build new lives, and grow professionally—but who also shared a deep love for cricket.</p>\n\n<p>When life gradually returned to normal, the founders picked up where they had left off. In 2022, Cayman Super Kings was officially founded, bringing together players from different cricketing backgrounds. CSK played its first tournament in early 2023 and has continued competing ever since.</p>\n"
+  },
+  {
+    "id": "news-05",
+    "slug": "more-than-a-cricket-team",
+    "category": "Club Culture",
+    "title": "More Than a Cricket Team: Community, Brotherhood, and Growth",
+    "date": "July 24, 2026",
+    "author": "Executive Committee",
+    "read_time": "3 min read",
+    "excerpt": "From the beginning, the team was built around more than just cricket. It was about creating a community—bringing people together and developing talent.",
+    "content": "\n<p class=\"lead\">From the beginning, the team was built around more than just cricket. It was about creating a community—bringing people together, developing players, creating friendships, and giving talented individuals an opportunity to compete and improve.</p>\n\n<p>With every season, new players join, existing players develop, new milestones are achieved, and the ambitions of the club continue to grow. The graph is only going up.</p>\n\n<p>Guided by our motto, 'One Team. One Dream.', Cayman Super Kings stands as a proud pillar of passion, sportsmanship, and brotherhood across the Cayman Islands cricket fraternity.</p>\n"
   }
 ]
