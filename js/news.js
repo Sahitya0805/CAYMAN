@@ -160,13 +160,13 @@ export async function initArticlePage() {
           </div>
 
           <!-- Official Club Hub -->
-          <div class="card" style="background: #09152B; border-radius: 16px; padding: 24px; color: #FFFFFF; box-shadow: 0 8px 24px rgba(9, 21, 43, 0.12);">
-            <span style="font-size: 0.75rem; font-weight: 800; color: #38BDF8; letter-spacing: 0.08em; text-transform: uppercase;">COMMUNITY &amp; DEVELOPMENT</span>
-            <h4 style="font-family: var(--font-display); font-size: 1.25rem; font-weight: 900; margin: 8px 0 12px 0;">Cayman Super Kings</h4>
-            <p style="font-size: 0.875rem; color: #CBD5E1; line-height: 1.5; margin-bottom: 16px;">
+          <div class="card card--navy" style="background: #09152B !important; border: 1.5px solid #1E293B !important; border-radius: 16px; padding: 24px; color: #FFFFFF !important; box-shadow: 0 12px 32px rgba(9, 21, 43, 0.16);">
+            <span style="display: block; font-size: 0.75rem; font-weight: 900; color: #38BDF8 !important; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 8px;">COMMUNITY &amp; DEVELOPMENT</span>
+            <h4 style="font-family: var(--font-display); font-size: 1.25rem; font-weight: 900; color: #FFFFFF !important; margin: 0 0 10px 0;">Cayman Super Kings</h4>
+            <p style="font-size: 0.9rem; color: #E2E8F0 !important; line-height: 1.6; margin-bottom: 18px; font-weight: 500;">
               Developing youth cricket talent, promoting grassroots sportsmanship, and competing across all official Cayman Islands leagues.
             </p>
-            <a href="squad.html" class="btn btn-primary btn-sm" style="width: 100%; text-align: center; justify-content: center; font-weight: 800; border-radius: 999px;">
+            <a href="squad.html" class="btn btn-primary btn-sm" style="width: 100%; text-align: center; justify-content: center; font-weight: 800; border-radius: 999px; text-decoration: none; padding: 10px 20px;">
               Explore 2026 Squad →
             </a>
           </div>
