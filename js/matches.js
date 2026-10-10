@@ -472,23 +472,6 @@ export async function initMatchDetail() {
                 </table>
               </div>
             ` : ''}
-
-            <!-- Real Match Action Gallery Strip -->
-            <h3 style="font-family: var(--font-display); font-size: 1.35rem; font-weight: 900; color: #09152B; text-transform: uppercase; margin-bottom: 16px; letter-spacing: 0.02em;">Match Action Gallery</h3>
-            <div class="grid" style="gap: 18px;">
-              <div class="col-6">
-                <div style="border-radius: 12px; overflow: hidden; border: 1.5px solid #CBD5E1; box-shadow: 0 6px 20px rgba(9,21,43,0.06); height: 240px; background: #080E18;">
-                  <img src="assets/players/real/Rahul-Garg-Crease.jpg" alt="Rahul Garg at the crease" style="width: 100%; height: 100%; object-fit: cover; object-position: center 20%;">
-                </div>
-                <span style="display: block; margin-top: 6px; font-size: 0.8125rem; color: #64748B; font-weight: 600;">Skipper Rahul Garg at the crease during powerplay</span>
-              </div>
-              <div class="col-6">
-                <div style="border-radius: 12px; overflow: hidden; border: 1.5px solid #CBD5E1; box-shadow: 0 6px 20px rgba(9,21,43,0.06); height: 240px; background: #080E18;">
-                  <img src="assets/csk-hero-celebration.jpg" alt="CSK Team celebration" style="width: 100%; height: 100%; object-fit: cover;">
-                </div>
-                <span style="display: block; margin-top: 6px; font-size: 0.8125rem; color: #64748B; font-weight: 600;">Championship trophy celebrations with the squad</span>
-              </div>
-            </div>
           </div>
 
           <!-- Sidebar -->
