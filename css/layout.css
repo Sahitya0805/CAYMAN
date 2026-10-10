@@ -569,8 +569,8 @@ body.editorial-home .site-header {
   justify-content: space-between !important;
   flex-wrap: wrap !important;
   gap: 24px !important;
-  padding-bottom: 32px !important;
-  margin-bottom: 36px !important;
+  padding-bottom: 24px !important;
+  margin-bottom: 0 !important;
   border-bottom: 1px solid rgba(255, 255, 255, 0.08) !important;
 }
 
