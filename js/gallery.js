@@ -48,34 +48,19 @@ export async function initGalleryPage() {
     container.style.display = 'grid';
 
     // Build flat items list for lightbox
-    flatItems = [];
-    filtered.forEach(album => {
-      if (album.items && album.items.length > 0) {
-        album.items.forEach(item => {
-          flatItems.push({
-            src: item.src,
-            alt: item.alt || album.title,
-            caption: `${album.title} — ${item.caption || ''}`,
-            year: album.year,
-            type: album.type
-          });
-        });
-      } else {
-        flatItems.push({
-          src: album.cover_image,
-          alt: album.title,
-          caption: album.title,
-          year: album.year,
-          type: album.type
-        });
-      }
-    });
+    flatItems = filtered.map(p => ({
+      src: p.src || p.cover_image,
+      alt: p.title,
+      caption: `${p.title} — ${p.caption || p.category || ''}`,
+      year: p.year,
+      type: p.type || 'photo'
+    }));
 
     container.innerHTML = filtered.map((a, idx) => `
-      <div class="circular-gallery-card" data-album-index="${idx}" role="button" tabindex="0" aria-label="View photo album: ${a.title}">
+      <div class="circular-gallery-card" data-album-index="${idx}" role="button" tabindex="0" aria-label="View photo: ${a.title}">
         <!-- Circular Photo Frame with Gold Ring -->
         <div class="circular-photo-wrapper">
-          <img src="${a.cover_image}" alt="${a.title}" class="circular-photo-img" loading="lazy">
+          <img src="${a.src || a.cover_image}" alt="${a.title}" class="circular-photo-img" loading="lazy">
           <div class="circular-photo-overlay">
             <div class="circular-zoom-icon">
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg>
@@ -86,8 +71,8 @@ export async function initGalleryPage() {
         <!-- Details below circular photo -->
         <h3 class="circular-card-title">${a.title}</h3>
         <span class="circular-card-subtitle">${a.category}</span>
-        <span class="circular-badge-pill">
-          ${a.type === 'video' ? '▶ Video Highlight' : '📷 ' + a.count_or_duration}
+        <span class="circular-badge-pill" style="background: rgba(2, 132, 199, 0.12); color: #0284C7; font-weight: 800; font-size: 0.75rem; padding: 3px 10px; border-radius: 999px;">
+          📷 ${a.date || 'Official Photo'}
         </span>
       </div>
     `).join('');

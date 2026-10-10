@@ -5676,6 +5676,21 @@ body.page--white-theme .about-tab-panel .card li {
   }
 }
 
+/* Article 2-Column Responsive Layout */
+.article-layout-grid {
+  display: grid;
+  grid-template-columns: 1fr 340px;
+  gap: 32px;
+  align-items: start;
+}
+
+@media (max-width: 920px) {
+  .article-layout-grid {
+    grid-template-columns: 1fr !important;
+    gap: 24px !important;
+  }
+}
+
 
 
 

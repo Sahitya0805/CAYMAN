@@ -92,48 +92,85 @@ export async function initArticlePage() {
 
   const newsList = await store.getNews();
   const article = newsList.find(n => n.slug === slug) || newsList[0];
+  const otherStories = newsList.filter(n => n.slug !== article.slug).slice(0, 3);
 
   document.title = `${article.title} | Cayman Super Kings News`;
 
   container.innerHTML = `
-    <div class="article-container" style="max-width: 860px; margin: 40px auto 80px; padding: 0 16px;">
-      <div class="card" style="background: #FFFFFF; border: 1.5px solid #CBD5E1; border-radius: 18px; padding: 48px 40px; box-shadow: 0 14px 40px rgba(9, 21, 43, 0.08);">
-        <!-- Article Header -->
-        <div class="article-header" style="margin-bottom: 28px; border-bottom: 1.5px solid #E2E8F0; padding-bottom: 24px;">
-          <div style="margin-bottom: 18px;">
-            <a href="news.html" style="font-size: 0.875rem; color: #0284C7; font-weight: 800; text-decoration: none; display: inline-flex; align-items: center; gap: 6px;">
-              ← Back to All Stories
+    <div style="max-width: 1200px; margin: 20px auto 80px; width: 100%; padding: 0 16px;">
+      <!-- Breadcrumb Navigation -->
+      <div style="margin-bottom: 24px;">
+        <a href="news.html" style="font-size: 0.875rem; color: #0284C7; font-weight: 800; text-decoration: none; display: inline-flex; align-items: center; gap: 6px; background: rgba(2, 132, 199, 0.08); padding: 8px 16px; border-radius: 999px;">
+          ← Back to All Stories
+        </a>
+      </div>
+
+      <div style="display: grid; grid-template-columns: 1fr 340px; gap: 32px; align-items: start;" class="article-layout-grid">
+        <!-- Main Article Column -->
+        <article class="card" style="background: #FFFFFF; border: 1.5px solid #CBD5E1; border-radius: 18px; padding: 40px; box-shadow: 0 14px 40px rgba(9, 21, 43, 0.08);">
+          <!-- Article Header -->
+          <div class="article-header" style="margin-bottom: 28px; border-bottom: 1.5px solid #E2E8F0; padding-bottom: 24px;">
+            <span class="badge" style="background: rgba(2, 132, 199, 0.12); color: #0284C7; font-weight: 800; font-size: 0.8125rem; letter-spacing: 0.06em; text-transform: uppercase; padding: 5px 14px; border-radius: 999px;">
+              ${article.category}
+            </span>
+            <h1 style="font-family: var(--font-display); font-size: clamp(2rem, 3.5vw, 2.6rem); font-weight: 900; color: #09152B; line-height: 1.25; margin-top: 16px; margin-bottom: 16px;">
+              ${article.title}
+            </h1>
+            <div class="article-meta" style="display: flex; gap: 12px; align-items: center; color: #64748B; font-size: 0.875rem; font-weight: 600; flex-wrap: wrap;">
+              <span>By <strong style="color: #09152B;">${article.author || 'CSK Editorial'}</strong></span>
+              <span>•</span>
+              <span>${article.date}</span>
+              <span>•</span>
+              <span>${article.read_time || '3 min read'}</span>
+            </div>
+          </div>
+
+          <!-- Article Body (High Contrast Typography) -->
+          <div class="article-body" style="font-size: 1.075rem; line-height: 1.85; color: #1E293B; font-weight: 500;">
+            ${article.content}
+          </div>
+
+          <!-- Navigation Footer -->
+          <div style="margin-top: 48px; padding-top: 24px; border-top: 1.5px solid #E2E8F0; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px;">
+            <a href="news.html" class="btn btn-outline-navy btn-sm" style="border-radius: 999px; font-weight: 800;">
+              ← Back to Stories
+            </a>
+            <a href="about.html" class="btn btn-primary btn-sm" style="border-radius: 999px; font-weight: 800;">
+              Club History &amp; Timeline →
             </a>
           </div>
-          <span class="badge" style="background: rgba(2, 132, 199, 0.12); color: #0284C7; font-weight: 800; font-size: 0.8125rem; letter-spacing: 0.06em; text-transform: uppercase; padding: 5px 14px; border-radius: 999px;">
-            ${article.category}
-          </span>
-          <h1 style="font-family: var(--font-display); font-size: clamp(2rem, 4vw, 2.6rem); font-weight: 900; color: #09152B; line-height: 1.25; margin-top: 16px; margin-bottom: 16px;">
-            ${article.title}
-          </h1>
-          <div class="article-meta" style="display: flex; gap: 12px; align-items: center; color: #64748B; font-size: 0.875rem; font-weight: 600; flex-wrap: wrap;">
-            <span>By <strong style="color: #09152B;">${article.author || 'CSK Editorial'}</strong></span>
-            <span>•</span>
-            <span>${article.date}</span>
-            <span>•</span>
-            <span>${article.read_time || '3 min read'}</span>
+        </article>
+
+        <!-- Right Sidebar (Eliminates Empty Space) -->
+        <aside style="display: flex; flex-direction: column; gap: 24px;">
+          <!-- More Stories Widget -->
+          <div class="card" style="background: #FFFFFF; border: 1.5px solid #CBD5E1; border-radius: 16px; padding: 24px; box-shadow: 0 8px 24px rgba(9, 21, 43, 0.06);">
+            <h3 style="font-family: var(--font-display); font-size: 1.15rem; color: #09152B; font-weight: 900; text-transform: uppercase; margin: 0 0 16px 0; border-bottom: 2px solid #0284C7; padding-bottom: 8px;">
+              More CSK News
+            </h3>
+            <div style="display: flex; flex-direction: column; gap: 16px;">
+              ${otherStories.map(s => `
+                <a href="article.html?slug=${s.slug}" style="text-decoration: none; display: block; border-bottom: 1px solid #E2E8F0; padding-bottom: 12px;">
+                  <span style="font-size: 0.75rem; font-weight: 800; color: #0284C7; text-transform: uppercase;">${s.category}</span>
+                  <h4 style="font-size: 0.95rem; font-weight: 800; color: #09152B; margin: 4px 0 6px 0; line-height: 1.35;">${s.title}</h4>
+                  <span style="font-size: 0.75rem; color: #64748B; font-weight: 600;">${s.date}</span>
+                </a>
+              `).join('')}
+            </div>
           </div>
-        </div>
 
-        <!-- Article Body (High Contrast Typography) -->
-        <div class="article-body" style="font-size: 1.1rem; line-height: 1.85; color: #1E293B; font-weight: 500;">
-          ${article.content}
-        </div>
-
-        <!-- Navigation Footer -->
-        <div style="margin-top: 48px; padding-top: 24px; border-top: 1.5px solid #E2E8F0; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px;">
-          <a href="news.html" class="btn btn-outline-navy btn-sm" style="border-radius: 999px; font-weight: 800;">
-            ← Back to Stories
-          </a>
-          <a href="about.html" class="btn btn-primary btn-sm" style="border-radius: 999px; font-weight: 800;">
-            Club History &amp; Timeline →
-          </a>
-        </div>
+          <!-- Official Club Hub -->
+          <div class="card" style="background: #09152B; border-radius: 16px; padding: 24px; color: #FFFFFF; box-shadow: 0 8px 24px rgba(9, 21, 43, 0.12);">
+            <span style="font-size: 0.75rem; font-weight: 800; color: #38BDF8; letter-spacing: 0.08em; text-transform: uppercase;">COMMUNITY &amp; DEVELOPMENT</span>
+            <h4 style="font-family: var(--font-display); font-size: 1.25rem; font-weight: 900; margin: 8px 0 12px 0;">Cayman Super Kings</h4>
+            <p style="font-size: 0.875rem; color: #CBD5E1; line-height: 1.5; margin-bottom: 16px;">
+              Developing youth cricket talent, promoting grassroots sportsmanship, and competing across all official Cayman Islands leagues.
+            </p>
+            <a href="squad.html" class="btn btn-primary btn-sm" style="width: 100%; text-align: center; justify-content: center; font-weight: 800; border-radius: 999px;">
+              Explore 2026 Squad →
+            </a>
+          </div>
+        </aside>
       </div>
     </div>
   `;
