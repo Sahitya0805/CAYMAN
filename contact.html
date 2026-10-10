@@ -193,10 +193,10 @@
 
               <!-- Secretariat Enquiries Excel Export Tools -->
               <div style="margin-top: 28px; padding: 14px 16px; background: rgba(56, 189, 248, 0.08); border: 1px solid rgba(56, 189, 248, 0.25); border-radius: 8px;">
-                <strong style="display: block; font-size: 0.78rem; color: #38BDF8; font-weight: 800; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 8px;">Enquiry Records &amp; Logs</strong>
+                <strong style="display: block; font-size: 0.78rem; color: #38BDF8; font-weight: 800; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 8px;">Live Dynamic Enquiry Records</strong>
                 <div style="display: flex; gap: 8px; flex-wrap: wrap;">
-                  <a href="exports/CSK_Contact_Enquiries_Database.xlsx" download class="btn btn-sm" style="font-size: 0.75rem; padding: 6px 14px; background: #0284C7; color: #FFFFFF; border-radius: 6px; font-weight: 700; text-decoration: none;">📊 Download Excel (.xlsx)</a>
-                  <button type="button" onclick="window.exportCSKEnquiries()" class="btn btn-sm" style="font-size: 0.75rem; padding: 6px 14px; background: rgba(255,255,255,0.12); color: #FFFFFF; border: 1px solid rgba(255,255,255,0.25); border-radius: 6px; font-weight: 700; cursor: pointer;">📥 Live CSV Export</button>
+                  <a href="/api/enquiries?format=csv" download class="btn btn-sm" style="font-size: 0.75rem; padding: 6px 14px; background: #0284C7; color: #FFFFFF; border-radius: 6px; font-weight: 700; text-decoration: none;">📊 Live Stream Export (.csv)</a>
+                  <button type="button" onclick="window.exportCSKEnquiries()" class="btn btn-sm" style="font-size: 0.75rem; padding: 6px 14px; background: rgba(255,255,255,0.12); color: #FFFFFF; border: 1px solid rgba(255,255,255,0.25); border-radius: 6px; font-weight: 700; cursor: pointer;">📥 Instant Browser Export</button>
                 </div>
               </div>
             </div>

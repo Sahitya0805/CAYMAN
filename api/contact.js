@@ -1,5 +1,4 @@
-// Serverless API Endpoint: /api/contact
-// Receives contact messages and dispatches notifications
+import { addSubmission } from './contact-store.js';
 
 export default async function handler(req, res) {
   res.setHeader('Access-Control-Allow-Origin', '*');
@@ -27,10 +26,14 @@ export default async function handler(req, res) {
       name: String(name).trim().slice(0, 100),
       email: String(email).trim().slice(0, 120),
       subject: String(subject || 'General Enquiry').trim().slice(0, 150),
-      message: String(message).trim().slice(0, 3000)
+      message: String(message).trim().slice(0, 3000),
+      status: "New / Received"
     };
 
-    console.log('[CSK Contact Enquiry Received]:', submission);
+    // Store in live memory runtime
+    addSubmission(submission);
+
+    console.log('[CSK Contact Enquiry Received Live]:', submission);
 
     // Optional: Forward to external webhook (Google Sheets / Discord / Slack / Web3Forms)
     const webhookUrl = process.env.CONTACT_WEBHOOK_URL;
