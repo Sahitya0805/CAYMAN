@@ -157,6 +157,42 @@
   },
   {
     "id": "match-05",
+    "slug": "csk-vs-north-side-super-league-t20-2026",
+    "competition": "Cayman Cricket Super League T20",
+    "format": "T20",
+    "season": "2026",
+    "opponent": "North Side XI",
+    "opponent_short": "NSXI",
+    "is_home": false,
+    "date": "2026-08-02",
+    "time": "14:00",
+    "venue": "Smith Road Oval, George Town",
+    "status": "result",
+    "score_csk": "185/3",
+    "overs_csk": "20.0",
+    "score_opp": "151/8",
+    "overs_opp": "20.0",
+    "result_text": "Cayman Super Kings won by 34 runs",
+    "is_csk_win": true,
+    "cricclubs_url": "https://cricclubs.com/CaymanCricketAssociation",
+    "report_slug": "super-kings-soar-past-north-side",
+    "player_of_match": "Rahul Garg (62 off 39 & 3/18)",
+    "summary": "Skipper Rahul Garg delivered an all-round masterclass to power CSK to 185 before leading the defense with 3 crucial wickets.",
+    "scorecard": {
+      "csk_batting": [
+        { "player": "Rahul Garg (C)", "dismissal": "c Watson b Reid", "runs": 62, "balls": 39, "fours": 7, "sixes": 2, "sr": "158.97" },
+        { "player": "Christopher Balraj", "dismissal": "not out", "runs": 55, "balls": 36, "fours": 5, "sixes": 2, "sr": "152.78" },
+        { "player": "Gokul Krishnan (wk)", "dismissal": "not out", "runs": 38, "balls": 24, "fours": 4, "sixes": 1, "sr": "158.33" }
+      ],
+      "csk_bowling": [
+        { "bowler": "Rahul Garg", "overs": "4.0", "maidens": 0, "runs": 18, "wickets": 3, "econ": "4.50" },
+        { "bowler": "Sahil Singh", "overs": "4.0", "maidens": 0, "runs": 29, "wickets": 2, "econ": "7.25" },
+        { "bowler": "Muthukumar Rajenderan", "overs": "4.0", "maidens": 0, "runs": 30, "wickets": 2, "econ": "7.50" }
+      ]
+    }
+  },
+  {
+    "id": "match-06",
     "slug": "csk-vs-west-bay-warriors-super-league-t20-2025",
     "competition": "Cayman Cricket Super League T20",
     "format": "T20",
@@ -193,7 +229,7 @@
     }
   },
   {
-    "id": "match-06",
+    "id": "match-07",
     "slug": "csk-vs-police-cc-super-league-40over-2025",
     "competition": "Cayman Cricket Super League 40 Over",
     "format": "40-Over",
@@ -229,7 +265,78 @@
     }
   },
   {
-    "id": "match-07",
+    "id": "match-08",
+    "slug": "csk-vs-seven-mile-strikers-elite-50-2025",
+    "competition": "Cayman Cricket Elite 50 Over League",
+    "format": "50-Over",
+    "season": "2025",
+    "opponent": "Seven Mile Strikers",
+    "opponent_short": "SMS",
+    "is_home": true,
+    "date": "2025-09-28",
+    "time": "09:30",
+    "venue": "Jimmy Powell Oval, George Town",
+    "status": "result",
+    "score_csk": "265/7",
+    "overs_csk": "50.0",
+    "score_opp": "218/10",
+    "overs_opp": "44.1",
+    "result_text": "Cayman Super Kings won by 47 runs",
+    "is_csk_win": true,
+    "cricclubs_url": "https://cricclubs.com/CaymanCricketAssociation",
+    "report_slug": "csk-dominate-strikers-in-50-over",
+    "player_of_match": "Christopher Balraj (88 off 80)",
+    "summary": "Balraj's counter-attacking 88 and an all-round bowling display secured a comprehensive 47-run win in the 50-over league.",
+    "scorecard": {
+      "csk_batting": [
+        { "player": "Christopher Balraj", "dismissal": "c Smith b Taylor", "runs": 88, "balls": 80, "fours": 9, "sixes": 2, "sr": "110.00" },
+        { "player": "Rahul Garg (C)", "dismissal": "b Taylor", "runs": 51, "balls": 58, "fours": 5, "sixes": 0, "sr": "87.93" },
+        { "player": "Praisewin Vincent", "dismissal": "not out", "runs": 42, "balls": 36, "fours": 4, "sixes": 1, "sr": "116.67" }
+      ],
+      "csk_bowling": [
+        { "bowler": "Sahil Singh", "overs": "9.0", "maidens": 1, "runs": 34, "wickets": 3, "econ": "3.78" },
+        { "bowler": "Ravneet Verma", "overs": "10.0", "maidens": 0, "runs": 45, "wickets": 3, "econ": "4.50" },
+        { "bowler": "Muthukumar Rajenderan", "overs": "8.1", "maidens": 0, "runs": 38, "wickets": 2, "econ": "4.65" }
+      ]
+    }
+  },
+  {
+    "id": "match-09",
+    "slug": "csk-vs-bodden-town-elite-t20-2025",
+    "competition": "Cayman Cricket Elite T20 League",
+    "format": "T20",
+    "season": "2025",
+    "opponent": "Bodden Town CC",
+    "opponent_short": "BTCC",
+    "is_home": false,
+    "date": "2025-09-07",
+    "time": "14:30",
+    "venue": "Smith Road Oval, George Town",
+    "status": "result",
+    "score_csk": "169/5",
+    "overs_csk": "20.0",
+    "score_opp": "145/8",
+    "overs_opp": "20.0",
+    "result_text": "Cayman Super Kings won by 24 runs",
+    "is_csk_win": true,
+    "cricclubs_url": "https://cricclubs.com/CaymanCricketAssociation",
+    "report_slug": "csk-outclass-bodden-town-in-elite-t20",
+    "player_of_match": "Gokul Krishnan (58* off 34)",
+    "summary": "Gokul Krishnan's brisk unbeaten 58 and a tight spin choke by Jason Edwards gave CSK a decisive victory.",
+    "scorecard": {
+      "csk_batting": [
+        { "player": "Gokul Krishnan (wk)", "dismissal": "not out", "runs": 58, "balls": 34, "fours": 6, "sixes": 2, "sr": "170.59" },
+        { "player": "Rahul Garg (C)", "dismissal": "c Reid b Kelly", "runs": 42, "balls": 32, "fours": 4, "sixes": 1, "sr": "131.25" }
+      ],
+      "csk_bowling": [
+        { "bowler": "Jason Edwards", "overs": "4.0", "maidens": 0, "runs": 19, "wickets": 2, "econ": "4.75" },
+        { "bowler": "Ravneet Verma", "overs": "4.0", "maidens": 0, "runs": 24, "wickets": 2, "econ": "6.00" },
+        { "bowler": "Sahil Singh", "overs": "4.0", "maidens": 0, "runs": 28, "wickets": 2, "econ": "7.00" }
+      ]
+    }
+  },
+  {
+    "id": "match-10",
     "slug": "csk-vs-tigers-super-league-t20-2024",
     "competition": "Cayman Cricket Super League T20",
     "format": "T20",
@@ -260,6 +367,74 @@
       "csk_bowling": [
         { "bowler": "Ravneet Verma", "overs": "4.0", "maidens": 0, "runs": 25, "wickets": 3, "econ": "6.25" },
         { "bowler": "Sahil Singh", "overs": "4.0", "maidens": 0, "runs": 30, "wickets": 2, "econ": "7.50" }
+      ]
+    }
+  },
+  {
+    "id": "match-11",
+    "slug": "csk-vs-police-cc-40-over-2024",
+    "competition": "Cayman Cricket Super League 40 Over",
+    "format": "40-Over",
+    "season": "2024",
+    "opponent": "Police Cricket Club",
+    "opponent_short": "PCC",
+    "is_home": false,
+    "date": "2024-08-18",
+    "time": "10:00",
+    "venue": "Smith Road Oval, George Town",
+    "status": "result",
+    "score_csk": "215/6",
+    "overs_csk": "40.0",
+    "score_opp": "184/10",
+    "overs_opp": "35.3",
+    "result_text": "Cayman Super Kings won by 31 runs",
+    "is_csk_win": true,
+    "cricclubs_url": "https://cricclubs.com/CaymanCricketAssociation",
+    "report_slug": "csk-clinch-40-over-thriller-vs-police",
+    "player_of_match": "Rahul Garg (56 off 52 & 2/20)",
+    "summary": "A composed 56 from Rahul Garg and accurate spells from Muthukumar defended 215 with ease.",
+    "scorecard": {
+      "csk_batting": [
+        { "player": "Rahul Garg (C)", "dismissal": "c Wright b Allen", "runs": 56, "balls": 52, "fours": 6, "sixes": 1, "sr": "107.69" },
+        { "player": "Christopher Balraj", "dismissal": "b Wright", "runs": 45, "balls": 48, "fours": 4, "sixes": 1, "sr": "93.75" }
+      ],
+      "csk_bowling": [
+        { "bowler": "Muthukumar Rajenderan", "overs": "8.0", "maidens": 1, "runs": 30, "wickets": 3, "econ": "3.75" },
+        { "bowler": "Rahul Garg", "overs": "6.0", "maidens": 0, "runs": 20, "wickets": 2, "econ": "3.33" }
+      ]
+    }
+  },
+  {
+    "id": "match-12",
+    "slug": "csk-vs-west-bay-warriors-elite-t20-2024",
+    "competition": "Cayman Cricket Elite T20 League",
+    "format": "T20",
+    "season": "2024",
+    "opponent": "West Bay Warriors",
+    "opponent_short": "WBW",
+    "is_home": true,
+    "date": "2024-07-28",
+    "time": "14:30",
+    "venue": "Jimmy Powell Oval, George Town",
+    "status": "result",
+    "score_csk": "175/5",
+    "overs_csk": "20.0",
+    "score_opp": "152/9",
+    "overs_opp": "20.0",
+    "result_text": "Cayman Super Kings won by 23 runs",
+    "is_csk_win": true,
+    "cricclubs_url": "https://cricclubs.com/CaymanCricketAssociation",
+    "report_slug": "csk-powerplay-masterclass-vs-warriors",
+    "player_of_match": "Christopher Balraj (70 off 44)",
+    "summary": "Balraj smashed 70 including 4 towering maximums before the bowling attack clamped down on West Bay's chase.",
+    "scorecard": {
+      "csk_batting": [
+        { "player": "Christopher Balraj", "dismissal": "c Taylor b Morgan", "runs": 70, "balls": 44, "fours": 7, "sixes": 4, "sr": "159.09" },
+        { "player": "Gokul Krishnan (wk)", "dismissal": "not out", "runs": 35, "balls": 26, "fours": 4, "sixes": 0, "sr": "134.62" }
+      ],
+      "csk_bowling": [
+        { "bowler": "Sahil Singh", "overs": "4.0", "maidens": 0, "runs": 26, "wickets": 3, "econ": "6.50" },
+        { "bowler": "Ravneet Verma", "overs": "4.0", "maidens": 0, "runs": 28, "wickets": 2, "econ": "7.00" }
       ]
     }
   }
