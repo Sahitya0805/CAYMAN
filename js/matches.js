@@ -349,35 +349,35 @@ export async function initMatchDetail() {
 
   container.innerHTML = `
     <!-- Header Hero -->
-    <div class="match-header-banner">
+    <div class="match-header-banner" style="background: linear-gradient(180deg, #09152B 0%, #0D1D3A 50%, #060E1E 100%); color: #FFFFFF; padding: 36px 0;">
       <div class="container">
-        <div style="display: flex; gap: 12px; align-items: center; margin-bottom: 12px;">
-          <span class="badge badge--gold">${match.competition}</span>
-          <span class="badge badge--dark">${match.format}</span>
-          <span style="color: var(--c-text-inverse-muted); font-size: 0.875rem;">${formatDate(match.date)} • ${match.venue}</span>
+        <div style="display: flex; gap: 12px; align-items: center; margin-bottom: 16px; flex-wrap: wrap;">
+          <span class="badge badge--gold" style="font-weight: 800; letter-spacing: 0.06em;">${match.competition}</span>
+          <span class="badge" style="background: rgba(255,255,255,0.15); color: #FFFFFF; font-weight: 800;">${match.format}</span>
+          <span style="color: #94A3B8; font-size: 0.875rem; font-weight: 600;">${formatDate(match.date)} • ${match.venue}</span>
         </div>
 
-        <div class="match-score-display">
+        <div class="match-score-display" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 20px; background: rgba(13, 23, 44, 0.85); border: 1px solid rgba(255, 255, 255, 0.12); border-radius: 16px; padding: 28px 32px; box-shadow: 0 14px 40px rgba(0,0,0,0.4);">
           <div class="team-score-block">
-            <h3>Cayman Super Kings</h3>
-            <div class="score-large tabular-nums">${match.score_csk || 'Upcoming'}</div>
-            ${match.overs_csk ? `<div class="overs">${match.overs_csk} Overs</div>` : ''}
+            <h3 style="color: #38BDF8; font-family: var(--font-display); font-size: 1.4rem; font-weight: 900; margin-bottom: 6px;">Cayman Super Kings</h3>
+            <div class="score-large tabular-nums" style="font-size: 2.2rem; font-weight: 900; color: #FFFFFF;">${match.score_csk || 'Upcoming'}</div>
+            ${match.overs_csk ? `<div class="overs" style="color: #94A3B8; font-size: 0.9rem; font-weight: 600;">${match.overs_csk} Overs</div>` : ''}
           </div>
 
           <div style="text-align: center;">
-            <div class="match-result-pill">${match.result_text}</div>
-            ${match.player_of_match ? `<div style="font-size: 0.875rem; color: var(--c-gold); margin-top: 8px; font-weight: 600;">Player of the Match: ${match.player_of_match}</div>` : ''}
+            <div class="match-result-pill" style="display: inline-block; background: #0284C7; color: #FFFFFF; font-weight: 800; font-size: 0.875rem; padding: 6px 18px; border-radius: 999px; text-transform: uppercase; letter-spacing: 0.06em;">${match.result_text}</div>
+            ${match.player_of_match ? `<div style="font-size: 0.875rem; color: #F59E0B; margin-top: 8px; font-weight: 700;">★ Player of the Match: ${match.player_of_match}</div>` : ''}
           </div>
 
           <div class="team-score-block" style="text-align: right;">
-            <h3>${match.opponent}</h3>
-            <div class="score-large tabular-nums" style="color: var(--c-text-inverse-muted);">${match.score_opp || '—'}</div>
-            ${match.overs_opp ? `<div class="overs">${match.overs_opp} Overs</div>` : ''}
+            <h3 style="color: #E2E8F0; font-family: var(--font-display); font-size: 1.4rem; font-weight: 900; margin-bottom: 6px;">${match.opponent}</h3>
+            <div class="score-large tabular-nums" style="font-size: 2.2rem; font-weight: 900; color: #CBD5E1;">${match.score_opp || '—'}</div>
+            ${match.overs_opp ? `<div class="overs" style="color: #94A3B8; font-size: 0.9rem; font-weight: 600;">${match.overs_opp} Overs</div>` : ''}
           </div>
         </div>
 
-        <div style="margin-top: 24px; display: flex; justify-content: flex-end;">
-          <a href="${match.cricclubs_url}" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+        <div style="margin-top: 20px; display: flex; justify-content: flex-end;">
+          <a href="${match.cricclubs_url}" target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="font-weight: 800; border-radius: 999px;">
             Full scorecard on CricClubs ↗
           </a>
         </div>
@@ -385,69 +385,73 @@ export async function initMatchDetail() {
     </div>
 
     <!-- Match Content (Tables & Report) -->
-    <section class="section">
+    <section class="section" style="padding: 48px 0;">
       <div class="container">
-        <div class="grid">
+        <div class="grid" style="gap: 32px;">
           <div class="col-8">
-            <h2 style="margin-bottom: 24px;">Match Report &amp; Analysis</h2>
-            <div style="font-size: 1.125rem; line-height: 1.7; margin-bottom: 40px;">
-              <p class="lead" style="font-size: 1.25rem; font-weight: 500; color: #FFFFFF !important;">${match.summary || ''}</p>
+            <h2 style="font-family: var(--font-display); font-size: 1.85rem; font-weight: 900; color: #09152B; text-transform: uppercase; margin-bottom: 16px; letter-spacing: 0.02em;">Match Report &amp; Analysis</h2>
+            
+            <!-- Match Summary Lead Card -->
+            <div style="margin-bottom: 36px;">
+              <p class="lead" style="font-size: 1.15rem; font-weight: 500; color: #1E293B; line-height: 1.75; margin: 0; padding: 24px 28px; background: #FFFFFF; border-left: 5px solid #0284C7; border-radius: 0 14px 14px 0; border-top: 1.5px solid #CBD5E1; border-right: 1.5px solid #CBD5E1; border-bottom: 1.5px solid #CBD5E1; box-shadow: 0 6px 20px rgba(9,21,43,0.06);">
+                ${match.summary || 'A dominant performance from the Cayman Super Kings in this crucial league fixture.'}
+              </p>
             </div>
 
             <!-- Scorecard Tables -->
             ${match.scorecard ? `
-              <h3 style="margin-bottom: 16px;">CSK Batting Card</h3>
-              <div class="table-responsive" style="margin-bottom: 32px;">
-                <table class="data-table">
+              <h3 style="font-family: var(--font-display); font-size: 1.35rem; font-weight: 900; color: #09152B; text-transform: uppercase; margin-bottom: 14px; letter-spacing: 0.02em;">CSK Batting Card</h3>
+              <div class="table-responsive" style="margin-bottom: 36px; border: 1.5px solid #CBD5E1; border-radius: 12px; box-shadow: 0 6px 20px rgba(9,21,43,0.06); background: #FFFFFF;">
+                <table class="data-table" style="width: 100%; border-collapse: collapse;">
                   <thead>
-                    <tr>
-                      <th>Batter</th>
-                      <th>Dismissal</th>
-                      <th>R</th>
-                      <th>B</th>
-                      <th>4s</th>
-                      <th>6s</th>
-                      <th>SR</th>
+                    <tr style="background: #09152B; color: #FFFFFF;">
+                      <th style="padding: 14px 16px; font-weight: 800; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.06em; color: #F59E0B; text-align: left;">Batter</th>
+                      <th style="padding: 14px 16px; font-weight: 800; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.06em; color: #94A3B8; text-align: left;">Dismissal</th>
+                      <th style="padding: 14px 16px; font-weight: 800; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.06em; color: #FFFFFF; text-align: center;">R</th>
+                      <th style="padding: 14px 16px; font-weight: 800; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.06em; color: #CBD5E1; text-align: center;">B</th>
+                      <th style="padding: 14px 16px; font-weight: 800; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.06em; color: #CBD5E1; text-align: center;">4s</th>
+                      <th style="padding: 14px 16px; font-weight: 800; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.06em; color: #CBD5E1; text-align: center;">6s</th>
+                      <th style="padding: 14px 16px; font-weight: 800; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.06em; color: #CBD5E1; text-align: right;">SR</th>
                     </tr>
                   </thead>
                   <tbody>
                     ${match.scorecard.csk_batting.map(b => `
-                      <tr>
-                        <td><strong>${b.player}</strong></td>
-                        <td style="color: var(--c-text-muted);">${b.dismissal}</td>
-                        <td class="highlight-col">${b.runs}</td>
-                        <td>${b.balls}</td>
-                        <td>${b.fours}</td>
-                        <td>${b.sixes}</td>
-                        <td>${b.sr}</td>
+                      <tr style="border-bottom: 1px solid #E2E8F0; transition: background 0.2s;">
+                        <td style="padding: 12px 16px; font-weight: 800; color: #09152B;">${b.player}</td>
+                        <td style="padding: 12px 16px; color: #64748B; font-size: 0.875rem;">${b.dismissal}</td>
+                        <td style="padding: 12px 16px; text-align: center; font-weight: 900; color: #09152B; font-size: 1rem;">${b.runs}</td>
+                        <td style="padding: 12px 16px; text-align: center; color: #334155;">${b.balls}</td>
+                        <td style="padding: 12px 16px; text-align: center; color: #334155;">${b.fours}</td>
+                        <td style="padding: 12px 16px; text-align: center; color: #334155;">${b.sixes}</td>
+                        <td style="padding: 12px 16px; text-align: right; color: #0284C7; font-weight: 700;">${b.sr}</td>
                       </tr>
                     `).join('')}
                   </tbody>
                 </table>
               </div>
 
-              <h3 style="margin-bottom: 16px;">CSK Bowling Analysis</h3>
-              <div class="table-responsive" style="margin-bottom: 40px;">
-                <table class="data-table">
+              <h3 style="font-family: var(--font-display); font-size: 1.35rem; font-weight: 900; color: #09152B; text-transform: uppercase; margin-bottom: 14px; letter-spacing: 0.02em;">CSK Bowling Analysis</h3>
+              <div class="table-responsive" style="margin-bottom: 40px; border: 1.5px solid #CBD5E1; border-radius: 12px; box-shadow: 0 6px 20px rgba(9,21,43,0.06); background: #FFFFFF;">
+                <table class="data-table" style="width: 100%; border-collapse: collapse;">
                   <thead>
-                    <tr>
-                      <th>Bowler</th>
-                      <th>O</th>
-                      <th>M</th>
-                      <th>R</th>
-                      <th>W</th>
-                      <th>Econ</th>
+                    <tr style="background: #09152B; color: #FFFFFF;">
+                      <th style="padding: 14px 16px; font-weight: 800; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.06em; color: #F59E0B; text-align: left;">Bowler</th>
+                      <th style="padding: 14px 16px; font-weight: 800; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.06em; color: #CBD5E1; text-align: center;">O</th>
+                      <th style="padding: 14px 16px; font-weight: 800; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.06em; color: #CBD5E1; text-align: center;">M</th>
+                      <th style="padding: 14px 16px; font-weight: 800; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.06em; color: #CBD5E1; text-align: center;">R</th>
+                      <th style="padding: 14px 16px; font-weight: 800; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.06em; color: #EF4444; text-align: center;">W</th>
+                      <th style="padding: 14px 16px; font-weight: 800; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.06em; color: #0284C7; text-align: right;">Econ</th>
                     </tr>
                   </thead>
                   <tbody>
                     ${match.scorecard.csk_bowling.map(bow => `
-                      <tr>
-                        <td><strong>${bow.bowler}</strong></td>
-                        <td>${bow.overs}</td>
-                        <td>${bow.maidens}</td>
-                        <td>${bow.runs}</td>
-                        <td class="highlight-col" style="color: var(--c-flame-text); font-weight: 800;">${bow.wickets}</td>
-                        <td>${bow.econ}</td>
+                      <tr style="border-bottom: 1px solid #E2E8F0; transition: background 0.2s;">
+                        <td style="padding: 12px 16px; font-weight: 800; color: #09152B;">${bow.bowler}</td>
+                        <td style="padding: 12px 16px; text-align: center; color: #334155;">${bow.overs}</td>
+                        <td style="padding: 12px 16px; text-align: center; color: #334155;">${bow.maidens}</td>
+                        <td style="padding: 12px 16px; text-align: center; color: #334155;">${bow.runs}</td>
+                        <td style="padding: 12px 16px; text-align: center; font-weight: 900; color: #DC2626; font-size: 1rem;">${bow.wickets}</td>
+                        <td style="padding: 12px 16px; text-align: right; color: #0284C7; font-weight: 700;">${bow.econ}</td>
                       </tr>
                     `).join('')}
                   </tbody>
@@ -455,55 +459,63 @@ export async function initMatchDetail() {
               </div>
             ` : ''}
 
-            <!-- Match Action Gallery Strip -->
-            <h3 style="margin-bottom: 16px;">Match Action Gallery</h3>
-            <div class="grid">
+            <!-- Real Match Action Gallery Strip -->
+            <h3 style="font-family: var(--font-display); font-size: 1.35rem; font-weight: 900; color: #09152B; text-transform: uppercase; margin-bottom: 16px; letter-spacing: 0.02em;">Match Action Gallery</h3>
+            <div class="grid" style="gap: 18px;">
               <div class="col-6">
-                <img src="assets/placeholders/action-match.svg" alt="Match action shot" style="border-radius: 8px; width: 100%;">
+                <div style="border-radius: 12px; overflow: hidden; border: 1.5px solid #CBD5E1; box-shadow: 0 6px 20px rgba(9,21,43,0.06); height: 240px; background: #080E18;">
+                  <img src="assets/players/real/Rahul-Garg-Crease.jpg" alt="Rahul Garg at the crease" style="width: 100%; height: 100%; object-fit: cover; object-position: center 20%;">
+                </div>
+                <span style="display: block; margin-top: 6px; font-size: 0.8125rem; color: #64748B; font-weight: 600;">Skipper Rahul Garg at the crease during powerplay</span>
               </div>
               <div class="col-6">
-                <img src="assets/placeholders/hero-team.svg" alt="Team celebration" style="border-radius: 8px; width: 100%;">
+                <div style="border-radius: 12px; overflow: hidden; border: 1.5px solid #CBD5E1; box-shadow: 0 6px 20px rgba(9,21,43,0.06); height: 240px; background: #080E18;">
+                  <img src="assets/csk-hero-celebration.jpg" alt="CSK Team celebration" style="width: 100%; height: 100%; object-fit: cover;">
+                </div>
+                <span style="display: block; margin-top: 6px; font-size: 0.8125rem; color: #64748B; font-weight: 600;">Championship trophy celebrations with the squad</span>
               </div>
             </div>
           </div>
 
           <!-- Sidebar -->
           <div class="col-4">
-            <div class="card card-body" style="background: var(--c-navy-light); color: #fff; margin-bottom: 24px;">
-              <h4 style="color: var(--c-gold); margin-bottom: 16px;">Official Verification</h4>
-              <p style="font-size: 0.875rem; line-height: 1.6; color: var(--c-text-inverse-muted);">
+            <!-- Official Verification Card -->
+            <div class="card card-body" style="background: #FFFFFF; border: 1.5px solid #CBD5E1; border-radius: 14px; padding: 26px; box-shadow: 0 6px 20px rgba(9,21,43,0.06); margin-bottom: 24px;">
+              <h4 style="color: #09152B; font-family: var(--font-display); font-size: 1.15rem; font-weight: 900; margin-bottom: 12px; text-transform: uppercase; letter-spacing: 0.04em;">Official Verification</h4>
+              <p style="font-size: 0.9rem; line-height: 1.65; color: #334155; margin-bottom: 18px; font-weight: 500;">
                 All match scores, ball-by-ball records, and official league points are certified by Cayman Islands Cricket Association umpires.
               </p>
-              <a href="${match.cricclubs_url}" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm" style="margin-top: 16px;">
+              <a href="${match.cricclubs_url}" target="_blank" rel="noopener noreferrer" class="btn btn-outline-navy btn-sm" style="font-weight: 800; border-radius: 999px; width: 100%; text-align: center; justify-content: center;">
                 Open CricClubs Portal ↗
               </a>
             </div>
 
-            <div class="card card-body">
-              <h4 style="margin-bottom: 16px;">Match Details</h4>
-              <ul style="list-style: none; display: flex; flex-direction: column; gap: 12px; font-size: 0.875rem;">
-                <li><strong>Competition:</strong> ${match.competition}</li>
-                <li><strong>Format:</strong> ${match.format}</li>
-                <li><strong>Venue:</strong> ${match.venue}</li>
-                <li><strong>Date:</strong> ${formatDate(match.date)}</li>
-                <li><strong>Status:</strong> ${match.status.toUpperCase()}</li>
+            <!-- Match Details Card -->
+            <div class="card card-body" style="background: #FFFFFF; border: 1.5px solid #CBD5E1; border-radius: 14px; padding: 26px; box-shadow: 0 6px 20px rgba(9,21,43,0.06);">
+              <h4 style="color: #09152B; font-family: var(--font-display); font-size: 1.15rem; font-weight: 900; margin-bottom: 16px; text-transform: uppercase; letter-spacing: 0.04em;">Match Details</h4>
+              <ul style="list-style: none; display: flex; flex-direction: column; gap: 12px; font-size: 0.9rem; padding: 0; margin: 0;">
+                <li style="display: flex; justify-content: space-between; border-bottom: 1px solid #E2E8F0; padding-bottom: 8px;"><strong style="color: #64748B;">Competition:</strong> <span style="color: #09152B; font-weight: 800;">${match.competition}</span></li>
+                <li style="display: flex; justify-content: space-between; border-bottom: 1px solid #E2E8F0; padding-bottom: 8px;"><strong style="color: #64748B;">Format:</strong> <span style="color: #09152B; font-weight: 800;">${match.format}</span></li>
+                <li style="display: flex; justify-content: space-between; border-bottom: 1px solid #E2E8F0; padding-bottom: 8px;"><strong style="color: #64748B;">Venue:</strong> <span style="color: #09152B; font-weight: 800;">${match.venue}</span></li>
+                <li style="display: flex; justify-content: space-between; border-bottom: 1px solid #E2E8F0; padding-bottom: 8px;"><strong style="color: #64748B;">Date:</strong> <span style="color: #09152B; font-weight: 800;">${formatDate(match.date)}</span></li>
+                <li style="display: flex; justify-content: space-between;"><strong style="color: #64748B;">Status:</strong> <span style="color: #0284C7; font-weight: 900;">${match.status.toUpperCase()}</span></li>
               </ul>
             </div>
           </div>
         </div>
 
         <!-- Prev / Next Navigation Footer -->
-        <div class="match-nav-footer">
+        <div class="match-nav-footer" style="margin-top: 40px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px;">
           ${prevMatch ? `
-            <a href="match-detail.html?slug=${prevMatch.slug}" class="btn btn-outline-navy btn-sm">
+            <a href="match-detail.html?slug=${prevMatch.slug}" class="btn btn-outline-navy btn-sm" style="font-weight: 800; border-radius: 999px;">
               ← Prev: vs ${prevMatch.opponent}
             </a>
           ` : '<div></div>'}
 
-          <a href="matches.html" class="btn btn-primary btn-sm">All Matches &amp; Fixtures</a>
+          <a href="matches.html" class="btn btn-primary btn-sm" style="font-weight: 800; border-radius: 999px;">All Matches &amp; Fixtures</a>
 
           ${nextMatch ? `
-            <a href="match-detail.html?slug=${nextMatch.slug}" class="btn btn-outline-navy btn-sm">
+            <a href="match-detail.html?slug=${nextMatch.slug}" class="btn btn-outline-navy btn-sm" style="font-weight: 800; border-radius: 999px;">
               Next: vs ${nextMatch.opponent} →
             </a>
           ` : '<div></div>'}
