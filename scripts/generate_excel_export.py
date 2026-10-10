@@ -221,12 +221,49 @@ def main():
             t.get("description", "")
         ])
 
-    # 5. Enquiries Format Template
-    enquiries_headers = ["Submission Timestamp", "Cayman Local Time", "Full Name", "Email Address", "Enquiry Subject", "Message Body"]
+    # 5. Enquiries Format Template & Database
+    enquiries_headers = [
+        "Submission Timestamp (UTC)",
+        "Cayman Local Date & Time",
+        "Sender Full Name",
+        "Sender Email Address",
+        "Enquiry Category / Subject",
+        "Message Body / Inquiry Details",
+        "Follow-up Status",
+        "Assigned Official / Committee Member"
+    ]
     enquiries_rows = [
         enquiries_headers,
-        ["2026-10-10T11:45:00Z", "10/10/2026, 6:45:00 AM", "Marcus Campbell", "marcus@example.ky", "Corporate Sponsorship & Brand Partnership", "Looking to discuss CSK corporate jersey sponsorship for the 2026/27 Super League season."],
-        ["2026-10-10T10:30:00Z", "10/10/2026, 5:30:00 AM", "Dave Robinson", "dave.r@example.ky", "Youth Academy Registration (Ages 10–18)", "Interested in enrolling two youth players (under-15) for weekly coaching sessions."]
+        [
+            "2026-10-10T11:45:00Z",
+            "10/10/2026, 6:45:00 AM",
+            "Marcus Campbell",
+            "marcus@example.ky",
+            "Corporate Sponsorship & Brand Partnership",
+            "Looking to discuss CSK corporate jersey sponsorship for the 2026/27 Super League season.",
+            "In Review",
+            "Rahul Garg (Club Captain)"
+        ],
+        [
+            "2026-10-10T10:30:00Z",
+            "10/10/2026, 5:30:00 AM",
+            "Dave Robinson",
+            "dave.r@example.ky",
+            "Youth Academy Registration (Ages 10–18)",
+            "Interested in enrolling two youth players (under-15) for weekly coaching sessions.",
+            "Pending",
+            "Majin Paul (Team Manager)"
+        ],
+        [
+            "2026-10-09T18:15:00Z",
+            "09/10/2026, 1:15:00 PM",
+            "Sarah Jenkins",
+            "sarah.j@caymanports.ky",
+            "General Club Enquiry",
+            "Inquiry regarding upcoming tournament schedule at Jimmy Powell Oval and match ticketing.",
+            "Contacted",
+            "Christopher Balraj (Co-Founder)"
+        ]
     ]
 
     # Write individual CSV files
@@ -250,14 +287,18 @@ def main():
         writer = csv.writer(f)
         writer.writerows(enquiries_rows)
 
+    # Standalone Contact Enquiries Excel Sheet (.xlsx)
+    contact_xlsx = os.path.join(exports_dir, 'CSK_Contact_Enquiries_Database.xlsx')
+    create_xlsx({"Contact_Enquiries": enquiries_rows}, contact_xlsx)
+
     # Write Master Microsoft Excel Workbook (.xlsx)
     master_xlsx = os.path.join(exports_dir, 'Cayman_Super_Kings_Complete_Database.xlsx')
     sheets_dict = {
+        "Contact_Enquiries": enquiries_rows,
         "Squad_Players": squad_rows,
         "Matches_Fixtures": matches_rows,
         "News_Articles": news_rows,
-        "Timeline_Honours": timeline_rows,
-        "Contact_Enquiries": enquiries_rows
+        "Timeline_Honours": timeline_rows
     }
     create_xlsx(sheets_dict, master_xlsx)
 
