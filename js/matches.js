@@ -16,9 +16,8 @@ export async function initMatchesPage() {
   if (!container) return;
 
   const fixtures = await store.getFixtures();
-  let currentTab = 'results';
-  let currentFormat = 'all';
-  let currentSeason = '2026';
+  let currentFormat = formatFilter ? formatFilter.value : 'all';
+  let currentSeason = seasonFilter ? seasonFilter.value : 'all';
 
   function render() {
     let filtered = fixtures.filter(f => f.status === 'result');
@@ -44,7 +43,7 @@ export async function initMatchesPage() {
 
     if (emptyState) emptyState.style.display = 'none';
     container.style.display = 'grid';
-    container.style.gridTemplateColumns = 'repeat(2, 1fr)';
+    container.style.gridTemplateColumns = 'repeat(auto-fill, minmax(360px, 1fr))';
     container.style.gap = '24px';
     container.innerHTML = filtered.map((m, index) => createMatchCardHTML(m, index)).join('');
   }
@@ -312,17 +311,21 @@ export async function initMatchesPage() {
   });
 
   if (formatFilter) {
-    formatFilter.addEventListener('change', (e) => {
+    const handleFormatChange = (e) => {
       currentFormat = e.target.value;
       render();
-    });
+    };
+    formatFilter.addEventListener('change', handleFormatChange);
+    formatFilter.addEventListener('input', handleFormatChange);
   }
 
   if (seasonFilter) {
-    seasonFilter.addEventListener('change', (e) => {
+    const handleSeasonChange = (e) => {
       currentSeason = e.target.value;
       render();
-    });
+    };
+    seasonFilter.addEventListener('change', handleSeasonChange);
+    seasonFilter.addEventListener('input', handleSeasonChange);
   }
 
   render();
