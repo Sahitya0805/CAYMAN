@@ -96,42 +96,44 @@ export async function initArticlePage() {
   document.title = `${article.title} | Cayman Super Kings News`;
 
   container.innerHTML = `
-    <div class="article-container" style="max-width: 820px; margin: 0 auto; padding: 40px 20px 80px;">
-      <!-- Article Header -->
-      <div class="article-header" style="margin-bottom: 32px; border-bottom: 1.5px solid #E2E8F0; padding-bottom: 24px;">
-        <div style="margin-bottom: 18px;">
-          <a href="news.html" style="font-size: 0.875rem; color: #0284C7; font-weight: 800; text-decoration: none; display: inline-flex; align-items: center; gap: 6px;">
-            ← Back to All Stories
+    <div class="article-container" style="max-width: 860px; margin: 40px auto 80px; padding: 0 16px;">
+      <div class="card" style="background: #FFFFFF; border: 1.5px solid #CBD5E1; border-radius: 18px; padding: 48px 40px; box-shadow: 0 14px 40px rgba(9, 21, 43, 0.08);">
+        <!-- Article Header -->
+        <div class="article-header" style="margin-bottom: 28px; border-bottom: 1.5px solid #E2E8F0; padding-bottom: 24px;">
+          <div style="margin-bottom: 18px;">
+            <a href="news.html" style="font-size: 0.875rem; color: #0284C7; font-weight: 800; text-decoration: none; display: inline-flex; align-items: center; gap: 6px;">
+              ← Back to All Stories
+            </a>
+          </div>
+          <span class="badge" style="background: rgba(2, 132, 199, 0.12); color: #0284C7; font-weight: 800; font-size: 0.8125rem; letter-spacing: 0.06em; text-transform: uppercase; padding: 5px 14px; border-radius: 999px;">
+            ${article.category}
+          </span>
+          <h1 style="font-family: var(--font-display); font-size: clamp(2rem, 4vw, 2.6rem); font-weight: 900; color: #09152B; line-height: 1.25; margin-top: 16px; margin-bottom: 16px;">
+            ${article.title}
+          </h1>
+          <div class="article-meta" style="display: flex; gap: 12px; align-items: center; color: #64748B; font-size: 0.875rem; font-weight: 600; flex-wrap: wrap;">
+            <span>By <strong style="color: #09152B;">${article.author || 'CSK Editorial'}</strong></span>
+            <span>•</span>
+            <span>${article.date}</span>
+            <span>•</span>
+            <span>${article.read_time || '3 min read'}</span>
+          </div>
+        </div>
+
+        <!-- Article Body (High Contrast Typography) -->
+        <div class="article-body" style="font-size: 1.1rem; line-height: 1.85; color: #1E293B; font-weight: 500;">
+          ${article.content}
+        </div>
+
+        <!-- Navigation Footer -->
+        <div style="margin-top: 48px; padding-top: 24px; border-top: 1.5px solid #E2E8F0; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px;">
+          <a href="news.html" class="btn btn-outline-navy btn-sm" style="border-radius: 999px; font-weight: 800;">
+            ← Back to Stories
+          </a>
+          <a href="about.html" class="btn btn-primary btn-sm" style="border-radius: 999px; font-weight: 800;">
+            Club History &amp; Timeline →
           </a>
         </div>
-        <span class="badge" style="background: rgba(2, 132, 199, 0.12); color: #0284C7; font-weight: 800; font-size: 0.8125rem; letter-spacing: 0.06em; text-transform: uppercase; padding: 5px 14px; border-radius: 999px;">
-          ${article.category}
-        </span>
-        <h1 style="font-family: var(--font-display); font-size: clamp(2rem, 4vw, 2.8rem); font-weight: 900; color: #09152B; line-height: 1.2; margin-top: 16px; margin-bottom: 16px;">
-          ${article.title}
-        </h1>
-        <div class="article-meta" style="display: flex; gap: 12px; align-items: center; color: #64748B; font-size: 0.875rem; font-weight: 600; flex-wrap: wrap;">
-          <span>By <strong>${article.author || 'CSK Editorial'}</strong></span>
-          <span>•</span>
-          <span>${article.date}</span>
-          <span>•</span>
-          <span>${article.read_time || '3 min read'}</span>
-        </div>
-      </div>
-
-      <!-- Article Body (Clean High-Contrast Typography) -->
-      <div class="article-body" style="font-size: 1.1rem; line-height: 1.8; color: #1E293B;">
-        ${article.content}
-      </div>
-
-      <!-- Navigation Footer -->
-      <div style="margin-top: 48px; padding-top: 24px; border-top: 1.5px solid #E2E8F0; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px;">
-        <a href="news.html" class="btn btn-outline-navy btn-sm" style="border-radius: 999px; font-weight: 800;">
-          ← Back to Stories
-        </a>
-        <a href="about.html" class="btn btn-primary btn-sm" style="border-radius: 999px; font-weight: 800;">
-          Club History &amp; Timeline →
-        </a>
       </div>
     </div>
   `;
