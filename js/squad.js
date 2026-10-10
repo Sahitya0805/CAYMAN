@@ -101,10 +101,7 @@ function createStadiumPlayerCard(p) {
     <article class="squad-player-stage-card" tabindex="0" aria-label="${playerName} - ${p.role}">
       <!-- Front Showcase Layer -->
       <div class="squad-card-front">
-        <!-- Huge Oversized Block Jersey Number -->
-        <div class="squad-jersey-bg-num">${jerseyNum}</div>
-
-        <!-- Standing Player Cutout -->
+        <!-- Full Size Player Photo -->
         <div class="squad-player-figure-wrap">
           <img src="${photoSrc}" alt="${playerName}" class="squad-player-cutout-img" loading="lazy">
         </div>
