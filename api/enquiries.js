@@ -1,14 +1,36 @@
 // Serverless API Endpoint: /api/enquiries
-// Dynamically exports all live contact form submissions into CSV or JSON on-the-fly
+// STRICTLY RESTRICTED TO CSK CLUB ADMINISTRATORS
 
 import { getSubmissions } from './contact-store.js';
 
 export default async function handler(req, res) {
   res.setHeader('Access-Control-Allow-Origin', '*');
   res.setHeader('Access-Control-Allow-Methods', 'GET, OPTIONS');
+  res.setHeader('Access-Control-Allow-Headers', 'Authorization, Content-Type, X-Admin-Key');
 
   if (req.method === 'OPTIONS') {
     return res.status(200).end();
+  }
+
+  // Security Verification: Require valid Admin Secret
+  const ADMIN_SECRET = process.env.CSK_ADMIN_KEY || process.env.ADMIN_SECRET || 'csk-secretariat-2026';
+
+  const authHeader = req.headers['authorization'] || '';
+  const bearerToken = authHeader.replace(/^Bearer\s+/i, '').trim();
+  const queryKey = req.query.key || req.query.secret || '';
+  const customHeader = req.headers['x-admin-key'] || '';
+
+  const isAuthorized = (
+    (bearerToken && bearerToken === ADMIN_SECRET) ||
+    (queryKey && queryKey === ADMIN_SECRET) ||
+    (customHeader && customHeader === ADMIN_SECRET)
+  );
+
+  if (!isAuthorized) {
+    return res.status(401).json({
+      error: 'Unauthorized access. Confidential enquiry records are strictly restricted to CSK Club Administrators.',
+      status: 401
+    });
   }
 
   try {
@@ -42,7 +64,7 @@ export default async function handler(req, res) {
       }
 
       const csvString = csvRows.join('\n');
-      const filename = `csk_live_enquiries_${new Date().toISOString().slice(0, 10)}.csv`;
+      const filename = `csk_admin_enquiries_${new Date().toISOString().slice(0, 10)}.csv`;
 
       res.setHeader('Content-Type', 'text/csv; charset=utf-8');
       res.setHeader('Content-Disposition', `attachment; filename="${filename}"`);
@@ -57,6 +79,6 @@ export default async function handler(req, res) {
     });
   } catch (err) {
     console.error('API /api/enquiries error:', err);
-    return res.status(500).json({ error: 'Failed to retrieve live enquiries' });
+    return res.status(500).json({ error: 'Failed to retrieve enquiry records' });
   }
 }

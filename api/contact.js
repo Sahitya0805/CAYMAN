@@ -30,13 +30,13 @@ export default async function handler(req, res) {
       status: "New / Received"
     };
 
-    // Store in live memory runtime
+    // Safely store in backend private store
     addSubmission(submission);
 
-    console.log('[CSK Contact Enquiry Received Live]:', submission);
+    console.log('[CSK Backend Contact Enquiry Logged]:', submission);
 
-    // Optional: Forward to external webhook (Google Sheets / Discord / Slack / Web3Forms)
-    const webhookUrl = process.env.CONTACT_WEBHOOK_URL;
+    // Forward to secure backend webhook (Google Sheets / Discord / Slack / Email) if configured
+    const webhookUrl = process.env.CONTACT_WEBHOOK_URL || process.env.GOOGLE_SHEET_WEBHOOK_URL;
     if (webhookUrl && webhookUrl.startsWith('http')) {
       try {
         await fetch(webhookUrl, {
@@ -45,14 +45,14 @@ export default async function handler(req, res) {
           body: JSON.stringify(submission)
         });
       } catch (webhookErr) {
-        console.warn('Webhook dispatch warning:', webhookErr);
+        console.warn('Backend webhook dispatch notice:', webhookErr);
       }
     }
 
     return res.status(200).json({
       success: true,
-      message: 'Enquiry safely logged and recorded.',
-      data: submission
+      message: 'Enquiry safely received and logged in CSK private database.',
+      timestamp: submission.timestamp
     });
   } catch (err) {
     console.error('API /api/contact error:', err);

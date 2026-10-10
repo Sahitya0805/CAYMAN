@@ -14,32 +14,6 @@ export function initContactForm() {
 
   if (!form) return;
 
-  // Expose global export helper so admins can download all enquiries as CSV
-  window.exportCSKEnquiries = function () {
-    const raw = localStorage.getItem('csk_contact_submissions') || '[]';
-    const items = JSON.parse(raw);
-    if (!items.length) {
-      alert('No enquiries recorded yet.');
-      return;
-    }
-    const headers = ['Date', 'Name', 'Email', 'Subject', 'Message'];
-    const rows = items.map(i => [
-      `"${i.dateFormatted || i.timestamp}"`,
-      `"${(i.name || '').replace(/"/g, '""')}"`,
-      `"${(i.email || '').replace(/"/g, '""')}"`,
-      `"${(i.subject || '').replace(/"/g, '""')}"`,
-      `"${(i.message || '').replace(/"/g, '""')}"`
-    ]);
-    const csvContent = 'data:text/csv;charset=utf-8,' + [headers.join(','), ...rows.map(r => r.join(','))].join('\n');
-    const encodedUri = encodeURI(csvContent);
-    const link = document.createElement('a');
-    link.setAttribute('href', encodedUri);
-    link.setAttribute('download', `csk_enquiries_${new Date().toISOString().slice(0, 10)}.csv`);
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
-  };
-
   form.addEventListener('submit', async (e) => {
     e.preventDefault();
 
@@ -118,10 +92,6 @@ export function initContactForm() {
         }).catch(err => console.warn('Google Sheet dispatch notice:', err));
       }
 
-      // 4. Save to client storage backup
-      const existing = JSON.parse(localStorage.getItem('csk_contact_submissions') || '[]');
-      existing.unshift(payload);
-      localStorage.setItem('csk_contact_submissions', JSON.stringify(existing));
 
       // 5. Show Success State
       form.style.display = 'none';
