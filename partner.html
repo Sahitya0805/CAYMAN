@@ -20,55 +20,16 @@
       border: 1.5px solid #CBD5E1;
       border-left: 6px solid #0284C7;
       border-radius: 16px;
-      padding: 36px 32px;
+      padding: 48px 36px;
       box-shadow: 0 10px 30px rgba(9, 21, 43, 0.07);
       text-align: center;
-      margin-bottom: 40px;
-    }
-
-    .jumbotron-hud-white {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      border-bottom: 1px solid #E2E8F0;
-      padding-bottom: 14px;
-      margin-bottom: 24px;
-      flex-wrap: wrap;
-      gap: 12px;
-    }
-
-    .jumbotron-live-status-white {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      font-family: var(--font-display);
-      font-size: 0.8rem;
-      font-weight: 800;
-      color: #0284C7;
-      letter-spacing: 0.08em;
-    }
-
-    .jumbotron-live-dot {
-      width: 9px;
-      height: 9px;
-      border-radius: 50%;
-      background: #F2600C;
-      box-shadow: 0 0 8px #F2600C;
-      display: inline-block;
-    }
-
-    .jumbotron-season-tag-white {
-      font-family: var(--font-mono, monospace);
-      font-size: 0.78rem;
-      font-weight: 700;
-      color: #64748B;
-      letter-spacing: 0.06em;
+      margin-bottom: 0;
     }
 
     .jumbotron-icon-wrap-white {
       width: 68px;
       height: 68px;
-      margin: 0 auto 16px;
+      margin: 0 auto 20px;
       background: rgba(2, 132, 199, 0.08);
       border: 1.5px solid #0284C7;
       border-radius: 50%;
@@ -80,19 +41,19 @@
 
     .jumbotron-title-white {
       font-family: var(--font-display);
-      font-size: clamp(1.5rem, 3.2vw, 2rem);
+      font-size: clamp(1.6rem, 3.2vw, 2.2rem);
       font-weight: 900;
       text-transform: uppercase;
       letter-spacing: 0.03em;
       color: #09152B;
-      margin-bottom: 12px;
+      margin-bottom: 14px;
     }
 
     .jumbotron-desc-white {
-      font-size: 1.02rem;
-      color: #334155;
+      font-size: 1.05rem;
+      color: #475569;
       line-height: 1.65;
-      max-width: 680px;
+      max-width: 620px;
       margin: 0 auto 28px;
       font-weight: 500;
     }
@@ -102,325 +63,6 @@
       justify-content: center;
       gap: 16px;
       flex-wrap: wrap;
-    }
-
-    /* ── Metric Impact Cards ── */
-    .partner-stats-grid-white {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 18px;
-      margin-bottom: 48px;
-    }
-
-    .partner-stat-card-white {
-      background: #FFFFFF;
-      border: 1.5px solid #E2E8F0;
-      border-radius: 14px;
-      padding: 24px 18px;
-      text-align: center;
-      box-shadow: 0 4px 16px rgba(9, 21, 43, 0.05);
-      transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
-    }
-
-    .partner-stat-card-white:hover {
-      transform: translateY(-4px);
-      border-color: #0284C7;
-      box-shadow: 0 10px 24px rgba(2, 132, 199, 0.12);
-    }
-
-    .partner-stat-val-white {
-      font-family: var(--font-display);
-      font-size: clamp(1.9rem, 3vw, 2.4rem);
-      font-weight: 900;
-      color: #0284C7;
-      line-height: 1.1;
-      margin-bottom: 6px;
-    }
-
-    .partner-stat-label-white {
-      font-size: 0.8125rem;
-      font-weight: 800;
-      color: #475569;
-      letter-spacing: 0.04em;
-      text-transform: uppercase;
-    }
-
-    /* ── Sponsorship Packages ── */
-    .partner-tiers-grid-white {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 24px;
-      align-items: stretch;
-      margin-top: 36px;
-    }
-
-    .tier-card-white {
-      background: #FFFFFF;
-      border: 1.5px solid #CBD5E1;
-      border-radius: 16px;
-      padding: 32px 26px;
-      display: flex;
-      flex-direction: column;
-      position: relative;
-      box-shadow: 0 8px 24px rgba(9, 21, 43, 0.06);
-      transition: transform 0.28s ease, box-shadow 0.28s ease, border-color 0.28s ease;
-    }
-
-    .tier-card-white:hover {
-      transform: translateY(-6px);
-      border-color: #0284C7;
-      box-shadow: 0 16px 36px rgba(9, 21, 43, 0.12);
-    }
-
-    .tier-card-white--featured {
-      border: 2px solid #F59E0B;
-      box-shadow: 0 12px 36px rgba(245, 158, 11, 0.15);
-      transform: translateY(-6px);
-    }
-
-    .tier-card-white--featured:hover {
-      transform: translateY(-10px);
-      box-shadow: 0 20px 48px rgba(245, 158, 11, 0.22);
-    }
-
-    .tier-floating-badge-gold {
-      position: absolute;
-      top: -14px;
-      left: 50%;
-      transform: translateX(-50%);
-      background: linear-gradient(135deg, #F59E0B 0%, #D97706 100%);
-      color: #09152B;
-      font-family: var(--font-display);
-      font-size: 0.78rem;
-      font-weight: 900;
-      padding: 4px 16px;
-      border-radius: 999px;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      box-shadow: 0 4px 14px rgba(245, 158, 11, 0.35);
-      white-space: nowrap;
-    }
-
-    .tier-pill-badge-white {
-      align-self: flex-start;
-      font-family: var(--font-display);
-      font-size: 0.75rem;
-      font-weight: 800;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      padding: 4px 12px;
-      border-radius: 999px;
-      margin-bottom: 14px;
-    }
-
-    .tier-pill-badge-white--cyan {
-      background: rgba(2, 132, 199, 0.12);
-      color: #0284C7;
-      border: 1px solid rgba(2, 132, 199, 0.3);
-    }
-
-    .tier-pill-badge-white--gold {
-      background: rgba(245, 158, 11, 0.15);
-      color: #B45309;
-      border: 1px solid rgba(245, 158, 11, 0.35);
-    }
-
-    .tier-pill-badge-white--flame {
-      background: rgba(242, 96, 12, 0.12);
-      color: #C2410C;
-      border: 1px solid rgba(242, 96, 12, 0.3);
-    }
-
-    .tier-card-title-white {
-      font-family: var(--font-display);
-      font-size: 1.5rem;
-      font-weight: 900;
-      color: #09152B;
-      margin: 0 0 6px;
-      letter-spacing: 0.02em;
-    }
-
-    .tier-card-price-white {
-      font-family: var(--font-display);
-      font-size: 2rem;
-      font-weight: 900;
-      margin-bottom: 6px;
-      color: #09152B;
-    }
-
-    .tier-card-price-white.color-cyan { color: #0284C7; }
-    .tier-card-price-white.color-gold { color: #D97706; }
-    .tier-card-price-white.color-flame { color: #EA580C; }
-
-    .tier-card-price-white span {
-      font-size: 0.9rem;
-      font-weight: 600;
-      color: #64748B;
-    }
-
-    .tier-draft-tag-white {
-      font-size: 0.75rem;
-      font-weight: 700;
-      color: #B45309;
-      background: rgba(245, 158, 11, 0.12);
-      border: 1px solid rgba(245, 158, 11, 0.25);
-      padding: 3px 10px;
-      border-radius: 6px;
-      display: inline-block;
-      margin-bottom: 14px;
-      width: fit-content;
-    }
-
-    .tier-card-desc-white {
-      font-size: 0.925rem;
-      color: #475569;
-      line-height: 1.55;
-      margin-bottom: 20px;
-      font-weight: 500;
-    }
-
-    .tier-features-list-white {
-      list-style: none;
-      padding: 0;
-      margin: 0 0 28px;
-      flex-grow: 1;
-    }
-
-    .tier-features-list-white li {
-      padding: 9px 0;
-      border-bottom: 1px solid #F1F5F9;
-      font-size: 0.92rem;
-      color: #334155;
-      display: flex;
-      align-items: flex-start;
-      gap: 10px;
-      line-height: 1.45;
-      font-weight: 500;
-    }
-
-    .tier-features-list-white li:last-child {
-      border-bottom: none;
-    }
-
-    .tier-check-icon-blue {
-      color: #0284C7;
-      font-weight: 900;
-      font-size: 1rem;
-      flex-shrink: 0;
-      margin-top: 1px;
-    }
-
-    .tier-check-icon-gold {
-      color: #D97706;
-      font-weight: 900;
-      font-size: 1rem;
-      flex-shrink: 0;
-      margin-top: 1px;
-    }
-
-    /* ── Single Mega CTA Stadium Banner ── */
-    .partner-mega-cta-box {
-      background: linear-gradient(135deg, #061530 0%, #0A2454 60%, #030C1C 100%);
-      border: 1px solid rgba(255, 255, 255, 0.12);
-      border-radius: 16px;
-      padding: 44px 32px;
-      margin-top: 56px;
-      text-align: center;
-      color: #FFFFFF;
-      box-shadow: 0 12px 36px rgba(9, 21, 43, 0.15);
-    }
-
-    .partner-mega-cta-box h2 {
-      font-family: var(--font-display);
-      font-size: clamp(1.8rem, 3.5vw, 2.4rem);
-      font-weight: 900;
-      text-transform: uppercase;
-      letter-spacing: 0.03em;
-      color: #FFFFFF;
-      margin-bottom: 12px;
-    }
-
-    .partner-mega-cta-box p {
-      color: #CBD5E1;
-      max-width: 640px;
-      margin: 0 auto 26px;
-      font-size: 1.02rem;
-      line-height: 1.6;
-    }
-
-    /* ── White FAQ Cards ── */
-    .partner-faq-card-white {
-      background: #FFFFFF;
-      border: 1.5px solid #E2E8F0;
-      border-left: 4px solid #0284C7;
-      border-radius: 12px;
-      padding: 22px 26px;
-      margin-bottom: 16px;
-      box-shadow: 0 4px 16px rgba(9, 21, 43, 0.04);
-      transition: border-color 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
-    }
-
-    .partner-faq-card-white:hover {
-      border-left-color: #0284C7;
-      border-color: #CBD5E1;
-      transform: translateX(4px);
-      box-shadow: 0 8px 24px rgba(9, 21, 43, 0.08);
-    }
-
-    .partner-faq-q-white {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      font-family: var(--font-display);
-      font-size: 1.15rem;
-      font-weight: 900;
-      color: #09152B;
-      margin-bottom: 10px;
-    }
-
-    .partner-faq-num-white {
-      background: rgba(2, 132, 199, 0.12);
-      border: 1px solid rgba(2, 132, 199, 0.3);
-      color: #0284C7;
-      font-size: 0.78rem;
-      font-weight: 900;
-      padding: 2px 8px;
-      border-radius: 6px;
-    }
-
-    .partner-faq-a-white {
-      color: #334155;
-      font-size: 0.95rem;
-      line-height: 1.6;
-      margin: 0;
-      padding-left: 36px;
-      font-weight: 500;
-    }
-
-    /* Responsive */
-    @media (max-width: 992px) {
-      .partner-stats-grid-white {
-        grid-template-columns: repeat(2, 1fr);
-      }
-      .partner-tiers-grid-white {
-        grid-template-columns: 1fr;
-        gap: 28px;
-      }
-      .tier-card-white--featured {
-        transform: none;
-      }
-      .tier-card-white--featured:hover {
-        transform: translateY(-4px);
-      }
-    }
-
-    @media (max-width: 640px) {
-      .partner-stats-grid-white {
-        grid-template-columns: 1fr;
-      }
-      .partner-faq-a-white {
-        padding-left: 0;
-      }
     }
   </style>
 </head>
@@ -557,203 +199,38 @@
   </header>
 
   <main>
-    <!-- Standard Franchise Hero Banner (Symmetric with About, Gallery, News) -->
+    <!-- Standard Franchise Hero Banner -->
     <section class="section section--navy" style="padding-top: 56px; padding-bottom: 56px;">
       <div class="container">
-        <span class="section-eyebrow" style="color: #38BDF8;">2026/27 Commercial Alliances</span>
+        <span class="section-eyebrow" style="color: #38BDF8;">Commercial Alliances</span>
         <h1 class="section-title" style="color: #FFFFFF;">POWER THE PRIDE OF CAYMAN CRICKET</h1>
         <p class="section-desc" style="max-width: 680px; color: #CBD5E1;">
-          Partner with Cayman's premier cricket franchise. Gain high-impact commercial visibility, engage local communities, and empower grassroots youth athletic excellence.
+          Partner with Cayman Super Kings Cricket Club and support local cricket excellence.
         </p>
       </div>
     </section>
 
-    <!-- Main White-Theme Content Section -->
-    <section class="section" style="padding-top: 48px; padding-bottom: 72px;">
-      <div class="container">
-        
-        <!-- White-Theme Jumbotron Announcement Card -->
-        <div class="sponsors-jumbotron-white">
-          <div class="jumbotron-hud-white">
-            <div class="jumbotron-live-status-white">
-              <span class="jumbotron-live-dot"></span>
-              <span>COMMERCIAL HUD // ROSTER STATUS: LOCKED IN FINAL STAGES</span>
-            </div>
-            <span class="jumbotron-season-tag-white">CICA LEAGUE 2026/27</span>
-          </div>
-
+    <!-- Main White-Theme Content Section: Currently Looking for Sponsors -->
+    <section class="section" style="padding-top: 64px; padding-bottom: 96px; min-height: 50vh; display: flex; align-items: center;">
+      <div class="container" style="width: 100%;">
+        <div class="sponsors-jumbotron-white" style="max-width: 780px; margin: 0 auto; text-align: center;">
           <div class="jumbotron-icon-wrap-white">
             <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
               <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
             </svg>
           </div>
 
-          <h2 class="jumbotron-title-white">2026/27 Title &amp; Official Franchise Sponsors</h2>
+          <h2 class="jumbotron-title-white">Currently We Are Looking for Sponsors</h2>
           <p class="jumbotron-desc-white">
-            We are currently finalizing exclusive commercial contracts with our principal corporate sponsors. Official partner badges, jersey crest placements, and perimeter boards will be unveiled right here ahead of the CICA opening fixture.
+            We are actively welcoming brand partners, corporate sponsors, and local community supporters for the upcoming season. If you are interested in partnering with Cayman Super Kings, please get in touch with our committee.
           </p>
 
           <div class="jumbotron-actions">
-            <a href="#packages" class="btn btn-primary" style="padding: 13px 30px; font-size: 0.95rem; font-weight: 800; border-radius: 999px;">
-              ⚡ View Sponsorship Packages ↓
-            </a>
-            <a href="contact.html?subject=partner" class="btn btn-outline-navy" style="padding: 13px 28px; font-size: 0.95rem; font-weight: 800; border-radius: 999px;">
-              📩 Contact Sponsorship Committee
+            <a href="contact.html?subject=partner" class="btn btn-primary" style="padding: 14px 36px; font-size: 0.95rem; font-weight: 800; border-radius: 999px;">
+              Contact Sponsorship Committee →
             </a>
           </div>
         </div>
-
-        <!-- Metric Impact Stats Grid -->
-        <div class="partner-stats-grid-white">
-          <div class="partner-stat-card-white">
-            <div class="partner-stat-val-white tabular-nums">4,500+</div>
-            <div class="partner-stat-label-white">Matchday Spectators / Year</div>
-          </div>
-          <div class="partner-stat-card-white">
-            <div class="partner-stat-val-white tabular-nums">18,000+</div>
-            <div class="partner-stat-label-white">Monthly Social Views</div>
-          </div>
-          <div class="partner-stat-card-white">
-            <div class="partner-stat-val-white tabular-nums">100%</div>
-            <div class="partner-stat-label-white">Cayman Reinvestment</div>
-          </div>
-          <div class="partner-stat-card-white">
-            <div class="partner-stat-val-white">CICA</div>
-            <div class="partner-stat-label-white">Sanctioned Club</div>
-          </div>
-        </div>
-
-        <!-- 3 Sponsorship Packages -->
-        <div id="packages" style="padding-top: 24px;">
-          <div class="section-header section-header--center" style="margin-bottom: 32px;">
-            <span class="section-eyebrow" style="color: #0284C7; font-weight: 800;">Commercial Portfolio</span>
-            <h2 class="section-title" style="color: #09152B; font-family: var(--font-display); font-size: clamp(2.2rem, 4.5vw, 2.8rem); font-weight: 900;">
-              2026/27 Sponsorship Packages
-            </h2>
-            <p class="section-desc" style="color: #475569; max-width: 680px; margin: 0 auto; font-weight: 500;">
-              Flexible investment tiers tailored for Cayman corporations, enterprises, and local retail seeking authentic community visibility.
-            </p>
-          </div>
-
-          <div class="partner-tiers-grid-white">
-            <!-- TIER 1: Community Partner -->
-            <div class="tier-card-white">
-              <span class="tier-pill-badge-white tier-pill-badge-white--cyan">Entry Tier</span>
-              <h3 class="tier-card-title-white">Community Partner</h3>
-              <div class="tier-card-price-white color-cyan tabular-nums">KYD 500 <span>/ season</span></div>
-              <div class="tier-draft-tag-white">⚠️ Draft Rate — Pending Sign-Off</div>
-              <p class="tier-card-desc-white">
-                Ideal for local retail and family-owned businesses supporting grassroots youth athletics and community cricket.
-              </p>
-              <ul class="tier-features-list-white">
-                <li><span class="tier-check-icon-blue">✓</span> Brand logo on official club website partner showcase</li>
-                <li><span class="tier-check-icon-blue">✓</span> Inclusion in digital social media partner roll-call</li>
-                <li><span class="tier-check-icon-blue">✓</span> 2 VIP invitations to end-of-season Club Awards Gala</li>
-                <li><span class="tier-check-icon-blue">✓</span> Official CSK Framed Partner Certificate for your office</li>
-              </ul>
-              <a href="contact.html?subject=partner-community" class="btn btn-outline-navy" style="border-radius: 999px; font-weight: 800; text-align: center;">
-                Request Community Deck →
-              </a>
-            </div>
-
-            <!-- TIER 2: Club Partner (FEATURED) -->
-            <div class="tier-card-white tier-card-white--featured">
-              <div class="tier-floating-badge-gold">🔥 MOST POPULAR</div>
-              <span class="tier-pill-badge-white tier-pill-badge-white--gold" style="margin-top: 6px;">Featured Tier</span>
-              <h3 class="tier-card-title-white">Club Partner</h3>
-              <div class="tier-card-price-white color-gold tabular-nums">KYD 1,000 <span>/ season</span></div>
-              <div class="tier-draft-tag-white">⚠️ Draft Rate — Pending Sign-Off</div>
-              <p class="tier-card-desc-white">
-                Enhanced brand exposure across match reports, training kits, and ground signage.
-              </p>
-              <ul class="tier-features-list-white">
-                <li><span class="tier-check-icon-gold">⚡</span> <strong>Everything in Community Partner</strong></li>
-                <li><span class="tier-check-icon-gold">⚡</span> Logo placement on official warm-up &amp; training jerseys</li>
-                <li><span class="tier-check-icon-gold">⚡</span> Dedicated Matchday Sponsor banner at Jimmy Powell Oval</li>
-                <li><span class="tier-check-icon-gold">⚡</span> Featured monthly corporate spotlight in CSK News</li>
-                <li><span class="tier-check-icon-gold">⚡</span> 4 VIP tickets to all home fixtures and finals</li>
-              </ul>
-              <a href="contact.html?subject=partner-club" class="btn btn-primary" style="border-radius: 999px; font-weight: 900; text-align: center;">
-                Request Club Deck →
-              </a>
-            </div>
-
-            <!-- TIER 3: Premier Partner -->
-            <div class="tier-card-white">
-              <span class="tier-pill-badge-white tier-pill-badge-white--flame">Principal Tier</span>
-              <h3 class="tier-card-title-white">Premier Partner</h3>
-              <div class="tier-card-price-white color-flame tabular-nums">KYD 3,000 <span>/ season</span></div>
-              <div class="tier-draft-tag-white">⚠️ Draft Rate — Pending Sign-Off</div>
-              <p class="tier-card-desc-white">
-                Exclusive prime branding across matchday playing kit, digital live streams, and youth development clinics.
-              </p>
-              <ul class="tier-features-list-white">
-                <li><span class="tier-check-icon-blue">✓</span> Prime front / sleeve logo on official matchday jersey</li>
-                <li><span class="tier-check-icon-blue">✓</span> Prominent boundary perimeter branding at all home games</li>
-                <li><span class="tier-check-icon-blue">✓</span> Exclusive naming rights to Player of the Match awards</li>
-                <li><span class="tier-check-icon-blue">✓</span> Youth Academy title sponsor naming rights option</li>
-                <li><span class="tier-check-icon-blue">✓</span> Full table (8 VIP seats) at Annual Gala &amp; activations</li>
-              </ul>
-              <a href="contact.html?subject=partner-premier" class="btn btn-outline-navy" style="border-radius: 999px; font-weight: 800; text-align: center;">
-                Request Premier Deck →
-              </a>
-            </div>
-          </div>
-        </div>
-
-        <!-- Single Mega CTA Banner -->
-        <div class="partner-mega-cta-box">
-          <h2>Ready to Empower Cayman Athletics?</h2>
-          <p>
-            Download our complete 2026/27 Commercial Partnership Overview deck or speak directly with our executive sponsorships committee.
-          </p>
-          <a href="contact.html?subject=partner" class="btn btn-primary btn-lg" style="font-weight: 900; font-size: 1rem; padding: 14px 34px; border-radius: 999px;">
-            Request the Partnership Deck →
-          </a>
-        </div>
-
-        <!-- Partnership FAQs -->
-        <div style="padding-top: 56px;">
-          <div class="section-header section-header--center" style="margin-bottom: 32px;">
-            <span class="section-eyebrow" style="color: #0284C7; font-weight: 800;">Got Questions?</span>
-            <h2 class="section-title" style="color: #09152B; font-family: var(--font-display); font-size: clamp(2rem, 4vw, 2.5rem); font-weight: 900;">
-              Partnership FAQs
-            </h2>
-          </div>
-
-          <div style="max-width: 880px; margin: 0 auto;">
-            <div class="partner-faq-card-white">
-              <div class="partner-faq-q-white">
-                <span class="partner-faq-num-white">01</span>
-                <span>How are sponsorship funds utilized by the club?</span>
-              </div>
-              <p class="partner-faq-a-white">
-                100% of sponsorship revenue goes directly into player safety gear, match fees, umpire certifications, pitch hire at Jimmy Powell Oval, and subsidising free coaching equipment for Under-19 youth academy participants.
-              </p>
-            </div>
-
-            <div class="partner-faq-card-white">
-              <div class="partner-faq-q-white">
-                <span class="partner-faq-num-white">02</span>
-                <span>Can partnership packages be customised to our marketing objectives?</span>
-              </div>
-              <p class="partner-faq-a-white">
-                Yes. While our standard tiers (Premier, Club, Community) provide transparent structured benefits, our executive committee is eager to co-create bespoke corporate hospitality, employee cricket clinics, or CSR activations.
-              </p>
-            </div>
-
-            <div class="partner-faq-card-white">
-              <div class="partner-faq-q-white">
-                <span class="partner-faq-num-white">03</span>
-                <span>When does the sponsorship agreement take effect?</span>
-              </div>
-              <p class="partner-faq-a-white">
-                Agreements run across the entire CICA calendar year covering both the Autumn T20 Super League and the Spring 40-Over Cup, with kit production locking in 4 weeks prior to opening fixture dates.
-              </p>
-            </div>
-          </div>
-        </div>
-
       </div>
     </section>
   </main>
