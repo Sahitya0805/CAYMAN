@@ -20,25 +20,41 @@ export async function initSquadPage() {
 }
 
 function renderSquadShowcase(container) {
-  // Filter logic
+  // Always sort master list by exact priority order
+  allSquadMembers.sort((a, b) => (a.priority || 99) - (b.priority || 99));
+
+  // Filter logic across the 4 sections
   const filteredPlayers = currentFilter === 'all' 
-    ? allSquadMembers 
-    : allSquadMembers.filter(p => p.group === currentFilter);
+    ? [...allSquadMembers] 
+    : allSquadMembers.filter(p => {
+        if (p.groups && Array.isArray(p.groups)) {
+          return p.groups.includes(currentFilter);
+        }
+        return p.group === currentFilter;
+      });
+
+  // Ensure exact priority order in every filtered section
+  filteredPlayers.sort((a, b) => (a.priority || 99) - (b.priority || 99));
+
+  const countAll = allSquadMembers.length;
+  const countBatters = allSquadMembers.filter(p => (p.groups ? p.groups.includes('batters') : p.group === 'batters')).length;
+  const countAllrounders = allSquadMembers.filter(p => (p.groups ? p.groups.includes('allrounders') : p.group === 'allrounders')).length;
+  const countBowlers = allSquadMembers.filter(p => (p.groups ? p.groups.includes('bowlers') : p.group === 'bowlers')).length;
 
   let html = `
     <!-- Top Filter Navigation Pills -->
     <div class="squad-filter-bar" role="tablist" aria-label="Squad Filter">
       <button class="squad-filter-btn ${currentFilter === 'all' ? 'active' : ''}" data-filter="all">
-        ALL (${allSquadMembers.length})
+        ALL (${countAll})
       </button>
       <button class="squad-filter-btn ${currentFilter === 'batters' ? 'active' : ''}" data-filter="batters">
-        BATTERS
+        BATTERS (${countBatters})
       </button>
       <button class="squad-filter-btn ${currentFilter === 'allrounders' ? 'active' : ''}" data-filter="allrounders">
-        ALL-ROUNDERS
+        ALL-ROUNDERS (${countAllrounders})
       </button>
       <button class="squad-filter-btn ${currentFilter === 'bowlers' ? 'active' : ''}" data-filter="bowlers">
-        BOWLERS
+        BOWLERS (${countBowlers})
       </button>
     </div>
 
@@ -91,7 +107,7 @@ function setupFilterListeners() {
   });
 }
 
-function createStadiumPlayerCard(p) {
+export function createStadiumPlayerCard(p) {
   const jerseyNum = p.jersey_display || '—';
   const playerName = p.name_full || p.name_display;
   const photoSrc = p.photo || 'assets/players/csk-01.svg';

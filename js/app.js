@@ -9,6 +9,7 @@ import { store } from './content-store.js';
 import { initHeroSlider } from './hero-slider.js';
 import { initSplashLoader } from './splash-loader.js';
 import { initCricketCrazy } from './cricket-crazy.js';
+import { createStadiumPlayerCard } from './squad.js';
 
 // Initialize splash loader immediately to handle smooth page entrance
 initSplashLoader();
@@ -20,8 +21,22 @@ document.addEventListener('DOMContentLoaded', async () => {
   initSmoothScroll();
   initRosterCardInteractions();
   initCricketCrazy();
+  await initHomepageRoster();
   await initAnnouncementBar();
 });
+
+async function initHomepageRoster() {
+  const rosterGrid = document.querySelector('.roster-grid');
+  if (!rosterGrid) return;
+
+  const squad = await store.getSquad();
+  if (!squad || squad.length === 0) return;
+
+  // Strictly sort by priority 1 to 18
+  squad.sort((a, b) => (a.priority || 99) - (b.priority || 99));
+
+  rosterGrid.innerHTML = squad.map(p => createStadiumPlayerCard(p)).join('');
+}
 
 function initRosterCardInteractions() {
   document.addEventListener('click', (e) => {
