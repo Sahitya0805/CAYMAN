@@ -16,17 +16,12 @@ export async function initMatchesPage() {
   if (!container) return;
 
   const fixtures = await store.getFixtures();
-  let currentTab = 'upcoming'; // 'upcoming', 'results', 'standings'
+  let currentTab = 'results';
   let currentFormat = 'all';
   let currentSeason = '2026';
 
   function render() {
-    if (currentTab === 'standings') {
-      renderStandings();
-      return;
-    }
-
-    let filtered = fixtures.filter(f => f.status === (currentTab === 'upcoming' ? 'upcoming' : 'result'));
+    let filtered = fixtures.filter(f => f.status === 'result');
     
     if (currentFormat !== 'all') {
       filtered = filtered.filter(f => f.format === currentFormat);
@@ -41,13 +36,8 @@ export async function initMatchesPage() {
         emptyState.style.display = 'block';
         const emptyTitle = emptyState.querySelector('.empty-state__title');
         const emptyDesc = emptyState.querySelector('.empty-state__desc');
-        if (currentTab === 'upcoming') {
-          if (emptyTitle) emptyTitle.textContent = 'Fixtures Being Finalised';
-          if (emptyDesc) emptyDesc.textContent = 'Fixtures for the upcoming season are currently being finalised by the Cayman Islands Cricket Association.';
-        } else {
-          if (emptyTitle) emptyTitle.textContent = 'No Results Found';
-          if (emptyDesc) emptyDesc.textContent = 'There are no match results matching your selected filters.';
-        }
+        if (emptyTitle) emptyTitle.textContent = 'No Match Results Found';
+        if (emptyDesc) emptyDesc.textContent = 'There are no past match results matching your selected filters.';
       }
       return;
     }
