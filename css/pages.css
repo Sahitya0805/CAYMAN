@@ -5691,6 +5691,90 @@ body.page--white-theme .about-tab-panel .card li {
   }
 }
 
+/* ─────────────────────────────────────────────────────────────
+   UNIVERSAL RESPONSIVE EXCELLENCE ACROSS ALL DEVICES
+   Supports: 320px, 375px, 414px, 480px, 768px, 1024px, 1440px+
+   ───────────────────────────────────────────────────────────── */
+
+/* Table & Scorecard Mobile Horizontal Scrolling */
+.table-responsive,
+.scorecard-table-wrap,
+.stat-table-wrap {
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  margin-bottom: 1rem;
+}
+
+.table-responsive table,
+.scorecard-table-wrap table {
+  min-width: 540px;
+}
+
+/* Fluid Filter Bar on Mobile */
+@media (max-width: 768px) {
+  .squad-filter-bar,
+  .matches-filter-bar {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    gap: 8px !important;
+    justify-content: center !important;
+    margin-bottom: 24px !important;
+  }
+  
+  .squad-filter-btn {
+    flex: 1 1 calc(50% - 8px) !important;
+    min-width: 140px !important;
+    padding: 10px 14px !important;
+    font-size: 0.8125rem !important;
+    text-align: center !important;
+  }
+
+  .contact-layout-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  .contact-form-panel {
+    padding: 28px 20px !important;
+  }
+
+  .timeline-container {
+    padding-left: 16px !important;
+  }
+}
+
+/* Safe touch-friendly sizes on small screens */
+@media (max-width: 480px) {
+  .container {
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+  }
+
+  .section {
+    padding-top: 40px !important;
+    padding-bottom: 40px !important;
+  }
+
+  .hero-cinematic-headline {
+    font-size: clamp(2rem, 9vw, 3.2rem) !important;
+  }
+
+  .squad-card-player-name {
+    font-size: 1.35rem !important;
+  }
+
+  .squad-player-stage-card,
+  .roster-stage-card {
+    height: 440px !important;
+  }
+
+  .btn-lg {
+    width: 100% !important;
+    text-align: center !important;
+  }
+}
+
+
 
 
 
