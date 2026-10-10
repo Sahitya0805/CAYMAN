@@ -3,28 +3,33 @@
     "id": "gal-01",
     "year": "2026",
     "type": "photo",
-    "title": "1ST MATCH - CSK VS GTT",
-    "category": "CICA T20 SUPER LEAGUE 2026",
-    "count_or_duration": "12 Photos",
-    "cover_image": "assets/slider-stadium-night.jpg",
+    "title": "CHAMPIONSHIP SQUAD & HONOURS",
+    "category": "CICA T20 CAMPAIGN",
+    "count_or_duration": "4 Photos",
+    "cover_image": "assets/csk-hero-celebration.jpg",
     "drive_folder": "https://drive.google.com/drive/folders/1rYNaOJZCnTV7RrFFjOI08XvzURHpywHH",
     "date": "August 30, 2026",
-    "description": "Captain Rahul Garg and the squad celebrating following a clinical victory under the lights at Jimmy Powell Oval.",
+    "description": "The official Cayman Super Kings senior squad celebrating together with the championship trophy.",
     "items": [
       {
-        "src": "assets/slider-stadium-night.jpg",
-        "alt": "Captain Rahul Garg celebrating team performance",
-        "caption": "Captain Rahul Garg celebrating victory under the lights"
+        "src": "assets/csk-hero-celebration.jpg",
+        "alt": "CSK Championship Trophy Celebration",
+        "caption": "Championship Trophy Celebration - Cayman Super Kings celebrating victory"
       },
       {
-        "src": "assets/csk-hero.png",
-        "alt": "Full CSK team celebration",
-        "caption": "CSK squad celebrations on the outfield"
+        "src": "assets/csk-official-team-hero.jpg",
+        "alt": "Official 2026 Senior Franchise Squad",
+        "caption": "Official 2026 Senior Franchise Squad at Jimmy Powell Oval"
       },
       {
-        "src": "assets/csk-action.png",
-        "alt": "Rahul Garg batting strokeplay",
-        "caption": "Rahul Garg in full flow during the powerplay"
+        "src": "assets/csk-team-huddle-hero.jpg",
+        "alt": "Team Huddle & Match Strategy",
+        "caption": "Team Huddle & Tactical Strategy at the Fortress"
+      },
+      {
+        "src": "assets/players/real/Rahul and Chris.jpg",
+        "alt": "Skipper Rahul Garg & Founder Christopher Balraj",
+        "caption": "Skipper Rahul Garg & Founder Christopher Balraj together on matchday"
       }
     ]
   },
@@ -32,66 +37,101 @@
     "id": "gal-02",
     "year": "2026",
     "type": "photo",
-    "title": "6TH MATCH - CSK VS SMS",
-    "category": "CICA T20 SUPER LEAGUE 2026",
-    "count_or_duration": "18 Photos",
-    "cover_image": "assets/slider-stadium-sunset.jpg",
+    "title": "MATCHDAY ACTION & POWERPLAY",
+    "category": "CICA SUPER LEAGUE",
+    "count_or_duration": "4 Photos",
+    "cover_image": "assets/players/real/Rahul-Garg-Crease.jpg",
     "drive_folder": "https://drive.google.com/drive/folders/1rYNaOJZCnTV7RrFFjOI08XvzURHpywHH",
     "date": "August 23, 2026",
-    "description": "Highlights from the high-scoring clash featuring Chris Balraj's leg-spin variations and Sahil Singh's pace.",
+    "description": "Captain Rahul Garg at the crease, aggressive strokeplay, and team boundary fielding.",
     "items": [
       {
-        "src": "assets/slider-stadium-sunset.jpg",
-        "alt": "Sahil Singh pace bowling delivery stride",
-        "caption": "Sahil Singh bowling with relentless speed and seam movement"
+        "src": "assets/players/real/Rahul-Garg-Crease.jpg",
+        "alt": "Rahul Garg Batting at the Crease",
+        "caption": "Captain Rahul Garg in action during the powerplay overs"
       },
       {
-        "src": "assets/csk-action.png",
-        "alt": "Gokul Krishnan sharp stumping behind wickets",
-        "caption": "Gokul Krishnan completing a sharp stumping behind the stumps"
+        "src": "assets/players/real/Christopher Balraj.png",
+        "alt": "Christopher Balraj Leg Spin Action",
+        "caption": "Christopher Balraj bowling wicket-taking leg-spin variations"
+      },
+      {
+        "src": "assets/players/real/20250405_104447_IMG_5374.jpg",
+        "alt": "Live Matchday Innings Action",
+        "caption": "Live matchday innings and boundary action in Grand Cayman"
+      },
+      {
+        "src": "assets/players/real/Team.jpg",
+        "alt": "Squad Fielding Setup",
+        "caption": "Squad fielding intensity and tactical boundary setup"
       }
     ]
   },
   {
     "id": "gal-03",
     "year": "2026",
-    "type": "video",
-    "title": "10TH MATCH - CSK VS WBW",
-    "category": "CICA T20 SUPER LEAGUE 2026",
-    "count_or_duration": "03:45",
-    "cover_image": "assets/csk-action.png",
+    "type": "photo",
+    "title": "STRIKE ATTACK & BOWLING CORPS",
+    "category": "FAST BOWLING & SPIN",
+    "count_or_duration": "4 Photos",
+    "cover_image": "assets/players/real/Sahil-Singh.jpeg",
     "drive_folder": "https://drive.google.com/drive/folders/1rYNaOJZCnTV7RrFFjOI08XvzURHpywHH",
-    "date": "August 24, 2026",
-    "description": "Boundaries and match-turning bowling spells from Rahul Garg and Christopher Balraj.",
+    "date": "August 16, 2026",
+    "description": "Express pace from Sahil Singh, Chris Donovan, Muthukumar's inswingers, and Ravneet's leg breaks.",
     "items": [
       {
-        "src": "assets/csk-action.png",
-        "alt": "Match highlights action",
-        "caption": "Video Highlight: Rahul Garg powerplay boundaries and sixes"
+        "src": "assets/players/real/Sahil-Singh.jpeg",
+        "alt": "Sahil Singh Strike Bowler",
+        "caption": "Sahil Singh — Relentless pace bowler with seam movement"
+      },
+      {
+        "src": "assets/players/real/Ravneet-Verma-solo.jpg",
+        "alt": "Ravneet Verma Leg Spinner",
+        "caption": "Ravneet Verma — Student of the art of legspin bowling"
+      },
+      {
+        "src": "assets/players/real/dfc6af5a-1c01-458c-8b44-26fce836510d.jpg",
+        "alt": "Muthukumar Rajenderan Left-Arm Bowler",
+        "caption": "Muthukumar Rajenderan — Left-arm opening bowler and inswing weapon"
+      },
+      {
+        "src": "assets/players/real/Chris.jpg",
+        "alt": "Chris Donovan Express Pace",
+        "caption": "Chris Donovan — High energy all-rounder with express fast bowling"
       }
     ]
   },
   {
     "id": "gal-04",
-    "year": "2026",
+    "year": "2025",
     "type": "photo",
-    "title": "NEXT GEN - YOUTH CLINIC",
-    "category": "CSK YOUTH PATHWAY",
-    "count_or_duration": "24 Photos",
-    "cover_image": "assets/csk-academy.png",
+    "title": "ALL-ROUND ENGINE & FINISHERS",
+    "category": "MIDDLE ORDER IMPACT",
+    "count_or_duration": "4 Photos",
+    "cover_image": "assets/players/real/Praisewin-Vincent-solo.jpg",
     "drive_folder": "https://drive.google.com/drive/folders/1rYNaOJZCnTV7RrFFjOI08XvzURHpywHH",
-    "date": "July 18, 2026",
-    "description": "Young school cricketers developing skills, discipline, and playing alongside senior CSK players.",
+    "date": "November 20, 2025",
+    "description": "Versatile all-round contributors providing batting depth and crucial middle-over overs.",
     "items": [
       {
-        "src": "assets/csk-academy.png",
-        "alt": "Youth coaching drill session",
-        "caption": "Developing the next generation: Youth batting and bowling drills"
+        "src": "assets/players/real/Praisewin-Vincent-solo.jpg",
+        "alt": "Praisewin Vincent All-Rounder",
+        "caption": "Praisewin Vincent — Dynamic all-rounder contributing with bat and ball"
       },
       {
-        "src": "assets/csk-action.png",
-        "alt": "Group fielding exercise",
-        "caption": "Fielding and agility exercises with senior CSK squad mentors"
+        "src": "assets/players/real/Jason-Edwards.jpg",
+        "alt": "Jason Edwards Spin All-Rounder",
+        "caption": "Jason Edwards — Dependable spin bowler and middle-order contributor"
+      },
+      {
+        "src": "assets/players/real/Rajasekhara-Kalagotla.jpg",
+        "alt": "Rajasekhara Kalagotla Utility Player",
+        "caption": "Rajasekhara Kalagotla — Consistent fielding, spin bowling, and keeping"
+      },
+      {
+        "src": "assets/players/real/Sakthivel shanmugasundaram.Jpg",
+        "alt": "Sakthivel Shanmugasundaram",
+        "caption": "Sakthivel Shanmugasundaram — Medium pace all-rounder supporting with both bat and ball"
       }
     ]
   },
@@ -99,47 +139,72 @@
     "id": "gal-05",
     "year": "2025",
     "type": "photo",
-    "title": "T10 TOURNAMENT KNOCKOUTS",
-    "category": "T10 CHAMPIONSHIP 2025",
-    "count_or_duration": "15 Photos",
-    "cover_image": "assets/slider-cricket-ball-bat.jpg",
+    "title": "CLUB LEADERSHIP & FOUNDERS",
+    "category": "EXECUTIVE LEADERSHIP",
+    "count_or_duration": "4 Photos",
+    "cover_image": "assets/players/real/Majin-Paul-solo.jpg",
     "drive_folder": "https://drive.google.com/drive/folders/1rYNaOJZCnTV7RrFFjOI08XvzURHpywHH",
-    "date": "December 14, 2025",
-    "description": "Historic milestone celebration as CSK qualifies for the knockout stages of the T10 tournament.",
+    "date": "October 15, 2025",
+    "description": "The leadership group driving Cayman Super Kings forward on and off the cricket field.",
     "items": [
       {
-        "src": "assets/slider-cricket-ball-bat.jpg",
-        "alt": "CSK Knockout Celebration",
-        "caption": "CSK squad celebrating qualification for the T10 knockouts"
+        "src": "assets/players/real/Majin-Paul-solo.jpg",
+        "alt": "Majin Paul Co-Founder & Manager",
+        "caption": "Majin Paul — Co-Founder & Team Manager, the backbone of CSK"
       },
       {
-        "src": "assets/csk-hero.png",
-        "alt": "Squad presentation",
-        "caption": "Rahul Garg and Majin Paul with the squad after the knockout qualification"
+        "src": "assets/players/real/Rahul-Garg-Portrait.jpg",
+        "alt": "Rahul Garg Captain",
+        "caption": "Rahul Garg — Club Captain, Opening Batsman & Medium Pacer"
+      },
+      {
+        "src": "assets/players/real/Gokul Krishnan.jpg",
+        "alt": "Gokul Krishnan Vice Captain",
+        "caption": "Gokul Krishnan — Vice Captain & Top-Order Wicketkeeper Batsman"
+      },
+      {
+        "src": "assets/players/real/Christopher Balraj1.png",
+        "alt": "Christopher Balraj Founder",
+        "caption": "Christopher Balraj — Co-Founder & Match-Winning All-Rounder"
       }
     ]
   },
   {
     "id": "gal-06",
-    "year": "2025",
+    "year": "2026",
     "type": "photo",
-    "title": "TRAINING CAMP & NETS",
-    "category": "HIGH PERFORMANCE 2025",
-    "count_or_duration": "20 Photos",
-    "cover_image": "assets/csk-hero.png",
+    "title": "RISING STARS & ATHLETES",
+    "category": "FRANCHISE TALENT",
+    "count_or_duration": "5 Photos",
+    "cover_image": "assets/players/real/Ein-Majin-solo.jpg",
     "drive_folder": "https://drive.google.com/drive/folders/1rYNaOJZCnTV7RrFFjOI08XvzURHpywHH",
-    "date": "November 08, 2025",
-    "description": "Fitness drills, bowling speed tracking, and net sessions with Muthukumar, Ravneet, and Rajasekhara.",
+    "date": "September 05, 2026",
+    "description": "The young energy and athletic talent strengthening the Cayman Super Kings squad.",
     "items": [
       {
-        "src": "assets/csk-hero.png",
-        "alt": "Strength and conditioning session",
-        "caption": "Conditioning drills and athletic fitness at Jimmy Powell Oval"
+        "src": "assets/players/real/Ein-Majin-solo.jpg",
+        "alt": "Ein Majin Fast Bowler",
+        "caption": "Ein Majin — Young pace prodigy with natural bounce and speed"
       },
       {
-        "src": "assets/slider-stadium-night.jpg",
-        "alt": "Night net bowling practice",
-        "caption": "Muthukumar inswing bowling drills under floodlights"
+        "src": "assets/players/real/Jibin-Moncy.jpg",
+        "alt": "Jibin Moncy All-Rounder",
+        "caption": "Jibin Moncy — Medium pacer and energetic outfield fielder"
+      },
+      {
+        "src": "assets/players/real/Viran.jpg",
+        "alt": "Viran Narayana All-Rounder",
+        "caption": "Viran Narayana — Aggressive middle-order finisher and off-spin bowler"
+      },
+      {
+        "src": "assets/players/real/Fahad.JPG",
+        "alt": "Fahad Noushad All-Rounder",
+        "caption": "Fahad Noushad — Versatile all-rounder strengthening the squad"
+      },
+      {
+        "src": "assets/players/real/Teammate-left.jpg",
+        "alt": "Muhammed Jazeem Keloth Left-Arm Seamer",
+        "caption": "Muhammed Jazeem Keloth — Specialist left-arm pace bowler"
       }
     ]
   }
