@@ -26,6 +26,17 @@ class ContentStore {
   }
 
   async getFixtures() {
+    try {
+      const apiData = await this.fetchJSON('/api/matches');
+      if (apiData && Array.isArray(apiData.matches) && apiData.matches.length > 0) {
+        return apiData.matches;
+      }
+      if (Array.isArray(apiData) && apiData.length > 0) {
+        return apiData;
+      }
+    } catch (e) {
+      console.warn('API matches fallback triggered:', e);
+    }
     return (await this.fetchJSON('content/fixtures.json')) || [];
   }
 
