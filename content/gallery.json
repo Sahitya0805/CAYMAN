@@ -3,33 +3,38 @@
     "id": "gal-01",
     "year": "2026",
     "type": "photo",
-    "title": "CHAMPIONSHIP SQUAD & HONOURS",
-    "category": "CICA T20 CAMPAIGN",
-    "count_or_duration": "4 Photos",
-    "cover_image": "assets/csk-hero-celebration.jpg",
+    "title": "TEAM HUDDLE & MATCHDAY",
+    "category": "FOUNDERS & SQUAD",
+    "count_or_duration": "5 Photos",
+    "cover_image": "assets/players/real/Rahul and Chris.jpg",
     "drive_folder": "https://drive.google.com/drive/folders/1rYNaOJZCnTV7RrFFjOI08XvzURHpywHH",
     "date": "August 30, 2026",
-    "description": "The official Cayman Super Kings senior squad celebrating together with the championship trophy.",
+    "description": "Skipper Rahul Garg, Co-Founder Christopher Balraj, and the Cayman Super Kings squad together on matchday.",
     "items": [
       {
-        "src": "assets/csk-hero-celebration.jpg",
-        "alt": "CSK Championship Trophy Celebration",
-        "caption": "Championship Trophy Celebration - Cayman Super Kings celebrating victory"
-      },
-      {
-        "src": "assets/csk-official-team-hero.jpg",
-        "alt": "Official 2026 Senior Franchise Squad",
-        "caption": "Official 2026 Senior Franchise Squad at Jimmy Powell Oval"
-      },
-      {
-        "src": "assets/csk-team-huddle-hero.jpg",
-        "alt": "Team Huddle & Match Strategy",
-        "caption": "Team Huddle & Tactical Strategy at the Fortress"
-      },
-      {
         "src": "assets/players/real/Rahul and Chris.jpg",
-        "alt": "Skipper Rahul Garg & Founder Christopher Balraj",
-        "caption": "Skipper Rahul Garg & Founder Christopher Balraj together on matchday"
+        "alt": "Skipper Rahul Garg & Christopher Balraj",
+        "caption": "Skipper Rahul Garg & Christopher Balraj together on matchday at the venue"
+      },
+      {
+        "src": "assets/players/real/Team.jpg",
+        "alt": "CSK Squad on Matchday Field",
+        "caption": "Cayman Super Kings squad tactical setup on the pitch"
+      },
+      {
+        "src": "assets/players/real/20250405_104447_IMG_5374.jpg",
+        "alt": "Matchday Live Innings Action",
+        "caption": "Live cricket action in Grand Cayman at Jimmy Powell Oval"
+      },
+      {
+        "src": "assets/players/real/Rahul-Garg-Portrait.jpg",
+        "alt": "Captain Rahul Garg",
+        "caption": "Captain Rahul Garg match ready in official cricket whites"
+      },
+      {
+        "src": "assets/players/real/Jibin-Moncy.jpg",
+        "alt": "CSK Squad Members",
+        "caption": "CSK squad members and support crew during tournament fixture"
       }
     ]
   },
@@ -37,28 +42,28 @@
     "id": "gal-02",
     "year": "2026",
     "type": "photo",
-    "title": "MATCHDAY ACTION & POWERPLAY",
-    "category": "CICA SUPER LEAGUE",
+    "title": "MATCHDAY ACTION & SQUAD",
+    "category": "CICA LEAGUE ACTION",
     "count_or_duration": "4 Photos",
-    "cover_image": "assets/players/real/Rahul-Garg-Crease.jpg",
+    "cover_image": "assets/players/real/20250405_104447_IMG_5374.jpg",
     "drive_folder": "https://drive.google.com/drive/folders/1rYNaOJZCnTV7RrFFjOI08XvzURHpywHH",
     "date": "August 23, 2026",
-    "description": "Captain Rahul Garg at the crease, aggressive strokeplay, and team boundary fielding.",
+    "description": "Live matchday action, pitch battles, and squad intensity in Grand Cayman.",
     "items": [
       {
-        "src": "assets/players/real/Rahul-Garg-Crease.jpg",
-        "alt": "Rahul Garg Batting at the Crease",
-        "caption": "Captain Rahul Garg in action during the powerplay overs"
+        "src": "assets/players/real/20250405_104447_IMG_5374.jpg",
+        "alt": "Live Match Action at Jimmy Powell Oval",
+        "caption": "Live matchday innings and boundary action in Grand Cayman"
+      },
+      {
+        "src": "assets/players/real/Rahul-Garg-Portrait.jpg",
+        "alt": "Captain Rahul Garg at the Crease",
+        "caption": "Captain Rahul Garg — Matchday focus and leadership"
       },
       {
         "src": "assets/players/real/Christopher Balraj.png",
-        "alt": "Christopher Balraj Leg Spin Action",
-        "caption": "Christopher Balraj bowling wicket-taking leg-spin variations"
-      },
-      {
-        "src": "assets/players/real/20250405_104447_IMG_5374.jpg",
-        "alt": "Live Matchday Innings Action",
-        "caption": "Live matchday innings and boundary action in Grand Cayman"
+        "alt": "Christopher Balraj",
+        "caption": "Christopher Balraj — Match-winning all-rounder and game finisher"
       },
       {
         "src": "assets/players/real/Team.jpg",
@@ -82,12 +87,12 @@
       {
         "src": "assets/players/real/Sahil-Singh.jpeg",
         "alt": "Sahil Singh Strike Bowler",
-        "caption": "Sahil Singh — Relentless pace bowler with seam movement"
+        "caption": "Sahil Singh — Strike bowler with matchday honours"
       },
       {
-        "src": "assets/players/real/Ravneet-Verma-solo.jpg",
-        "alt": "Ravneet Verma Leg Spinner",
-        "caption": "Ravneet Verma — Student of the art of legspin bowling"
+        "src": "assets/players/real/Chris.jpg",
+        "alt": "Chris Donovan Express Pace",
+        "caption": "Chris Donovan — High energy all-rounder with express fast bowling"
       },
       {
         "src": "assets/players/real/dfc6af5a-1c01-458c-8b44-26fce836510d.jpg",
@@ -95,9 +100,9 @@
         "caption": "Muthukumar Rajenderan — Left-arm opening bowler and inswing weapon"
       },
       {
-        "src": "assets/players/real/Chris.jpg",
-        "alt": "Chris Donovan Express Pace",
-        "caption": "Chris Donovan — High energy all-rounder with express fast bowling"
+        "src": "assets/players/real/Ravneet-Verma-solo.jpg",
+        "alt": "Ravneet Verma Leg Spinner",
+        "caption": "Ravneet Verma — Student of the art of legspin bowling"
       }
     ]
   },
@@ -108,16 +113,11 @@
     "title": "ALL-ROUND ENGINE & FINISHERS",
     "category": "MIDDLE ORDER IMPACT",
     "count_or_duration": "4 Photos",
-    "cover_image": "assets/players/real/Praisewin-Vincent-solo.jpg",
+    "cover_image": "assets/players/real/Jason-Edwards.jpg",
     "drive_folder": "https://drive.google.com/drive/folders/1rYNaOJZCnTV7RrFFjOI08XvzURHpywHH",
     "date": "November 20, 2025",
     "description": "Versatile all-round contributors providing batting depth and crucial middle-over overs.",
     "items": [
-      {
-        "src": "assets/players/real/Praisewin-Vincent-solo.jpg",
-        "alt": "Praisewin Vincent All-Rounder",
-        "caption": "Praisewin Vincent — Dynamic all-rounder contributing with bat and ball"
-      },
       {
         "src": "assets/players/real/Jason-Edwards.jpg",
         "alt": "Jason Edwards Spin All-Rounder",
@@ -132,6 +132,11 @@
         "src": "assets/players/real/Sakthivel shanmugasundaram.Jpg",
         "alt": "Sakthivel Shanmugasundaram",
         "caption": "Sakthivel Shanmugasundaram — Medium pace all-rounder supporting with both bat and ball"
+      },
+      {
+        "src": "assets/players/real/Praisewin-Vincent-solo.jpg",
+        "alt": "Praisewin Vincent All-Rounder",
+        "caption": "Praisewin Vincent — Dynamic all-rounder contributing with bat and ball"
       }
     ]
   },
@@ -142,15 +147,15 @@
     "title": "CLUB LEADERSHIP & FOUNDERS",
     "category": "EXECUTIVE LEADERSHIP",
     "count_or_duration": "4 Photos",
-    "cover_image": "assets/players/real/Majin-Paul-solo.jpg",
+    "cover_image": "assets/players/real/Christopher Balraj.png",
     "drive_folder": "https://drive.google.com/drive/folders/1rYNaOJZCnTV7RrFFjOI08XvzURHpywHH",
     "date": "October 15, 2025",
     "description": "The leadership group driving Cayman Super Kings forward on and off the cricket field.",
     "items": [
       {
-        "src": "assets/players/real/Majin-Paul-solo.jpg",
-        "alt": "Majin Paul Co-Founder & Manager",
-        "caption": "Majin Paul — Co-Founder & Team Manager, the backbone of CSK"
+        "src": "assets/players/real/Christopher Balraj.png",
+        "alt": "Christopher Balraj Founder",
+        "caption": "Christopher Balraj — Co-Founder & Match-Winning All-Rounder"
       },
       {
         "src": "assets/players/real/Rahul-Garg-Portrait.jpg",
@@ -163,9 +168,9 @@
         "caption": "Gokul Krishnan — Vice Captain & Top-Order Wicketkeeper Batsman"
       },
       {
-        "src": "assets/players/real/Christopher Balraj1.png",
-        "alt": "Christopher Balraj Founder",
-        "caption": "Christopher Balraj — Co-Founder & Match-Winning All-Rounder"
+        "src": "assets/players/real/Majin-Paul-solo.jpg",
+        "alt": "Majin Paul Co-Founder & Manager",
+        "caption": "Majin Paul — Co-Founder & Team Manager, the backbone of CSK"
       }
     ]
   },
@@ -176,25 +181,20 @@
     "title": "RISING STARS & ATHLETES",
     "category": "FRANCHISE TALENT",
     "count_or_duration": "5 Photos",
-    "cover_image": "assets/players/real/Ein-Majin-solo.jpg",
+    "cover_image": "assets/players/real/Viran.jpg",
     "drive_folder": "https://drive.google.com/drive/folders/1rYNaOJZCnTV7RrFFjOI08XvzURHpywHH",
     "date": "September 05, 2026",
     "description": "The young energy and athletic talent strengthening the Cayman Super Kings squad.",
     "items": [
       {
-        "src": "assets/players/real/Ein-Majin-solo.jpg",
-        "alt": "Ein Majin Fast Bowler",
-        "caption": "Ein Majin — Young pace prodigy with natural bounce and speed"
-      },
-      {
-        "src": "assets/players/real/Jibin-Moncy.jpg",
-        "alt": "Jibin Moncy All-Rounder",
-        "caption": "Jibin Moncy — Medium pacer and energetic outfield fielder"
-      },
-      {
         "src": "assets/players/real/Viran.jpg",
         "alt": "Viran Narayana All-Rounder",
         "caption": "Viran Narayana — Aggressive middle-order finisher and off-spin bowler"
+      },
+      {
+        "src": "assets/players/real/Ein-Majin-solo.jpg",
+        "alt": "Ein Majin Fast Bowler",
+        "caption": "Ein Majin — Young pace prodigy with natural bounce and speed"
       },
       {
         "src": "assets/players/real/Fahad.JPG",
@@ -205,6 +205,11 @@
         "src": "assets/players/real/Teammate-left.jpg",
         "alt": "Muhammed Jazeem Keloth Left-Arm Seamer",
         "caption": "Muhammed Jazeem Keloth — Specialist left-arm pace bowler"
+      },
+      {
+        "src": "assets/players/real/Jibin-Moncy.jpg",
+        "alt": "Jibin Moncy All-Rounder",
+        "caption": "Jibin Moncy — Medium pacer and energetic outfield fielder"
       }
     ]
   }
