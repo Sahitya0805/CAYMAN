@@ -23,7 +23,21 @@ export async function initMatchesPage() {
     let filtered = fixtures.filter(f => f.status === 'result');
     
     if (currentFormat !== 'all') {
-      filtered = filtered.filter(f => f.format === currentFormat);
+      filtered = filtered.filter(f => {
+        if (currentFormat === 'Super League T20') {
+          return (f.competition && f.competition.toLowerCase().includes('super league') && f.format === 'T20');
+        }
+        if (currentFormat === 'Super League 40-Over') {
+          return (f.competition && f.competition.toLowerCase().includes('super league') && (f.format === '40-Over' || f.format === '40 Over'));
+        }
+        if (currentFormat === 'Elite 50-Over') {
+          return (f.competition && f.competition.toLowerCase().includes('elite') && (f.format === '50-Over' || f.format === '50 Over'));
+        }
+        if (currentFormat === 'Elite T20') {
+          return (f.competition && f.competition.toLowerCase().includes('elite') && f.format === 'T20');
+        }
+        return f.format === currentFormat || (f.competition && f.competition.toLowerCase().includes(currentFormat.toLowerCase()));
+      });
     }
     if (currentSeason !== 'all') {
       filtered = filtered.filter(f => f.season === currentSeason);
