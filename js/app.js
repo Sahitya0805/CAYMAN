@@ -128,11 +128,6 @@ function highlightActiveNav() {
       link.classList.remove('active');
     }
   });
-
-  const userPill = document.querySelector('.site-header__user-pill');
-  if (userPill && currentFile === 'contact') {
-    userPill.classList.add('active');
-  }
 }
 
 function initSmoothScroll() {
