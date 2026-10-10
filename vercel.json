@@ -5,9 +5,5 @@
   "installCommand": null,
   "outputDirectory": ".",
   "cleanUrls": true,
-  "trailingSlash": false,
-  "redirects": [
-    { "source": "/contact", "destination": "/", "permanent": true },
-    { "source": "/contact.html", "destination": "/", "permanent": true }
-  ]
+  "trailingSlash": false
 }
