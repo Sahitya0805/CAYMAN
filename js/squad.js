@@ -176,10 +176,6 @@ export function createStadiumPlayerCard(p) {
           </div>
         ` : ''}
 
-        <!-- Mini Cutout Silhouette tucked in bottom right -->
-        <div class="hud-mini-cutout-wrap">
-          <img src="${photoSrc}" alt="${playerName}" class="hud-mini-cutout-img" loading="lazy">
-        </div>
 
         <!-- Bottom Action CTA -->
         <div class="hud-bottom-cta" style="display: flex; gap: 10px; align-items: center; justify-content: flex-start; margin-top: auto; padding-top: 6px;">
