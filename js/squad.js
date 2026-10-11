@@ -182,16 +182,11 @@ export function createStadiumPlayerCard(p) {
         </div>
 
         <!-- Bottom Action CTA -->
-        <div class="hud-bottom-cta" style="display: flex; gap: 10px; align-items: center; justify-content: space-between; margin-top: auto; padding-top: 6px;">
+        <div class="hud-bottom-cta" style="display: flex; gap: 10px; align-items: center; justify-content: flex-start; margin-top: auto; padding-top: 6px;">
           <a href="player-detail.html?id=${p.id}" class="hud-read-more-link">
             <span>View Profile</span>
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
           </a>
-          ${p.photo_drive ? `
-            <a href="${p.photo_drive}" target="_blank" rel="noopener noreferrer" style="color: #38BDF8; font-size: 0.75rem; font-weight: 800; text-decoration: none; padding: 5px 10px; background: rgba(56, 189, 248, 0.12); border: 1px solid rgba(56, 189, 248, 0.3); border-radius: 6px; transition: all 0.2s ease;">
-              Drive Photo ↗
-            </a>
-          ` : ''}
         </div>
       </div>
     </article>
@@ -255,13 +250,6 @@ export async function initPlayerProfile() {
                 <li style="display: flex; justify-content: space-between; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 8px;"><strong style="color: #94A3B8; font-weight: 700;">Bowling Style:</strong> <span style="color: #FFFFFF; font-weight: 700;">${player.bowlingStyle || '—'}</span></li>
                 <li style="display: flex; justify-content: space-between;"><strong style="color: #94A3B8; font-weight: 700;">National Team:</strong> <span style="color: #FFFFFF; font-weight: 700;">${player.national_team_experience || 'No'}</span></li>
               </ul>
-              ${player.photo_drive ? `
-                <div style="margin-top: 18px; padding-top: 14px; border-top: 1px solid rgba(255,255,255,0.1);">
-                  <a href="${player.photo_drive}" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm" style="width: 100%; text-align: center; justify-content: center; font-weight: 800;">
-                    View Photo on Google Drive ↗
-                  </a>
-                </div>
-              ` : ''}
             </div>
           </div>
 
