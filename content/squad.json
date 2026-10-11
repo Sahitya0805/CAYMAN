@@ -7,7 +7,11 @@
     "role": "Captain & All-Rounder",
     "badge": "CAPTAIN",
     "group": "allrounders",
-    "groups": ["allrounders", "batters", "bowlers"],
+    "groups": [
+      "allrounders",
+      "batters",
+      "bowlers"
+    ],
     "jersey_display": "01",
     "birthday": "03/08/1995",
     "age": 31,
@@ -16,7 +20,7 @@
     "description": "I am a right-handed opening batsman who enjoys taking the initiative during the powerplay by finding boundaries and maintaining a strong scoring rate. Outside the powerplay, I focus on rotating the strike effectively and building partnerships.\n\nAs a medium-pace all-rounder, I bring plenty of variations to my bowling and am comfortable bowling in any phase of the game, particularly in pressure situations. I pride myself on being a versatile and reliable option for the team.\n\nFitness is a major part of my game. I am a fit and energetic all-rounder who enjoys being active on the field, covering ground, and contributing through high-intensity fielding. I bring energy, adaptability, and a team-first mindset to every game.",
     "didYouKnow": "I have had the opportunity to play in international T10 leagues in the Cayman Islands under the captaincy of cricket legend David Warner. I have also shared the field and dressing room with several internationally renowned players, including Carlos Brathwaite, Alex Hales, Beau Webster, George Munsey, Shakib Al Hasan, Thisara Perera, and many other established names in the game.\n\nI have also been part of the Cayman Islands national team training squad, giving me exposure to the international and associate-level cricket environment.\n\nBeyond my playing experience, I have built strong friendships and connections with players from various Associate Nations, giving me a unique perspective on different cricketing cultures, playing styles, and experiences across the global game.",
     "photo": "assets/players/real/Rahul-Garg-Portrait.jpg",
-    "photo_drive": "https://drive.google.com/file/d/1xdI7M2cpiq5qK1VQx252zj5MWqQJ7eHR/view?usp=drivesdk",
+    "photo_drive": "",
     "national_team_experience": "Cayman Islands National Training Squad"
   },
   {
@@ -27,7 +31,9 @@
     "role": "Vice Captain & Batsman / Wicket Keeper",
     "badge": "VICE CAPTAIN",
     "group": "batters",
-    "groups": ["batters"],
+    "groups": [
+      "batters"
+    ],
     "jersey_display": "02",
     "birthday": "31/01/1995",
     "age": 31,
@@ -36,7 +42,7 @@
     "description": "Top order Batsman and sharp wicket-keeper commanding the field with clinical glovework and attacking strokeplay in the powerplay overs.",
     "didYouKnow": "Dynamic top-order wicket-keeper batsman and tactical leader on the pitch, anchoring crucial tournament chases.",
     "photo": "assets/players/real/Gokul Krishnan.jpg",
-    "photo_drive": "https://drive.google.com/drive/folders/1rYNaOJZCnTV7RrFFjOI08XvzURHpywHH",
+    "photo_drive": "",
     "national_team_experience": "No"
   },
   {
@@ -47,7 +53,11 @@
     "role": "Co-Founder & All-Rounder",
     "badge": "CO-FOUNDER",
     "group": "allrounders",
-    "groups": ["allrounders", "batters", "bowlers"],
+    "groups": [
+      "allrounders",
+      "batters",
+      "bowlers"
+    ],
     "jersey_display": "03",
     "birthday": "11/06/1987",
     "age": 39,
@@ -56,7 +66,7 @@
     "description": "An aggressive right-handed batsman with the ability to dominate bowling attacks and accelerate the scoring rate when it matters most. A wicket-taking leg-spinner who combines attacking variations with an impressive economy rate. A reliable outfielder A proven game finisher and all-round match-winner, capable of changing the course of a match with bat, ball, or in the field.",
     "didYouKnow": "A foundational team builder and leader who built the team from the ground up, developing its structure, identity, and competitive spirit. Led the team during its first two formative years, taking responsibility for guiding, motivating, and developing the players.",
     "photo": "assets/players/real/Christopher Balraj.png",
-    "photo_drive": "https://drive.google.com/drive/folders/1rYNaOJZCnTV7RrFFjOI08XvzURHpywHH",
+    "photo_drive": "",
     "national_team_experience": "Represented team in a 2023 world cup qualifier - Bermuda"
   },
   {
@@ -67,7 +77,10 @@
     "role": "Co-Founder & Team Manager / All-Rounder",
     "badge": "MANAGER",
     "group": "allrounders",
-    "groups": ["allrounders", "batters"],
+    "groups": [
+      "allrounders",
+      "batters"
+    ],
     "jersey_display": "04",
     "birthday": "14/03/1983",
     "age": 43,
@@ -76,7 +89,7 @@
     "description": "Co-founder and manager of Cayman Super Kings. A reliable all-rounder who steadies the middle order and contributes key medium-pace spells.",
     "didYouKnow": "Co-founder of CSK & Team Manager overseeing team development, strategic planning, and squad welfare since inception.",
     "photo": "assets/players/real/Majin-Paul-solo.jpg",
-    "photo_drive": "https://drive.google.com/drive/folders/1rYNaOJZCnTV7RrFFjOI08XvzURHpywHH",
+    "photo_drive": "",
     "national_team_experience": "N/A"
   },
   {
@@ -87,7 +100,10 @@
     "role": "All-Rounder",
     "badge": "ALL ROUNDER",
     "group": "allrounders",
-    "groups": ["allrounders", "bowlers"],
+    "groups": [
+      "allrounders",
+      "bowlers"
+    ],
     "jersey_display": "05",
     "birthday": "01/05/1985",
     "age": 41,
@@ -96,7 +112,7 @@
     "description": "Allrounder can support with both bat and ball",
     "didYouKnow": "Dependable veteran spin bowler and middle-order contributor for critical league fixtures.",
     "photo": "assets/players/real/Jason-Edwards.jpg",
-    "photo_drive": "https://drive.google.com/drive/folders/1rYNaOJZCnTV7RrFFjOI08XvzURHpywHH",
+    "photo_drive": "",
     "national_team_experience": "No"
   },
   {
@@ -107,7 +123,10 @@
     "role": "All-Rounder / Wicket Keeper",
     "badge": "ALL ROUNDER",
     "group": "allrounders",
-    "groups": ["allrounders", "batters"],
+    "groups": [
+      "allrounders",
+      "batters"
+    ],
     "jersey_display": "06",
     "birthday": "12/07/1991",
     "age": 34,
@@ -116,7 +135,7 @@
     "description": "Consistent with Feidling, batting, Feidling and have ability to do Keeping when team needed",
     "didYouKnow": "Multi-skilled utility player offering dependable spin, sharp ground fielding, and wicket-keeping flexibility.",
     "photo": "assets/players/real/Rajasekhara-Kalagotla.jpg",
-    "photo_drive": "https://drive.google.com/drive/folders/1rYNaOJZCnTV7RrFFjOI08XvzURHpywHH",
+    "photo_drive": "",
     "national_team_experience": "No"
   },
   {
@@ -127,7 +146,9 @@
     "role": "Strike Bowler",
     "badge": "STRIKE BOWLER",
     "group": "bowlers",
-    "groups": ["bowlers"],
+    "groups": [
+      "bowlers"
+    ],
     "jersey_display": "07",
     "birthday": "06/06/1996",
     "age": 30,
@@ -135,8 +156,8 @@
     "bowlingStyle": "Left-Arm Bowler",
     "description": "I am a left-arm opening bowler and left-handed batsman who can contribute in all three areas of the game. As an opening bowler, I can contain runs while creating opportunities to take wickets, and I can also bowl effectively in the middle and death overs when needed. I am a strong and reliable fielder as well. As a batsman, I can contribute in the middle order by rotating the strike, taking quick singles and doubles, building partnerships, and keeping the scoreboard moving to support the team.",
     "didYouKnow": "My key strength is my ability to bowl strong inswingers, which can trouble batsmen and create early wicket-taking opportunities. I am particularly effective during the powerplay, where I focus on maintaining a tight line and length, containing runs, and taking wickets.",
-    "photo": "assets/players/real/dfc6af5a-1c01-458c-8b44-26fce836510d.jpg",
-    "photo_drive": "https://drive.google.com/drive/folders/1rYNaOJZCnTV7RrFFjOI08XvzURHpywHH",
+    "photo": "assets/players/real/Muthukumar-Rajenderan.jpg",
+    "photo_drive": "",
     "national_team_experience": "No"
   },
   {
@@ -147,7 +168,10 @@
     "role": "All-Rounder / Finisher",
     "badge": "ALL ROUNDER",
     "group": "allrounders",
-    "groups": ["allrounders", "batters"],
+    "groups": [
+      "allrounders",
+      "batters"
+    ],
     "jersey_display": "08",
     "birthday": "1996",
     "age": 30,
@@ -156,7 +180,7 @@
     "description": "Decent batter with aggressive approach to the game. Can bat both top and middle order and known for finishing. Handy right arm orthodox spinner, capable to delivering a few cheap overs. Reliable fielder in and out field.",
     "didYouKnow": "Love to chirp around in the field, lifting the team morale and maintaining high vocal intensity throughout 20 overs.",
     "photo": "assets/players/real/Viran.jpg",
-    "photo_drive": "https://drive.google.com/drive/folders/1rYNaOJZCnTV7RrFFjOI08XvzURHpywHH",
+    "photo_drive": "",
     "national_team_experience": "No"
   },
   {
@@ -167,7 +191,10 @@
     "role": "All-Rounder",
     "badge": "ALL ROUNDER",
     "group": "allrounders",
-    "groups": ["allrounders", "bowlers"],
+    "groups": [
+      "allrounders",
+      "bowlers"
+    ],
     "jersey_display": "09",
     "birthday": "11/05/1993",
     "age": 33,
@@ -176,7 +203,7 @@
     "description": "Allrounder can support with both bat and ball",
     "didYouKnow": "Reliable all-rounder providing seam support and lower-order power hitting.",
     "photo": "assets/players/real/Sakthivel shanmugasundaram.Jpg",
-    "photo_drive": "https://drive.google.com/drive/folders/1rYNaOJZCnTV7RrFFjOI08XvzURHpywHH",
+    "photo_drive": "",
     "national_team_experience": "No"
   },
   {
@@ -187,7 +214,9 @@
     "role": "Bowler / Leg Spinner",
     "badge": "SPINNER",
     "group": "bowlers",
-    "groups": ["bowlers"],
+    "groups": [
+      "bowlers"
+    ],
     "jersey_display": "10",
     "birthday": "17/11/1985",
     "age": 40,
@@ -196,7 +225,7 @@
     "description": "Student of the art of legspin. Wish to contribute with the bat.",
     "didYouKnow": "Dedicated wrist-spinner specializing in middle-over breakthroughs and deceiving batsmen through drift.",
     "photo": "assets/players/real/Ravneet-Verma-solo.jpg",
-    "photo_drive": "https://drive.google.com/drive/folders/1rYNaOJZCnTV7RrFFjOI08XvzURHpywHH",
+    "photo_drive": "",
     "national_team_experience": "No"
   },
   {
@@ -207,7 +236,11 @@
     "role": "All-Rounder",
     "badge": "ALL ROUNDER",
     "group": "allrounders",
-    "groups": ["allrounders", "batters", "bowlers"],
+    "groups": [
+      "allrounders",
+      "batters",
+      "bowlers"
+    ],
     "jersey_display": "11",
     "birthday": "15/09/1995",
     "age": 31,
@@ -216,7 +249,7 @@
     "description": "I’m an all-rounder who can contribute with both bat and ball.",
     "didYouKnow": "Versatile all-rounder with energetic presence and athletic boundary fielding.",
     "photo": "assets/players/real/Praisewin-Vincent-solo.jpg",
-    "photo_drive": "https://drive.google.com/drive/folders/1rYNaOJZCnTV7RrFFjOI08XvzURHpywHH",
+    "photo_drive": "",
     "national_team_experience": "No"
   },
   {
@@ -227,7 +260,10 @@
     "role": "All-Rounder",
     "badge": "ALL ROUNDER",
     "group": "allrounders",
-    "groups": ["allrounders", "bowlers"],
+    "groups": [
+      "allrounders",
+      "bowlers"
+    ],
     "jersey_display": "12",
     "birthday": "02/11/1993",
     "age": 32,
@@ -236,7 +272,7 @@
     "description": "All rounder",
     "didYouKnow": "Key all-round contributor bringing intensity and athletic outfield fielding.",
     "photo": "assets/players/real/Jibin-Moncy.jpg",
-    "photo_drive": "https://drive.google.com/drive/folders/1rYNaOJZCnTV7RrFFjOI08XvzURHpywHH",
+    "photo_drive": "",
     "national_team_experience": "No"
   },
   {
@@ -247,7 +283,9 @@
     "role": "Bowler / Left-Arm Seamer",
     "badge": "BOWLER",
     "group": "bowlers",
-    "groups": ["bowlers"],
+    "groups": [
+      "bowlers"
+    ],
     "jersey_display": "13",
     "birthday": "23/05/1998",
     "age": 28,
@@ -256,7 +294,7 @@
     "description": "Specialist left-arm pace bowler creating deceptive angles of trajectory and sharp seam movement into right-handers.",
     "didYouKnow": "Left-arm seam weapon specializing in early new-ball breakthroughs and tight death overs.",
     "photo": "assets/players/real/Teammate-left.jpg",
-    "photo_drive": "https://drive.google.com/drive/folders/1rYNaOJZCnTV7RrFFjOI08XvzURHpywHH",
+    "photo_drive": "",
     "national_team_experience": "No"
   },
   {
@@ -267,7 +305,10 @@
     "role": "All-Rounder / Fast Bowler",
     "badge": "ALL ROUNDER",
     "group": "allrounders",
-    "groups": ["allrounders", "bowlers"],
+    "groups": [
+      "allrounders",
+      "bowlers"
+    ],
     "jersey_display": "14",
     "birthday": "14/03/2005",
     "age": 21,
@@ -287,7 +328,9 @@
     "role": "Bowler / Fast Bowler",
     "badge": "BOWLER",
     "group": "bowlers",
-    "groups": ["bowlers"],
+    "groups": [
+      "bowlers"
+    ],
     "jersey_display": "15",
     "birthday": "20/11/2010",
     "age": 16,
@@ -307,7 +350,9 @@
     "role": "Bowler / Strike Fast Bowler",
     "badge": "STRIKE BOWLER",
     "group": "bowlers",
-    "groups": ["bowlers"],
+    "groups": [
+      "bowlers"
+    ],
     "jersey_display": "16",
     "birthday": "20/12/1998",
     "age": 27,
@@ -316,7 +361,7 @@
     "description": "A decent fast bowler who can bowl at both ends with equal guile and relentless speed.",
     "didYouKnow": "Key strike bowler and tech coordinator keeping the team connected and technologically advanced.",
     "photo": "assets/players/real/Sahil-Singh.jpeg",
-    "photo_drive": "https://drive.google.com/drive/folders/1rYNaOJZCnTV7RrFFjOI08XvzURHpywHH",
+    "photo_drive": "",
     "national_team_experience": "No"
   },
   {
@@ -327,7 +372,10 @@
     "role": "All-Rounder",
     "badge": "ALL ROUNDER",
     "group": "allrounders",
-    "groups": ["allrounders", "batters"],
+    "groups": [
+      "allrounders",
+      "batters"
+    ],
     "jersey_display": "17",
     "birthday": "13/05/2000",
     "age": 26,
@@ -336,7 +384,7 @@
     "description": "A fast-bowling all-rounder who can open the attack with swing and provide stability in the middle order.",
     "didYouKnow": "Young talent with excellent swing control and athletic ground fielding capability.",
     "photo": "assets/players/real/20250405_104447_IMG_5374.jpg",
-    "photo_drive": "https://drive.google.com/drive/folders/1rYNaOJZCnTV7RrFFjOI08XvzURHpywHH",
+    "photo_drive": "",
     "national_team_experience": "No"
   },
   {
@@ -347,7 +395,10 @@
     "role": "All-Rounder",
     "badge": "ALL ROUNDER",
     "group": "allrounders",
-    "groups": ["allrounders", "batters"],
+    "groups": [
+      "allrounders",
+      "batters"
+    ],
     "jersey_display": "18",
     "birthday": "19/11/1998",
     "age": 27,
@@ -356,7 +407,7 @@
     "description": "Versatile all-rounder strengthening the squad with disciplined seam bowling and aggressive middle-order batting.",
     "didYouKnow": "Dynamic utility all-rounder contributing effectively across all phases of matchplay.",
     "photo": "assets/players/real/Fahad.JPG",
-    "photo_drive": "https://drive.google.com/drive/folders/1rYNaOJZCnTV7RrFFjOI08XvzURHpywHH",
+    "photo_drive": "",
     "national_team_experience": "No"
   }
 ]
