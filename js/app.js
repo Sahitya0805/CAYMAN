@@ -67,6 +67,9 @@ function initRosterCardInteractions() {
 }
 
 function initMobileNav() {
+  if (typeof window.toggleCSKMobileNav === 'function') {
+    return;
+  }
   const toggle = document.querySelector('.mobile-toggle');
   const menu = document.querySelector('.nav-menu');
   

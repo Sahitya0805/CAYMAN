@@ -28,64 +28,6 @@ function initHeroSparksCanvas() {
   }
 }
 
-  const ctx = canvas.getContext('2d');
-  let width = (canvas.width = canvas.parentElement.offsetWidth);
-  let height = (canvas.height = canvas.parentElement.offsetHeight);
-
-  const particles = [];
-  const particleCount = Math.min(36, Math.floor(width / 35));
-
-  for (let i = 0; i < particleCount; i++) {
-    particles.push({
-      x: Math.random() * width,
-      y: Math.random() * height,
-      size: Math.random() * 2.5 + 1,
-      speedX: (Math.random() - 0.5) * 0.4,
-      speedY: -Math.random() * 0.6 - 0.2,
-      opacity: Math.random() * 0.7 + 0.3,
-      hue: Math.random() > 0.5 ? '#38BDF8' : (Math.random() > 0.3 ? '#00E5FF' : '#FFFFFF'),
-      pulse: Math.random() * 0.05
-    });
-  }
-
-  function resize() {
-    if (!canvas.parentElement) return;
-    width = canvas.width = canvas.parentElement.offsetWidth;
-    height = canvas.height = canvas.parentElement.offsetHeight;
-  }
-  window.addEventListener('resize', resize);
-
-  function animate() {
-    ctx.clearRect(0, 0, width, height);
-
-    for (let p of particles) {
-      p.x += p.speedX;
-      p.y += p.speedY;
-      p.opacity += Math.sin(Date.now() * p.pulse) * 0.01;
-
-      if (p.y < -10) {
-        p.y = height + 10;
-        p.x = Math.random() * width;
-      }
-      if (p.x < -10) p.x = width + 10;
-      if (p.x > width + 10) p.x = -10;
-
-      ctx.save();
-      ctx.globalAlpha = Math.max(0.1, Math.min(0.9, p.opacity));
-      ctx.shadowBlur = 10;
-      ctx.shadowColor = p.hue;
-      ctx.fillStyle = p.hue;
-      ctx.beginPath();
-      ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
-      ctx.fill();
-      ctx.restore();
-    }
-
-    requestAnimationFrame(animate);
-  }
-  animate();
-}
-
 /**
  * 2. INTERACTIVE 3D HERO MOUSE PARALLAX
  */
