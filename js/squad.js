@@ -110,16 +110,24 @@ function setupFilterListeners() {
 export function createStadiumPlayerCard(p) {
   const jerseyNum = p.jersey_display || '—';
   const playerName = p.name_full || p.name_display;
-  const photoSrc = p.photo || 'assets/players/csk-01.svg';
+  const hasPhoto = !!(p.photo && p.photo.trim());
+  const photoSrc = hasPhoto ? p.photo : '';
   const hasDidYouKnow = p.didYouKnow && p.didYouKnow.trim().toUpperCase() !== 'NA' && p.didYouKnow.trim().toUpperCase() !== 'N/A';
 
   return `
     <article class="squad-player-stage-card" tabindex="0" aria-label="${playerName} - ${p.role}">
       <!-- Front Showcase Layer -->
       <div class="squad-card-front">
-        <!-- Full Size Player Photo -->
+        <!-- Full Size Player Photo or Empty State -->
         <div class="squad-player-figure-wrap">
-          <img src="${photoSrc}" alt="${playerName}" class="squad-player-cutout-img" loading="lazy">
+          ${hasPhoto ? `
+            <img src="${photoSrc}" alt="${playerName}" class="squad-player-cutout-img" loading="lazy">
+          ` : `
+            <div class="squad-player-empty-wrap" style="display: flex; flex-direction: column; align-items: center; justify-content: center; width: 100%; height: 100%; background: radial-gradient(circle at 50% 40%, rgba(56, 189, 248, 0.08) 0%, rgba(9, 21, 43, 0.95) 75%);">
+              <img src="assets/csk-official-logo.png" alt="CSK" style="width: 72px; height: 72px; opacity: 0.2; filter: grayscale(1);">
+              <span style="font-size: 0.72rem; font-weight: 800; color: #64748B; letter-spacing: 0.1em; text-transform: uppercase; margin-top: 14px;">NO PHOTO</span>
+            </div>
+          `}
         </div>
 
         <!-- Bottom Role & Name Strip -->
@@ -205,7 +213,8 @@ export async function initPlayerProfile() {
   const nextPlayer = playerIndex < rawSquad.length - 1 ? rawSquad[playerIndex + 1] : null;
 
   const playerName = player.name_full || player.name_display;
-  const photoSrc = player.photo || 'assets/players/csk-01.svg';
+  const hasPhoto = !!(player.photo && player.photo.trim());
+  const photoSrc = hasPhoto ? player.photo : '';
   const hasDidYouKnow = player.didYouKnow && player.didYouKnow.trim().toUpperCase() !== 'NA' && player.didYouKnow.trim().toUpperCase() !== 'N/A';
 
   document.title = `${playerName} | Cayman Super Kings Squad`;
@@ -222,7 +231,14 @@ export async function initPlayerProfile() {
           <!-- Left Column: Portrait & Key Fields -->
           <div>
             <div class="profile-portrait" style="background: radial-gradient(circle at center, rgba(242, 96, 12, 0.25) 0%, rgba(9, 21, 43, 0.9) 80%); border-radius: 14px; overflow: hidden; border: 1px solid rgba(255, 255, 255, 0.18); box-shadow: 0 14px 40px rgba(0,0,0,0.6);">
-              <img src="${photoSrc}" alt="${playerName}" style="width: 100%; display: block; filter: drop-shadow(0 10px 20px rgba(0,0,0,0.5));">
+              ${hasPhoto ? `
+                <img src="${photoSrc}" alt="${playerName}" style="width: 100%; display: block; filter: drop-shadow(0 10px 20px rgba(0,0,0,0.5));">
+              ` : `
+                <div style="display: flex; flex-direction: column; align-items: center; justify-content: center; height: 380px; background: rgba(9, 21, 43, 0.85);">
+                  <img src="assets/csk-official-logo.png" alt="CSK" style="width: 90px; height: 90px; opacity: 0.2; filter: grayscale(1);">
+                  <span style="font-size: 0.75rem; font-weight: 800; color: #64748B; letter-spacing: 0.1em; text-transform: uppercase; margin-top: 14px;">NO PHOTO AVAILABLE</span>
+                </div>
+              `}
             </div>
 
             <div class="card card-body" style="margin-top: 20px; background: rgba(8, 14, 28, 0.85); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 12px; padding: 22px; color: #fff;">
