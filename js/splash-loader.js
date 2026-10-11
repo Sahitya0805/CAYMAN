@@ -153,18 +153,29 @@ export function initSplashLoader() {
     splash.classList.add('is-hidden');
     splash.classList.remove('is-active');
     splash.setAttribute('aria-hidden', 'true');
+    try {
+      sessionStorage.setItem('csk_splash_seen', 'true');
+    } catch (err) {}
     setTimeout(() => {
       if (splash.parentNode) {
         splash.style.display = 'none';
       }
-    }, 450);
+    }, 300);
   }
+
+  // If already seen in this session or fast return, dismiss immediately
+  try {
+    if (sessionStorage.getItem('csk_splash_seen') === 'true') {
+      dismissSplash();
+      return;
+    }
+  } catch (err) {}
 
   // Click anywhere to skip instantly
   splash.addEventListener('click', dismissSplash);
 
   let progress = 0;
-  const durationMs = 1250;
+  const durationMs = 850;
   const startTime = performance.now();
 
   function updateProgress(currentTime) {
@@ -227,15 +238,15 @@ export function initSplashLoader() {
     if (rawProgress < 1) {
       requestAnimationFrame(updateProgress);
     } else {
-      // Hold bowled celebration for 420ms so the user enjoys the shattering wicket impact
-      setTimeout(dismissSplash, 420);
+      // Hold bowled celebration for 180ms so the user enjoys the shattering wicket impact briefly
+      setTimeout(dismissSplash, 180);
     }
   }
 
   requestAnimationFrame(updateProgress);
 
   // Fallback safety timeout
-  setTimeout(dismissSplash, 2100);
+  setTimeout(dismissSplash, 1200);
 
   // Handle browser back/forward history cache (pageshow)
   window.addEventListener('pageshow', (event) => {
