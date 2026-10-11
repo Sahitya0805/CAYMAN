@@ -15,6 +15,12 @@ export function initFuturisticSystem() {
   initCyberShockwaveRipples();
   initLiveTelemetryHUD();
   initTelemetryCounters();
+
+  // Next-Gen Cyber Motion Additions (Additive without changing existing ones)
+  initCyberCursorReticle();
+  initCyberTargetingCorners();
+  initCyberWarpDrive();
+  initMagneticButtons();
 }
 
 /**
@@ -203,6 +209,12 @@ function initLiveTelemetryHUD() {
   chip.innerHTML = `
     <span class="live-radar-dot" style="width: 8px; height: 8px; background: #38BDF8; box-shadow: 0 0 8px #38BDF8;"></span>
     <span>ARENA HUD // 22-YARD SYS ONLINE</span>
+    <span class="cyber-audio-eq" title="Live Broadcast Telemetry Feed">
+      <span class="eq-bar"></span>
+      <span class="eq-bar"></span>
+      <span class="eq-bar"></span>
+      <span class="eq-bar"></span>
+    </span>
   `;
   document.body.appendChild(chip);
 }
@@ -284,3 +296,135 @@ function initTelemetryCounters() {
     requestAnimationFrame(step);
   }
 }
+
+/**
+ * 9. Cyber Plasma Photon Cursor Aura (Desktop Holographic Reticle Follower)
+ */
+function initCyberCursorReticle() {
+  if (!window.matchMedia('(hover: hover) and (pointer: fine)').matches) return;
+  if (document.getElementById('cyber-cursor-follower')) return;
+
+  const follower = document.createElement('div');
+  follower.id = 'cyber-cursor-follower';
+  follower.className = 'cyber-cursor-follower';
+  follower.innerHTML = `
+    <div class="cyber-cursor-ring"></div>
+    <div class="cyber-cursor-dot"></div>
+  `;
+  document.body.appendChild(follower);
+
+  let mouseX = -100, mouseY = -100;
+  let ringX = -100, ringY = -100;
+
+  window.addEventListener('mousemove', (e) => {
+    mouseX = e.clientX;
+    mouseY = e.clientY;
+    follower.style.opacity = '1';
+  }, { passive: true });
+
+  window.addEventListener('mouseleave', () => {
+    follower.style.opacity = '0';
+  });
+
+  document.addEventListener('mouseover', (e) => {
+    if (e.target.closest('a, button, .fixture-ticket, .squad-player-stage-card, .tier-card, input, select, .filter-pill, .filter-group')) {
+      follower.classList.add('is-hovering');
+    } else {
+      follower.classList.remove('is-hovering');
+    }
+  });
+
+  function renderCursor() {
+    ringX += (mouseX - ringX) * 0.22;
+    ringY += (mouseY - ringY) * 0.22;
+    follower.style.transform = `translate3d(${ringX}px, ${ringY}px, 0)`;
+    requestAnimationFrame(renderCursor);
+  }
+  requestAnimationFrame(renderCursor);
+}
+
+/**
+ * 10. Cyber Targeting Brackets (Sci-Fi Corner Reticles on Cards)
+ */
+function initCyberTargetingCorners() {
+  const targetCards = document.querySelectorAll(
+    '.fixture-ticket, .squad-player-stage-card, .tier-card, .roster-stage-card'
+  );
+
+  targetCards.forEach(card => {
+    if (card.querySelector('.cyber-reticle-bracket')) return;
+
+    const bTL = document.createElement('span');
+    bTL.className = 'cyber-reticle-bracket bracket-tl';
+    const bTR = document.createElement('span');
+    bTR.className = 'cyber-reticle-bracket bracket-tr';
+    const bBL = document.createElement('span');
+    bBL.className = 'cyber-reticle-bracket bracket-bl';
+    const bBR = document.createElement('span');
+    bBR.className = 'cyber-reticle-bracket bracket-br';
+
+    card.appendChild(bTL);
+    card.appendChild(bTR);
+    card.appendChild(bBL);
+    card.appendChild(bBR);
+  });
+}
+
+/**
+ * 11. Cyber Warp Velocity Streaks (Rapid Scroll Hyperdrive Particles)
+ */
+function initCyberWarpDrive() {
+  if (document.getElementById('cyber-warp-canvas')) return;
+
+  const warpWrap = document.createElement('div');
+  warpWrap.id = 'cyber-warp-canvas';
+  warpWrap.className = 'cyber-warp-canvas';
+  warpWrap.innerHTML = `
+    <div class="warp-line warp-left"></div>
+    <div class="warp-line warp-right"></div>
+  `;
+  document.body.appendChild(warpWrap);
+
+  let lastScrollY = window.scrollY;
+  let scrollTimeout = null;
+
+  window.addEventListener('scroll', () => {
+    const currentScrollY = window.scrollY;
+    const velocity = Math.abs(currentScrollY - lastScrollY);
+    lastScrollY = currentScrollY;
+
+    if (velocity > 32) {
+      warpWrap.classList.add('is-warping');
+      clearTimeout(scrollTimeout);
+      scrollTimeout = setTimeout(() => {
+        warpWrap.classList.remove('is-warping');
+      }, 180);
+    }
+  }, { passive: true });
+}
+
+/**
+ * 12. Interactive Magnetic Physics on Core Interactive Controls
+ */
+function initMagneticButtons() {
+  if (!window.matchMedia('(hover: hover) and (pointer: fine)').matches) return;
+
+  const magneticTargets = document.querySelectorAll(
+    '.btn-primary, .btn-sponsor-primary, .btn-live-sync, .ticket-btn-pill, .squad-explore-redirect-btn'
+  );
+
+  magneticTargets.forEach(btn => {
+    btn.addEventListener('mousemove', (e) => {
+      const rect = btn.getBoundingClientRect();
+      const x = e.clientX - rect.left - rect.width / 2;
+      const y = e.clientY - rect.top - rect.height / 2;
+
+      btn.style.transform = `translate3d(${x * 0.18}px, ${y * 0.18}px, 0)`;
+    });
+
+    btn.addEventListener('mouseleave', () => {
+      btn.style.transform = '';
+    });
+  });
+}
+
