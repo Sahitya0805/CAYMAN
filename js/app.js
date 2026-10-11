@@ -63,42 +63,61 @@ function initMobileNav() {
   const menu = document.querySelector('.nav-menu');
   
   if (toggle && menu) {
-    toggle.addEventListener('click', (e) => {
-      e.stopPropagation();
+    function toggleMenu(e) {
+      if (e) {
+        e.preventDefault();
+        e.stopPropagation();
+      }
       const isOpen = menu.classList.toggle('is-open');
       toggle.setAttribute('aria-expanded', String(isOpen));
       toggle.classList.toggle('active', isOpen);
       document.body.classList.toggle('nav-open', isOpen);
+    }
+
+    function closeMenu() {
+      if (menu.classList.contains('is-open')) {
+        menu.classList.remove('is-open');
+        toggle.setAttribute('aria-expanded', 'false');
+        toggle.classList.remove('active');
+        document.body.classList.remove('nav-open');
+      }
+    }
+
+    // Support click & pointerup with debounce to prevent double triggers
+    let lastToggleTime = 0;
+    toggle.addEventListener('click', (e) => {
+      const now = Date.now();
+      if (now - lastToggleTime < 300) return;
+      lastToggleTime = now;
+      toggleMenu(e);
     });
 
     // Close when clicking any nav link
     const navLinks = menu.querySelectorAll('a');
     navLinks.forEach(link => {
       link.addEventListener('click', () => {
-        menu.classList.remove('is-open');
-        toggle.setAttribute('aria-expanded', 'false');
-        toggle.classList.remove('active');
-        document.body.classList.remove('nav-open');
+        closeMenu();
       });
     });
 
-    // Close on click outside
+    // Close on click or touch outside
     document.addEventListener('click', (e) => {
       if (menu.classList.contains('is-open') && !menu.contains(e.target) && !toggle.contains(e.target)) {
-        menu.classList.remove('is-open');
-        toggle.setAttribute('aria-expanded', 'false');
-        toggle.classList.remove('active');
-        document.body.classList.remove('nav-open');
+        closeMenu();
       }
     });
 
     // Close on Escape key
     window.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape' && menu.classList.contains('is-open')) {
-        menu.classList.remove('is-open');
-        toggle.setAttribute('aria-expanded', 'false');
-        toggle.classList.remove('active');
-        document.body.classList.remove('nav-open');
+      if (e.key === 'Escape') {
+        closeMenu();
+      }
+    });
+
+    // Auto close on window resize beyond mobile breakpoint
+    window.addEventListener('resize', () => {
+      if (window.innerWidth > 992 && menu.classList.contains('is-open')) {
+        closeMenu();
       }
     });
   }
