@@ -904,4 +904,328 @@ body.nav-open .mobile-nav-backdrop {
   100% { background-position: -150% -150%; }
 }
 
+/* ─────────────────────────────────────────────────────────────
+   23. SQUAD SHOWCASE — 3D PERSPECTIVE TILT & FUTURISTIC HUD
+   ───────────────────────────────────────────────────────────── */
+
+/* 3D Perspective Card Container */
+.squad-player-stage-card {
+  perspective: 1200px !important;
+  transform-style: preserve-3d !important;
+  transition: transform 0.22s cubic-bezier(0.16, 1, 0.3, 1), 
+              box-shadow 0.25s ease, 
+              border-color 0.25s ease !important;
+  will-change: transform, box-shadow;
+}
+
+.squad-player-stage-card:hover {
+  transform: perspective(1200px) 
+             rotateX(var(--tilt-x, 0deg)) 
+             rotateY(var(--tilt-y, 0deg)) 
+             translateY(-8px) 
+             scale3d(1.025, 1.025, 1.025) !important;
+  border-color: rgba(56, 189, 248, 0.6) !important;
+  box-shadow: 0 26px 54px rgba(0, 0, 0, 0.75), 
+              0 0 32px rgba(56, 189, 248, 0.35),
+              inset 0 1px 2px rgba(255, 255, 255, 0.25) !important;
+}
+
+/* 3D Parallax Depth on Player Cutout Image */
+.squad-player-stage-card .squad-player-cutout-img {
+  transform-style: preserve-3d !important;
+  transform: translateZ(24px) scale(1.03);
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), filter 0.3s ease !important;
+}
+
+.squad-player-stage-card:hover .squad-player-cutout-img {
+  transform: translateZ(42px) scale(1.08) !important;
+  filter: brightness(1.04) contrast(1.08) !important;
+}
+
+/* 4 Cybernetic Corner Targeting Reticles */
+.squad-reticle {
+  position: absolute;
+  width: 14px;
+  height: 14px;
+  pointer-events: none;
+  z-index: 12;
+  opacity: 0.3;
+  transition: all 0.24s cubic-bezier(0.16, 1, 0.3, 1);
+  border: 1.5px solid transparent;
+}
+
+.reticle-tl {
+  top: 8px;
+  left: 8px;
+  border-top-color: #38BDF8;
+  border-left-color: #38BDF8;
+}
+
+.reticle-tr {
+  top: 8px;
+  right: 8px;
+  border-top-color: #38BDF8;
+  border-right-color: #38BDF8;
+}
+
+.reticle-bl {
+  bottom: 8px;
+  left: 8px;
+  border-bottom-color: #38BDF8;
+  border-left-color: #38BDF8;
+}
+
+.reticle-br {
+  bottom: 8px;
+  right: 8px;
+  border-bottom-color: #38BDF8;
+  border-right-color: #38BDF8;
+}
+
+.squad-player-stage-card:hover .squad-reticle {
+  opacity: 1;
+  filter: drop-shadow(0 0 6px #38BDF8);
+}
+
+.squad-player-stage-card:hover .reticle-tl { top: 11px; left: 11px; }
+.squad-player-stage-card:hover .reticle-tr { top: 11px; right: 11px; }
+.squad-player-stage-card:hover .reticle-bl { bottom: 11px; left: 11px; }
+.squad-player-stage-card:hover .reticle-br { bottom: 11px; right: 11px; }
+
+/* Holographic Biometric Scanner Beam */
+.squad-biometric-scanner {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 8;
+  opacity: 0;
+  transition: opacity 0.25s ease;
+  overflow: hidden;
+}
+
+.squad-player-stage-card:hover .squad-biometric-scanner {
+  opacity: 1;
+}
+
+.scanner-laser-bar {
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, transparent 0%, #38BDF8 25%, #FFFFFF 50%, #38BDF8 75%, transparent 100%);
+  box-shadow: 0 0 14px #38BDF8, 0 0 28px rgba(56, 189, 248, 0.7);
+  animation: squadScannerSweep 1.7s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+}
+
+@keyframes squadScannerSweep {
+  0% { top: 0%; opacity: 0; }
+  15% { opacity: 1; }
+  85% { opacity: 1; }
+  100% { top: 100%; opacity: 0; }
+}
+
+.scanner-hud-tag {
+  position: absolute;
+  bottom: 88px;
+  right: 12px;
+  font-family: var(--font-display, 'Chakra Petch', monospace);
+  font-size: 0.62rem;
+  font-weight: 800;
+  color: #38BDF8;
+  letter-spacing: 0.12em;
+  background: rgba(3, 7, 18, 0.88);
+  padding: 3px 8px;
+  border-radius: 4px;
+  border: 1px solid rgba(56, 189, 248, 0.4);
+  backdrop-filter: blur(6px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.6);
+  pointer-events: none;
+  animation: hudTagBlink 2s ease-in-out infinite;
+}
+
+@keyframes hudTagBlink {
+  0%, 100% { opacity: 0.85; }
+  50% { opacity: 1; border-color: #38BDF8; }
+}
+
+/* Combat Impact Index Meter */
+.squad-power-index-wrap {
+  margin: 6px 0 8px;
+  padding: 7px 10px;
+  background: rgba(56, 189, 248, 0.08);
+  border: 1px solid rgba(56, 189, 248, 0.25);
+  border-radius: 8px;
+}
+
+.power-index-label-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 5px;
+}
+
+.power-label {
+  font-size: 0.68rem;
+  font-weight: 800;
+  color: #38BDF8;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.power-score {
+  font-size: 0.92rem;
+  font-weight: 900;
+  color: #F59E0B;
+  text-shadow: 0 0 8px rgba(245, 158, 11, 0.5);
+}
+
+.power-meter-track {
+  height: 6px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 999px;
+  overflow: hidden;
+  position: relative;
+}
+
+.power-meter-fill {
+  height: 100%;
+  border-radius: 999px;
+  background: linear-gradient(90deg, #0284C7 0%, #38BDF8 60%, #F59E0B 100%);
+  box-shadow: 0 0 10px rgba(56, 189, 248, 0.8);
+  transition: width 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Dynamic Stadium Floodlight Motion Sweeps */
+.squad-floodlight--left {
+  animation: floodlightOscillateLeft 9s ease-in-out infinite alternate !important;
+}
+
+.squad-floodlight--right {
+  animation: floodlightOscillateRight 9s ease-in-out infinite alternate !important;
+}
+
+@keyframes floodlightOscillateLeft {
+  0% { transform: rotate(-26deg) scale(1); opacity: 0.65; }
+  50% { transform: rotate(-14deg) scale(1.15); opacity: 1; }
+  100% { transform: rotate(-22deg) scale(1.05); opacity: 0.85; }
+}
+
+@keyframes floodlightOscillateRight {
+  0% { transform: rotate(26deg) scale(1); opacity: 0.65; }
+  50% { transform: rotate(14deg) scale(1.15); opacity: 1; }
+  100% { transform: rotate(18deg) scale(1.05); opacity: 0.85; }
+}
+
+/* Squad Hero Sonic Waveform */
+.squad-hero-waveform {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  height: 26px;
+  margin: 10px auto 14px;
+  max-width: 240px;
+}
+
+.wave-bar {
+  width: 3.5px;
+  height: 6px;
+  border-radius: 999px;
+  background: linear-gradient(180deg, #38BDF8 0%, #0284C7 100%);
+  box-shadow: 0 0 8px rgba(56, 189, 248, 0.6);
+  animation: waveformBounce 1.4s ease-in-out infinite alternate;
+}
+
+.wave-bar.bar-1  { animation-delay: 0.05s; }
+.wave-bar.bar-2  { animation-delay: 0.20s; }
+.wave-bar.bar-3  { animation-delay: 0.35s; }
+.wave-bar.bar-4  { animation-delay: 0.15s; }
+.wave-bar.bar-5  { animation-delay: 0.40s; }
+.wave-bar.bar-6  { animation-delay: 0.25s; }
+.wave-bar.bar-7  { animation-delay: 0.50s; }
+.wave-bar.bar-8  { animation-delay: 0.10s; }
+.wave-bar.bar-9  { animation-delay: 0.45s; }
+.wave-bar.bar-10 { animation-delay: 0.30s; }
+.wave-bar.bar-11 { animation-delay: 0.18s; }
+.wave-bar.bar-12 { animation-delay: 0.42s; }
+.wave-bar.bar-13 { animation-delay: 0.28s; }
+.wave-bar.bar-14 { animation-delay: 0.12s; }
+.wave-bar.bar-15 { animation-delay: 0.38s; }
+
+@keyframes waveformBounce {
+  0% { height: 4px; opacity: 0.4; }
+  50% { height: 22px; opacity: 1; }
+  100% { height: 8px; opacity: 0.7; }
+}
+
+/* Radar Ping Dot */
+.radar-ping-dot {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #38BDF8;
+  box-shadow: 0 0 10px #38BDF8, 0 0 18px rgba(56, 189, 248, 0.8);
+  margin-right: 6px;
+  animation: radarDotPulse 1.6s ease-in-out infinite;
+}
+
+@keyframes radarDotPulse {
+  0%, 100% { transform: scale(1); opacity: 0.85; }
+  50% { transform: scale(1.4); opacity: 1; box-shadow: 0 0 16px #38BDF8, 0 0 24px #F59E0B; }
+}
+
+/* Floating Ambient Stadium Dust / Starlight Embers */
+.squad-stadium-dust {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.dust-particle {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: #F59E0B;
+  box-shadow: 0 0 8px #F59E0B;
+  opacity: 0;
+  animation: floatDustEmbers 8s linear infinite;
+}
+
+.dust-particle.dp-1 { left: 10%; bottom: -10px; animation-delay: 0s; width: 3px; height: 3px; }
+.dust-particle.dp-2 { left: 25%; bottom: -10px; animation-delay: 2s; width: 4px; height: 4px; background: #38BDF8; box-shadow: 0 0 8px #38BDF8; }
+.dust-particle.dp-3 { left: 45%; bottom: -10px; animation-delay: 4.5s; width: 3px; height: 3px; }
+.dust-particle.dp-4 { left: 60%; bottom: -10px; animation-delay: 1.2s; width: 5px; height: 5px; }
+.dust-particle.dp-5 { left: 75%; bottom: -10px; animation-delay: 3.5s; width: 3px; height: 3px; background: #38BDF8; box-shadow: 0 0 8px #38BDF8; }
+.dust-particle.dp-6 { left: 88%; bottom: -10px; animation-delay: 5s; width: 4px; height: 4px; }
+.dust-particle.dp-7 { left: 35%; bottom: -10px; animation-delay: 6.2s; width: 3px; height: 3px; }
+.dust-particle.dp-8 { left: 92%; bottom: -10px; animation-delay: 2.8s; width: 4px; height: 4px; }
+
+@keyframes floatDustEmbers {
+  0% { transform: translateY(0) scale(0.6); opacity: 0; }
+  20% { opacity: 0.65; }
+  80% { opacity: 0.65; }
+  100% { transform: translateY(-700px) scale(1.2); opacity: 0; }
+}
+
+/* Category Filter Active Styling with Cyber Energy */
+.squad-filter-btn {
+  position: relative !important;
+  overflow: hidden !important;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+.squad-filter-btn.active {
+  background: linear-gradient(135deg, #0284C7 0%, #0369A1 100%) !important;
+  color: #FFFFFF !important;
+  border-color: #38BDF8 !important;
+  box-shadow: 0 0 20px rgba(56, 189, 248, 0.5), 
+              inset 0 1px 2px rgba(255, 255, 255, 0.4) !important;
+  transform: translateY(-2px);
+}
+
+
 

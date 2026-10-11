@@ -46,10 +46,14 @@ export async function initSquadPage() {
         ${createStadiumPlayerCard(p)}
       </div>
     `).join('');
+
+    initSquadCard3DTilt(container);
   }
 
   filterBtns.forEach(btn => {
-    btn.addEventListener('click', () => {
+    btn.addEventListener('click', (e) => {
+      // Trigger cyber ripple on filter click
+      createFilterShockwave(btn, e);
       filterBtns.forEach(b => b.classList.remove('active'));
       btn.classList.add('active');
       currentFilter = btn.getAttribute('data-filter') || 'all';
@@ -58,6 +62,63 @@ export async function initSquadPage() {
   });
 
   render();
+}
+
+/**
+ * High-performance 3D Perspective Tilt & Specular Light System
+ */
+export function initSquadCard3DTilt(root = document) {
+  const cards = root.querySelectorAll('.squad-player-stage-card');
+  cards.forEach(card => {
+    if (card.dataset.tiltReady === 'true') return;
+    card.dataset.tiltReady = 'true';
+
+    function onPointerMove(e) {
+      const rect = card.getBoundingClientRect();
+      const clientX = e.touches ? e.touches[0].clientX : e.clientX;
+      const clientY = e.touches ? e.touches[0].clientY : e.clientY;
+      const x = clientX - rect.left;
+      const y = clientY - rect.top;
+      const halfW = rect.width / 2;
+      const halfH = rect.height / 2;
+
+      // Realistic sports card 3D tilt angle
+      const rotX = ((y - halfH) / halfH) * -7.5;
+      const rotY = ((x - halfW) / halfW) * 7.5;
+
+      card.style.setProperty('--tilt-x', `${rotX.toFixed(2)}deg`);
+      card.style.setProperty('--tilt-y', `${rotY.toFixed(2)}deg`);
+      card.style.setProperty('--mouse-x', `${((x / rect.width) * 100).toFixed(1)}%`);
+      card.style.setProperty('--mouse-y', `${((y / rect.height) * 100).toFixed(1)}%`);
+    }
+
+    function onPointerLeave() {
+      card.style.setProperty('--tilt-x', '0deg');
+      card.style.setProperty('--tilt-y', '0deg');
+      card.style.setProperty('--mouse-x', '50%');
+      card.style.setProperty('--mouse-y', '50%');
+    }
+
+    card.addEventListener('mousemove', onPointerMove, { passive: true });
+    card.addEventListener('mouseleave', onPointerLeave, { passive: true });
+    card.addEventListener('touchmove', onPointerMove, { passive: true });
+    card.addEventListener('touchend', onPointerLeave, { passive: true });
+  });
+}
+
+function createFilterShockwave(btn, e) {
+  const rect = btn.getBoundingClientRect();
+  const wave = document.createElement('span');
+  wave.className = 'cyber-shockwave';
+  const size = Math.max(rect.width, rect.height) * 1.8;
+  wave.style.width = `${size}px`;
+  wave.style.height = `${size}px`;
+  wave.style.left = `${(e.clientX - rect.left) - size / 2}px`;
+  wave.style.top = `${(e.clientY - rect.top) - size / 2}px`;
+  btn.style.position = 'relative';
+  btn.style.overflow = 'hidden';
+  btn.appendChild(wave);
+  setTimeout(() => wave.remove(), 700);
 }
 
 export function createStadiumPlayerCard(p) {
@@ -77,14 +138,34 @@ export function createStadiumPlayerCard(p) {
   const bowl = st.bowling || {};
   const hasBowling = bowl.wickets && bowl.wickets > 0;
 
+  // Dynamic Combat Impact Rating (91-99)
+  let powerRating = 91;
+  if (badgeText === 'CAPTAIN') powerRating = 99;
+  else if (badgeText === 'VICE CAPTAIN' || badgeText === 'CO-FOUNDER') powerRating = 98;
+  else if ((p.role || '').toLowerCase().includes('all-rounder')) powerRating = 96;
+  else if ((bat.runs && bat.runs > 100) || (bowl.wickets && bowl.wickets > 5)) powerRating = 95;
+  else if ((p.priority || 99) <= 4) powerRating = 94;
+  else powerRating = 90 + ((parseInt(jerseyNum, 10) || 7) % 8);
+
   return `
     <article class="squad-player-stage-card roster-stage-card futuristic-card" tabindex="0" aria-label="${playerName} - ${p.role}">
+      <!-- 4 Cybernetic Corner Targeting Reticles -->
+      <div class="squad-reticle reticle-tl" aria-hidden="true"></div>
+      <div class="squad-reticle reticle-tr" aria-hidden="true"></div>
+      <div class="squad-reticle reticle-bl" aria-hidden="true"></div>
+      <div class="squad-reticle reticle-br" aria-hidden="true"></div>
+
       <!-- Front Facing Face Card -->
       <div class="squad-card-front">
         ${badgeText ? `<div class="squad-card-badge ${badgeClass}" title="${p.role}">${badgeText}</div>` : ''}
 
-        <!-- Player Portrait Wrap -->
+        <!-- Player Portrait Wrap with Biometric Scanner Beam -->
         <div class="squad-player-figure-wrap">
+          <div class="squad-biometric-scanner" aria-hidden="true">
+            <span class="scanner-laser-bar"></span>
+            <span class="scanner-hud-tag">REC // CSK-${jerseyNum} • MATCH READY</span>
+          </div>
+
           ${hasPhoto ? `
             <img src="${photoSrc}" alt="${playerName}" class="squad-player-cutout-img" loading="lazy">
           ` : `
@@ -119,6 +200,17 @@ export function createStadiumPlayerCard(p) {
           </div>
           <div style="font-size: 0.8125rem; color: #38BDF8; font-weight: 800; letter-spacing: 0.04em;">
             AGE ${p.age} • ${p.birthday}
+          </div>
+        </div>
+
+        <!-- Combat Power Index Meter -->
+        <div class="squad-power-index-wrap">
+          <div class="power-index-label-row">
+            <span class="power-label">⚡ COMBAT IMPACT RATING</span>
+            <span class="power-score">${powerRating}<span style="font-size: 0.65rem; color: #94A3B8;">/100</span></span>
+          </div>
+          <div class="power-meter-track">
+            <div class="power-meter-fill" style="width: ${powerRating}%;"></div>
           </div>
         </div>
 

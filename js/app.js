@@ -9,7 +9,7 @@ import { store } from './content-store.js';
 import { initHeroSlider } from './hero-slider.js';
 import { initSplashLoader } from './splash-loader.js';
 import { initCricketCrazy } from './cricket-crazy.js';
-import { createStadiumPlayerCard } from './squad.js';
+import { createStadiumPlayerCard, initSquadCard3DTilt } from './squad.js';
 import { initFuturisticSystem } from './futuristic.js';
 
 // Initialize splash loader immediately to handle smooth page entrance
@@ -46,6 +46,7 @@ async function initHomepageRoster() {
   // In first page only first 4 players
   const top4 = squad.slice(0, 4);
   rosterGrid.innerHTML = top4.map(p => createStadiumPlayerCard(p)).join('');
+  initSquadCard3DTilt(rosterGrid);
 }
 
 function initRosterCardInteractions() {
