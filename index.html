@@ -176,6 +176,30 @@
         gap: 8px;
       }
     }
+
+    .squad-explore-redirect-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      background: linear-gradient(135deg, #F59E0B 0%, #E11D48 100%);
+      color: #FFFFFF !important;
+      font-weight: 900;
+      font-size: 1.05rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      padding: 16px 38px;
+      border-radius: 999px;
+      text-decoration: none;
+      box-shadow: 0 10px 25px rgba(245, 158, 11, 0.35), 0 0 20px rgba(225, 29, 72, 0.25);
+      border: 1.5px solid rgba(255, 255, 255, 0.25);
+      transition: all 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .squad-explore-redirect-btn:hover {
+      transform: translateY(-3px) scale(1.03);
+      box-shadow: 0 16px 36px rgba(245, 158, 11, 0.5), 0 0 30px rgba(225, 29, 72, 0.45);
+      color: #FFFFFF !important;
+    }
   </style>
   <script src="js/mobile-nav.js" defer></script>
 </head>
@@ -615,6 +639,13 @@
               </div>
             </div>
           </article>
+        </div>
+
+        <div class="squad-redirect-wrap" style="text-align: center; margin-top: 40px;">
+          <a href="squad.html" class="squad-explore-redirect-btn">
+            <span>EXPLORE FULL CSK SQUAD (18 PLAYERS)</span>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
         </div>
       </div>
     </section>
