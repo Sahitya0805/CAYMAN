@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Our Sponsors &amp; Corporate Partners | Cayman Super Kings</title>
-  <meta name="description" content="Sponsorship opportunities and brand partnerships with Cayman Super Kings Cricket Club. Reach local Cayman audiences and support grassroots youth athletics.">
+  <title>Commercial Alliances &amp; Sponsorship | Cayman Super Kings</title>
+  <meta name="description" content="Partner with Cayman Super Kings Cricket Club and support local cricket excellence — on the field and in the community. Discover season-long brand visibility, youth development impact, and sponsorship tiers.">
   <link rel="icon" type="image/png" href="assets/csk-official-logo.png?v=20260923_10">
   <link rel="shortcut icon" href="favicon.ico">
   <link rel="apple-touch-icon" href="assets/csk-official-logo.png?v=20260923_10">
@@ -15,65 +15,543 @@
   <link rel="stylesheet" href="css/pages.css?v=20260923_10">
   <link rel="stylesheet" href="css/futuristic.css?v=20261011_live">
   <style>
-    /* ── White-Theme Sponsorship Page Styles ── */
-    .sponsors-jumbotron-white {
-      background: #FFFFFF;
-      border: 1.5px solid #CBD5E1;
-      border-left: 6px solid #0284C7;
-      border-radius: 16px;
-      padding: 48px 36px;
-      box-shadow: 0 10px 30px rgba(9, 21, 43, 0.07);
-      text-align: center;
-      margin-bottom: 0;
+    /* ── Commercial Alliances & Sponsorship Styling (Navy & Gold Design Language) ── */
+    :root {
+      --sp-gold: #F59E0B;
+      --sp-gold-light: #FBBF24;
+      --sp-gold-glow: rgba(245, 158, 11, 0.22);
+      --sp-navy-deep: #060E1D;
+      --sp-navy-card: #0B1933;
+      --sp-navy-card-hover: #0F2245;
+      --sp-border-subtle: rgba(255, 255, 255, 0.1);
+      --sp-border-gold: rgba(245, 158, 11, 0.45);
+      --sp-cyan: #38BDF8;
     }
 
-    .jumbotron-icon-wrap-white {
-      width: 68px;
-      height: 68px;
-      margin: 0 auto 20px;
-      background: rgba(2, 132, 199, 0.08);
-      border: 1.5px solid #0284C7;
-      border-radius: 50%;
+    body.page-sponsors {
+      background-color: var(--sp-navy-deep);
+      color: #E2E8F0;
+    }
+
+    /* Hero Section */
+    .sponsors-hero {
+      position: relative;
+      background: radial-gradient(circle at 50% 20%, rgba(14, 34, 70, 0.95), var(--sp-navy-deep) 85%);
+      padding: 72px 0 56px;
+      text-align: center;
+      border-bottom: 1px solid var(--sp-border-subtle);
+      overflow: hidden;
+    }
+
+    .sponsors-hero::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background-image: radial-gradient(rgba(245, 158, 11, 0.06) 1px, transparent 1px);
+      background-size: 28px 28px;
+      pointer-events: none;
+    }
+
+    .sponsors-hero-kicker {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 16px;
+      border-radius: 999px;
+      background: rgba(56, 189, 248, 0.1);
+      border: 1px solid rgba(56, 189, 248, 0.3);
+      color: var(--sp-cyan);
+      font-size: 0.8rem;
+      font-weight: 800;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+    }
+
+    .sponsors-hero-title {
+      font-family: var(--font-display, "Chakra Petch", sans-serif);
+      font-size: clamp(2.2rem, 5vw, 3.8rem);
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: 0.02em;
+      color: #FFFFFF;
+      line-height: 1.1;
+      margin-bottom: 18px;
+    }
+
+    .sponsors-hero-subtitle {
+      max-width: 780px;
+      margin: 0 auto;
+      font-size: clamp(1.05rem, 2vw, 1.25rem);
+      color: #CBD5E1;
+      line-height: 1.6;
+      font-weight: 400;
+    }
+
+    /* Container Spacing */
+    .sponsors-content-wrap {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 56px 20px 88px;
+      display: flex;
+      flex-direction: column;
+      gap: 48px;
+    }
+
+    /* Card 1 — Centerpiece: What your sponsorship delivers */
+    .card-delivers-centerpiece {
+      background: linear-gradient(180deg, #0D1F3D 0%, #08152B 100%);
+      border: 1.5px solid var(--sp-border-gold);
+      border-radius: 20px;
+      padding: 48px 40px;
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.45), 0 0 35px var(--sp-gold-glow);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .card-delivers-centerpiece::after {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, #F59E0B, #FBBF24, #38BDF8, #F59E0B);
+    }
+
+    .centerpiece-header {
+      margin-bottom: 36px;
+      border-bottom: 1px solid var(--sp-border-subtle);
+      padding-bottom: 24px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: flex-end;
+      gap: 16px;
+    }
+
+    .centerpiece-title {
+      font-family: var(--font-display, "Chakra Petch", sans-serif);
+      font-size: clamp(1.8rem, 3.5vw, 2.5rem);
+      font-weight: 900;
+      color: #FFFFFF;
+      letter-spacing: 0.02em;
+      margin: 0;
+    }
+
+    .centerpiece-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(245, 158, 11, 0.15);
+      border: 1px solid var(--sp-gold);
+      color: var(--sp-gold-light);
+      font-size: 0.78rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 6px 14px;
+      border-radius: 999px;
+    }
+
+    .delivers-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 36px 32px;
+    }
+
+    @media (max-width: 860px) {
+      .delivers-grid {
+        grid-template-columns: 1fr;
+      }
+      .card-delivers-centerpiece {
+        padding: 32px 24px;
+      }
+    }
+
+    .deliver-column {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .deliver-col-header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 16px;
+    }
+
+    .deliver-col-icon {
+      width: 38px;
+      height: 38px;
+      border-radius: 10px;
+      background: rgba(245, 158, 11, 0.12);
+      border: 1px solid rgba(245, 158, 11, 0.3);
       display: flex;
       align-items: center;
       justify-content: center;
-      color: #0284C7;
+      color: var(--sp-gold-light);
+      flex-shrink: 0;
     }
 
-    .jumbotron-title-white {
-      font-family: var(--font-display);
-      font-size: clamp(1.6rem, 3.2vw, 2.2rem);
+    .deliver-col-title {
+      font-size: 1.15rem;
+      font-weight: 800;
+      color: #FFFFFF;
+      letter-spacing: 0.01em;
+      margin: 0;
+    }
+
+    .deliver-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .deliver-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      font-size: 0.96rem;
+      color: #CBD5E1;
+      line-height: 1.55;
+    }
+
+    .deliver-bullet {
+      width: 18px;
+      height: 18px;
+      flex-shrink: 0;
+      margin-top: 3px;
+      color: var(--sp-gold-light);
+    }
+
+    /* Card 2 — Transparency: Where your funds go */
+    .card-funds-transparency {
+      background: #0B1933;
+      border: 1px solid rgba(56, 189, 248, 0.25);
+      border-radius: 18px;
+      padding: 36px 32px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+    }
+
+    .funds-title {
+      font-family: var(--font-display, "Chakra Petch", sans-serif);
+      font-size: 1.6rem;
       font-weight: 900;
-      text-transform: uppercase;
-      letter-spacing: 0.03em;
-      color: #09152B;
-      margin-bottom: 14px;
+      color: #FFFFFF;
+      margin-bottom: 24px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
     }
 
-    .jumbotron-desc-white {
-      font-size: 1.05rem;
-      color: #475569;
-      line-height: 1.65;
-      max-width: 620px;
-      margin: 0 auto 28px;
+    .funds-list {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 24px 0;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 16px;
+    }
+
+    .funds-item {
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid var(--sp-border-subtle);
+      border-radius: 12px;
+      padding: 16px 18px;
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      font-size: 0.95rem;
+      color: #CBD5E1;
+      line-height: 1.5;
+    }
+
+    .funds-item strong {
+      color: #FFFFFF;
+      font-weight: 700;
+    }
+
+    .funds-bullet {
+      width: 18px;
+      height: 18px;
+      flex-shrink: 0;
+      margin-top: 2px;
+      color: var(--sp-cyan);
+    }
+
+    .funds-guarantee {
+      background: rgba(56, 189, 248, 0.06);
+      border-left: 4px solid var(--sp-cyan);
+      border-radius: 8px;
+      padding: 14px 20px;
+      font-size: 0.95rem;
+      font-style: italic;
+      color: #E2E8F0;
       font-weight: 500;
     }
 
-    .jumbotron-actions {
+    /* Tier Cards (Three Across) */
+    .tiers-section-title {
+      font-family: var(--font-display, "Chakra Petch", sans-serif);
+      font-size: 1.8rem;
+      font-weight: 900;
+      color: #FFFFFF;
+      text-align: center;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      margin-bottom: 28px;
+    }
+
+    .tiers-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      align-items: stretch;
+    }
+
+    @media (max-width: 992px) {
+      .tiers-grid {
+        grid-template-columns: 1fr;
+        max-width: 540px;
+        margin: 0 auto;
+      }
+    }
+
+    .tier-card {
+      background: #0B1933;
+      border: 1px solid var(--sp-border-subtle);
+      border-radius: 16px;
+      padding: 32px 26px;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+    }
+
+    .tier-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 16px 36px rgba(0, 0, 0, 0.4);
+    }
+
+    /* Featured Title Tier */
+    .tier-card--featured {
+      background: linear-gradient(180deg, #122244 0%, #0B1933 100%);
+      border: 2px solid var(--sp-gold);
+      box-shadow: 0 14px 40px rgba(0, 0, 0, 0.4), 0 0 25px rgba(245, 158, 11, 0.25);
+    }
+
+    .tier-badge {
+      position: absolute;
+      top: -13px;
+      right: 24px;
+      background: linear-gradient(135deg, #F59E0B, #D97706);
+      color: #060E1D;
+      font-size: 0.72rem;
+      font-weight: 900;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 4px 12px;
+      border-radius: 999px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    }
+
+    .tier-header {
+      margin-bottom: 24px;
+      border-bottom: 1px solid var(--sp-border-subtle);
+      padding-bottom: 20px;
+    }
+
+    .tier-name {
+      font-family: var(--font-display, "Chakra Petch", sans-serif);
+      font-size: 1.25rem;
+      font-weight: 800;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      color: #CBD5E1;
+      margin-bottom: 8px;
+    }
+
+    .tier-card--featured .tier-name {
+      color: var(--sp-gold-light);
+    }
+
+    .tier-price {
+      font-size: 1.9rem;
+      font-weight: 900;
+      color: #FFFFFF;
+      font-family: var(--font-display, "Chakra Petch", sans-serif);
+    }
+
+    .tier-card--featured .tier-price {
+      color: #FFFFFF;
+    }
+
+    .tier-features {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 24px 0;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      flex-grow: 1;
+    }
+
+    .tier-features li {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: 0.92rem;
+      color: #CBD5E1;
+      line-height: 1.5;
+    }
+
+    .tier-bullet {
+      width: 16px;
+      height: 16px;
+      flex-shrink: 0;
+      margin-top: 3px;
+      color: var(--sp-gold);
+    }
+
+    .in-kind-note {
+      text-align: center;
+      margin-top: 18px;
+      font-size: 0.98rem;
+      color: #94A3B8;
+      font-style: italic;
+    }
+
+    .in-kind-note strong {
+      color: #E2E8F0;
+    }
+
+    /* Accountability Strip */
+    .accountability-strip {
+      background: rgba(255, 255, 255, 0.02);
+      border: 1px solid var(--sp-border-subtle);
+      border-radius: 14px;
+      padding: 24px 28px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+    }
+
+    .accountability-pill {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .accountability-pill-icon {
+      width: 36px;
+      height: 36px;
+      border-radius: 8px;
+      background: rgba(56, 189, 248, 0.1);
+      border: 1px solid rgba(56, 189, 248, 0.25);
+      color: var(--sp-cyan);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .accountability-pill-text {
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: #E2E8F0;
+      line-height: 1.35;
+    }
+
+    /* CTA Block */
+    .sponsors-cta-block {
+      background: linear-gradient(135deg, #10254C 0%, #091730 100%);
+      border: 1.5px solid var(--sp-border-gold);
+      border-radius: 20px;
+      padding: 52px 36px;
+      text-align: center;
+      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.45);
+    }
+
+    .cta-heading {
+      font-family: var(--font-display, "Chakra Petch", sans-serif);
+      font-size: clamp(1.8rem, 3.6vw, 2.4rem);
+      font-weight: 900;
+      color: #FFFFFF;
+      text-transform: uppercase;
+      letter-spacing: 0.02em;
+      margin-bottom: 24px;
+    }
+
+    .cta-buttons {
       display: flex;
       justify-content: center;
-      gap: 16px;
+      align-items: center;
+      gap: 18px;
       flex-wrap: wrap;
+      margin-bottom: 20px;
+    }
+
+    .btn-sponsor-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: linear-gradient(135deg, #F59E0B 0%, #D97706 100%);
+      color: #060E1D;
+      font-size: 1rem;
+      font-weight: 900;
+      padding: 16px 32px;
+      border-radius: 999px;
+      text-decoration: none;
+      box-shadow: 0 8px 24px rgba(245, 158, 11, 0.35);
+      transition: all 0.2s ease;
+      letter-spacing: 0.02em;
+    }
+
+    .btn-sponsor-primary:hover {
+      background: linear-gradient(135deg, #FBBF24 0%, #F59E0B 100%);
+      transform: translateY(-2px);
+      box-shadow: 0 12px 30px rgba(245, 158, 11, 0.45);
+      color: #060E1D;
+    }
+
+    .btn-sponsor-secondary {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: rgba(255, 255, 255, 0.06);
+      border: 1.5px solid rgba(255, 255, 255, 0.2);
+      color: #FFFFFF;
+      font-size: 0.98rem;
+      font-weight: 700;
+      padding: 15px 28px;
+      border-radius: 999px;
+      text-decoration: none;
+      transition: all 0.2s ease;
+    }
+
+    .btn-sponsor-secondary:hover {
+      background: rgba(255, 255, 255, 0.12);
+      border-color: #FFFFFF;
+      transform: translateY(-2px);
+      color: #FFFFFF;
+    }
+
+    .cta-promise-line {
+      font-size: 0.95rem;
+      color: #94A3B8;
+      margin: 0;
+      font-weight: 500;
     }
   </style>
 </head>
-<body class="page--white-theme">
-  <!-- CSK CRICKET MATCHDAY POWERPLAY LOADER (CRICKET VIBES EDITION) -->
+<body class="page-sponsors">
+  <!-- CSK CRICKET MATCHDAY POWERPLAY LOADER -->
   <div id="csk-splash-screen" class="csk-splash-screen" aria-hidden="false">
     <div class="csk-splash-screen__backdrop"></div>
 
     <div class="csk-splash-screen__content">
-      <!-- Stadium Lion Crest & Cricket Seam Orbit -->
       <div class="csk-splash-screen__logo-wrap">
         <div class="csk-splash-seam-ring">
           <svg viewBox="0 0 160 160" class="seam-svg">
@@ -85,19 +563,17 @@
         <img src="assets/csk-official-logo.png?v=20260923_10" alt="Cayman Super Kings" class="csk-splash-screen__image">
       </div>
 
-      <!-- Cricket Franchise Heading -->
       <div class="csk-splash-brand-wrap">
         <h1 class="csk-splash-brand-title">CAYMAN SUPER KINGS</h1>
         <div class="csk-splash-cricket-pill">
           <span class="cricket-live-beacon"></span>
-          <span class="csk-splash-motto">🏏 MATCHDAY POWERPLAY // 22-YARD ARENA</span>
+          <span class="csk-splash-motto">🏏 COMMERCIAL ALLIANCES // EST. 2022</span>
         </div>
       </div>
 
-      <!-- 22-YARD CRICKET PITCH ARENA & BAT-BALL STRIKE LOADER -->
       <div class="csk-cricket-pitch-loader">
         <div class="pitch-loader-hud">
-          <div class="pitch-commentary" id="arena-loader-status">🏏 POLISHING THE LEATHER SEAM...</div>
+          <div class="pitch-commentary" id="arena-loader-status">🏏 PREPARING PARTNERSHIP SUITE...</div>
           <div class="pitch-speed-readout">
             <span class="speed-label">SPEED:</span>
             <span class="speed-val" id="arena-loader-speed">138.4</span> <span class="speed-unit">KM/H</span>
@@ -162,19 +638,15 @@
   <header class="site-header">
     <div class="site-header__container">
       <div class="franchise-navbar-wrap">
-        <!-- Main Angled Navigation Bar -->
         <div class="franchise-nav-bar">
-          <!-- Breakout Franchise Crest -->
           <a href="index.html" class="franchise-logo-link" aria-label="Cayman Super Kings Home">
             <img src="assets/csk-official-logo.png?v=20260923_10" alt="Cayman Super Kings Logo" class="franchise-logo-img">
           </a>
 
-          <!-- Mobile Menu Toggle -->
           <button class="mobile-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
             <span></span><span></span><span></span>
           </button>
 
-          <!-- Navigation Links -->
           <nav class="navbar-nav" aria-label="Main Navigation">
             <ul class="nav-menu">
               <li><a href="squad.html" class="nav-link">Squad</a></li>
@@ -191,46 +663,302 @@
   </header>
 
   <main>
-    <!-- Standard Franchise Hero Banner -->
-    <section class="section section--navy" style="padding-top: 56px; padding-bottom: 56px;">
+    <!-- Hero (keep current, small edit) -->
+    <section class="sponsors-hero" aria-label="Sponsorship and Commercial Alliances">
       <div class="container">
-        <span class="section-eyebrow" style="color: #38BDF8;">Commercial Alliances</span>
-        <h1 class="section-title" style="color: #FFFFFF;">POWER THE PRIDE OF CAYMAN CRICKET</h1>
-        <p class="section-desc" style="max-width: 680px; color: #CBD5E1;">
-          Partner with Cayman Super Kings Cricket Club and support local cricket excellence.
+        <div class="sponsors-hero-kicker">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          COMMERCIAL ALLIANCES
+        </div>
+        <h1 class="sponsors-hero-title">Power the Pride of Cayman Cricket</h1>
+        <p class="sponsors-hero-subtitle">
+          Partner with Cayman Super Kings Cricket Club and support local cricket excellence — on the field and in the community.
         </p>
       </div>
     </section>
 
-    <!-- Main White-Theme Content Section: Currently Looking for Sponsors -->
-    <section class="section" style="padding-top: 64px; padding-bottom: 96px; min-height: 50vh; display: flex; align-items: center;">
-      <div class="container" style="width: 100%;">
-        <div class="sponsors-jumbotron-white" style="max-width: 780px; margin: 0 auto; text-align: center;">
-          <div class="jumbotron-icon-wrap-white">
-            <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-              <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
-            </svg>
+    <div class="container">
+      <div class="sponsors-content-wrap">
+
+        <!-- Card 1 — Centerpiece: What your sponsorship delivers -->
+        <section class="card-delivers-centerpiece" aria-labelledby="heading-delivers">
+          <div class="centerpiece-header">
+            <div>
+              <h2 id="heading-delivers" class="centerpiece-title">What your sponsorship delivers</h2>
+            </div>
+            <div class="centerpiece-badge">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg>
+              2027 Season Deliverables
+            </div>
           </div>
 
-          <h2 class="jumbotron-title-white">Currently We Are Looking for Sponsors</h2>
-          <p class="jumbotron-desc-white">
-            We are actively welcoming brand partners, corporate sponsors, and local community supporters for the upcoming season. If you are interested in partnering with Cayman Super Kings, please get in touch with our committee.
-          </p>
+          <div class="delivers-grid">
+            <!-- Group 1: Season-long brand visibility -->
+            <div class="deliver-column">
+              <div class="deliver-col-header">
+                <div class="deliver-col-icon">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/></svg>
+                </div>
+                <h3 class="deliver-col-title">Season-long brand visibility</h3>
+              </div>
+              <ul class="deliver-list">
+                <li>
+                  <svg class="deliver-bullet" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="10" fill="rgba(245, 158, 11, 0.15)"/><path d="M6 10L9 13L14 7" stroke="#F59E0B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                  <span>Your logo on all 22 match jerseys, worn at every fixture across the 2027 season</span>
+                </li>
+                <li>
+                  <svg class="deliver-bullet" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="10" fill="rgba(245, 158, 11, 0.15)"/><path d="M6 10L9 13L14 7" stroke="#F59E0B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                  <span>Named sponsor credit in every post-match feature on Instagram @caymansuperkings — 12+ fixtures a year, every match covered</span>
+                </li>
+                <li>
+                  <svg class="deliver-bullet" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="10" fill="rgba(245, 158, 11, 0.15)"/><path d="M6 10L9 13L14 7" stroke="#F59E0B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                  <span>Ground banner presence at our home fixtures (Jimmy Powell Oval &amp; Smith Road Oval)</span>
+                </li>
+                <li>
+                  <svg class="deliver-bullet" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="10" fill="rgba(245, 158, 11, 0.15)"/><path d="M6 10L9 13L14 7" stroke="#F59E0B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                  <span>Logo and link on this website — every page, all season</span>
+                </li>
+                <li>
+                  <svg class="deliver-bullet" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="10" fill="rgba(245, 158, 11, 0.15)"/><path d="M6 10L9 13L14 7" stroke="#F59E0B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                  <span>Co-branded moments: season jersey reveal post, season launch announcement, trophy celebrations</span>
+                </li>
+              </ul>
+            </div>
 
-          <div class="jumbotron-actions">
-            <a href="https://www.instagram.com/caymansuperkings?igsi=aXBpaHY2azlxNGF1" target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="padding: 14px 36px; font-size: 0.95rem; font-weight: 800; border-radius: 999px;">
-              Contact via Instagram @caymansuperkings →
+            <!-- Group 2: Real community & youth impact -->
+            <div class="deliver-column">
+              <div class="deliver-col-header">
+                <div class="deliver-col-icon">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                </div>
+                <h3 class="deliver-col-title">Real community &amp; youth impact</h3>
+              </div>
+              <ul class="deliver-list">
+                <li>
+                  <svg class="deliver-bullet" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="10" fill="rgba(245, 158, 11, 0.15)"/><path d="M6 10L9 13L14 7" stroke="#F59E0B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                  <span>Direct support for our development squad — 3–4 Caymanian and resident youth players (U18/U22) who train and play alongside the senior team: coaching, equipment, and match opportunities</span>
+                </li>
+                <li>
+                  <svg class="deliver-bullet" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="10" fill="rgba(245, 158, 11, 0.15)"/><path d="M6 10L9 13L14 7" stroke="#F59E0B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                  <span>Free, family-friendly matches that bring together players and supporters of many nationalities, year-round</span>
+                </li>
+                <li>
+                  <svg class="deliver-bullet" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="10" fill="rgba(245, 158, 11, 0.15)"/><path d="M6 10L9 13L14 7" stroke="#F59E0B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                  <span>Your brand aligned with sport, youth development, and active healthy lifestyles in the Cayman Islands</span>
+                </li>
+              </ul>
+            </div>
+
+            <!-- Group 3: Engagement for your people -->
+            <div class="deliver-column">
+              <div class="deliver-col-header">
+                <div class="deliver-col-icon">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                </div>
+                <h3 class="deliver-col-title">Engagement for your people</h3>
+              </div>
+              <ul class="deliver-list">
+                <li>
+                  <svg class="deliver-bullet" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="10" fill="rgba(245, 158, 11, 0.15)"/><path d="M6 10L9 13L14 7" stroke="#F59E0B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                  <span>An invitation for your staff to a CSK match day or a friendly corporate cricket session with the squad</span>
+                </li>
+                <li>
+                  <svg class="deliver-bullet" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="10" fill="rgba(245, 158, 11, 0.15)"/><path d="M6 10L9 13L14 7" stroke="#F59E0B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                  <span>Player appearances for your community or company events, by arrangement</span>
+                </li>
+              </ul>
+            </div>
+
+            <!-- Group 4: Full accountability -->
+            <div class="deliver-column">
+              <div class="deliver-col-header">
+                <div class="deliver-col-icon">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+                </div>
+                <h3 class="deliver-col-title">Full accountability</h3>
+              </div>
+              <ul class="deliver-list">
+                <li>
+                  <svg class="deliver-bullet" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="10" fill="rgba(245, 158, 11, 0.15)"/><path d="M6 10L9 13L14 7" stroke="#F59E0B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                  <span>An end-of-season impact report: how funds were used, fixtures played, social reach, youth development progress, and a photo record of your brand in action</span>
+                </li>
+                <li>
+                  <svg class="deliver-bullet" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="10" fill="rgba(245, 158, 11, 0.15)"/><path d="M6 10L9 13L14 7" stroke="#F59E0B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                  <span>A single point of contact on our committee throughout the season</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <!-- Card 2 — Transparency: Where your funds go -->
+        <section class="card-funds-transparency" aria-labelledby="heading-funds">
+          <h2 id="heading-funds" class="funds-title">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#38BDF8" stroke-width="2.2"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+            Where your funds go
+          </h2>
+          <ul class="funds-list">
+            <li class="funds-item">
+              <svg class="funds-bullet" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="10" fill="rgba(56, 189, 248, 0.15)"/><path d="M6 10L9 13L14 7" stroke="#38BDF8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <span><strong>Team kit</strong> — match jerseys and caps for the 22-player squad, carrying your brand</span>
+            </li>
+            <li class="funds-item">
+              <svg class="funds-bullet" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="10" fill="rgba(56, 189, 248, 0.15)"/><path d="M6 10L9 13L14 7" stroke="#38BDF8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <span><strong>Competition</strong> — registration fees for T20 and 35-over league and tournament play</span>
+            </li>
+            <li class="funds-item">
+              <svg class="funds-bullet" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="10" fill="rgba(56, 189, 248, 0.15)"/><path d="M6 10L9 13L14 7" stroke="#38BDF8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <span><strong>Match operations</strong> — ground fees, match balls, and equipment for year-round fixtures</span>
+            </li>
+            <li class="funds-item">
+              <svg class="funds-bullet" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="10" fill="rgba(56, 189, 248, 0.15)"/><path d="M6 10L9 13L14 7" stroke="#38BDF8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <span><strong>Youth development</strong> — training, coaching support, and equipment for our U18/U22 development players</span>
+            </li>
+            <li class="funds-item">
+              <svg class="funds-bullet" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="10" fill="rgba(56, 189, 248, 0.15)"/><path d="M6 10L9 13L14 7" stroke="#38BDF8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <span><strong>Media &amp; promotion</strong> — match-day photography and the post-match features your brand appears in</span>
+            </li>
+          </ul>
+
+          <div class="funds-guarantee">
+            Every dollar goes to club activities. No funds are paid to individuals.
+          </div>
+        </section>
+
+        <!-- Tier Cards (Three Across) -->
+        <section aria-labelledby="heading-tiers">
+          <h2 id="heading-tiers" class="tiers-section-title">Partnership Tiers</h2>
+          <div class="tiers-grid">
+            <!-- Tier 1: Title Partner (Featured) -->
+            <div class="tier-card tier-card--featured">
+              <div class="tier-badge">FEATURED</div>
+              <div class="tier-header">
+                <div class="tier-name">TITLE PARTNER</div>
+                <div class="tier-price">KYD 3,000+</div>
+              </div>
+              <ul class="tier-features">
+                <li>
+                  <svg class="tier-bullet" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="10" fill="rgba(245, 158, 11, 0.15)"/><path d="M6 10L9 13L14 7" stroke="#F59E0B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                  <span>Logo on all 22 match jerseys, full season</span>
+                </li>
+                <li>
+                  <svg class="tier-bullet" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="10" fill="rgba(245, 158, 11, 0.15)"/><path d="M6 10L9 13L14 7" stroke="#F59E0B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                  <span>Named title sponsor in every post-match Instagram feature</span>
+                </li>
+                <li>
+                  <svg class="tier-bullet" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="10" fill="rgba(245, 158, 11, 0.15)"/><path d="M6 10L9 13L14 7" stroke="#F59E0B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                  <span>Banner at all fixtures + website presence</span>
+                </li>
+                <li>
+                  <svg class="tier-bullet" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="10" fill="rgba(245, 158, 11, 0.15)"/><path d="M6 10L9 13L14 7" stroke="#F59E0B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                  <span>Jersey reveal + season launch co-branding</span>
+                </li>
+                <li>
+                  <svg class="tier-bullet" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="10" fill="rgba(245, 158, 11, 0.15)"/><path d="M6 10L9 13L14 7" stroke="#F59E0B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                  <span>End-of-season impact report</span>
+                </li>
+                <li>
+                  <svg class="tier-bullet" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="10" fill="rgba(245, 158, 11, 0.15)"/><path d="M6 10L9 13L14 7" stroke="#F59E0B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                  <span>Staff match-day / corporate cricket session</span>
+                </li>
+              </ul>
+            </div>
+
+            <!-- Tier 2: Match-Day Partner -->
+            <div class="tier-card">
+              <div class="tier-header">
+                <div class="tier-name">MATCH-DAY PARTNER</div>
+                <div class="tier-price">KYD 1,000+</div>
+              </div>
+              <ul class="tier-features">
+                <li>
+                  <svg class="tier-bullet" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="10" fill="rgba(56, 189, 248, 0.15)"/><path d="M6 10L9 13L14 7" stroke="#38BDF8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                  <span>Ground banner + named credit for your sponsored fixtures</span>
+                </li>
+                <li>
+                  <svg class="tier-bullet" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="10" fill="rgba(56, 189, 248, 0.15)"/><path d="M6 10L9 13L14 7" stroke="#38BDF8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                  <span>Social media credits on sponsored match features</span>
+                </li>
+                <li>
+                  <svg class="tier-bullet" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="10" fill="rgba(56, 189, 248, 0.15)"/><path d="M6 10L9 13L14 7" stroke="#38BDF8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                  <span>Website listing + season report</span>
+                </li>
+              </ul>
+            </div>
+
+            <!-- Tier 3: Kit Partner -->
+            <div class="tier-card">
+              <div class="tier-header">
+                <div class="tier-name">KIT PARTNER</div>
+                <div class="tier-price">KYD 500+</div>
+              </div>
+              <ul class="tier-features">
+                <li>
+                  <svg class="tier-bullet" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="10" fill="rgba(56, 189, 248, 0.15)"/><path d="M6 10L9 13L14 7" stroke="#38BDF8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                  <span>Logo on training kit</span>
+                </li>
+                <li>
+                  <svg class="tier-bullet" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="10" fill="rgba(56, 189, 248, 0.15)"/><path d="M6 10L9 13L14 7" stroke="#38BDF8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                  <span>Social media credit + website listing</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <p class="in-kind-note">
+            Open to in-kind partnerships too — equipment, venue access, printing, or services. <strong>Talk to us.</strong>
+          </p>
+        </section>
+
+        <!-- Accountability Strip -->
+        <section class="accountability-strip" aria-label="Club Accountability & Governance">
+          <div class="accountability-pill">
+            <div class="accountability-pill-icon">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            </div>
+            <div class="accountability-pill-text">100% Volunteer Committee &amp; Zero Individual Stipends</div>
+          </div>
+          <div class="accountability-pill">
+            <div class="accountability-pill-icon">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg>
+            </div>
+            <div class="accountability-pill-text">End-of-Season Audited Financial &amp; Impact Reports</div>
+          </div>
+          <div class="accountability-pill">
+            <div class="accountability-pill-icon">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+            </div>
+            <div class="accountability-pill-text">Direct Dedicated Committee Corporate Liaison</div>
+          </div>
+        </section>
+
+        <!-- CTA block (update) -->
+        <section class="sponsors-cta-block" aria-labelledby="heading-cta">
+          <h2 id="heading-cta" class="cta-heading">Become a founding partner for the 2027 season</h2>
+          
+          <div class="cta-buttons">
+            <a href="mailto:caymansuperkings@gmail.com?subject=CSK%202027%20Sponsorship%20Inquiry" class="btn-sponsor-primary">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+              Email our committee → caymansuperkings@gmail.com
+            </a>
+            <a href="https://www.instagram.com/caymansuperkings?igsi=aXBpaHY2azlxNGF1" target="_blank" rel="noopener noreferrer" class="btn-sponsor-secondary">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+              Contact via Instagram @caymansuperkings
             </a>
           </div>
-        </div>
+
+          <p class="cta-promise-line">
+            We'll respond within two days with our sponsorship deck and a conversation, not a hard sell.
+          </p>
+        </section>
+
       </div>
-    </section>
+    </div>
   </main>
 
   <!-- Site Footer -->
-    <footer class="site-footer editorial-footer">
+  <footer class="site-footer editorial-footer">
     <div class="container">
-      <!-- Horizontal Brand & Action Hero Bar -->
       <div class="footer-horizontal-hero">
         <div class="footer-hero-brand">
           <img src="assets/csk-official-logo.png?v=20260923_10" alt="CSK Official Crest">
@@ -247,10 +975,9 @@
         </div>
       </div>
 
-      <!-- Horizontal Bottom Bar -->
       <div class="footer-bottom">
         <span>© 2026 Cayman Super Kings Cricket Club. All rights reserved.</span>
-        <span>Affiliated with Cayman Islands Cricket Association (CICA)</span>
+        <span>Affiliated with the Cayman Islands Cricket Association (CICA). Est. 2022.</span>
       </div>
     </div>
   </footer>
