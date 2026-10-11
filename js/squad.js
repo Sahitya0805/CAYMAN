@@ -8,10 +8,11 @@
 import { store } from './content-store.js';
 
 export async function initSquadPage() {
-  const container = document.getElementById('squad-grid');
+  const container = document.getElementById('squad-grid') || document.getElementById('squad-container');
   const filterBtns = document.querySelectorAll('.squad-filter-btn');
 
   if (!container) return;
+  container.classList.add('squad-stage-grid');
 
   const squad = await store.getSquad();
   let currentFilter = 'all';
@@ -23,14 +24,28 @@ export async function initSquadPage() {
     let filtered = squad;
     if (currentFilter !== 'all') {
       filtered = squad.filter(p => {
-        if (p.groups && Array.isArray(p.groups)) {
-          return p.groups.includes(currentFilter);
+        const role = (p.role || '').toLowerCase();
+        const grp = (p.group || '').toLowerCase();
+        const grps = Array.isArray(p.groups) ? p.groups.map(g => g.toLowerCase()) : [];
+
+        if (currentFilter === 'batters' || currentFilter === 'batsmen') {
+          return grp === 'batters' || grps.includes('batters') || role.includes('bat') || role.includes('wicket');
         }
-        return p.group === currentFilter;
+        if (currentFilter === 'allrounders') {
+          return grp === 'allrounders' || grps.includes('allrounders') || role.includes('all-rounder');
+        }
+        if (currentFilter === 'bowlers') {
+          return grp === 'bowlers' || grps.includes('bowlers') || role.includes('bowl');
+        }
+        return grp === currentFilter || grps.includes(currentFilter);
       });
     }
 
-    container.innerHTML = filtered.map(p => createStadiumPlayerCard(p)).join('');
+    container.innerHTML = filtered.map((p, idx) => `
+      <div class="cyber-reveal is-revealed" style="animation-delay: ${idx * 0.05}s;">
+        ${createStadiumPlayerCard(p)}
+      </div>
+    `).join('');
   }
 
   filterBtns.forEach(btn => {

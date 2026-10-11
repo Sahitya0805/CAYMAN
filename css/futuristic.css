@@ -15,7 +15,6 @@
 
 /* ── 1. Laser Scanline Effect for Cards ── */
 .futuristic-card,
-.fixture-ticket,
 .roster-stage-card,
 .squad-player-stage-card,
 .sponsor-card,
@@ -26,6 +25,20 @@
               box-shadow 0.32s cubic-bezier(0.16, 1, 0.3, 1), 
               border-color 0.32s ease !important;
   will-change: transform, box-shadow;
+}
+
+.fixture-ticket {
+  position: relative !important;
+  overflow: visible !important;
+  margin-bottom: 28px !important;
+  transition: transform 0.32s cubic-bezier(0.16, 1, 0.3, 1), 
+              box-shadow 0.32s cubic-bezier(0.16, 1, 0.3, 1), 
+              border-color 0.32s ease !important;
+  will-change: transform, box-shadow;
+}
+
+.ticket-body {
+  overflow: visible !important;
 }
 
 .futuristic-card::before,
@@ -429,3 +442,101 @@ body.nav-open .mobile-nav-backdrop {
   -webkit-text-fill-color: transparent;
   text-shadow: 0 0 24px rgba(56, 189, 248, 0.35);
 }
+
+/* ── 11. Desktop Ticket Match Report Pill Enhancement ── */
+.ticket-btn-pill {
+  position: absolute !important;
+  bottom: -16px !important;
+  left: 50% !important;
+  transform: translateX(-50%) !important;
+  background: #071530 !important;
+  color: #38BDF8 !important;
+  border: 1.5px solid rgba(56, 189, 248, 0.6) !important;
+  border-radius: 999px !important;
+  padding: 8px 24px !important;
+  font-family: var(--font-display) !important;
+  font-weight: 800 !important;
+  font-size: 0.8rem !important;
+  letter-spacing: 0.05em !important;
+  text-transform: uppercase !important;
+  text-decoration: none !important;
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.6), 0 0 16px rgba(56, 189, 248, 0.25) !important;
+  z-index: 20 !important;
+  transition: all 0.25s ease !important;
+  white-space: nowrap !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 7px !important;
+}
+
+.ticket-btn-pill:hover {
+  background: #0284C7 !important;
+  border-color: #38BDF8 !important;
+  color: #FFFFFF !important;
+  transform: translateX(-50%) translateY(-2px) !important;
+  box-shadow: 0 12px 28px rgba(2, 132, 199, 0.5), 0 0 22px rgba(56, 189, 248, 0.6) !important;
+}
+
+/* ── 12. Futuristic Sitewide Page Load Animations ── */
+@keyframes pageSlideDown {
+  0% {
+    opacity: 0;
+    transform: translateY(-24px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pageFadeUp {
+  0% {
+    opacity: 0;
+    transform: translateY(24px);
+    filter: blur(4px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0);
+  }
+}
+
+@keyframes pageGlowPulse {
+  0%, 100% {
+    filter: drop-shadow(0 0 8px rgba(56, 189, 248, 0.3));
+  }
+  50% {
+    filter: drop-shadow(0 0 18px rgba(56, 189, 248, 0.7));
+  }
+}
+
+/* Automatic Page Load Entrance on Core Elements */
+.site-header {
+  animation: pageSlideDown 0.65s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.hero,
+.editorial-hero,
+.squad-stadium-hero,
+.gallery-pills-bar,
+.squad-filter-bar,
+.match-header-banner,
+.page-header {
+  animation: pageFadeUp 0.7s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+/* Staggered card entrance on load */
+.squad-stage-grid > *,
+.csk-album-grid > *,
+.fixtures-ticket-grid > * {
+  animation: pageFadeUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.squad-stage-grid > *:nth-child(1), .csk-album-grid > *:nth-child(1), .fixtures-ticket-grid > *:nth-child(1) { animation-delay: 0.05s; }
+.squad-stage-grid > *:nth-child(2), .csk-album-grid > *:nth-child(2), .fixtures-ticket-grid > *:nth-child(2) { animation-delay: 0.1s; }
+.squad-stage-grid > *:nth-child(3), .csk-album-grid > *:nth-child(3), .fixtures-ticket-grid > *:nth-child(3) { animation-delay: 0.15s; }
+.squad-stage-grid > *:nth-child(4), .csk-album-grid > *:nth-child(4), .fixtures-ticket-grid > *:nth-child(4) { animation-delay: 0.2s; }
+.squad-stage-grid > *:nth-child(5), .csk-album-grid > *:nth-child(5), .fixtures-ticket-grid > *:nth-child(5) { animation-delay: 0.25s; }
+.squad-stage-grid > *:nth-child(6), .csk-album-grid > *:nth-child(6), .fixtures-ticket-grid > *:nth-child(6) { animation-delay: 0.3s; }
+

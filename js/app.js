@@ -15,7 +15,7 @@ import { initFuturisticSystem } from './futuristic.js';
 // Initialize splash loader immediately to handle smooth page entrance
 initSplashLoader();
 
-document.addEventListener('DOMContentLoaded', async () => {
+async function startApp() {
   initHeroSlider();
   initMobileNav();
   highlightActiveNav();
@@ -25,7 +25,13 @@ document.addEventListener('DOMContentLoaded', async () => {
   initFuturisticSystem();
   await initHomepageRoster();
   await initAnnouncementBar();
-});
+}
+
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', startApp);
+} else {
+  startApp();
+}
 
 async function initHomepageRoster() {
   const rosterGrid = document.querySelector('.roster-grid');
@@ -65,6 +71,14 @@ function initMobileNav() {
   const menu = document.querySelector('.nav-menu');
   
   if (toggle && menu) {
+    // Ensure backdrop exists
+    let backdrop = document.querySelector('.mobile-nav-backdrop');
+    if (!backdrop) {
+      backdrop = document.createElement('div');
+      backdrop.className = 'mobile-nav-backdrop';
+      document.body.appendChild(backdrop);
+    }
+
     function toggleMenu(e) {
       if (e) {
         e.preventDefault();
@@ -85,14 +99,17 @@ function initMobileNav() {
       }
     }
 
-    // Support click & pointerup with debounce to prevent double triggers
+    // Support click & pointerup with debounce
     let lastToggleTime = 0;
-    toggle.addEventListener('click', (e) => {
+    const handleToggle = (e) => {
       const now = Date.now();
-      if (now - lastToggleTime < 300) return;
+      if (now - lastToggleTime < 250) return;
       lastToggleTime = now;
       toggleMenu(e);
-    });
+    };
+
+    toggle.addEventListener('click', handleToggle);
+    backdrop.addEventListener('click', closeMenu);
 
     // Close when clicking any nav link
     const navLinks = menu.querySelectorAll('a');
@@ -102,7 +119,7 @@ function initMobileNav() {
       });
     });
 
-    // Close on click or touch outside
+    // Close on click outside
     document.addEventListener('click', (e) => {
       if (menu.classList.contains('is-open') && !menu.contains(e.target) && !toggle.contains(e.target)) {
         closeMenu();

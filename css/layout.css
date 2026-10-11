@@ -193,7 +193,7 @@ input, select, textarea { color: #FFFFFF; background: #0F1B2C; border: 1px solid
   top: 0;
   left: 0;
   right: 0;
-  z-index: 1000;
+  z-index: 100000 !important;
   padding: 12px 0;
   background: #020612 !important;
   border-bottom: 1px solid rgba(255, 255, 255, 0.08);
@@ -429,18 +429,22 @@ body.editorial-home .site-header {
 }
 
 @media (max-width: 992px) {
+  .franchise-navbar-wrap,
+  .cricket-bat-navbar {
+    filter: none !important;
+  }
   .franchise-nav-bar,
   .bat-blade,
   .site-header__bar {
-    height: 50px;
+    height: 52px;
     padding: 0 14px;
-    transform: none;
+    transform: none !important;
   }
   .franchise-logo-link,
   .bat-logo-link,
   .navbar-logo-breakout,
   .mobile-toggle {
-    transform: none;
+    transform: none !important;
   }
   .franchise-logo-img,
   .bat-logo-img,
@@ -467,28 +471,28 @@ body.editorial-home .site-header {
   }
   
   .mobile-toggle {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 5px;
-    background: rgba(255, 255, 255, 0.08);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    border-radius: 8px;
-    cursor: pointer;
-    padding: 8px 10px;
-    z-index: 1005;
-    position: relative;
-    pointer-events: auto;
-    touch-action: manipulation;
-    -webkit-tap-highlight-color: transparent;
-    transition: background 0.2s ease, border-color 0.2s ease;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+    align-items: center !important;
+    gap: 5px !important;
+    background: rgba(255, 255, 255, 0.1) !important;
+    border: 1px solid rgba(56, 189, 248, 0.35) !important;
+    border-radius: 8px !important;
+    cursor: pointer !important;
+    padding: 8px 12px !important;
+    z-index: 100010 !important;
+    position: relative !important;
+    pointer-events: auto !important;
+    touch-action: manipulation !important;
+    -webkit-tap-highlight-color: transparent !important;
+    transition: background 0.2s ease, border-color 0.2s ease !important;
   }
   .mobile-toggle:hover,
   .mobile-toggle:focus-visible {
-    background: rgba(255, 255, 255, 0.16);
-    border-color: #38BDF8;
-    outline: none;
+    background: rgba(255, 255, 255, 0.2) !important;
+    border-color: #38BDF8 !important;
+    outline: none !important;
   }
   .mobile-toggle span {
     display: block;
@@ -516,28 +520,27 @@ body.editorial-home .site-header {
 
   .nav-menu {
     display: none;
-    position: fixed;
-    top: 76px;
-    left: 12px;
-    right: 12px;
-    background: #060e1e;
-    background: linear-gradient(180deg, rgba(8, 18, 38, 0.98) 0%, rgba(3, 8, 20, 0.99) 100%);
-    border: 1.5px solid rgba(56, 189, 248, 0.45);
-    border-radius: 14px;
-    padding: 18px 14px;
-    flex-direction: column;
-    gap: 8px;
-    z-index: 99999;
-    box-shadow: 0 24px 60px rgba(0, 0, 0, 0.95), 0 0 30px rgba(56, 189, 248, 0.2);
-    -webkit-backdrop-filter: blur(20px);
-    backdrop-filter: blur(20px);
-    transform: none;
-    max-height: calc(100vh - 96px);
-    overflow-y: auto;
+    position: fixed !important;
+    top: 68px !important;
+    left: 12px !important;
+    right: 12px !important;
+    background: linear-gradient(180deg, #091734 0%, #040A18 100%) !important;
+    border: 1.5px solid rgba(56, 189, 248, 0.5) !important;
+    border-radius: 14px !important;
+    padding: 18px 14px !important;
+    flex-direction: column !important;
+    gap: 8px !important;
+    z-index: 100005 !important;
+    box-shadow: 0 24px 60px rgba(0, 0, 0, 0.95), 0 0 30px rgba(56, 189, 248, 0.2) !important;
+    -webkit-backdrop-filter: blur(20px) !important;
+    backdrop-filter: blur(20px) !important;
+    transform: none !important;
+    max-height: calc(100vh - 86px) !important;
+    overflow-y: auto !important;
   }
   .nav-menu.is-open {
     display: flex !important;
-    animation: menuFadeIn 0.25s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    animation: menuFadeIn 0.25s cubic-bezier(0.16, 1, 0.3, 1) forwards !important;
   }
   .nav-menu li {
     width: 100%;

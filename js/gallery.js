@@ -27,14 +27,14 @@ export async function initGalleryPage() {
   if (!grid) return;
 
   const photos = await store.getGallery();
-  let currentYear = '2026'; // Default selected year matching CSK screenshot
+  let currentCategory = 'all'; // Default shows all genuine photos
   let activeFiltered = [];
   let currentIndex = 0;
 
   function render() {
     activeFiltered = photos.filter(item => {
-      if (currentYear === 'all') return true;
-      return item.year === currentYear;
+      if (currentCategory === 'all') return true;
+      return (item.category || '').toLowerCase() === currentCategory.toLowerCase();
     });
 
     if (activeFiltered.length === 0) {
@@ -47,7 +47,7 @@ export async function initGalleryPage() {
     grid.style.display = 'grid';
 
     grid.innerHTML = activeFiltered.map((p, idx) => `
-      <article class="csk-album-card" data-index="${idx}" tabindex="0" role="button" aria-label="${p.title}">
+      <article class="csk-album-card cyber-reveal is-revealed" data-index="${idx}" tabindex="0" role="button" aria-label="${p.title}" style="animation-delay: ${idx * 0.04}s;">
         <!-- High-Res Album Cover Image -->
         <img src="${p.src}" alt="${p.title}" class="csk-album-img" loading="lazy">
 
@@ -127,7 +127,7 @@ export async function initGalleryPage() {
       btn.addEventListener('click', () => {
         pillsBar.querySelectorAll('.gallery-pill-btn').forEach(b => b.classList.remove('is-active'));
         btn.classList.add('is-active');
-        currentYear = btn.getAttribute('data-year');
+        currentCategory = btn.getAttribute('data-category') || 'all';
         render();
       });
     });
@@ -137,11 +137,11 @@ export async function initGalleryPage() {
     btnShowAll.addEventListener('click', () => {
       if (pillsBar) {
         pillsBar.querySelectorAll('.gallery-pill-btn').forEach(b => {
-          if (b.getAttribute('data-year') === 'all') b.classList.add('is-active');
+          if (b.getAttribute('data-category') === 'all') b.classList.add('is-active');
           else b.classList.remove('is-active');
         });
       }
-      currentYear = 'all';
+      currentCategory = 'all';
       render();
     });
   }
