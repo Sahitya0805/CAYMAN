@@ -540,3 +540,133 @@ body.nav-open .mobile-nav-backdrop {
 .squad-stage-grid > *:nth-child(5), .csk-album-grid > *:nth-child(5), .fixtures-ticket-grid > *:nth-child(5) { animation-delay: 0.25s; }
 .squad-stage-grid > *:nth-child(6), .csk-album-grid > *:nth-child(6), .fixtures-ticket-grid > *:nth-child(6) { animation-delay: 0.3s; }
 
+/* ── 13. Cyber Scroll Laser Progress Indicator (Top Telemetry Beam) ── */
+.cyber-scroll-laser {
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  height: 3px !important;
+  width: 0%;
+  background: linear-gradient(90deg, #0284C7 0%, #38BDF8 50%, #F59E0B 100%) !important;
+  box-shadow: 0 0 10px rgba(56, 189, 248, 0.8), 0 0 20px rgba(245, 158, 11, 0.6) !important;
+  z-index: 2147483647 !important;
+  pointer-events: none !important;
+  transition: width 0.08s linear !important;
+}
+
+.cyber-scroll-laser-tip {
+  position: absolute;
+  right: -2px;
+  top: -2px;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #FFFFFF;
+  box-shadow: 0 0 12px #38BDF8, 0 0 24px #F59E0B;
+  animation: laserPulse 1s ease-in-out infinite alternate;
+}
+
+@keyframes laserPulse {
+  0% { transform: scale(0.8); opacity: 0.8; }
+  100% { transform: scale(1.6); opacity: 1; }
+}
+
+/* ── 14. Holographic Specular Glare on Cards ── */
+.squad-player-stage-card::after,
+.fixture-ticket::after,
+.tier-card::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: radial-gradient(
+    320px circle at var(--mouse-x, 50%) var(--mouse-y, 50%),
+    rgba(56, 189, 248, 0.16) 0%,
+    rgba(245, 158, 11, 0.06) 40%,
+    transparent 70%
+  );
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+  z-index: 6;
+}
+
+.squad-player-stage-card:hover::after,
+.fixture-ticket:hover::after,
+.tier-card:hover::after {
+  opacity: 1;
+}
+
+/* ── 15. Cyber Glitch & Hologram Shimmer on Heading Hover ── */
+.section-title:hover,
+.journey-book-title:hover,
+.sponsors-hero-title:hover {
+  animation: cyberGlitchFlicker 0.4s ease forwards !important;
+}
+
+@keyframes cyberGlitchFlicker {
+  0% { transform: translate(0); }
+  20% { transform: translate(-2px, 1px); text-shadow: 2px 0 #38BDF8, -2px 0 #EF4444; }
+  40% { transform: translate(2px, -1px); text-shadow: -2px 0 #38BDF8, 2px 0 #EF4444; }
+  60% { transform: translate(-1px, 0.5px); text-shadow: 1px 0 #38BDF8, -1px 0 #F59E0B; }
+  80% { transform: translate(1px, -0.5px); text-shadow: 0 0 14px rgba(56, 189, 248, 0.6); }
+  100% { transform: translate(0); text-shadow: none; }
+}
+
+/* ── 16. Interactive Click Ripple Shockwave (Stadium Energy Wave) ── */
+.cyber-shockwave {
+  position: absolute !important;
+  border-radius: 50% !important;
+  border: 2px solid #38BDF8 !important;
+  background: radial-gradient(circle, rgba(56, 189, 248, 0.4) 0%, rgba(245, 158, 11, 0.15) 50%, transparent 75%) !important;
+  pointer-events: none !important;
+  animation: cyberRipple 0.65s cubic-bezier(0.16, 1, 0.3, 1) forwards !important;
+  z-index: 99 !important;
+}
+
+@keyframes cyberRipple {
+  0% {
+    width: 0px;
+    height: 0px;
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(0);
+  }
+  100% {
+    width: 320px;
+    height: 320px;
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(1);
+  }
+}
+
+/* ── 17. Live Telemetry HUD Chip ── */
+.cyber-telemetry-chip {
+  position: fixed !important;
+  bottom: 20px !important;
+  left: 20px !important;
+  z-index: 99980 !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 9px !important;
+  background: rgba(3, 10, 24, 0.88) !important;
+  border: 1px solid rgba(56, 189, 248, 0.4) !important;
+  backdrop-filter: blur(12px) !important;
+  -webkit-backdrop-filter: blur(12px) !important;
+  padding: 6px 14px !important;
+  border-radius: 999px !important;
+  font-family: var(--font-display, "Chakra Petch", sans-serif) !important;
+  font-size: 0.72rem !important;
+  font-weight: 800 !important;
+  color: #CBD5E1 !important;
+  letter-spacing: 0.08em !important;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.6), 0 0 16px rgba(56, 189, 248, 0.2) !important;
+  pointer-events: none !important;
+  transition: opacity 0.3s ease, transform 0.3s ease !important;
+}
+
+@media (max-width: 860px) {
+  .cyber-telemetry-chip {
+    display: none !important;
+  }
+}
+
