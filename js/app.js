@@ -156,7 +156,8 @@ async function initAnnouncementBar() {
   const results = fixtures.filter(f => f.status === 'result');
   if (results.length > 0) {
     const latest = results[0];
-    textEl.innerHTML = `<strong>Latest Result:</strong> CSK (${latest.score_csk}) defeated ${latest.opponent} (${latest.score_opp}) — ${latest.result_text}`;
+    const outcomeText = latest.is_csk_win ? `defeated ${latest.opponent}` : `vs ${latest.opponent}`;
+    textEl.innerHTML = `<strong>Latest Result:</strong> CSK (${latest.score_csk}) ${outcomeText} (${latest.score_opp}) — ${latest.result_text}`;
     if (linkEl) {
       linkEl.href = `match-detail.html?slug=${latest.slug}`;
       linkEl.innerHTML = `Match Report ↗`;

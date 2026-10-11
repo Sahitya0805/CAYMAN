@@ -12,6 +12,7 @@ export async function initMatchesPage() {
   const emptyState = document.getElementById('matches-empty');
   const formatFilter = document.getElementById('format-filter');
   const seasonFilter = document.getElementById('season-filter');
+  const resultFilter = document.getElementById('result-filter');
   const syncBtn = document.getElementById('btn-sync-matches');
   const syncTimestamp = document.getElementById('sync-timestamp');
 
@@ -20,6 +21,7 @@ export async function initMatchesPage() {
   let fixtures = await store.getFixtures();
   let currentFormat = formatFilter ? formatFilter.value : 'all';
   let currentSeason = seasonFilter ? seasonFilter.value : 'all';
+  let currentResult = resultFilter ? resultFilter.value : 'all';
 
   function updateSyncTimeDisplay() {
     if (syncTimestamp) {
@@ -83,6 +85,13 @@ export async function initMatchesPage() {
     }
     if (currentSeason !== 'all') {
       filtered = filtered.filter(f => f.season === currentSeason);
+    }
+    if (currentResult !== 'all') {
+      if (currentResult === 'won') {
+        filtered = filtered.filter(f => f.is_csk_win === true);
+      } else if (currentResult === 'lost') {
+        filtered = filtered.filter(f => f.is_csk_win === false);
+      }
     }
 
     if (filtered.length === 0) {
@@ -193,7 +202,7 @@ export async function initMatchesPage() {
             <!-- VS Center -->
             <div class="ticket-vs">
               <span class="ticket-vs-text">VS</span>
-              ${isResult ? `<span class="ticket-vs-result">${m.is_csk_win ? 'CSK WON' : 'COMPLETED'}</span>` : '<span class="ticket-vs-sub">MATCHDAY</span>'}
+              ${isResult ? `<span class="ticket-vs-result ${m.is_csk_win ? 'is-win' : 'is-loss'}">${m.is_csk_win ? 'CSK WON' : 'CSK LOST'}</span>` : '<span class="ticket-vs-sub">MATCHDAY</span>'}
             </div>
 
             <!-- Team 2 -->
@@ -244,6 +253,15 @@ export async function initMatchesPage() {
     };
     seasonFilter.addEventListener('change', handleSeasonChange);
     seasonFilter.addEventListener('input', handleSeasonChange);
+  }
+
+  if (resultFilter) {
+    const handleResultChange = (e) => {
+      currentResult = e.target.value;
+      render();
+    };
+    resultFilter.addEventListener('change', handleResultChange);
+    resultFilter.addEventListener('input', handleResultChange);
   }
 
   render();
@@ -299,7 +317,7 @@ export async function initMatchDetail() {
           </div>
 
           <div style="text-align: center;">
-            <div class="match-result-pill" style="display: inline-block; background: #0284C7; color: #FFFFFF; font-weight: 800; font-size: 0.875rem; padding: 7px 20px; border-radius: 999px; text-transform: uppercase; letter-spacing: 0.06em; box-shadow: 0 0 16px rgba(56, 189, 248, 0.4);">${match.result_text}</div>
+            <div class="match-result-pill ${match.is_csk_win ? 'is-win' : 'is-loss'}" style="display: inline-block; background: ${match.is_csk_win ? '#0284C7' : '#DC2626'}; color: #FFFFFF; font-weight: 800; font-size: 0.875rem; padding: 7px 20px; border-radius: 999px; text-transform: uppercase; letter-spacing: 0.06em; box-shadow: 0 0 16px ${match.is_csk_win ? 'rgba(56, 189, 248, 0.4)' : 'rgba(239, 68, 68, 0.4)'};">${match.result_text}</div>
             ${match.player_of_match ? `<div style="font-size: 0.875rem; color: #F59E0B; margin-top: 10px; font-weight: 800;">★ Player of the Match: ${match.player_of_match}</div>` : ''}
           </div>
 
@@ -330,8 +348,8 @@ export async function initMatchDetail() {
             
             <!-- Match Summary Lead Card -->
             <div style="margin-bottom: 36px;">
-              <p class="lead" style="font-size: 1.15rem; font-weight: 500; color: #1E293B; line-height: 1.75; margin: 0; padding: 24px 28px; background: #FFFFFF; border-left: 5px solid #0284C7; border-radius: 0 14px 14px 0; border-top: 1.5px solid #CBD5E1; border-right: 1.5px solid #CBD5E1; border-bottom: 1.5px solid #CBD5E1; box-shadow: 0 6px 20px rgba(9,21,43,0.06);">
-                ${match.summary || 'A dominant performance from the Cayman Super Kings in this crucial league fixture.'}
+              <p class="lead" style="font-size: 1.15rem; font-weight: 500; color: #1E293B; line-height: 1.75; margin: 0; padding: 24px 28px; background: #FFFFFF; border-left: 5px solid ${match.is_csk_win ? '#0284C7' : '#DC2626'}; border-radius: 0 14px 14px 0; border-top: 1.5px solid #CBD5E1; border-right: 1.5px solid #CBD5E1; border-bottom: 1.5px solid #CBD5E1; box-shadow: 0 6px 20px rgba(9,21,43,0.06);">
+                ${match.summary || 'A competitive encounter from the Cayman Super Kings in this crucial league fixture.'}
               </p>
             </div>
 
