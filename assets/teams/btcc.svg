@@ -1,6 +1,69 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100" height="100">
-  <circle cx="50" cy="50" r="46" fill="#4A0E17" stroke="#FAB81E" stroke-width="4"/>
-  <circle cx="50" cy="50" r="38" fill="#7A1C28"/>
-  <text x="50" y="58" font-family="'Impact', Arial, sans-serif" font-weight="900" font-size="26" fill="#FFFFFF" text-anchor="middle" letter-spacing="1">BTCC</text>
-  <text x="50" y="74" font-family="sans-serif" font-weight="800" font-size="8" fill="#FAB81E" text-anchor="middle" letter-spacing="1">BODDEN TOWN</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500" width="500" height="500">
+  <defs>
+    <radialGradient id="btShieldBg" cx="50%" cy="40%" r="60%">
+      <stop offset="0%" stop-color="#4C1D95" />
+      <stop offset="100%" stop-color="#2E1065" />
+    </radialGradient>
+    <linearGradient id="btGold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FDE047" />
+      <stop offset="50%" stop-color="#EAB308" />
+      <stop offset="100%" stop-color="#CA8A04" />
+    </linearGradient>
+    <filter id="btDrop" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="8" stdDeviation="10" flood-color="#000" flood-opacity="0.5" />
+    </filter>
+  </defs>
+
+  <g filter="url(#btDrop)">
+    <!-- Crossed Cricket Bats behind shield -->
+    <g transform="rotate(-35 250 250)">
+      <rect x="242" y="50" width="16" height="70" rx="4" fill="#E2E8F0" stroke="#0F172A" stroke-width="2"/>
+      <path d="M236 120 L264 120 L262 380 Q250 400 238 380 Z" fill="#F59E0B" stroke="#B45309" stroke-width="3"/>
+    </g>
+    <g transform="rotate(35 250 250)">
+      <rect x="242" y="50" width="16" height="70" rx="4" fill="#E2E8F0" stroke="#0F172A" stroke-width="2"/>
+      <path d="M236 120 L264 120 L262 380 Q250 400 238 380 Z" fill="#F59E0B" stroke="#B45309" stroke-width="3"/>
+    </g>
+
+    <!-- Main Heraldic Shield -->
+    <path d="M110 80 Q250 60 390 80 C390 240 340 370 250 430 C160 370 110 240 110 80 Z" 
+          fill="url(#btShieldBg)" stroke="url(#btGold)" stroke-width="8" stroke-linejoin="round" />
+
+    <!-- Shield Inner Border -->
+    <path d="M125 95 Q250 78 375 95 C375 235 330 350 250 410 C170 350 125 235 125 95 Z" 
+          fill="none" stroke="rgba(253, 224, 71, 0.4)" stroke-width="2" />
+
+    <!-- Top Crown -->
+    <path d="M215 115 L225 135 L250 110 L275 135 L285 115 L290 145 L210 145 Z" fill="url(#btGold)" stroke="#92400E" stroke-width="1.5" />
+    <circle cx="215" cy="112" r="3" fill="#EF4444" />
+    <circle cx="250" cy="107" r="4" fill="#38BDF8" />
+    <circle cx="285" cy="112" r="3" fill="#EF4444" />
+
+    <!-- Rampant Heraldic Lion Silhouette -->
+    <g transform="translate(230, 150) scale(0.4)">
+      <path d="M40 0 C48 0 52 8 50 15 C58 12 65 18 62 26 C68 28 70 38 65 44 C72 50 70 62 60 66 C65 75 58 85 48 84 C42 92 30 92 26 84 C18 88 10 80 14 70 C6 68 4 58 10 50 C4 44 6 34 14 30 C12 22 18 14 26 16 C28 8 34 0 40 0 Z" fill="url(#btGold)" stroke="#78350F" stroke-width="2" />
+    </g>
+
+    <!-- Center Banner -->
+    <path d="M85 210 L415 210 L400 255 L100 255 Z" fill="#FFFFFF" stroke="url(#btGold)" stroke-width="3" />
+    <text x="250" y="243" font-family="Arial, Helvetica, sans-serif" font-size="24" font-weight="900" fill="#2E1065" text-anchor="middle" letter-spacing="1.5">BODDEN TOWN CC</text>
+
+    <!-- Lower Emblems: Lighthouse & Historic Castle -->
+    <!-- Left: Lighthouse -->
+    <path d="M175 330 L195 330 L190 280 L180 280 Z" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="1.5"/>
+    <rect x="178" y="272" width="14" height="8" fill="url(#btGold)"/>
+    <path d="M172 330 L198 330 L200 340 L170 340 Z" fill="#94A3B8"/>
+
+    <!-- Right: Historic Castle / Guard House -->
+    <path d="M305 340 L305 285 L315 285 L315 295 L325 295 L325 285 L335 285 L335 295 L345 295 L345 285 L355 285 L355 340 Z" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="1.5"/>
+    <path d="M322 340 L322 320 Q330 312 338 320 L338 340 Z" fill="#2E1065"/>
+
+    <!-- Center Red Cricket Ball with white Seam -->
+    <circle cx="250" cy="315" r="26" fill="#DC2626" stroke="#FFFFFF" stroke-width="2.5" />
+    <path d="M234 300 Q250 315 266 330" stroke="#FFFFFF" stroke-width="2" stroke-dasharray="2.5 2" fill="none"/>
+
+    <!-- Bottom Ribbon: EST. 1970 -->
+    <path d="M160 395 L250 380 L340 395 L330 420 L250 405 L170 420 Z" fill="url(#btGold)" stroke="#78350F" stroke-width="2"/>
+    <text x="250" y="405" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="900" fill="#2E1065" text-anchor="middle" letter-spacing="1.5">EST. 1970</text>
+  </g>
 </svg>

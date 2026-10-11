@@ -115,7 +115,7 @@ export async function initMatchesPage() {
               <tr style="border-bottom: 1px solid #E2E8F0;">
                 <td style="padding: 14px 16px; font-weight: 700; color: #09152B;">2</td>
                 <td style="padding: 14px 16px; display: flex; align-items: center; gap: 10px;">
-                  <img src="assets/teams/wbw.svg" alt="WBW" style="width: 24px; height: 24px; object-fit: contain;">
+                  <img src="assets/teams/wbw.png" alt="WBW" style="width: 26px; height: 26px; object-fit: contain;">
                   <span style="color: #1E293B; font-weight: 700;">West Bay Warriors</span>
                 </td>
                 <td style="padding: 14px 16px; text-align: center; color: #1E293B;">6</td>
@@ -129,7 +129,7 @@ export async function initMatchesPage() {
               <tr style="border-bottom: 1px solid #E2E8F0;">
                 <td style="padding: 14px 16px; font-weight: 700; color: #09152B;">3</td>
                 <td style="padding: 14px 16px; display: flex; align-items: center; gap: 10px;">
-                  <img src="assets/teams/gtt.svg" alt="GTT" style="width: 24px; height: 24px; object-fit: contain;">
+                  <img src="assets/teams/gtt.png" alt="GTT" style="width: 26px; height: 26px; object-fit: contain;">
                   <span style="color: #1E293B; font-weight: 700;">George Town Tigers</span>
                 </td>
                 <td style="padding: 14px 16px; text-align: center; color: #1E293B;">6</td>
@@ -143,7 +143,7 @@ export async function initMatchesPage() {
               <tr style="border-bottom: 1px solid #E2E8F0;">
                 <td style="padding: 14px 16px; font-weight: 700; color: #09152B;">4</td>
                 <td style="padding: 14px 16px; display: flex; align-items: center; gap: 10px;">
-                  <img src="assets/teams/sms.svg" alt="SMS" style="width: 24px; height: 24px; object-fit: contain;">
+                  <img src="assets/teams/sms.png" alt="SMS" style="width: 26px; height: 26px; object-fit: contain;">
                   <span style="color: #1E293B; font-weight: 700;">Seven Mile Strikers</span>
                 </td>
                 <td style="padding: 14px 16px; text-align: center; color: #1E293B;">6</td>
@@ -157,7 +157,7 @@ export async function initMatchesPage() {
               <tr style="border-bottom: 1px solid #E2E8F0;">
                 <td style="padding: 14px 16px; font-weight: 700; color: #09152B;">5</td>
                 <td style="padding: 14px 16px; display: flex; align-items: center; gap: 10px;">
-                  <img src="assets/teams/btcc.svg" alt="BTCC" style="width: 24px; height: 24px; object-fit: contain;">
+                  <img src="assets/teams/btcc.png" alt="BTCC" style="width: 26px; height: 26px; object-fit: contain;">
                   <span style="color: #64748B; font-weight: 600;">Bodden Town CC</span>
                 </td>
                 <td style="padding: 14px 16px; text-align: center; color: #64748B;">6</td>
@@ -171,7 +171,7 @@ export async function initMatchesPage() {
               <tr>
                 <td style="padding: 14px 16px; font-weight: 700; color: #09152B;">6</td>
                 <td style="padding: 14px 16px; display: flex; align-items: center; gap: 10px;">
-                  <img src="assets/teams/pcc.svg" alt="PCC" style="width: 24px; height: 24px; object-fit: contain;">
+                  <img src="assets/teams/pcc.png" alt="PCC" style="width: 26px; height: 26px; object-fit: contain;">
                   <span style="color: #64748B; font-weight: 600;">Police Cricket Club</span>
                 </td>
                 <td style="padding: 14px 16px; text-align: center; color: #64748B;">6</td>
@@ -205,14 +205,15 @@ export async function initMatchesPage() {
     // Opponent Logo mapper
     const oppKey = (m.opponent_short || '').toLowerCase();
     const oppLogoMap = {
-      gtt: 'assets/teams/gtt.svg',
-      sms: 'assets/teams/sms.svg',
-      btcc: 'assets/teams/btcc.svg',
-      wbw: 'assets/teams/wbw.svg',
-      pcc: 'assets/teams/pcc.svg',
-      nsxi: 'assets/teams/nsxi.svg'
+      vgc: 'assets/teams/vgc.png',
+      gtt: 'assets/teams/gtt.png',
+      sms: 'assets/teams/sms.png',
+      btcc: 'assets/teams/btcc.png',
+      wbw: 'assets/teams/wbw.png',
+      pcc: 'assets/teams/pcc.png',
+      nsxi: 'assets/teams/nsxi.png'
     };
-    const oppLogo = oppLogoMap[oppKey] || 'assets/teams/gtt.svg';
+    const oppLogo = oppLogoMap[oppKey] || 'assets/teams/vgc.png';
     const cskLogo = 'assets/csk-official-logo.png';
 
     // Time formatting
@@ -361,6 +362,18 @@ export async function initMatchDetail() {
 
   document.title = `${match.competition}: CSK vs ${match.opponent} | Cayman Super Kings`;
 
+  const oppKey = (match.opponent_short || '').toLowerCase();
+  const oppLogoMap = {
+    vgc: 'assets/teams/vgc.png',
+    gtt: 'assets/teams/gtt.png',
+    sms: 'assets/teams/sms.png',
+    btcc: 'assets/teams/btcc.png',
+    wbw: 'assets/teams/wbw.png',
+    pcc: 'assets/teams/pcc.png',
+    nsxi: 'assets/teams/nsxi.png'
+  };
+  const oppLogo = oppLogoMap[oppKey] || 'assets/teams/vgc.png';
+
   container.innerHTML = `
     <!-- Header Hero -->
     <div class="match-header-banner" style="background: linear-gradient(180deg, #09152B 0%, #0D1D3A 50%, #060E1E 100%); color: #FFFFFF; padding: 36px 0;">
@@ -373,7 +386,10 @@ export async function initMatchDetail() {
 
         <div class="match-score-display" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 20px; background: rgba(13, 23, 44, 0.85); border: 1px solid rgba(255, 255, 255, 0.12); border-radius: 16px; padding: 28px 32px; box-shadow: 0 14px 40px rgba(0,0,0,0.4);">
           <div class="team-score-block">
-            <h3 style="color: #38BDF8; font-family: var(--font-display); font-size: 1.4rem; font-weight: 900; margin-bottom: 6px;">Cayman Super Kings</h3>
+            <h3 style="color: #38BDF8; font-family: var(--font-display); font-size: 1.4rem; font-weight: 900; margin-bottom: 6px; display: flex; align-items: center; gap: 10px;">
+              <img src="assets/csk-official-logo.png" alt="CSK" style="width: 32px; height: 32px; object-fit: contain;">
+              <span>Cayman Super Kings</span>
+            </h3>
             <div class="score-large tabular-nums" style="font-size: 2.2rem; font-weight: 900; color: #FFFFFF;">${match.score_csk || 'Upcoming'}</div>
             ${match.overs_csk ? `<div class="overs" style="color: #94A3B8; font-size: 0.9rem; font-weight: 600;">${match.overs_csk} Overs</div>` : ''}
           </div>
@@ -384,7 +400,10 @@ export async function initMatchDetail() {
           </div>
 
           <div class="team-score-block" style="text-align: right;">
-            <h3 style="color: #E2E8F0; font-family: var(--font-display); font-size: 1.4rem; font-weight: 900; margin-bottom: 6px;">${match.opponent}</h3>
+            <h3 style="color: #E2E8F0; font-family: var(--font-display); font-size: 1.4rem; font-weight: 900; margin-bottom: 6px; display: flex; align-items: center; justify-content: flex-end; gap: 10px;">
+              <span>${match.opponent}</span>
+              <img src="${oppLogo}" alt="${match.opponent}" style="width: 32px; height: 32px; object-fit: contain; border-radius: 50%; background: #FFFFFF; padding: 2px;">
+            </h3>
             <div class="score-large tabular-nums" style="font-size: 2.2rem; font-weight: 900; color: #CBD5E1;">${match.score_opp || '—'}</div>
             ${match.overs_opp ? `<div class="overs" style="color: #94A3B8; font-size: 0.9rem; font-weight: 600;">${match.overs_opp} Overs</div>` : ''}
           </div>
