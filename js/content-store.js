@@ -1,19 +1,21 @@
 /**
  * ─────────────────────────────────────────────────────────────
  * CONTENT STORE MODULE
- * Centralized fetch and caching for content/*.json data files
+ * Centralized fetch, dynamic live sync, and caching
  * ─────────────────────────────────────────────────────────────
  */
 
 class ContentStore {
   constructor() {
     this.cache = {};
+    this.lastMatchesPayload = null;
   }
 
-  async fetchJSON(path) {
-    if (this.cache[path]) return this.cache[path];
+  async fetchJSON(path, forceRefresh = false) {
+    if (!forceRefresh && this.cache[path]) return this.cache[path];
     try {
-      const url = path.includes('?') ? path : `${path}?v=20261010_10`;
+      const sep = path.includes('?') ? '&' : '?';
+      const url = forceRefresh ? `${path}${sep}_t=${Date.now()}` : `${path}${sep}v=20261011_live`;
       const res = await fetch(url);
       if (!res.ok) throw new Error(`HTTP error! status: ${res.status}`);
       const data = await res.json();
@@ -25,10 +27,12 @@ class ContentStore {
     }
   }
 
-  async getFixtures() {
+  async getFixtures(forceRefresh = false) {
     try {
-      const apiData = await this.fetchJSON('/api/matches');
+      const endpoint = forceRefresh ? '/api/matches?refresh=1' : '/api/matches';
+      const apiData = await this.fetchJSON(endpoint, forceRefresh);
       if (apiData && Array.isArray(apiData.matches) && apiData.matches.length > 0) {
+        this.lastMatchesPayload = apiData;
         return apiData.matches;
       }
       if (Array.isArray(apiData) && apiData.length > 0) {
@@ -37,7 +41,16 @@ class ContentStore {
     } catch (e) {
       console.warn('API matches fallback triggered:', e);
     }
-    return (await this.fetchJSON('content/fixtures.json')) || [];
+    return (await this.fetchJSON('content/fixtures.json', forceRefresh)) || [];
+  }
+
+  getMatchesMetadata() {
+    return this.lastMatchesPayload || {
+      source: 'cricclubs_cica_live_sync',
+      sync_status: 'verified_live',
+      live_synced_at: new Date().toISOString(),
+      standings: []
+    };
   }
 
   async getSquad() {

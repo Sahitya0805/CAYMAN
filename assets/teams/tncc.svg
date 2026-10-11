@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <defs>
+    <linearGradient id="tnccGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#DC2626"/>
+      <stop offset="100%" stop-color="#991B1B"/>
+    </linearGradient>
+    <linearGradient id="goldRim" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FCD34D"/>
+      <stop offset="100%" stop-color="#F59E0B"/>
+    </linearGradient>
+  </defs>
+  <!-- Shield Outer -->
+  <path d="M100 12 L172 38 L158 132 C152 165 100 188 100 188 C100 188 48 165 42 132 L28 38 Z" fill="url(#goldRim)" stroke="#78350F" stroke-width="2"/>
+  <!-- Shield Inner -->
+  <path d="M100 20 L164 43 L152 128 C146 156 100 178 100 178 C100 178 54 156 48 128 L36 43 Z" fill="url(#tnccGrad)"/>
+  <!-- Crossed Bats -->
+  <g stroke="#FDE68A" stroke-width="3" stroke-linecap="round">
+    <line x1="68" y1="68" x2="132" y2="132"/>
+    <line x1="132" y1="68" x2="68" y2="132"/>
+  </g>
+  <!-- Central Ball -->
+  <circle cx="100" cy="100" r="16" fill="#F59E0B" stroke="#FFF" stroke-width="2"/>
+  <path d="M92 92 Q100 100 92 108 M108 92 Q100 100 108 108" stroke="#FFF" stroke-width="1.5" fill="none"/>
+  <!-- Top Arc Banner Text -->
+  <text x="100" y="58" font-family="'Barlow Condensed', sans-serif" font-weight="900" font-size="14" fill="#FFFFFF" text-anchor="middle" letter-spacing="1.5">TAMILNADU</text>
+  <!-- Bottom Text -->
+  <text x="100" y="152" font-family="'Barlow Condensed', sans-serif" font-weight="900" font-size="13" fill="#FDE68A" text-anchor="middle" letter-spacing="2">CC</text>
+</svg>
