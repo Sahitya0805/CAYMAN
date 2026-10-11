@@ -260,7 +260,7 @@ def main():
             "Sarah Jenkins",
             "sarah.j@caymanports.ky",
             "General Club Enquiry",
-            "Inquiry regarding upcoming tournament schedule at Jimmy Powell Oval and match ticketing.",
+            "Inquiry regarding upcoming tournament schedule at Smith Road Oval and match ticketing.",
             "Contacted",
             "Christopher Balraj (Co-Founder)"
         ]
