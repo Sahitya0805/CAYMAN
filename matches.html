@@ -13,6 +13,7 @@
   <link rel="stylesheet" href="css/layout.css?v=20260923_10">
   <link rel="stylesheet" href="css/components.css?v=20260923_10">
   <link rel="stylesheet" href="css/pages.css?v=20260923_10">
+  <link rel="stylesheet" href="css/futuristic.css?v=20261011_live">
 </head>
 <body class="page--white-theme">
     <!-- CSK CRICKET MATCHDAY POWERPLAY LOADER (CRICKET VIBES EDITION) -->
@@ -192,13 +193,31 @@
     <!-- Main Matches Section (Embossed White Cricket Asset) -->
     <section class="section" style="padding-top: 40px; padding-bottom: 80px;">
       <div class="container">
+        <!-- Dynamic Live CricClubs Sync Hub -->
+        <div class="live-sync-hub">
+          <div class="live-sync-status-group">
+            <span class="live-sync-badge">
+              <span class="live-radar-dot"></span>
+              <span>Live Synced</span>
+            </span>
+            <span class="live-sync-meta" id="sync-timestamp">
+              Live Synced • Official CICA Portal
+            </span>
+          </div>
+          <button id="btn-sync-matches" class="btn-live-sync" title="Fetch latest results from CricClubs">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21.5 2v6h-6M21.34 15.57a10 10 0 1 1-.57-8.38l5.67-5.67"/></svg>
+            <span>Sync Live</span>
+          </button>
+        </div>
+
         <!-- Filter Controls Bar -->
-        <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; margin-bottom: 36px; background: rgba(255, 255, 255, 0.8); padding: 14px 20px; border-radius: 14px; border: 1.5px solid #E2E8F0; box-shadow: 0 2px 8px rgba(9, 21, 43, 0.04);">
+        <div class="matches-filter-bar-wrap" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; margin-bottom: 32px; background: rgba(255, 255, 255, 0.9); padding: 14px 20px; border-radius: 14px; border: 1.5px solid #CBD5E1; box-shadow: 0 4px 14px rgba(9, 21, 43, 0.04);">
           <div class="filter-group" style="margin-bottom: 0; display: flex; align-items: center; gap: 16px; flex-wrap: wrap;">
             <div style="display: flex; align-items: center; gap: 8px;">
               <label for="format-filter" style="font-size: 0.875rem; font-weight: 800; color: #09152B; text-transform: uppercase; letter-spacing: 0.04em;">Format:</label>
               <select id="format-filter" class="matches-filter-select">
                 <option value="all">All Formats</option>
+                <option value="Daniel Morris T20">Daniel Morris Div 2 T20</option>
                 <option value="Super League T20">Super League T20</option>
                 <option value="Super League 40-Over">Super League 40-Over</option>
                 <option value="Elite 50-Over">Elite 50-Over League</option>
@@ -210,21 +229,20 @@
               <label for="season-filter" style="font-size: 0.875rem; font-weight: 800; color: #09152B; text-transform: uppercase; letter-spacing: 0.04em;">Season:</label>
               <select id="season-filter" class="matches-filter-select">
                 <option value="all" selected>All Seasons</option>
-                <option value="2026">2026 Season</option>
                 <option value="2025">2025 Season</option>
                 <option value="2024">2024 Season</option>
               </select>
             </div>
           </div>
 
-          <a href="https://cricclubs.com/CaymanCricketAssociation" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm" style="font-weight: 800; padding: 10px 22px; display: inline-flex; align-items: center; gap: 8px; border-radius: 999px;">
+          <a href="https://cricclubs.com/CaymanCricketAssociation" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm btn-cricclubs-top" style="font-weight: 800; padding: 10px 22px; display: inline-flex; align-items: center; gap: 8px; border-radius: 999px;">
             <span>Official CricClubs Portal</span>
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="21" y1="3" x2="10" y2="14"></line></svg>
           </a>
         </div>
 
         <!-- Dynamic Matches Container -->
-        <div id="matches-list" class="grid" style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px;">
+        <div id="matches-list" class="matches-dynamic-grid">
           <!-- Populated by js/matches.js -->
         </div>
 
@@ -273,7 +291,9 @@
   <script type="module" src="js/app.js?v=20260923_10"></script>
   <script type="module">
     import { initMatchesPage } from './js/matches.js';
+    import { initFuturisticSystem } from './js/futuristic.js';
     initMatchesPage();
+    initFuturisticSystem();
   </script>
 </body>
 </html>

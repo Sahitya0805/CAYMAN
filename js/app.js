@@ -10,6 +10,7 @@ import { initHeroSlider } from './hero-slider.js';
 import { initSplashLoader } from './splash-loader.js';
 import { initCricketCrazy } from './cricket-crazy.js';
 import { createStadiumPlayerCard } from './squad.js';
+import { initFuturisticSystem } from './futuristic.js';
 
 // Initialize splash loader immediately to handle smooth page entrance
 initSplashLoader();
@@ -21,6 +22,7 @@ document.addEventListener('DOMContentLoaded', async () => {
   initSmoothScroll();
   initRosterCardInteractions();
   initCricketCrazy();
+  initFuturisticSystem();
   await initHomepageRoster();
   await initAnnouncementBar();
 });

@@ -1,0 +1,431 @@
+/* ─────────────────────────────────────────────────────────────
+   CAYMAN SUPER KINGS — FUTURISTIC CYBER ANIMATIONS & RESPONSIVE HUD
+   High-performance, hardware-accelerated futuristic motion system
+   ───────────────────────────────────────────────────────────── */
+
+:root {
+  --cyber-cyan: #38BDF8;
+  --cyber-cyan-glow: rgba(56, 189, 248, 0.35);
+  --cyber-gold: #F59E0B;
+  --cyber-gold-glow: rgba(245, 158, 11, 0.35);
+  --cyber-navy: #050E20;
+  --cyber-deep: #020611;
+  --cyber-border: rgba(56, 189, 248, 0.22);
+}
+
+/* ── 1. Laser Scanline Effect for Cards ── */
+.futuristic-card,
+.fixture-ticket,
+.roster-stage-card,
+.squad-player-stage-card,
+.sponsor-card,
+.club-stat-pill {
+  position: relative !important;
+  overflow: hidden !important;
+  transition: transform 0.32s cubic-bezier(0.16, 1, 0.3, 1), 
+              box-shadow 0.32s cubic-bezier(0.16, 1, 0.3, 1), 
+              border-color 0.32s ease !important;
+  will-change: transform, box-shadow;
+}
+
+.futuristic-card::before,
+.fixture-ticket::before,
+.roster-stage-card::before,
+.squad-player-stage-card::before {
+  content: '' !important;
+  position: absolute !important;
+  top: -150% !important;
+  left: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  background: linear-gradient(
+    180deg, 
+    transparent 0%, 
+    rgba(56, 189, 248, 0.04) 75%, 
+    rgba(56, 189, 248, 0.22) 98%, 
+    rgba(255, 255, 255, 0.45) 100%
+  ) !important;
+  pointer-events: none !important;
+  z-index: 10 !important;
+  transition: opacity 0.2s ease !important;
+  opacity: 0 !important;
+}
+
+.futuristic-card:hover::before,
+.fixture-ticket:hover::before,
+.roster-stage-card:hover::before,
+.squad-player-stage-card:hover::before {
+  opacity: 1 !important;
+  animation: cyberLaserScan 1.25s cubic-bezier(0.2, 0.8, 0.2, 1) infinite !important;
+}
+
+@keyframes cyberLaserScan {
+  0% {
+    top: -120%;
+  }
+  100% {
+    top: 140%;
+  }
+}
+
+/* ── 2. Holographic Border & Neon Glow ── */
+.fixture-ticket:hover {
+  transform: translateY(-8px) scale(1.012) !important;
+  border-color: var(--cyber-cyan) !important;
+  box-shadow: 0 16px 44px rgba(9, 21, 43, 0.16), 
+              0 0 28px rgba(56, 189, 248, 0.28) !important;
+}
+
+.roster-stage-card:hover,
+.squad-player-stage-card:hover {
+  transform: translateY(-8px) scale(1.015) !important;
+  border-color: var(--cyber-cyan) !important;
+  box-shadow: 0 24px 50px rgba(0, 0, 0, 0.7), 
+              0 0 32px rgba(56, 189, 248, 0.3) !important;
+}
+
+/* ── 3. Live Radar Pulse Beacon ── */
+.live-radar-dot {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  background-color: #22C55E;
+  border-radius: 50%;
+  position: relative;
+  box-shadow: 0 0 8px #22C55E;
+}
+
+.live-radar-dot::after {
+  content: '';
+  position: absolute;
+  top: -4px;
+  left: -4px;
+  right: -4px;
+  bottom: -4px;
+  border: 2px solid #22C55E;
+  border-radius: 50%;
+  animation: radarPing 1.8s cubic-bezier(0, 0.2, 0.8, 1) infinite;
+}
+
+@keyframes radarPing {
+  0% {
+    transform: scale(0.8);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(2.4);
+    opacity: 0;
+  }
+}
+
+/* ── 4. Live Sync Hub Banner (Matches Page) ── */
+.live-sync-hub {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 14px;
+  background: linear-gradient(90deg, #071530 0%, #0B224E 50%, #071530 100%);
+  border: 1.5px solid rgba(56, 189, 248, 0.3);
+  border-radius: 14px;
+  padding: 12px 20px;
+  margin-bottom: 24px;
+  box-shadow: 0 8px 24px rgba(7, 21, 48, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  position: relative;
+  overflow: hidden;
+}
+
+.live-sync-hub::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #38BDF8, #F59E0B, #38BDF8, transparent);
+  background-size: 200% 100%;
+  animation: shimmerLine 3s linear infinite;
+}
+
+@keyframes shimmerLine {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+.live-sync-status-group {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.live-sync-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(34, 197, 94, 0.14);
+  border: 1px solid rgba(34, 197, 94, 0.4);
+  color: #4ADE80;
+  font-family: var(--font-display);
+  font-size: 0.85rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 4px 12px;
+  border-radius: 999px;
+}
+
+.live-sync-meta {
+  color: #CBD5E1;
+  font-size: 0.825rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.btn-live-sync {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(56, 189, 248, 0.12);
+  border: 1px solid rgba(56, 189, 248, 0.35);
+  color: #38BDF8;
+  font-family: var(--font-display);
+  font-size: 0.85rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 6px 14px;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn-live-sync:hover {
+  background: #38BDF8;
+  color: #040914;
+  box-shadow: 0 0 16px rgba(56, 189, 248, 0.5);
+  transform: translateY(-1px);
+}
+
+.btn-live-sync.is-syncing svg {
+  animation: spinSync 0.8s linear infinite;
+}
+
+@keyframes spinSync {
+  100% { transform: rotate(360deg); }
+}
+
+/* ── 5. Futuristic Ticket Enhancements ── */
+.ticket-crest-aura {
+  position: relative;
+  transition: transform 0.3s ease;
+}
+
+.fixture-ticket:hover .ticket-crest-aura {
+  transform: scale(1.1);
+}
+
+.fixture-ticket:hover .ticket-crest-aura::after {
+  content: '';
+  position: absolute;
+  top: -6px;
+  left: -6px;
+  right: -6px;
+  bottom: -6px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(56, 189, 248, 0.4) 0%, transparent 70%);
+  z-index: -1;
+  animation: crestPulse 1.5s ease-in-out infinite alternate;
+}
+
+@keyframes crestPulse {
+  0% { transform: scale(0.9); opacity: 0.5; }
+  100% { transform: scale(1.2); opacity: 0.9; }
+}
+
+.ticket-vs-result {
+  background: linear-gradient(135deg, #0284C7 0%, #0369A1 100%) !important;
+  box-shadow: 0 2px 10px rgba(2, 132, 199, 0.35) !important;
+  animation: glowPulse 2.5s ease-in-out infinite alternate;
+}
+
+@keyframes glowPulse {
+  0% { box-shadow: 0 2px 10px rgba(2, 132, 199, 0.3); }
+  100% { box-shadow: 0 2px 18px rgba(56, 189, 248, 0.7); }
+}
+
+/* ── 6. Futuristic Cyber Grid Background ── */
+.cyber-grid-overlay {
+  position: absolute;
+  inset: 0;
+  background-image: 
+    linear-gradient(rgba(56, 189, 248, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(56, 189, 248, 0.03) 1px, transparent 1px);
+  background-size: 36px 36px;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* ── 7. Floating Specular Highlight ── */
+.holo-tilt {
+  transform-style: preserve-3d;
+  perspective: 1000px;
+}
+
+/* ── 8. Futuristic Mobile Navigation Overlay ── */
+.mobile-nav-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(2, 6, 17, 0.75);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  z-index: 99990;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.25s ease;
+}
+
+body.nav-open .mobile-nav-backdrop {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* ── 9. Fully Responsive Grid & Mobile Architecture ── */
+.matches-dynamic-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+  width: 100%;
+}
+
+@media (max-width: 992px) {
+  .matches-dynamic-grid {
+    grid-template-columns: 1fr !important;
+    gap: 20px !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .live-sync-hub {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 14px 16px;
+  }
+  
+  .btn-live-sync {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .matches-filter-bar-wrap {
+    flex-direction: column !important;
+    align-items: stretch !important;
+    gap: 16px !important;
+  }
+
+  .filter-group {
+    width: 100% !important;
+    flex-direction: column !important;
+    align-items: stretch !important;
+    gap: 12px !important;
+  }
+
+  .filter-group > div {
+    width: 100% !important;
+    justify-content: space-between !important;
+  }
+
+  .matches-filter-select {
+    flex: 1 !important;
+    max-width: 220px !important;
+  }
+
+  .btn-cricclubs-top {
+    width: 100% !important;
+    justify-content: center !important;
+  }
+}
+
+@media (max-width: 520px) {
+  .fixture-ticket {
+    flex-direction: column !important;
+    border-radius: 16px !important;
+    margin-bottom: 20px !important;
+  }
+
+  .ticket-stub {
+    width: 100% !important;
+    border-right: none !important;
+    border-bottom: 2px dashed #CBD5E1 !important;
+    border-top-right-radius: 14px !important;
+    border-bottom-left-radius: 0 !important;
+    padding: 12px 16px !important;
+    flex-direction: row !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+  }
+
+  .ticket-notch-top,
+  .ticket-notch-bottom {
+    display: none !important;
+  }
+
+  .ticket-body {
+    padding: 16px 14px 28px !important;
+    border-bottom-left-radius: 14px !important;
+    border-top-right-radius: 0 !important;
+  }
+
+  .ticket-matchup {
+    gap: 12px !important;
+  }
+
+  .ticket-team-name {
+    font-size: 0.85rem !important;
+  }
+
+  .ticket-team-score {
+    font-size: 1.15rem !important;
+  }
+
+  .ticket-btn-pill {
+    position: static !important;
+    transform: none !important;
+    width: 100% !important;
+    justify-content: center !important;
+    margin-top: 16px !important;
+    border-radius: 10px !important;
+    padding: 10px 14px !important;
+  }
+
+  .ticket-btn-pill:hover {
+    transform: translateY(-2px) !important;
+  }
+}
+
+/* ── 10. Futuristic Stagger Scroll Entrance ── */
+.cyber-reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  filter: blur(4px);
+  transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.6s cubic-bezier(0.16, 1, 0.3, 1),
+              filter 0.6s ease;
+  will-change: opacity, transform, filter;
+}
+
+.cyber-reveal.is-revealed {
+  opacity: 1;
+  transform: translateY(0);
+  filter: blur(0);
+}
+
+/* Telemetry HUD scan effect on headers */
+.futuristic-glow-text {
+  background: linear-gradient(135deg, #FFFFFF 0%, #38BDF8 60%, #F59E0B 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 0 24px rgba(56, 189, 248, 0.35);
+}
