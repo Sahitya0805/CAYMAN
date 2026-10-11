@@ -14,14 +14,332 @@
   <link rel="stylesheet" href="css/components.css?v=20260923_10">
   <link rel="stylesheet" href="css/pages.css?v=20260923_10">
   <link rel="stylesheet" href="css/futuristic.css?v=20261011_live">
+
+  <style>
+    /* ── CSK OFFICIAL IPL / DHONI STYLE PLAYER PROFILE THEME ── */
+    body.page--player-profile {
+      background-color: #FFFFFF !important;
+      color: #1E293B;
+      font-family: var(--font-sans, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif);
+      margin: 0;
+      padding: 0;
+    }
+
+    /* Hero Section */
+    .csk-player-hero {
+      background-color: #E6ECF2;
+      background-image: 
+        linear-gradient(rgba(26, 74, 132, 0.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(26, 74, 132, 0.05) 1px, transparent 1px);
+      background-size: 28px 28px;
+      position: relative;
+      padding: 24px 0 0;
+      border-bottom: 1px solid #D5DFEB;
+      overflow: hidden;
+    }
+
+    .csk-player-hero-container {
+      max-width: 1140px;
+      margin: 0 auto;
+      padding: 0 28px;
+      position: relative;
+    }
+
+    .csk-back-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      color: #1A4A84;
+      font-size: 0.95rem;
+      font-weight: 800;
+      text-decoration: none;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 14px;
+      transition: opacity 0.2s ease, transform 0.2s ease;
+    }
+
+    .csk-back-btn:hover {
+      opacity: 0.85;
+      transform: translateX(-3px);
+      color: #0E366C;
+    }
+
+    .csk-hero-main {
+      display: flex;
+      align-items: flex-end;
+      justify-content: flex-start;
+      gap: 52px;
+      min-height: 400px;
+    }
+
+    @media (max-width: 900px) {
+      .csk-hero-main {
+        flex-direction: column-reverse;
+        align-items: center;
+        text-align: center;
+        gap: 20px;
+        padding-bottom: 32px;
+      }
+    }
+
+    .csk-player-cutout-wrap {
+      flex: 0 0 360px;
+      display: flex;
+      align-items: flex-end;
+      justify-content: center;
+      position: relative;
+    }
+
+    .csk-player-cutout-img {
+      max-height: 410px;
+      width: auto;
+      max-width: 100%;
+      display: block;
+      object-fit: contain;
+      filter: drop-shadow(0 14px 28px rgba(9, 21, 43, 0.18));
+      transition: transform 0.3s ease;
+    }
+
+    .csk-player-meta-wrap {
+      flex: 1;
+      padding-bottom: 44px;
+    }
+
+    @media (max-width: 900px) {
+      .csk-player-meta-wrap {
+        padding-bottom: 0;
+      }
+    }
+
+    .csk-player-firstname {
+      color: #1A4A84;
+      font-size: 1.35rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin: 0 0 2px 0;
+    }
+
+    .csk-player-lastname {
+      color: #0E366C;
+      font-size: clamp(2.4rem, 5vw, 4.2rem);
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: 0.02em;
+      line-height: 1;
+      margin: 0 0 32px 0;
+      font-family: var(--font-display, "Chakra Petch", sans-serif);
+    }
+
+    .csk-meta-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 22px 40px;
+      max-width: 540px;
+    }
+
+    @media (max-width: 900px) {
+      .csk-meta-grid {
+        margin: 0 auto;
+        text-align: left;
+      }
+    }
+
+    .csk-meta-item {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .csk-meta-label {
+      color: #1A4A84;
+      font-size: 0.78rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 4px;
+    }
+
+    .csk-meta-val {
+      color: #475569;
+      font-size: 0.95rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      line-height: 1.35;
+    }
+
+    .csk-hero-socials {
+      position: absolute;
+      right: 28px;
+      bottom: 24px;
+      display: flex;
+      gap: 14px;
+      align-items: center;
+    }
+
+    .csk-hero-social-link {
+      color: #94A3B8;
+      transition: color 0.2s ease, transform 0.2s ease;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+    }
+
+    .csk-hero-social-link:hover {
+      color: #1A4A84;
+      transform: translateY(-2px);
+    }
+
+    /* Floating Side Navigation Chevrons */
+    .csk-side-nav-arrow {
+      position: fixed;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 44px;
+      height: 64px;
+      background: rgba(255, 255, 255, 0.85);
+      border: 1px solid rgba(26, 74, 132, 0.2);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #1A4A84;
+      text-decoration: none;
+      cursor: pointer;
+      z-index: 50;
+      transition: all 0.2s ease;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    }
+
+    .csk-side-nav-arrow:hover {
+      background: #FFFFFF;
+      box-shadow: 0 8px 24px rgba(26, 74, 132, 0.2);
+      transform: translateY(-50%) scale(1.08);
+      color: #0E366C;
+    }
+
+    .csk-side-nav-arrow--prev {
+      left: 12px;
+    }
+
+    .csk-side-nav-arrow--next {
+      right: 12px;
+    }
+
+    @media (max-width: 768px) {
+      .csk-side-nav-arrow {
+        display: none;
+      }
+    }
+
+    /* White Body Content Section */
+    .csk-player-content-body {
+      background: #FFFFFF;
+      padding: 56px 20px 88px;
+    }
+
+    .csk-content-container {
+      max-width: 1040px;
+      margin: 0 auto;
+    }
+
+    .csk-section-title {
+      color: #0E366C;
+      font-family: var(--font-display, "Chakra Petch", sans-serif);
+      font-size: 1.85rem;
+      font-weight: 800;
+      text-align: center;
+      margin: 0 0 16px 0;
+      letter-spacing: 0.02em;
+    }
+
+    .csk-about-text {
+      max-width: 840px;
+      margin: 0 auto 52px;
+      text-align: center;
+      font-size: 0.98rem;
+      line-height: 1.75;
+      color: #475569;
+    }
+
+    /* Stats Tables */
+    .csk-stats-block {
+      margin-bottom: 48px;
+    }
+
+    .csk-format-badge {
+      color: #0E366C;
+      font-size: 0.85rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      margin: 20px 0 8px 0;
+      display: block;
+    }
+
+    .csk-table-wrap {
+      width: 100%;
+      overflow-x: auto;
+      border-radius: 4px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+      margin-bottom: 24px;
+      border: 1px solid #D1D5DB;
+      -webkit-overflow-scrolling: touch;
+    }
+
+    .csk-stats-table {
+      width: 100%;
+      border-collapse: collapse;
+      text-align: center;
+      min-width: 720px;
+      background: #FFFFFF;
+    }
+
+    .csk-stats-table th {
+      background: #184785;
+      color: #FFFFFF;
+      font-size: 0.74rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      padding: 10px 8px;
+      border-right: 1px solid rgba(255, 255, 255, 0.16);
+      white-space: nowrap;
+    }
+
+    .csk-stats-table th:last-child {
+      border-right: none;
+    }
+
+    .csk-stats-table td {
+      padding: 12px 8px;
+      font-size: 0.92rem;
+      font-weight: 700;
+      color: #0F172A;
+      border-bottom: 1px solid #E2E8F0;
+      border-right: 1px solid #F1F5F9;
+      white-space: nowrap;
+    }
+
+    .csk-stats-table td:last-child {
+      border-right: none;
+    }
+
+    /* Mobile Squad Return Link */
+    .csk-bottom-squad-link {
+      display: flex;
+      justify-content: center;
+      margin-top: 40px;
+    }
+  </style>
 </head>
-<body>
-    <!-- CSK CRICKET MATCHDAY POWERPLAY LOADER (CRICKET VIBES EDITION) -->
+<body class="page--player-profile">
+  <!-- CSK CRICKET MATCHDAY POWERPLAY LOADER (CRICKET VIBES EDITION) -->
   <div id="csk-splash-screen" class="csk-splash-screen" aria-hidden="false">
     <div class="csk-splash-screen__backdrop"></div>
 
     <div class="csk-splash-screen__content">
-      <!-- Stadium Lion Crest & Cricket Seam Orbit -->
       <div class="csk-splash-screen__logo-wrap">
         <div class="csk-splash-seam-ring">
           <svg viewBox="0 0 160 160" class="seam-svg">
@@ -33,7 +351,6 @@
         <img src="assets/csk-official-logo.png?v=20260923_10" alt="Cayman Super Kings" class="csk-splash-screen__image">
       </div>
 
-      <!-- Cricket Franchise Heading -->
       <div class="csk-splash-brand-wrap">
         <h1 class="csk-splash-brand-title">CAYMAN SUPER KINGS</h1>
         <div class="csk-splash-cricket-pill">
@@ -42,11 +359,9 @@
         </div>
       </div>
 
-      <!-- 22-YARD CRICKET PITCH ARENA & BAT-BALL STRIKE LOADER -->
       <div class="csk-cricket-pitch-loader">
-        <!-- Top Scoreboard HUD: Speed Gun & Live Match Commentary -->
         <div class="pitch-loader-hud">
-          <div class="pitch-commentary" id="arena-loader-status">🏏 POLISHING THE LEATHER SEAM...</div>
+          <div class="pitch-commentary" id="arena-loader-status">🏏 LOADING PLAYER CAREER STATS...</div>
           <div class="pitch-speed-readout">
             <span class="speed-label">SPEED:</span>
             <span class="speed-val" id="arena-loader-speed">138.4</span> <span class="speed-unit">KM/H</span>
@@ -54,37 +369,25 @@
           </div>
         </div>
 
-        <!-- 22-Yard Stadium Pitch Corridor -->
         <div class="pitch-corridor">
-          <!-- English Willow Cricket Bat at Bowler/Crease End -->
           <div class="pitch-bat-wrap" id="pitch-bat-wrap">
             <svg viewBox="0 0 32 64" class="cricket-bat-svg" width="24" height="48">
-              <!-- Rubber Grip Handle -->
               <rect x="14" y="2" width="4" height="18" rx="2" fill="#E2E8F0" stroke="#0F172A" stroke-width="1" />
               <line x1="14" y1="6" x2="18" y2="6" stroke="#EF4444" stroke-width="1.2" />
               <line x1="14" y1="10" x2="18" y2="10" stroke="#EF4444" stroke-width="1.2" />
               <line x1="14" y1="14" x2="18" y2="14" stroke="#EF4444" stroke-width="1.2" />
-              <!-- English Willow Blade with Wood Grain -->
               <path d="M12 20 L20 20 L21 54 C21 58 19 60 16 60 C13 60 11 58 11 54 Z" fill="#FBBF24" stroke="#D97706" stroke-width="1" />
-              <!-- CSK Flame Accent on Blade -->
               <path d="M14 26 L18 26 L17 44 L15 44 Z" fill="#EF4444" />
             </svg>
           </div>
 
-          <!-- Bowling Crease Line -->
           <div class="pitch-crease-mark pitch-crease--bowler">
             <span class="crease-label">BOWLER</span>
           </div>
           
-          <!-- 22-Yard Turf Surface Track (Green Grass Gradient) -->
           <div class="pitch-mat">
-            <!-- Pitch Grass Texture Stripes -->
             <div class="pitch-turf-stripes"></div>
-            
-            <!-- Hawk-Eye Trajectory Trail -->
             <div class="pitch-fill-trail" id="arena-loader-fill"></div>
-            
-            <!-- High Velocity Moving Red Leather Cricket Ball -->
             <div class="pitch-ball-runner" id="pitch-ball-runner">
               <div class="pitch-cricket-ball">
                 <span class="seam-stitch"></span>
@@ -93,7 +396,6 @@
             </div>
           </div>
 
-          <!-- Popping Crease & Target: LED Zing Stumps -->
           <div class="pitch-stumps-target" id="pitch-stumps-target">
             <div class="zing-bails">
               <span class="bail-led bail-left"></span>
@@ -106,13 +408,11 @@
             </div>
           </div>
 
-          <!-- Explosive Impact Flash Badge (Triggers at 95%+) -->
           <div class="pitch-impact-burst" id="pitch-impact-burst">
             <span>⚡ TIMBER! CLEAN BOWLED!</span>
           </div>
         </div>
 
-        <!-- Matchday Status Sub-steps -->
         <div class="arena-loader-steps">
           <span class="arena-step is-active" id="arena-step-1"><span class="step-dot" id="step-dot-1">●</span> 🏏 LEATHER SEAM</span>
           <span class="arena-step" id="arena-step-2"><span class="step-dot" id="step-dot-2">○</span> 📐 HAWK-EYE READY</span>
@@ -122,18 +422,15 @@
     </div>
   </div>
 
-    <!-- Professional Franchise Sports Navbar -->
+  <!-- Professional Franchise Sports Navbar -->
   <header class="site-header">
     <div class="site-header__container">
       <div class="franchise-navbar-wrap">
-        <!-- Main Angled Navigation Bar -->
         <div class="franchise-nav-bar">
-          <!-- Breakout Franchise Crest -->
           <a href="index.html" class="franchise-logo-link" aria-label="Cayman Super Kings Home">
             <img src="assets/csk-official-logo.png?v=20260923_10" alt="Cayman Super Kings Logo" class="franchise-logo-img">
           </a>
 
-          <!-- Mobile Menu Toggle -->
           <button class="mobile-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
             <span></span><span></span><span></span>
           </button>
@@ -141,11 +438,12 @@
           <!-- Navigation Links -->
           <nav class="navbar-nav" aria-label="Main Navigation">
             <ul class="nav-menu">
-              <li><a href="squad.html" class="nav-link">Squad</a></li>
-              <li><a href="matches.html" class="nav-link">Fixtures</a></li>
+              <li><a href="squad.html" class="nav-link active">Squad</a></li>
+              <li><a href="matches.html" class="nav-link">Matches</a></li>
               <li><a href="about.html" class="nav-link">History</a></li>
               <li><a href="gallery.html" class="nav-link">Gallery</a></li>
               <li><a href="partner.html" class="nav-link">Sponsors</a></li>
+              <li><a href="contact.html" class="nav-link">Contact</a></li>
             </ul>
           </nav>
         </div>
@@ -155,13 +453,11 @@
 
   <main id="player-profile-content">
     <!-- Populated dynamically via js/squad.js -> initPlayerProfile() -->
-      
   </main>
 
   <!-- Site Footer -->
-      <footer class="site-footer editorial-footer">
+  <footer class="site-footer editorial-footer">
     <div class="container">
-      <!-- Horizontal Brand & Action Hero Bar -->
       <div class="footer-horizontal-hero">
         <div class="footer-hero-brand">
           <img src="assets/csk-official-logo.png?v=20260923_10" alt="CSK Official Crest">
@@ -178,7 +474,6 @@
         </div>
       </div>
 
-      <!-- Horizontal Bottom Bar -->
       <div class="footer-bottom">
         <span>© 2026 Cayman Super Kings Cricket Club. All rights reserved.</span>
         <span>Affiliated with Cayman Islands Cricket Association (CICA)</span>
