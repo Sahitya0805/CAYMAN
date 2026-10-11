@@ -259,14 +259,35 @@
 }
 
 .ticket-vs-result {
+  padding: 4px 10px !important;
+  border-radius: 999px !important;
+  font-size: 0.72rem !important;
+  font-weight: 800 !important;
+  letter-spacing: 0.05em !important;
+  color: #FFFFFF !important;
+}
+
+.ticket-vs-result.is-win,
+.ticket-vs-result:not(.is-loss) {
   background: linear-gradient(135deg, #0284C7 0%, #0369A1 100%) !important;
   box-shadow: 0 2px 10px rgba(2, 132, 199, 0.35) !important;
   animation: glowPulse 2.5s ease-in-out infinite alternate;
 }
 
+.ticket-vs-result.is-loss {
+  background: linear-gradient(135deg, #DC2626 0%, #991B1B 100%) !important;
+  box-shadow: 0 2px 10px rgba(220, 38, 38, 0.45) !important;
+  animation: glowPulseLoss 2.5s ease-in-out infinite alternate;
+}
+
 @keyframes glowPulse {
   0% { box-shadow: 0 2px 10px rgba(2, 132, 199, 0.3); }
   100% { box-shadow: 0 2px 18px rgba(56, 189, 248, 0.7); }
+}
+
+@keyframes glowPulseLoss {
+  0% { box-shadow: 0 2px 10px rgba(220, 38, 38, 0.3); }
+  100% { box-shadow: 0 2px 18px rgba(239, 68, 68, 0.75); }
 }
 
 /* ── 6. Futuristic Cyber Grid Background ── */

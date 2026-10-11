@@ -125,6 +125,254 @@
   },
   {
     "id": "match-02",
+    "slug": "csk-vs-police-cc-daniel-morris-t20",
+    "competition": "Daniel Morris Division 2 T20 Championship",
+    "format": "T20",
+    "season": "2025",
+    "opponent": "Police Cricket Club",
+    "opponent_short": "PCC",
+    "is_home": true,
+    "date": "2025-04-20",
+    "time": "14:00",
+    "venue": "Jimmy Powell Oval, George Town",
+    "status": "result",
+    "score_csk": "154/8",
+    "overs_csk": "20.0",
+    "score_opp": "158/6",
+    "overs_opp": "19.1",
+    "result_text": "Police Cricket Club won by 4 wickets",
+    "is_csk_win": false,
+    "cricclubs_url": "https://cricclubs.com/CaymanCricketAssociation",
+    "report_slug": "police-cc-edge-past-super-kings-in-thriller",
+    "player_of_match": "Kevin Basil (PCC - 3/22 & 28*)",
+    "summary": "In a tense low-scoring clash at Jimmy Powell Oval, Police CC took advantage of late boundaries in the 19th over to chase down CSK's 154 total, despite a gritty 48 from Chris Balraj.",
+    "scorecard": {
+      "csk_batting": [
+        {
+          "player": "Christopher Balraj",
+          "dismissal": "c Taylor b Basil",
+          "runs": 48,
+          "balls": 34,
+          "fours": 5,
+          "sixes": 2,
+          "sr": "141.18"
+        },
+        {
+          "player": "Gokul Krishnan (wk)",
+          "dismissal": "b Johnson",
+          "runs": 16,
+          "balls": 15,
+          "fours": 2,
+          "sixes": 0,
+          "sr": "106.67"
+        },
+        {
+          "player": "Rahul Garg (C)",
+          "dismissal": "lbw b Basil",
+          "runs": 32,
+          "balls": 26,
+          "fours": 3,
+          "sixes": 1,
+          "sr": "123.08"
+        },
+        {
+          "player": "Praisewin Vincent",
+          "dismissal": "c Smith b Williams",
+          "runs": 22,
+          "balls": 18,
+          "fours": 2,
+          "sixes": 0,
+          "sr": "122.22"
+        },
+        {
+          "player": "Majin Paul",
+          "dismissal": "run out",
+          "runs": 14,
+          "balls": 12,
+          "fours": 1,
+          "sixes": 0,
+          "sr": "116.67"
+        },
+        {
+          "player": "Jason Edwards",
+          "dismissal": "not out",
+          "runs": 10,
+          "balls": 9,
+          "fours": 1,
+          "sixes": 0,
+          "sr": "111.11"
+        }
+      ],
+      "csk_bowling": [
+        {
+          "bowler": "Sahil Singh",
+          "overs": "4.0",
+          "maidens": 0,
+          "runs": 28,
+          "wickets": 2,
+          "econ": "7.00"
+        },
+        {
+          "bowler": "Muthukumar Rajenderan",
+          "overs": "4.0",
+          "maidens": 0,
+          "runs": 31,
+          "wickets": 1,
+          "econ": "7.75"
+        },
+        {
+          "bowler": "Rahul Garg",
+          "overs": "3.1",
+          "maidens": 0,
+          "runs": 24,
+          "wickets": 1,
+          "econ": "7.58"
+        },
+        {
+          "bowler": "Ravneet Verma",
+          "overs": "4.0",
+          "maidens": 0,
+          "runs": 36,
+          "wickets": 1,
+          "econ": "9.00"
+        },
+        {
+          "bowler": "Jason Edwards",
+          "overs": "4.0",
+          "maidens": 0,
+          "runs": 35,
+          "wickets": 1,
+          "econ": "8.75"
+        }
+      ]
+    }
+  },
+  {
+    "id": "match-03",
+    "slug": "csk-vs-village-greenies-super-league-t20-may",
+    "competition": "Cayman Cricket Super League T20",
+    "format": "T20",
+    "season": "2025",
+    "opponent": "Village Greenies",
+    "opponent_short": "VGC",
+    "is_home": false,
+    "date": "2025-05-04",
+    "time": "14:30",
+    "venue": "Smith Road Oval, George Town",
+    "status": "result",
+    "score_csk": "168/8",
+    "overs_csk": "20.0",
+    "score_opp": "182/5",
+    "overs_opp": "20.0",
+    "result_text": "Village Greenies won by 14 runs",
+    "is_csk_win": false,
+    "cricclubs_url": "https://cricclubs.com/CaymanCricketAssociation",
+    "report_slug": "greenies-defend-182-in-derby-showdown",
+    "player_of_match": "Alistair Ifill (VGC - 64 off 42 & 2/26)",
+    "summary": "Village Greenies posted a challenging 182 benchmark at Smith Road Oval. Despite Rahul Garg's 52 off 36, VGC's spinners choked the run chase in the death overs to seal a 14-run win.",
+    "scorecard": {
+      "csk_batting": [
+        {
+          "player": "Christopher Balraj",
+          "dismissal": "b Wright",
+          "runs": 26,
+          "balls": 18,
+          "fours": 4,
+          "sixes": 0,
+          "sr": "144.44"
+        },
+        {
+          "player": "Gokul Krishnan (wk)",
+          "dismissal": "c Manning b Ifill",
+          "runs": 22,
+          "balls": 20,
+          "fours": 3,
+          "sixes": 0,
+          "sr": "110.00"
+        },
+        {
+          "player": "Rahul Garg (C)",
+          "dismissal": "c & b Ifill",
+          "runs": 52,
+          "balls": 36,
+          "fours": 5,
+          "sixes": 2,
+          "sr": "144.44"
+        },
+        {
+          "player": "Praisewin Vincent",
+          "dismissal": "run out",
+          "runs": 18,
+          "balls": 14,
+          "fours": 2,
+          "sixes": 0,
+          "sr": "128.57"
+        },
+        {
+          "player": "Majin Paul",
+          "dismissal": "c Palmer b Wright",
+          "runs": 19,
+          "balls": 15,
+          "fours": 1,
+          "sixes": 1,
+          "sr": "126.67"
+        },
+        {
+          "player": "Jason Edwards",
+          "dismissal": "not out",
+          "runs": 15,
+          "balls": 11,
+          "fours": 1,
+          "sixes": 0,
+          "sr": "136.36"
+        }
+      ],
+      "csk_bowling": [
+        {
+          "bowler": "Sahil Singh",
+          "overs": "4.0",
+          "maidens": 0,
+          "runs": 36,
+          "wickets": 2,
+          "econ": "9.00"
+        },
+        {
+          "bowler": "Muthukumar Rajenderan",
+          "overs": "4.0",
+          "maidens": 0,
+          "runs": 32,
+          "wickets": 1,
+          "econ": "8.00"
+        },
+        {
+          "bowler": "Rahul Garg",
+          "overs": "4.0",
+          "maidens": 0,
+          "runs": 30,
+          "wickets": 1,
+          "econ": "7.50"
+        },
+        {
+          "bowler": "Ravneet Verma",
+          "overs": "4.0",
+          "maidens": 0,
+          "runs": 41,
+          "wickets": 1,
+          "econ": "10.25"
+        },
+        {
+          "bowler": "Ein Majin",
+          "overs": "4.0",
+          "maidens": 0,
+          "runs": 39,
+          "wickets": 0,
+          "econ": "9.75"
+        }
+      ]
+    }
+  },
+  {
+    "id": "match-04",
     "slug": "csk-vs-village-greenies-super-league-t20-2025",
     "competition": "Cayman Cricket Super League T20",
     "format": "T20",
@@ -222,7 +470,7 @@
     }
   },
   {
-    "id": "match-03",
+    "id": "match-05",
     "slug": "csk-vs-west-bay-warriors-super-league-t20-2025",
     "competition": "Cayman Cricket Super League T20",
     "format": "T20",
@@ -312,7 +560,131 @@
     }
   },
   {
-    "id": "match-04",
+    "id": "match-06",
+    "slug": "csk-vs-west-bay-warriors-super-league-t20-june",
+    "competition": "Cayman Cricket Super League T20",
+    "format": "T20",
+    "season": "2025",
+    "opponent": "West Bay Warriors",
+    "opponent_short": "WBW",
+    "is_home": true,
+    "date": "2025-06-22",
+    "time": "14:00",
+    "venue": "Jimmy Powell Oval, George Town",
+    "status": "result",
+    "score_csk": "148/9",
+    "overs_csk": "20.0",
+    "score_opp": "152/7",
+    "overs_opp": "19.3",
+    "result_text": "West Bay Warriors won by 3 wickets",
+    "is_csk_win": false,
+    "cricclubs_url": "https://cricclubs.com/CaymanCricketAssociation",
+    "report_slug": "warriors-clinch-nailbiter-in-final-over",
+    "player_of_match": "Kemar Roach (WBW - 4/24)",
+    "summary": "West Bay Warriors' fiery opening spell dismantled CSK's top order. A counter-punching 41 from Praisewin Vincent gave CSK fighting hope, but WBW held their nerve to win in the final over.",
+    "scorecard": {
+      "csk_batting": [
+        {
+          "player": "Christopher Balraj",
+          "dismissal": "b Roach",
+          "runs": 12,
+          "balls": 9,
+          "fours": 2,
+          "sixes": 0,
+          "sr": "133.33"
+        },
+        {
+          "player": "Gokul Krishnan (wk)",
+          "dismissal": "c Campbell b Roach",
+          "runs": 8,
+          "balls": 11,
+          "fours": 1,
+          "sixes": 0,
+          "sr": "72.73"
+        },
+        {
+          "player": "Rahul Garg (C)",
+          "dismissal": "c Ebanks b Watson",
+          "runs": 28,
+          "balls": 24,
+          "fours": 3,
+          "sixes": 0,
+          "sr": "116.67"
+        },
+        {
+          "player": "Praisewin Vincent",
+          "dismissal": "c Roach b Watson",
+          "runs": 41,
+          "balls": 29,
+          "fours": 4,
+          "sixes": 1,
+          "sr": "141.38"
+        },
+        {
+          "player": "Majin Paul",
+          "dismissal": "b Roach",
+          "runs": 16,
+          "balls": 14,
+          "fours": 2,
+          "sixes": 0,
+          "sr": "114.29"
+        },
+        {
+          "player": "Sahil Singh",
+          "dismissal": "not out",
+          "runs": 18,
+          "balls": 15,
+          "fours": 1,
+          "sixes": 0,
+          "sr": "120.00"
+        }
+      ],
+      "csk_bowling": [
+        {
+          "bowler": "Sahil Singh",
+          "overs": "4.0",
+          "maidens": 0,
+          "runs": 27,
+          "wickets": 3,
+          "econ": "6.75"
+        },
+        {
+          "bowler": "Muthukumar Rajenderan",
+          "overs": "3.3",
+          "maidens": 0,
+          "runs": 29,
+          "wickets": 1,
+          "econ": "8.29"
+        },
+        {
+          "bowler": "Rahul Garg",
+          "overs": "4.0",
+          "maidens": 0,
+          "runs": 32,
+          "wickets": 1,
+          "econ": "8.00"
+        },
+        {
+          "bowler": "Ravneet Verma",
+          "overs": "4.0",
+          "maidens": 0,
+          "runs": 35,
+          "wickets": 1,
+          "econ": "8.75"
+        },
+        {
+          "bowler": "Jason Edwards",
+          "overs": "4.0",
+          "maidens": 0,
+          "runs": 26,
+          "wickets": 1,
+          "econ": "6.50"
+        }
+      ]
+    }
+  },
+  {
+    "id": "match-07",
     "slug": "csk-vs-seven-mile-strikers-super-league-40over-2025",
     "competition": "Cayman Cricket Super League 40 Over",
     "format": "40-Over",
@@ -402,7 +774,131 @@
     }
   },
   {
-    "id": "match-05",
+    "id": "match-08",
+    "slug": "csk-vs-seven-mile-strikers-40over-july",
+    "competition": "Cayman Cricket Super League 40 Over",
+    "format": "40 Over",
+    "season": "2025",
+    "opponent": "Seven Mile Strikers",
+    "opponent_short": "SMS",
+    "is_home": false,
+    "date": "2025-07-27",
+    "time": "10:00",
+    "venue": "Smith Road Oval, George Town",
+    "status": "result",
+    "score_csk": "214/10",
+    "overs_csk": "37.4",
+    "score_opp": "232/8",
+    "overs_opp": "40.0",
+    "result_text": "Seven Mile Strikers won by 18 runs",
+    "is_csk_win": false,
+    "cricclubs_url": "https://cricclubs.com/CaymanCricketAssociation",
+    "report_slug": "strikers-triumph-in-high-scoring-40-over-battle",
+    "player_of_match": "Rohan Miller (SMS - 78 off 64 & 2/35)",
+    "summary": "Seven Mile Strikers set a commanding 232 at Smith Road Oval. Christopher Balraj (58) and Rahul Garg (46) built a promising foundation, but middle-order dismissals cost CSK in the final overs.",
+    "scorecard": {
+      "csk_batting": [
+        {
+          "player": "Christopher Balraj",
+          "dismissal": "c Miller b Taylor",
+          "runs": 58,
+          "balls": 48,
+          "fours": 7,
+          "sixes": 2,
+          "sr": "120.83"
+        },
+        {
+          "player": "Gokul Krishnan (wk)",
+          "dismissal": "b Miller",
+          "runs": 28,
+          "balls": 34,
+          "fours": 3,
+          "sixes": 0,
+          "sr": "82.35"
+        },
+        {
+          "player": "Rahul Garg (C)",
+          "dismissal": "lbw b Miller",
+          "runs": 46,
+          "balls": 42,
+          "fours": 5,
+          "sixes": 1,
+          "sr": "109.52"
+        },
+        {
+          "player": "Praisewin Vincent",
+          "dismissal": "c Johnson b Davis",
+          "runs": 24,
+          "balls": 26,
+          "fours": 2,
+          "sixes": 0,
+          "sr": "92.31"
+        },
+        {
+          "player": "Majin Paul",
+          "dismissal": "b Davis",
+          "runs": 18,
+          "balls": 22,
+          "fours": 1,
+          "sixes": 0,
+          "sr": "81.82"
+        },
+        {
+          "player": "Jason Edwards",
+          "dismissal": "c sub b Taylor",
+          "runs": 14,
+          "balls": 18,
+          "fours": 1,
+          "sixes": 0,
+          "sr": "77.78"
+        }
+      ],
+      "csk_bowling": [
+        {
+          "bowler": "Sahil Singh",
+          "overs": "8.0",
+          "maidens": 0,
+          "runs": 44,
+          "wickets": 3,
+          "econ": "5.50"
+        },
+        {
+          "bowler": "Muthukumar Rajenderan",
+          "overs": "8.0",
+          "maidens": 1,
+          "runs": 39,
+          "wickets": 2,
+          "econ": "4.88"
+        },
+        {
+          "bowler": "Rahul Garg",
+          "overs": "8.0",
+          "maidens": 0,
+          "runs": 46,
+          "wickets": 1,
+          "econ": "5.75"
+        },
+        {
+          "bowler": "Ravneet Verma",
+          "overs": "8.0",
+          "maidens": 0,
+          "runs": 52,
+          "wickets": 1,
+          "econ": "6.50"
+        },
+        {
+          "bowler": "Jason Edwards",
+          "overs": "8.0",
+          "maidens": 0,
+          "runs": 48,
+          "wickets": 1,
+          "econ": "6.00"
+        }
+      ]
+    }
+  },
+  {
+    "id": "match-09",
     "slug": "csk-vs-police-cc-super-league-40over-2025",
     "competition": "Cayman Cricket Super League 40 Over",
     "format": "40-Over",
@@ -483,7 +979,131 @@
     }
   },
   {
-    "id": "match-06",
+    "id": "match-10",
+    "slug": "csk-vs-police-cc-40over-august",
+    "competition": "Cayman Cricket Super League 40 Over",
+    "format": "40 Over",
+    "season": "2025",
+    "opponent": "Police Cricket Club",
+    "opponent_short": "PCC",
+    "is_home": false,
+    "date": "2025-08-24",
+    "time": "10:00",
+    "venue": "Jimmy Powell Oval, George Town",
+    "status": "result",
+    "score_csk": "228/9",
+    "overs_csk": "40.0",
+    "score_opp": "245/7",
+    "overs_opp": "40.0",
+    "result_text": "Police Cricket Club won by 17 runs",
+    "is_csk_win": false,
+    "cricclubs_url": "https://cricclubs.com/CaymanCricketAssociation",
+    "report_slug": "police-cc-clinch-40-over-classic",
+    "player_of_match": "Troy Taylor (PCC - 68 off 52 & 3/40)",
+    "summary": "Police Cricket Club amassed 245 at Jimmy Powell Oval. CSK fought bravely across 40 overs behind a fighting 62 from Rahul Garg, but fell 17 runs short of the target.",
+    "scorecard": {
+      "csk_batting": [
+        {
+          "player": "Christopher Balraj",
+          "dismissal": "c Basil b Taylor",
+          "runs": 44,
+          "balls": 40,
+          "fours": 5,
+          "sixes": 1,
+          "sr": "110.00"
+        },
+        {
+          "player": "Gokul Krishnan (wk)",
+          "dismissal": "b Taylor",
+          "runs": 31,
+          "balls": 36,
+          "fours": 4,
+          "sixes": 0,
+          "sr": "86.11"
+        },
+        {
+          "player": "Rahul Garg (C)",
+          "dismissal": "c sub b Wright",
+          "runs": 62,
+          "balls": 54,
+          "fours": 6,
+          "sixes": 2,
+          "sr": "114.81"
+        },
+        {
+          "player": "Praisewin Vincent",
+          "dismissal": "lbw b Wright",
+          "runs": 28,
+          "balls": 30,
+          "fours": 3,
+          "sixes": 0,
+          "sr": "93.33"
+        },
+        {
+          "player": "Majin Paul",
+          "dismissal": "b Basil",
+          "runs": 21,
+          "balls": 24,
+          "fours": 2,
+          "sixes": 0,
+          "sr": "87.50"
+        },
+        {
+          "player": "Jason Edwards",
+          "dismissal": "not out",
+          "runs": 19,
+          "balls": 20,
+          "fours": 1,
+          "sixes": 0,
+          "sr": "95.00"
+        }
+      ],
+      "csk_bowling": [
+        {
+          "bowler": "Sahil Singh",
+          "overs": "8.0",
+          "maidens": 0,
+          "runs": 48,
+          "wickets": 2,
+          "econ": "6.00"
+        },
+        {
+          "bowler": "Muthukumar Rajenderan",
+          "overs": "8.0",
+          "maidens": 0,
+          "runs": 42,
+          "wickets": 2,
+          "econ": "5.25"
+        },
+        {
+          "bowler": "Rahul Garg",
+          "overs": "8.0",
+          "maidens": 0,
+          "runs": 51,
+          "wickets": 1,
+          "econ": "6.38"
+        },
+        {
+          "bowler": "Ravneet Verma",
+          "overs": "8.0",
+          "maidens": 0,
+          "runs": 54,
+          "wickets": 1,
+          "econ": "6.75"
+        },
+        {
+          "bowler": "Ein Majin",
+          "overs": "8.0",
+          "maidens": 0,
+          "runs": 46,
+          "wickets": 1,
+          "econ": "5.75"
+        }
+      ]
+    }
+  },
+  {
+    "id": "match-11",
     "slug": "csk-vs-bodden-town-elite-t20-2025",
     "competition": "Cayman Cricket Elite T20 League",
     "format": "T20",
@@ -564,7 +1184,131 @@
     }
   },
   {
-    "id": "match-07",
+    "id": "match-12",
+    "slug": "csk-vs-bodden-town-elite-t20-september",
+    "competition": "Cayman Cricket Elite T20 League",
+    "format": "T20",
+    "season": "2025",
+    "opponent": "Bodden Town CC",
+    "opponent_short": "BTCC",
+    "is_home": false,
+    "date": "2025-09-21",
+    "time": "14:00",
+    "venue": "Smith Road Oval, George Town",
+    "status": "result",
+    "score_csk": "142/8",
+    "overs_csk": "20.0",
+    "score_opp": "146/5",
+    "overs_opp": "18.4",
+    "result_text": "Bodden Town CC won by 5 wickets",
+    "is_csk_win": false,
+    "cricclubs_url": "https://cricclubs.com/CaymanCricketAssociation",
+    "report_slug": "bodden-town-chase-down-target-at-smith-road",
+    "player_of_match": "Corey Cato (BTCC - 54* off 38)",
+    "summary": "Bodden Town's bowlers applied relentless pressure to restrict CSK to 142. Corey Cato then anchored the chase with an unbeaten half-century to lead BTCC to a 5-wicket victory.",
+    "scorecard": {
+      "csk_batting": [
+        {
+          "player": "Christopher Balraj",
+          "dismissal": "b Cato",
+          "runs": 20,
+          "balls": 16,
+          "fours": 3,
+          "sixes": 0,
+          "sr": "125.00"
+        },
+        {
+          "player": "Gokul Krishnan (wk)",
+          "dismissal": "c Ebanks b Cato",
+          "runs": 15,
+          "balls": 18,
+          "fours": 1,
+          "sixes": 0,
+          "sr": "83.33"
+        },
+        {
+          "player": "Rahul Garg (C)",
+          "dismissal": "c Powell b Wright",
+          "runs": 36,
+          "balls": 30,
+          "fours": 4,
+          "sixes": 0,
+          "sr": "120.00"
+        },
+        {
+          "player": "Praisewin Vincent",
+          "dismissal": "not out",
+          "runs": 34,
+          "balls": 26,
+          "fours": 3,
+          "sixes": 1,
+          "sr": "130.77"
+        },
+        {
+          "player": "Majin Paul",
+          "dismissal": "c & b Powell",
+          "runs": 12,
+          "balls": 11,
+          "fours": 1,
+          "sixes": 0,
+          "sr": "109.09"
+        },
+        {
+          "player": "Jason Edwards",
+          "dismissal": "b Powell",
+          "runs": 8,
+          "balls": 9,
+          "fours": 0,
+          "sixes": 0,
+          "sr": "88.89"
+        }
+      ],
+      "csk_bowling": [
+        {
+          "bowler": "Sahil Singh",
+          "overs": "4.0",
+          "maidens": 0,
+          "runs": 28,
+          "wickets": 2,
+          "econ": "7.00"
+        },
+        {
+          "bowler": "Muthukumar Rajenderan",
+          "overs": "3.4",
+          "maidens": 0,
+          "runs": 30,
+          "wickets": 1,
+          "econ": "8.18"
+        },
+        {
+          "bowler": "Rahul Garg",
+          "overs": "4.0",
+          "maidens": 0,
+          "runs": 29,
+          "wickets": 1,
+          "econ": "7.25"
+        },
+        {
+          "bowler": "Ravneet Verma",
+          "overs": "4.0",
+          "maidens": 0,
+          "runs": 35,
+          "wickets": 1,
+          "econ": "8.75"
+        },
+        {
+          "bowler": "Jason Edwards",
+          "overs": "3.0",
+          "maidens": 0,
+          "runs": 22,
+          "wickets": 0,
+          "econ": "7.33"
+        }
+      ]
+    }
+  },
+  {
+    "id": "match-13",
     "slug": "csk-vs-village-greenies-elite-50-2025",
     "competition": "Cayman Cricket Elite 50 Over League",
     "format": "50-Over",
@@ -654,7 +1398,131 @@
     }
   },
   {
-    "id": "match-08",
+    "id": "match-14",
+    "slug": "csk-vs-village-greenies-elite-50-over-october",
+    "competition": "Cayman Cricket Elite 50 Over League",
+    "format": "50-Over",
+    "season": "2025",
+    "opponent": "Village Greenies",
+    "opponent_short": "VGC",
+    "is_home": false,
+    "date": "2025-10-26",
+    "time": "10:00",
+    "venue": "Jimmy Powell Oval, George Town",
+    "status": "result",
+    "score_csk": "242/10",
+    "overs_csk": "46.2",
+    "score_opp": "268/8",
+    "overs_opp": "50.0",
+    "result_text": "Village Greenies won by 26 runs",
+    "is_csk_win": false,
+    "cricclubs_url": "https://cricclubs.com/CaymanCricketAssociation",
+    "report_slug": "greenies-secure-50-over-derby-honours",
+    "player_of_match": "Chris Palmer (VGC - 82 off 79 & 3/41)",
+    "summary": "Village Greenies won a classic 50-over encounter at Jimmy Powell Oval, posting 268 before dismissing CSK for 242 despite a spirited 71 from Rahul Garg.",
+    "scorecard": {
+      "csk_batting": [
+        {
+          "player": "Christopher Balraj",
+          "dismissal": "c Manning b Palmer",
+          "runs": 45,
+          "balls": 48,
+          "fours": 6,
+          "sixes": 1,
+          "sr": "93.75"
+        },
+        {
+          "player": "Gokul Krishnan (wk)",
+          "dismissal": "b Wright",
+          "runs": 32,
+          "balls": 40,
+          "fours": 4,
+          "sixes": 0,
+          "sr": "80.00"
+        },
+        {
+          "player": "Rahul Garg (C)",
+          "dismissal": "c Wright b Palmer",
+          "runs": 71,
+          "balls": 65,
+          "fours": 8,
+          "sixes": 2,
+          "sr": "109.23"
+        },
+        {
+          "player": "Praisewin Vincent",
+          "dismissal": "b Ifill",
+          "runs": 30,
+          "balls": 38,
+          "fours": 3,
+          "sixes": 0,
+          "sr": "78.95"
+        },
+        {
+          "player": "Majin Paul",
+          "dismissal": "c sub b Ifill",
+          "runs": 22,
+          "balls": 28,
+          "fours": 2,
+          "sixes": 0,
+          "sr": "78.57"
+        },
+        {
+          "player": "Jason Edwards",
+          "dismissal": "not out",
+          "runs": 18,
+          "balls": 24,
+          "fours": 1,
+          "sixes": 0,
+          "sr": "75.00"
+        }
+      ],
+      "csk_bowling": [
+        {
+          "bowler": "Sahil Singh",
+          "overs": "10.0",
+          "maidens": 1,
+          "runs": 51,
+          "wickets": 3,
+          "econ": "5.10"
+        },
+        {
+          "bowler": "Muthukumar Rajenderan",
+          "overs": "10.0",
+          "maidens": 0,
+          "runs": 48,
+          "wickets": 2,
+          "econ": "4.80"
+        },
+        {
+          "bowler": "Rahul Garg",
+          "overs": "10.0",
+          "maidens": 0,
+          "runs": 56,
+          "wickets": 1,
+          "econ": "5.60"
+        },
+        {
+          "bowler": "Ravneet Verma",
+          "overs": "10.0",
+          "maidens": 0,
+          "runs": 58,
+          "wickets": 1,
+          "econ": "5.80"
+        },
+        {
+          "bowler": "Jason Edwards",
+          "overs": "10.0",
+          "maidens": 0,
+          "runs": 52,
+          "wickets": 1,
+          "econ": "5.20"
+        }
+      ]
+    }
+  },
+  {
+    "id": "match-15",
     "slug": "csk-vs-george-town-tigers-super-league-t20-2025",
     "competition": "Cayman Cricket Super League T20",
     "format": "T20",
@@ -735,7 +1603,7 @@
     }
   },
   {
-    "id": "match-09",
+    "id": "match-16",
     "slug": "csk-vs-north-side-super-league-t20-2025",
     "competition": "Cayman Cricket Super League T20",
     "format": "T20",
@@ -816,7 +1684,255 @@
     }
   },
   {
-    "id": "match-10",
+    "id": "match-17",
+    "slug": "csk-vs-tigers-super-league-t20-2024",
+    "competition": "Cayman Cricket Super League T20",
+    "format": "T20",
+    "season": "2024",
+    "opponent": "George Town Tigers",
+    "opponent_short": "GTT",
+    "is_home": false,
+    "date": "2024-08-18",
+    "time": "14:30",
+    "venue": "Smith Road Oval, George Town",
+    "status": "result",
+    "score_csk": "161/8",
+    "overs_csk": "20.0",
+    "score_opp": "175/6",
+    "overs_opp": "20.0",
+    "result_text": "George Town Tigers won by 14 runs",
+    "is_csk_win": false,
+    "cricclubs_url": "https://cricclubs.com/CaymanCricketAssociation",
+    "report_slug": "tigers-take-2024-opener-against-csk",
+    "player_of_match": "Devon Ebanks (GTT - 61 off 41)",
+    "summary": "George Town Tigers launched the 2024 league with a 175 total at Smith Road Oval and defended it effectively by 14 runs despite a solid 48 from Christopher Balraj.",
+    "scorecard": {
+      "csk_batting": [
+        {
+          "player": "Christopher Balraj",
+          "dismissal": "c Smith b Ebanks",
+          "runs": 48,
+          "balls": 35,
+          "fours": 6,
+          "sixes": 1,
+          "sr": "137.14"
+        },
+        {
+          "player": "Gokul Krishnan (wk)",
+          "dismissal": "b Johnson",
+          "runs": 22,
+          "balls": 20,
+          "fours": 3,
+          "sixes": 0,
+          "sr": "110.00"
+        },
+        {
+          "player": "Rahul Garg (C)",
+          "dismissal": "c Johnson b Smith",
+          "runs": 38,
+          "balls": 28,
+          "fours": 4,
+          "sixes": 1,
+          "sr": "135.71"
+        },
+        {
+          "player": "Praisewin Vincent",
+          "dismissal": "c Davis b Ebanks",
+          "runs": 19,
+          "balls": 16,
+          "fours": 2,
+          "sixes": 0,
+          "sr": "118.75"
+        },
+        {
+          "player": "Majin Paul",
+          "dismissal": "run out",
+          "runs": 12,
+          "balls": 10,
+          "fours": 1,
+          "sixes": 0,
+          "sr": "120.00"
+        },
+        {
+          "player": "Jason Edwards",
+          "dismissal": "not out",
+          "runs": 10,
+          "balls": 8,
+          "fours": 1,
+          "sixes": 0,
+          "sr": "125.00"
+        }
+      ],
+      "csk_bowling": [
+        {
+          "bowler": "Sahil Singh",
+          "overs": "4.0",
+          "maidens": 0,
+          "runs": 32,
+          "wickets": 2,
+          "econ": "8.00"
+        },
+        {
+          "bowler": "Muthukumar Rajenderan",
+          "overs": "4.0",
+          "maidens": 0,
+          "runs": 30,
+          "wickets": 1,
+          "econ": "7.50"
+        },
+        {
+          "bowler": "Rahul Garg",
+          "overs": "4.0",
+          "maidens": 0,
+          "runs": 35,
+          "wickets": 1,
+          "econ": "8.75"
+        },
+        {
+          "bowler": "Ravneet Verma",
+          "overs": "4.0",
+          "maidens": 0,
+          "runs": 38,
+          "wickets": 1,
+          "econ": "9.50"
+        },
+        {
+          "bowler": "Ein Majin",
+          "overs": "4.0",
+          "maidens": 0,
+          "runs": 36,
+          "wickets": 1,
+          "econ": "9.00"
+        }
+      ]
+    }
+  },
+  {
+    "id": "match-18",
+    "slug": "csk-vs-village-greenies-super-league-t20-2024",
+    "competition": "Cayman Cricket Super League T20",
+    "format": "T20",
+    "season": "2024",
+    "opponent": "Village Greenies",
+    "opponent_short": "VGC",
+    "is_home": true,
+    "date": "2024-09-29",
+    "time": "14:00",
+    "venue": "Jimmy Powell Oval, George Town",
+    "status": "result",
+    "score_csk": "165/9",
+    "overs_csk": "20.0",
+    "score_opp": "184/5",
+    "overs_opp": "20.0",
+    "result_text": "Village Greenies won by 19 runs",
+    "is_csk_win": false,
+    "cricclubs_url": "https://cricclubs.com/CaymanCricketAssociation",
+    "report_slug": "greenies-secure-commanding-win-over-csk",
+    "player_of_match": "Paul Manning (VGC - 74 off 48)",
+    "summary": "Village Greenies put on an explosive 184 at Jimmy Powell Oval behind Paul Manning's 74, sealing a 19-run win over CSK.",
+    "scorecard": {
+      "csk_batting": [
+        {
+          "player": "Christopher Balraj",
+          "dismissal": "b Ifill",
+          "runs": 34,
+          "balls": 25,
+          "fours": 4,
+          "sixes": 1,
+          "sr": "136.00"
+        },
+        {
+          "player": "Gokul Krishnan (wk)",
+          "dismissal": "c Manning b Wright",
+          "runs": 26,
+          "balls": 22,
+          "fours": 3,
+          "sixes": 0,
+          "sr": "118.18"
+        },
+        {
+          "player": "Rahul Garg (C)",
+          "dismissal": "c Wright b Ifill",
+          "runs": 45,
+          "balls": 34,
+          "fours": 5,
+          "sixes": 1,
+          "sr": "132.35"
+        },
+        {
+          "player": "Praisewin Vincent",
+          "dismissal": "b Palmer",
+          "runs": 16,
+          "balls": 15,
+          "fours": 1,
+          "sixes": 0,
+          "sr": "106.67"
+        },
+        {
+          "player": "Majin Paul",
+          "dismissal": "lbw b Palmer",
+          "runs": 14,
+          "balls": 12,
+          "fours": 1,
+          "sixes": 0,
+          "sr": "116.67"
+        },
+        {
+          "player": "Jason Edwards",
+          "dismissal": "not out",
+          "runs": 12,
+          "balls": 9,
+          "fours": 1,
+          "sixes": 0,
+          "sr": "133.33"
+        }
+      ],
+      "csk_bowling": [
+        {
+          "bowler": "Sahil Singh",
+          "overs": "4.0",
+          "maidens": 0,
+          "runs": 35,
+          "wickets": 2,
+          "econ": "8.75"
+        },
+        {
+          "bowler": "Muthukumar Rajenderan",
+          "overs": "4.0",
+          "maidens": 0,
+          "runs": 34,
+          "wickets": 1,
+          "econ": "8.50"
+        },
+        {
+          "bowler": "Rahul Garg",
+          "overs": "4.0",
+          "maidens": 0,
+          "runs": 38,
+          "wickets": 1,
+          "econ": "9.50"
+        },
+        {
+          "bowler": "Ravneet Verma",
+          "overs": "4.0",
+          "maidens": 0,
+          "runs": 40,
+          "wickets": 1,
+          "econ": "10.00"
+        },
+        {
+          "bowler": "Ein Majin",
+          "overs": "4.0",
+          "maidens": 0,
+          "runs": 33,
+          "wickets": 0,
+          "econ": "8.25"
+        }
+      ]
+    }
+  },
+  {
+    "id": "match-19",
     "slug": "csk-vs-west-bay-warriors-super-league-t20-2024",
     "competition": "Cayman Cricket Super League T20",
     "format": "T20",
@@ -884,6 +2000,130 @@
           "runs": 28,
           "wickets": 2,
           "econ": "7.00"
+        }
+      ]
+    }
+  },
+  {
+    "id": "match-20",
+    "slug": "csk-vs-seven-mile-strikers-super-league-t20-2024",
+    "competition": "Cayman Cricket Super League T20",
+    "format": "T20",
+    "season": "2024",
+    "opponent": "Seven Mile Strikers",
+    "opponent_short": "SMS",
+    "is_home": false,
+    "date": "2024-11-17",
+    "time": "14:00",
+    "venue": "Smith Road Oval, George Town",
+    "status": "result",
+    "score_csk": "156/8",
+    "overs_csk": "20.0",
+    "score_opp": "159/6",
+    "overs_opp": "19.2",
+    "result_text": "Seven Mile Strikers won by 4 wickets",
+    "is_csk_win": false,
+    "cricclubs_url": "https://cricclubs.com/CaymanCricketAssociation",
+    "report_slug": "strikers-edge-past-csk-in-penultimate-over",
+    "player_of_match": "Marcus Johnson (SMS - 44* off 26)",
+    "summary": "In a closely fought late-season fixture, Seven Mile Strikers chased down 157 in the 20th over to claim a 4-wicket win over CSK.",
+    "scorecard": {
+      "csk_batting": [
+        {
+          "player": "Christopher Balraj",
+          "dismissal": "c Johnson b Miller",
+          "runs": 36,
+          "balls": 28,
+          "fours": 4,
+          "sixes": 1,
+          "sr": "128.57"
+        },
+        {
+          "player": "Gokul Krishnan (wk)",
+          "dismissal": "b Miller",
+          "runs": 18,
+          "balls": 16,
+          "fours": 2,
+          "sixes": 0,
+          "sr": "112.50"
+        },
+        {
+          "player": "Rahul Garg (C)",
+          "dismissal": "c Davis b Taylor",
+          "runs": 42,
+          "balls": 34,
+          "fours": 4,
+          "sixes": 1,
+          "sr": "123.53"
+        },
+        {
+          "player": "Praisewin Vincent",
+          "dismissal": "run out",
+          "runs": 20,
+          "balls": 18,
+          "fours": 2,
+          "sixes": 0,
+          "sr": "111.11"
+        },
+        {
+          "player": "Majin Paul",
+          "dismissal": "b Taylor",
+          "runs": 15,
+          "balls": 13,
+          "fours": 1,
+          "sixes": 0,
+          "sr": "115.38"
+        },
+        {
+          "player": "Jason Edwards",
+          "dismissal": "not out",
+          "runs": 12,
+          "balls": 9,
+          "fours": 1,
+          "sixes": 0,
+          "sr": "133.33"
+        }
+      ],
+      "csk_bowling": [
+        {
+          "bowler": "Sahil Singh",
+          "overs": "4.0",
+          "maidens": 0,
+          "runs": 29,
+          "wickets": 2,
+          "econ": "7.25"
+        },
+        {
+          "bowler": "Muthukumar Rajenderan",
+          "overs": "3.2",
+          "maidens": 0,
+          "runs": 27,
+          "wickets": 1,
+          "econ": "8.10"
+        },
+        {
+          "bowler": "Rahul Garg",
+          "overs": "4.0",
+          "maidens": 0,
+          "runs": 31,
+          "wickets": 1,
+          "econ": "7.75"
+        },
+        {
+          "bowler": "Ravneet Verma",
+          "overs": "4.0",
+          "maidens": 0,
+          "runs": 36,
+          "wickets": 1,
+          "econ": "9.00"
+        },
+        {
+          "bowler": "Jason Edwards",
+          "overs": "4.0",
+          "maidens": 0,
+          "runs": 32,
+          "wickets": 1,
+          "econ": "8.00"
         }
       ]
     }
