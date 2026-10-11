@@ -443,6 +443,7 @@ body.editorial-home .site-header {
   .franchise-logo-link,
   .bat-logo-link,
   .navbar-logo-breakout,
+  .navbar-nav,
   .mobile-toggle {
     transform: none !important;
   }
@@ -495,27 +496,26 @@ body.editorial-home .site-header {
     outline: none !important;
   }
   .mobile-toggle span {
-    display: block;
-    width: 22px;
-    height: 2px;
-    background: #FFFFFF;
-    border-radius: 2px;
-    transition: transform 0.25s ease, opacity 0.25s ease;
-    pointer-events: none;
+    display: block !important;
+    width: 22px !important;
+    height: 2px !important;
+    background: #FFFFFF !important;
+    border-radius: 2px !important;
+    transition: transform 0.25s ease, opacity 0.25s ease !important;
+    pointer-events: none !important;
   }
   .mobile-toggle.active span:nth-child(1) {
-    transform: translateY(7px) rotate(45deg);
+    transform: translateY(7px) rotate(45deg) !important;
   }
   .mobile-toggle.active span:nth-child(2) {
-    opacity: 0;
+    opacity: 0 !important;
   }
   .mobile-toggle.active span:nth-child(3) {
-    transform: translateY(-7px) rotate(-45deg);
+    transform: translateY(-7px) rotate(-45deg) !important;
   }
 
   .navbar-nav {
-    display: block;
-    flex: 0 0 auto;
+    display: none !important;
   }
 
   .nav-menu {
@@ -851,5 +851,229 @@ ul.footer-links {
     flex-direction: column !important;
     text-align: center !important;
     gap: 12px !important;
+  }
+}
+
+/* ─────────────────────────────────────────────────────────────
+   CSK BULLETPROOF MOBILE DRAWER NAVIGATION (IPL / FRANCHISE STYLE)
+   Attached directly to body, zero-risk of stacking context trap
+   ───────────────────────────────────────────────────────────── */
+.csk-mobile-drawer {
+  position: fixed !important;
+  inset: 0 !important;
+  z-index: 2147483640 !important;
+  display: flex !important;
+  justify-content: flex-end !important;
+  visibility: hidden;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.28s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.28s;
+}
+
+.csk-mobile-drawer.is-active {
+  visibility: visible !important;
+  opacity: 1 !important;
+  pointer-events: auto !important;
+}
+
+.csk-drawer-backdrop {
+  position: absolute !important;
+  inset: 0 !important;
+  background: rgba(2, 6, 18, 0.8) !important;
+  -webkit-backdrop-filter: blur(12px) !important;
+  backdrop-filter: blur(12px) !important;
+  cursor: pointer;
+}
+
+.csk-drawer-sheet {
+  position: relative !important;
+  width: min(340px, 86vw) !important;
+  height: 100% !important;
+  background: linear-gradient(180deg, #091938 0%, #051024 60%, #020712 100%) !important;
+  border-left: 1.5px solid rgba(56, 189, 248, 0.45) !important;
+  box-shadow: -16px 0 48px rgba(0, 0, 0, 0.85), 0 0 32px rgba(56, 189, 248, 0.2) !important;
+  display: flex !important;
+  flex-direction: column !important;
+  padding: 24px 20px 28px !important;
+  box-sizing: border-box !important;
+  transform: translateX(100%) !important;
+  transition: transform 0.32s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  overflow-y: auto !important;
+  z-index: 2 !important;
+}
+
+.csk-mobile-drawer.is-active .csk-drawer-sheet {
+  transform: translateX(0) !important;
+}
+
+.csk-drawer-header {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  padding-bottom: 20px !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important;
+  margin-bottom: 20px !important;
+}
+
+.csk-drawer-brand {
+  display: flex !important;
+  align-items: center !important;
+  gap: 12px !important;
+}
+
+.csk-drawer-logo {
+  width: 44px !important;
+  height: 44px !important;
+  object-fit: contain !important;
+  filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.6)) !important;
+}
+
+.csk-drawer-brand-text {
+  display: flex !important;
+  flex-direction: column !important;
+}
+
+.csk-drawer-title {
+  font-family: var(--font-display, "Chakra Petch", sans-serif) !important;
+  font-size: 1.05rem !important;
+  font-weight: 900 !important;
+  color: #FFFFFF !important;
+  letter-spacing: 0.04em !important;
+  line-height: 1.1 !important;
+}
+
+.csk-drawer-sub {
+  font-size: 0.72rem !important;
+  font-weight: 700 !important;
+  color: #F59E0B !important;
+  letter-spacing: 0.08em !important;
+  text-transform: uppercase !important;
+  margin-top: 2px !important;
+}
+
+.csk-drawer-close {
+  width: 38px !important;
+  height: 38px !important;
+  border-radius: 8px !important;
+  background: rgba(255, 255, 255, 0.08) !important;
+  border: 1px solid rgba(255, 255, 255, 0.2) !important;
+  color: #FFFFFF !important;
+  font-size: 1.5rem !important;
+  line-height: 1 !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  cursor: pointer !important;
+  transition: all 0.2s ease !important;
+}
+
+.csk-drawer-close:hover,
+.csk-drawer-close:focus-visible {
+  background: rgba(239, 68, 68, 0.25) !important;
+  border-color: #EF4444 !important;
+  color: #EF4444 !important;
+}
+
+.csk-drawer-nav {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 8px !important;
+  flex: 1 !important;
+}
+
+.csk-drawer-link {
+  display: flex !important;
+  align-items: center !important;
+  gap: 14px !important;
+  padding: 13px 16px !important;
+  border-radius: 10px !important;
+  background: rgba(255, 255, 255, 0.04) !important;
+  border: 1px solid rgba(255, 255, 255, 0.08) !important;
+  color: #E2E8F0 !important;
+  text-decoration: none !important;
+  font-size: 1rem !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.02em !important;
+  transition: all 0.2s ease !important;
+}
+
+.csk-drawer-link:hover {
+  background: rgba(56, 189, 248, 0.14) !important;
+  border-color: rgba(56, 189, 248, 0.45) !important;
+  color: #38BDF8 !important;
+  transform: translateX(4px) !important;
+}
+
+.csk-drawer-link.is-active {
+  background: linear-gradient(90deg, rgba(56, 189, 248, 0.22) 0%, rgba(245, 158, 11, 0.12) 100%) !important;
+  border: 1.5px solid #38BDF8 !important;
+  color: #FFFFFF !important;
+  box-shadow: 0 4px 16px rgba(56, 189, 248, 0.25) !important;
+}
+
+.csk-drawer-icon {
+  font-size: 1.25rem !important;
+  line-height: 1 !important;
+  width: 24px !important;
+  display: flex !important;
+  justify-content: center !important;
+}
+
+.csk-drawer-label {
+  flex: 1 !important;
+  font-family: var(--font-display, "Chakra Petch", sans-serif) !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.04em !important;
+}
+
+.csk-drawer-pill {
+  font-size: 0.68rem !important;
+  font-weight: 800 !important;
+  letter-spacing: 0.08em !important;
+  padding: 3px 8px !important;
+  border-radius: 999px !important;
+  background: rgba(56, 189, 248, 0.15) !important;
+  border: 1px solid rgba(56, 189, 248, 0.35) !important;
+  color: #38BDF8 !important;
+}
+
+.csk-drawer-link.is-active .csk-drawer-pill {
+  background: rgba(245, 158, 11, 0.2) !important;
+  border-color: #F59E0B !important;
+  color: #FBBF24 !important;
+}
+
+.csk-drawer-footer {
+  margin-top: 24px !important;
+  padding-top: 20px !important;
+  border-top: 1px solid rgba(255, 255, 255, 0.1) !important;
+}
+
+.csk-drawer-insta-btn {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 10px !important;
+  padding: 12px 18px !important;
+  border-radius: 999px !important;
+  background: linear-gradient(135deg, rgba(225, 48, 108, 0.2) 0%, rgba(245, 158, 11, 0.2) 100%) !important;
+  border: 1px solid rgba(225, 48, 108, 0.45) !important;
+  color: #FFFFFF !important;
+  text-decoration: none !important;
+  font-size: 0.88rem !important;
+  font-weight: 800 !important;
+  letter-spacing: 0.04em !important;
+  transition: all 0.2s ease !important;
+}
+
+.csk-drawer-insta-btn:hover {
+  background: linear-gradient(135deg, rgba(225, 48, 108, 0.35) 0%, rgba(245, 158, 11, 0.35) 100%) !important;
+  border-color: #E1306C !important;
+  transform: translateY(-2px) !important;
+}
+
+@media (min-width: 993px) {
+  .csk-mobile-drawer {
+    display: none !important;
   }
 }
