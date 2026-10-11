@@ -53,7 +53,7 @@ function initTiltPhysics() {
  * Cyber Stagger Scroll Reveal using IntersectionObserver
  */
 function initCyberScrollReveals() {
-  const elements = document.querySelectorAll('.section, .section-title, .fixture-ticket, .roster-stage-card, .card, .site-header');
+  const elements = document.querySelectorAll('.section, .section-title, .fixture-ticket, .roster-stage-card, .card, .csk-album-card');
   
   if (!('IntersectionObserver' in window)) {
     elements.forEach(el => el.classList.add('is-revealed'));

@@ -172,7 +172,15 @@
     <!-- SQUAD STAGE SHOWCASE (18 PLAYERS) -->
     <section class="squad-stage-section">
       <div class="container">
-        <div id="squad-container">
+        <!-- Squad Category Filter Bar -->
+        <div class="squad-filter-bar">
+          <button class="squad-filter-btn active" data-filter="all">ALL SQUAD (18)</button>
+          <button class="squad-filter-btn" data-filter="batters">BATTERS</button>
+          <button class="squad-filter-btn" data-filter="allrounders">ALL-ROUNDERS</button>
+          <button class="squad-filter-btn" data-filter="bowlers">BOWLERS</button>
+        </div>
+
+        <div id="squad-grid" class="squad-stage-grid">
           <!-- Dynamically populated via js/squad.js -->
         </div>
       </div>

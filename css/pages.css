@@ -5459,35 +5459,35 @@ body.page--white-theme .about-tab-panel .card li {
 /* Overlapping Bottom Match Center Pill */
 .ticket-btn-pill {
   position: absolute !important;
-  bottom: -15px !important;
+  bottom: -16px !important;
   left: 50% !important;
   transform: translateX(-50%) !important;
-  background: #09152B !important;
-  color: #FFFFFF !important;
-  border: 1.5px solid #09152B !important;
+  background: #061228 !important;
+  color: #38BDF8 !important;
+  border: 1.5px solid rgba(56, 189, 248, 0.6) !important;
   border-radius: 999px !important;
-  padding: 6px 24px !important;
+  padding: 8px 24px !important;
   font-family: var(--font-display) !important;
   font-weight: 900 !important;
   font-size: 0.8rem !important;
   letter-spacing: 0.06em !important;
   text-transform: uppercase !important;
   text-decoration: none !important;
-  box-shadow: 0 6px 18px rgba(9, 21, 43, 0.28) !important;
-  z-index: 10 !important;
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.6), 0 0 16px rgba(56, 189, 248, 0.25) !important;
+  z-index: 20 !important;
   transition: all 0.25s ease !important;
   white-space: nowrap !important;
   display: inline-flex !important;
   align-items: center !important;
-  gap: 6px !important;
+  gap: 7px !important;
 }
 
 .ticket-btn-pill:hover {
   background: #0284C7 !important;
-  border-color: #0284C7 !important;
+  border-color: #38BDF8 !important;
   color: #FFFFFF !important;
   transform: translateX(-50%) translateY(-2px) !important;
-  box-shadow: 0 10px 24px rgba(2, 132, 199, 0.4) !important;
+  box-shadow: 0 12px 28px rgba(2, 132, 199, 0.5), 0 0 20px rgba(56, 189, 248, 0.6) !important;
 }
 
 /* ─────────────────────────────────────────────────────────────
