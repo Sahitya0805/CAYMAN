@@ -1,6 +1,66 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100" height="100">
-  <circle cx="50" cy="50" r="46" fill="#132A13" stroke="#FAB81E" stroke-width="4"/>
-  <circle cx="50" cy="50" r="38" fill="#31572C"/>
-  <text x="50" y="58" font-family="'Impact', Arial, sans-serif" font-weight="900" font-size="26" fill="#FFFFFF" text-anchor="middle" letter-spacing="1">NS XI</text>
-  <text x="50" y="74" font-family="sans-serif" font-weight="800" font-size="8" fill="#90A955" text-anchor="middle" letter-spacing="1.5">NORTH SIDE</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500" width="500" height="500">
+  <defs>
+    <linearGradient id="nsBlue" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0284C7" />
+      <stop offset="100%" stop-color="#0369A1" />
+    </linearGradient>
+    <linearGradient id="nsYellow" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FACC15" />
+      <stop offset="100%" stop-color="#EAB308" />
+    </linearGradient>
+    <filter id="nsDrop" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="8" stdDeviation="10" flood-color="#000" flood-opacity="0.4" />
+    </filter>
+  </defs>
+
+  <g filter="url(#nsDrop)">
+    <!-- Crossed Cricket Bats Behind -->
+    <g transform="rotate(-38 250 250)">
+      <rect x="242" y="40" width="16" height="75" rx="3" fill="#F8FAFC" stroke="#0F172A" stroke-width="2"/>
+      <path d="M235 115 L265 115 L263 390 Q250 410 237 390 Z" fill="#FBBF24" stroke="#B45309" stroke-width="3"/>
+    </g>
+    <g transform="rotate(38 250 250)">
+      <rect x="242" y="40" width="16" height="75" rx="3" fill="#F8FAFC" stroke="#0F172A" stroke-width="2"/>
+      <path d="M235 115 L265 115 L263 390 Q250 410 237 390 Z" fill="#FBBF24" stroke="#B45309" stroke-width="3"/>
+    </g>
+
+    <!-- Main Shield -->
+    <path d="M120 75 Q250 55 380 75 C380 250 340 375 250 435 C160 375 120 250 120 75 Z" 
+          fill="#FFFFFF" stroke="#0284C7" stroke-width="8" stroke-linejoin="round" />
+
+    <!-- Top Header Banner -->
+    <path d="M95 65 L405 65 L390 110 L110 110 Z" fill="#0284C7" stroke="url(#nsYellow)" stroke-width="3" />
+    <text x="250" y="97" font-family="Arial, Helvetica, sans-serif" font-size="24" font-weight="900" fill="#FFFFFF" text-anchor="middle" letter-spacing="2">NORTH SIDE XI</text>
+
+    <!-- Inner Blue & Gold Striped Crest -->
+    <path d="M170 145 L330 145 C330 250 300 310 250 340 C200 310 170 250 170 145 Z" fill="url(#nsBlue)" stroke="url(#nsYellow)" stroke-width="4"/>
+    
+    <clipPath id="innerClip">
+      <path d="M172 147 L328 147 C328 248 298 308 250 336 C202 308 172 248 172 147 Z" />
+    </clipPath>
+    <g clip-path="url(#innerClip)">
+      <line x1="150" y1="120" x2="350" y2="320" stroke="#FFFFFF" stroke-width="14" opacity="0.9"/>
+      <line x1="190" y1="120" x2="390" y2="320" stroke="url(#nsYellow)" stroke-width="14"/>
+      <line x1="110" y1="120" x2="310" y2="320" stroke="url(#nsYellow)" stroke-width="14"/>
+      <line x1="70" y1="120" x2="270" y2="320" stroke="#FFFFFF" stroke-width="14" opacity="0.9"/>
+    </g>
+
+    <!-- Bold Central Badge: NS XI -->
+    <rect x="180" y="210" width="140" height="50" rx="8" fill="#09152B" stroke="url(#nsYellow)" stroke-width="2.5" />
+    <text x="250" y="247" font-family="Arial, Helvetica, sans-serif" font-size="32" font-weight="900" fill="#FFFFFF" text-anchor="middle" letter-spacing="3">NS XI</text>
+
+    <!-- Cricket Wickets & Ball Top Emblem -->
+    <rect x="235" y="125" width="5" height="38" rx="2" fill="url(#nsYellow)" stroke="#B45309" stroke-width="1"/>
+    <rect x="247" y="125" width="5" height="38" rx="2" fill="url(#nsYellow)" stroke="#B45309" stroke-width="1"/>
+    <rect x="259" y="125" width="5" height="38" rx="2" fill="url(#nsYellow)" stroke="#B45309" stroke-width="1"/>
+    <rect x="232" y="123" width="35" height="4" rx="2" fill="url(#nsYellow)" stroke="#B45309" stroke-width="1"/>
+    
+    <!-- Red Cricket Ball with Seam -->
+    <circle cx="250" cy="305" r="20" fill="#DC2626" stroke="#FFFFFF" stroke-width="2"/>
+    <path d="M238 293 Q250 305 262 317" stroke="#FFFFFF" stroke-width="1.8" stroke-dasharray="2 1.5" fill="none"/>
+
+    <!-- Bottom Ribbon: CRICKET CLUB • 1980 -->
+    <path d="M120 370 L250 355 L380 370 L370 410 L250 392 L130 410 Z" fill="url(#nsYellow)" stroke="#0369A1" stroke-width="3"/>
+    <text x="250" y="388" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="900" fill="#0369A1" text-anchor="middle" letter-spacing="1.5">CRICKET CLUB • 1980</text>
+  </g>
 </svg>
