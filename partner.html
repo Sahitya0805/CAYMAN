@@ -15,31 +15,40 @@
   <link rel="stylesheet" href="css/pages.css?v=20260923_10">
   <link rel="stylesheet" href="css/futuristic.css?v=20261011_live">
   <style>
-    /* ── Commercial Alliances & Sponsorship Styling (Navy & Gold Design Language) ── */
+    /* ── Commercial Alliances & Sponsorship Styling (Modern White Theme Edition) ── */
     :root {
       --sp-gold: #F59E0B;
-      --sp-gold-light: #FBBF24;
+      --sp-gold-light: #B45309;
       --sp-gold-glow: rgba(245, 158, 11, 0.22);
       --sp-navy-deep: #060E1D;
-      --sp-navy-card: #0B1933;
-      --sp-navy-card-hover: #0F2245;
-      --sp-border-subtle: rgba(255, 255, 255, 0.1);
-      --sp-border-gold: rgba(245, 158, 11, 0.45);
-      --sp-cyan: #38BDF8;
+      --sp-navy-card: #FFFFFF;
+      --sp-navy-card-hover: #F8FAFC;
+      --sp-border-subtle: #E2E8F0;
+      --sp-border-gold: rgba(245, 158, 11, 0.55);
+      --sp-cyan: #0284C7;
     }
 
     body.page-sponsors {
-      background-color: var(--sp-navy-deep);
-      color: #E2E8F0;
+      background-color: #F8FAFC !important;
+      background-image: 
+        radial-gradient(ellipse 90% 40% at 50% 0%, rgba(2, 132, 199, 0.08) 0%, transparent 65%),
+        radial-gradient(ellipse 70% 50% at 85% 80%, rgba(245, 158, 11, 0.06) 0%, transparent 55%),
+        radial-gradient(circle at 1.5px 1.5px, rgba(9, 21, 43, 0.08) 1.5px, transparent 0),
+        linear-gradient(180deg, #FFFFFF 0%, #F8FAFC 35%, #F1F5F9 70%, #E2E8F0 100%) !important;
+      background-size: 100% 100%, 100% 100%, 20px 20px, 100% 100% !important;
+      color: #0F172A !important;
     }
 
     /* Hero Section */
     .sponsors-hero {
       position: relative;
-      background: radial-gradient(circle at 50% 20%, rgba(14, 34, 70, 0.95), var(--sp-navy-deep) 85%);
+      background: #FFFFFF !important;
+      background-image: 
+        radial-gradient(ellipse 80% 50% at 50% -20%, rgba(2, 132, 199, 0.12), transparent 70%),
+        radial-gradient(ellipse 60% 50% at 85% 100%, rgba(245, 158, 11, 0.08), transparent 60%) !important;
       padding: 72px 0 56px;
       text-align: center;
-      border-bottom: 1px solid var(--sp-border-subtle);
+      border-bottom: 1px solid #E2E8F0 !important;
       overflow: hidden;
     }
 
@@ -47,7 +56,7 @@
       content: '';
       position: absolute;
       top: 0; left: 0; right: 0; bottom: 0;
-      background-image: radial-gradient(rgba(245, 158, 11, 0.06) 1px, transparent 1px);
+      background-image: radial-gradient(rgba(9, 21, 43, 0.06) 1px, transparent 1px);
       background-size: 28px 28px;
       pointer-events: none;
     }
@@ -58,9 +67,9 @@
       gap: 8px;
       padding: 6px 16px;
       border-radius: 999px;
-      background: rgba(56, 189, 248, 0.1);
-      border: 1px solid rgba(56, 189, 248, 0.3);
-      color: var(--sp-cyan);
+      background: rgba(2, 132, 199, 0.08);
+      border: 1px solid rgba(2, 132, 199, 0.3);
+      color: #0284C7;
       font-size: 0.8rem;
       font-weight: 800;
       letter-spacing: 0.14em;
@@ -74,7 +83,7 @@
       font-weight: 900;
       text-transform: uppercase;
       letter-spacing: 0.02em;
-      color: #FFFFFF;
+      color: #09152B !important;
       line-height: 1.1;
       margin-bottom: 18px;
     }
@@ -83,9 +92,9 @@
       max-width: 780px;
       margin: 0 auto;
       font-size: clamp(1.05rem, 2vw, 1.25rem);
-      color: #CBD5E1;
+      color: #334155 !important;
       line-height: 1.6;
-      font-weight: 400;
+      font-weight: 500;
     }
 
     /* Container Spacing */
@@ -98,13 +107,13 @@
       gap: 48px;
     }
 
-    /* Card 1 — Centerpiece: What your sponsorship delivers */
+    /* Card 1 — Centerpiece: What your sponsorship delivers (White Theme) */
     .card-delivers-centerpiece {
-      background: linear-gradient(180deg, #0D1F3D 0%, #08152B 100%);
-      border: 1.5px solid var(--sp-border-gold);
+      background: #FFFFFF !important;
+      border: 1.5px solid #E2E8F0 !important;
       border-radius: 20px;
       padding: 48px 40px;
-      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.45), 0 0 35px var(--sp-gold-glow);
+      box-shadow: 0 16px 44px rgba(9, 21, 43, 0.07), 0 0 30px rgba(245, 158, 11, 0.1) !important;
       position: relative;
       overflow: hidden;
     }
@@ -113,13 +122,13 @@
       content: '';
       position: absolute;
       top: 0; left: 0; right: 0;
-      height: 4px;
-      background: linear-gradient(90deg, #F59E0B, #FBBF24, #38BDF8, #F59E0B);
+      height: 5px;
+      background: linear-gradient(90deg, #F59E0B, #FBBF24, #0284C7, #F59E0B);
     }
 
     .centerpiece-header {
       margin-bottom: 36px;
-      border-bottom: 1px solid var(--sp-border-subtle);
+      border-bottom: 1px solid #E2E8F0 !important;
       padding-bottom: 24px;
       display: flex;
       flex-wrap: wrap;
@@ -132,7 +141,7 @@
       font-family: var(--font-display, "Chakra Petch", sans-serif);
       font-size: clamp(1.8rem, 3.5vw, 2.5rem);
       font-weight: 900;
-      color: #FFFFFF;
+      color: #09152B !important;
       letter-spacing: 0.02em;
       margin: 0;
     }
@@ -141,9 +150,9 @@
       display: inline-flex;
       align-items: center;
       gap: 6px;
-      background: rgba(245, 158, 11, 0.15);
+      background: rgba(245, 158, 11, 0.12);
       border: 1px solid var(--sp-gold);
-      color: var(--sp-gold-light);
+      color: #B45309;
       font-size: 0.78rem;
       font-weight: 800;
       letter-spacing: 0.08em;
@@ -184,18 +193,18 @@
       height: 38px;
       border-radius: 10px;
       background: rgba(245, 158, 11, 0.12);
-      border: 1px solid rgba(245, 158, 11, 0.3);
+      border: 1px solid rgba(245, 158, 11, 0.35);
       display: flex;
       align-items: center;
       justify-content: center;
-      color: var(--sp-gold-light);
+      color: #D97706;
       flex-shrink: 0;
     }
 
     .deliver-col-title {
       font-size: 1.15rem;
       font-weight: 800;
-      color: #FFFFFF;
+      color: #09152B !important;
       letter-spacing: 0.01em;
       margin: 0;
     }
@@ -214,7 +223,7 @@
       align-items: flex-start;
       gap: 12px;
       font-size: 0.96rem;
-      color: #CBD5E1;
+      color: #334155 !important;
       line-height: 1.55;
     }
 
@@ -223,23 +232,23 @@
       height: 18px;
       flex-shrink: 0;
       margin-top: 3px;
-      color: var(--sp-gold-light);
+      color: var(--sp-gold);
     }
 
     /* Card 2 — Transparency: Where your funds go */
     .card-funds-transparency {
-      background: #0B1933;
-      border: 1px solid rgba(56, 189, 248, 0.25);
+      background: #FFFFFF !important;
+      border: 1.5px solid #E2E8F0 !important;
       border-radius: 18px;
       padding: 36px 32px;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+      box-shadow: 0 12px 36px rgba(9, 21, 43, 0.05) !important;
     }
 
     .funds-title {
       font-family: var(--font-display, "Chakra Petch", sans-serif);
       font-size: 1.6rem;
       font-weight: 900;
-      color: #FFFFFF;
+      color: #09152B !important;
       margin-bottom: 24px;
       display: flex;
       align-items: center;
@@ -256,20 +265,20 @@
     }
 
     .funds-item {
-      background: rgba(255, 255, 255, 0.03);
-      border: 1px solid var(--sp-border-subtle);
+      background: #F8FAFC !important;
+      border: 1px solid #E2E8F0 !important;
       border-radius: 12px;
       padding: 16px 18px;
       display: flex;
       align-items: flex-start;
       gap: 12px;
       font-size: 0.95rem;
-      color: #CBD5E1;
+      color: #334155 !important;
       line-height: 1.5;
     }
 
     .funds-item strong {
-      color: #FFFFFF;
+      color: #09152B !important;
       font-weight: 700;
     }
 
@@ -278,18 +287,18 @@
       height: 18px;
       flex-shrink: 0;
       margin-top: 2px;
-      color: var(--sp-cyan);
+      color: #0284C7;
     }
 
     .funds-guarantee {
-      background: rgba(56, 189, 248, 0.06);
-      border-left: 4px solid var(--sp-cyan);
+      background: #EFF6FF !important;
+      border-left: 4px solid #0284C7 !important;
       border-radius: 8px;
       padding: 14px 20px;
       font-size: 0.95rem;
       font-style: italic;
-      color: #E2E8F0;
-      font-weight: 500;
+      color: #0F172A !important;
+      font-weight: 600;
     }
 
     /* Tier Cards (Three Across) */
@@ -297,7 +306,7 @@
       font-family: var(--font-display, "Chakra Petch", sans-serif);
       font-size: 1.8rem;
       font-weight: 900;
-      color: #FFFFFF;
+      color: #09152B !important;
       text-align: center;
       text-transform: uppercase;
       letter-spacing: 0.04em;
@@ -320,26 +329,28 @@
     }
 
     .tier-card {
-      background: #0B1933;
-      border: 1px solid var(--sp-border-subtle);
+      background: #FFFFFF !important;
+      border: 1.5px solid #E2E8F0 !important;
       border-radius: 16px;
       padding: 32px 26px;
       display: flex;
       flex-direction: column;
       position: relative;
+      box-shadow: 0 10px 30px rgba(9, 21, 43, 0.05) !important;
       transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
     }
 
     .tier-card:hover {
       transform: translateY(-4px);
-      box-shadow: 0 16px 36px rgba(0, 0, 0, 0.4);
+      box-shadow: 0 18px 40px rgba(9, 21, 43, 0.1) !important;
+      border-color: var(--sp-gold) !important;
     }
 
     /* Featured Title Tier */
     .tier-card--featured {
-      background: linear-gradient(180deg, #122244 0%, #0B1933 100%);
-      border: 2px solid var(--sp-gold);
-      box-shadow: 0 14px 40px rgba(0, 0, 0, 0.4), 0 0 25px rgba(245, 158, 11, 0.25);
+      background: #FFFFFF !important;
+      border: 2px solid var(--sp-gold) !important;
+      box-shadow: 0 16px 40px rgba(245, 158, 11, 0.15), 0 0 25px rgba(245, 158, 11, 0.1) !important;
     }
 
     .tier-badge {
@@ -354,12 +365,12 @@
       text-transform: uppercase;
       padding: 4px 12px;
       border-radius: 999px;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+      box-shadow: 0 4px 10px rgba(245, 158, 11, 0.35);
     }
 
     .tier-header {
       margin-bottom: 24px;
-      border-bottom: 1px solid var(--sp-border-subtle);
+      border-bottom: 1px solid #E2E8F0 !important;
       padding-bottom: 20px;
     }
 
@@ -369,23 +380,23 @@
       font-weight: 800;
       letter-spacing: 0.05em;
       text-transform: uppercase;
-      color: #CBD5E1;
+      color: #09152B !important;
       margin-bottom: 8px;
     }
 
     .tier-card--featured .tier-name {
-      color: var(--sp-gold-light);
+      color: #B45309 !important;
     }
 
     .tier-price {
       font-size: 1.9rem;
       font-weight: 900;
-      color: #FFFFFF;
+      color: #09152B !important;
       font-family: var(--font-display, "Chakra Petch", sans-serif);
     }
 
     .tier-card--featured .tier-price {
-      color: #FFFFFF;
+      color: #09152B !important;
     }
 
     .tier-features {
@@ -403,7 +414,7 @@
       align-items: flex-start;
       gap: 10px;
       font-size: 0.92rem;
-      color: #CBD5E1;
+      color: #334155 !important;
       line-height: 1.5;
     }
 
@@ -419,23 +430,24 @@
       text-align: center;
       margin-top: 18px;
       font-size: 0.98rem;
-      color: #94A3B8;
+      color: #475569 !important;
       font-style: italic;
     }
 
     .in-kind-note strong {
-      color: #E2E8F0;
+      color: #09152B !important;
     }
 
     /* Accountability Strip */
     .accountability-strip {
-      background: rgba(255, 255, 255, 0.02);
-      border: 1px solid var(--sp-border-subtle);
+      background: #FFFFFF !important;
+      border: 1.5px solid #E2E8F0 !important;
       border-radius: 14px;
       padding: 24px 28px;
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
       gap: 20px;
+      box-shadow: 0 8px 24px rgba(9, 21, 43, 0.04) !important;
     }
 
     .accountability-pill {
@@ -448,9 +460,9 @@
       width: 36px;
       height: 36px;
       border-radius: 8px;
-      background: rgba(56, 189, 248, 0.1);
-      border: 1px solid rgba(56, 189, 248, 0.25);
-      color: var(--sp-cyan);
+      background: #EFF6FF !important;
+      border: 1px solid #BAE6FD !important;
+      color: #0284C7 !important;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -459,26 +471,26 @@
 
     .accountability-pill-text {
       font-size: 0.9rem;
-      font-weight: 600;
-      color: #E2E8F0;
+      font-weight: 700;
+      color: #09152B !important;
       line-height: 1.35;
     }
 
     /* CTA Block */
     .sponsors-cta-block {
-      background: linear-gradient(135deg, #10254C 0%, #091730 100%);
+      background: linear-gradient(135deg, #09152B 0%, #030814 100%) !important;
       border: 1.5px solid var(--sp-border-gold);
       border-radius: 20px;
       padding: 52px 36px;
       text-align: center;
-      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.45);
+      box-shadow: 0 16px 40px rgba(9, 21, 43, 0.15);
     }
 
     .cta-heading {
       font-family: var(--font-display, "Chakra Petch", sans-serif);
       font-size: clamp(1.8rem, 3.6vw, 2.4rem);
       font-weight: 900;
-      color: #FFFFFF;
+      color: #FFFFFF !important;
       text-transform: uppercase;
       letter-spacing: 0.02em;
       margin-bottom: 24px;
@@ -547,7 +559,7 @@
   </style>
   <script src="js/mobile-nav.js" defer></script>
 </head>
-<body class="page-sponsors">
+<body class="page-sponsors page--white-theme">
   <!-- CSK CRICKET MATCHDAY POWERPLAY LOADER -->
   <div id="csk-splash-screen" class="csk-splash-screen" aria-hidden="false">
     <div class="csk-splash-screen__backdrop"></div>

@@ -43,7 +43,9 @@ async function initHomepageRoster() {
   // Strictly sort by priority 1 to 18
   squad.sort((a, b) => (a.priority || 99) - (b.priority || 99));
 
-  rosterGrid.innerHTML = squad.map(p => createStadiumPlayerCard(p)).join('');
+  // In first page only first 4 players
+  const top4 = squad.slice(0, 4);
+  rosterGrid.innerHTML = top4.map(p => createStadiumPlayerCard(p)).join('');
 }
 
 function initRosterCardInteractions() {
