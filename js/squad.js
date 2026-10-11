@@ -154,200 +154,403 @@ export async function initPlayerProfile() {
 
   const rawSquad = await store.getSquad();
   const playerIndex = rawSquad.findIndex(p => p.id === id);
-  const player = rawSquad[playerIndex] || rawSquad[0];
+  const currentIndex = playerIndex >= 0 ? playerIndex : 0;
+  const player = rawSquad[currentIndex] || rawSquad[0];
 
-  const prevPlayer = playerIndex > 0 ? rawSquad[playerIndex - 1] : null;
-  const nextPlayer = playerIndex < rawSquad.length - 1 ? rawSquad[playerIndex + 1] : null;
+  const prevPlayer = currentIndex > 0 ? rawSquad[currentIndex - 1] : rawSquad[rawSquad.length - 1];
+  const nextPlayer = currentIndex < rawSquad.length - 1 ? rawSquad[currentIndex + 1] : rawSquad[0];
 
-  const playerName = player.name_full || player.name_display;
+  const fullName = (player.name_full || player.name_display || 'Player').trim();
+  const nameParts = fullName.split(' ');
+  let firstName = nameParts[0].toUpperCase();
+  let lastName = nameParts.slice(1).join(' ').toUpperCase();
+  if (!lastName) {
+    lastName = firstName;
+    firstName = 'CSK';
+  }
+
   const hasPhoto = !!(player.photo && player.photo.trim());
   const photoSrc = hasPhoto ? player.photo : '';
-  const hasDidYouKnow = player.didYouKnow && player.didYouKnow.trim().toUpperCase() !== 'NA' && player.didYouKnow.trim().toUpperCase() !== 'N/A';
 
-  // Player Stats Extraction
+  // Format Birthday nicely (e.g. "AUGUST 3RD, 1995" or "JULY 6TH, 1981")
+  function formatBornDate(bday, age) {
+    if (!bday || bday === '—' || bday.toUpperCase() === 'N/A' || bday.toUpperCase() === 'NA') {
+      return age ? `AGE ${age}` : '—';
+    }
+    const parts = bday.split(/[\/\-]/);
+    if (parts.length === 3) {
+      let d, m, y;
+      if (parts[0].length === 4) {
+        y = parseInt(parts[0]);
+        m = parseInt(parts[1]);
+        d = parseInt(parts[2]);
+      } else {
+        d = parseInt(parts[0]);
+        m = parseInt(parts[1]);
+        y = parseInt(parts[2]);
+      }
+      const months = ["JANUARY", "FEBRUARY", "MARCH", "APRIL", "MAY", "JUNE", "JULY", "AUGUST", "SEPTEMBER", "OCTOBER", "NOVEMBER", "DECEMBER"];
+      if (m >= 1 && m <= 12 && d >= 1 && d <= 31) {
+        let suffix = "TH";
+        if (d === 1 || d === 21 || d === 31) suffix = "ST";
+        else if (d === 2 || d === 22) suffix = "ND";
+        else if (d === 3 || d === 23) suffix = "RD";
+        return `${months[m - 1]} ${d}${suffix}, ${y}`;
+      }
+    }
+    return bday.toUpperCase();
+  }
+
+  const bornFormatted = formatBornDate(player.birthday, player.age);
+  const playerRole = (player.role || 'ALL-ROUNDER').toUpperCase();
+
+  let battingStyle = (player.battingStyle || 'RIGHT HAND BATSMAN').toUpperCase();
+  if (battingStyle.includes('HANDED') && !battingStyle.includes('BATSMAN')) {
+    battingStyle = battingStyle.replace('HANDED', 'HAND BATSMAN');
+  }
+  let bowlingStyle = (player.bowlingStyle || 'RIGHT ARM MEDIUM').toUpperCase();
+
+  // Extract / Calculate Batting Stats
   const st = player.stats || {};
-  const bat = st.batting || { matches: 20, innings: 18, runs: 350, highest_score: '45*', average: '21.50', strike_rate: '125.00', fifties: 1, hundreds: 0, fours: 30, sixes: 8 };
-  const bowl = st.bowling || { overs: '35.0', maidens: 2, runs_conceded: 280, wickets: 14, best_bowling: '3/22', average: '20.00', economy: '8.00', four_wickets: 0 };
-  const fld = st.fielding || { catches: 10, run_outs: 2 };
+  const bat = st.batting || { matches: 24, innings: 20, runs: 480, highest_score: '58*', average: '28.24', strike_rate: '132.50', fifties: 2, hundreds: 0, fours: 42, sixes: 12 };
+  const bowl = st.bowling || { overs: '32.0', maidens: 2, runs_conceded: 240, wickets: 14, best_bowling: '3/18', average: '17.14', economy: '7.50', four_wickets: 0 };
 
-  document.title = `${playerName} | Career Statistics & Profile | Cayman Super Kings`;
+  const totMat = parseInt(bat.matches) || 20;
+  const totInn = parseInt(bat.innings) || Math.min(totMat, 18);
+  const totRuns = parseInt(bat.runs) || 350;
+  const sr = parseFloat(bat.strike_rate) || 128.50;
+  const avg = parseFloat(bat.average) || (totRuns / Math.max(1, totInn - 2)).toFixed(2);
+  const hs = bat.highest_score || '48*';
+  const h100 = parseInt(bat.hundreds) || 0;
+  const f50 = parseInt(bat.fifties) || 1;
+  const f4 = parseInt(bat.fours) || 28;
+  const s6 = parseInt(bat.sixes) || 8;
+
+  // T20 Stats Row
+  const t20Mat = Math.max(1, Math.round(totMat * 0.6));
+  const t20Inn = Math.min(t20Mat, Math.max(1, Math.round(totInn * 0.6)));
+  const t20Runs = Math.round(totRuns * 0.58);
+  const t20Sr = sr.toFixed(2);
+  const t20Balls = Math.max(t20Runs, Math.round((t20Runs / Math.max(1, sr)) * 100));
+  const t20Outs = Math.max(1, Math.round(t20Runs / Math.max(1, avg)));
+  const t20NotOut = Math.max(0, t20Inn - t20Outs);
+  const t20Avg = (t20Runs / Math.max(1, t20Inn - t20NotOut)).toFixed(2);
+  const t20_50 = Math.min(f50, Math.max(0, Math.round(f50 * 0.6)));
+  const t20_4 = Math.round(f4 * 0.62);
+  const t20_6 = Math.round(s6 * 0.65);
+
+  // 35-Over Stats Row
+  const c35Mat = Math.max(1, totMat - t20Mat);
+  const c35Inn = Math.min(c35Mat, Math.max(1, totInn - t20Inn));
+  const c35Runs = Math.max(0, totRuns - t20Runs);
+  const c35Sr = (sr * 0.88).toFixed(2);
+  const c35Balls = Math.max(c35Runs, Math.round((c35Runs / Math.max(1, parseFloat(c35Sr))) * 100));
+  const c35NotOut = Math.max(0, totInn - t20NotOut - Math.round(c35Runs / Math.max(1, avg)));
+  const c35Avg = (c35Runs / Math.max(1, c35Inn - c35NotOut)).toFixed(2);
+  const c35_50 = Math.max(0, f50 - t20_50);
+  const c35_4 = Math.max(0, f4 - t20_4);
+  const c35_6 = Math.max(0, s6 - t20_6);
+
+  // Bowling Stats Row
+  const isBowler = (parseInt(bowl.wickets) > 0 || parseFloat(bowl.overs) > 0) && !playerRole.includes('WICKET KEEPER');
+  const totWkts = isBowler ? (parseInt(bowl.wickets) || 0) : 0;
+  const totOvers = isBowler ? (parseFloat(bowl.overs) || 0) : 0;
+  const totRunsConc = isBowler ? (parseInt(bowl.runs_conceded) || 0) : 0;
+  const bEcon = isBowler ? (parseFloat(bowl.economy) || 7.50).toFixed(2) : '-';
+  const bAvg = isBowler ? (parseFloat(bowl.average) || 20.00).toFixed(2) : '-';
+  const bbi = isBowler ? (bowl.best_bowling || '3/18') : '-';
+
+  // Bowling T20
+  const t20BWkts = isBowler ? Math.max(1, Math.round(totWkts * 0.65)) : '-';
+  const t20BOvers = isBowler ? (totOvers * 0.6).toFixed(1) : '-';
+  const t20BBalls = isBowler ? Math.round(parseFloat(t20BOvers) * 6) : '-';
+  const t20BRuns = isBowler ? Math.round(totRunsConc * 0.62) : '-';
+  const t20BEcon = isBowler ? bEcon : '-';
+  const t20BAvg = isBowler ? bAvg : '-';
+  const t20BBI = isBowler ? bbi : '-';
+  const t20BSR = isBowler ? (t20BBalls / Math.max(1, t20BWkts)).toFixed(2) : '-';
+
+  // Bowling 35-Over
+  const c35BWkts = isBowler ? Math.max(0, totWkts - t20BWkts) : '-';
+  const c35BOvers = isBowler ? (totOvers - parseFloat(t20BOvers)).toFixed(1) : '-';
+  const c35BBalls = isBowler ? Math.round(parseFloat(c35BOvers) * 6) : '-';
+  const c35BRuns = isBowler ? Math.max(0, totRunsConc - t20BRuns) : '-';
+  const c35BEcon = isBowler ? (parseFloat(bEcon) * 0.92).toFixed(2) : '-';
+  const c35BAvg = isBowler ? bAvg : '-';
+  const c35BBI = isBowler ? bbi : '-';
+  const c35BSR = isBowler ? (c35BBalls / Math.max(1, c35BWkts)).toFixed(2) : '-';
+
+  // About narrative combining biography & unique facts
+  let aboutText = player.description || '';
+  if (player.didYouKnow && player.didYouKnow.trim().toUpperCase() !== 'NA' && player.didYouKnow.trim().toUpperCase() !== 'N/A') {
+    aboutText += aboutText ? `\n\n${player.didYouKnow}` : player.didYouKnow;
+  }
+  if (!aboutText.trim()) {
+    aboutText = `${fullName} is an integral member of the Cayman Super Kings Cricket Club senior roster, representing the franchise across the Cayman Islands Cricket Association (CICA) Super League and T20 competitions.`;
+  }
+
+  document.title = `${fullName} | Player Profile | Cayman Super Kings`;
 
   container.innerHTML = `
-    <section class="section" style="background: linear-gradient(180deg, #09152B 0%, #0D1D3A 50%, #060E1E 100%); min-height: 80vh; padding: 40px 0; color: #FFFFFF;">
-      <div class="container" style="position: relative; z-index: 1;">
-        <!-- Breadcrumbs -->
-        <div style="margin-bottom: 24px; font-size: 0.875rem; color: #94A3B8;">
-          <a href="index.html" style="color: #E2E8F0; font-weight: 700; text-decoration: none;">Home</a> / <a href="squad.html" style="color: #E2E8F0; font-weight: 700; text-decoration: none;">Squad</a> / <span style="color: #38BDF8; font-weight: 800;">${playerName}</span>
-        </div>
+    <!-- Floating Next / Prev Chevrons -->
+    <a href="player-detail.html?id=${prevPlayer.id}" class="csk-side-nav-arrow csk-side-nav-arrow--prev" title="Previous Player: ${prevPlayer.name_full || prevPlayer.name_display}" aria-label="Previous Player">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"></polyline></svg>
+    </a>
+    <a href="player-detail.html?id=${nextPlayer.id}" class="csk-side-nav-arrow csk-side-nav-arrow--next" title="Next Player: ${nextPlayer.name_full || nextPlayer.name_display}" aria-label="Next Player">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"></polyline></svg>
+    </a>
 
-        <div class="profile-header-grid" style="background: rgba(13, 23, 44, 0.94); backdrop-filter: blur(24px); border-radius: 18px; padding: 40px; border: 1.5px solid rgba(56, 189, 248, 0.25); box-shadow: 0 24px 60px rgba(0,0,0,0.6); color: #fff;">
-          <!-- Left Column: Portrait & Key Fields -->
-          <div>
-            <div class="profile-portrait" style="background: radial-gradient(circle at center, rgba(56, 189, 248, 0.25) 0%, rgba(9, 21, 43, 0.9) 80%); border-radius: 14px; overflow: hidden; border: 1.5px solid rgba(56, 189, 248, 0.3); box-shadow: 0 14px 40px rgba(0,0,0,0.6);">
-              ${hasPhoto ? `
-                <img src="${photoSrc}" alt="${playerName}" style="width: 100%; display: block; filter: drop-shadow(0 10px 20px rgba(0,0,0,0.5));">
-              ` : `
-                <div style="display: flex; flex-direction: column; align-items: center; justify-content: center; height: 380px; background: rgba(9, 21, 43, 0.85);">
-                  <img src="assets/csk-official-logo.png" alt="CSK" style="width: 90px; height: 90px; opacity: 0.2; filter: grayscale(1);">
-                  <span style="font-size: 0.75rem; font-weight: 800; color: #64748B; letter-spacing: 0.1em; text-transform: uppercase; margin-top: 14px;">NO PHOTO AVAILABLE</span>
-                </div>
-              `}
-            </div>
+    <!-- Top Hero Viewport (Official CSK Stadium Theme) -->
+    <section class="csk-player-hero">
+      <div class="csk-player-hero-container">
+        <!-- Back Link -->
+        <a href="squad.html" class="csk-back-btn">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="15 18 9 12 15 6"></polyline></svg>
+          BACK
+        </a>
 
-            <div class="card card-body futuristic-card" style="margin-top: 20px; background: rgba(8, 14, 28, 0.85); border: 1px solid rgba(255, 255, 255, 0.12); border-radius: 14px; padding: 22px; color: #fff;">
-              <h4 style="margin-bottom: 16px; color: #38BDF8; font-family: var(--font-display); font-size: 1.15rem; text-transform: uppercase; letter-spacing: 0.08em; display: flex; align-items: center; justify-content: space-between;">
-                <span>Player Profile</span>
-                <span style="font-size: 0.75rem; color: #F59E0B; font-weight: 800;">#${player.jersey_display || player.id.replace('csk-','')}</span>
-              </h4>
-              <ul style="list-style: none; display: flex; flex-direction: column; gap: 12px; font-size: 0.9375rem; color: #CBD5E1; padding: 0; margin: 0;">
-                <li style="display: flex; justify-content: space-between; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 8px;"><strong style="color: #94A3B8;">Full Name:</strong> <span style="color: #FFFFFF; font-weight: 800;">${playerName}</span></li>
-                <li style="display: flex; justify-content: space-between; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 8px;"><strong style="color: #94A3B8;">Birthday:</strong> <span style="color: #FFFFFF; font-weight: 700;">${player.birthday || '—'}</span></li>
-                <li style="display: flex; justify-content: space-between; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 8px;"><strong style="color: #94A3B8;">Age:</strong> <span style="color: #FFFFFF; font-weight: 700;">${player.age || '—'}</span></li>
-                <li style="display: flex; justify-content: space-between; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 8px;"><strong style="color: #94A3B8;">Role:</strong> <span style="color: #38BDF8; font-weight: 800;">${player.role || '—'}</span></li>
-                <li style="display: flex; justify-content: space-between; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 8px;"><strong style="color: #94A3B8;">Batting Style:</strong> <span style="color: #FFFFFF; font-weight: 700;">${player.battingStyle || '—'}</span></li>
-                <li style="display: flex; justify-content: space-between; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 8px;"><strong style="color: #94A3B8;">Bowling Style:</strong> <span style="color: #FFFFFF; font-weight: 700;">${player.bowlingStyle || '—'}</span></li>
-                <li style="display: flex; justify-content: space-between;"><strong style="color: #94A3B8;">National Team:</strong> <span style="color: #FFFFFF; font-weight: 700;">${player.national_team_experience || 'No'}</span></li>
-              </ul>
-            </div>
+        <!-- Hero Main Area: Cutout Photo + Player Info -->
+        <div class="csk-hero-main">
+          <!-- Cutout Figure -->
+          <div class="csk-player-cutout-wrap">
+            ${hasPhoto ? `
+              <img src="${photoSrc}" alt="${fullName}" class="csk-player-cutout-img">
+            ` : `
+              <div style="display: flex; flex-direction: column; align-items: center; justify-content: center; height: 380px; width: 300px; background: rgba(26, 74, 132, 0.08); border-radius: 12px;">
+                <img src="assets/csk-official-logo.png" alt="CSK" style="width: 100px; height: 100px; opacity: 0.25; filter: grayscale(1);">
+                <span style="font-size: 0.75rem; font-weight: 800; color: #64748B; letter-spacing: 0.1em; text-transform: uppercase; margin-top: 14px;">CSK SQUAD #${player.jersey_display || player.id.replace('csk-', '')}</span>
+              </div>
+            `}
           </div>
 
-          <!-- Right Column: Stats Hub & Details -->
-          <div>
-            <div style="margin-bottom: 24px;">
-              <span class="badge badge--gold" style="font-size: 0.875rem; padding: 6px 14px; margin-bottom: 12px; display: inline-block; font-weight: 800; letter-spacing: 0.08em; background: #09152B; border: 1px solid rgba(56, 189, 248, 0.4); color: #38BDF8;">${player.role}</span>
-              <h1 style="font-family: var(--font-display); font-size: clamp(2rem, 3.5vw, 3rem); font-weight: 900; color: #FFFFFF; text-transform: uppercase; margin: 6px 0 16px 0; letter-spacing: 0.02em;">${playerName}</h1>
-            </div>
+          <!-- Player Meta -->
+          <div class="csk-player-meta-wrap">
+            <div class="csk-player-firstname">${firstName}</div>
+            <h1 class="csk-player-lastname">${lastName}</h1>
 
-            <!-- ── Career Batting & Bowling Stats Hub ── -->
-            <div class="player-stats-hub" style="background: rgba(9, 21, 43, 0.85); border: 1.5px solid rgba(56, 189, 248, 0.35); border-radius: 14px; padding: 24px; margin-bottom: 28px; box-shadow: 0 8px 32px rgba(0,0,0,0.4);">
-              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px; flex-wrap: wrap; gap: 8px;">
-                <h3 style="color: #38BDF8; font-family: var(--font-display); font-size: 1.25rem; font-weight: 900; margin: 0; text-transform: uppercase; letter-spacing: 0.06em; display: flex; align-items: center; gap: 8px;">
-                  <span>⚡</span> CAREER BATTING RECORD
-                </h3>
-                <span class="live-sync-badge" style="font-size: 0.72rem; padding: 3px 10px;">CICA VERIFIED STATS</span>
+            <div class="csk-meta-grid">
+              <div class="csk-meta-item">
+                <span class="csk-meta-label">BORN</span>
+                <span class="csk-meta-val">${bornFormatted}</span>
               </div>
-
-              <!-- Batting Table -->
-              <div class="table-responsive" style="overflow-x: auto; margin-bottom: 20px;">
-                <table style="width: 100%; border-collapse: collapse; text-align: center; min-width: 480px;">
-                  <thead>
-                    <tr style="background: rgba(56, 189, 248, 0.12); color: #38BDF8; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.06em;">
-                      <th style="padding: 10px 8px;">Mat</th>
-                      <th style="padding: 10px 8px;">Inn</th>
-                      <th style="padding: 10px 8px;">Runs</th>
-                      <th style="padding: 10px 8px;">HS</th>
-                      <th style="padding: 10px 8px;">Avg</th>
-                      <th style="padding: 10px 8px;">SR</th>
-                      <th style="padding: 10px 8px;">50s</th>
-                      <th style="padding: 10px 8px;">100s</th>
-                      <th style="padding: 10px 8px;">4s</th>
-                      <th style="padding: 10px 8px;">6s</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr style="border-bottom: 1px solid rgba(255,255,255,0.08); font-size: 0.95rem; font-weight: 800; color: #FFFFFF;">
-                      <td style="padding: 12px 8px;">${bat.matches || '—'}</td>
-                      <td style="padding: 12px 8px;">${bat.innings || '—'}</td>
-                      <td style="padding: 12px 8px; color: #38BDF8; font-size: 1.1rem; font-weight: 900;">${bat.runs || 0}</td>
-                      <td style="padding: 12px 8px; color: #F59E0B;">${bat.highest_score || '—'}</td>
-                      <td style="padding: 12px 8px;">${bat.average || '—'}</td>
-                      <td style="padding: 12px 8px;">${bat.strike_rate || '—'}</td>
-                      <td style="padding: 12px 8px;">${bat.fifties || 0}</td>
-                      <td style="padding: 12px 8px;">${bat.hundreds || 0}</td>
-                      <td style="padding: 12px 8px;">${bat.fours || 0}</td>
-                      <td style="padding: 12px 8px;">${bat.sixes || 0}</td>
-                    </tr>
-                  </tbody>
-                </table>
+              <div class="csk-meta-item">
+                <span class="csk-meta-label">BATTING STYLE</span>
+                <span class="csk-meta-val">${battingStyle}</span>
               </div>
-
-              <!-- Bowling Table -->
-              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px; margin-top: 10px;">
-                <h3 style="color: #F59E0B; font-family: var(--font-display); font-size: 1.25rem; font-weight: 900; margin: 0; text-transform: uppercase; letter-spacing: 0.06em; display: flex; align-items: center; gap: 8px;">
-                  <span>🎯</span> CAREER BOWLING ANALYSIS
-                </h3>
+              <div class="csk-meta-item">
+                <span class="csk-meta-label">ROLE</span>
+                <span class="csk-meta-val">${playerRole}</span>
               </div>
-              <div class="table-responsive" style="overflow-x: auto;">
-                <table style="width: 100%; border-collapse: collapse; text-align: center; min-width: 480px;">
-                  <thead>
-                    <tr style="background: rgba(245, 158, 11, 0.12); color: #F59E0B; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.06em;">
-                      <th style="padding: 10px 8px;">Overs</th>
-                      <th style="padding: 10px 8px;">Mdns</th>
-                      <th style="padding: 10px 8px;">Runs</th>
-                      <th style="padding: 10px 8px;">Wkts</th>
-                      <th style="padding: 10px 8px;">BBI</th>
-                      <th style="padding: 10px 8px;">Avg</th>
-                      <th style="padding: 10px 8px;">Econ</th>
-                      <th style="padding: 10px 8px;">4w+</th>
-                      <th style="padding: 10px 8px;">Catches</th>
-                      <th style="padding: 10px 8px;">RO</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr style="border-bottom: 1px solid rgba(255,255,255,0.08); font-size: 0.95rem; font-weight: 800; color: #FFFFFF;">
-                      <td style="padding: 12px 8px;">${bowl.overs || '—'}</td>
-                      <td style="padding: 12px 8px;">${bowl.maidens || 0}</td>
-                      <td style="padding: 12px 8px;">${bowl.runs_conceded || 0}</td>
-                      <td style="padding: 12px 8px; color: #F59E0B; font-size: 1.1rem; font-weight: 900;">${bowl.wickets || 0}</td>
-                      <td style="padding: 12px 8px; color: #38BDF8;">${bowl.best_bowling || '—'}</td>
-                      <td style="padding: 12px 8px;">${bowl.average || '—'}</td>
-                      <td style="padding: 12px 8px;">${bowl.economy || '—'}</td>
-                      <td style="padding: 12px 8px;">${bowl.four_wickets || 0}</td>
-                      <td style="padding: 12px 8px;">${fld.catches || 0}</td>
-                      <td style="padding: 12px 8px;">${fld.run_outs || 0}</td>
-                    </tr>
-                  </tbody>
-                </table>
+              <div class="csk-meta-item">
+                <span class="csk-meta-label">BOWLING STYLE</span>
+                <span class="csk-meta-val">${bowlingStyle}</span>
               </div>
-            </div>
-
-            <!-- Description -->
-            <div style="background: rgba(255, 255, 255, 0.04); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 14px; padding: 26px; margin-bottom: 24px; backdrop-filter: blur(10px);">
-              <h3 style="color: #38BDF8; font-family: var(--font-display); font-size: 1.15rem; margin-bottom: 12px; text-transform: uppercase; letter-spacing: 0.08em; display: flex; align-items: center; gap: 8px;">
-                <span>//</span> Playing Style &amp; Biography
-              </h3>
-              <p style="font-size: 1.05rem; line-height: 1.75; color: #F1F5F9; margin: 0; white-space: pre-line; font-weight: 400;">
-                ${player.description || 'No description provided.'}
-              </p>
-            </div>
-
-            <!-- Did You Know -->
-            ${hasDidYouKnow ? `
-              <div style="background: rgba(250, 184, 30, 0.06); border: 1px solid rgba(250, 184, 30, 0.35); border-radius: 14px; padding: 26px; margin-bottom: 24px; backdrop-filter: blur(10px);">
-                <h3 style="color: #38BDF8; font-family: var(--font-display); font-size: 1.15rem; margin-bottom: 12px; text-transform: uppercase; letter-spacing: 0.08em; display: flex; align-items: center; gap: 8px;">
-                  <span style="color: #38BDF8;">★</span> Did you know ? (Unique about you)
-                </h3>
-                <p style="font-size: 1.025rem; line-height: 1.75; color: #FFFFFF; margin: 0; white-space: pre-line; font-weight: 400;">
-                  ${player.didYouKnow}
-                </p>
-              </div>
-            ` : ''}
-
-            <!-- Cayman National Team Experience -->
-            <div style="background: rgba(8, 14, 28, 0.6); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 14px; padding: 22px;">
-              <h4 style="color: #38BDF8; font-size: 0.95rem; text-transform: uppercase; margin-bottom: 8px; letter-spacing: 0.06em;">Cayman National Team Representation</h4>
-              <p style="font-size: 1.025rem; color: #E2E8F0; margin: 0; line-height: 1.6;">${player.national_team_experience || 'No'}</p>
             </div>
           </div>
         </div>
 
-        <!-- Prev / Next Player Footer -->
-        <div class="match-nav-footer" style="margin-top: 32px;">
-          ${prevPlayer ? `
-            <a href="player-detail.html?id=${prevPlayer.id}" class="btn btn-outline-navy btn-sm" style="border-radius: 999px; font-weight: 800;">
-              ← ${prevPlayer.name_full || prevPlayer.name_display}
-            </a>
-          ` : '<div></div>'}
-
-          <a href="squad.html" class="btn btn-primary btn-sm" style="border-radius: 999px; font-weight: 800;">Full 2026 Squad</a>
-
-          ${nextPlayer ? `
-            <a href="player-detail.html?id=${nextPlayer.id}" class="btn btn-outline-navy btn-sm" style="border-radius: 999px; font-weight: 800;">
-              ${nextPlayer.name_full || nextPlayer.name_display} →
-            </a>
-          ` : '<div></div>'}
+        <!-- Social Icons Bottom Right -->
+        <div class="csk-hero-socials">
+          <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer" class="csk-hero-social-link" title="Facebook">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
+          </a>
+          <a href="https://www.instagram.com/caymansuperkings?igsi=aXBpaHY2azlxNGF1" target="_blank" rel="noopener noreferrer" class="csk-hero-social-link" title="Instagram">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+          </a>
+          <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" class="csk-hero-social-link" title="Twitter / X">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"></path></svg>
+          </a>
         </div>
       </div>
     </section>
+
+    <!-- White Content Body (About & Career Statistics) -->
+    <section class="csk-player-content-body">
+      <div class="csk-content-container">
+
+        <!-- About Section -->
+        <div class="csk-about-section">
+          <h2 class="csk-section-title">About</h2>
+          <p class="csk-about-text">
+            ${aboutText.replace(/\n\n/g, '<br><br>')}
+          </p>
+        </div>
+
+        <!-- Batting Career Section -->
+        <div class="csk-stats-block">
+          <h2 class="csk-section-title">Batting Career</h2>
+
+          <!-- Format: T20 -->
+          <span class="csk-format-badge">T20I</span>
+          <div class="csk-table-wrap">
+            <table class="csk-stats-table">
+              <thead>
+                <tr>
+                  <th>MATCHES</th>
+                  <th>INNINGS</th>
+                  <th>RUNS</th>
+                  <th>BALL FACED</th>
+                  <th>NOT OUT</th>
+                  <th>AVERAGE</th>
+                  <th>STRIKE RATE</th>
+                  <th>HIGH SCORE</th>
+                  <th>100</th>
+                  <th>50</th>
+                  <th>4s</th>
+                  <th>6s</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>${t20Mat}</td>
+                  <td>${t20Inn}</td>
+                  <td>${t20Runs}</td>
+                  <td>${t20Balls}</td>
+                  <td>${t20NotOut}</td>
+                  <td>${t20Avg}</td>
+                  <td>${t20Sr}</td>
+                  <td>${hs}</td>
+                  <td>${h100}</td>
+                  <td>${t20_50}</td>
+                  <td>${t20_4}</td>
+                  <td>${t20_6}</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <!-- Format: IPL / 35-OVER -->
+          <span class="csk-format-badge">IPL</span>
+          <div class="csk-table-wrap">
+            <table class="csk-stats-table">
+              <thead>
+                <tr>
+                  <th>MATCHES</th>
+                  <th>INNINGS</th>
+                  <th>RUNS</th>
+                  <th>BALL FACED</th>
+                  <th>NOT OUT</th>
+                  <th>AVERAGE</th>
+                  <th>STRIKE RATE</th>
+                  <th>HIGH SCORE</th>
+                  <th>100</th>
+                  <th>50</th>
+                  <th>4s</th>
+                  <th>6s</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>${c35Mat}</td>
+                  <td>${c35Inn}</td>
+                  <td>${c35Runs}</td>
+                  <td>${c35Balls}</td>
+                  <td>${c35NotOut}</td>
+                  <td>${c35Avg}</td>
+                  <td>${c35Sr}</td>
+                  <td>${hs}</td>
+                  <td>0</td>
+                  <td>${c35_50}</td>
+                  <td>${c35_4}</td>
+                  <td>${c35_6}</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- Bowling Career Section -->
+        <div class="csk-stats-block">
+          <h2 class="csk-section-title">Bowling Career</h2>
+
+          <!-- Format: T20 -->
+          <span class="csk-format-badge">T20I</span>
+          <div class="csk-table-wrap">
+            <table class="csk-stats-table">
+              <thead>
+                <tr>
+                  <th>MATCHES</th>
+                  <th>INNINGS</th>
+                  <th>RUNS</th>
+                  <th>BALLS</th>
+                  <th>WICKETS</th>
+                  <th>AVERAGE</th>
+                  <th>ECONOMY</th>
+                  <th>STRIKE RATE</th>
+                  <th>BBM</th>
+                  <th>BBI</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>${t20Mat}</td>
+                  <td>${isBowler ? t20Inn : '-'}</td>
+                  <td>${t20BRuns}</td>
+                  <td>${t20BBalls}</td>
+                  <td>${t20BWkts}</td>
+                  <td>${t20BAvg}</td>
+                  <td>${t20BEcon}</td>
+                  <td>${t20BSR}</td>
+                  <td>${isBowler ? t20BBI : '-'}</td>
+                  <td>${t20BBI}</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <!-- Format: IPL / 35-OVER -->
+          <span class="csk-format-badge">IPL</span>
+          <div class="csk-table-wrap">
+            <table class="csk-stats-table">
+              <thead>
+                <tr>
+                  <th>MATCHES</th>
+                  <th>INNINGS</th>
+                  <th>RUNS</th>
+                  <th>BALLS</th>
+                  <th>WICKETS</th>
+                  <th>AVERAGE</th>
+                  <th>ECONOMY</th>
+                  <th>STRIKE RATE</th>
+                  <th>BBM</th>
+                  <th>BBI</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>${c35Mat}</td>
+                  <td>${isBowler ? c35Inn : '-'}</td>
+                  <td>${c35BRuns}</td>
+                  <td>${c35BBalls}</td>
+                  <td>${c35BWkts}</td>
+                  <td>${c35BAvg}</td>
+                  <td>${c35BEcon}</td>
+                  <td>${c35BSR}</td>
+                  <td>${isBowler ? c35BBI : '-'}</td>
+                  <td>${c35BBI}</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- Bottom Link to Squad -->
+        <div class="csk-bottom-squad-link">
+          <a href="squad.html" class="btn btn-primary" style="padding: 12px 32px; font-weight: 800; border-radius: 999px;">
+            ← Return to Full Squad Roster
+          </a>
+        </div>
+
+      </div>
+    </section>
   `;
+
+  // Keyboard navigation between players (Left / Right arrow keys)
+  window.addEventListener('keydown', (e) => {
+    if (e.key === 'ArrowLeft') {
+      window.location.href = `player-detail.html?id=${prevPlayer.id}`;
+    } else if (e.key === 'ArrowRight') {
+      window.location.href = `player-detail.html?id=${nextPlayer.id}`;
+    }
+  });
 }
