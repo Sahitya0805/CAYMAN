@@ -128,11 +128,16 @@ def main():
         "Priority Order", "ID", "Full Name", "Display Name", "Role / Designation",
         "Badge", "Primary Category", "Secondary Categories", "Jersey #",
         "Age", "Birthday", "Batting Style", "Bowling Style",
+        "Matches", "Innings", "Runs", "Highest Score", "Batting Avg", "Strike Rate",
+        "50s", "100s", "4s", "6s",
+        "Overs", "Maidens", "Runs Conceded", "Wickets", "Best Bowling", "Bowling Avg", "Economy",
+        "Catches", "Run Outs",
         "Cayman National Experience", "Player Description", "Leadership / Background Note",
         "Photo Asset Path", "Drive Photo Folder"
     ]
     squad_rows = [squad_headers]
     for p in squad_data:
+        st = p.get("stats", {})
         squad_rows.append([
             p.get("priority", ""),
             p.get("id", ""),
@@ -147,6 +152,25 @@ def main():
             p.get("birthday", ""),
             p.get("battingStyle", ""),
             p.get("bowlingStyle", ""),
+            st.get("matches", ""),
+            st.get("innings", ""),
+            st.get("runs", ""),
+            st.get("highest_score", ""),
+            st.get("batting_avg", ""),
+            st.get("strike_rate", ""),
+            st.get("fifties", ""),
+            st.get("hundreds", ""),
+            st.get("fours", ""),
+            st.get("sixes", ""),
+            st.get("overs", ""),
+            st.get("maidens", ""),
+            st.get("runs_conceded", ""),
+            st.get("wickets", ""),
+            st.get("best_bowling", ""),
+            st.get("bowling_avg", ""),
+            st.get("economy", ""),
+            st.get("catches", ""),
+            st.get("run_outs", ""),
             p.get("national_team_experience", ""),
             p.get("description", ""),
             p.get("didYouKnow", ""),
@@ -266,6 +290,22 @@ def main():
         ]
     ]
 
+    # 6. Load Gallery Data
+    gallery_rows = [["Image ID", "Title / Caption", "Year", "Category", "High-Res Image Path", "Tags"]]
+    gallery_path = os.path.join(root, 'content', 'gallery.json')
+    if os.path.exists(gallery_path):
+        with open(gallery_path, 'r') as f:
+            gallery_data = json.load(f)
+        for g in gallery_data:
+            gallery_rows.append([
+                g.get("id", ""),
+                g.get("title", ""),
+                g.get("year", ""),
+                g.get("category", ""),
+                g.get("src", ""),
+                ", ".join(g.get("tags", []))
+            ])
+
     # Write individual CSV files
     with open(os.path.join(exports_dir, 'CSK_Squad_Players.csv'), 'w', newline='', encoding='utf-8') as f:
         writer = csv.writer(f)
@@ -274,6 +314,10 @@ def main():
     with open(os.path.join(exports_dir, 'CSK_Matches_Results.csv'), 'w', newline='', encoding='utf-8') as f:
         writer = csv.writer(f)
         writer.writerows(matches_rows)
+
+    with open(os.path.join(exports_dir, 'CSK_Photo_Gallery.csv'), 'w', newline='', encoding='utf-8') as f:
+        writer = csv.writer(f)
+        writer.writerows(gallery_rows)
 
     with open(os.path.join(exports_dir, 'CSK_News_Articles.csv'), 'w', newline='', encoding='utf-8') as f:
         writer = csv.writer(f)
@@ -297,6 +341,7 @@ def main():
         "Contact_Enquiries": enquiries_rows,
         "Squad_Players": squad_rows,
         "Matches_Fixtures": matches_rows,
+        "Photo_Gallery": gallery_rows,
         "News_Articles": news_rows,
         "Timeline_Honours": timeline_rows
     }
