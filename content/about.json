@@ -146,8 +146,9 @@
     }
   ],
   "ground": {
-    "name": "Jimmy Powell Oval",
-    "location": "West Bay Road / George Town, Grand Cayman",
+    "name": "Smith Road Oval / The Oval Cricket Ground",
+    "location": "Smith Road, George Town, Cayman Islands",
+    "type": "Cricket ground and sports venue",
     "capacity": "1,500 Spectators",
     "surface": "Natural Turf Pitch & Outfield",
     "facilities": "Two-bay net practice enclosures, pavilion & clubhouse, spectator seating, floodlight training bays."
