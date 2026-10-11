@@ -1,164 +1,170 @@
 /**
  * ─────────────────────────────────────────────────────────────
- * GALLERY MODULE WITH KEYBOARD-ACCESSIBLE LIGHTBOX
+ * GALLERY MODULE
+ * Filtering by Year & Category, Fullscreen Lightbox with Zoom & Controls
  * ─────────────────────────────────────────────────────────────
  */
 
 import { store } from './content-store.js';
 
 export async function initGalleryPage() {
-  const container = document.getElementById('gallery-grid');
+  const grid = document.getElementById('gallery-grid');
   const emptyState = document.getElementById('gallery-empty');
   const yearFilter = document.getElementById('gallery-year-filter');
-  const typeFilter = document.getElementById('gallery-type-filter');
+  const catFilter = document.getElementById('gallery-cat-filter');
+  const countEl = document.getElementById('gallery-count');
 
-  const modal = document.getElementById('lightbox-modal');
-  const modalImg = document.getElementById('lightbox-img');
-  const modalCaption = document.getElementById('lightbox-caption');
-  const modalCounter = document.getElementById('lightbox-counter');
+  // Lightbox elements
+  const lightboxModal = document.getElementById('lightbox-modal');
+  const lightboxImg = document.getElementById('lightbox-img');
+  const lightboxTitle = document.getElementById('lightbox-title');
+  const lightboxDesc = document.getElementById('lightbox-desc');
+  const lightboxCounter = document.getElementById('lightbox-counter');
   const closeBtn = document.getElementById('lightbox-close');
   const prevBtn = document.getElementById('lightbox-prev');
   const nextBtn = document.getElementById('lightbox-next');
 
-  if (!container) return;
+  if (!grid) return;
 
-  const albums = await store.getGallery();
-  let currentYear = 'all';
-  let currentType = 'all';
-
-  let flatItems = [];
+  const photos = await store.getGallery();
+  let currentYear = yearFilter ? yearFilter.value : 'all';
+  let currentCat = catFilter ? catFilter.value : 'all';
+  let activeFiltered = [];
   let currentIndex = 0;
 
   function render() {
-    let filtered = albums;
-    if (currentYear !== 'all') {
-      filtered = filtered.filter(a => a.year === currentYear);
-    }
-    if (currentType !== 'all') {
-      filtered = filtered.filter(a => a.type === currentType);
+    activeFiltered = photos.filter(item => {
+      const matchYear = currentYear === 'all' || item.year === currentYear;
+      const matchCat = currentCat === 'all' || item.category === currentCat;
+      return matchYear && matchCat;
+    });
+
+    if (countEl) {
+      countEl.textContent = `Showing ${activeFiltered.length} Verified Photos`;
     }
 
-    if (filtered.length === 0) {
-      container.style.display = 'none';
+    if (activeFiltered.length === 0) {
+      grid.style.display = 'none';
       if (emptyState) emptyState.style.display = 'block';
       return;
     }
 
     if (emptyState) emptyState.style.display = 'none';
-    container.style.display = 'grid';
-
-    // Build flat items list for lightbox
-    flatItems = filtered.map(p => ({
-      src: p.src || p.cover_image,
-      alt: p.title,
-      caption: `${p.title} — ${p.caption || p.category || ''}`,
-      year: p.year,
-      type: p.type || 'photo'
-    }));
-
-    container.innerHTML = filtered.map((a, idx) => `
-      <div class="circular-gallery-card" data-album-index="${idx}" role="button" tabindex="0" aria-label="View photo: ${a.title}">
-        <!-- Circular Photo Frame with Gold Ring -->
-        <div class="circular-photo-wrapper">
-          <img src="${a.src || a.cover_image}" alt="${a.title}" class="circular-photo-img" loading="lazy">
-          <div class="circular-photo-overlay">
-            <div class="circular-zoom-icon">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg>
-            </div>
+    grid.style.display = 'grid';
+    grid.innerHTML = activeFiltered.map((p, idx) => `
+      <article class="gallery-card futuristic-card" data-index="${idx}" tabindex="0" role="button" aria-label="${p.title}">
+        <div class="gallery-card__img-wrap">
+          <img src="${p.src}" alt="${p.title}" class="gallery-card__img" loading="lazy">
+          <div class="gallery-card__badge-row">
+            <span class="gallery-card__category">${p.category}</span>
+            <span class="gallery-card__year">${p.year}</span>
           </div>
         </div>
-
-        <!-- Details below circular photo -->
-        <h3 class="circular-card-title">${a.title}</h3>
-        <span class="circular-card-subtitle">${a.category}</span>
-        <span class="circular-badge-pill" style="background: rgba(2, 132, 199, 0.12); color: #0284C7; font-weight: 800; font-size: 0.75rem; padding: 3px 10px; border-radius: 999px;">
-          📷 ${a.date || 'Official Photo'}
-        </span>
-      </div>
+        <div class="gallery-card__meta">
+          <h3 class="gallery-card__title">${p.title}</h3>
+          <p class="gallery-card__caption">${p.caption || ''}</p>
+          <div class="gallery-card__footer">
+            <span>${p.date || p.year}</span>
+            <span>View Fullscreen ↗</span>
+          </div>
+        </div>
+      </article>
     `).join('');
 
-    // Attach click triggers to open lightbox
-    const cards = container.querySelectorAll('[data-album-index]');
-    cards.forEach((card, idx) => {
+    // Attach card click handlers for Lightbox
+    grid.querySelectorAll('.gallery-card').forEach(card => {
       card.addEventListener('click', () => {
+        const idx = parseInt(card.getAttribute('data-index'), 10);
         openLightbox(idx);
+      });
+      card.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          const idx = parseInt(card.getAttribute('data-index'), 10);
+          openLightbox(idx);
+        }
       });
     });
   }
 
   function openLightbox(index) {
-    if (flatItems.length === 0) return;
+    if (!activeFiltered[index]) return;
     currentIndex = index;
-    updateLightboxUI();
-    modal.classList.add('is-active');
-    modal.setAttribute('aria-hidden', 'false');
-    document.body.style.overflow = 'hidden';
-    modal.focus();
+    updateLightboxContent();
+    if (lightboxModal) {
+      lightboxModal.classList.add('is-active');
+      document.body.style.overflow = 'hidden';
+    }
   }
 
   function closeLightbox() {
-    modal.classList.remove('is-active');
-    modal.setAttribute('aria-hidden', 'true');
-    document.body.style.overflow = '';
+    if (lightboxModal) {
+      lightboxModal.classList.remove('is-active');
+      document.body.style.overflow = '';
+    }
   }
 
-  function nextImage() {
-    if (flatItems.length === 0) return;
-    currentIndex = (currentIndex + 1) % flatItems.length;
-    updateLightboxUI();
-  }
-
-  function prevImage() {
-    if (flatItems.length === 0) return;
-    currentIndex = (currentIndex - 1 + flatItems.length) % flatItems.length;
-    updateLightboxUI();
-  }
-
-  function updateLightboxUI() {
-    const item = flatItems[currentIndex];
+  function updateLightboxContent() {
+    const item = activeFiltered[currentIndex];
     if (!item) return;
 
-    modalImg.src = item.src;
-    modalImg.alt = item.alt;
-    modalCaption.innerHTML = `${item.caption} &nbsp;·&nbsp; <a href="https://drive.google.com/drive/folders/1rYNaOJZCnTV7RrFFjOI08XvzURHpywHH" target="_blank" rel="noopener noreferrer" style="color: #38BDF8; font-weight: 700; text-decoration: underline;">View on Google Drive ↗</a>`;
-    modalCounter.textContent = `${currentIndex + 1} of ${flatItems.length}`;
+    if (lightboxImg) {
+      lightboxImg.src = item.src;
+      lightboxImg.alt = item.title;
+    }
+    if (lightboxTitle) lightboxTitle.textContent = item.title;
+    if (lightboxDesc) lightboxDesc.textContent = item.caption;
+    if (lightboxCounter) {
+      lightboxCounter.textContent = `Photo ${currentIndex + 1} of ${activeFiltered.length} • ${item.year} // ${item.category}`;
+    }
   }
 
-  // Keyboard navigation
-  window.addEventListener('keydown', (e) => {
-    if (!modal.classList.contains('is-active')) return;
-    if (e.key === 'Escape') {
-      closeLightbox();
-    } else if (e.key === 'ArrowRight') {
-      nextImage();
-    } else if (e.key === 'ArrowLeft') {
-      prevImage();
-    }
-  });
+  function showNext() {
+    if (activeFiltered.length === 0) return;
+    currentIndex = (currentIndex + 1) % activeFiltered.length;
+    updateLightboxContent();
+  }
 
-  if (closeBtn) closeBtn.addEventListener('click', closeLightbox);
-  if (nextBtn) nextBtn.addEventListener('click', nextImage);
-  if (prevBtn) prevBtn.addEventListener('click', prevImage);
+  function showPrev() {
+    if (activeFiltered.length === 0) return;
+    currentIndex = (currentIndex - 1 + activeFiltered.length) % activeFiltered.length;
+    updateLightboxContent();
+  }
 
-  modal.addEventListener('click', (e) => {
-    if (e.target === modal) {
-      closeLightbox();
-    }
-  });
-
+  // Filter Listeners
   if (yearFilter) {
     yearFilter.addEventListener('change', (e) => {
       currentYear = e.target.value;
       render();
     });
   }
-
-  if (typeFilter) {
-    typeFilter.addEventListener('change', (e) => {
-      currentType = e.target.value;
+  if (catFilter) {
+    catFilter.addEventListener('change', (e) => {
+      currentCat = e.target.value;
       render();
     });
   }
+
+  // Lightbox Controls
+  if (closeBtn) closeBtn.addEventListener('click', closeLightbox);
+  if (prevBtn) prevBtn.addEventListener('click', showPrev);
+  if (nextBtn) nextBtn.addEventListener('click', showNext);
+
+  if (lightboxModal) {
+    lightboxModal.addEventListener('click', (e) => {
+      if (e.target === lightboxModal || e.target.classList.contains('lightbox-img-wrap')) {
+        closeLightbox();
+      }
+    });
+  }
+
+  // Keyboard Navigation
+  window.addEventListener('keydown', (e) => {
+    if (!lightboxModal || !lightboxModal.classList.contains('is-active')) return;
+    if (e.key === 'Escape') closeLightbox();
+    if (e.key === 'ArrowRight') showNext();
+    if (e.key === 'ArrowLeft') showPrev();
+  });
 
   render();
 }
