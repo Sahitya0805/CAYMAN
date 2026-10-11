@@ -39,24 +39,22 @@
       color: #0F172A !important;
     }
 
-    /* Hero Section */
+    /* Hero Section — Seamless Dark Sports Banner (Zero Awkward White Space Below Navbar) */
     .sponsors-hero {
       position: relative;
-      background: #FFFFFF !important;
-      background-image: 
-        radial-gradient(ellipse 80% 50% at 50% -20%, rgba(2, 132, 199, 0.12), transparent 70%),
-        radial-gradient(ellipse 60% 50% at 85% 100%, rgba(245, 158, 11, 0.08), transparent 60%) !important;
-      padding: 72px 0 56px;
+      background: linear-gradient(135deg, #050E20 0%, #0A1E42 55%, #030814 100%) !important;
+      padding: 38px 0 32px !important;
       text-align: center;
-      border-bottom: 1px solid #E2E8F0 !important;
+      border-bottom: 1.5px solid rgba(255, 255, 255, 0.1) !important;
       overflow: hidden;
+      margin: 0 !important;
     }
 
     .sponsors-hero::before {
       content: '';
       position: absolute;
       top: 0; left: 0; right: 0; bottom: 0;
-      background-image: radial-gradient(rgba(9, 21, 43, 0.06) 1px, transparent 1px);
+      background-image: radial-gradient(rgba(56, 189, 248, 0.08) 1px, transparent 1px);
       background-size: 28px 28px;
       pointer-events: none;
     }
@@ -67,44 +65,45 @@
       gap: 8px;
       padding: 6px 16px;
       border-radius: 999px;
-      background: rgba(2, 132, 199, 0.08);
-      border: 1px solid rgba(2, 132, 199, 0.3);
-      color: #0284C7;
+      background: rgba(56, 189, 248, 0.12);
+      border: 1px solid rgba(56, 189, 248, 0.35);
+      color: #38BDF8;
       font-size: 0.8rem;
       font-weight: 800;
       letter-spacing: 0.14em;
       text-transform: uppercase;
-      margin-bottom: 20px;
+      margin-bottom: 14px;
     }
 
     .sponsors-hero-title {
       font-family: var(--font-display, "Chakra Petch", sans-serif);
-      font-size: clamp(2.2rem, 5vw, 3.8rem);
+      font-size: clamp(2.2rem, 5vw, 3.6rem);
       font-weight: 900;
       text-transform: uppercase;
       letter-spacing: 0.02em;
-      color: #09152B !important;
+      color: #FFFFFF !important;
       line-height: 1.1;
-      margin-bottom: 18px;
+      margin-bottom: 14px;
+      text-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
     }
 
     .sponsors-hero-subtitle {
       max-width: 780px;
       margin: 0 auto;
-      font-size: clamp(1.05rem, 2vw, 1.25rem);
-      color: #334155 !important;
+      font-size: clamp(1rem, 2vw, 1.15rem);
+      color: #CBD5E1 !important;
       line-height: 1.6;
       font-weight: 500;
     }
 
-    /* Container Spacing */
+    /* Container Spacing — Zero Extra Space */
     .sponsors-content-wrap {
       max-width: 1180px;
       margin: 0 auto;
-      padding: 56px 20px 88px;
+      padding: 32px 20px 64px !important;
       display: flex;
       flex-direction: column;
-      gap: 48px;
+      gap: 36px !important;
     }
 
     /* Card 1 — Centerpiece: What your sponsorship delivers (White Theme) */
