@@ -11,9 +11,11 @@ import { initSplashLoader } from './splash-loader.js';
 import { initCricketCrazy } from './cricket-crazy.js';
 import { createStadiumPlayerCard, initSquadCard3DTilt } from './squad.js';
 import { initFuturisticSystem } from './futuristic.js';
+import { initPageTransitions } from './page-transition.js';
 
-// Initialize splash loader immediately to handle smooth page entrance
+// Initialize splash loader and cricket page transitions immediately
 initSplashLoader();
+initPageTransitions();
 
 async function startApp() {
   initHeroSlider();
