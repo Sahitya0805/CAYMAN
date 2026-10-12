@@ -23,6 +23,19 @@ export async function initMatchesPage() {
   let currentSeason = seasonFilter ? seasonFilter.value : 'all';
   let currentResult = resultFilter ? resultFilter.value : 'all';
 
+  function updateFilterCounts() {
+    const results = fixtures.filter(f => f.status === 'result');
+    const wonCount = results.filter(f => f.is_csk_win === true).length;
+    const lostCount = results.filter(f => f.is_csk_win === false).length;
+    if (resultFilter) {
+      const wonOpt = resultFilter.querySelector('option[value="won"]');
+      const lostOpt = resultFilter.querySelector('option[value="lost"]');
+      if (wonOpt) wonOpt.textContent = `CSK Won (${wonCount})`;
+      if (lostOpt) lostOpt.textContent = `CSK Lost (${lostCount})`;
+    }
+  }
+  updateFilterCounts();
+
   function updateSyncTimeDisplay() {
     if (syncTimestamp) {
       const now = new Date();
@@ -44,6 +57,7 @@ export async function initMatchesPage() {
       try {
         fixtures = await store.getFixtures(true);
         updateSyncTimeDisplay();
+        updateFilterCounts();
         render();
       } catch (err) {
         console.warn('Sync refresh error:', err);

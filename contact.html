@@ -182,7 +182,7 @@
                   <span style="font-size: 1.25rem;">✉️</span>
                   <div>
                     <strong style="display: block; font-size: 0.95rem; color: #FFFFFF; font-weight: 800; margin-bottom: 2px;">Email:</strong>
-                    <a href="mailto:info@caymansuperkings.ky" style="color: #38BDF8; font-size: 0.875rem; text-decoration: none; font-weight: 600;">info@caymansuperkings.ky</a>
+                    <a href="mailto:caymansuperkings@gmail.com" style="color: #38BDF8; font-size: 0.875rem; text-decoration: none; font-weight: 600;">caymansuperkings@gmail.com</a>
                   </div>
                 </div>
 
@@ -215,39 +215,43 @@
               <div style="font-size: 2.2rem; margin-bottom: 10px;">✅</div>
               <h4 style="color: #166534; font-size: 1.25rem; font-weight: 900; margin-bottom: 8px;">Message Recorded Successfully!</h4>
               <p style="color: #15803D; font-size: 0.9375rem; line-height: 1.6; margin-bottom: 16px;">
-                Thank you for reaching out to Cayman Super Kings. Your message has been safely logged in our official enquiry sheet, and a committee member will respond within two business days.
+                Thank you for reaching out to Cayman Super Kings. Your message has been safely recorded in our official enquiry sheet and dispatched to <strong>caymansuperkings@gmail.com</strong>. A committee member will respond within two business days.
               </p>
               <button type="button" class="btn btn-sm" onclick="window.location.reload();" style="border-radius: 999px; font-weight: 800; color: #064E3B; border: 1.5px solid #059669; background: #FFFFFF; padding: 8px 22px; cursor: pointer;">
                 Send Another Message
               </button>
             </div>
 
-            <!-- Main Input Form -->
+            <!-- Main Input Form with Individual Field Validations -->
             <form id="contact-form" novalidate>
-              <div class="form-group" style="margin-bottom: 20px;">
+              <div class="form-group" style="margin-bottom: 18px;">
                 <label for="contact-name" class="form-label" style="display: block; font-size: 0.875rem; font-weight: 800; color: #09152B; margin-bottom: 6px;">Full Name *</label>
-                <input type="text" id="contact-name" class="form-input" placeholder="e.g. Marcus Campbell" required style="width: 100%; padding: 12px 16px; border: 1.5px solid #CBD5E1; border-radius: 8px; font-size: 0.95rem; color: #09152B; background: #F8FAFC;">
+                <input type="text" id="contact-name" class="form-input" placeholder="e.g. Marcus Campbell" required style="width: 100%; padding: 12px 16px; border: 1.5px solid #CBD5E1; border-radius: 8px; font-size: 0.95rem; color: #09152B; background: #F8FAFC; transition: border-color 0.2s ease;">
+                <div id="contact-name-error" class="field-error-msg" style="display: none; color: #DC2626; font-size: 0.8rem; font-weight: 700; margin-top: 5px;">⚠ Please enter your full name (minimum 2 characters).</div>
               </div>
 
-              <div class="form-group" style="margin-bottom: 20px;">
+              <div class="form-group" style="margin-bottom: 18px;">
                 <label for="contact-email" class="form-label" style="display: block; font-size: 0.875rem; font-weight: 800; color: #09152B; margin-bottom: 6px;">Email Address *</label>
-                <input type="email" id="contact-email" class="form-input" placeholder="e.g. marcus@example.ky" required style="width: 100%; padding: 12px 16px; border: 1.5px solid #CBD5E1; border-radius: 8px; font-size: 0.95rem; color: #09152B; background: #F8FAFC;">
+                <input type="email" id="contact-email" class="form-input" placeholder="e.g. marcus@example.com" required style="width: 100%; padding: 12px 16px; border: 1.5px solid #CBD5E1; border-radius: 8px; font-size: 0.95rem; color: #09152B; background: #F8FAFC; transition: border-color 0.2s ease;">
+                <div id="contact-email-error" class="field-error-msg" style="display: none; color: #DC2626; font-size: 0.8rem; font-weight: 700; margin-top: 5px;">⚠ Please enter a valid email address (e.g. yourname@gmail.com).</div>
               </div>
 
-              <div class="form-group" style="margin-bottom: 20px;">
+              <div class="form-group" style="margin-bottom: 18px;">
                 <label for="contact-subject" class="form-label" style="display: block; font-size: 0.875rem; font-weight: 800; color: #09152B; margin-bottom: 6px;">Enquiry Subject *</label>
-                <select id="contact-subject" class="form-select" required style="width: 100%; padding: 12px 16px; border: 1.5px solid #CBD5E1; border-radius: 8px; font-size: 0.95rem; color: #09152B; background: #F8FAFC;">
+                <select id="contact-subject" class="form-select" required style="width: 100%; padding: 12px 16px; border: 1.5px solid #CBD5E1; border-radius: 8px; font-size: 0.95rem; color: #09152B; background: #F8FAFC; transition: border-color 0.2s ease;">
                   <option value="">- Please Select -</option>
                   <option value="Sponsorship / Brand Partnership">Corporate Sponsorship &amp; Brand Partnership</option>
                   <option value="Youth Academy Registration">Youth Academy Registration (Ages 10–18)</option>
                   <option value="Senior Squad Trials">Senior Squad Trials &amp; Recruitment</option>
                   <option value="General Club Enquiry">General Club Enquiry</option>
                 </select>
+                <div id="contact-subject-error" class="field-error-msg" style="display: none; color: #DC2626; font-size: 0.8rem; font-weight: 700; margin-top: 5px;">⚠ Please select an enquiry category from the dropdown.</div>
               </div>
 
-              <div class="form-group" style="margin-bottom: 24px;">
+              <div class="form-group" style="margin-bottom: 22px;">
                 <label for="contact-message" class="form-label" style="display: block; font-size: 0.875rem; font-weight: 800; color: #09152B; margin-bottom: 6px;">Your Message *</label>
-                <textarea id="contact-message" class="form-textarea" rows="4" placeholder="Tell us how we can help..." required style="width: 100%; padding: 12px 16px; border: 1.5px solid #CBD5E1; border-radius: 8px; font-size: 0.95rem; color: #09152B; background: #F8FAFC; resize: vertical;"></textarea>
+                <textarea id="contact-message" class="form-textarea" rows="4" placeholder="Tell us how we can help..." required style="width: 100%; padding: 12px 16px; border: 1.5px solid #CBD5E1; border-radius: 8px; font-size: 0.95rem; color: #09152B; background: #F8FAFC; resize: vertical; transition: border-color 0.2s ease;"></textarea>
+                <div id="contact-message-error" class="field-error-msg" style="display: none; color: #DC2626; font-size: 0.8rem; font-weight: 700; margin-top: 5px;">⚠ Please write your message (at least 10 characters).</div>
               </div>
 
               <button type="submit" class="btn btn-primary" style="width: 100%; padding: 14px 28px; font-size: 1rem; font-weight: 900; letter-spacing: 0.04em; text-transform: uppercase; border-radius: 999px; display: flex; align-items: center; justify-content: center; gap: 8px; box-shadow: 0 4px 16px rgba(2, 132, 199, 0.25);">

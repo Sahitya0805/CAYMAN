@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 80" width="240" height="80">
+  <defs>
+    <linearGradient id="v2Red" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#EF4444"/>
+      <stop offset="100%" stop-color="#B91C1C"/>
+    </linearGradient>
+  </defs>
+  <g transform="translate(14, 16)">
+    <rect x="0" y="4" width="46" height="40" rx="8" fill="url(#v2Red)"/>
+    <text x="23" y="32" font-family="'Chakra Petch', Impact, sans-serif" font-weight="900" font-size="24" fill="#FFFFFF" text-anchor="middle">V2</text>
+    <text x="56" y="22" font-family="-apple-system, system-ui, sans-serif" font-weight="900" font-size="16" fill="#FFFFFF" letter-spacing="1">VALUE &amp; VARIETY</text>
+    <text x="57" y="36" font-family="-apple-system, system-ui, sans-serif" font-weight="700" font-size="9" fill="#94A3B8" letter-spacing="2">CAYMAN ISLANDS</text>
+  </g>
+</svg>

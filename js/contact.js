@@ -14,23 +14,91 @@ export function initContactForm() {
 
   if (!form) return;
 
+  const nameInput = document.getElementById('contact-name');
+  const emailInput = document.getElementById('contact-email');
+  const subjectInput = document.getElementById('contact-subject');
+  const messageInput = document.getElementById('contact-message');
+
+  const nameError = document.getElementById('contact-name-error');
+  const emailError = document.getElementById('contact-email-error');
+  const subjectError = document.getElementById('contact-subject-error');
+  const messageError = document.getElementById('contact-message-error');
+
+  function validateName() {
+    if (!nameInput) return true;
+    const val = nameInput.value.trim();
+    const isValid = val.length >= 2;
+    if (nameError) nameError.style.display = isValid ? 'none' : 'block';
+    nameInput.style.borderColor = isValid ? '#CBD5E1' : '#DC2626';
+    return isValid;
+  }
+
+  function validateEmail() {
+    if (!emailInput) return true;
+    const val = emailInput.value.trim();
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    const isValid = emailRegex.test(val);
+    if (emailError) emailError.style.display = isValid ? 'none' : 'block';
+    emailInput.style.borderColor = isValid ? '#CBD5E1' : '#DC2626';
+    return isValid;
+  }
+
+  function validateSubject() {
+    if (!subjectInput) return true;
+    const val = subjectInput.value.trim();
+    const isValid = val !== '';
+    if (subjectError) subjectError.style.display = isValid ? 'none' : 'block';
+    subjectInput.style.borderColor = isValid ? '#CBD5E1' : '#DC2626';
+    return isValid;
+  }
+
+  function validateMessage() {
+    if (!messageInput) return true;
+    const val = messageInput.value.trim();
+    const isValid = val.length >= 10;
+    if (messageError) messageError.style.display = isValid ? 'none' : 'block';
+    messageInput.style.borderColor = isValid ? '#CBD5E1' : '#DC2626';
+    return isValid;
+  }
+
+  // Real-time live validations
+  if (nameInput) {
+    nameInput.addEventListener('input', () => { if (nameError && nameError.style.display === 'block') validateName(); });
+    nameInput.addEventListener('blur', validateName);
+  }
+  if (emailInput) {
+    emailInput.addEventListener('input', () => { if (emailError && emailError.style.display === 'block') validateEmail(); });
+    emailInput.addEventListener('blur', validateEmail);
+  }
+  if (subjectInput) {
+    subjectInput.addEventListener('change', validateSubject);
+    subjectInput.addEventListener('blur', validateSubject);
+  }
+  if (messageInput) {
+    messageInput.addEventListener('input', () => { if (messageError && messageError.style.display === 'block') validateMessage(); });
+    messageInput.addEventListener('blur', validateMessage);
+  }
+
   form.addEventListener('submit', async (e) => {
     e.preventDefault();
 
-    const nameInput = document.getElementById('contact-name');
-    const emailInput = document.getElementById('contact-email');
-    const subjectInput = document.getElementById('contact-subject');
-    const messageInput = document.getElementById('contact-message');
+    const isNameValid = validateName();
+    const isEmailValid = validateEmail();
+    const isSubjectValid = validateSubject();
+    const isMessageValid = validateMessage();
 
-    const name = nameInput ? nameInput.value.trim() : '';
-    const email = emailInput ? emailInput.value.trim() : '';
-    const subject = subjectInput ? subjectInput.value.trim() : '';
-    const message = messageInput ? messageInput.value.trim() : '';
-
-    if (!name || !email || !message) {
-      alert('Please fill out all required fields.');
+    if (!isNameValid || !isEmailValid || !isSubjectValid || !isMessageValid) {
+      if (!isNameValid && nameInput) nameInput.focus();
+      else if (!isEmailValid && emailInput) emailInput.focus();
+      else if (!isSubjectValid && subjectInput) subjectInput.focus();
+      else if (!isMessageValid && messageInput) messageInput.focus();
       return;
     }
+
+    const name = nameInput.value.trim();
+    const email = emailInput.value.trim();
+    const subject = subjectInput.value.trim();
+    const message = messageInput.value.trim();
 
     const payload = {
       timestamp: new Date().toISOString(),
@@ -40,6 +108,15 @@ export function initContactForm() {
       subject: subject || 'General Club Enquiry',
       message: message
     };
+
+    // Save to local storage for persistence & review
+    try {
+      const existing = JSON.parse(localStorage.getItem('csk_enquiries') || '[]');
+      existing.unshift(payload);
+      localStorage.setItem('csk_enquiries', JSON.stringify(existing.slice(0, 50)));
+    } catch (e) {
+      console.warn('LocalStorage save failed:', e);
+    }
 
     // UI Loading state
     if (submitBtn) {
@@ -63,8 +140,8 @@ export function initContactForm() {
         body: JSON.stringify(payload)
       }).catch(err => console.warn('API /api/contact notification notice:', err));
 
-      // 2. Dispatch to FormSubmit Email Relay to info@caymansuperkings.ky
-      fetch('https://formsubmit.co/ajax/info@caymansuperkings.ky', {
+      // 2. Dispatch to FormSubmit Email Relay to caymansuperkings@gmail.com
+      fetch('https://formsubmit.co/ajax/caymansuperkings@gmail.com', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -92,8 +169,7 @@ export function initContactForm() {
         }).catch(err => console.warn('Google Sheet dispatch notice:', err));
       }
 
-
-      // 5. Show Success State
+      // 4. Show Success State
       form.style.display = 'none';
       if (successEl) {
         successEl.style.display = 'block';
