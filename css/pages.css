@@ -2873,49 +2873,78 @@ body.page--white-theme .circular-card-subtitle {
   justify-content: flex-end;
 }
 
-/* Badges */
+/* Badges — Dynamic Sports Franchise Capsule Badge */
 .squad-card-badge {
-  position: absolute;
-  top: 18px;
-  left: 18px;
-  width: 36px;
-  height: 36px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-family: var(--font-display);
-  font-weight: 900;
-  font-size: 0.85rem;
-  text-transform: uppercase;
-  z-index: 5;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+  position: absolute !important;
+  top: 14px !important;
+  left: 14px !important;
+  width: auto !important;
+  min-width: 32px !important;
+  height: 28px !important;
+  padding: 4px 12px !important;
+  border-radius: 999px !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  font-family: var(--font-display, "Chakra Petch", sans-serif) !important;
+  font-weight: 900 !important;
+  font-size: 0.72rem !important;
+  letter-spacing: 0.08em !important;
+  text-transform: uppercase !important;
+  white-space: nowrap !important;
+  z-index: 10 !important;
+  background: linear-gradient(135deg, #071530 0%, #030814 100%) !important;
+  color: #FFFFFF !important;
+  border: 1.5px solid rgba(56, 189, 248, 0.5) !important;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.45), 0 0 10px rgba(56, 189, 248, 0.2) !important;
+  backdrop-filter: blur(8px) !important;
+  -webkit-backdrop-filter: blur(8px) !important;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+.squad-card-badge:empty {
+  display: none !important;
 }
 
 .squad-card-badge--c {
-  background: #38C6D9;
-  color: #FFFFFF;
-  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: linear-gradient(135deg, #081636 0%, #030814 100%) !important;
+  color: #FBBF24 !important;
+  border-color: #F59E0B !important;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.5), 0 0 12px rgba(245, 158, 11, 0.35) !important;
 }
 
 .squad-card-badge--vc {
-  background: #09152B;
-  color: #FFFFFF;
-  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: linear-gradient(135deg, #081636 0%, #030814 100%) !important;
+  color: #38BDF8 !important;
+  border-color: #38BDF8 !important;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.5), 0 0 12px rgba(56, 189, 248, 0.35) !important;
+}
+
+.squad-card-badge--mgr,
+.squad-card-badge--manager {
+  background: linear-gradient(135deg, #081636 0%, #030814 100%) !important;
+  color: #34D399 !important;
+  border-color: #10B981 !important;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.5), 0 0 12px rgba(16, 185, 129, 0.35) !important;
+}
+
+.squad-card-badge--default {
+  background: linear-gradient(135deg, #081636 0%, #030814 100%) !important;
+  color: #E2E8F0 !important;
+  border-color: rgba(56, 189, 248, 0.45) !important;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.4) !important;
 }
 
 .squad-card-badge--overseas {
-  background: #0E7490;
-  color: #FFFFFF;
-  border: 2px solid #FFFFFF;
-  font-size: 0.95rem;
+  background: #0E7490 !important;
+  color: #FFFFFF !important;
+  border-color: #38BDF8 !important;
 }
 
 .squad-card-badge--u19 {
-  background: #09152B;
-  color: #38BDF8;
-  border: 2px solid #38BDF8;
-  font-size: 0.75rem;
+  background: #09152B !important;
+  color: #38BDF8 !important;
+  border-color: #38BDF8 !important;
 }
 
 /* Giant Block Jersey Number in Background (Removed) */

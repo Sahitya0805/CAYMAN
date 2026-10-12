@@ -130,7 +130,8 @@ export function createStadiumPlayerCard(p) {
 
   let badgeClass = 'squad-card-badge--default';
   if (badgeText === 'CAPTAIN') badgeClass = 'squad-card-badge--c';
-  else if (badgeText === 'VICE CAPTAIN' || badgeText === 'CO-FOUNDER' || badgeText === 'MANAGER') badgeClass = 'squad-card-badge--vc';
+  else if (badgeText === 'VICE CAPTAIN' || badgeText === 'CO-FOUNDER') badgeClass = 'squad-card-badge--vc';
+  else if (badgeText === 'MANAGER' || badgeText === 'MGR') badgeClass = 'squad-card-badge--mgr';
 
   // Extract Career Statistics
   const st = p.stats || {};
