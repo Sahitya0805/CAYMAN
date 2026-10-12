@@ -21,6 +21,16 @@ export function initFuturisticSystem() {
   initCyberTargetingCorners();
   initCyberWarpDrive();
   initMagneticButtons();
+
+  // Dynamic observer for dynamically rendered squad and match cards
+  const dynamicContainers = document.querySelectorAll('#squad-grid, .roster-grid, #matches-grid-container');
+  dynamicContainers.forEach(c => {
+    const obs = new MutationObserver(() => {
+      initCyberTargetingCorners();
+      initTiltPhysics();
+    });
+    obs.observe(c, { childList: true });
+  });
 }
 
 /**

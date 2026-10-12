@@ -212,6 +212,26 @@
           </button>
         </div>
 
+        <!-- 2026 Season Championship Campaign HUD -->
+        <div class="cyber-2026-hub">
+          <div class="cyber-2026-left">
+            <div class="cyber-2026-badge">
+              <span class="live-radar-dot"></span>
+              <span class="cyber-2026-tag">SEASON 2026</span>
+            </div>
+            <div class="cyber-2026-title-wrap">
+              <h3 class="cyber-2026-heading">CICA OFFICIAL CHAMPIONSHIP CAMPAIGN</h3>
+              <span class="cyber-2026-telemetry">10 TOURNAMENT FIXTURES • 5 PREMIER FORMATS • 18 KINGS ROSTER LOCKED</span>
+            </div>
+          </div>
+          <div class="cyber-2026-actions">
+            <button type="button" class="btn-2026-quick-filter" id="btn-quick-2026" onclick="var sf = document.getElementById('season-filter'); if(sf) { sf.value='2026'; sf.dispatchEvent(new Event('change')); } document.getElementById('matches-grid-container').scrollIntoView({behavior: 'smooth', block: 'start'});">
+              <span class="btn-2026-icon">⚡</span>
+              <span>VIEW 2026 FIXTURES (10)</span>
+            </button>
+          </div>
+        </div>
+
         <!-- Filter Controls Bar -->
         <div class="matches-filter-bar-wrap" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; margin-bottom: 32px; background: rgba(255, 255, 255, 0.9); padding: 14px 20px; border-radius: 14px; border: 1.5px solid #CBD5E1; box-shadow: 0 4px 14px rgba(9, 21, 43, 0.04);">
           <div class="filter-group" style="margin-bottom: 0; display: flex; align-items: center; gap: 16px; flex-wrap: wrap;">

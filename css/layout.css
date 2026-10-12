@@ -811,13 +811,22 @@ ul.footer-links {
 }
 
 @media (max-width: 900px) {
-  .col-8, .col-6, .col-4, .col-3 {
+  .col-8 {
+    grid-column: span 12 !important;
+  }
+  .col-6, .col-4, .col-3 {
     grid-column: span 6;
   }
   .footer-top,
   .footer-grid-horizontal {
     grid-template-columns: repeat(2, 1fr) !important;
     gap: 32px 20px !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .col-6, .col-4, .col-3, .col-2 {
+    grid-column: span 12 !important;
   }
 }
 
@@ -1181,6 +1190,13 @@ img, svg, video, canvas, audio, iframe {
     width: 100% !important;
     max-width: 100% !important;
     height: 480px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .squad-player-stage-card,
+  .roster-card {
+    height: 450px !important;
   }
 
   /* Sponsors Content */
