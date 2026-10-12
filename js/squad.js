@@ -187,6 +187,27 @@ export function createStadiumPlayerCard(p) {
     ];
   }
 
+  // Punchy, concise scouting highlight without paragraph crowding
+  const desc = (p.description || '').trim();
+  const dyk = (p.didYouKnow || '').trim();
+  let rawText = desc;
+  if (!desc || desc.length < 20) {
+    rawText = dyk || desc;
+  }
+
+  let scoutHighlight = '';
+  if (rawText) {
+    const cleanOneLine = rawText.replace(/\n+/g, ' ').replace(/\s+/g, ' ').trim();
+    const firstSentence = cleanOneLine.split(/\.\s+/)[0].trim();
+    if (firstSentence.length <= 165) {
+      scoutHighlight = firstSentence + (firstSentence.endsWith('.') ? '' : '.');
+    } else {
+      const truncated = firstSentence.slice(0, 150);
+      const lastSpace = truncated.lastIndexOf(' ');
+      scoutHighlight = (lastSpace > 60 ? truncated.slice(0, lastSpace) : truncated).trim() + '...';
+    }
+  }
+
   return `
     <article class="squad-player-stage-card roster-stage-card futuristic-card" tabindex="0" aria-label="${playerName} - ${p.role}">
       <!-- 4 Cybernetic Corner Targeting Reticles -->
@@ -228,68 +249,52 @@ export function createStadiumPlayerCard(p) {
         </div>
       </div>
 
-      <!-- Interactive Hover/Tap HUD -->
+      <!-- Interactive Hover/Tap HUD (Sleek, Uncrowded & Appealing) -->
       <div class="squad-card-hover-hud">
-        <!-- Top Meta Header -->
-        <div class="hud-top-meta">
-          <div class="hud-role-badge-row">
-            <span class="hud-squad-capsule">CSK #${jerseyNum}</span>
-            <span class="hud-role-name" title="${p.role}">${p.role.toUpperCase()}</span>
+        <!-- Clean Header (No Truncation) -->
+        <div class="hud-header">
+          <div class="hud-meta-row">
+            <div class="hud-meta-left">
+              <span class="hud-tag hud-tag--jersey">#${jerseyNum}</span>
+              <span class="hud-tag hud-tag--age">AGE ${p.age}</span>
+            </div>
+            <span class="hud-tag hud-tag--matches">${bat.matches || 0} MATCHES</span>
           </div>
-          <div class="hud-age-badge">
-            AGE ${p.age} <span class="hud-dot">•</span> ${p.birthday}
+
+          <h4 class="hud-role-heading">${p.role.toUpperCase()}</h4>
+
+          <div class="hud-styles-row">
+            <span class="hud-style-chip">🏏 ${p.battingStyle || 'Right Hand'}</span>
+            <span class="hud-style-chip">${isWK ? '🧤 Wicket Keeper' : '🎯 ' + (p.bowlingStyle || 'Bowler')}</span>
           </div>
         </div>
 
-        <!-- Disciplines (Batting & Bowling / Keeping) -->
-        <div class="hud-disciplines-bar">
-          <div class="discipline-badge">
-            <span class="discipline-icon">🏏</span>
-            <div class="discipline-details">
-              <span class="discipline-label">BATTING</span>
-              <span class="discipline-text" title="${p.battingStyle || '—'}">${p.battingStyle || '—'}</span>
-            </div>
-          </div>
-          <div class="discipline-badge">
-            <span class="discipline-icon">${isWK ? '🧤' : '🎯'}</span>
-            <div class="discipline-details">
-              <span class="discipline-label">${isWK ? 'KEEPING' : 'BOWLING'}</span>
-              <span class="discipline-text" title="${p.bowlingStyle || '—'}">${p.bowlingStyle || '—'}</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- Career Performance Matrix Box -->
-        <div class="hud-career-matrix-box">
-          <div class="career-matrix-header">
-            <div class="matrix-title-group">
-              <svg class="matrix-icon" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"/></svg>
-              <span class="matrix-title">CAREER PERFORMANCE</span>
-            </div>
-            <span class="matrix-caps-pill">${bat.matches || 0} MATCHES</span>
-          </div>
-          <div class="career-matrix-grid">
+        <!-- Single Unified Stats Showcase (Clean & Airy, No Nested Box Overload) -->
+        <div class="hud-stats-showcase">
+          <div class="hud-stats-grid">
             ${statTiles.map(t => `
-              <div class="matrix-tile">
-                <span class="matrix-tile-label">${t.label}</span>
-                <span class="matrix-tile-val ${t.accent === 'cyan' ? 'accent-cyan' : t.accent === 'white' ? 'accent-white' : 'accent-yellow'}">${t.val}</span>
-                <span class="matrix-tile-sub">${t.sub}</span>
+              <div class="hud-stat-col">
+                <span class="hud-stat-num ${t.accent === 'cyan' ? 'is-cyan' : t.accent === 'white' ? 'is-white' : 'is-gold'}">${t.val}</span>
+                <div class="hud-stat-meta">
+                  <span class="hud-stat-label">${t.label}</span>
+                  <span class="hud-stat-sub">${t.sub}</span>
+                </div>
               </div>
             `).join('')}
           </div>
         </div>
 
-        <!-- Description Snippet -->
-        ${p.description ? `
-          <div class="hud-bio-quote">
-            ${p.description}
+        <!-- Scouting Highlight (Concise, Legible, Never Cut Off) -->
+        ${scoutHighlight ? `
+          <div class="hud-scout-highlight">
+            <p class="hud-scout-text">“${scoutHighlight}”</p>
           </div>
         ` : ''}
 
         <!-- Bottom Action CTA -->
         <div class="hud-bottom-cta">
-          <a href="player-detail.html?id=${p.id}" class="hud-read-more-link">
-            <span>Career Stats &amp; Profile</span>
+          <a href="player-detail.html?id=${p.id}" class="hud-profile-btn hud-read-more-link">
+            <span>Career Stats &amp; Full Profile</span>
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
           </a>
         </div>
