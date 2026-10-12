@@ -153,12 +153,23 @@ export function initSplashLoader() {
     splash.classList.add('is-hidden');
     splash.classList.remove('is-active');
     splash.setAttribute('aria-hidden', 'true');
+    try {
+      sessionStorage.setItem('csk_splash_seen', 'true');
+    } catch (err) {}
     setTimeout(() => {
       if (splash.parentNode) {
         splash.style.display = 'none';
       }
     }, 280);
   }
+
+  // If already seen in this session or navigating between pages, dismiss immediately
+  try {
+    if (sessionStorage.getItem('csk_splash_seen') === 'true') {
+      dismissSplash();
+      return;
+    }
+  } catch (err) {}
 
   // Click anywhere to skip instantly
   splash.addEventListener('click', dismissSplash);
