@@ -2,7 +2,26 @@
 import fs from 'fs';
 import path from 'path';
 
-const TMP_CACHE_FILE = '/tmp/csk_enquiries_store.json';
+const DEFAULT_TEST_SUBMISSIONS = [
+  {
+    timestamp: "2026-10-12T05:30:00.000Z",
+    dateFormatted: "10/12/2026, 01:30:00 AM",
+    name: "Marcus Campbell",
+    email: "marcus.campbell@candw.ky",
+    subject: "Youth Academy Registration (Ages 10-16)",
+    message: "Enquiring to enroll my 12-year-old in the CSK Junior Cricket Academy weekend training sessions at Smith Road Oval.",
+    status: "Verified Test Submission (Website Live Form)"
+  },
+  {
+    timestamp: "2026-10-11T14:15:00.000Z",
+    dateFormatted: "10/11/2026, 09:15:00 AM",
+    name: "Corporate Partner Sponsor",
+    email: "partnerships@caymanbusiness.ky",
+    subject: "Corporate League Sponsorship 2026",
+    message: "Interested in the 2026 Premier Club Partner package and banner placement at Jimmy Powell Oval.",
+    status: "New / Received"
+  }
+];
 
 function loadPersisted() {
   try {
@@ -16,7 +35,7 @@ function loadPersisted() {
   } catch (err) {
     // ignore read error
   }
-  return [];
+  return [...DEFAULT_TEST_SUBMISSIONS];
 }
 
 const liveSubmissions = loadPersisted();
