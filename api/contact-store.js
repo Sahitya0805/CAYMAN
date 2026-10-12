@@ -2,6 +2,8 @@
 import fs from 'fs';
 import path from 'path';
 
+const TMP_CACHE_FILE = path.join('/tmp', 'csk_enquiries.json');
+
 const DEFAULT_TEST_SUBMISSIONS = [
   {
     timestamp: "2026-10-12T05:30:00.000Z",

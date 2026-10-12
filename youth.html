@@ -306,8 +306,9 @@
       if (!grid) return;
 
       const rawSquad = await store.getSquad();
-      const devSquad = rawSquad.filter(p => p.group === 'development').slice(0, 4);
-      const safeSquad = ConsentGuard.sanitizeList(devSquad);
+      const devSquad = rawSquad.filter(p => p.group === 'development' || p.age <= 21);
+      const displaySquad = devSquad.length > 0 ? devSquad : [...rawSquad].sort((a, b) => a.age - b.age).slice(0, 4);
+      const safeSquad = ConsentGuard.sanitizeList(displaySquad);
 
       grid.innerHTML = safeSquad.map(p => `
         <div class="col-3">
