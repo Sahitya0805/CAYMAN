@@ -1,14 +1,16 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 80" width="240" height="80">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280 90" width="280" height="90">
   <defs>
-    <linearGradient id="tulsiGold" x1="0%" y1="0%" x2="100%" y2="100%">
+    <linearGradient id="tulsiGoldLight" x1="0%" y1="0%" x2="100%" y2="100%">
       <stop offset="0%" stop-color="#D97706"/>
       <stop offset="100%" stop-color="#F59E0B"/>
     </linearGradient>
   </defs>
-  <g transform="translate(16, 20)">
-    <path d="M14 0 C6 8 0 22 14 36 C28 22 22 8 14 0 Z" fill="url(#tulsiGold)"/>
-    <path d="M14 36 C4 24 2 12 14 0" stroke="#FFFFFF" stroke-width="1.2" fill="none" opacity="0.6"/>
-    <text x="44" y="24" font-family="'Cinzel', 'Playfair Display', Georgia, serif" font-weight="900" font-size="24" fill="#FFFFFF" letter-spacing="3">TULSI</text>
-    <text x="45" y="36" font-family="-apple-system, system-ui, sans-serif" font-weight="700" font-size="8" fill="#F59E0B" letter-spacing="4">LTD • CAYMAN</text>
+  <g transform="translate(18, 22)">
+    <!-- Leaf / Flame Symbol -->
+    <path d="M18 0 C8 10 0 28 18 46 C36 28 28 10 18 0 Z" fill="url(#tulsiGoldLight)"/>
+    <path d="M18 46 C5 31 3 15 18 0" stroke="#FFFFFF" stroke-width="1.5" fill="none" opacity="0.7"/>
+    <!-- Brand Wordmark -->
+    <text x="52" y="30" font-family="'Cinzel', 'Playfair Display', 'Times New Roman', Georgia, serif" font-weight="900" font-size="30" fill="#09152B" letter-spacing="4">TULSI</text>
+    <text x="54" y="45" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-weight="800" font-size="10" fill="#D97706" letter-spacing="4">LTD • CAYMAN</text>
   </g>
 </svg>
