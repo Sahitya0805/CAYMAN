@@ -1079,3 +1079,121 @@ ul.footer-links {
     display: none !important;
   }
 }
+
+/* ─────────────────────────────────────────────────────────────
+   GLOBAL RESPONSIVE OPTIMIZATIONS ACROSS ALL BREAKPOINTS
+   ───────────────────────────────────────────────────────────── */
+html, body {
+  max-width: 100vw !important;
+  overflow-x: hidden !important;
+  -webkit-text-size-adjust: 100%;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+/* Ensure no media item forces horizontal overflow */
+img, svg, video, canvas, audio, iframe {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Touch-friendly Horizontal Table Scrolling */
+.table-responsive,
+.csk-table-wrap,
+.points-table-container,
+.sponsors-table-wrap {
+  width: 100% !important;
+  max-width: 100% !important;
+  overflow-x: auto !important;
+  -webkit-overflow-scrolling: touch !important;
+  scrollbar-width: thin;
+}
+
+/* Tablets & Mobile Screens (<= 768px) */
+@media (max-width: 768px) {
+  .container {
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+  }
+
+  h1, .hero-cinematic-headline, .squad-hero-main-title {
+    font-size: clamp(1.8rem, 6.5vw, 3rem) !important;
+    word-break: break-word !important;
+  }
+
+  .section-title {
+    font-size: clamp(1.5rem, 5.5vw, 2.2rem) !important;
+  }
+
+  .footer-horizontal-hero {
+    flex-direction: column !important;
+    align-items: center !important;
+    text-align: center !important;
+    gap: 18px !important;
+  }
+
+  .footer-hero-brand {
+    flex-direction: column !important;
+    align-items: center !important;
+  }
+
+  .footer-bottom {
+    flex-direction: column !important;
+    text-align: center !important;
+    gap: 8px !important;
+  }
+}
+
+/* Mobile Screens (<= 640px) */
+@media (max-width: 640px) {
+  /* Squad Filter Swipe Bar */
+  .squad-filter-bar {
+    display: flex !important;
+    flex-wrap: nowrap !important;
+    overflow-x: auto !important;
+    justify-content: flex-start !important;
+    padding: 6px 12px 12px !important;
+    gap: 8px !important;
+    -webkit-overflow-scrolling: touch !important;
+    scrollbar-width: none !important;
+  }
+  .squad-filter-bar::-webkit-scrollbar {
+    display: none !important;
+  }
+  .squad-filter-btn {
+    flex-shrink: 0 !important;
+    white-space: nowrap !important;
+    font-size: 0.78rem !important;
+    padding: 8px 16px !important;
+  }
+
+  /* Roster & Squad Cards single column */
+  .roster-grid,
+  .squad-stage-grid {
+    grid-template-columns: 1fr !important;
+    gap: 16px !important;
+  }
+
+  .squad-player-stage-card,
+  .roster-card {
+    width: 100% !important;
+    max-width: 100% !important;
+    height: 480px !important;
+  }
+
+  /* Sponsors Content */
+  .sponsors-content-wrap {
+    padding: 20px 12px 48px !important;
+    gap: 24px !important;
+  }
+
+  .sponsors-deliver-grid,
+  .tiers-cards-grid,
+  .tier-detail-grid {
+    grid-template-columns: 1fr !important;
+    gap: 16px !important;
+  }
+}
+

@@ -317,75 +317,48 @@ export async function initPlayerProfile() {
   }
   let bowlingStyle = (player.bowlingStyle || 'RIGHT ARM MEDIUM').toUpperCase();
 
-  // Extract / Calculate Batting Stats
+  // Extract Batting & Bowling Stats directly from data
   const st = player.stats || {};
-  const bat = st.batting || { matches: 24, innings: 20, runs: 480, highest_score: '58*', average: '28.24', strike_rate: '132.50', fifties: 2, hundreds: 0, fours: 42, sixes: 12 };
-  const bowl = st.bowling || { overs: '32.0', maidens: 2, runs_conceded: 240, wickets: 14, best_bowling: '3/18', average: '17.14', economy: '7.50', four_wickets: 0 };
+  const bat = st.batting || {};
+  const bowl = st.bowling || {};
 
-  const totMat = parseInt(bat.matches) || 20;
-  const totInn = parseInt(bat.innings) || Math.min(totMat, 18);
-  const totRuns = parseInt(bat.runs) || 350;
-  const sr = parseFloat(bat.strike_rate) || 128.50;
-  const avg = parseFloat(bat.average) || (totRuns / Math.max(1, totInn - 2)).toFixed(2);
-  const hs = bat.highest_score || '48*';
-  const h100 = parseInt(bat.hundreds) || 0;
-  const f50 = parseInt(bat.fifties) || 1;
-  const f4 = parseInt(bat.fours) || 28;
-  const s6 = parseInt(bat.sixes) || 8;
+  // Helper to convert overs string (e.g. "92.4") to balls
+  function oversToBalls(ov) {
+    if (!ov) return 0;
+    const parts = String(ov).split('.');
+    const full = parseInt(parts[0], 10) || 0;
+    const rem = parseInt(parts[1], 10) || 0;
+    return (full * 6) + rem;
+  }
 
-  // T20 Stats Row
-  const t20Mat = Math.max(1, Math.round(totMat * 0.6));
-  const t20Inn = Math.min(t20Mat, Math.max(1, Math.round(totInn * 0.6)));
-  const t20Runs = Math.round(totRuns * 0.58);
-  const t20Sr = sr.toFixed(2);
-  const t20Balls = Math.max(t20Runs, Math.round((t20Runs / Math.max(1, sr)) * 100));
-  const t20Outs = Math.max(1, Math.round(t20Runs / Math.max(1, avg)));
-  const t20NotOut = Math.max(0, t20Inn - t20Outs);
-  const t20Avg = (t20Runs / Math.max(1, t20Inn - t20NotOut)).toFixed(2);
-  const t20_50 = Math.min(f50, Math.max(0, Math.round(f50 * 0.6)));
-  const t20_4 = Math.round(f4 * 0.62);
-  const t20_6 = Math.round(s6 * 0.65);
+  // Batting Stats (Single official career stat row)
+  const totMat = bat.matches !== undefined ? bat.matches : 0;
+  const totInn = bat.innings !== undefined ? bat.innings : (totMat > 0 ? totMat : 0);
+  const totRuns = bat.runs !== undefined ? bat.runs : 0;
+  const totSr = bat.strike_rate !== undefined ? bat.strike_rate : (totRuns > 0 ? '120.00' : '-');
+  const calcBalls = parseFloat(totSr) > 0 ? Math.round((parseFloat(totRuns) / parseFloat(totSr)) * 100) : totRuns;
+  const totBalls = bat.balls_faced !== undefined ? bat.balls_faced : (bat.balls !== undefined ? bat.balls : calcBalls);
+  const totAvg = bat.average !== undefined ? bat.average : (totInn > 0 ? (totRuns / totInn).toFixed(2) : '-');
+  const parsedAvg = parseFloat(totAvg);
+  const computedOuts = parsedAvg > 0 ? Math.round(parseFloat(totRuns) / parsedAvg) : totInn;
+  const totNotOut = bat.not_outs !== undefined ? bat.not_outs : (bat.not_out !== undefined ? bat.not_out : Math.max(0, totInn - computedOuts));
+  const totHs = bat.highest_score || bat.high_score || '-';
+  const tot100 = bat.hundreds !== undefined ? bat.hundreds : 0;
+  const tot50 = bat.fifties !== undefined ? bat.fifties : 0;
+  const tot4 = bat.fours !== undefined ? bat.fours : 0;
+  const tot6 = bat.sixes !== undefined ? bat.sixes : 0;
 
-  // 35-Over Stats Row
-  const c35Mat = Math.max(1, totMat - t20Mat);
-  const c35Inn = Math.min(c35Mat, Math.max(1, totInn - t20Inn));
-  const c35Runs = Math.max(0, totRuns - t20Runs);
-  const c35Sr = (sr * 0.88).toFixed(2);
-  const c35Balls = Math.max(c35Runs, Math.round((c35Runs / Math.max(1, parseFloat(c35Sr))) * 100));
-  const c35NotOut = Math.max(0, totInn - t20NotOut - Math.round(c35Runs / Math.max(1, avg)));
-  const c35Avg = (c35Runs / Math.max(1, c35Inn - c35NotOut)).toFixed(2);
-  const c35_50 = Math.max(0, f50 - t20_50);
-  const c35_4 = Math.max(0, f4 - t20_4);
-  const c35_6 = Math.max(0, s6 - t20_6);
-
-  // Bowling Stats Row
-  const isBowler = (parseInt(bowl.wickets) > 0 || parseFloat(bowl.overs) > 0) && !playerRole.includes('WICKET KEEPER');
-  const totWkts = isBowler ? (parseInt(bowl.wickets) || 0) : 0;
-  const totOvers = isBowler ? (parseFloat(bowl.overs) || 0) : 0;
-  const totRunsConc = isBowler ? (parseInt(bowl.runs_conceded) || 0) : 0;
-  const bEcon = isBowler ? (parseFloat(bowl.economy) || 7.50).toFixed(2) : '-';
-  const bAvg = isBowler ? (parseFloat(bowl.average) || 20.00).toFixed(2) : '-';
-  const bbi = isBowler ? (bowl.best_bowling || '3/18') : '-';
-
-  // Bowling T20
-  const t20BWkts = isBowler ? Math.max(1, Math.round(totWkts * 0.65)) : '-';
-  const t20BOvers = isBowler ? (totOvers * 0.6).toFixed(1) : '-';
-  const t20BBalls = isBowler ? Math.round(parseFloat(t20BOvers) * 6) : '-';
-  const t20BRuns = isBowler ? Math.round(totRunsConc * 0.62) : '-';
-  const t20BEcon = isBowler ? bEcon : '-';
-  const t20BAvg = isBowler ? bAvg : '-';
-  const t20BBI = isBowler ? bbi : '-';
-  const t20BSR = isBowler ? (t20BBalls / Math.max(1, t20BWkts)).toFixed(2) : '-';
-
-  // Bowling 35-Over
-  const c35BWkts = isBowler ? Math.max(0, totWkts - t20BWkts) : '-';
-  const c35BOvers = isBowler ? (totOvers - parseFloat(t20BOvers)).toFixed(1) : '-';
-  const c35BBalls = isBowler ? Math.round(parseFloat(c35BOvers) * 6) : '-';
-  const c35BRuns = isBowler ? Math.max(0, totRunsConc - t20BRuns) : '-';
-  const c35BEcon = isBowler ? (parseFloat(bEcon) * 0.92).toFixed(2) : '-';
-  const c35BAvg = isBowler ? bAvg : '-';
-  const c35BBI = isBowler ? bbi : '-';
-  const c35BSR = isBowler ? (c35BBalls / Math.max(1, c35BWkts)).toFixed(2) : '-';
+  // Bowling Stats (Single official career stat row)
+  const isBowler = (parseInt(bowl.wickets) > 0 || parseFloat(bowl.overs) > 0 || (bowl.best_bowling && bowl.best_bowling !== '-')) && !playerRole.includes('WICKET KEEPER');
+  const bowlBalls = isBowler ? (bowl.balls !== undefined ? bowl.balls : oversToBalls(bowl.overs)) : '-';
+  const bowlRuns = isBowler ? (bowl.runs_conceded !== undefined ? bowl.runs_conceded : (bowl.runs !== undefined ? bowl.runs : '-')) : '-';
+  const bowlWkts = isBowler ? (bowl.wickets !== undefined ? bowl.wickets : 0) : '-';
+  const bowlInn = isBowler ? (bowl.innings !== undefined ? bowl.innings : (parseFloat(bowl.overs) > 0 ? Math.min(totMat, Math.max(1, Math.round(parseFloat(bowl.overs) / 3))) : '-')) : '-';
+  const bowlAvg = isBowler ? (bowl.average !== undefined ? bowl.average : (parseInt(bowlWkts) > 0 && bowlRuns !== '-' ? (parseFloat(bowlRuns) / parseInt(bowlWkts)).toFixed(2) : '-')) : '-';
+  const bowlEcon = isBowler ? (bowl.economy !== undefined ? bowl.economy : (bowlBalls > 0 && bowlRuns !== '-' ? ((parseFloat(bowlRuns) / (bowlBalls / 6))).toFixed(2) : '-')) : '-';
+  const bowlSr = isBowler ? (bowl.strike_rate !== undefined ? bowl.strike_rate : (parseInt(bowlWkts) > 0 && bowlBalls > 0 ? (bowlBalls / parseInt(bowlWkts)).toFixed(2) : '-')) : '-';
+  const bowlBbi = isBowler ? (bowl.best_bowling || bowl.bbi || '-') : '-';
+  const bowlBbm = isBowler ? (bowl.bbm || bowlBbi) : '-';
 
   // About narrative combining biography & unique facts
   let aboutText = player.description || '';
@@ -399,7 +372,7 @@ export async function initPlayerProfile() {
   document.title = `${fullName} | Player Profile | Cayman Super Kings`;
 
   container.innerHTML = `
-    <!-- Floating Next / Prev Chevrons -->
+    <!-- Floating Next / Prev Chevrons (Visible on widescreen) -->
     <a href="player-detail.html?id=${prevPlayer.id}" class="csk-side-nav-arrow csk-side-nav-arrow--prev" title="Previous Player: ${prevPlayer.name_full || prevPlayer.name_display}" aria-label="Previous Player">
       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"></polyline></svg>
     </a>
@@ -413,7 +386,7 @@ export async function initPlayerProfile() {
         <!-- Back Link -->
         <a href="squad.html" class="csk-back-btn">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="15 18 9 12 15 6"></polyline></svg>
-          BACK
+          BACK TO SQUAD
         </a>
 
         <!-- Hero Main Area: Cutout Photo + Player Info -->
@@ -423,7 +396,7 @@ export async function initPlayerProfile() {
             ${hasPhoto ? `
               <img src="${photoSrc}" alt="${fullName}" class="csk-player-cutout-img">
             ` : `
-              <div style="display: flex; flex-direction: column; align-items: center; justify-content: center; height: 380px; width: 300px; background: rgba(26, 74, 132, 0.08); border-radius: 12px;">
+              <div style="display: flex; flex-direction: column; align-items: center; justify-content: center; height: 380px; width: 300px; max-width: 100%; background: rgba(26, 74, 132, 0.08); border-radius: 12px;">
                 <img src="assets/csk-official-logo.png" alt="CSK" style="width: 100px; height: 100px; opacity: 0.25; filter: grayscale(1);">
                 <span style="font-size: 0.75rem; font-weight: 800; color: #64748B; letter-spacing: 0.1em; text-transform: uppercase; margin-top: 14px;">CSK SQUAD #${player.jersey_display || player.id.replace('csk-', '')}</span>
               </div>
@@ -456,7 +429,7 @@ export async function initPlayerProfile() {
           </div>
         </div>
 
-        <!-- Social Icons Bottom Right -->
+        <!-- Social Icons -->
         <div class="csk-hero-socials">
           <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer" class="csk-hero-social-link" title="Facebook">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
@@ -483,12 +456,10 @@ export async function initPlayerProfile() {
           </p>
         </div>
 
-        <!-- Batting Career Section -->
+        <!-- Batting Career Section — Single Unified Stat Table (No IPL/T20I split) -->
         <div class="csk-stats-block">
           <h2 class="csk-section-title">Batting Career</h2>
-
-          <!-- Format: T20 -->
-          <span class="csk-format-badge">T20I</span>
+          <div class="csk-table-scroll-hint">↔ Swipe to view all stats</div>
           <div class="csk-table-wrap">
             <table class="csk-stats-table">
               <thead>
@@ -509,69 +480,28 @@ export async function initPlayerProfile() {
               </thead>
               <tbody>
                 <tr>
-                  <td>${t20Mat}</td>
-                  <td>${t20Inn}</td>
-                  <td>${t20Runs}</td>
-                  <td>${t20Balls}</td>
-                  <td>${t20NotOut}</td>
-                  <td>${t20Avg}</td>
-                  <td>${t20Sr}</td>
-                  <td>${hs}</td>
-                  <td>${h100}</td>
-                  <td>${t20_50}</td>
-                  <td>${t20_4}</td>
-                  <td>${t20_6}</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-
-          <!-- Format: IPL / 35-OVER -->
-          <span class="csk-format-badge">IPL</span>
-          <div class="csk-table-wrap">
-            <table class="csk-stats-table">
-              <thead>
-                <tr>
-                  <th>MATCHES</th>
-                  <th>INNINGS</th>
-                  <th>RUNS</th>
-                  <th>BALL FACED</th>
-                  <th>NOT OUT</th>
-                  <th>AVERAGE</th>
-                  <th>STRIKE RATE</th>
-                  <th>HIGH SCORE</th>
-                  <th>100</th>
-                  <th>50</th>
-                  <th>4s</th>
-                  <th>6s</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>${c35Mat}</td>
-                  <td>${c35Inn}</td>
-                  <td>${c35Runs}</td>
-                  <td>${c35Balls}</td>
-                  <td>${c35NotOut}</td>
-                  <td>${c35Avg}</td>
-                  <td>${c35Sr}</td>
-                  <td>${hs}</td>
-                  <td>0</td>
-                  <td>${c35_50}</td>
-                  <td>${c35_4}</td>
-                  <td>${c35_6}</td>
+                  <td>${totMat}</td>
+                  <td>${totInn}</td>
+                  <td>${totRuns}</td>
+                  <td>${totBalls}</td>
+                  <td>${totNotOut}</td>
+                  <td>${totAvg}</td>
+                  <td>${totSr}</td>
+                  <td>${totHs}</td>
+                  <td>${tot100}</td>
+                  <td>${tot50}</td>
+                  <td>${tot4}</td>
+                  <td>${tot6}</td>
                 </tr>
               </tbody>
             </table>
           </div>
         </div>
 
-        <!-- Bowling Career Section -->
+        <!-- Bowling Career Section — Single Unified Stat Table (No IPL/T20I split) -->
         <div class="csk-stats-block">
           <h2 class="csk-section-title">Bowling Career</h2>
-
-          <!-- Format: T20 -->
-          <span class="csk-format-badge">T20I</span>
+          <div class="csk-table-scroll-hint">↔ Swipe to view all stats</div>
           <div class="csk-table-wrap">
             <table class="csk-stats-table">
               <thead>
@@ -590,61 +520,32 @@ export async function initPlayerProfile() {
               </thead>
               <tbody>
                 <tr>
-                  <td>${t20Mat}</td>
-                  <td>${isBowler ? t20Inn : '-'}</td>
-                  <td>${t20BRuns}</td>
-                  <td>${t20BBalls}</td>
-                  <td>${t20BWkts}</td>
-                  <td>${t20BAvg}</td>
-                  <td>${t20BEcon}</td>
-                  <td>${t20BSR}</td>
-                  <td>${isBowler ? t20BBI : '-'}</td>
-                  <td>${t20BBI}</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-
-          <!-- Format: IPL / 35-OVER -->
-          <span class="csk-format-badge">IPL</span>
-          <div class="csk-table-wrap">
-            <table class="csk-stats-table">
-              <thead>
-                <tr>
-                  <th>MATCHES</th>
-                  <th>INNINGS</th>
-                  <th>RUNS</th>
-                  <th>BALLS</th>
-                  <th>WICKETS</th>
-                  <th>AVERAGE</th>
-                  <th>ECONOMY</th>
-                  <th>STRIKE RATE</th>
-                  <th>BBM</th>
-                  <th>BBI</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>${c35Mat}</td>
-                  <td>${isBowler ? c35Inn : '-'}</td>
-                  <td>${c35BRuns}</td>
-                  <td>${c35BBalls}</td>
-                  <td>${c35BWkts}</td>
-                  <td>${c35BAvg}</td>
-                  <td>${c35BEcon}</td>
-                  <td>${c35BSR}</td>
-                  <td>${isBowler ? c35BBI : '-'}</td>
-                  <td>${c35BBI}</td>
+                  <td>${totMat}</td>
+                  <td>${bowlInn}</td>
+                  <td>${bowlRuns}</td>
+                  <td>${bowlBalls}</td>
+                  <td>${bowlWkts}</td>
+                  <td>${bowlAvg}</td>
+                  <td>${bowlEcon}</td>
+                  <td>${bowlSr}</td>
+                  <td>${bowlBbm}</td>
+                  <td>${bowlBbi}</td>
                 </tr>
               </tbody>
             </table>
           </div>
         </div>
 
-        <!-- Bottom Link to Squad -->
+        <!-- Bottom Navigation & Return Link -->
         <div class="csk-bottom-squad-link">
-          <a href="squad.html" class="btn btn-primary" style="padding: 12px 32px; font-weight: 800; border-radius: 999px;">
-            ← Return to Full Squad Roster
+          <a href="player-detail.html?id=${prevPlayer.id}" class="btn btn-secondary csk-nav-btn-prev">
+            ← Prev Player
+          </a>
+          <a href="squad.html" class="btn btn-primary csk-nav-btn-main">
+            Return to Full Squad Roster
+          </a>
+          <a href="player-detail.html?id=${nextPlayer.id}" class="btn btn-secondary csk-nav-btn-next">
+            Next Player →
           </a>
         </div>
 
