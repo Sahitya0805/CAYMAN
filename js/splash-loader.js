@@ -153,9 +153,6 @@ export function initSplashLoader() {
     splash.classList.add('is-hidden');
     splash.classList.remove('is-active');
     splash.setAttribute('aria-hidden', 'true');
-    try {
-      sessionStorage.setItem('csk_splash_seen', 'true');
-    } catch (err) {}
     setTimeout(() => {
       if (splash.parentNode) {
         splash.style.display = 'none';
@@ -163,19 +160,11 @@ export function initSplashLoader() {
     }, 280);
   }
 
-  // If already seen in this session or navigating between pages, dismiss immediately
-  try {
-    if (sessionStorage.getItem('csk_splash_seen') === 'true') {
-      dismissSplash();
-      return;
-    }
-  } catch (err) {}
-
   // Click anywhere to skip instantly
   splash.addEventListener('click', dismissSplash);
 
   let progress = 0;
-  const durationMs = 620;
+  const durationMs = 480;
   const startTime = performance.now();
 
   function updateProgress(currentTime) {
@@ -239,19 +228,70 @@ export function initSplashLoader() {
       requestAnimationFrame(updateProgress);
     } else {
       // Hold bowled celebration briefly so the user sees the LED stumps impact
-      setTimeout(dismissSplash, 120);
+      setTimeout(dismissSplash, 90);
     }
   }
 
   requestAnimationFrame(updateProgress);
 
   // Fallback safety timeout
-  setTimeout(dismissSplash, 950);
+  setTimeout(dismissSplash, 750);
 
   // Handle browser back/forward history cache (pageshow)
   window.addEventListener('pageshow', (event) => {
     if (event.persisted) {
       dismissSplash();
+    }
+  });
+
+  // Enable outgoing page transitions
+  initPageTransitionLinks();
+}
+
+/**
+ * Intercept internal page link clicks to trigger the matchday loading screen instantly
+ */
+export function initPageTransitionLinks() {
+  if (window._cskPageTransitionsBound) return;
+  window._cskPageTransitionsBound = true;
+
+  document.addEventListener('click', (e) => {
+    const link = e.target.closest('a');
+    if (!link) return;
+
+    const href = link.getAttribute('href');
+    if (!href) return;
+
+    // Ignore anchors, external links, download, mailto, tel, javascript, or new tab
+    if (
+      link.target === '_blank' ||
+      href.startsWith('#') ||
+      href.startsWith('http://') ||
+      href.startsWith('https://') ||
+      href.startsWith('mailto:') ||
+      href.startsWith('tel:') ||
+      href.startsWith('javascript:') ||
+      link.hasAttribute('download')
+    ) {
+      return;
+    }
+
+    const currentPath = window.location.pathname.split('/').pop() || 'index.html';
+    const targetPath = href.split('?')[0].split('#')[0].split('/').pop() || 'index.html';
+
+    // If clicking same page hash anchor, ignore
+    if (targetPath === currentPath && href.includes('#')) {
+      return;
+    }
+
+    // Trigger loading page immediately
+    let splash = document.getElementById('csk-splash-screen');
+    if (splash) {
+      splash.classList.remove('is-hidden');
+      splash.classList.add('is-active');
+      splash.style.display = 'flex';
+      splash.style.opacity = '1';
+      splash.setAttribute('aria-hidden', 'false');
     }
   });
 }

@@ -553,12 +553,6 @@
   transition: opacity 0.3s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.3s;
   pointer-events: all;
   overflow: hidden;
-  animation: cskSplashAutoFade 0.95s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-}
-
-@keyframes cskSplashAutoFade {
-  0%, 70% { opacity: 1; visibility: visible; }
-  100% { opacity: 0; visibility: hidden; pointer-events: none; }
 }
 
 .csk-splash-screen.is-hidden {
@@ -569,9 +563,10 @@
 }
 
 .csk-splash-screen.is-active {
-  opacity: 1;
-  visibility: visible;
-  pointer-events: all;
+  opacity: 1 !important;
+  visibility: visible !important;
+  pointer-events: all !important;
+  display: flex !important;
 }
 
 .csk-splash-screen__backdrop {
