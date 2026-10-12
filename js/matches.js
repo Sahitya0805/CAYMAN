@@ -24,9 +24,33 @@ export async function initMatchesPage() {
   let currentResult = resultFilter ? resultFilter.value : 'all';
 
   function updateFilterCounts() {
-    const results = fixtures.filter(f => f.status === 'result');
-    const wonCount = results.filter(f => f.is_csk_win === true).length;
-    const lostCount = results.filter(f => f.is_csk_win === false).length;
+    let pool = fixtures.filter(f => f.status === 'result');
+    if (currentFormat !== 'all') {
+      pool = pool.filter(f => {
+        const comp = (f.competition || '').toLowerCase();
+        if (currentFormat === 'Super League T20') {
+          return comp.includes('super league') && f.format === 'T20';
+        }
+        if (currentFormat === 'Super League 40-Over') {
+          return comp.includes('super league') && (f.format === '40-Over' || f.format === '40 Over');
+        }
+        if (currentFormat === 'Elite 50-Over') {
+          return comp.includes('elite') && (f.format === '50-Over' || f.format === '50 Over');
+        }
+        if (currentFormat === 'Elite T20') {
+          return comp.includes('elite') && f.format === 'T20';
+        }
+        if (currentFormat === 'Daniel Morris T20') {
+          return comp.includes('daniel morris');
+        }
+        return f.format === currentFormat || comp.includes(currentFormat.toLowerCase());
+      });
+    }
+    if (currentSeason !== 'all') {
+      pool = pool.filter(f => f.season === currentSeason);
+    }
+    const wonCount = pool.filter(f => f.is_csk_win === true).length;
+    const lostCount = pool.filter(f => f.is_csk_win === false).length;
     if (resultFilter) {
       const wonOpt = resultFilter.querySelector('option[value="won"]');
       const lostOpt = resultFilter.querySelector('option[value="lost"]');
@@ -254,6 +278,7 @@ export async function initMatchesPage() {
   if (formatFilter) {
     const handleFormatChange = (e) => {
       currentFormat = e.target.value;
+      updateFilterCounts();
       render();
     };
     formatFilter.addEventListener('change', handleFormatChange);
@@ -263,6 +288,7 @@ export async function initMatchesPage() {
   if (seasonFilter) {
     const handleSeasonChange = (e) => {
       currentSeason = e.target.value;
+      updateFilterCounts();
       render();
     };
     seasonFilter.addEventListener('change', handleSeasonChange);
