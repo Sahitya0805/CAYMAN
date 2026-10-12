@@ -103,7 +103,26 @@ export function initSquadCard3DTilt(root = document) {
     card.addEventListener('mouseleave', onPointerLeave, { passive: true });
     card.addEventListener('touchmove', onPointerMove, { passive: true });
     card.addEventListener('touchend', onPointerLeave, { passive: true });
+
+    // Tap/Click to toggle HUD active state on touch/mobile
+    card.addEventListener('click', (e) => {
+      if (e.target.closest('.hud-read-more-link')) return;
+      const isAlreadyActive = card.classList.contains('is-active');
+      document.querySelectorAll('.squad-player-stage-card.is-active').forEach(c => c.classList.remove('is-active'));
+      if (!isAlreadyActive) {
+        card.classList.add('is-active');
+      }
+    });
   });
+
+  if (!window._squadOutsideClickAttached) {
+    window._squadOutsideClickAttached = true;
+    document.addEventListener('click', (e) => {
+      if (!e.target.closest('.squad-player-stage-card')) {
+        document.querySelectorAll('.squad-player-stage-card.is-active').forEach(c => c.classList.remove('is-active'));
+      }
+    });
+  }
 }
 
 function createFilterShockwave(btn, e) {
@@ -137,16 +156,36 @@ export function createStadiumPlayerCard(p) {
   const st = p.stats || {};
   const bat = st.batting || {};
   const bowl = st.bowling || {};
-  const hasBowling = bowl.wickets && bowl.wickets > 0;
+  const fld = st.fielding || {};
 
-  // Dynamic Combat Impact Rating (91-99)
-  let powerRating = 91;
-  if (badgeText === 'CAPTAIN') powerRating = 99;
-  else if (badgeText === 'VICE CAPTAIN' || badgeText === 'CO-FOUNDER') powerRating = 98;
-  else if ((p.role || '').toLowerCase().includes('all-rounder')) powerRating = 96;
-  else if ((bat.runs && bat.runs > 100) || (bowl.wickets && bowl.wickets > 5)) powerRating = 95;
-  else if ((p.priority || 99) <= 4) powerRating = 94;
-  else powerRating = 90 + ((parseInt(jerseyNum, 10) || 7) % 8);
+  const roleLower = (p.role || '').toLowerCase();
+  const isBowler = roleLower.includes('bowler') && ((bowl.wickets && bowl.wickets >= 15) || (bat.runs && bat.runs < 150));
+  const isWK = roleLower.includes('wicket') || (p.bowlingStyle || '').toLowerCase().includes('wicket');
+
+  let statTiles = [];
+  if (isBowler) {
+    statTiles = [
+      { label: 'WICKETS', val: bowl.wickets ?? '—', sub: `Avg ${bowl.average || '—'}`, accent: 'yellow' },
+      { label: 'ECONOMY', val: bowl.economy ?? '—', sub: `${bowl.maidens || 0} Maidens`, accent: 'cyan' },
+      { label: 'BEST BOWLING', val: bowl.best_bowling || '—', sub: `${bowl.four_wickets || 0}x 4-Wkts`, accent: 'cyan' },
+      { label: 'CAREER RUNS', val: bat.runs ?? 0, sub: `SR ${bat.strike_rate || '—'}`, accent: 'white' }
+    ];
+  } else if (isWK && (!bowl.wickets || bowl.wickets === 0)) {
+    statTiles = [
+      { label: 'CAREER RUNS', val: bat.runs ?? 0, sub: `Avg ${bat.average || '—'}`, accent: 'yellow' },
+      { label: 'STRIKE RATE', val: bat.strike_rate ?? '—', sub: `HS ${bat.highest_score || '—'}`, accent: 'cyan' },
+      { label: '50s / 100s', val: `${bat.fifties || 0} / ${bat.hundreds || 0}`, sub: `${bat.fours || 0} 4s • ${bat.sixes || 0} 6s`, accent: 'white' },
+      { label: 'DISMISSALS', val: (fld.catches || 0) + (fld.stumpings || 0), sub: `${fld.catches || 0} Ct • ${fld.stumpings || 0} St`, accent: 'cyan' }
+    ];
+  } else {
+    // All-Rounder & General
+    statTiles = [
+      { label: 'CAREER RUNS', val: bat.runs ?? 0, sub: `Avg ${bat.average || '—'}`, accent: 'yellow' },
+      { label: 'WICKETS', val: bowl.wickets ?? 0, sub: `Econ ${bowl.economy || '—'}`, accent: 'yellow' },
+      { label: 'STRIKE RATE', val: bat.strike_rate ?? '—', sub: `HS ${bat.highest_score || '—'}`, accent: 'cyan' },
+      { label: 'BEST BOWLING', val: bowl.best_bowling || '—', sub: `${fld.catches || 0} Catches`, accent: 'cyan' }
+    ];
+  }
 
   return `
     <article class="squad-player-stage-card roster-stage-card futuristic-card" tabindex="0" aria-label="${playerName} - ${p.role}">
@@ -191,58 +230,64 @@ export function createStadiumPlayerCard(p) {
 
       <!-- Interactive Hover/Tap HUD -->
       <div class="squad-card-hover-hud">
+        <!-- Top Meta Header -->
         <div class="hud-top-meta">
-          <div class="hud-nationality-row">
-            <span class="hud-flag">🏏</span>
-            <div class="hud-nat-text">
-              <span class="hud-sub-label">SQUAD #${jerseyNum}</span>
-              <strong class="hud-nat-title">${p.role.toUpperCase()}</strong>
+          <div class="hud-role-badge-row">
+            <span class="hud-squad-capsule">CSK #${jerseyNum}</span>
+            <span class="hud-role-name" title="${p.role}">${p.role.toUpperCase()}</span>
+          </div>
+          <div class="hud-age-badge">
+            AGE ${p.age} <span class="hud-dot">•</span> ${p.birthday}
+          </div>
+        </div>
+
+        <!-- Disciplines (Batting & Bowling / Keeping) -->
+        <div class="hud-disciplines-bar">
+          <div class="discipline-badge">
+            <span class="discipline-icon">🏏</span>
+            <div class="discipline-details">
+              <span class="discipline-label">BATTING</span>
+              <span class="discipline-text" title="${p.battingStyle || '—'}">${p.battingStyle || '—'}</span>
             </div>
           </div>
-          <div style="font-size: 0.8125rem; color: #38BDF8; font-weight: 800; letter-spacing: 0.04em;">
-            AGE ${p.age} • ${p.birthday}
+          <div class="discipline-badge">
+            <span class="discipline-icon">${isWK ? '🧤' : '🎯'}</span>
+            <div class="discipline-details">
+              <span class="discipline-label">${isWK ? 'KEEPING' : 'BOWLING'}</span>
+              <span class="discipline-text" title="${p.bowlingStyle || '—'}">${p.bowlingStyle || '—'}</span>
+            </div>
           </div>
         </div>
 
-        <!-- Combat Power Index Meter -->
-        <div class="squad-power-index-wrap">
-          <div class="power-index-label-row">
-            <span class="power-label">⚡ COMBAT IMPACT RATING</span>
-            <span class="power-score">${powerRating}<span style="font-size: 0.65rem; color: #94A3B8;">/100</span></span>
+        <!-- Career Performance Matrix Box -->
+        <div class="hud-career-matrix-box">
+          <div class="career-matrix-header">
+            <div class="matrix-title-group">
+              <svg class="matrix-icon" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"/></svg>
+              <span class="matrix-title">CAREER PERFORMANCE</span>
+            </div>
+            <span class="matrix-caps-pill">${bat.matches || 0} MATCHES</span>
           </div>
-          <div class="power-meter-track">
-            <div class="power-meter-fill" style="width: ${powerRating}%;"></div>
+          <div class="career-matrix-grid">
+            ${statTiles.map(t => `
+              <div class="matrix-tile">
+                <span class="matrix-tile-label">${t.label}</span>
+                <span class="matrix-tile-val ${t.accent === 'cyan' ? 'accent-cyan' : t.accent === 'white' ? 'accent-white' : 'accent-yellow'}">${t.val}</span>
+                <span class="matrix-tile-sub">${t.sub}</span>
+              </div>
+            `).join('')}
           </div>
-        </div>
-
-        <!-- Details Grid -->
-        <div class="hud-stats-grid" style="grid-template-columns: 1fr 1fr; gap: 6px; margin: 6px 0;">
-          <div class="hud-stat-cell" style="padding: 6px 10px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 6px;">
-            <span class="hud-stat-label" style="color: #94A3B8; font-size: 0.6rem; font-weight: 800;">BATTING</span>
-            <span class="hud-stat-val" style="font-size: 0.825rem; color: #FFFFFF; font-weight: 800;">${p.battingStyle || '—'}</span>
-          </div>
-          <div class="hud-stat-cell" style="padding: 6px 10px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 6px;">
-            <span class="hud-stat-label" style="color: #94A3B8; font-size: 0.6rem; font-weight: 800;">BOWLING</span>
-            <span class="hud-stat-val" style="font-size: 0.825rem; color: #FFFFFF; font-weight: 800;">${p.bowlingStyle || '—'}</span>
-          </div>
-        </div>
-
-        <!-- Career Telemetry Pill -->
-        <div style="margin: 6px 0; padding: 7px 10px; background: rgba(56, 189, 248, 0.08); border: 1px solid rgba(56, 189, 248, 0.28); border-radius: 8px; font-size: 0.72rem; display: flex; justify-content: space-between; align-items: center; color: #FFFFFF; flex-wrap: wrap; gap: 4px;">
-          <span><strong style="color: #38BDF8;">CAREER</strong> • ${bat.matches || 20}M</span>
-          <span><strong>${bat.runs || 0}</strong> Runs (Avg ${bat.average || '—'})</span>
-          ${hasBowling ? `<span><strong style="color: #F59E0B;">${bowl.wickets}</strong> Wkts (BBI ${bowl.best_bowling || '—'})</span>` : ''}
         </div>
 
         <!-- Description Snippet -->
         ${p.description ? `
-          <div style="font-size: 0.78rem; color: #F1F5F9; line-height: 1.45; max-height: 60px; overflow-y: auto; margin: 4px 0; padding: 6px 8px; background: rgba(255,255,255,0.04); border-left: 2px solid #38BDF8; border-radius: 0 6px 6px 0;">
+          <div class="hud-bio-quote">
             ${p.description}
           </div>
         ` : ''}
 
         <!-- Bottom Action CTA -->
-        <div class="hud-bottom-cta" style="display: flex; gap: 10px; align-items: center; justify-content: space-between; margin-top: auto; padding-top: 6px;">
+        <div class="hud-bottom-cta">
           <a href="player-detail.html?id=${p.id}" class="hud-read-more-link">
             <span>Career Stats &amp; Profile</span>
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
