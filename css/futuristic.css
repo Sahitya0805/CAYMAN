@@ -1227,5 +1227,333 @@ body.nav-open .mobile-nav-backdrop {
   transform: translateY(-2px);
 }
 
+/* ─────────────────────────────────────────────────────────────
+   24. 2026 FRANCHISE CAMPAIGN HUD & TELEMETRY SYSTEMS
+   ───────────────────────────────────────────────────────────── */
+.cyber-2026-hub {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  background: linear-gradient(135deg, rgba(5, 14, 32, 0.95) 0%, rgba(10, 30, 66, 0.92) 50%, rgba(4, 11, 24, 0.95) 100%);
+  border: 1.5px solid rgba(56, 189, 248, 0.4);
+  border-radius: 16px;
+  padding: 14px 22px;
+  margin-bottom: 24px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.6), 0 0 24px rgba(56, 189, 248, 0.18);
+  position: relative;
+  overflow: hidden;
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+}
+
+.cyber-2026-hub::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #38BDF8, #F59E0B, #38BDF8, transparent);
+  background-size: 200% 100%;
+  animation: shimmerLine 3.2s linear infinite;
+}
+
+.cyber-2026-left {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.cyber-2026-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(56, 189, 248, 0.16);
+  border: 1px solid rgba(56, 189, 248, 0.5);
+  padding: 5px 14px;
+  border-radius: 999px;
+  box-shadow: 0 0 12px rgba(56, 189, 248, 0.25);
+}
+
+.cyber-2026-tag {
+  font-family: var(--font-display, "Chakra Petch", sans-serif);
+  font-size: 0.8rem;
+  font-weight: 900;
+  letter-spacing: 0.1em;
+  color: #38BDF8;
+  text-transform: uppercase;
+}
+
+.cyber-2026-title-wrap {
+  display: flex;
+  flex-direction: column;
+}
+
+.cyber-2026-heading {
+  font-family: var(--font-display, "Chakra Petch", sans-serif);
+  font-size: 1.05rem;
+  font-weight: 900;
+  letter-spacing: 0.05em;
+  color: #FFFFFF;
+  margin: 0 0 2px 0;
+  text-transform: uppercase;
+}
+
+.cyber-2026-telemetry {
+  font-size: 0.76rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  color: #94A3B8;
+  text-transform: uppercase;
+}
+
+.cyber-2026-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.btn-2026-quick-filter {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: linear-gradient(135deg, rgba(56, 189, 248, 0.22) 0%, rgba(245, 158, 11, 0.18) 100%);
+  border: 1.5px solid #38BDF8;
+  color: #FFFFFF;
+  font-family: var(--font-display, "Chakra Petch", sans-serif);
+  font-size: 0.82rem;
+  font-weight: 900;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 8px 18px;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 4px 16px rgba(56, 189, 248, 0.3);
+  white-space: nowrap;
+}
+
+.btn-2026-quick-filter:hover {
+  background: linear-gradient(135deg, #0284C7 0%, #0369A1 100%);
+  color: #FFFFFF;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(56, 189, 248, 0.6);
+  border-color: #FFFFFF;
+}
+
+.btn-2026-icon {
+  font-size: 1rem;
+  color: #F59E0B;
+  filter: drop-shadow(0 0 6px #F59E0B);
+}
+
+/* ─────────────────────────────────────────────────────────────
+   25. UNIVERSAL SITETEXT & MOBILE RESPONSIVENESS SYSTEM
+   Comprehensive safeguards across 320px, 375px, 480px, 640px, 768px, 992px
+   ───────────────────────────────────────────────────────────── */
+
+/* Global Overflow-X Neutralizer */
+html, body {
+  max-width: 100vw !important;
+  overflow-x: hidden !important;
+  width: 100% !important;
+  position: relative;
+}
+
+/* Container responsive padding */
+@media (max-width: 768px) {
+  .container,
+  .gallery-container,
+  .csk-content-container,
+  .sponsors-content-wrap {
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+  }
+}
+
+@media (max-width: 380px) {
+  .container,
+  .gallery-container,
+  .csk-content-container,
+  .sponsors-content-wrap {
+    padding-left: 12px !important;
+    padding-right: 12px !important;
+  }
+}
+
+/* 2026 Hub on Tablets & Mobile */
+@media (max-width: 768px) {
+  .cyber-2026-hub {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 16px 16px;
+    gap: 14px;
+  }
+
+  .cyber-2026-actions {
+    width: 100%;
+  }
+
+  .btn-2026-quick-filter {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+/* Contact Page Split Grid on Mobile */
+@media (max-width: 860px) {
+  .contact-split-grid {
+    grid-template-columns: 1fr !important;
+    border-radius: 16px !important;
+  }
+
+  .contact-split-grid > div:first-child {
+    padding: 32px 20px !important;
+  }
+
+  .contact-form-panel {
+    padding: 32px 20px !important;
+  }
+}
+
+/* About Page Manifesto Card & Grid on Mobile */
+@media (max-width: 860px) {
+  .csk-manifesto-card {
+    padding: 28px 18px !important;
+    border-radius: 16px !important;
+  }
+
+  .csk-manifesto-meta-grid {
+    grid-template-columns: 1fr !important;
+    gap: 10px !important;
+  }
+
+  .csk-manifesto-header {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 12px !important;
+  }
+
+  .csk-manifesto-footer {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 14px !important;
+  }
+}
+
+/* Match Detail Score Display on Mobile */
+@media (max-width: 640px) {
+  .match-score-display {
+    flex-direction: column !important;
+    align-items: center !important;
+    text-align: center !important;
+    padding: 20px 16px !important;
+    gap: 18px !important;
+  }
+
+  .team-score-block {
+    text-align: center !important;
+    width: 100% !important;
+  }
+
+  .team-score-block h3 {
+    justify-content: center !important;
+    font-size: 1.25rem !important;
+  }
+
+  .score-large {
+    font-size: 1.85rem !important;
+  }
+}
+
+/* Fixture Ticket Mobile Full Width Stacking */
+@media (max-width: 640px) {
+  .fixture-ticket {
+    flex-direction: column !important;
+    border-radius: 16px !important;
+    margin-bottom: 24px !important;
+  }
+
+  .ticket-stub {
+    width: 100% !important;
+    border-right: none !important;
+    border-bottom: 2px dashed #CBD5E1 !important;
+    border-top-right-radius: 14px !important;
+    border-bottom-left-radius: 0 !important;
+    padding: 10px 16px !important;
+    flex-direction: row !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+  }
+
+  .ticket-notch-top,
+  .ticket-notch-bottom {
+    display: none !important;
+  }
+
+  .ticket-body {
+    padding: 16px 14px 28px !important;
+    border-bottom-left-radius: 14px !important;
+    border-top-right-radius: 0 !important;
+  }
+
+  .ticket-matchup {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    gap: 8px !important;
+    width: 100% !important;
+  }
+
+  .ticket-team {
+    flex: 1 !important;
+    min-width: 0 !important;
+  }
+
+  .ticket-team-name {
+    font-size: 0.82rem !important;
+    max-width: 100% !important;
+    word-break: break-word !important;
+  }
+
+  .ticket-team-score {
+    font-size: 1.05rem !important;
+  }
+
+  .ticket-btn-pill {
+    position: static !important;
+    transform: none !important;
+    width: 100% !important;
+    justify-content: center !important;
+    margin-top: 14px !important;
+    border-radius: 10px !important;
+    padding: 10px 14px !important;
+  }
+}
+
+/* Past Sponsors Section & Centerpieces on Mobile */
+@media (max-width: 640px) {
+  #our-sponsors-section,
+  .card-delivers-centerpiece {
+    padding: 24px 14px !important;
+    border-radius: 14px !important;
+  }
+
+  #our-sponsors-section img {
+    max-width: 85% !important;
+    height: auto !important;
+  }
+}
+
+/* iOS Safari Input Focus Prevention of Zoom */
+@media (max-width: 768px) {
+  input, select, textarea {
+    font-size: 16px !important;
+  }
+}
+
+
 
 
