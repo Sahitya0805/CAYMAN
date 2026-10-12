@@ -12,8 +12,15 @@ export default async function handler(req, res) {
     return res.status(200).end();
   }
 
-  // Security Verification: Require valid Admin Secret
-  const ADMIN_SECRET = process.env.CSK_ADMIN_KEY || process.env.ADMIN_SECRET || 'csk-secretariat-2026';
+  // Security Verification: Require valid Admin Secret configured in server environment
+  const ADMIN_SECRET = process.env.CSK_ADMIN_KEY || process.env.ADMIN_SECRET;
+
+  if (!ADMIN_SECRET) {
+    return res.status(503).json({
+      error: 'Admin access unavailable. Administrative key is not configured in server environment.',
+      status: 503
+    });
+  }
 
   const authHeader = req.headers['authorization'] || '';
   const bearerToken = authHeader.replace(/^Bearer\s+/i, '').trim();
