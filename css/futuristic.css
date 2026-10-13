@@ -499,22 +499,29 @@ body.nav-open .mobile-nav-backdrop {
 }
 
 /* ── 12. Futuristic Sitewide Page Load Animations ── */
-@keyframes pageSlideDown {
+@keyframes pageFadeIn {
   0% {
     opacity: 0;
-    transform: translateY(-24px);
   }
   100% {
     opacity: 1;
-    transform: translateY(0);
+  }
+}
+
+@keyframes pageSlideDown {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
   }
 }
 
 @keyframes pageFadeUp {
   0% {
     opacity: 0;
-    transform: translateY(24px);
-    filter: blur(4px);
+    transform: translateY(16px);
+    filter: blur(2px);
   }
   100% {
     opacity: 1;
@@ -532,9 +539,9 @@ body.nav-open .mobile-nav-backdrop {
   }
 }
 
-/* Automatic Page Load Entrance on Core Elements */
+/* Automatic Page Load Entrance on Core Elements (No vertical disconnection below navbar) */
 .site-header {
-  animation: pageSlideDown 0.65s cubic-bezier(0.16, 1, 0.3, 1) both;
+  animation: pageFadeIn 0.35s ease-out both;
 }
 
 .hero,
@@ -544,7 +551,7 @@ body.nav-open .mobile-nav-backdrop {
 .squad-filter-bar,
 .match-header-banner,
 .page-header {
-  animation: pageFadeUp 0.7s cubic-bezier(0.16, 1, 0.3, 1) both;
+  animation: pageFadeIn 0.4s ease-out both;
 }
 
 /* Staggered card entrance on load */

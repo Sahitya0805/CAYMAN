@@ -25,17 +25,14 @@
       padding: 0;
     }
 
-    /* Hero Section */
+    /* Hero Section — Seamless Dark Sports Banner (Zero Awkward White Space Below Navbar) */
     .csk-player-hero {
-      background-color: #E6ECF2;
-      background-image: 
-        linear-gradient(rgba(26, 74, 132, 0.05) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(26, 74, 132, 0.05) 1px, transparent 1px);
-      background-size: 28px 28px;
+      background: linear-gradient(135deg, #061530 0%, #0A2454 60%, #030C1C 100%) !important;
       position: relative;
       padding: 24px 0 0;
-      border-bottom: 1px solid #D5DFEB;
+      border-bottom: 1.5px solid rgba(255, 255, 255, 0.1) !important;
       overflow: hidden;
+      margin: 0 !important;
     }
 
     .csk-player-hero-container {
@@ -49,7 +46,7 @@
       display: inline-flex;
       align-items: center;
       gap: 6px;
-      color: #1A4A84;
+      color: #38BDF8;
       font-size: 0.95rem;
       font-weight: 800;
       text-decoration: none;
@@ -62,7 +59,7 @@
     .csk-back-btn:hover {
       opacity: 0.85;
       transform: translateX(-3px);
-      color: #0E366C;
+      color: #FFFFFF;
     }
 
     .csk-hero-main {
@@ -113,7 +110,7 @@
     }
 
     .csk-player-firstname {
-      color: #1A4A84;
+      color: #38BDF8;
       font-size: 1.35rem;
       font-weight: 800;
       text-transform: uppercase;
@@ -122,7 +119,7 @@
     }
 
     .csk-player-lastname {
-      color: #0E366C;
+      color: #FFFFFF;
       font-size: clamp(2.4rem, 5vw, 4.2rem);
       font-weight: 900;
       text-transform: uppercase;
@@ -130,6 +127,7 @@
       line-height: 1;
       margin: 0 0 32px 0;
       font-family: var(--font-display, "Chakra Petch", sans-serif);
+      text-shadow: 0 2px 12px rgba(0, 0, 0, 0.6);
     }
 
     .csk-meta-grid {
@@ -152,7 +150,7 @@
     }
 
     .csk-meta-label {
-      color: #1A4A84;
+      color: #38BDF8;
       font-size: 0.78rem;
       font-weight: 800;
       text-transform: uppercase;
@@ -161,7 +159,7 @@
     }
 
     .csk-meta-val {
-      color: #475569;
+      color: #E2E8F0;
       font-size: 0.95rem;
       font-weight: 700;
       text-transform: uppercase;
