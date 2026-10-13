@@ -1,8 +1,10 @@
-// Backend Private Submissions Store (In-Memory & Serverless Cache)
+// Backend Private Submissions Store (In-Memory, File-Based & Excel Database Sync)
 import fs from 'fs';
 import path from 'path';
+import { exec } from 'child_process';
 
 const TMP_CACHE_FILE = path.join('/tmp', 'csk_enquiries.json');
+const CONTENT_FILE = path.join(process.cwd(), 'content', 'enquiries.json');
 
 const DEFAULT_TEST_SUBMISSIONS = [
   {
@@ -27,6 +29,18 @@ const DEFAULT_TEST_SUBMISSIONS = [
 
 function loadPersisted() {
   try {
+    if (fs.existsSync(CONTENT_FILE)) {
+      const data = fs.readFileSync(CONTENT_FILE, 'utf8');
+      const parsed = JSON.parse(data);
+      if (Array.isArray(parsed) && parsed.length > 0) {
+        return parsed;
+      }
+    }
+  } catch (err) {
+    // ignore
+  }
+
+  try {
     if (fs.existsSync(TMP_CACHE_FILE)) {
       const data = fs.readFileSync(TMP_CACHE_FILE, 'utf8');
       const parsed = JSON.parse(data);
@@ -44,11 +58,36 @@ const liveSubmissions = loadPersisted();
 
 export function addSubmission(sub) {
   liveSubmissions.unshift(sub);
+
+  // 1. Persist to /tmp/csk_enquiries.json
   try {
     fs.writeFileSync(TMP_CACHE_FILE, JSON.stringify(liveSubmissions, null, 2), 'utf8');
   } catch (err) {
-    // ignore write error in restricted runtime
+    // ignore in restricted env
   }
+
+  // 2. Persist to content/enquiries.json
+  try {
+    fs.writeFileSync(CONTENT_FILE, JSON.stringify(liveSubmissions, null, 2), 'utf8');
+  } catch (err) {
+    // ignore in read-only serverless env
+  }
+
+  // 3. Trigger immediate Excel export update
+  try {
+    const scriptPath = path.join(process.cwd(), 'scripts', 'generate_excel_export.py');
+    if (fs.existsSync(scriptPath)) {
+      exec(`python3 "${scriptPath}"`, (err) => {
+        if (err) {
+          // fallback to python command if python3 not available
+          exec(`python "${scriptPath}"`, () => {});
+        }
+      });
+    }
+  } catch (err) {
+    // ignore
+  }
+
   return liveSubmissions;
 }
 

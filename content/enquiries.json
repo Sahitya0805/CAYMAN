@@ -1,0 +1,51 @@
+[
+  {
+    "timestamp": "2026-10-13T12:09:50.140150+00:00",
+    "dateFormatted": "10/13/2026, 05:39:50 PM",
+    "name": "Sahil Singh (Player Trial Enquiry)",
+    "email": "sahil.singh.test@caymansuperkings.ky",
+    "subject": "Senior Squad Trials & Recruitment",
+    "message": "Testing automated verification that contact page enquiries are accurately saved in Excel (.xlsx) database.",
+    "status": "Verified Website Submission"
+  },
+  {
+    "timestamp": "2026-10-13T12:08:22.626Z",
+    "dateFormatted": "10/13/2026, 05:38:22 PM",
+    "name": "Sahil Singh",
+    "email": "sahil.singh.trial@caymansuperkings.ky",
+    "subject": "Senior Squad Trials & Recruitment",
+    "message": "Enquiring regarding upcoming open bowling trials for senior squad selection at Smith Road Oval.",
+    "status": "Verified Website Submission",
+    "assigned": "Rahul Garg (Captain)"
+  },
+  {
+    "timestamp": "2026-10-10T11:45:00Z",
+    "dateFormatted": "10/10/2026, 6:45:00 AM",
+    "name": "Marcus Campbell",
+    "email": "marcus@example.ky",
+    "subject": "Corporate Sponsorship & Brand Partnership",
+    "message": "Looking to discuss CSK corporate jersey sponsorship for the 2026/27 Super League season.",
+    "status": "In Review",
+    "assigned": "Rahul Garg (Club Captain)"
+  },
+  {
+    "timestamp": "2026-10-10T10:30:00Z",
+    "dateFormatted": "10/10/2026, 5:30:00 AM",
+    "name": "Dave Robinson",
+    "email": "dave.r@example.ky",
+    "subject": "Youth Academy Registration (Ages 10\u201318)",
+    "message": "Interested in enrolling two youth players (under-15) for weekly coaching sessions.",
+    "status": "Pending",
+    "assigned": "Majin Paul (Team Manager)"
+  },
+  {
+    "timestamp": "2026-10-09T18:15:00Z",
+    "dateFormatted": "09/10/2026, 1:15:00 PM",
+    "name": "Sarah Jenkins",
+    "email": "sarah.j@caymanports.ky",
+    "subject": "General Club Enquiry",
+    "message": "Inquiry regarding upcoming tournament schedule at Smith Road Oval and match ticketing.",
+    "status": "Contacted",
+    "assigned": "Christopher Balraj (Co-Founder)"
+  }
+]

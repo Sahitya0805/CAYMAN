@@ -256,39 +256,42 @@ def main():
         "Follow-up Status",
         "Assigned Official / Committee Member"
     ]
-    enquiries_rows = [
-        enquiries_headers,
-        [
-            "2026-10-10T11:45:00Z",
-            "10/10/2026, 6:45:00 AM",
-            "Marcus Campbell",
-            "marcus@example.ky",
-            "Corporate Sponsorship & Brand Partnership",
-            "Looking to discuss CSK corporate jersey sponsorship for the 2026/27 Super League season.",
-            "In Review",
-            "Rahul Garg (Club Captain)"
-        ],
-        [
-            "2026-10-10T10:30:00Z",
-            "10/10/2026, 5:30:00 AM",
-            "Dave Robinson",
-            "dave.r@example.ky",
-            "Youth Academy Registration (Ages 10–18)",
-            "Interested in enrolling two youth players (under-15) for weekly coaching sessions.",
-            "Pending",
-            "Majin Paul (Team Manager)"
-        ],
-        [
-            "2026-10-09T18:15:00Z",
-            "09/10/2026, 1:15:00 PM",
-            "Sarah Jenkins",
-            "sarah.j@caymanports.ky",
-            "General Club Enquiry",
-            "Inquiry regarding upcoming tournament schedule at Smith Road Oval and match ticketing.",
-            "Contacted",
-            "Christopher Balraj (Co-Founder)"
-        ]
-    ]
+    enquiries_rows = [enquiries_headers]
+    
+    enquiries_list = []
+    enquiries_path = os.path.join(root, 'content', 'enquiries.json')
+    if os.path.exists(enquiries_path):
+        try:
+            with open(enquiries_path, 'r', encoding='utf-8') as f:
+                enquiries_list = json.load(f)
+        except Exception as e:
+            print(f"Error loading {enquiries_path}: {e}")
+            
+    # Also check /tmp/csk_enquiries.json
+    tmp_path = '/tmp/csk_enquiries.json'
+    if os.path.exists(tmp_path):
+        try:
+            with open(tmp_path, 'r', encoding='utf-8') as f:
+                tmp_list = json.load(f)
+                seen = {e.get('timestamp') for e in enquiries_list if e.get('timestamp')}
+                for item in tmp_list:
+                    if item.get('timestamp') not in seen:
+                        enquiries_list.append(item)
+                        seen.add(item.get('timestamp'))
+        except Exception:
+            pass
+
+    for e in enquiries_list:
+        enquiries_rows.append([
+            e.get("timestamp", ""),
+            e.get("dateFormatted", ""),
+            e.get("name", ""),
+            e.get("email", ""),
+            e.get("subject", ""),
+            e.get("message", ""),
+            e.get("status", "New / Received"),
+            e.get("assigned", "Committee Review")
+        ])
 
     # 6. Load Gallery Data
     gallery_rows = [["Image ID", "Title / Caption", "Year", "Category", "High-Res Image Path", "Tags"]]
