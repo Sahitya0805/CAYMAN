@@ -222,6 +222,19 @@ body.editorial-home .site-header {
   }
 }
 
+/* Ensure zero space between site-header and adjacent hero content across all pages */
+.site-header + main,
+.site-header + .section,
+.site-header + .section--navy,
+main > section:first-child,
+main > .section--navy:first-child,
+main > .sponsors-hero:first-child,
+main > .matches-hero-banner:first-child,
+main > .squad-stadium-hero:first-child,
+main > .csk-player-hero:first-child {
+  margin-top: 0 !important;
+}
+
 .site-header__container {
   pointer-events: auto;
   max-width: 1240px;
