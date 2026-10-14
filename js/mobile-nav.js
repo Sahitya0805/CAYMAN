@@ -12,7 +12,7 @@
     var path = window.location.pathname.toLowerCase();
     if (path.indexOf('squad') !== -1 || path.indexOf('player-detail') !== -1) return 'squad';
     if (path.indexOf('match') !== -1) return 'matches';
-    if (path.indexOf('kids') !== -1 || path.indexOf('youth') !== -1) return 'kids';
+    if (path.indexOf('youth') !== -1 || path.indexOf('kids') !== -1) return 'youth';
     if (path.indexOf('about') !== -1 || path.indexOf('history') !== -1) return 'about';
     if (path.indexOf('gallery') !== -1) return 'gallery';
     if (path.indexOf('partner') !== -1 || path.indexOf('sponsor') !== -1) return 'partner';
@@ -58,9 +58,9 @@
       '      <span class="csk-drawer-label">Matches</span>',
       '      <span class="csk-drawer-pill">FIXTURES</span>',
       '    </a>',
-      '    <a href="kids.html" class="csk-drawer-link ' + (active === 'kids' ? 'is-active' : '') + '">',
-      '      <span class="csk-drawer-icon">🧒</span>',
-      '      <span class="csk-drawer-label">Kids Academy</span>',
+      '    <a href="youth.html" class="csk-drawer-link ' + (active === 'youth' ? 'is-active' : '') + '">',
+      '      <span class="csk-drawer-icon">🏏</span>',
+      '      <span class="csk-drawer-label">Youth Academy</span>',
       '      <span class="csk-drawer-pill">JUNIORS</span>',
       '    </a>',
       '    <a href="about.html" class="csk-drawer-link ' + (active === 'about' ? 'is-active' : '') + '">',
