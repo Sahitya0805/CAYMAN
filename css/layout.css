@@ -232,6 +232,7 @@ main > .sponsors-hero:first-child,
 main > .matches-hero-banner:first-child,
 main > .squad-stadium-hero:first-child,
 main > .kids-hero-section:first-child,
+main > .youth-hero-section:first-child,
 main > .csk-player-hero:first-child {
   margin-top: 0 !important;
 }
