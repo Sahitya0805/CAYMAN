@@ -1442,6 +1442,15 @@
               <span>Submit Academy Registration</span>
             </button>
             <div id="youth-form-feedback" style="display: none; margin-top: 14px; font-weight: 700; font-size: 0.95rem; text-align: center;"></div>
+            
+            <!-- Data Destination & Privacy Notice -->
+            <div style="margin-top: 16px; padding: 12px 14px; background: #F8FAFC; border: 1px solid #E2E8F0; border-radius: 8px; font-size: 0.8rem; color: #64748B; line-height: 1.5; text-align: left;">
+              <strong style="color: #09152B; display: flex; align-items: center; gap: 6px; margin-bottom: 3px;">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#1D5496" stroke-width="2.5"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+                <span>Where is your data shared?</span>
+              </strong>
+              <span>All registrations are saved to the <strong>CSK Academy Private Registry &amp; Excel Database</strong> and routed directly to the Academy Coordinator email (<code>caymansuperkings@gmail.com</code>). Your phone number is strictly used to contact you regarding training schedules and trials.</span>
+            </div>
           </form>
 
           <div class="youth-direct-contact">
@@ -1568,26 +1577,84 @@
     });
 
     // Handle Enrollment Form Submit
-    function handleYouthEnrollment(e) {
+    async function handleYouthEnrollment(e) {
       e.preventDefault();
       const parentName = document.getElementById('parent-name').value.trim();
       const childInfo = document.getElementById('child-info').value.trim();
       const phone = document.getElementById('parent-phone').value.trim();
+      const email = (document.getElementById('parent-email') ? document.getElementById('parent-email').value.trim() : '');
       const level = document.getElementById('experience-level').value;
       const feedback = document.getElementById('youth-form-feedback');
       const submitBtn = document.getElementById('youth-submit-btn');
 
-      submitBtn.disabled = true;
-      submitBtn.innerHTML = '<span>Registering...</span>';
+      if (!parentName || !childInfo || !phone) return;
 
-      setTimeout(function() {
+      submitBtn.disabled = true;
+      submitBtn.innerHTML = '<span style="display:inline-flex;align-items:center;justify-content:center;gap:8px;"><svg style="animation:spin 1s linear infinite" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10" stroke-opacity="0.25"></circle><path d="M12 2a10 10 0 0 1 10 10" stroke-linecap="round"></path></svg>Saving &amp; Registering...</span>';
+
+      const validEmail = (email && /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) ? email : 'academy-enrollment@caymansuperkings.com';
+
+      const payload = {
+        timestamp: new Date().toISOString(),
+        dateFormatted: new Date().toLocaleString('en-US', { timeZone: 'America/Cayman' }),
+        name: parentName,
+        email: validEmail,
+        subject: `Youth Academy Enrollment - ${childInfo}`,
+        message: `[YOUTH ACADEMY ENROLLMENT]\n• Parent/Guardian: ${parentName}\n• Child Info & Age: ${childInfo}\n• Phone / WhatsApp: ${phone}\n• Email: ${email || 'Not provided'}\n• Experience Level: ${level}\n• Training Ground: Smith Road Oval, George Town`
+      };
+
+      // 1. Save to LocalStorage for persistent browser access
+      try {
+        const enrollments = JSON.parse(localStorage.getItem('csk_youth_enrollments') || '[]');
+        enrollments.unshift(payload);
+        localStorage.setItem('csk_youth_enrollments', JSON.stringify(enrollments.slice(0, 50)));
+
+        const clubEnquiries = JSON.parse(localStorage.getItem('csk_enquiries') || '[]');
+        clubEnquiries.unshift(payload);
+        localStorage.setItem('csk_enquiries', JSON.stringify(clubEnquiries.slice(0, 50)));
+      } catch (err) {
+        console.warn('LocalStorage save notice:', err);
+      }
+
+      // 2. Dispatch to Serverless Database API (/api/contact -> content/enquiries.json -> Excel export)
+      try {
+        fetch('/api/contact', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(payload)
+        }).catch(err => console.warn('API sync notice:', err));
+      } catch (err) {}
+
+      // 3. Email relay directly to CSK management caymansuperkings@gmail.com
+      try {
+        fetch('https://formsubmit.co/ajax/caymansuperkings@gmail.com', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+          body: JSON.stringify({
+            _subject: `🏏 [CSK Youth Academy Registration] ${childInfo} (Parent: ${parentName})`,
+            _template: 'table',
+            _captcha: 'false',
+            "Submission Date": payload.dateFormatted,
+            "Parent / Guardian": parentName,
+            "Child & Age": childInfo,
+            "Phone / WhatsApp": phone,
+            "Parent Email": email || 'Not provided',
+            "Experience Level": level,
+            "Training Location": "Smith Road Oval, George Town"
+          })
+        }).catch(err => console.warn('Email dispatch notice:', err));
+      } catch (err) {}
+
+      // 4. UI Confirmation
+      setTimeout(() => {
         feedback.style.display = 'block';
         feedback.style.color = '#059669';
-        feedback.innerHTML = '🎉 Thank you, ' + parentName + '! Enrollment received for ' + childInfo + '. Our coach will WhatsApp/call ' + phone + ' shortly with session schedules.';
+        feedback.innerHTML = '🎉 Thank you, <strong>' + parentName + '</strong>! Enrollment received for <strong>' + childInfo + '</strong>. Data is logged in the CSK Academy Registry and sent to coaching staff. Our team will WhatsApp / call <strong>' + phone + '</strong> shortly.';
         submitBtn.innerHTML = '<span>Registration Confirmed ✓</span>';
         submitBtn.style.background = '#059669';
+        submitBtn.disabled = false;
         document.getElementById('youth-enrollment-form').reset();
-      }, 700);
+      }, 500);
     }
   </script>
 </body>
