@@ -1,0 +1,1587 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kids &amp; Junior Cricket Academy | Cayman Super Kings</title>
+  <meta name="description" content="Cayman Super Kings Kids & Junior Cricket Academy: Grassroots coaching, live matchday action, and character-building pathways for young cricketers aged 5-17 in Grand Cayman.">
+  <link rel="icon" type="image/png" href="assets/csk-official-logo.png?v=20260923_10">
+  <link rel="shortcut icon" href="favicon.ico">
+  <link rel="apple-touch-icon" href="assets/csk-official-logo.png?v=20260923_10">
+  
+  <link rel="stylesheet" href="css/tokens.css?v=20260923_10">
+  <link rel="stylesheet" href="css/layout.css?v=20260923_10">
+  <link rel="stylesheet" href="css/components.css?v=20260923_10">
+  <link rel="stylesheet" href="css/pages.css?v=20260923_10">
+  <link rel="stylesheet" href="css/futuristic.css?v=20261012_clean">
+  <script src="js/mobile-nav.js" defer></script>
+
+  <style>
+    /* ── CSK KIDS ACADEMY DEDICATED STYLES ── */
+    body.page-kids {
+      background-color: #02050C !important;
+      color: #E2E8F0;
+      font-family: var(--font-sans, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif);
+      margin: 0;
+      padding: 0;
+      overflow-x: hidden;
+    }
+
+    /* Zero-gap Hero Banner */
+    .kids-hero-section {
+      position: relative;
+      background: radial-gradient(circle at 50% 20%, rgba(29, 84, 150, 0.4) 0%, rgba(6, 11, 22, 0.95) 60%, #02050C 100%),
+                  linear-gradient(180deg, #060B16 0%, #02050C 100%);
+      padding: 44px 0 64px;
+      margin: 0 !important;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      overflow: hidden;
+    }
+
+    .kids-hero-aurora {
+      position: absolute;
+      top: -120px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 900px;
+      height: 400px;
+      background: radial-gradient(ellipse, rgba(245, 158, 11, 0.18) 0%, rgba(56, 189, 248, 0.12) 40%, transparent 70%);
+      filter: blur(60px);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .kids-hero-container {
+      position: relative;
+      z-index: 1;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+      text-align: center;
+    }
+
+    .kids-badge-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(245, 158, 11, 0.12);
+      border: 1px solid rgba(245, 158, 11, 0.4);
+      color: #F59E0B;
+      padding: 6px 18px;
+      border-radius: 999px;
+      font-size: 0.8rem;
+      font-weight: 800;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+      box-shadow: 0 0 20px rgba(245, 158, 11, 0.2);
+    }
+
+    .kids-hero-title {
+      font-family: var(--font-display, 'Outfit', 'Montserrat', sans-serif);
+      font-size: clamp(2.4rem, 5.5vw, 4.4rem);
+      font-weight: 950;
+      letter-spacing: 0.02em;
+      line-height: 1.08;
+      color: #FFFFFF;
+      text-transform: uppercase;
+      margin: 0 0 16px;
+      text-shadow: 0 4px 24px rgba(0, 0, 0, 0.8);
+    }
+
+    .kids-hero-title span {
+      background: linear-gradient(135deg, #FDE047 0%, #F59E0B 50%, #EF4444 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      display: inline-block;
+    }
+
+    .kids-hero-motto {
+      font-size: clamp(1.1rem, 2.2vw, 1.4rem);
+      font-weight: 700;
+      color: #38BDF8;
+      letter-spacing: 0.04em;
+      margin-bottom: 20px;
+      text-transform: uppercase;
+    }
+
+    .kids-hero-lead {
+      max-width: 860px;
+      margin: 0 auto 32px;
+      font-size: clamp(1rem, 1.6vw, 1.15rem);
+      line-height: 1.7;
+      color: #CBD5E1;
+    }
+
+    /* Key Metrics Highlights Grid */
+    .kids-metrics-bar {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+      max-width: 1040px;
+      margin: 0 auto 36px;
+    }
+
+    @media (max-width: 768px) {
+      .kids-metrics-bar {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+      }
+    }
+
+    .kids-metric-card {
+      background: rgba(15, 23, 42, 0.7);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 12px;
+      padding: 16px 14px;
+      text-align: center;
+      backdrop-filter: blur(8px);
+      transition: transform 0.25s ease, border-color 0.25s ease;
+    }
+
+    .kids-metric-card:hover {
+      transform: translateY(-3px);
+      border-color: rgba(245, 158, 11, 0.5);
+    }
+
+    .kids-metric-val {
+      font-family: var(--font-display, sans-serif);
+      font-size: 1.6rem;
+      font-weight: 900;
+      color: #FBBF24;
+      line-height: 1.1;
+      margin-bottom: 4px;
+    }
+
+    .kids-metric-lbl {
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      color: #94A3B8;
+    }
+
+    /* CTA Button Group */
+    .kids-cta-group {
+      display: flex;
+      justify-content: center;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .kids-btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: linear-gradient(135deg, #F59E0B 0%, #D97706 100%);
+      color: #0B1422;
+      font-weight: 800;
+      font-size: 0.95rem;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      padding: 13px 28px;
+      border-radius: 8px;
+      text-decoration: none;
+      box-shadow: 0 4px 18px rgba(245, 158, 11, 0.35);
+      transition: all 0.22s ease;
+    }
+
+    .kids-btn-primary:hover {
+      background: linear-gradient(135deg, #FBBF24 0%, #F59E0B 100%);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 24px rgba(245, 158, 11, 0.5);
+      color: #060B14;
+    }
+
+    .kids-btn-secondary {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: rgba(30, 41, 59, 0.7);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      color: #FFFFFF;
+      font-weight: 700;
+      font-size: 0.95rem;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      padding: 13px 26px;
+      border-radius: 8px;
+      text-decoration: none;
+      transition: all 0.22s ease;
+    }
+
+    .kids-btn-secondary:hover {
+      background: rgba(51, 65, 85, 0.9);
+      border-color: #38BDF8;
+      color: #38BDF8;
+      transform: translateY(-2px);
+    }
+
+    /* ── EDITORIAL STORY SECTION ── */
+    .kids-editorial-section {
+      background: #060B16;
+      padding: 72px 0;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    }
+
+    .kids-editorial-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 48px;
+      align-items: center;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    @media (max-width: 960px) {
+      .kids-editorial-grid {
+        grid-template-columns: 1fr;
+        gap: 36px;
+      }
+    }
+
+    .kids-editorial-text h2 {
+      font-family: var(--font-display, sans-serif);
+      font-size: clamp(1.8rem, 3.2vw, 2.6rem);
+      font-weight: 900;
+      letter-spacing: 0.02em;
+      line-height: 1.15;
+      color: #FFFFFF;
+      text-transform: uppercase;
+      margin: 0 0 20px;
+    }
+
+    .kids-editorial-text h2 span {
+      color: #F59E0B;
+    }
+
+    .kids-editorial-text p {
+      font-size: 1.05rem;
+      line-height: 1.75;
+      color: #CBD5E1;
+      margin-bottom: 18px;
+    }
+
+    .kids-feature-pillars {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin-top: 24px;
+    }
+
+    @media (max-width: 540px) {
+      .kids-feature-pillars {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .kids-pillar-item {
+      background: rgba(15, 23, 42, 0.6);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-left: 3px solid #F59E0B;
+      border-radius: 8px;
+      padding: 14px 16px;
+    }
+
+    .kids-pillar-title {
+      font-weight: 800;
+      font-size: 0.95rem;
+      color: #FFFFFF;
+      margin-bottom: 4px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .kids-pillar-desc {
+      font-size: 0.85rem;
+      color: #94A3B8;
+      line-height: 1.5;
+      margin: 0;
+    }
+
+    .kids-editorial-media {
+      position: relative;
+    }
+
+    .kids-editorial-frame {
+      position: relative;
+      border-radius: 16px;
+      overflow: hidden;
+      border: 2px solid rgba(245, 158, 11, 0.3);
+      box-shadow: 0 20px 48px rgba(0, 0, 0, 0.5);
+    }
+
+    .kids-editorial-frame img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.5s ease;
+    }
+
+    .kids-editorial-frame:hover img {
+      transform: scale(1.03);
+    }
+
+    .kids-frame-badge {
+      position: absolute;
+      bottom: 16px;
+      left: 16px;
+      background: rgba(2, 5, 12, 0.88);
+      backdrop-filter: blur(8px);
+      border: 1px solid rgba(245, 158, 11, 0.4);
+      padding: 8px 16px;
+      border-radius: 8px;
+      color: #FFFFFF;
+      font-size: 0.85rem;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    /* ── ACTION GALLERY SHOWCASE SECTION ── */
+    .kids-gallery-section {
+      background: #02050C;
+      padding: 72px 0 88px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .kids-section-head {
+      text-align: center;
+      max-width: 800px;
+      margin: 0 auto 48px;
+      padding: 0 24px;
+    }
+
+    .kids-section-eyebrow {
+      display: inline-block;
+      font-size: 0.8rem;
+      font-weight: 800;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: #38BDF8;
+      margin-bottom: 10px;
+    }
+
+    .kids-section-title {
+      font-family: var(--font-display, sans-serif);
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 900;
+      letter-spacing: 0.02em;
+      color: #FFFFFF;
+      text-transform: uppercase;
+      margin: 0 0 14px;
+    }
+
+    .kids-section-title span {
+      color: #F59E0B;
+    }
+
+    .kids-section-sub {
+      font-size: 1.05rem;
+      color: #94A3B8;
+      line-height: 1.6;
+      margin: 0;
+    }
+
+    /* Responsive 5-Photo Action Showcase */
+    .kids-photos-showcase {
+      max-width: 1240px;
+      margin: 0 auto;
+      padding: 0 24px;
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: 24px;
+    }
+
+    /* Card Layout Variations for Impact */
+    .kids-photo-card {
+      position: relative;
+      background: #091222;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 16px;
+      overflow: hidden;
+      cursor: pointer;
+      display: flex;
+      flex-direction: column;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .kids-photo-card:hover {
+      transform: translateY(-6px);
+      border-color: rgba(245, 158, 11, 0.6);
+      box-shadow: 0 18px 40px rgba(245, 158, 11, 0.2);
+    }
+
+    .card-span-7 {
+      grid-column: span 7;
+    }
+
+    .card-span-5 {
+      grid-column: span 5;
+    }
+
+    .card-span-4 {
+      grid-column: span 4;
+    }
+
+    @media (max-width: 960px) {
+      .card-span-7, .card-span-5, .card-span-4 {
+        grid-column: span 6;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .card-span-7, .card-span-5, .card-span-4 {
+        grid-column: span 12;
+      }
+    }
+
+    .kids-photo-img-wrap {
+      position: relative;
+      width: 100%;
+      height: 320px;
+      overflow: hidden;
+      background: #0F172A;
+    }
+
+    .card-tall .kids-photo-img-wrap {
+      height: 380px;
+    }
+
+    .kids-photo-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 20%;
+      transition: transform 0.5s ease;
+    }
+
+    .kids-photo-card:hover .kids-photo-img {
+      transform: scale(1.05);
+    }
+
+    .kids-photo-tag {
+      position: absolute;
+      top: 14px;
+      left: 14px;
+      background: rgba(2, 5, 12, 0.85);
+      border: 1px solid rgba(245, 158, 11, 0.5);
+      backdrop-filter: blur(6px);
+      color: #FBBF24;
+      font-size: 0.72rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 5px 12px;
+      border-radius: 999px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      z-index: 2;
+    }
+
+    .kids-photo-zoom-hint {
+      position: absolute;
+      top: 14px;
+      right: 14px;
+      background: rgba(2, 5, 12, 0.75);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #FFFFFF;
+      opacity: 0;
+      transform: scale(0.85);
+      transition: all 0.2s ease;
+      z-index: 2;
+    }
+
+    .kids-photo-card:hover .kids-photo-zoom-hint {
+      opacity: 1;
+      transform: scale(1);
+    }
+
+    .kids-photo-body {
+      padding: 20px 22px;
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+      background: linear-gradient(180deg, #0B1322 0%, #070C16 100%);
+    }
+
+    .kids-photo-title {
+      font-family: var(--font-display, sans-serif);
+      font-size: 1.25rem;
+      font-weight: 800;
+      color: #FFFFFF;
+      letter-spacing: 0.01em;
+      margin: 0 0 8px;
+    }
+
+    .kids-photo-desc {
+      font-size: 0.92rem;
+      line-height: 1.6;
+      color: #94A3B8;
+      margin: 0;
+    }
+
+    /* ── AGE COHORTS & PATHWAYS SECTION ── */
+    .kids-cohorts-section {
+      background: #060B16;
+      padding: 72px 0 88px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .kids-cohorts-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    @media (max-width: 860px) {
+      .kids-cohorts-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+      }
+    }
+
+    .kids-cohort-card {
+      background: radial-gradient(circle at 50% 0%, rgba(29, 84, 150, 0.25) 0%, #091222 70%);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 16px;
+      padding: 32px 26px;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      transition: all 0.3s ease;
+    }
+
+    .kids-cohort-card:hover {
+      transform: translateY(-5px);
+      border-color: rgba(245, 158, 11, 0.45);
+      box-shadow: 0 16px 36px rgba(0, 0, 0, 0.5);
+    }
+
+    .kids-cohort-badge {
+      display: inline-block;
+      font-size: 0.75rem;
+      font-weight: 800;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #38BDF8;
+      background: rgba(56, 189, 248, 0.12);
+      border: 1px solid rgba(56, 189, 248, 0.3);
+      padding: 4px 12px;
+      border-radius: 999px;
+      align-self: flex-start;
+      margin-bottom: 16px;
+    }
+
+    .kids-cohort-name {
+      font-family: var(--font-display, sans-serif);
+      font-size: 1.6rem;
+      font-weight: 900;
+      color: #FFFFFF;
+      margin: 0 0 8px;
+    }
+
+    .kids-cohort-age {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: #F59E0B;
+      margin-bottom: 16px;
+    }
+
+    .kids-cohort-desc {
+      font-size: 0.93rem;
+      line-height: 1.65;
+      color: #CBD5E1;
+      margin-bottom: 20px;
+      flex-grow: 1;
+    }
+
+    .kids-cohort-points {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      padding-top: 16px;
+    }
+
+    .kids-cohort-points li {
+      font-size: 0.85rem;
+      color: #94A3B8;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 10px;
+    }
+
+    .kids-cohort-points li svg {
+      color: #10B981;
+      flex-shrink: 0;
+    }
+
+    /* ── VENUE & REGISTRATION SECTION ── */
+    .kids-enroll-section {
+      background: #02050C;
+      padding: 72px 0 88px;
+    }
+
+    .kids-enroll-container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 24px;
+      display: grid;
+      grid-template-columns: 1fr 1.1fr;
+      gap: 40px;
+      align-items: start;
+    }
+
+    @media (max-width: 860px) {
+      .kids-enroll-container {
+        grid-template-columns: 1fr;
+        gap: 32px;
+      }
+    }
+
+    .kids-venue-box {
+      background: #091222;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: 16px;
+      padding: 32px 28px;
+    }
+
+    .kids-venue-box h3 {
+      font-family: var(--font-display, sans-serif);
+      font-size: 1.5rem;
+      font-weight: 900;
+      color: #FFFFFF;
+      margin: 0 0 16px;
+      text-transform: uppercase;
+    }
+
+    .kids-venue-detail {
+      display: flex;
+      gap: 14px;
+      margin-bottom: 20px;
+      align-items: flex-start;
+    }
+
+    .kids-venue-icon {
+      width: 40px;
+      height: 40px;
+      border-radius: 10px;
+      background: rgba(245, 158, 11, 0.15);
+      border: 1px solid rgba(245, 158, 11, 0.3);
+      color: #F59E0B;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .kids-venue-info strong {
+      display: block;
+      color: #FFFFFF;
+      font-size: 0.95rem;
+      margin-bottom: 4px;
+    }
+
+    .kids-venue-info span {
+      color: #94A3B8;
+      font-size: 0.88rem;
+      line-height: 1.5;
+    }
+
+    /* Parent Registration Form */
+    .kids-form-card {
+      background: #091222;
+      border: 1.5px solid rgba(245, 158, 11, 0.35);
+      border-radius: 16px;
+      padding: 36px 32px;
+      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.6);
+    }
+
+    .kids-form-card h3 {
+      font-family: var(--font-display, sans-serif);
+      font-size: 1.6rem;
+      font-weight: 900;
+      color: #FFFFFF;
+      margin: 0 0 8px;
+      text-transform: uppercase;
+    }
+
+    .kids-form-card p {
+      font-size: 0.9rem;
+      color: #94A3B8;
+      margin: 0 0 24px;
+    }
+
+    .kids-input-group {
+      margin-bottom: 18px;
+    }
+
+    .kids-input-label {
+      display: block;
+      font-size: 0.8rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: #CBD5E1;
+      margin-bottom: 6px;
+    }
+
+    .kids-input-field {
+      width: 100%;
+      background: rgba(15, 23, 42, 0.8);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      border-radius: 8px;
+      padding: 12px 14px;
+      color: #FFFFFF;
+      font-size: 0.95rem;
+      font-family: inherit;
+      box-sizing: border-box;
+      transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .kids-input-field:focus {
+      outline: none;
+      border-color: #F59E0B;
+      box-shadow: 0 0 12px rgba(245, 158, 11, 0.3);
+    }
+
+    .kids-form-submit {
+      width: 100%;
+      background: linear-gradient(135deg, #F59E0B 0%, #D97706 100%);
+      color: #0B1422;
+      border: none;
+      border-radius: 8px;
+      padding: 14px;
+      font-size: 1rem;
+      font-weight: 800;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      cursor: pointer;
+      box-shadow: 0 4px 16px rgba(245, 158, 11, 0.35);
+      transition: all 0.22s ease;
+      margin-top: 8px;
+    }
+
+    .kids-form-submit:hover {
+      background: linear-gradient(135deg, #FBBF24 0%, #F59E0B 100%);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 24px rgba(245, 158, 11, 0.5);
+    }
+
+    .kids-direct-contact {
+      margin-top: 20px;
+      text-align: center;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      padding-top: 18px;
+      display: flex;
+      justify-content: center;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .kids-contact-pill {
+      font-size: 0.82rem;
+      color: #38BDF8;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 6px 14px;
+      border-radius: 999px;
+      background: rgba(56, 189, 248, 0.1);
+      border: 1px solid rgba(56, 189, 248, 0.25);
+      transition: all 0.2s ease;
+    }
+
+    .kids-contact-pill:hover {
+      background: rgba(56, 189, 248, 0.2);
+      border-color: #38BDF8;
+    }
+
+    /* ── SAFEGUARDING GUARANTEE BANNER ── */
+    .kids-safeguard-banner {
+      background: rgba(16, 28, 63, 0.7);
+      border: 1px solid rgba(56, 189, 248, 0.3);
+      border-radius: 12px;
+      padding: 24px;
+      margin-top: 36px;
+      display: flex;
+      gap: 18px;
+      align-items: center;
+    }
+
+    @media (max-width: 640px) {
+      .kids-safeguard-banner {
+        flex-direction: column;
+        text-align: center;
+      }
+    }
+
+    /* ── FULLSCREEN LIGHTBOX MODAL ── */
+    .kids-lightbox {
+      position: fixed;
+      inset: 0;
+      background: rgba(2, 5, 12, 0.95);
+      backdrop-filter: blur(12px);
+      z-index: 99999;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+      box-sizing: border-box;
+      opacity: 0;
+      transition: opacity 0.25s ease;
+    }
+
+    .kids-lightbox.is-open {
+      display: flex;
+      opacity: 1;
+    }
+
+    .kids-lightbox-dialog {
+      position: relative;
+      max-width: 960px;
+      width: 100%;
+      background: #091222;
+      border: 1px solid rgba(245, 158, 11, 0.4);
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 24px 60px rgba(0, 0, 0, 0.8);
+      display: flex;
+      flex-direction: column;
+      animation: modalZoomIn 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    @keyframes modalZoomIn {
+      from { transform: scale(0.92); opacity: 0; }
+      to { transform: scale(1); opacity: 1; }
+    }
+
+    .kids-lightbox-close {
+      position: absolute;
+      top: 14px;
+      right: 14px;
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: rgba(0, 0, 0, 0.75);
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      color: #FFFFFF;
+      font-size: 22px;
+      line-height: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      z-index: 10;
+      transition: all 0.2s ease;
+    }
+
+    .kids-lightbox-close:hover {
+      background: #EF4444;
+      border-color: #EF4444;
+    }
+
+    .kids-lightbox-media {
+      width: 100%;
+      max-height: 65vh;
+      background: #02050C;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    .kids-lightbox-media img {
+      max-width: 100%;
+      max-height: 65vh;
+      object-fit: contain;
+      display: block;
+    }
+
+    .kids-lightbox-footer {
+      padding: 20px 24px;
+      background: #0B1424;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .kids-lightbox-badge {
+      display: inline-block;
+      font-size: 0.72rem;
+      font-weight: 800;
+      color: #FBBF24;
+      background: rgba(245, 158, 11, 0.12);
+      border: 1px solid rgba(245, 158, 11, 0.3);
+      padding: 3px 10px;
+      border-radius: 999px;
+      text-transform: uppercase;
+      margin-bottom: 6px;
+    }
+
+    .kids-lightbox-title {
+      font-family: var(--font-display, sans-serif);
+      font-size: 1.35rem;
+      font-weight: 800;
+      color: #FFFFFF;
+      margin: 0 0 6px;
+    }
+
+    .kids-lightbox-caption {
+      font-size: 0.92rem;
+      color: #CBD5E1;
+      line-height: 1.5;
+      margin: 0;
+    }
+  </style>
+</head>
+<body class="page-kids">
+  <!-- CSK CRICKET MATCHDAY POWERPLAY LOADER -->
+  <div id="csk-splash-screen" class="csk-splash-screen" aria-hidden="false">
+    <div class="csk-splash-screen__backdrop"></div>
+    <div class="csk-splash-screen__content">
+      <div class="csk-splash-screen__logo-wrap">
+        <div class="csk-splash-seam-ring">
+          <svg viewBox="0 0 160 160" class="seam-svg">
+            <circle cx="80" cy="80" r="74" fill="none" stroke="rgba(56, 189, 248, 0.25)" stroke-width="1.5" />
+            <circle cx="80" cy="80" r="74" fill="none" stroke="#38BDF8" stroke-width="2.5" stroke-dasharray="6 8" class="seam-spin-circle" />
+            <circle cx="80" cy="80" r="68" fill="none" stroke="rgba(239, 68, 68, 0.5)" stroke-width="1.5" stroke-dasharray="4 6" class="seam-spin-reverse" />
+          </svg>
+        </div>
+        <img src="assets/csk-official-logo.png?v=20260923_10" alt="Cayman Super Kings" class="csk-splash-screen__image">
+      </div>
+      <div class="csk-splash-brand-wrap">
+        <h1 class="csk-splash-brand-title">CAYMAN SUPER KINGS</h1>
+        <div class="csk-splash-cricket-pill">
+          <span class="cricket-live-beacon"></span>
+          <span class="csk-splash-motto">🏏 KIDS &amp; JUNIOR ACADEMY</span>
+        </div>
+      </div>
+      <div class="csk-cricket-pitch-loader">
+        <div class="pitch-loader-hud">
+          <div class="pitch-commentary" id="arena-loader-status">🏏 PREPARING THE JUNIOR TURF NETS...</div>
+          <div class="pitch-speed-readout">
+            <span class="speed-label">SPEED:</span>
+            <span class="speed-val" id="arena-loader-speed">138.4</span> <span class="speed-unit">KM/H</span>
+            <span class="pitch-pct tabular-nums" id="arena-loader-pct">0%</span>
+          </div>
+        </div>
+        <div class="pitch-corridor">
+          <div class="pitch-bat-wrap" id="pitch-bat-wrap">
+            <svg viewBox="0 0 32 64" class="cricket-bat-svg" width="24" height="48">
+              <rect x="14" y="2" width="4" height="18" rx="2" fill="#E2E8F0" stroke="#0F172A" stroke-width="1" />
+              <line x1="14" y1="6" x2="18" y2="6" stroke="#EF4444" stroke-width="1.2" />
+              <line x1="14" y1="10" x2="18" y2="10" stroke="#EF4444" stroke-width="1.2" />
+              <line x1="14" y1="14" x2="18" y2="14" stroke="#EF4444" stroke-width="1.2" />
+              <path d="M12 20 L20 20 L21 54 C21 58 19 60 16 60 C13 60 11 58 11 54 Z" fill="#FBBF24" stroke="#D97706" stroke-width="1" />
+              <path d="M14 26 L18 26 L17 44 L15 44 Z" fill="#EF4444" />
+            </svg>
+          </div>
+          <div class="pitch-crease-mark pitch-crease--bowler">
+            <span class="crease-label">BOWLER</span>
+          </div>
+          <div class="pitch-mat">
+            <div class="pitch-turf-stripes"></div>
+            <div class="pitch-fill-trail" id="arena-loader-fill"></div>
+            <div class="pitch-ball-runner" id="pitch-ball-runner">
+              <div class="pitch-cricket-ball">
+                <span class="seam-stitch"></span>
+              </div>
+              <div class="ball-heat-tail"></div>
+            </div>
+          </div>
+          <div class="pitch-stumps-target" id="pitch-stumps-target">
+            <div class="zing-bails">
+              <span class="bail-led bail-left"></span>
+              <span class="bail-led bail-right"></span>
+            </div>
+            <div class="zing-wickets">
+              <span class="wicket-led off-stump"></span>
+              <span class="wicket-led middle-stump"></span>
+              <span class="wicket-led leg-stump"></span>
+            </div>
+          </div>
+          <div class="pitch-impact-burst" id="pitch-impact-burst">
+            <span>⚡ PLAY BALL! JUNIOR ACADEMY READY</span>
+          </div>
+        </div>
+        <div class="arena-loader-steps">
+          <span class="arena-step is-active" id="arena-step-1"><span class="step-dot" id="step-dot-1">●</span> 🏏 FOUNDATION DRILLS</span>
+          <span class="arena-step" id="arena-step-2"><span class="step-dot" id="step-dot-2">○</span> 📐 NET SESSIONS</span>
+          <span class="arena-step" id="arena-step-3"><span class="step-dot" id="step-dot-3">○</span> 🏟️ MATCHDAY THRILLS</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Professional Franchise Sports Navbar -->
+  <header class="site-header">
+    <div class="site-header__container">
+      <div class="franchise-navbar-wrap">
+        <div class="franchise-nav-bar">
+          <!-- Breakout Franchise Crest -->
+          <a href="index.html" class="franchise-logo-link" aria-label="Cayman Super Kings Home">
+            <img src="assets/csk-official-logo.png?v=20260923_10" alt="Cayman Super Kings Logo" class="franchise-logo-img">
+          </a>
+
+          <!-- Mobile Menu Toggle -->
+          <button class="mobile-toggle" onclick="toggleCSKMobileNav(event)" aria-label="Toggle navigation menu" aria-expanded="false">
+            <span></span><span></span><span></span>
+          </button>
+
+          <!-- Navigation Links -->
+          <nav class="navbar-nav" aria-label="Main Navigation">
+            <ul class="nav-menu">
+              <li><a href="squad.html" class="nav-link">Squad</a></li>
+              <li><a href="matches.html" class="nav-link">Matches</a></li>
+              <li><a href="kids.html" class="nav-link active">Kids</a></li>
+              <li><a href="about.html" class="nav-link">History</a></li>
+              <li><a href="gallery.html" class="nav-link">Gallery</a></li>
+              <li><a href="partner.html" class="nav-link">Sponsors</a></li>
+              <li><a href="contact.html" class="nav-link">Contact</a></li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- ── ZERO-GAP HERO SECTION ── -->
+    <section class="kids-hero-section">
+      <div class="kids-hero-aurora"></div>
+      <div class="kids-hero-container">
+        <div class="kids-badge-pill">
+          <span>🏏</span> GRASSROOTS CRICKET • CAYMAN JUNIORS
+        </div>
+        <h1 class="kids-hero-title">
+          CSK KIDS &amp; JUNIOR <span>CRICKET ACADEMY</span>
+        </h1>
+        <div class="kids-hero-motto">
+          IGNITING PASSION • BUILDING CHARACTER • INSPIRING CHAMPIONS
+        </div>
+        <p class="kids-hero-lead">
+          Cayman Super Kings is committed to shaping the future of cricket in Grand Cayman. Our Kids &amp; Junior Academy offers young boys and girls ages 5 to 17 world-class developmental coaching, weekly turf net practices, live competitive matchdays, and mentorship from senior franchise captains.
+        </p>
+
+        <!-- Metric Highlights Bar -->
+        <div class="kids-metrics-bar">
+          <div class="kids-metric-card">
+            <div class="kids-metric-val">100%</div>
+            <div class="kids-metric-lbl">Grassroots Focus</div>
+          </div>
+          <div class="kids-metric-card">
+            <div class="kids-metric-val">3 DIVS</div>
+            <div class="kids-metric-lbl">U9 • U13 • U17 Cohorts</div>
+          </div>
+          <div class="kids-metric-card">
+            <div class="kids-metric-val">CICA</div>
+            <div class="kids-metric-lbl">Certified Coaching</div>
+          </div>
+          <div class="kids-metric-card">
+            <div class="kids-metric-val">TURF</div>
+            <div class="kids-metric-lbl">Smith Road Oval Venue</div>
+          </div>
+        </div>
+
+        <!-- Action CTA Buttons -->
+        <div class="kids-cta-group">
+          <a href="#enroll" class="kids-btn-primary">
+            <span>Enrol Your Child</span>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+          <a href="#action-gallery" class="kids-btn-secondary">
+            <span>View Matchday Action (5 Photos)</span>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 14l-7 7m0 0l-7-7m7 7V3"/></svg>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── EDITORIAL STORY: NURTURING FUTURE CHAMPIONS ── -->
+    <section class="kids-editorial-section">
+      <div class="kids-editorial-grid">
+        <div class="kids-editorial-text">
+          <span class="kids-section-eyebrow">OUR PHILOSOPHY</span>
+          <h2>Building More Than Cricketers. <span>Building Champions For Life.</span></h2>
+          <p>
+            At Cayman Super Kings, cricket is more than boundaries and wickets—it is an extraordinary classroom for character, resilience, discipline, and lifelong friendships. Our Junior Academy was established to give every young athlete in Grand Cayman the platform, technical guidance, and encouragement needed to discover their full sporting potential.
+          </p>
+          <p>
+            Whether a child is holding an English willow bat for the very first time or refining an inswinging yorker with certified CICA coaches, we provide a structured, age-appropriate curriculum. Sessions combine biomechanically sound fundamentals with high-energy games, ensuring that every session is both technically rewarding and immensely fun.
+          </p>
+          <p>
+            Through regular match exposure at George Town’s iconic Smith Road Oval, junior players learn strategic game awareness, loud communication between wickets, sportsmanship in victory and defeat, and the proud tradition of the 22 yards.
+          </p>
+
+          <!-- 4 Pillars -->
+          <div class="kids-feature-pillars">
+            <div class="kids-pillar-item">
+              <div class="kids-pillar-title"><span>🎯</span> Technical Mastery</div>
+              <p class="kids-pillar-desc">Front-foot strokeplay, repeatable bowling actions, and reflex catching.</p>
+            </div>
+            <div class="kids-pillar-item">
+              <div class="kids-pillar-title"><span>🏃</span> Athletic Fitness</div>
+              <p class="kids-pillar-desc">Agility ladders, sprint mechanics, and core balance drills.</p>
+            </div>
+            <div class="kids-pillar-item">
+              <div class="kids-pillar-title"><span>🤝</span> Sportsmanship</div>
+              <p class="kids-pillar-desc">Respect for teammates, umpires, and opponents at every step.</p>
+            </div>
+            <div class="kids-pillar-item">
+              <div class="kids-pillar-title"><span>🛡️</span> Safety &amp; Inclusivity</div>
+              <p class="kids-pillar-desc">Strict child welfare protocols and small coach-to-student ratios.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Featured Action Highlight Media -->
+        <div class="kids-editorial-media">
+          <div class="kids-editorial-frame">
+            <img src="assets/kids/csk-kids-action-3.jpg" alt="Cayman Junior Cricket Matchday Action with Coach">
+            <div class="kids-frame-badge">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#F59E0B" stroke-width="2.5"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <span>Live Pitch Match with Official CICA Coach &amp; Umpire</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── ACTION GALLERY SHOWCASE (ALL 5 PHOTOS) ── -->
+    <section class="kids-gallery-section" id="action-gallery">
+      <div class="kids-section-head">
+        <span class="kids-section-eyebrow">MATCHDAY ACTION &amp; TRAINING INTENSITY</span>
+        <h2 class="kids-section-title">Kids in Action: <span>The Junior Showcase</span></h2>
+        <p class="kids-section-sub">
+          Explore genuine training and matchday moments captured on the turf at Smith Road Oval. Click any card to expand high-resolution photography with full tactical breakdown.
+        </p>
+      </div>
+
+      <div class="kids-photos-showcase">
+        <!-- Photo 1 (Span 7) -->
+        <article class="kids-photo-card card-span-7" onclick="openKidsLightbox(0)">
+          <div class="kids-photo-img-wrap">
+            <span class="kids-photo-tag"><span>🏃</span> Running Between Wickets</span>
+            <div class="kids-photo-zoom-hint">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/><path d="M11 8v6M8 11h6"/></svg>
+            </div>
+            <img src="assets/kids/csk-kids-action-1.jpg" alt="Young batter sprinting with yellow bat" class="kids-photo-img" loading="lazy">
+          </div>
+          <div class="kids-photo-body">
+            <h3 class="kids-photo-title">Aggressive Intent &amp; Quick Calling</h3>
+            <p class="kids-photo-desc">
+              Sprint acceleration and sharp turns at the batting crease. Junior batters develop explosive foot speed and decisive calling to convert pressure singles into safe runs.
+            </p>
+          </div>
+        </article>
+
+        <!-- Photo 2 (Span 5) -->
+        <article class="kids-photo-card card-span-5" onclick="openKidsLightbox(1)">
+          <div class="kids-photo-img-wrap">
+            <span class="kids-photo-tag"><span>🎯</span> Bowling Clinic</span>
+            <div class="kids-photo-zoom-hint">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/><path d="M11 8v6M8 11h6"/></svg>
+            </div>
+            <img src="assets/kids/csk-kids-action-2.jpg" alt="Junior bowler in orange jersey delivery stride" class="kids-photo-img" loading="lazy">
+          </div>
+          <div class="kids-photo-body">
+            <h3 class="kids-photo-title">Pace &amp; Rhythm Delivery Mechanics</h3>
+            <p class="kids-photo-desc">
+              Hitting the delivery stride with balanced head alignment, upright seam presentation, and athletic shoulder follow-through on the turf track.
+            </p>
+          </div>
+        </article>
+
+        <!-- Photo 3 (Span 4) -->
+        <article class="kids-photo-card card-span-4" onclick="openKidsLightbox(2)">
+          <div class="kids-photo-img-wrap">
+            <span class="kids-photo-tag"><span>🏟️</span> Match Mentorship</span>
+            <div class="kids-photo-zoom-hint">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/><path d="M11 8v6M8 11h6"/></svg>
+            </div>
+            <img src="assets/kids/csk-kids-action-3.jpg" alt="Junior match with CICA umpire and coach on pitch" class="kids-photo-img" loading="lazy">
+          </div>
+          <div class="kids-photo-body">
+            <h3 class="kids-photo-title">Live CICA Match Scenarios</h3>
+            <p class="kids-photo-desc">
+              Real-time tactical instruction on the 22 yards. Qualified coaches stand alongside young cricketers to teach field placements and game intelligence.
+            </p>
+          </div>
+        </article>
+
+        <!-- Photo 4 (Span 4) -->
+        <article class="kids-photo-card card-span-4" onclick="openKidsLightbox(3)">
+          <div class="kids-photo-img-wrap">
+            <span class="kids-photo-tag"><span>⚡</span> High-Octane Speed</span>
+            <div class="kids-photo-zoom-hint">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/><path d="M11 8v6M8 11h6"/></svg>
+            </div>
+            <img src="assets/kids/csk-kids-action-4.jpg" alt="Dynamic running shot of junior batsman" class="kids-photo-img" loading="lazy">
+          </div>
+          <div class="kids-photo-body">
+            <h3 class="kids-photo-title">Charging to the Danger End</h3>
+            <p class="kids-photo-desc">
+              Never-give-up grit in full motion. Athletes learn sliding the bat over the popping crease to beat direct-hit throws from energetic fielders.
+            </p>
+          </div>
+        </article>
+
+        <!-- Photo 5 (Span 4) -->
+        <article class="kids-photo-card card-span-4" onclick="openKidsLightbox(4)">
+          <div class="kids-photo-img-wrap">
+            <span class="kids-photo-tag"><span>🛡️</span> Batting Fundamentals</span>
+            <div class="kids-photo-zoom-hint">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/><path d="M11 8v6M8 11h6"/></svg>
+            </div>
+            <img src="assets/kids/csk-kids-action-5.jpg" alt="Junior batter at the crease with CA Pro Star bat and keeper behind" class="kids-photo-img" loading="lazy">
+          </div>
+          <div class="kids-photo-body">
+            <h3 class="kids-photo-title">Poise &amp; Focus at the Crease</h3>
+            <p class="kids-photo-desc">
+              Patience, stance stability, and laser-like eye focus. A young opener prepares to meet the leather ball with complete protective equipment.
+            </p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- ── 3 AGE COHORTS & PATHWAYS ── -->
+    <section class="kids-cohorts-section">
+      <div class="kids-section-head">
+        <span class="kids-section-eyebrow">STRUCTURED PATHWAYS</span>
+        <h2 class="kids-section-title">Age Divisions <span>&amp; Training Stages</span></h2>
+        <p class="kids-section-sub">
+          Tailored learning stages designed to meet each age group at their exact developmental phase, from first swings to competitive island leagues.
+        </p>
+      </div>
+
+      <div class="kids-cohorts-grid">
+        <!-- Division 1: U9 -->
+        <div class="kids-cohort-card">
+          <span class="kids-cohort-badge">DIVISION 01</span>
+          <h3 class="kids-cohort-name">Little Kings</h3>
+          <div class="kids-cohort-age">Under-9 (Ages 5 to 9)</div>
+          <p class="kids-cohort-desc">
+            An exhilarating introduction to cricket emphasizing joy, reaction drills, softball hand-eye games, batting swings, and athletic movement.
+          </p>
+          <ul class="kids-cohort-points">
+            <li>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
+              <span>Soft cricket balls &amp; lightweight safety gear</span>
+            </li>
+            <li>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
+              <span>Throwing, catching &amp; agility games</span>
+            </li>
+            <li>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
+              <span>Confidence-building team atmosphere</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Division 2: U13 -->
+        <div class="kids-cohort-card">
+          <span class="kids-cohort-badge">DIVISION 02</span>
+          <h3 class="kids-cohort-name">Rising Kings</h3>
+          <div class="kids-cohort-age">Under-13 (Ages 10 to 13)</div>
+          <p class="kids-cohort-desc">
+            The core developmental bridge where players transition to hard-ball leather cricket, full batting pads, turf net practice, and junior league derbies.
+          </p>
+          <ul class="kids-cohort-points">
+            <li>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
+              <span>Front &amp; back foot strokeplay mechanics</span>
+            </li>
+            <li>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
+              <span>Pace run-up alignment &amp; spin variations</span>
+            </li>
+            <li>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
+              <span>Junior CICA League fixtures</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Division 3: U17 -->
+        <div class="kids-cohort-card">
+          <span class="kids-cohort-badge">DIVISION 03</span>
+          <h3 class="kids-cohort-name">Academy XI</h3>
+          <div class="kids-cohort-age">Under-17 (Ages 14 to 17)</div>
+          <p class="kids-cohort-desc">
+            Elite high-performance training with video analysis, powerplay tactics, match situational pressure drills, and a direct pipeline into the senior CSK squad.
+          </p>
+          <ul class="kids-cohort-points">
+            <li>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
+              <span>Match scenario batting (Powerplay &amp; Death)</span>
+            </li>
+            <li>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
+              <span>High-intensity strength &amp; stamina drills</span>
+            </li>
+            <li>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
+              <span>Direct pathway to Senior CSK League squad</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── ENROL & VENUE SECTION ── -->
+    <section class="kids-enroll-section" id="enroll">
+      <div class="kids-enroll-container">
+        <!-- Venue & Schedule Card -->
+        <div class="kids-venue-box">
+          <span class="kids-section-eyebrow">LOCATION &amp; TIMINGS</span>
+          <h3>Academy Training Center</h3>
+
+          <div class="kids-venue-detail">
+            <div class="kids-venue-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            </div>
+            <div class="kids-venue-info">
+              <strong>Smith Road Oval / The Oval Cricket Ground</strong>
+              <span>George Town, Grand Cayman (Official CICA Home of Cayman Cricket)</span>
+            </div>
+          </div>
+
+          <div class="kids-venue-detail">
+            <div class="kids-venue-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+            </div>
+            <div class="kids-venue-info">
+              <strong>Weekly Training Schedule</strong>
+              <span><strong>Saturdays:</strong> 8:30 AM – 11:00 AM (Skills &amp; Turf Nets)<br><strong>Wednesdays:</strong> 4:30 PM – 6:00 PM (Fitness &amp; Match Simulation)</span>
+            </div>
+          </div>
+
+          <div class="kids-venue-detail">
+            <div class="kids-venue-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            </div>
+            <div class="kids-venue-info">
+              <strong>Protective Gear &amp; Equipment</strong>
+              <span>Full batting kits, helmets, pads, and balls provided for academy sessions. Personal cricket gear is welcomed.</span>
+            </div>
+          </div>
+
+          <!-- Safeguarding Guarantee Notice -->
+          <div class="kids-safeguard-banner">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#38BDF8" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            <div style="font-size: 0.86rem; color: #CBD5E1; line-height: 1.55;">
+              <strong style="color: #38BDF8; display: block; margin-bottom: 2px;">CICA Child Safeguarding &amp; Welfare Guarantee</strong>
+              Cayman Super Kings rigorously adheres to Cayman Islands Cricket Association (CICA) Child Welfare guidelines. All coaches are vetted, and sessions are run with qualified first aid and guardian presence.
+            </div>
+          </div>
+        </div>
+
+        <!-- Parent Enrollment Form -->
+        <div class="kids-form-card">
+          <span class="kids-section-eyebrow">REGISTRATION &amp; INQUIRIES</span>
+          <h3>Enrol Your Young Cricketer</h3>
+          <p>Fill out the quick form below. Our Junior Academy coordinator will contact you promptly with session details and trial information.</p>
+
+          <form id="kids-enrollment-form" onsubmit="handleKidsEnrollment(event)">
+            <div class="kids-input-group">
+              <label class="kids-input-label" for="parent-name">Parent / Guardian Full Name *</label>
+              <input type="text" id="parent-name" class="kids-input-field" placeholder="e.g. Michael Smith" required>
+            </div>
+
+            <div class="kids-input-group">
+              <label class="kids-input-label" for="child-info">Child's Name &amp; Age *</label>
+              <input type="text" id="child-info" class="kids-input-field" placeholder="e.g. Ethan Smith, Age 10" required>
+            </div>
+
+            <div class="kids-input-group">
+              <label class="kids-input-label" for="parent-phone">Phone / WhatsApp Number *</label>
+              <input type="tel" id="parent-phone" class="kids-input-field" placeholder="+1 (345) 555-0123" required>
+            </div>
+
+            <div class="kids-input-group">
+              <label class="kids-input-label" for="parent-email">Email Address</label>
+              <input type="email" id="parent-email" class="kids-input-field" placeholder="parent@example.com">
+            </div>
+
+            <div class="kids-input-group">
+              <label class="kids-input-label" for="experience-level">Experience Level</label>
+              <select id="experience-level" class="kids-input-field" style="appearance: auto;">
+                <option value="beginner">Beginner (First Time Playing / Soft Ball)</option>
+                <option value="intermediate" selected>Intermediate (Played in School / Basic Nets)</option>
+                <option value="advanced">Advanced (Hard Ball Junior Competitive Player)</option>
+              </select>
+            </div>
+
+            <button type="submit" class="kids-form-submit" id="kids-submit-btn">
+              <span>Submit Academy Registration</span>
+            </button>
+            <div id="kids-form-feedback" style="display: none; margin-top: 14px; font-weight: 700; font-size: 0.95rem; text-align: center;"></div>
+          </form>
+
+          <div class="kids-direct-contact">
+            <span style="font-size: 0.85rem; color: #94A3B8; width: 100%;">Prefer direct messaging?</span>
+            <a href="https://www.instagram.com/caymansuperkings?igsi=aXBpaHY2azlxNGF1" target="_blank" rel="noopener noreferrer" class="kids-contact-pill">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+              <span>DM on Instagram @caymansuperkings</span>
+            </a>
+            <a href="contact.html" class="kids-contact-pill">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              <span>Franchise Contact Page</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ── FULLSCREEN LIGHTBOX MODAL ── -->
+  <div class="kids-lightbox" id="kids-lightbox" onclick="closeKidsLightbox(event)">
+    <div class="kids-lightbox-dialog" onclick="event.stopPropagation()">
+      <button class="kids-lightbox-close" onclick="closeKidsLightbox()" aria-label="Close photo preview">&times;</button>
+      <div class="kids-lightbox-media">
+        <img id="kids-lightbox-img" src="" alt="Junior Cricket Preview">
+      </div>
+      <div class="kids-lightbox-footer">
+        <span class="kids-lightbox-badge" id="kids-lightbox-badge">MATCHDAY ACTION</span>
+        <h4 class="kids-lightbox-title" id="kids-lightbox-title">Photo Title</h4>
+        <p class="kids-lightbox-caption" id="kids-lightbox-caption">Photo description</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Site Footer -->
+  <footer class="site-footer editorial-footer">
+    <div class="container">
+      <div class="footer-horizontal-hero">
+        <div class="footer-hero-brand">
+          <img src="assets/csk-official-logo.png?v=20260923_10" alt="CSK Official Crest">
+          <div class="footer-hero-titles">
+            <h3>CAYMAN SUPER KINGS</h3>
+            <span>ONE TEAM • ONE DREAM // EST. 2022</span>
+          </div>
+        </div>
+        <div class="footer-hero-actions">
+          <a href="https://www.instagram.com/caymansuperkings?igsi=aXBpaHY2azlxNGF1" target="_blank" rel="noopener noreferrer" class="footer-action-btn footer-action-btn--primary">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+            <span>Follow @caymansuperkings ↗</span>
+          </a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2026 Cayman Super Kings Cricket Club. All rights reserved.</span>
+        <span>Affiliated with Cayman Islands Cricket Association (CICA)</span>
+      </div>
+    </div>
+  </footer>
+
+  <script type="module" src="js/app.js?v=20261012_clean"></script>
+  <script>
+    // 5 Photos Dataset for Lightbox
+    const kidsGalleryData = [
+      {
+        src: 'assets/kids/csk-kids-action-1.jpg',
+        badge: '🏃 RUNNING BETWEEN WICKETS',
+        title: 'Aggressive Intent & Quick Calling',
+        caption: 'Junior batter sprinting hard between the creases with focus and intent. Our training emphasizes decisive calling, bat grounding, and turning ones into twos under pressure.'
+      },
+      {
+        src: 'assets/kids/csk-kids-action-2.jpg',
+        badge: '🎯 BOWLING DELIVERY MECHANICS',
+        title: 'Pace & Rhythm Delivery Mechanics',
+        caption: 'Junior pace prospect hitting the delivery stride with balanced head position and rhythmic follow-through on the turf strip.'
+      },
+      {
+        src: 'assets/kids/csk-kids-action-3.jpg',
+        badge: '🏟️ LIVE MATCHDAY COACHING',
+        title: 'Live CICA Match Scenarios with Certified Coaches',
+        caption: 'Active weekend fixture in George Town with official CICA coaches and umpires guiding young players through real-time field settings and match tactics.'
+      },
+      {
+        src: 'assets/kids/csk-kids-action-4.jpg',
+        badge: '⚡ SPRINT ACCELERATION',
+        title: 'Charging to the Danger End',
+        caption: 'High-intensity running to beat the throw at the striker’s end. Building athletic conditioning and speed that translates across all sports.'
+      },
+      {
+        src: 'assets/kids/csk-kids-action-5.jpg',
+        badge: '🛡️ CREASE POISE & CONCENTRATION',
+        title: 'Stance, Balance & Shot Selection',
+        caption: 'Poised at the crease with CA Pro Star blade and full protective gear, ready to watch the ball onto the bat. Instilling patience, technique, and courage.'
+      }
+    ];
+
+    function openKidsLightbox(index) {
+      const item = kidsGalleryData[index];
+      if (!item) return;
+
+      document.getElementById('kids-lightbox-img').src = item.src;
+      document.getElementById('kids-lightbox-badge').textContent = item.badge;
+      document.getElementById('kids-lightbox-title').textContent = item.title;
+      document.getElementById('kids-lightbox-caption').textContent = item.caption;
+
+      const modal = document.getElementById('kids-lightbox');
+      modal.classList.add('is-open');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeKidsLightbox(e) {
+      if (e && e.target !== e.currentTarget && !e.target.classList.contains('kids-lightbox-close')) return;
+      const modal = document.getElementById('kids-lightbox');
+      modal.classList.remove('is-open');
+      document.body.style.overflow = '';
+    }
+
+    // Close on Escape key
+    window.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') {
+        const modal = document.getElementById('kids-lightbox');
+        if (modal && modal.classList.contains('is-open')) {
+          closeKidsLightbox();
+        }
+      }
+    });
+
+    // Handle Enrollment Form Submit
+    function handleKidsEnrollment(e) {
+      e.preventDefault();
+      const parentName = document.getElementById('parent-name').value.trim();
+      const childInfo = document.getElementById('child-info').value.trim();
+      const phone = document.getElementById('parent-phone').value.trim();
+      const level = document.getElementById('experience-level').value;
+      const feedback = document.getElementById('kids-form-feedback');
+      const submitBtn = document.getElementById('kids-submit-btn');
+
+      submitBtn.disabled = true;
+      submitBtn.innerHTML = '<span>Registering...</span>';
+
+      setTimeout(function() {
+        feedback.style.display = 'block';
+        feedback.style.color = '#34D399';
+        feedback.innerHTML = '🎉 Thank you, ' + parentName + '! Enrollment received for ' + childInfo + '. Our coach will WhatsApp/call ' + phone + ' shortly with session schedules.';
+        submitBtn.innerHTML = '<span>Registration Confirmed ✓</span>';
+        submitBtn.style.background = '#10B981';
+        document.getElementById('kids-enrollment-form').reset();
+      }, 700);
+    }
+  </script>
+</body>
+</html>
