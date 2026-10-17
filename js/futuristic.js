@@ -233,7 +233,29 @@ function initLiveTelemetryHUD() {
  * 7. Cyber Stagger Scroll Reveal using IntersectionObserver
  */
 function initCyberScrollReveals() {
-  const elements = document.querySelectorAll('.section, .section-title, .fixture-ticket, .roster-stage-card, .card, .csk-album-card');
+  const selectors = [
+    'section',
+    '.section',
+    '.section-head',
+    '.section-title',
+    '.section-subtitle',
+    '.youth-photo-card',
+    '.youth-cohort-card',
+    '.squad-player-stage-card',
+    '.fixture-ticket',
+    '.roster-stage-card',
+    '.card',
+    '.csk-album-card',
+    '.tier-card',
+    '.sponsor-card',
+    '.about-feature-card',
+    '.history-milestone-card',
+    '.timeline-item',
+    '.sponsors-hero-title',
+    '.centerpiece-title'
+  ].join(', ');
+
+  const elements = document.querySelectorAll(selectors);
   
   if (!('IntersectionObserver' in window)) {
     elements.forEach(el => el.classList.add('is-revealed'));
@@ -255,7 +277,9 @@ function initCyberScrollReveals() {
   });
 
   elements.forEach(el => {
-    el.classList.add('cyber-reveal');
+    if (!el.classList.contains('cyber-reveal')) {
+      el.classList.add('cyber-reveal');
+    }
     observer.observe(el);
   });
 }

@@ -42,12 +42,33 @@ export async function initSquadPage() {
     }
 
     container.innerHTML = filtered.map((p, idx) => `
-      <div class="cyber-reveal is-revealed" style="animation-delay: ${idx * 0.05}s;">
+      <div class="cyber-reveal" style="animation-delay: ${(idx % 4) * 0.1}s;">
         ${createStadiumPlayerCard(p)}
       </div>
     `).join('');
 
     initSquadCard3DTilt(container);
+    initSquadScrollObserver(container);
+  }
+
+  function initSquadScrollObserver(root) {
+    const reveals = root.querySelectorAll('.cyber-reveal');
+    if (!('IntersectionObserver' in window)) {
+      reveals.forEach(c => c.classList.add('is-revealed'));
+      return;
+    }
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-revealed');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, {
+      threshold: 0.08,
+      rootMargin: '0px 0px -40px 0px'
+    });
+    reveals.forEach(el => observer.observe(el));
   }
 
   filterBtns.forEach(btn => {
@@ -219,6 +240,9 @@ export function createStadiumPlayerCard(p) {
       <!-- Front Facing Face Card -->
       <div class="squad-card-front">
         ${badgeText ? `<div class="squad-card-badge ${badgeClass}" title="${p.role}">${badgeText}</div>` : ''}
+
+        <!-- SRH-Style Big Jersey Number Watermark -->
+        <div class="squad-jersey-bg-num" aria-hidden="true">${jerseyNum}</div>
 
         <!-- Player Portrait Wrap with Biometric Scanner Beam -->
         <div class="squad-player-figure-wrap">
