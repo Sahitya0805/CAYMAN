@@ -294,7 +294,7 @@ def main():
         ])
 
     # 6. Load Gallery Data
-    gallery_rows = [["Image ID", "Title / Caption", "Year", "Category", "High-Res Image Path", "Tags"]]
+    gallery_rows = [["Media ID", "Media Type", "Title", "Year", "Category", "Duration", "Media Asset Path", "Poster Thumbnail", "Caption"]]
     gallery_path = os.path.join(root, 'content', 'gallery.json')
     if os.path.exists(gallery_path):
         with open(gallery_path, 'r') as f:
@@ -302,11 +302,14 @@ def main():
         for g in gallery_data:
             gallery_rows.append([
                 g.get("id", ""),
+                (g.get("type") or "photo").upper(),
                 g.get("title", ""),
                 g.get("year", ""),
                 g.get("category", ""),
+                g.get("duration", "N/A"),
                 g.get("src", ""),
-                ", ".join(g.get("tags", []))
+                g.get("poster", ""),
+                g.get("caption", "")
             ])
 
     # Write individual CSV files

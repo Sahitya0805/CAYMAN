@@ -1,24 +1,32 @@
-Image ID,Title / Caption,Year,Category,High-Res Image Path,Tags
-photo-00,Australian Cricket Legend David Warner in Cayman,2026,Behind the Scenes,assets/players/real/david-warner-csk-cayman.jpg,
-photo-19,Junior Super King at the Crease,2026,Training & Youth,assets/players/real/csk-youth-batting-technique.jpg,
-photo-20,Spirit of Cricket - Mid-Pitch Camaraderie,2026,Matchday Action,assets/players/real/csk-matchday-spirit-handshake.jpg,
-photo-21,Taking the Field at Jimmy Powell Oval,2026,Matchday Action,assets/players/real/csk-matchday-field-stride.jpg,
-photo-22,Powerplay Strategy in Motion,2026,Matchday Action,assets/players/real/csk-matchday-pitch-walk.jpg,
-photo-23,Matchday Protocol & Walk-Out,2026,Matchday Action,assets/players/real/csk-matchday-officials-crease.jpg,
-photo-01,Championship Squad Triumph,2025,Trophy Celebrations,assets/players/real/Team.jpg,
-photo-02,Championship Matchday Action,2025,Matchday Action,assets/players/real/20250405_104447_IMG_5374.jpg,
-photo-03,Skipper Rahul Garg Leading the Pride,2026,Behind the Scenes,assets/players/real/Rahul-Garg-Portrait.jpg,
-photo-04,The Founding Visionaries,2024,Behind the Scenes,assets/players/real/Rahul and Chris.jpg,
-photo-06,Wicketkeeper Reflexes,2026,Matchday Action,assets/players/real/Gokul Krishnan.jpg,
-photo-07,Christopher Balraj Bermuda Qualifiers,2024,Matchday Action,assets/players/real/Christopher Balraj.png,
-photo-08,Leg-Spin Craftsmanship,2025,Training & Youth,assets/players/real/Ravneet-Verma-solo.jpg,
-photo-09,Fast Bowling Mechanics,2026,Training & Youth,assets/players/real/Sahil-Singh.jpeg,
-photo-10,All-Round Power Hitting,2025,Matchday Action,assets/players/real/Sakthivel shanmugasundaram.Jpg,
-photo-11,Powerplay Strike Execution,2025,Matchday Action,assets/players/real/Praisewin-Vincent-solo.jpg,
-photo-12,Death Overs Range Hitting,2025,Training & Youth,assets/players/real/Viran.jpg,
-photo-13,Matchday Preparation & Focus,2025,Training & Youth,assets/players/real/Jason-Edwards.jpg,
-photo-14,Outfield Athleticism & Agility,2025,Training & Youth,assets/players/real/Jibin-Moncy.jpg,
-photo-15,Left-Arm Swing Trajectory,2025,Matchday Action,assets/players/real/Teammate-left.jpg,
-photo-16,Wicketkeeper & Glovework Drills,2025,Training & Youth,assets/players/real/Rajasekhara-Kalagotla.jpg,
-photo-17,All-Round Match Tempo,2025,Matchday Action,assets/players/real/Fahad.JPG,
-photo-18,Franchise Management & Strategy,2025,Behind the Scenes,assets/players/real/Majin-Paul-solo.jpg,
+Media ID,Media Type,Title,Year,Category,Duration,Media Asset Path,Poster Thumbnail,Caption
+video-01,VIDEO,Academy Batting Net Drills,2026,Training & Youth,0:30,video/csk-match-clip-01.mp4,assets/videos/posters/video-01.jpg,Junior Super King fine-tuning forward defensive technique and bat flow in the outdoor batting cages.
+video-02,VIDEO,Bowling Machine Match Simulation,2026,Training & Youth,1:21,video/csk-match-clip-02.mp4,assets/videos/posters/video-02.jpg,Intense powerplay batting drill facing high-speed deliveries from the club bowling machine at the training facility.
+video-03,VIDEO,Junior Agility & Crease Footwork,2026,Training & Youth,0:13,video/csk-match-clip-03.mp4,assets/videos/posters/video-03.jpg,"Agility marker routines designed to build quick lateral movement, balance, and quick feet at the batting crease."
+video-04,VIDEO,Forward Stride & Precision Timing,2026,Training & Youth,0:15,video/csk-match-clip-04.mp4,assets/videos/posters/video-04.jpg,Developing head position over the ball and high elbow execution during specialized youth coaching drills.
+video-05,VIDEO,Open Turf Batting Session,2026,Training & Youth,1:21,video/csk-match-clip-05.mp4,assets/videos/posters/video-05.jpg,Full-length outdoor practice strip batting repetitions simulating real matchday bounce and trajectory.
+video-06,VIDEO,Matchday Outfield Fielding Action,2026,Matchday Action,0:25,video/csk-match-clip-06.mp4,assets/videos/posters/video-06.jpg,Cayman Super Kings outfielders organizing defensive field placements along the boundary line at Jimmy Powell Oval.
+video-07,VIDEO,Caribbean Rain Delay & Pitch Covers,2026,Behind the Scenes,0:41,video/csk-match-clip-07.mp4,assets/videos/posters/video-07.jpg,All hands on deck as ground staff and team personnel rush to protect the Jimmy Powell Oval wicket during a tropical shower.
+video-08,VIDEO,Skipper Rahul Garg Tactical Consultation,2026,Matchday Action,0:15,video/csk-match-clip-08.mp4,assets/videos/posters/video-08.jpg,Captain Rahul Garg (#38) consulting with match official at mid-off on match strategy and playing conditions.
+photo-00,PHOTO,Australian Cricket Legend David Warner in Cayman,2026,Behind the Scenes,N/A,assets/players/real/david-warner-csk-cayman.jpg,,"World Cup champion & Australian cricket icon David Warner visiting Grand Cayman, connecting with Cayman Super Kings on Seven Mile Beach."
+photo-19,PHOTO,Junior Super King at the Crease,2026,Training & Youth,N/A,assets/players/real/csk-youth-batting-technique.jpg,,Young Cayman cricket talent displaying textbook forward defensive technique during CSK youth academy matchday at Jimmy Powell Oval.
+photo-20,PHOTO,Spirit of Cricket - Mid-Pitch Camaraderie,2026,Matchday Action,N/A,assets/players/real/csk-matchday-spirit-handshake.jpg,,Cayman Super Kings and opponent batsman sharing a handshake in the spirit of the game under the Cayman sun.
+photo-21,PHOTO,Taking the Field at Jimmy Powell Oval,2026,Matchday Action,N/A,assets/players/real/csk-matchday-field-stride.jpg,,CSK batsman walking out alongside match officials and opponents as the afternoon session gets underway.
+photo-22,PHOTO,Powerplay Strategy in Motion,2026,Matchday Action,N/A,assets/players/real/csk-matchday-pitch-walk.jpg,,Batsman and match officials proceeding across the turf ahead of the opening powerplay overs.
+photo-23,PHOTO,Matchday Protocol & Walk-Out,2026,Matchday Action,N/A,assets/players/real/csk-matchday-officials-crease.jpg,,Approaching the crease at Jimmy Powell Oval for official competitive Cayman cricket fixture action.
+photo-01,PHOTO,Championship Squad Triumph,2025,Trophy Celebrations,N/A,assets/players/real/Team.jpg,,The complete Cayman Super Kings playing XI and coaching staff celebrating championship tournament qualification.
+photo-02,PHOTO,Championship Matchday Action,2025,Matchday Action,N/A,assets/players/real/20250405_104447_IMG_5374.jpg,,High-stakes league competition under the Caribbean sun at Jimmy Powell Oval.
+photo-03,PHOTO,Skipper Rahul Garg Leading the Pride,2026,Behind the Scenes,N/A,assets/players/real/Rahul-Garg-Portrait.jpg,,Captain Rahul Garg in official club whites ready for the 2026 CICA season campaign.
+photo-04,PHOTO,The Founding Visionaries,2024,Behind the Scenes,N/A,assets/players/real/Rahul and Chris.jpg,,Co-Founders Rahul Garg & Christopher Balraj sharing strategic insights ahead of fixture season.
+photo-06,PHOTO,Wicketkeeper Reflexes,2026,Matchday Action,N/A,assets/players/real/Gokul Krishnan.jpg,,Vice Captain Gokul Krishnan exhibiting lightning-quick glovework behind the wickets.
+photo-07,PHOTO,Christopher Balraj Bermuda Qualifiers,2024,Matchday Action,N/A,assets/players/real/Christopher Balraj.png,,Christopher Balraj representing the Cayman Islands national team at the Sub-Regional World Cup Qualifiers in Bermuda.
+photo-08,PHOTO,Leg-Spin Craftsmanship,2025,Training & Youth,N/A,assets/players/real/Ravneet-Verma-solo.jpg,,Ravneet Verma locking in variations and flight revolutions during mid-week net drills.
+photo-09,PHOTO,Fast Bowling Mechanics,2026,Training & Youth,N/A,assets/players/real/Sahil-Singh.jpeg,,Strike fast bowler Sahil Singh analyzing seam alignment and front-foot release.
+photo-10,PHOTO,All-Round Power Hitting,2025,Matchday Action,N/A,assets/players/real/Sakthivel shanmugasundaram.Jpg,,Sakthivel Shanmugasundaram taking on the bowling attack with clean lofted drives.
+photo-11,PHOTO,Powerplay Strike Execution,2025,Matchday Action,N/A,assets/players/real/Praisewin-Vincent-solo.jpg,,Praisewin Vincent executing calculated aggression through the off-side during training.
+photo-12,PHOTO,Death Overs Range Hitting,2025,Training & Youth,N/A,assets/players/real/Viran.jpg,,Viran Narayana fine-tuning explosive lower-order finish execution against pace and spin.
+photo-13,PHOTO,Matchday Preparation & Focus,2025,Training & Youth,N/A,assets/players/real/Jason-Edwards.jpg,,Jason Edwards completing match warmups and equipment checks before the fixture.
+photo-14,PHOTO,Outfield Athleticism & Agility,2025,Training & Youth,N/A,assets/players/real/Jibin-Moncy.jpg,,Jibin Moncy executing high-speed boundary cut-offs and direct-hit fielding drills.
+photo-15,PHOTO,Left-Arm Swing Trajectory,2025,Matchday Action,N/A,assets/players/real/Teammate-left.jpg,,Muhammed Jazeem Keloth delivering swinging deliveries under match pressure.
+photo-16,PHOTO,Wicketkeeper & Glovework Drills,2025,Training & Youth,N/A,assets/players/real/Rajasekhara-Kalagotla.jpg,,Rajasekhara Kalagotla running through reflex gathering and stump-to-stump agility routines.
+photo-17,PHOTO,All-Round Match Tempo,2025,Matchday Action,N/A,assets/players/real/Fahad.JPG,,Fahad Noushad displaying balance and strokeplay execution during match play.
+photo-18,PHOTO,Franchise Management & Strategy,2025,Behind the Scenes,N/A,assets/players/real/Majin-Paul-solo.jpg,,Co-Founder and Team Manager Majin Paul directing logistics and tournament preparation.
