@@ -56,6 +56,15 @@ export async function initGalleryPage() {
       return true;
     });
 
+    // In "All Media" view, always show photos before videos
+    if (currentMediaType === 'all') {
+      activeFiltered.sort((a, b) => {
+        const aIsVideo = (a.type === 'video') ? 1 : 0;
+        const bIsVideo = (b.type === 'video') ? 1 : 0;
+        return aIsVideo - bIsVideo;
+      });
+    }
+
     if (activeFiltered.length === 0) {
       grid.style.display = 'none';
       if (emptyState) {
@@ -260,6 +269,16 @@ export async function initGalleryPage() {
         lightboxVideo.src = item.src;
         if (item.poster) lightboxVideo.poster = item.poster;
         lightboxVideo.play().catch(() => {});
+        // Request fullscreen for video playback
+        setTimeout(() => {
+          if (lightboxVideo.requestFullscreen) {
+            lightboxVideo.requestFullscreen().catch(() => {});
+          } else if (lightboxVideo.webkitRequestFullscreen) {
+            lightboxVideo.webkitRequestFullscreen();
+          } else if (lightboxVideo.webkitEnterFullscreen) {
+            lightboxVideo.webkitEnterFullscreen();
+          }
+        }, 150);
       }
     } else {
       if (lightboxVideo) {

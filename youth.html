@@ -443,16 +443,70 @@
       grid-column: span 4;
     }
 
+    .card-span-6 {
+      grid-column: span 6;
+    }
+
     @media (max-width: 960px) {
-      .card-span-7, .card-span-5, .card-span-4 {
+      .card-span-7, .card-span-5, .card-span-4, .card-span-6 {
         grid-column: span 6;
       }
     }
 
     @media (max-width: 640px) {
-      .card-span-7, .card-span-5, .card-span-4 {
+      .card-span-7, .card-span-5, .card-span-4, .card-span-6 {
         grid-column: span 12;
       }
+    }
+
+    .youth-video-play-overlay {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(9, 21, 43, 0.3);
+      transition: all 0.25s ease;
+      z-index: 2;
+    }
+
+    .youth-photo-card:hover .youth-video-play-overlay {
+      background: rgba(9, 21, 43, 0.1);
+    }
+
+    .youth-video-play-btn {
+      width: 52px;
+      height: 52px;
+      border-radius: 50%;
+      background: rgba(29, 84, 150, 0.92);
+      border: 2px solid #F59E0B;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #FFFFFF;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.45);
+      transition: transform 0.25s ease, background 0.25s ease;
+    }
+
+    .youth-photo-card:hover .youth-video-play-btn {
+      transform: scale(1.12);
+      background: #F59E0B;
+      color: #09152B;
+    }
+
+    .youth-video-duration {
+      position: absolute;
+      bottom: 12px;
+      right: 12px;
+      background: rgba(9, 21, 43, 0.88);
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      color: #FFFFFF;
+      font-size: 0.72rem;
+      font-weight: 800;
+      letter-spacing: 0.04em;
+      padding: 3px 8px;
+      border-radius: 4px;
+      z-index: 2;
     }
 
     .youth-photo-img-wrap {
@@ -1320,6 +1374,129 @@
       </div>
     </section>
 
+    <!-- ── YOUTH ACTION VIDEOS ARCHIVE ── -->
+    <section class="youth-gallery-section youth-video-archive-section" id="youth-videos" style="background: #FFFFFF; border-bottom: 1.5px solid #E2E8F0; padding: 72px 0 88px;">
+      <div class="youth-section-head">
+        <span class="youth-section-eyebrow">ACADEMY IN MOTION</span>
+        <h2 class="youth-section-title">Youth Academy <span>Video Highlights</span></h2>
+        <p class="youth-section-sub">
+          Watch our young cricketers master footwork, bat swing mechanics, bowling machine match simulations, and powerplay execution under certified coaching.
+        </p>
+      </div>
+
+      <div class="youth-photos-showcase youth-videos-grid">
+        <!-- Video 1 -->
+        <article class="youth-photo-card card-span-6" onclick="openYouthVideoLightbox(0)">
+          <div class="youth-photo-img-wrap">
+            <span class="youth-photo-tag" style="background: #D97706;">📹 NET SESSIONS</span>
+            <span class="youth-video-duration">0:30</span>
+            <div class="youth-video-play-overlay">
+              <div class="youth-video-play-btn" aria-label="Play Video">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
+                  <polygon points="5 3 19 12 5 21 5 3"/>
+                </svg>
+              </div>
+            </div>
+            <img src="assets/videos/posters/video-01.jpg" alt="Academy Batting Net Drills" class="youth-photo-img" loading="lazy">
+          </div>
+          <div class="youth-photo-body">
+            <h3 class="youth-photo-title">Academy Batting Net Drills</h3>
+            <p class="youth-photo-desc">
+              Junior Super King fine-tuning forward defensive technique and bat flow in the outdoor batting cages.
+            </p>
+          </div>
+        </article>
+
+        <!-- Video 2 -->
+        <article class="youth-photo-card card-span-6" onclick="openYouthVideoLightbox(1)">
+          <div class="youth-photo-img-wrap">
+            <span class="youth-photo-tag" style="background: #1D5496;">⚡ SPEED SIMULATION</span>
+            <span class="youth-video-duration">1:21</span>
+            <div class="youth-video-play-overlay">
+              <div class="youth-video-play-btn" aria-label="Play Video">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
+                  <polygon points="5 3 19 12 5 21 5 3"/>
+                </svg>
+              </div>
+            </div>
+            <img src="assets/videos/posters/video-02.jpg" alt="Bowling Machine Match Simulation" class="youth-photo-img" loading="lazy">
+          </div>
+          <div class="youth-photo-body">
+            <h3 class="youth-photo-title">Bowling Machine Match Simulation</h3>
+            <p class="youth-photo-desc">
+              Intense powerplay batting drill facing high-speed deliveries from the club bowling machine at the training facility.
+            </p>
+          </div>
+        </article>
+
+        <!-- Video 3 -->
+        <article class="youth-photo-card card-span-4" onclick="openYouthVideoLightbox(2)">
+          <div class="youth-photo-img-wrap">
+            <span class="youth-photo-tag" style="background: #D97706;">🏃 FOOTWORK DRILLS</span>
+            <span class="youth-video-duration">0:13</span>
+            <div class="youth-video-play-overlay">
+              <div class="youth-video-play-btn" aria-label="Play Video">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
+                  <polygon points="5 3 19 12 5 21 5 3"/>
+                </svg>
+              </div>
+            </div>
+            <img src="assets/videos/posters/video-03.jpg" alt="Junior Agility & Crease Footwork" class="youth-photo-img" loading="lazy">
+          </div>
+          <div class="youth-photo-body">
+            <h3 class="youth-photo-title">Junior Agility & Crease Footwork</h3>
+            <p class="youth-photo-desc">
+              Agility marker routines designed to build quick lateral movement, balance, and quick feet at the batting crease.
+            </p>
+          </div>
+        </article>
+
+        <!-- Video 4 -->
+        <article class="youth-photo-card card-span-4" onclick="openYouthVideoLightbox(3)">
+          <div class="youth-photo-img-wrap">
+            <span class="youth-photo-tag" style="background: #1D5496;">📐 TECHNIQUE FOCUS</span>
+            <span class="youth-video-duration">0:15</span>
+            <div class="youth-video-play-overlay">
+              <div class="youth-video-play-btn" aria-label="Play Video">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
+                  <polygon points="5 3 19 12 5 21 5 3"/>
+                </svg>
+              </div>
+            </div>
+            <img src="assets/videos/posters/video-04.jpg" alt="Forward Stride & Precision Timing" class="youth-photo-img" loading="lazy">
+          </div>
+          <div class="youth-photo-body">
+            <h3 class="youth-photo-title">Forward Stride & Precision Timing</h3>
+            <p class="youth-photo-desc">
+              Developing head position over the ball and high elbow execution during specialized youth coaching drills.
+            </p>
+          </div>
+        </article>
+
+        <!-- Video 5 -->
+        <article class="youth-photo-card card-span-4" onclick="openYouthVideoLightbox(4)">
+          <div class="youth-photo-img-wrap">
+            <span class="youth-photo-tag" style="background: #D97706;">🏟️ TURF PRACTICE</span>
+            <span class="youth-video-duration">1:21</span>
+            <div class="youth-video-play-overlay">
+              <div class="youth-video-play-btn" aria-label="Play Video">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
+                  <polygon points="5 3 19 12 5 21 5 3"/>
+                </svg>
+              </div>
+            </div>
+            <img src="assets/videos/posters/video-05.jpg" alt="Open Turf Batting Session" class="youth-photo-img" loading="lazy">
+          </div>
+          <div class="youth-photo-body">
+            <h3 class="youth-photo-title">Open Turf Batting Session</h3>
+            <p class="youth-photo-desc">
+              Full-length outdoor practice strip batting repetitions simulating real matchday bounce and trajectory.
+            </p>
+          </div>
+        </article>
+      </div>
+    </section>
+
     <!-- ── 3 AGE COHORTS & PATHWAYS (WHITE CARDS) ── -->
     <section class="youth-cohorts-section">
       <div class="youth-section-head">
@@ -1526,6 +1703,7 @@
       <button class="youth-lightbox-close" onclick="closeYouthLightbox()" aria-label="Close photo preview">&times;</button>
       <div class="youth-lightbox-media">
         <img id="youth-lightbox-img" src="" alt="Junior Cricket Preview">
+        <video id="youth-lightbox-video" controls playsinline style="display:none; max-width:100%; max-height:65vh; width:100%; object-fit:contain;"></video>
       </div>
       <div class="youth-lightbox-footer">
         <span class="youth-lightbox-badge" id="youth-lightbox-badge">MATCHDAY ACTION</span>
@@ -1614,11 +1792,100 @@
       }
     ];
 
+    // Official Training & Youth Videos Dataset
+    const youthVideoData = [
+      {
+        src: 'video/csk-match-clip-01.mp4',
+        poster: 'assets/videos/posters/video-01.jpg',
+        badge: '📹 BATTING NET DRILLS',
+        title: 'Academy Batting Net Drills',
+        caption: 'Junior Super King fine-tuning forward defensive technique and bat flow in the outdoor batting cages.'
+      },
+      {
+        src: 'video/csk-match-clip-02.mp4',
+        poster: 'assets/videos/posters/video-02.jpg',
+        badge: '⚡ SPEED SIMULATION',
+        title: 'Bowling Machine Match Simulation',
+        caption: 'Intense powerplay batting drill facing high-speed deliveries from the club bowling machine at the training facility.'
+      },
+      {
+        src: 'video/csk-match-clip-03.mp4',
+        poster: 'assets/videos/posters/video-03.jpg',
+        badge: '🏃 FOOTWORK & AGILITY',
+        title: 'Junior Agility & Crease Footwork',
+        caption: 'Agility marker routines designed to build quick lateral movement, balance, and quick feet at the batting crease.'
+      },
+      {
+        src: 'video/csk-match-clip-04.mp4',
+        poster: 'assets/videos/posters/video-04.jpg',
+        badge: '📐 TECHNIQUE & STRIDE',
+        title: 'Forward Stride & Precision Timing',
+        caption: 'Developing head position over the ball and high elbow execution during specialized youth coaching drills.'
+      },
+      {
+        src: 'video/csk-match-clip-05.mp4',
+        poster: 'assets/videos/posters/video-05.jpg',
+        badge: '🏟️ OUTDOOR TURF PRACTICE',
+        title: 'Open Turf Batting Session',
+        caption: 'Full-length outdoor practice strip batting repetitions simulating real matchday bounce and trajectory.'
+      }
+    ];
+
     function openYouthLightbox(index) {
       const item = youthGalleryData[index];
       if (!item) return;
 
-      document.getElementById('youth-lightbox-img').src = item.src;
+      const videoEl = document.getElementById('youth-lightbox-video');
+      if (videoEl) {
+        videoEl.pause();
+        videoEl.src = '';
+        videoEl.style.display = 'none';
+      }
+      const imgEl = document.getElementById('youth-lightbox-img');
+      if (imgEl) {
+        imgEl.style.display = 'block';
+        imgEl.src = item.src;
+      }
+
+      document.getElementById('youth-lightbox-badge').textContent = item.badge;
+      document.getElementById('youth-lightbox-title').textContent = item.title;
+      document.getElementById('youth-lightbox-caption').textContent = item.caption;
+
+      const modal = document.getElementById('youth-lightbox');
+      modal.classList.add('is-open');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function openYouthVideoLightbox(index) {
+      const item = youthVideoData[index];
+      if (!item) return;
+
+      const imgEl = document.getElementById('youth-lightbox-img');
+      const videoEl = document.getElementById('youth-lightbox-video');
+
+      if (imgEl) {
+        imgEl.style.display = 'none';
+        imgEl.src = '';
+      }
+
+      if (videoEl) {
+        videoEl.style.display = 'block';
+        videoEl.src = item.src;
+        if (item.poster) videoEl.poster = item.poster;
+        videoEl.play().catch(() => {});
+
+        // Request fullscreen on video click
+        setTimeout(() => {
+          if (videoEl.requestFullscreen) {
+            videoEl.requestFullscreen().catch(() => {});
+          } else if (videoEl.webkitRequestFullscreen) {
+            videoEl.webkitRequestFullscreen();
+          } else if (videoEl.webkitEnterFullscreen) {
+            videoEl.webkitEnterFullscreen();
+          }
+        }, 150);
+      }
+
       document.getElementById('youth-lightbox-badge').textContent = item.badge;
       document.getElementById('youth-lightbox-title').textContent = item.title;
       document.getElementById('youth-lightbox-caption').textContent = item.caption;
@@ -1630,6 +1897,12 @@
 
     function closeYouthLightbox(e) {
       if (e && e.target !== e.currentTarget && !e.target.classList.contains('youth-lightbox-close')) return;
+      const videoEl = document.getElementById('youth-lightbox-video');
+      if (videoEl) {
+        videoEl.pause();
+        videoEl.src = '';
+        videoEl.style.display = 'none';
+      }
       const modal = document.getElementById('youth-lightbox');
       modal.classList.remove('is-open');
       document.body.style.overflow = '';
