@@ -1,5 +1,16 @@
 [
   {
+    "id": "photo-00",
+    "year": "2026",
+    "type": "photo",
+    "title": "Australian Cricket Legend David Warner in Cayman",
+    "category": "Behind the Scenes",
+    "src": "assets/players/real/david-warner-csk-cayman.jpg",
+    "caption": "World Cup champion & Australian cricket icon David Warner visiting Grand Cayman, connecting with Cayman Super Kings on Seven Mile Beach.",
+    "drive_folder": "",
+    "date": "October 2026"
+  },
+  {
     "id": "photo-01",
     "year": "2025",
     "type": "photo",
