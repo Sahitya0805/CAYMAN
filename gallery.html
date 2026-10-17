@@ -91,6 +91,132 @@
       box-shadow: 0 4px 14px rgba(245, 158, 11, 0.35);
     }
 
+    /* Media Type Segmented Controls (All Media / Photos / Videos) */
+    .gallery-media-types {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 20px;
+      flex-wrap: wrap;
+    }
+
+    .gallery-type-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 9px 20px;
+      border-radius: 9999px;
+      background: rgba(14, 54, 108, 0.5);
+      border: 1.5px solid rgba(56, 189, 248, 0.35);
+      color: #E2E8F0;
+      font-size: 0.88rem;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: all 0.22s ease;
+      backdrop-filter: blur(8px);
+    }
+
+    .gallery-type-btn svg {
+      color: #38BDF8;
+      transition: transform 0.2s ease, color 0.2s ease;
+    }
+
+    .gallery-type-btn:hover {
+      background: #154279;
+      border-color: #38BDF8;
+      color: #FFFFFF;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 14px rgba(56, 189, 248, 0.25);
+    }
+
+    .gallery-type-btn.is-active {
+      background: #0284C7;
+      border-color: #38BDF8;
+      color: #FFFFFF;
+      font-weight: 800;
+      box-shadow: 0 4px 18px rgba(2, 132, 199, 0.45);
+    }
+
+    .gallery-type-btn.is-active svg {
+      color: #FDE047;
+    }
+
+    .gallery-type-count {
+      display: inline-block;
+      padding: 1px 7px;
+      border-radius: 999px;
+      background: rgba(0, 0, 0, 0.3);
+      font-size: 0.78rem;
+      font-weight: 800;
+    }
+
+    /* Video Play Overlay Indicator */
+    .csk-card-play-btn {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 52px;
+      height: 52px;
+      border-radius: 50%;
+      background: rgba(10, 36, 84, 0.88);
+      backdrop-filter: blur(6px);
+      border: 2px solid #38BDF8;
+      color: #FFFFFF;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5), 0 0 16px rgba(56, 189, 248, 0.4);
+      transition: transform 0.25s ease, background 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+      z-index: 2;
+      pointer-events: none;
+    }
+
+    .csk-card-play-btn svg {
+      margin-left: 3px;
+      fill: #FFFFFF;
+    }
+
+    .csk-album-card:hover .csk-card-play-btn {
+      transform: translate(-50%, -50%) scale(1.15);
+      background: #0284C7;
+      border-color: #FDE047;
+      box-shadow: 0 12px 32px rgba(0, 0, 0, 0.6), 0 0 24px rgba(253, 224, 71, 0.6);
+    }
+
+    .csk-album-card:hover .csk-card-play-btn svg {
+      fill: #FDE047;
+    }
+
+    /* Video Duration & Type Badges */
+    .csk-video-badge {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      padding: 4px 9px;
+      border-radius: 6px;
+      background: rgba(6, 14, 29, 0.88);
+      backdrop-filter: blur(4px);
+      border: 1px solid rgba(56, 189, 248, 0.45);
+      color: #38BDF8;
+      font-size: 0.72rem;
+      font-weight: 800;
+      letter-spacing: 0.05em;
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      z-index: 3;
+    }
+
+    .csk-video-duration {
+      color: #FDE047;
+      font-weight: 700;
+      margin-left: 2px;
+    }
+
     /* 4-Column Album Card Grid */
     .csk-album-grid {
       display: grid;
@@ -506,9 +632,25 @@
     <main class="gallery-main-viewport">
       <div class="gallery-container">
 
-        <!-- Top Capsule Pill Filter Bar (Filter by Category, No Years) -->
+        <!-- Media Type Selector (All Media / Photos / Videos) -->
+        <div class="gallery-media-types" id="gallery-media-types">
+          <button class="gallery-type-btn is-active" data-type="all">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+            ALL MEDIA <span class="gallery-type-count" id="count-all">31</span>
+          </button>
+          <button class="gallery-type-btn" data-type="photo">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg>
+            PHOTOS <span class="gallery-type-count" id="count-photos">23</span>
+          </button>
+          <button class="gallery-type-btn" data-type="video">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2" ry="2"/></svg>
+            VIDEOS <span class="gallery-type-count" id="count-videos">8</span>
+          </button>
+        </div>
+
+        <!-- Category Pill Filter Bar (Filter by Category) -->
         <div class="gallery-pills-bar" id="gallery-pills-bar">
-          <button class="gallery-pill-btn is-active" data-category="all">ALL PHOTOS</button>
+          <button class="gallery-pill-btn is-active" data-category="all">ALL CATEGORIES</button>
           <button class="gallery-pill-btn" data-category="Matchday Action">MATCHDAY ACTION</button>
           <button class="gallery-pill-btn" data-category="Trophy Celebrations">TROPHY CELEBRATIONS</button>
           <button class="gallery-pill-btn" data-category="Training & Youth">TRAINING &amp; ACADEMY</button>
@@ -523,12 +665,12 @@
         <!-- Empty State -->
         <div id="gallery-empty" class="empty-state" style="display: none; padding: 60px 20px; text-align: center;">
           <div style="font-size: 2.5rem; margin-bottom: 12px;">📸</div>
-          <h3 style="color: #0E366C; font-size: 1.4rem; font-weight: 800; margin-bottom: 8px;">No Albums for Selected Year</h3>
-          <p style="color: #64748B; font-size: 0.95rem; max-width: 440px; margin: 0 auto 20px;">
-            Additional historical photos from this season are being digitized from the club archives.
+          <h3 id="empty-title" style="color: #0E366C; font-size: 1.4rem; font-weight: 800; margin-bottom: 8px;">No Items for Selected Filter</h3>
+          <p id="empty-desc" style="color: #64748B; font-size: 0.95rem; max-width: 440px; margin: 0 auto 20px;">
+            Additional media from this category is being digitized from the club archives.
           </p>
           <button class="gallery-pill-btn is-active" id="btn-show-all-albums" style="margin: 0 auto;">
-            Show All CSK Albums
+            Show All CSK Media
           </button>
         </div>
 
@@ -538,13 +680,14 @@
     </main>
 
     <!-- Fullscreen Click-to-Zoom Lightbox Modal -->
-    <div id="lightbox-modal" class="lightbox-modal" role="dialog" aria-modal="true" aria-label="Photo Lightbox">
+    <div id="lightbox-modal" class="lightbox-modal" role="dialog" aria-modal="true" aria-label="Media Lightbox">
       <button class="lightbox-close-btn" id="lightbox-close" aria-label="Close Lightbox">&times;</button>
-      <button class="lightbox-nav-btn lightbox-prev-btn" id="lightbox-prev" aria-label="Previous Photo">&#10094;</button>
-      <button class="lightbox-nav-btn lightbox-next-btn" id="lightbox-next" aria-label="Next Photo">&#10095;</button>
+      <button class="lightbox-nav-btn lightbox-prev-btn" id="lightbox-prev" aria-label="Previous Item">&#10094;</button>
+      <button class="lightbox-nav-btn lightbox-next-btn" id="lightbox-next" aria-label="Next Item">&#10095;</button>
 
       <div class="lightbox-img-wrap">
         <img id="lightbox-img" class="lightbox-img" src="" alt="CSK Gallery High-Res Photo">
+        <video id="lightbox-video" class="lightbox-video" controls playsinline preload="metadata" style="display: none; max-width: 100%; max-height: 75vh; border-radius: 12px; box-shadow: 0 16px 48px rgba(0, 0, 0, 0.8); border: 1px solid rgba(255, 255, 255, 0.15); background: #000;"></video>
       </div>
 
       <div class="lightbox-caption-bar">
