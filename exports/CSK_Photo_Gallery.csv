@@ -1,32 +1,32 @@
 Media ID,Media Type,Title,Year,Category,Duration,Media Asset Path,Poster Thumbnail,Caption
-video-01,VIDEO,Youth Batting Net Practice,2026,Training & Youth,0:30,video/csk-match-clip-01.mp4,assets/videos/posters/video-01.jpg,Video of youth batting practice in the outdoor cricket nets.
-video-02,VIDEO,Youth Batting Cage Session,2026,Training & Youth,1:21,video/csk-match-clip-02.mp4,assets/videos/posters/video-02.jpg,Video of youth batting practice in the outdoor batting cage.
-video-03,VIDEO,Youth Footwork & Batting Drill,2026,Training & Youth,0:13,video/csk-match-clip-03.mp4,assets/videos/posters/video-03.jpg,Video of a young batter practicing footwork and batting drills on cones.
-video-04,VIDEO,Youth Front-Foot Batting Drill,2026,Training & Youth,0:15,video/csk-match-clip-04.mp4,assets/videos/posters/video-04.jpg,Video of a young batter practicing front-foot drives off cones in the nets.
-video-05,VIDEO,Outdoor Net Batting Session,2026,Training & Youth,1:21,video/csk-match-clip-05.mp4,assets/videos/posters/video-05.jpg,Video of youth batting session in the outdoor practice net.
-video-06,VIDEO,Matchday at the Boundary,2026,Matchday Action,0:25,video/csk-match-clip-06.mp4,assets/videos/posters/video-06.jpg,Video from the boundary line during a match at the cricket ground.
-video-07,VIDEO,Rain Delay & Pitch Covers,2026,Behind the Scenes,0:41,video/csk-match-clip-07.mp4,assets/videos/posters/video-07.jpg,Video of players running off the field during rain with the pitch covered.
-video-08,VIDEO,Rahul Garg & Match Umpire on the Field,2026,Matchday Action,0:15,video/csk-match-clip-08.mp4,assets/videos/posters/video-08.jpg,Video of Captain Rahul Garg (#38) and the match umpire on the field.
-photo-00,PHOTO,David Warner & Rahul Garg,2026,Behind the Scenes,N/A,assets/players/real/david-warner-csk-cayman.jpg,,Image of Australian cricketer David Warner and Cayman Super Kings Captain Rahul Garg in Grand Cayman.
-photo-19,PHOTO,Youth Match Batting,2026,Training & Youth,N/A,assets/players/real/csk-youth-batting-technique.jpg,,Image of a young batter at the crease during a youth cricket match.
-photo-20,PHOTO,Matchday Handshake on the Pitch,2026,Matchday Action,N/A,assets/players/real/csk-matchday-spirit-handshake.jpg,,Image of players shaking hands on the pitch during a match.
-photo-21,PHOTO,Players & Umpire on the Field,2026,Matchday Action,N/A,assets/players/real/csk-matchday-field-stride.jpg,,Image of players and the match umpire walking across the field.
-photo-22,PHOTO,Players & Match Official on Matchday,2026,Matchday Action,N/A,assets/players/real/csk-matchday-pitch-walk.jpg,,Image of players and the match official walking near the pitch.
-photo-23,PHOTO,Matchday on the Field,2026,Matchday Action,N/A,assets/players/real/csk-matchday-officials-crease.jpg,,Image of players and the match umpire on the cricket ground.
-photo-01,PHOTO,Cayman Super Kings Team Photo,2025,Trophy Celebrations,N/A,assets/players/real/Team.jpg,,Group image of the Cayman Super Kings team in official club jerseys.
-photo-02,PHOTO,Wicketkeeper on the Field,2025,Matchday Action,N/A,assets/players/real/20250405_104447_IMG_5374.jpg?v=20261018_upright,,Image of wicketkeeper wearing keeping gloves and catching a cricket ball on the field.
-photo-03,PHOTO,Rahul Garg,2026,Behind the Scenes,N/A,assets/players/real/Rahul-Garg-Portrait.jpg,,"Image of Rahul Garg, Captain of Cayman Super Kings."
-photo-04,PHOTO,Christopher Balraj & Rahul Garg,2024,Behind the Scenes,N/A,assets/players/real/Rahul and Chris.jpg,,Image of Christopher Balraj and Rahul Garg in Cayman Super Kings batting gear.
-photo-06,PHOTO,Gokul Krishnan,2026,Matchday Action,N/A,assets/players/real/Gokul Krishnan.jpg,,"Image of Gokul Krishnan, Vice Captain of Cayman Super Kings."
-photo-07,PHOTO,Christopher Balraj,2024,Behind the Scenes,N/A,assets/players/real/Christopher Balraj.png,,"Image of Christopher Balraj, Co-Founder of Cayman Super Kings."
-photo-08,PHOTO,Ravneet Verma,2025,Trophy Celebrations,N/A,assets/players/real/Ravneet-Verma-solo.jpg,,Image of Ravneet Verma of Cayman Super Kings.
-photo-09,PHOTO,Sahil Singh & Rahul Garg,2026,Behind the Scenes,N/A,assets/players/real/Sahil-Singh.jpeg,,Image of Sahil Singh and Rahul Garg of Cayman Super Kings.
-photo-10,PHOTO,Sakthivel Shanmugasundaram,2025,Behind the Scenes,N/A,assets/players/real/Sakthivel shanmugasundaram.Jpg,,Image of Sakthivel Shanmugasundaram of Cayman Super Kings.
-photo-11,PHOTO,Praisewin Vincent,2025,Behind the Scenes,N/A,assets/players/real/Praisewin-Vincent-solo.jpg,,Image of Praisewin Vincent with teammates in the stadium stands.
-photo-12,PHOTO,Viran Narayana,2025,Behind the Scenes,N/A,assets/players/real/Viran.jpg,,Image of Viran Narayana of Cayman Super Kings.
-photo-13,PHOTO,Jason Edwards,2025,Behind the Scenes,N/A,assets/players/real/Jason-Edwards.jpg,,Image of Jason Edwards of Cayman Super Kings.
-photo-14,PHOTO,Jibin Moncy,2025,Behind the Scenes,N/A,assets/players/real/Jibin-Moncy.jpg,,Image of Jibin Moncy of Cayman Super Kings.
-photo-15,PHOTO,Muhammed Jazeem Keloth,2025,Behind the Scenes,N/A,assets/players/real/Teammate-left.jpg,,Image of Muhammed Jazeem Keloth of Cayman Super Kings.
-photo-16,PHOTO,Rajasekhara Kalagotla,2025,Behind the Scenes,N/A,assets/players/real/Rajasekhara-Kalagotla.jpg,,Image of Rajasekhara Kalagotla of Cayman Super Kings.
-photo-17,PHOTO,Fahad Noushad,2025,Behind the Scenes,N/A,assets/players/real/Fahad.JPG,,Image of Fahad Noushad of Cayman Super Kings.
-photo-18,PHOTO,Majin Paul,2025,Behind the Scenes,N/A,assets/players/real/Majin-Paul-solo.jpg,,"Image of Majin Paul, Co-Founder & Team Manager of Cayman Super Kings."
+video-01,VIDEO,Youth Batting Net Practice,2026,Training & Youth,0:30,video/csk-match-clip-01.mp4,assets/videos/posters/video-01.jpg,Youth batting practice in the outdoor cricket nets.
+video-02,VIDEO,Youth Batting Cage Session,2026,Training & Youth,1:21,video/csk-match-clip-02.mp4,assets/videos/posters/video-02.jpg,Youth batting practice in the outdoor batting cage.
+video-03,VIDEO,Youth Footwork & Batting Drill,2026,Training & Youth,0:13,video/csk-match-clip-03.mp4,assets/videos/posters/video-03.jpg,Young batter practicing footwork and batting drills.
+video-04,VIDEO,Youth Front-Foot Batting Drill,2026,Training & Youth,0:15,video/csk-match-clip-04.mp4,assets/videos/posters/video-04.jpg,Young batter practicing front-foot drives in the nets.
+video-05,VIDEO,Outdoor Net Batting Session,2026,Training & Youth,1:21,video/csk-match-clip-05.mp4,assets/videos/posters/video-05.jpg,Youth batting session in the outdoor practice net.
+video-06,VIDEO,Matchday at the Boundary,2026,Matchday Action,0:25,video/csk-match-clip-06.mp4,assets/videos/posters/video-06.jpg,Matchday clip from the boundary line at the cricket ground.
+video-07,VIDEO,Rain Delay & Pitch Covers,2026,Behind the Scenes,0:41,video/csk-match-clip-07.mp4,assets/videos/posters/video-07.jpg,Players running off the field during rain with the pitch covered.
+video-08,VIDEO,Rahul Garg & Match Umpire on the Field,2026,Matchday Action,0:15,video/csk-match-clip-08.mp4,assets/videos/posters/video-08.jpg,Captain Rahul Garg (#38) and the match umpire on the field.
+photo-00,PHOTO,Image of David Warner & Rahul Garg,2026,Behind the Scenes,N/A,assets/players/real/david-warner-csk-cayman.jpg,,Australian cricketer David Warner and Cayman Super Kings Captain Rahul Garg.
+photo-19,PHOTO,Youth Match Batting,2026,Training & Youth,N/A,assets/players/real/csk-youth-batting-technique.jpg,,Young batter at the crease during a youth cricket match.
+photo-20,PHOTO,Matchday Handshake on the Pitch,2026,Matchday Action,N/A,assets/players/real/csk-matchday-spirit-handshake.jpg,,Players shaking hands on the pitch during a match.
+photo-21,PHOTO,Players & Umpire on the Field,2026,Matchday Action,N/A,assets/players/real/csk-matchday-field-stride.jpg,,Players and the match umpire walking across the field.
+photo-22,PHOTO,Players & Match Official on Matchday,2026,Matchday Action,N/A,assets/players/real/csk-matchday-pitch-walk.jpg,,Players and the match official walking near the pitch.
+photo-23,PHOTO,Matchday on the Field,2026,Matchday Action,N/A,assets/players/real/csk-matchday-officials-crease.jpg,,Players and the match umpire on the cricket ground.
+photo-01,PHOTO,Image of Cayman Super Kings Team,2025,Trophy Celebrations,N/A,assets/players/real/Team.jpg,,Cayman Super Kings team group photo in official club jerseys.
+photo-02,PHOTO,Wicketkeeper on the Field,2025,Matchday Action,N/A,assets/players/real/20250405_104447_IMG_5374.jpg?v=20261018_upright,,Wicketkeeper catching a cricket ball on the field.
+photo-03,PHOTO,Image of Rahul Garg,2026,Behind the Scenes,N/A,assets/players/real/Rahul-Garg-Portrait.jpg,,"Rahul Garg — Captain, Cayman Super Kings."
+photo-04,PHOTO,Image of Christopher Balraj & Rahul Garg,2024,Behind the Scenes,N/A,assets/players/real/Rahul and Chris.jpg,,Christopher Balraj and Rahul Garg — Cayman Super Kings.
+photo-06,PHOTO,Image of Gokul Krishnan,2026,Matchday Action,N/A,assets/players/real/Gokul Krishnan.jpg,,"Gokul Krishnan — Vice Captain, Cayman Super Kings."
+photo-07,PHOTO,Image of Christopher Balraj,2024,Behind the Scenes,N/A,assets/players/real/Christopher Balraj.png,,"Christopher Balraj — Co-Founder, Cayman Super Kings."
+photo-08,PHOTO,Image of Ravneet Verma,2025,Trophy Celebrations,N/A,assets/players/real/Ravneet-Verma-solo.jpg,,Ravneet Verma — Cayman Super Kings.
+photo-09,PHOTO,Image of Sahil Singh & Rahul Garg,2026,Behind the Scenes,N/A,assets/players/real/Sahil-Singh.jpeg,,Sahil Singh and Rahul Garg — Cayman Super Kings.
+photo-10,PHOTO,Image of Sakthivel Shanmugasundaram,2025,Behind the Scenes,N/A,assets/players/real/Sakthivel shanmugasundaram.Jpg,,Sakthivel Shanmugasundaram — Cayman Super Kings.
+photo-11,PHOTO,Image of Praisewin Vincent,2025,Behind the Scenes,N/A,assets/players/real/Praisewin-Vincent-solo.jpg,,Praisewin Vincent — Cayman Super Kings.
+photo-12,PHOTO,Image of Viran Narayana,2025,Behind the Scenes,N/A,assets/players/real/Viran.jpg,,Viran Narayana — Cayman Super Kings.
+photo-13,PHOTO,Image of Jason Edwards,2025,Behind the Scenes,N/A,assets/players/real/Jason-Edwards.jpg,,Jason Edwards — Cayman Super Kings.
+photo-14,PHOTO,Image of Jibin Moncy,2025,Behind the Scenes,N/A,assets/players/real/Jibin-Moncy.jpg,,Jibin Moncy — Cayman Super Kings.
+photo-15,PHOTO,Image of Muhammed Jazeem Keloth,2025,Behind the Scenes,N/A,assets/players/real/Teammate-left.jpg,,Muhammed Jazeem Keloth — Cayman Super Kings.
+photo-16,PHOTO,Image of Rajasekhara Kalagotla,2025,Behind the Scenes,N/A,assets/players/real/Rajasekhara-Kalagotla.jpg,,Rajasekhara Kalagotla — Cayman Super Kings.
+photo-17,PHOTO,Image of Fahad Noushad,2025,Behind the Scenes,N/A,assets/players/real/Fahad.JPG,,Fahad Noushad — Cayman Super Kings.
+photo-18,PHOTO,Image of Majin Paul,2025,Behind the Scenes,N/A,assets/players/real/Majin-Paul-solo.jpg,,"Majin Paul — Co-Founder & Team Manager, Cayman Super Kings."

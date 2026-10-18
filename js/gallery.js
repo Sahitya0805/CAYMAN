@@ -1,4 +1,4 @@
-import { store } from './content-store.js?v=20261018_gallery_v2';
+import { store } from './content-store.js?v=20261018_clean_v3';
 
 export async function initGalleryPage() {
   const grid = document.getElementById('gallery-grid');
@@ -93,8 +93,8 @@ export async function initGalleryPage() {
     grid.innerHTML = activeFiltered.map((p, idx) => {
       const isVideo = p.type === 'video';
       const thumbSrc = isVideo ? (p.poster || p.src) : p.src;
-      const categoryLabel = p.category || (isVideo ? 'Video Clip' : 'Club Archive');
-      const yearLabel = p.year || '2026';
+      const isPersonPhoto = !isVideo && (p.title || '').startsWith('Image of');
+      const categoryLabel = isPersonPhoto ? 'Cayman Super Kings' : (p.category || (isVideo ? 'Video Clip' : 'Club Archive'));
 
       return `
         <article class="csk-album-card cyber-reveal is-revealed ${isVideo ? 'is-video-card' : ''}" data-index="${idx}" tabindex="0" role="button" aria-label="${p.title}" style="animation-delay: ${Math.min(idx * 0.03, 0.35)}s;">
@@ -102,7 +102,6 @@ export async function initGalleryPage() {
             <!-- High-Res Cover Image / Poster -->
             <img src="${thumbSrc}" alt="${p.title}" class="csk-album-img ${isVideo ? 'csk-video-poster-img' : ''}" loading="lazy" onerror="this.onerror=null; this.src='assets/csk-official-logo.png'; this.style.objectFit='contain'; this.style.padding='40px';">
 
-            <!-- Top-Left Badge -->
             ${isVideo ? `
               <div class="csk-video-badge" title="Official Video Footage">
                 <svg width="10" height="10" viewBox="0 0 24 24" fill="currentColor">
@@ -118,24 +117,9 @@ export async function initGalleryPage() {
                   <polygon points="6 4 20 12 6 20 6 4"/>
                 </svg>
               </div>
-            ` : `
-              <div class="csk-photo-pill-badge">
-                <span>${yearLabel}</span>
-              </div>
-            `}
+            ` : ''}
 
-            <!-- Top-Right Action Pill (Share) -->
-            <div class="csk-card-share-btn" title="Share Media" aria-label="Share">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
-                <circle cx="18" cy="5" r="3"></circle>
-                <circle cx="6" cy="12" r="3"></circle>
-                <circle cx="18" cy="19" r="3"></circle>
-                <line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line>
-                <line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line>
-              </svg>
-            </div>
-
-            <!-- Bottom Gradient Overlay Strip (No Whistle Icon) -->
+            <!-- Bottom Gradient Overlay Strip (Zero Circular Icons on Photos) -->
             <div class="csk-album-overlay">
               <div class="csk-album-info">
                 <div class="csk-album-meta-top">
