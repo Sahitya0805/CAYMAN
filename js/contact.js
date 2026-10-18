@@ -142,7 +142,10 @@ export function initContactForm() {
           body: JSON.stringify(payload)
         });
         if (apiRes.ok) {
-          apiHandled = true;
+          const apiData = await apiRes.json().catch(() => ({}));
+          if (apiData && apiData.sheetSynced) {
+            apiHandled = true;
+          }
         }
       } catch (err) {
         console.warn('API /api/contact notification notice:', err);

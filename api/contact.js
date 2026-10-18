@@ -42,15 +42,20 @@ export default async function handler(req, res) {
 
     // Forward to secure backend webhook (Google Sheets / Discord / Slack / Email) if configured
     const DEFAULT_SHEET_WEBHOOK = 'https://script.google.com/macros/s/AKfycbyAqCeY78kegRajbkM4iWDKnDcM4FB_UJNGyoa_0_oTH1RCGsJLU9kySAMzR1nmfzKOOg/exec';
-    const webhookUrl = process.env.CONTACT_WEBHOOK_URL || process.env.GOOGLE_SHEET_WEBHOOK_URL || DEFAULT_SHEET_WEBHOOK;
+    const webhookUrl = DEFAULT_SHEET_WEBHOOK || process.env.CONTACT_WEBHOOK_URL || process.env.GOOGLE_SHEET_WEBHOOK_URL;
+    let sheetSynced = false;
     if (webhookUrl && webhookUrl.startsWith('http')) {
       try {
-        await fetch(webhookUrl, {
+        const webhookRes = await fetch(webhookUrl, {
           method: 'POST',
           headers: { 'Content-Type': 'text/plain;charset=utf-8' },
           body: JSON.stringify(submission),
           redirect: 'follow'
         });
+        const respText = await webhookRes.text().catch(() => '');
+        if (webhookRes.ok && (respText.includes('"status":"ok"') || respText.includes('"result":"success"'))) {
+          sheetSynced = true;
+        }
       } catch (webhookErr) {
         console.warn('Backend webhook dispatch notice:', webhookErr);
       }
@@ -58,6 +63,7 @@ export default async function handler(req, res) {
 
     return res.status(200).json({
       success: true,
+      sheetSynced,
       message: 'Enquiry safely received and logged in CSK private database.',
       timestamp: submission.timestamp
     });

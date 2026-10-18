@@ -1,16 +1,16 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280 90" width="280" height="90">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 276 56" width="320" height="65">
   <defs>
     <linearGradient id="v2RedLight" x1="0%" y1="0%" x2="100%" y2="100%">
       <stop offset="0%" stop-color="#DC2626"/>
       <stop offset="100%" stop-color="#991B1B"/>
     </linearGradient>
   </defs>
-  <g transform="translate(14, 18)">
+  <g transform="translate(4, 2)">
     <!-- Red Brand Block -->
-    <rect x="0" y="4" width="54" height="46" rx="10" fill="url(#v2RedLight)"/>
-    <text x="27" y="37" font-family="'Chakra Petch', 'Arial Black', Impact, sans-serif" font-weight="900" font-size="28" fill="#FFFFFF" text-anchor="middle">V2</text>
+    <rect x="0" y="2" width="56" height="48" rx="10" fill="url(#v2RedLight)"/>
+    <text x="28" y="36" font-family="'Chakra Petch', 'Arial Black', Impact, sans-serif" font-weight="900" font-size="29" fill="#FFFFFF" text-anchor="middle">V2</text>
     <!-- Brand Wordmark -->
-    <text x="68" y="27" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-weight="900" font-size="20" fill="#09152B" letter-spacing="1.2">VALUE &amp; VARIETY</text>
-    <text x="70" y="44" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-weight="800" font-size="10.5" fill="#64748B" letter-spacing="3">CAYMAN ISLANDS</text>
+    <text x="68" y="26" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-weight="900" font-size="21.5" fill="#09152B" letter-spacing="1.2">VALUE &amp; VARIETY</text>
+    <text x="70" y="45" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-weight="800" font-size="11.5" fill="#64748B" letter-spacing="3.2">CAYMAN ISLANDS</text>
   </g>
 </svg>

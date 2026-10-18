@@ -1902,7 +1902,9 @@
       }
     });
 
-    // Handle Enrollment Form Submit
+    // Handle Enrollment Form Submit (API, Email, Google Sheets & Excel Registry)
+    const GOOGLE_SHEET_WEBHOOK_URL = 'https://script.google.com/macros/s/AKfycbyAqCeY78kegRajbkM4iWDKnDcM4FB_UJNGyoa_0_oTH1RCGsJLU9kySAMzR1nmfzKOOg/exec';
+
     async function handleYouthEnrollment(e) {
       e.preventDefault();
       const parentName = document.getElementById('parent-name').value.trim();
@@ -1923,10 +1925,13 @@
       const payload = {
         timestamp: new Date().toISOString(),
         dateFormatted: new Date().toLocaleString('en-US', { timeZone: 'America/Cayman' }),
-        name: parentName,
+        name: `${parentName} (Child: ${childInfo})`,
         email: validEmail,
-        subject: `Youth Academy Enrollment - ${childInfo}`,
-        message: `[YOUTH ACADEMY ENROLLMENT]\n• Parent/Guardian: ${parentName}\n• Child Info & Age: ${childInfo}\n• Phone / WhatsApp: ${phone}\n• Email: ${email || 'Not provided'}\n• Experience Level: ${level}\n• Training Ground: Smith Road Oval, George Town`
+        phone: phone,
+        childInfo: childInfo,
+        experienceLevel: level,
+        subject: `Youth Academy Enrollment - ${childInfo} (${level})`,
+        message: `[YOUTH ACADEMY ENROLLMENT] Parent/Guardian: ${parentName} | Child & Age: ${childInfo} | Phone/WhatsApp: ${phone} | Email: ${email || 'Not provided'} | Level: ${level} | Venue: Smith Road Oval, George Town`
       };
 
       // 1. Save to LocalStorage for persistent browser access
@@ -1942,45 +1947,60 @@
         console.warn('LocalStorage save notice:', err);
       }
 
-      // 2. Dispatch to Serverless Database API (/api/contact -> content/enquiries.json -> Excel export)
+      // 2. Dispatch to Serverless Database API (/api/contact -> content/enquiries.json -> Google Sheets & Excel export)
+      let apiHandled = false;
       try {
-        fetch('/api/contact', {
+        const apiRes = await fetch('/api/contact', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify(payload)
-        }).catch(err => console.warn('API sync notice:', err));
-      } catch (err) {}
+        });
+        if (apiRes.ok) {
+          const apiData = await apiRes.json().catch(() => ({}));
+          if (apiData && apiData.sheetSynced) {
+            apiHandled = true;
+          }
+        }
+      } catch (err) {
+        console.warn('API sync notice:', err);
+      }
 
       // 3. Email relay directly to CSK management caymansuperkings@gmail.com
-      try {
-        fetch('https://formsubmit.co/ajax/caymansuperkings@gmail.com', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
-          body: JSON.stringify({
-            _subject: `🏏 [CSK Youth Academy Registration] ${childInfo} (Parent: ${parentName})`,
-            _template: 'table',
-            _captcha: 'false',
-            "Submission Date": payload.dateFormatted,
-            "Parent / Guardian": parentName,
-            "Child & Age": childInfo,
-            "Phone / WhatsApp": phone,
-            "Parent Email": email || 'Not provided',
-            "Experience Level": level,
-            "Training Location": "Smith Road Oval, George Town"
-          })
-        }).catch(err => console.warn('Email dispatch notice:', err));
-      } catch (err) {}
+      fetch('https://formsubmit.co/ajax/caymansuperkings@gmail.com', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+        body: JSON.stringify({
+          _subject: `🏏 [CSK Youth Academy Registration] ${childInfo} (Parent: ${parentName})`,
+          _template: 'table',
+          _captcha: 'false',
+          "Submission Date": payload.dateFormatted,
+          "Parent / Guardian": parentName,
+          "Child & Age": childInfo,
+          "Phone / WhatsApp": phone,
+          "Parent Email": email || 'Not provided',
+          "Experience Level": level,
+          "Training Location": "Smith Road Oval, George Town"
+        })
+      }).catch(err => console.warn('Email dispatch notice:', err));
 
-      // 4. UI Confirmation
-      setTimeout(() => {
-        feedback.style.display = 'block';
-        feedback.style.color = '#059669';
-        feedback.innerHTML = '🎉 Thank you, <strong>' + parentName + '</strong>! Enrollment received for <strong>' + childInfo + '</strong>. Data is logged in the CSK Academy Registry and sent to coaching staff. Our team will WhatsApp / call <strong>' + phone + '</strong> shortly.';
-        submitBtn.innerHTML = '<span>Registration Confirmed ✓</span>';
-        submitBtn.style.background = '#059669';
-        submitBtn.disabled = false;
-        document.getElementById('youth-enrollment-form').reset();
-      }, 500);
+      // 4. Direct dispatch to Google Sheets Webhook if serverless API didn't confirm sheet sync
+      if (!apiHandled && GOOGLE_SHEET_WEBHOOK_URL && GOOGLE_SHEET_WEBHOOK_URL.startsWith('http')) {
+        await fetch(GOOGLE_SHEET_WEBHOOK_URL, {
+          method: 'POST',
+          mode: 'no-cors',
+          headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+          body: JSON.stringify(payload)
+        }).catch(err => console.warn('Google Sheet dispatch notice:', err));
+      }
+
+      // 5. UI Confirmation
+      feedback.style.display = 'block';
+      feedback.style.color = '#059669';
+      feedback.innerHTML = '🎉 Thank you, <strong>' + parentName + '</strong>! Enrollment received for <strong>' + childInfo + '</strong>. Data is logged in the CSK Academy Excel / Google Sheet Registry and sent to coaching staff. Our team will WhatsApp / call <strong>' + phone + '</strong> shortly.';
+      submitBtn.innerHTML = '<span>Registration Confirmed ✓</span>';
+      submitBtn.style.background = '#059669';
+      submitBtn.disabled = false;
+      document.getElementById('youth-enrollment-form').reset();
     }
   </script>
 </body>
