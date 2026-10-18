@@ -67,9 +67,10 @@ body.editorial-home {
 .hero-cinematic-sports {
   position: relative;
   width: 100%;
-  height: calc(100vh - 28px);
+  aspect-ratio: 1024 / 613;
+  height: auto;
   min-height: 560px;
-  max-height: 980px;
+  max-height: none;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -79,6 +80,7 @@ body.editorial-home {
 
 @media (max-width: 768px) {
   .hero-cinematic-sports {
+    aspect-ratio: auto !important;
     height: auto !important;
     min-height: auto !important;
     max-height: none !important;
@@ -111,13 +113,13 @@ body.editorial-home {
 .hero-slide {
   position: absolute;
   inset: 0;
-  background-position: center 30%;
-  background-size: cover;
+  background-position: center center;
+  background-size: 100% 100%;
   background-repeat: no-repeat;
-  filter: saturate(1.12) contrast(1.06) brightness(1.0);
+  filter: saturate(1.1) contrast(1.06) brightness(1.02);
   opacity: 0;
-  transform: scale(1.02);
-  transition: opacity 0.8s ease-in-out, transform 4s ease-out;
+  transform: scale(1);
+  transition: opacity 0.8s ease-in-out;
   pointer-events: none;
   z-index: 1;
 }
@@ -129,7 +131,7 @@ body.editorial-home {
     width: 100% !important;
     height: 100% !important;
     background-position: center center !important;
-    background-size: cover !important;
+    background-size: 100% 100% !important;
   }
 }
 
@@ -185,11 +187,11 @@ body.editorial-home {
   inset: 0;
   background: linear-gradient(
     180deg,
-    rgba(2, 6, 17, 0.65) 0%,
-    rgba(2, 6, 17, 0.15) 22%,
-    rgba(2, 6, 17, 0.0) 50%,
-    rgba(2, 6, 17, 0.3) 72%,
-    rgba(2, 6, 17, 0.88) 100%
+    rgba(2, 6, 17, 0.45) 0%,
+    rgba(2, 6, 17, 0.08) 18%,
+    rgba(2, 6, 17, 0.0) 65%,
+    rgba(2, 6, 17, 0.18) 84%,
+    rgba(2, 6, 17, 0.58) 100%
   );
   pointer-events: none;
   z-index: 4;
