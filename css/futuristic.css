@@ -1731,3 +1731,107 @@ html, body {
   }
 }
 
+/* ─────────────────────────────────────────────────────────────
+   IPL / SRH STYLE 5-BULB DIAGONAL STADIUM FLOODLIGHT RIGS
+   ───────────────────────────────────────────────────────────── */
+.csk-stadium-lights-rig {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 310px;
+  pointer-events: none;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.csk-stadium-lights-rig__truss-top,
+.csk-stadium-lights-rig__truss-bottom {
+  position: absolute;
+  left: 88px;
+  right: 88px;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0.42) 0%,
+    rgba(255, 255, 255, 0.16) 20%,
+    rgba(255, 255, 255, 0.12) 50%,
+    rgba(255, 255, 255, 0.16) 80%,
+    rgba(255, 255, 255, 0.42) 100%
+  );
+}
+
+.csk-stadium-lights-rig__truss-top {
+  top: 22px;
+}
+
+.csk-stadium-lights-rig__truss-bottom {
+  top: 76px;
+}
+
+.csk-stadium-bank {
+  position: absolute;
+  top: 2px;
+  width: 420px;
+  height: 300px;
+  pointer-events: none;
+  filter: drop-shadow(0 0 18px rgba(255, 255, 255, 0.35));
+  animation: stadiumBeamPulse 5s ease-in-out infinite alternate;
+}
+
+.csk-stadium-bank--left {
+  left: 0;
+}
+
+.csk-stadium-bank--right {
+  right: 0;
+  transform: scaleX(-1);
+}
+
+@keyframes stadiumBeamPulse {
+  0% {
+    opacity: 0.9;
+    filter: drop-shadow(0 0 14px rgba(255, 255, 255, 0.28));
+  }
+  100% {
+    opacity: 1;
+    filter: drop-shadow(0 0 24px rgba(255, 255, 255, 0.52));
+  }
+}
+
+@media (max-width: 992px) {
+  .csk-stadium-bank {
+    width: 280px;
+    height: 200px;
+  }
+  .csk-stadium-lights-rig__truss-top {
+    top: 16px;
+    left: 58px;
+    right: 58px;
+  }
+  .csk-stadium-lights-rig__truss-bottom {
+    top: 52px;
+    left: 42px;
+    right: 42px;
+  }
+}
+
+@media (max-width: 640px) {
+  .csk-stadium-bank {
+    width: 190px;
+    height: 140px;
+    opacity: 0.85;
+  }
+  .csk-stadium-lights-rig__truss-top {
+    top: 12px;
+    left: 38px;
+    right: 38px;
+  }
+  .csk-stadium-lights-rig__truss-bottom {
+    top: 38px;
+    left: 24px;
+    right: 24px;
+  }
+}
+
+

@@ -21,6 +21,7 @@ export function initFuturisticSystem() {
   initCyberTargetingCorners();
   initCyberWarpDrive();
   initMagneticButtons();
+  initStadiumFloodlights();
 
   // Dynamic observer for dynamically rendered squad and match cards
   const dynamicContainers = document.querySelectorAll('#squad-grid, .roster-grid, #matches-grid-container');
@@ -461,4 +462,149 @@ function initMagneticButtons() {
     });
   });
 }
+
+/**
+ * 13. IPL / SRH Style 5-Bulb Diagonal Stadium Floodlight Rigs
+ */
+export function getStadiumFloodlightRigHTML(uid = 'csk-fl') {
+  const bankSVG = (side) => {
+    const id = `${uid}-${side}`;
+    return `
+      <svg class="csk-stadium-bank csk-stadium-bank--${side}" viewBox="0 0 420 300" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <defs>
+          <linearGradient id="${id}-beam-1" x1="106" y1="18" x2="365" y2="128" gradientUnits="userSpaceOnUse">
+            <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.95" />
+            <stop offset="28%" stop-color="#FFFFFF" stop-opacity="0.55" />
+            <stop offset="68%" stop-color="#E0F2FE" stop-opacity="0.16" />
+            <stop offset="100%" stop-color="#FFFFFF" stop-opacity="0" />
+          </linearGradient>
+          <linearGradient id="${id}-beam-2" x1="82" y1="42" x2="325" y2="164" gradientUnits="userSpaceOnUse">
+            <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.95" />
+            <stop offset="28%" stop-color="#FFFFFF" stop-opacity="0.55" />
+            <stop offset="68%" stop-color="#E0F2FE" stop-opacity="0.16" />
+            <stop offset="100%" stop-color="#FFFFFF" stop-opacity="0" />
+          </linearGradient>
+          <linearGradient id="${id}-beam-3" x1="58" y1="66" x2="282" y2="198" gradientUnits="userSpaceOnUse">
+            <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.95" />
+            <stop offset="28%" stop-color="#FFFFFF" stop-opacity="0.55" />
+            <stop offset="68%" stop-color="#E0F2FE" stop-opacity="0.16" />
+            <stop offset="100%" stop-color="#FFFFFF" stop-opacity="0" />
+          </linearGradient>
+          <linearGradient id="${id}-beam-4" x1="34" y1="90" x2="236" y2="232" gradientUnits="userSpaceOnUse">
+            <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.95" />
+            <stop offset="28%" stop-color="#FFFFFF" stop-opacity="0.52" />
+            <stop offset="68%" stop-color="#E0F2FE" stop-opacity="0.15" />
+            <stop offset="100%" stop-color="#FFFFFF" stop-opacity="0" />
+          </linearGradient>
+          <linearGradient id="${id}-beam-5" x1="10" y1="114" x2="185" y2="264" gradientUnits="userSpaceOnUse">
+            <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.95" />
+            <stop offset="28%" stop-color="#FFFFFF" stop-opacity="0.50" />
+            <stop offset="68%" stop-color="#E0F2FE" stop-opacity="0.14" />
+            <stop offset="100%" stop-color="#FFFFFF" stop-opacity="0" />
+          </linearGradient>
+          <radialGradient id="${id}-haze" cx="0.22" cy="0.26" r="0.65">
+            <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.32" />
+            <stop offset="45%" stop-color="#BAE6FD" stop-opacity="0.12" />
+            <stop offset="100%" stop-color="#FFFFFF" stop-opacity="0" />
+          </radialGradient>
+          <filter id="${id}-blur-soft" x="-20%" y="-20%" width="140%" height="140%">
+            <feGaussianBlur stdDeviation="5.5" />
+          </filter>
+          <filter id="${id}-blur-core" x="-20%" y="-20%" width="140%" height="140%">
+            <feGaussianBlur stdDeviation="2.2" />
+          </filter>
+          <filter id="${id}-bulb-bloom" x="-80%" y="-80%" width="260%" height="260%">
+            <feGaussianBlur stdDeviation="4" result="glow" />
+            <feMerge>
+              <feMergeNode in="glow" />
+              <feMergeNode in="SourceGraphic" />
+            </feMerge>
+          </filter>
+        </defs>
+
+        <!-- Ambient Volumetric Stadium Haze -->
+        <ellipse cx="145" cy="110" rx="165" ry="110" fill="url(#${id}-haze)" />
+
+        <!-- Outer Soft Volumetric Light Cones -->
+        <g filter="url(#${id}-blur-soft)">
+          <polygon points="102,13 111,23 375,148 345,102" fill="url(#${id}-beam-1)" />
+          <polygon points="78,37 87,47 335,184 305,138" fill="url(#${id}-beam-2)" />
+          <polygon points="54,61 63,71 292,220 262,172" fill="url(#${id}-beam-3)" />
+          <polygon points="30,85 39,95 246,254 216,206" fill="url(#${id}-beam-4)" />
+          <polygon points="6,109 15,119 195,284 166,238" fill="url(#${id}-beam-5)" />
+        </g>
+
+        <!-- Intense Inner Core Light Beams -->
+        <g filter="url(#${id}-blur-core)">
+          <polygon points="104,15 109,21 350,132 336,112" fill="url(#${id}-beam-1)" />
+          <polygon points="80,39 85,45 312,168 298,148" fill="url(#${id}-beam-2)" />
+          <polygon points="56,63 61,69 270,202 256,182" fill="url(#${id}-beam-3)" />
+          <polygon points="32,87 37,93 226,236 212,216" fill="url(#${id}-beam-4)" />
+          <polygon points="8,111 13,117 178,266 164,248" fill="url(#${id}-beam-5)" />
+        </g>
+
+        <!-- 5 Diagonal Stadium Floodlight Lamp Fixtures -->
+        <g filter="url(#${id}-bulb-bloom)">
+          <!-- Lamp 1 (Top-Inner) -->
+          <g transform="translate(106, 18) rotate(-42)">
+            <ellipse cx="0" cy="0" rx="11.5" ry="8.5" fill="rgba(255,255,255,0.16)" stroke="rgba(255,255,255,0.85)" stroke-width="1.4" />
+            <ellipse cx="0" cy="1.2" rx="8.2" ry="6" fill="rgba(255,255,255,0.45)" stroke="#FFFFFF" stroke-width="1" />
+            <ellipse cx="0" cy="2" rx="5.6" ry="4.2" fill="#FFFFFF" />
+          </g>
+          <!-- Lamp 2 -->
+          <g transform="translate(82, 42) rotate(-42)">
+            <ellipse cx="0" cy="0" rx="11.5" ry="8.5" fill="rgba(255,255,255,0.16)" stroke="rgba(255,255,255,0.85)" stroke-width="1.4" />
+            <ellipse cx="0" cy="1.2" rx="8.2" ry="6" fill="rgba(255,255,255,0.45)" stroke="#FFFFFF" stroke-width="1" />
+            <ellipse cx="0" cy="2" rx="5.6" ry="4.2" fill="#FFFFFF" />
+          </g>
+          <!-- Lamp 3 -->
+          <g transform="translate(58, 66) rotate(-42)">
+            <ellipse cx="0" cy="0" rx="11.5" ry="8.5" fill="rgba(255,255,255,0.16)" stroke="rgba(255,255,255,0.85)" stroke-width="1.4" />
+            <ellipse cx="0" cy="1.2" rx="8.2" ry="6" fill="rgba(255,255,255,0.45)" stroke="#FFFFFF" stroke-width="1" />
+            <ellipse cx="0" cy="2" rx="5.6" ry="4.2" fill="#FFFFFF" />
+          </g>
+          <!-- Lamp 4 -->
+          <g transform="translate(34, 90) rotate(-42)">
+            <ellipse cx="0" cy="0" rx="11.5" ry="8.5" fill="rgba(255,255,255,0.16)" stroke="rgba(255,255,255,0.85)" stroke-width="1.4" />
+            <ellipse cx="0" cy="1.2" rx="8.2" ry="6" fill="rgba(255,255,255,0.45)" stroke="#FFFFFF" stroke-width="1" />
+            <ellipse cx="0" cy="2" rx="5.6" ry="4.2" fill="#FFFFFF" />
+          </g>
+          <!-- Lamp 5 (Bottom-Outer) -->
+          <g transform="translate(10, 114) rotate(-42)">
+            <ellipse cx="0" cy="0" rx="11.5" ry="8.5" fill="rgba(255,255,255,0.16)" stroke="rgba(255,255,255,0.85)" stroke-width="1.4" />
+            <ellipse cx="0" cy="1.2" rx="8.2" ry="6" fill="rgba(255,255,255,0.45)" stroke="#FFFFFF" stroke-width="1" />
+            <ellipse cx="0" cy="2" rx="5.6" ry="4.2" fill="#FFFFFF" />
+          </g>
+        </g>
+      </svg>
+    `;
+  };
+
+  return `
+    <div class="csk-stadium-lights-rig__truss-top"></div>
+    <div class="csk-stadium-lights-rig__truss-bottom"></div>
+    ${bankSVG('left')}
+    ${bankSVG('right')}
+  `;
+}
+
+function initStadiumFloodlights() {
+  const targets = document.querySelectorAll(
+    '#squad-section, #matches-section, .squad-stadium-hero, .squad-stage-section, .matches-hero-banner, .youth-hero-section, .sponsors-hero, .editorial-hero'
+  );
+
+  targets.forEach((sec, index) => {
+    if (sec.querySelector('.csk-stadium-lights-rig')) return;
+    const computedPos = window.getComputedStyle(sec).position;
+    if (computedPos === 'static') {
+      sec.style.position = 'relative';
+    }
+    const rig = document.createElement('div');
+    rig.className = 'csk-stadium-lights-rig';
+    rig.setAttribute('aria-hidden', 'true');
+    rig.innerHTML = getStadiumFloodlightRigHTML(`csk-fl-${index}`);
+    sec.insertBefore(rig, sec.firstChild);
+  });
+}
+
 
