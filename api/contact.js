@@ -41,7 +41,7 @@ export default async function handler(req, res) {
     console.log('[CSK Backend Contact Enquiry Logged]:', submission);
 
     // Forward to secure backend webhook (Google Sheets / Discord / Slack / Email) if configured
-    const DEFAULT_SHEET_WEBHOOK = 'https://script.google.com/macros/s/AKfycbwdC-jjkhW63SQOzLwpJtTfMkHopMfqvdiKt_TcpiDWCldNRjMGfTg8CIXYOapk_KkztQ/exec';
+    const DEFAULT_SHEET_WEBHOOK = 'https://script.google.com/macros/s/AKfycbxdrEtosSOUijKfu7X-1a1KxT96iuScxyG5YWwk87xDCukycILrLo28se0GwPouOVUTDw/exec';
     const webhookUrl = DEFAULT_SHEET_WEBHOOK || process.env.CONTACT_WEBHOOK_URL || process.env.GOOGLE_SHEET_WEBHOOK_URL;
     let sheetSynced = false;
     if (webhookUrl && webhookUrl.startsWith('http')) {
