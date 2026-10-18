@@ -89,9 +89,9 @@ export async function initGalleryPage() {
       const tagLabel = isVideo ? 'VIDEO' : 'ALBUM';
 
       return `
-        <article class="csk-album-card cyber-reveal is-revealed" data-index="${idx}" tabindex="0" role="button" aria-label="${p.title}" style="animation-delay: ${idx * 0.03}s;">
+        <article class="csk-album-card cyber-reveal is-revealed ${isVideo ? 'is-video-card' : ''}" data-index="${idx}" tabindex="0" role="button" aria-label="${p.title}" style="animation-delay: ${idx * 0.03}s;">
           <!-- High-Res Cover Image / Poster -->
-          <img src="${thumbSrc}" alt="${p.title}" class="csk-album-img" loading="lazy">
+          <img src="${thumbSrc}" alt="${p.title}" class="csk-album-img ${isVideo ? 'csk-video-poster-img' : ''}" loading="lazy" onerror="this.onerror=null; this.src='assets/img/csk-logo.png'; this.style.objectFit='contain'; this.style.padding='40px';">
 
           ${isVideo ? `
             <!-- Video Top-Left Duration Badge -->
