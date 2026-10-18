@@ -23,12 +23,13 @@ export function initFuturisticSystem() {
   initMagneticButtons();
   initStadiumFloodlights();
 
-  // Dynamic observer for dynamically rendered squad and match cards
-  const dynamicContainers = document.querySelectorAll('#squad-grid, .roster-grid, #matches-grid-container');
+  // Dynamic observer for dynamically rendered squad, match, and detail pages
+  const dynamicContainers = document.querySelectorAll('#squad-grid, .roster-grid, #matches-grid-container, #player-profile-content, #match-detail-content, #gallery-grid');
   dynamicContainers.forEach(c => {
     const obs = new MutationObserver(() => {
       initCyberTargetingCorners();
       initTiltPhysics();
+      initStadiumFloodlights();
     });
     obs.observe(c, { childList: true });
   });
@@ -590,7 +591,7 @@ export function getStadiumFloodlightRigHTML(uid = 'csk-fl') {
 
 function initStadiumFloodlights() {
   const targets = document.querySelectorAll(
-    '#squad-section, #matches-section, .squad-stadium-hero, .squad-stage-section, .matches-hero-banner, .youth-hero-section, .sponsors-hero, .editorial-hero'
+    '.hero-cinematic-sports, .section--navy, .csk-gallery-hero, .csk-player-hero, .match-detail-hero, #squad-section, #matches-section, .squad-stadium-hero, .squad-stage-section, .matches-hero-banner, .youth-hero-section, .sponsors-hero, .editorial-hero'
   );
 
   targets.forEach((sec, index) => {
@@ -599,6 +600,9 @@ function initStadiumFloodlights() {
     if (computedPos === 'static') {
       sec.style.position = 'relative';
     }
+    if (window.getComputedStyle(sec).overflow === 'visible') {
+      sec.style.overflow = 'hidden';
+    }
     const rig = document.createElement('div');
     rig.className = 'csk-stadium-lights-rig';
     rig.setAttribute('aria-hidden', 'true');
@@ -606,5 +610,6 @@ function initStadiumFloodlights() {
     sec.insertBefore(rig, sec.firstChild);
   });
 }
+
 
 

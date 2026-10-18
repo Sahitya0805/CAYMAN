@@ -1745,6 +1745,28 @@ html, body {
   overflow: hidden;
 }
 
+.hero-cinematic-sports > .csk-stadium-lights-rig {
+  z-index: 4;
+}
+
+.section--navy,
+.csk-gallery-hero,
+.csk-player-hero {
+  position: relative;
+  overflow: hidden;
+}
+
+.section--navy > .container,
+.csk-gallery-hero > .container,
+.csk-player-hero > .csk-player-hero-container,
+.sponsors-hero > .sponsors-hero-inner,
+.youth-hero-section > .container,
+.squad-stadium-hero > .container,
+.matches-hero-banner > .container {
+  position: relative;
+  z-index: 2;
+}
+
 .csk-stadium-lights-rig__truss-top,
 .csk-stadium-lights-rig__truss-bottom {
   position: absolute;

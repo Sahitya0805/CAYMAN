@@ -1,4 +1,4 @@
-import { store } from './content-store.js';
+import { store } from './content-store.js?v=20261018_gallery_v2';
 
 export async function initGalleryPage() {
   const grid = document.getElementById('gallery-grid');
@@ -8,6 +8,7 @@ export async function initGalleryPage() {
   const pillsBar = document.getElementById('gallery-pills-bar');
   const mediaTypesBar = document.getElementById('gallery-media-types');
   const btnShowAll = document.getElementById('btn-show-all-albums');
+  const resultsSummary = document.getElementById('gallery-results-summary');
 
   // Lightbox elements
   const lightboxModal = document.getElementById('lightbox-modal');
@@ -16,6 +17,7 @@ export async function initGalleryPage() {
   const lightboxTitle = document.getElementById('lightbox-title');
   const lightboxDesc = document.getElementById('lightbox-desc');
   const lightboxCounter = document.getElementById('lightbox-counter');
+  const lightboxCategory = document.getElementById('lightbox-category');
   const closeBtn = document.getElementById('lightbox-close');
   const prevBtn = document.getElementById('lightbox-prev');
   const nextBtn = document.getElementById('lightbox-next');
@@ -65,6 +67,11 @@ export async function initGalleryPage() {
       });
     }
 
+    if (resultsSummary) {
+      const catText = currentCategory === 'all' ? 'All Categories' : currentCategory;
+      resultsSummary.textContent = `Showing ${activeFiltered.length} ${activeFiltered.length === 1 ? 'item' : 'items'} in ${catText}`;
+    }
+
     if (activeFiltered.length === 0) {
       grid.style.display = 'none';
       if (emptyState) {
@@ -86,71 +93,57 @@ export async function initGalleryPage() {
     grid.innerHTML = activeFiltered.map((p, idx) => {
       const isVideo = p.type === 'video';
       const thumbSrc = isVideo ? (p.poster || p.src) : p.src;
-      const tagLabel = isVideo ? 'VIDEO' : 'ALBUM';
+      const categoryLabel = p.category || (isVideo ? 'Video Clip' : 'Club Archive');
+      const yearLabel = p.year || '2026';
 
       return `
-        <article class="csk-album-card cyber-reveal is-revealed ${isVideo ? 'is-video-card' : ''}" data-index="${idx}" tabindex="0" role="button" aria-label="${p.title}" style="animation-delay: ${idx * 0.03}s;">
-          <!-- High-Res Cover Image / Poster -->
-          <img src="${thumbSrc}" alt="${p.title}" class="csk-album-img ${isVideo ? 'csk-video-poster-img' : ''}" loading="lazy" onerror="this.onerror=null; this.src='assets/img/csk-logo.png'; this.style.objectFit='contain'; this.style.padding='40px';">
+        <article class="csk-album-card cyber-reveal is-revealed ${isVideo ? 'is-video-card' : ''}" data-index="${idx}" tabindex="0" role="button" aria-label="${p.title}" style="animation-delay: ${Math.min(idx * 0.03, 0.35)}s;">
+          <div class="csk-album-media-wrap">
+            <!-- High-Res Cover Image / Poster -->
+            <img src="${thumbSrc}" alt="${p.title}" class="csk-album-img ${isVideo ? 'csk-video-poster-img' : ''}" loading="lazy" onerror="this.onerror=null; this.src='assets/csk-official-logo.png'; this.style.objectFit='contain'; this.style.padding='40px';">
 
-          ${isVideo ? `
-            <!-- Video Top-Left Duration Badge -->
-            <div class="csk-video-badge" title="Official Video Footage">
-              <svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor">
-                <polygon points="5 3 19 12 5 21 5 3"/>
-              </svg>
-              <span>VIDEO</span>
-              ${p.duration ? `<span class="csk-video-duration">${p.duration}</span>` : ''}
-            </div>
-
-            <!-- Pulsing Center Play Button Overlay -->
-            <div class="csk-card-play-btn" aria-hidden="true" title="Play Video">
-              <svg width="20" height="20" viewBox="0 0 24 24">
-                <polygon points="6 4 20 12 6 20 6 4"/>
-              </svg>
-            </div>
-          ` : ''}
-
-          <!-- Top-Right Share Button -->
-          <div class="csk-card-share-btn" title="Share Media" aria-label="Share">
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3">
-              <circle cx="18" cy="5" r="3"></circle>
-              <circle cx="6" cy="12" r="3"></circle>
-              <circle cx="18" cy="19" r="3"></circle>
-              <line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line>
-              <line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line>
-            </svg>
-          </div>
-
-          <!-- Bottom Gradient Overlay Strip -->
-          <div class="csk-album-overlay">
-            <div class="csk-album-info">
-              <div class="csk-album-title-row">
-                <span class="csk-album-icon-badge" title="${isVideo ? 'Video Clip' : 'Photo Album'}">
-                  ${isVideo ? `
-                    <svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor">
-                      <polygon points="5 3 19 12 5 21 5 3"/>
-                    </svg>
-                  ` : `
-                    <svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor">
-                      <rect x="2" y="3" width="20" height="18" rx="3" fill="#060E1D"></rect>
-                      <circle cx="8" cy="8.5" r="2" fill="#F59E0B"></circle>
-                      <path d="M21 16l-5-5-8 8" stroke="#F59E0B" stroke-width="2" stroke-linecap="round"></path>
-                    </svg>
-                  `}
-                </span>
-                <h3 class="csk-album-title">${p.title}</h3>
+            <!-- Top-Left Badge -->
+            ${isVideo ? `
+              <div class="csk-video-badge" title="Official Video Footage">
+                <svg width="10" height="10" viewBox="0 0 24 24" fill="currentColor">
+                  <polygon points="5 3 19 12 5 21 5 3"/>
+                </svg>
+                <span>VIDEO</span>
+                ${p.duration ? `<span class="csk-video-duration">${p.duration}</span>` : ''}
               </div>
-              <span class="csk-album-tag" ${isVideo ? 'style="background: rgba(2, 132, 199, 0.4); color: #38BDF8; border-color: rgba(56, 189, 248, 0.4);"' : ''}>${tagLabel}</span>
+
+              <!-- Pulsing Center Play Button Overlay -->
+              <div class="csk-card-play-btn" aria-hidden="true" title="Play Video">
+                <svg width="20" height="20" viewBox="0 0 24 24">
+                  <polygon points="6 4 20 12 6 20 6 4"/>
+                </svg>
+              </div>
+            ` : `
+              <div class="csk-photo-pill-badge">
+                <span>${yearLabel}</span>
+              </div>
+            `}
+
+            <!-- Top-Right Action Pill (Share) -->
+            <div class="csk-card-share-btn" title="Share Media" aria-label="Share">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+                <circle cx="18" cy="5" r="3"></circle>
+                <circle cx="6" cy="12" r="3"></circle>
+                <circle cx="18" cy="19" r="3"></circle>
+                <line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line>
+                <line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line>
+              </svg>
             </div>
 
-            <!-- Bottom-Right Whistle Podu Circular Watermark Badge -->
-            <div class="csk-whistle-badge" title="Whistle Podu">
-              <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M11 5a7 7 0 1 0 7 7V5h-7z"></path>
-                <path d="M18 10h4"></path>
-                <circle cx="11" cy="12" r="2.5"></circle>
-              </svg>
+            <!-- Bottom Gradient Overlay Strip (No Whistle Icon) -->
+            <div class="csk-album-overlay">
+              <div class="csk-album-info">
+                <div class="csk-album-meta-top">
+                  <span class="csk-album-tag ${isVideo ? 'is-video-tag' : ''}">${categoryLabel}</span>
+                </div>
+                <h3 class="csk-album-title">${p.title}</h3>
+                ${p.caption ? `<p class="csk-album-caption">${p.caption}</p>` : ''}
+              </div>
             </div>
           </div>
         </article>
@@ -269,16 +262,6 @@ export async function initGalleryPage() {
         lightboxVideo.src = item.src;
         if (item.poster) lightboxVideo.poster = item.poster;
         lightboxVideo.play().catch(() => {});
-        // Request fullscreen for video playback
-        setTimeout(() => {
-          if (lightboxVideo.requestFullscreen) {
-            lightboxVideo.requestFullscreen().catch(() => {});
-          } else if (lightboxVideo.webkitRequestFullscreen) {
-            lightboxVideo.webkitRequestFullscreen();
-          } else if (lightboxVideo.webkitEnterFullscreen) {
-            lightboxVideo.webkitEnterFullscreen();
-          }
-        }, 150);
       }
     } else {
       if (lightboxVideo) {
@@ -293,12 +276,15 @@ export async function initGalleryPage() {
       }
     }
 
+    if (lightboxCategory) {
+      lightboxCategory.textContent = item.category || (isVideo ? 'Video Clip' : 'Photo');
+    }
     if (lightboxTitle) lightboxTitle.textContent = item.title;
     if (lightboxDesc) lightboxDesc.textContent = item.caption || '';
     if (lightboxCounter) {
       const typeLabel = isVideo ? 'Video' : 'Photo';
       const durText = isVideo && item.duration ? ` • ${item.duration}` : '';
-      lightboxCounter.textContent = `${typeLabel} ${currentIndex + 1} of ${activeFiltered.length} • Season ${item.year}${durText}`;
+      lightboxCounter.textContent = `${typeLabel} ${currentIndex + 1} of ${activeFiltered.length} • ${item.year || '2026'}${durText}`;
     }
   }
 
