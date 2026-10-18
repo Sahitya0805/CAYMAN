@@ -1903,7 +1903,7 @@
     });
 
     // Handle Enrollment Form Submit (API, Email, Google Sheets & Excel Registry)
-    const GOOGLE_SHEET_WEBHOOK_URL = 'https://script.google.com/macros/s/AKfycbxdrEtosSOUijKfu7X-1a1KxT96iuScxyG5YWwk87xDCukycILrLo28se0GwPouOVUTDw/exec';
+    const GOOGLE_SHEET_WEBHOOK_URL = 'https://script.google.com/macros/s/AKfycbyETv2XdvX7LimsrXNq0eRaK0RVRU2_nABhKRpofuTN4ec7FWL6dLlSPhNu2qgAPvtUag/exec';
 
     async function handleYouthEnrollment(e) {
       e.preventDefault();
@@ -1923,12 +1923,15 @@
       const validEmail = (email && /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) ? email : 'academy-enrollment@caymansuperkings.com';
 
       const payload = {
+        source: 'youth',
         timestamp: new Date().toISOString(),
         dateFormatted: new Date().toLocaleString('en-US', { timeZone: 'America/Cayman' }),
+        parentName: parentName,
         name: `${parentName} (Child: ${childInfo})`,
         email: validEmail,
         phone: phone,
         childInfo: childInfo,
+        level: level,
         experienceLevel: level,
         subject: `Youth Academy Enrollment - ${childInfo} (${level})`,
         message: `[YOUTH ACADEMY ENROLLMENT] Parent/Guardian: ${parentName} | Child & Age: ${childInfo} | Phone/WhatsApp: ${phone} | Email: ${email || 'Not provided'} | Level: ${level} | Venue: Smith Road Oval, George Town`

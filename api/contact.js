@@ -14,7 +14,7 @@ export default async function handler(req, res) {
   }
 
   try {
-    const { name, email, subject, message } = req.body || {};
+    const { name, email, subject, message, source, parentName, childInfo, phone, level, experienceLevel } = req.body || {};
 
     if (!name || !email || !message) {
       return res.status(400).json({ error: 'Name, email, and message are required.' });
@@ -25,11 +25,19 @@ export default async function handler(req, res) {
       return res.status(400).json({ error: 'Please provide a valid email address.' });
     }
 
+    const isYouth = source === 'youth' || String(subject || '').toLowerCase().includes('youth academy');
+
     const submission = {
+      source: isYouth ? 'youth' : 'contact',
       timestamp: new Date().toISOString(),
       dateFormatted: new Date().toLocaleString('en-US', { timeZone: 'America/Cayman' }),
       name: String(name).trim().slice(0, 100),
+      parentName: parentName ? String(parentName).trim().slice(0, 100) : String(name).trim().slice(0, 100),
+      childInfo: childInfo ? String(childInfo).trim().slice(0, 120) : '',
+      phone: phone ? String(phone).trim().slice(0, 60) : '',
       email: String(email).trim().slice(0, 120),
+      level: level || experienceLevel || '',
+      experienceLevel: experienceLevel || level || '',
       subject: String(subject || 'General Enquiry').trim().slice(0, 150),
       message: String(message).trim().slice(0, 3000),
       status: "New / Received"
@@ -40,9 +48,13 @@ export default async function handler(req, res) {
 
     console.log('[CSK Backend Contact Enquiry Logged]:', submission);
 
-    // Forward to secure backend webhook (Google Sheets / Discord / Slack / Email) if configured
-    const DEFAULT_SHEET_WEBHOOK = 'https://script.google.com/macros/s/AKfycbxdrEtosSOUijKfu7X-1a1KxT96iuScxyG5YWwk87xDCukycILrLo28se0GwPouOVUTDw/exec';
-    const webhookUrl = DEFAULT_SHEET_WEBHOOK || process.env.CONTACT_WEBHOOK_URL || process.env.GOOGLE_SHEET_WEBHOOK_URL;
+    // Forward to dedicated Google Sheets Webhooks for Youth vs Contact
+    const CONTACT_SHEET_WEBHOOK = 'https://script.google.com/macros/s/AKfycbxdrEtosSOUijKfu7X-1a1KxT96iuScxyG5YWwk87xDCukycILrLo28se0GwPouOVUTDw/exec';
+    const YOUTH_SHEET_WEBHOOK = 'https://script.google.com/macros/s/AKfycbyETv2XdvX7LimsrXNq0eRaK0RVRU2_nABhKRpofuTN4ec7FWL6dLlSPhNu2qgAPvtUag/exec';
+    const webhookUrl = isYouth
+      ? (process.env.YOUTH_SHEET_WEBHOOK_URL || YOUTH_SHEET_WEBHOOK)
+      : (CONTACT_SHEET_WEBHOOK || process.env.CONTACT_WEBHOOK_URL || process.env.GOOGLE_SHEET_WEBHOOK_URL);
+
     let sheetSynced = false;
     if (webhookUrl && webhookUrl.startsWith('http')) {
       try {
