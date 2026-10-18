@@ -41,13 +41,15 @@ export default async function handler(req, res) {
     console.log('[CSK Backend Contact Enquiry Logged]:', submission);
 
     // Forward to secure backend webhook (Google Sheets / Discord / Slack / Email) if configured
-    const webhookUrl = process.env.CONTACT_WEBHOOK_URL || process.env.GOOGLE_SHEET_WEBHOOK_URL;
+    const DEFAULT_SHEET_WEBHOOK = 'https://script.google.com/macros/s/AKfycbxS5Xi-KXNqrsbSd2BFfB28LmbhPMioPz59lxcp1DEZX5mAyn-If8lIjuiEedpAgaoDEg/exec';
+    const webhookUrl = process.env.CONTACT_WEBHOOK_URL || process.env.GOOGLE_SHEET_WEBHOOK_URL || DEFAULT_SHEET_WEBHOOK;
     if (webhookUrl && webhookUrl.startsWith('http')) {
       try {
         await fetch(webhookUrl, {
           method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify(submission)
+          headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+          body: JSON.stringify(submission),
+          redirect: 'follow'
         });
       } catch (webhookErr) {
         console.warn('Backend webhook dispatch notice:', webhookErr);

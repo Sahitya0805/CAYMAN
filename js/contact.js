@@ -133,12 +133,20 @@ export function initContactForm() {
     }
 
     try {
-      // 1. Send to local Serverless API Endpoint (/api/contact)
-      fetch('/api/contact', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(payload)
-      }).catch(err => console.warn('API /api/contact notification notice:', err));
+      // 1. Send to local Serverless API Endpoint (/api/contact) which forwards to Google Sheets
+      let apiHandled = false;
+      try {
+        const apiRes = await fetch('/api/contact', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(payload)
+        });
+        if (apiRes.ok) {
+          apiHandled = true;
+        }
+      } catch (err) {
+        console.warn('API /api/contact notification notice:', err);
+      }
 
       // 2. Dispatch to FormSubmit Email Relay to caymansuperkings@gmail.com
       fetch('https://formsubmit.co/ajax/caymansuperkings@gmail.com', {
@@ -159,12 +167,12 @@ export function initContactForm() {
         })
       }).catch(err => console.warn('Email dispatch relay notice:', err));
 
-      // 3. Send to Google Sheets Webhook if configured
-      if (GOOGLE_SHEET_WEBHOOK_URL && GOOGLE_SHEET_WEBHOOK_URL.startsWith('http')) {
-        fetch(GOOGLE_SHEET_WEBHOOK_URL, {
+      // 3. Fallback direct dispatch to Google Sheets Webhook if serverless API didn't handle it
+      if (!apiHandled && GOOGLE_SHEET_WEBHOOK_URL && GOOGLE_SHEET_WEBHOOK_URL.startsWith('http')) {
+        await fetch(GOOGLE_SHEET_WEBHOOK_URL, {
           method: 'POST',
           mode: 'no-cors',
-          headers: { 'Content-Type': 'application/json' },
+          headers: { 'Content-Type': 'text/plain;charset=utf-8' },
           body: JSON.stringify(payload)
         }).catch(err => console.warn('Google Sheet dispatch notice:', err));
       }
