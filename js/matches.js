@@ -63,11 +63,17 @@ export async function initMatchesPage() {
   function updateSyncTimeDisplay() {
     if (syncTimestamp) {
       const now = new Date();
-      const timeStr = now.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
-      syncTimestamp.textContent = `Live Synced at ${timeStr} • Official CICA Portal`;
+      const caymanTimeStr = now.toLocaleTimeString('en-US', {
+        timeZone: 'America/Cayman',
+        hour: '2-digit',
+        minute: '2-digit',
+        hour12: true
+      });
+      syncTimestamp.textContent = `Live Synced at ${caymanTimeStr} EST (Cayman Time) • Official CICA Portal`;
     }
   }
   updateSyncTimeDisplay();
+  setInterval(updateSyncTimeDisplay, 30000);
 
   // Wire up dynamic Live Sync button
   if (syncBtn) {
