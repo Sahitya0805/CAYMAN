@@ -1710,17 +1710,42 @@ html, body {
   }
 }
 
+/* Global Horizontal Overflow Prevention Across Viewports */
+html, body {
+  overflow-x: hidden;
+  max-width: 100%;
+}
+
 /* Past Sponsors Section & Centerpieces on Mobile */
 @media (max-width: 640px) {
   #our-sponsors-section,
-  .card-delivers-centerpiece {
-    padding: 24px 14px !important;
+  #sponsors .container > div,
+  .card-delivers-centerpiece,
+  .card-funds-transparency,
+  .sponsors-cta-block {
+    padding: 24px 16px !important;
     border-radius: 14px !important;
   }
 
-  #our-sponsors-section img {
-    max-width: 85% !important;
-    height: auto !important;
+  #our-sponsors-section img[src*="tulsi"],
+  #sponsors img[src*="tulsi"] {
+    height: 68px !important;
+    width: auto !important;
+    max-width: min(220px, 82vw) !important;
+  }
+
+  #our-sponsors-section img[src*="v2"],
+  #sponsors img[src*="v2"] {
+    height: 92px !important;
+    width: auto !important;
+    max-width: min(200px, 78vw) !important;
+  }
+
+  #our-sponsors-section img[src*="ecosmart"],
+  #sponsors img[src*="ecosmart"] {
+    height: 62px !important;
+    width: auto !important;
+    max-width: min(250px, 84vw) !important;
   }
 }
 
@@ -1833,8 +1858,8 @@ html, body {
 
 @media (max-width: 992px) {
   .csk-stadium-bank {
-    width: 280px;
-    height: 200px;
+    width: 260px;
+    height: 185px;
   }
   .csk-stadium-lights-rig__truss-top {
     top: 16px;
@@ -1849,21 +1874,25 @@ html, body {
 }
 
 @media (max-width: 640px) {
+  .csk-stadium-lights-rig {
+    height: 150px;
+  }
   .csk-stadium-bank {
-    width: 190px;
-    height: 140px;
-    opacity: 0.85;
+    width: 135px;
+    height: 105px;
+    opacity: 0.72;
   }
   .csk-stadium-lights-rig__truss-top {
-    top: 12px;
-    left: 38px;
-    right: 38px;
+    top: 10px;
+    left: 28px;
+    right: 28px;
   }
   .csk-stadium-lights-rig__truss-bottom {
-    top: 38px;
-    left: 24px;
-    right: 24px;
+    top: 32px;
+    left: 18px;
+    right: 18px;
   }
 }
+
 
 

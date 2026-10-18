@@ -13,7 +13,7 @@
   <link rel="stylesheet" href="css/layout.css?v=20260923_10">
   <link rel="stylesheet" href="css/components.css?v=20260923_10">
   <link rel="stylesheet" href="css/pages.css?v=20261018_gallery_v2">
-  <link rel="stylesheet" href="css/futuristic.css?v=20261018_gallery_v2">
+  <link rel="stylesheet" href="css/futuristic.css?v=20261019_resp">
 
   <style>
     /* ── CSK PREMIUM STADIUM GALLERY & MEDIA ARCHIVE UI/UX ── */
@@ -240,6 +240,58 @@
         display: none;
       }
     }
+
+    @media (max-width: 640px) {
+      .csk-gallery-hero {
+        padding: 44px 0 64px !important;
+      }
+      .gallery-container {
+        padding: 0 14px;
+      }
+      .gallery-control-dock {
+        margin-top: -32px;
+        margin-bottom: 24px;
+        padding: 14px 12px;
+        border-radius: 16px;
+      }
+      .gallery-dock-top-row {
+        gap: 12px;
+        padding-bottom: 12px;
+        margin-bottom: 12px;
+      }
+      .gallery-media-types {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        width: 100%;
+        gap: 4px;
+        padding: 4px;
+        border-radius: 14px;
+        box-sizing: border-box;
+      }
+      .gallery-type-btn {
+        justify-content: center;
+        padding: 8px 6px;
+        font-size: 0.72rem;
+        gap: 4px;
+        border-radius: 10px;
+      }
+      .gallery-type-btn svg {
+        width: 13px;
+        height: 13px;
+        flex-shrink: 0;
+      }
+      .gallery-type-count {
+        min-width: 20px;
+        height: 18px;
+        padding: 0 5px;
+        font-size: 0.68rem;
+      }
+      .gallery-pill-btn {
+        padding: 7px 14px;
+        font-size: 0.76rem;
+      }
+    }
+
 
     .gallery-pill-btn {
       background: #F1F5F9;

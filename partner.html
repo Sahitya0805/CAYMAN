@@ -13,7 +13,7 @@
   <link rel="stylesheet" href="css/layout.css?v=20260923_10">
   <link rel="stylesheet" href="css/components.css?v=20260923_10">
   <link rel="stylesheet" href="css/pages.css?v=20260923_10">
-  <link rel="stylesheet" href="css/futuristic.css?v=20261018_gallery_v2">
+  <link rel="stylesheet" href="css/futuristic.css?v=20261019_resp">
   <style>
     /* ── Commercial Alliances & Sponsorship Styling (Modern White Theme Edition) ── */
     :root {
@@ -259,7 +259,7 @@
       padding: 0;
       margin: 0 0 24px 0;
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
       gap: 16px;
     }
 
@@ -554,6 +554,31 @@
       color: #94A3B8;
       margin: 0;
       font-weight: 500;
+    }
+
+    @media (max-width: 640px) {
+      .sponsors-hero {
+        padding: 44px 16px 38px;
+      }
+      .sponsors-content-wrap {
+        padding: 24px 14px 48px !important;
+        gap: 24px !important;
+      }
+      .tier-card {
+        padding: 24px 18px;
+      }
+      .accountability-strip {
+        padding: 20px 16px;
+        grid-template-columns: 1fr;
+      }
+      .btn-sponsor-primary,
+      .btn-sponsor-secondary {
+        width: 100%;
+        justify-content: center;
+        padding: 14px 20px;
+        font-size: 0.9rem;
+        box-sizing: border-box;
+      }
     }
   </style>
   <script src="js/mobile-nav.js" defer></script>
@@ -975,7 +1000,7 @@
           <div style="width: 100%; max-width: 720px; height: 1px; background: #E2E8F0; margin: 0 auto 24px;"></div>
 
           <!-- Tier 2: Multi-Partner Row (Grid of 2) -->
-          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 28px 32px; max-width: 760px; margin: 0 auto 24px; align-items: center;">
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 28px 32px; max-width: 760px; margin: 0 auto 24px; align-items: center;">
             
             <!-- Left: V2 Value & Variety -->
             <div style="text-align: center;">
