@@ -132,21 +132,13 @@ export async function initGalleryPage() {
                   <polygon points="6 4 20 12 6 20 6 4"/>
                 </svg>
               </div>
-            ` : `
-              <div class="csk-photo-pill-badge">
-                <span class="csk-photo-pill-dot"></span>
-                <span>HD PHOTO</span>
-              </div>
-            `}
-
-            <div class="csk-card-index-badge">#${indexStr}</div>
+            ` : ''}
 
             <!-- Bottom Gradient Overlay Strip -->
             <div class="csk-album-overlay">
               <div class="csk-album-info">
                 <div class="csk-album-meta-top">
                   <span class="csk-album-tag ${isVideo ? 'is-video-tag' : ''}">${categoryLabel}</span>
-                  <span class="csk-album-hover-action">${isVideo ? 'WATCH ▶' : 'VIEW HD ↗'}</span>
                 </div>
                 <h3 class="csk-album-title">${p.title}</h3>
                 ${p.caption ? `<p class="csk-album-caption">${p.caption}</p>` : ''}

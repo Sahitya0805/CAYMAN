@@ -462,38 +462,23 @@
       box-shadow: 0 6px 16px rgba(10, 36, 84, 0.25);
     }
 
-    /* 4-Column Premium Album Card Grid (With Optional 3-Column Cinema Mode) */
+    /* 3-Column Premium Album Card Grid (3 Photos or Videos per Row) */
     .csk-album-grid {
       display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 22px;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
       transition: all 0.25s ease;
     }
 
-    .csk-album-grid.is-cinema-grid {
-      grid-template-columns: repeat(3, 1fr);
-      gap: 26px;
-    }
-
-    @media (max-width: 1140px) {
-      .csk-album-grid,
-      .csk-album-grid.is-cinema-grid {
-        grid-template-columns: repeat(3, 1fr);
+    @media (max-width: 960px) {
+      .csk-album-grid {
+        grid-template-columns: repeat(2, 1fr);
         gap: 18px;
       }
     }
 
-    @media (max-width: 768px) {
-      .csk-album-grid,
-      .csk-album-grid.is-cinema-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 14px;
-      }
-    }
-
-    @media (max-width: 500px) {
-      .csk-album-grid,
-      .csk-album-grid.is-cinema-grid {
+    @media (max-width: 560px) {
+      .csk-album-grid {
         grid-template-columns: 1fr;
         gap: 18px;
       }
@@ -1052,7 +1037,7 @@
       <div class="csk-gallery-hero__stats">
         <div class="csk-gallery-stat-item"><strong id="hero-stat-total">47</strong> Total Archives</div>
         <span class="csk-gallery-stat-sep"></span>
-        <div class="csk-gallery-stat-item"><strong id="hero-stat-photos">31</strong> HD Photos</div>
+        <div class="csk-gallery-stat-item"><strong id="hero-stat-photos">31</strong> Photos</div>
         <span class="csk-gallery-stat-sep"></span>
         <div class="csk-gallery-stat-item"><strong id="hero-stat-videos">16</strong> Matchday Videos</div>
       </div>
@@ -1081,20 +1066,11 @@
             </button>
           </div>
 
-          <!-- Search + Grid Layout Switcher + Summary -->
+          <!-- Search + Summary -->
           <div class="gallery-dock-right-tools">
             <div class="gallery-search-box">
               <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
               <input type="search" id="gallery-search-input" class="gallery-search-input" placeholder="Search player or moment..." aria-label="Search media archive">
-            </div>
-
-            <div class="gallery-view-toggle" id="gallery-view-toggle" title="Switch Grid Density">
-              <button type="button" class="gallery-view-btn is-active" data-cols="4" aria-label="4-Column Grid">
-                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
-              </button>
-              <button type="button" class="gallery-view-btn" data-cols="3" aria-label="3-Column Cinema Grid">
-                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><rect x="3" y="4" width="18" height="6" rx="1"/><rect x="3" y="14" width="18" height="6" rx="1"/></svg>
-              </button>
             </div>
 
             <div class="gallery-results-summary" id="gallery-results-summary">
@@ -1178,9 +1154,9 @@
     </div>
   </footer>
 
-  <script type="module" src="js/app.js?v=20261019_premium"></script>
+  <script type="module" src="js/app.js?v=20261019_3col"></script>
   <script type="module">
-    import { initGalleryPage } from './js/gallery.js?v=20261019_premium';
+    import { initGalleryPage } from './js/gallery.js?v=20261019_3col';
     initGalleryPage();
   </script>
 </body>
