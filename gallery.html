@@ -371,6 +371,35 @@
       }
     }
 
+    .gallery-pill-btn {
+      background: #F8FAFC;
+      color: #1E293B;
+      border: 1.5px solid #CBD5E1;
+      border-radius: 999px;
+      padding: 8px 20px;
+      font-size: 0.8rem;
+      font-weight: 800;
+      letter-spacing: 0.05em;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      white-space: nowrap;
+      font-family: inherit;
+    }
+
+    .gallery-pill-btn:hover {
+      background: #E2E8F0;
+      border-color: #94A3B8;
+      color: #0F172A;
+      transform: translateY(-1px);
+    }
+
+    .gallery-pill-btn.is-active {
+      background: linear-gradient(135deg, #091E46 0%, #0D2D66 100%);
+      color: #FDE047;
+      border-color: #0284C7;
+      box-shadow: 0 6px 16px rgba(10, 36, 84, 0.25);
+    }
+
     @media (max-width: 640px) {
       .csk-gallery-hero {
         padding: 44px 0 68px !important;
@@ -408,21 +437,30 @@
       }
       .gallery-type-btn {
         justify-content: center;
-        padding: 8px 6px;
-        font-size: 0.72rem;
+        padding: 8px 5px;
+        font-size: 0.7rem;
         gap: 4px;
         border-radius: 10px;
+        white-space: nowrap;
       }
       .gallery-type-btn svg {
-        width: 13px;
-        height: 13px;
+        width: 12px;
+        height: 12px;
         flex-shrink: 0;
       }
       .gallery-type-count {
-        min-width: 20px;
-        height: 18px;
-        padding: 0 5px;
-        font-size: 0.68rem;
+        min-width: 18px;
+        height: 17px;
+        padding: 0 4px;
+        font-size: 0.65rem;
+      }
+      .gallery-dock-right-tools {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 8px;
+      }
+      .gallery-results-summary {
+        text-align: center;
       }
       .gallery-view-toggle {
         display: none;
@@ -431,35 +469,6 @@
         padding: 7px 14px;
         font-size: 0.76rem;
       }
-    }
-
-    .gallery-pill-btn {
-      background: #F8FAFC;
-      color: #1E293B;
-      border: 1.5px solid #CBD5E1;
-      border-radius: 999px;
-      padding: 8px 20px;
-      font-size: 0.8rem;
-      font-weight: 800;
-      letter-spacing: 0.05em;
-      cursor: pointer;
-      transition: all 0.2s ease;
-      white-space: nowrap;
-      font-family: inherit;
-    }
-
-    .gallery-pill-btn:hover {
-      background: #E2E8F0;
-      border-color: #94A3B8;
-      color: #0F172A;
-      transform: translateY(-1px);
-    }
-
-    .gallery-pill-btn.is-active {
-      background: linear-gradient(135deg, #091E46 0%, #0D2D66 100%);
-      color: #FDE047;
-      border-color: #0284C7;
-      box-shadow: 0 6px 16px rgba(10, 36, 84, 0.25);
     }
 
     /* 3-Column Premium Album Card Grid (3 Photos or Videos per Row) */
@@ -477,7 +486,7 @@
       }
     }
 
-    @media (max-width: 560px) {
+    @media (max-width: 580px) {
       .csk-album-grid {
         grid-template-columns: 1fr;
         gap: 18px;
