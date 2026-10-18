@@ -5,7 +5,7 @@
  */
 
 // Optional: Set your deployed Google Apps Script Web App URL if using Google Sheets
-export const GOOGLE_SHEET_WEBHOOK_URL = 'https://script.google.com/macros/s/AKfycbyksfKJYV0rBwIAy7jhJTR0yvxuoMKa-5rCRoGv8ewovyacDdby8SnVAYzF8thGgC0b-Q/exec';
+export const GOOGLE_SHEET_WEBHOOK_URL = 'https://script.google.com/macros/s/AKfycbzFgiRVD4IBjELFL_78wxHHrbklrT8sEnMRysuf9mOuMsnA2vhdi_W3QhY9a3065wxEvA/exec';
 
 export function initContactForm() {
   const form = document.getElementById('contact-form');
