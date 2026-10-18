@@ -29,9 +29,12 @@
     .csk-gallery-hero {
       position: relative;
       overflow: hidden;
-      padding: 64px 0 84px !important;
-      background: linear-gradient(135deg, #061530 0%, #0A2454 60%, #030C1C 100%) !important;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      padding: 68px 0 94px !important;
+      background:
+        radial-gradient(circle at 50% 0%, rgba(2, 132, 199, 0.28) 0%, transparent 60%),
+        radial-gradient(circle at 85% 20%, rgba(250, 204, 21, 0.12) 0%, transparent 45%),
+        linear-gradient(135deg, #040D21 0%, #0A2454 55%, #030917 100%) !important;
+      border-bottom: 1px solid rgba(56, 189, 248, 0.22);
       text-align: center;
       margin: 0 !important;
     }
@@ -39,7 +42,7 @@
     .csk-gallery-hero__inner {
       position: relative;
       z-index: 2;
-      max-width: 820px;
+      max-width: 880px;
       margin: 0 auto;
       padding: 0 20px;
     }
@@ -48,17 +51,17 @@
       display: inline-flex;
       align-items: center;
       gap: 8px;
-      padding: 6px 16px;
+      padding: 6px 18px;
       border-radius: 999px;
-      background: rgba(14, 165, 233, 0.14);
-      border: 1px solid rgba(56, 189, 248, 0.4);
-      color: #38BDF8;
-      font-size: 0.76rem;
+      background: rgba(14, 165, 233, 0.16);
+      border: 1px solid rgba(56, 189, 248, 0.45);
+      color: #7DD3FC;
+      font-size: 0.75rem;
       font-weight: 800;
-      letter-spacing: 0.12em;
+      letter-spacing: 0.14em;
       text-transform: uppercase;
       margin-bottom: 16px;
-      box-shadow: 0 4px 16px rgba(2, 132, 199, 0.2);
+      box-shadow: 0 4px 20px rgba(2, 132, 199, 0.25);
     }
 
     .csk-gallery-hero__pill-dot {
@@ -66,42 +69,86 @@
       height: 7px;
       border-radius: 50%;
       background: #FACC15;
-      box-shadow: 0 0 8px #FACC15;
+      box-shadow: 0 0 10px #FACC15;
     }
 
     .csk-gallery-hero__title {
       color: #FFFFFF;
       font-family: var(--font-display, "Chakra Petch", sans-serif);
-      font-size: clamp(2.3rem, 5vw, 3.6rem);
+      font-size: clamp(2.4rem, 5.2vw, 3.8rem);
       font-weight: 900;
       letter-spacing: 0.03em;
-      line-height: 1.08;
+      line-height: 1.06;
       text-transform: uppercase;
       margin: 0 0 14px;
-      text-shadow: 0 6px 24px rgba(0, 0, 0, 0.65);
+      text-shadow: 0 8px 28px rgba(0, 0, 0, 0.7);
     }
 
     .csk-gallery-hero__title span {
-      color: #FACC15;
+      background: linear-gradient(135deg, #FDE047 0%, #F59E0B 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
     }
 
     .csk-gallery-hero__desc {
       color: #CBD5E1;
       font-size: 1.04rem;
       line-height: 1.65;
-      max-width: 650px;
-      margin: 0 auto;
+      max-width: 660px;
+      margin: 0 auto 26px;
+    }
+
+    /* Hero Vault Telemetry Strip */
+    .csk-gallery-hero__stats {
+      display: inline-flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      gap: 10px 24px;
+      padding: 10px 24px;
+      border-radius: 999px;
+      background: rgba(6, 17, 38, 0.68);
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+    }
+
+    .csk-gallery-stat-item {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      font-size: 0.76rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: #E2E8F0;
+    }
+
+    .csk-gallery-stat-item strong {
+      color: #FDE047;
+      font-size: 0.88rem;
+      font-weight: 900;
+    }
+
+    .csk-gallery-stat-sep {
+      width: 4px;
+      height: 4px;
+      border-radius: 50%;
+      background: rgba(56, 189, 248, 0.55);
     }
 
     /* Main Gallery Viewport */
     .gallery-main-viewport {
-      background: linear-gradient(180deg, #F1F5F9 0%, #FFFFFF 220px, #F8FAFC 100%);
+      background:
+        radial-gradient(circle at 50% 0%, rgba(224, 242, 254, 0.7) 0%, transparent 50%),
+        linear-gradient(180deg, #EEF2F6 0%, #FFFFFF 260px, #F8FAFC 100%);
       padding: 0 0 96px;
       min-height: 75vh;
     }
 
     .gallery-container {
-      max-width: 1280px;
+      max-width: 1320px;
       margin: 0 auto;
       padding: 0 24px;
     }
@@ -110,17 +157,18 @@
     .gallery-control-dock {
       position: relative;
       z-index: 10;
-      margin-top: -42px;
-      margin-bottom: 36px;
-      background: rgba(255, 255, 255, 0.96);
-      backdrop-filter: blur(16px);
-      -webkit-backdrop-filter: blur(16px);
-      border: 1px solid rgba(15, 23, 42, 0.09);
+      margin-top: -46px;
+      margin-bottom: 38px;
+      background: rgba(255, 255, 255, 0.98);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1.5px solid rgba(15, 23, 42, 0.08);
+      border-top: 4px solid #0284C7;
       border-radius: 20px;
-      padding: 20px 24px 18px;
+      padding: 22px 26px 20px;
       box-shadow:
-        0 20px 45px -15px rgba(6, 21, 48, 0.14),
-        0 4px 14px rgba(6, 21, 48, 0.05);
+        0 24px 50px -12px rgba(6, 21, 48, 0.16),
+        0 4px 16px rgba(6, 21, 48, 0.06);
     }
 
     .gallery-dock-top-row {
@@ -142,8 +190,8 @@
       background: #071630;
       padding: 5px;
       border-radius: 999px;
-      border: 1px solid rgba(56, 189, 248, 0.25);
-      box-shadow: inset 0 2px 6px rgba(0, 0, 0, 0.35);
+      border: 1px solid rgba(56, 189, 248, 0.28);
+      box-shadow: inset 0 2px 6px rgba(0, 0, 0, 0.4);
       flex-wrap: wrap;
     }
 
@@ -151,14 +199,14 @@
       display: inline-flex;
       align-items: center;
       gap: 8px;
-      padding: 8px 18px;
+      padding: 9px 18px;
       border-radius: 999px;
       background: transparent;
       border: 1px solid transparent;
       color: #CBD5E1;
-      font-size: 0.82rem;
+      font-size: 0.8rem;
       font-weight: 800;
-      letter-spacing: 0.05em;
+      letter-spacing: 0.06em;
       text-transform: uppercase;
       cursor: pointer;
       transition: all 0.22s ease;
@@ -177,7 +225,7 @@
 
     .gallery-type-btn.is-active {
       background: linear-gradient(135deg, #0284C7 0%, #0369A1 100%);
-      border-color: rgba(125, 211, 252, 0.55);
+      border-color: rgba(125, 211, 252, 0.65);
       color: #FFFFFF;
       box-shadow: 0 4px 14px rgba(2, 132, 199, 0.45);
     }
@@ -194,17 +242,92 @@
       height: 20px;
       padding: 0 7px;
       border-radius: 999px;
-      background: rgba(6, 15, 32, 0.55);
+      background: rgba(6, 15, 32, 0.6);
       color: #FDE047;
-      font-size: 0.74rem;
+      font-size: 0.72rem;
       font-weight: 800;
     }
 
+    /* Right Dock Controls: Search + Density Switcher + Summary */
+    .gallery-dock-right-tools {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .gallery-search-box {
+      position: relative;
+      display: flex;
+      align-items: center;
+    }
+
+    .gallery-search-box svg {
+      position: absolute;
+      left: 12px;
+      color: #64748B;
+      pointer-events: none;
+    }
+
+    .gallery-search-input {
+      padding: 8px 14px 8px 34px;
+      border-radius: 999px;
+      border: 1.5px solid #CBD5E1;
+      background: #F8FAFC;
+      color: #0F172A;
+      font-size: 0.82rem;
+      font-weight: 600;
+      width: 210px;
+      transition: all 0.2s ease;
+      font-family: inherit;
+    }
+
+    .gallery-search-input:focus {
+      outline: none;
+      border-color: #0284C7;
+      background: #FFFFFF;
+      width: 240px;
+      box-shadow: 0 0 0 3px rgba(2, 132, 199, 0.14);
+    }
+
+    .gallery-view-toggle {
+      display: inline-flex;
+      background: #F1F5F9;
+      border: 1px solid #CBD5E1;
+      border-radius: 10px;
+      padding: 3px;
+      gap: 2px;
+    }
+
+    .gallery-view-btn {
+      border: none;
+      background: transparent;
+      color: #64748B;
+      width: 32px;
+      height: 30px;
+      border-radius: 7px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: all 0.18s ease;
+    }
+
+    .gallery-view-btn.is-active {
+      background: #0A2454;
+      color: #FDE047;
+      box-shadow: 0 2px 6px rgba(10, 36, 84, 0.2);
+    }
+
     .gallery-results-summary {
-      font-size: 0.85rem;
-      font-weight: 700;
+      font-size: 0.82rem;
+      font-weight: 800;
       color: #475569;
       letter-spacing: 0.02em;
+      background: #F1F5F9;
+      padding: 6px 12px;
+      border-radius: 999px;
+      border: 1px solid #E2E8F0;
     }
 
     /* Horizontal Capsule Category Filter Bar */
@@ -226,8 +349,15 @@
       .gallery-media-types {
         justify-content: center;
       }
-      .gallery-results-summary {
-        text-align: center;
+      .gallery-dock-right-tools {
+        justify-content: space-between;
+      }
+      .gallery-search-box {
+        flex: 1;
+      }
+      .gallery-search-input,
+      .gallery-search-input:focus {
+        width: 100%;
       }
       .gallery-pills-bar {
         overflow-x: auto;
@@ -243,7 +373,15 @@
 
     @media (max-width: 640px) {
       .csk-gallery-hero {
-        padding: 44px 0 64px !important;
+        padding: 44px 0 68px !important;
+      }
+      .csk-gallery-hero__stats {
+        border-radius: 14px;
+        padding: 10px 14px;
+        gap: 8px 14px;
+      }
+      .csk-gallery-stat-sep {
+        display: none;
       }
       .gallery-container {
         padding: 0 14px;
@@ -286,22 +424,24 @@
         padding: 0 5px;
         font-size: 0.68rem;
       }
+      .gallery-view-toggle {
+        display: none;
+      }
       .gallery-pill-btn {
         padding: 7px 14px;
         font-size: 0.76rem;
       }
     }
 
-
     .gallery-pill-btn {
-      background: #F1F5F9;
+      background: #F8FAFC;
       color: #1E293B;
       border: 1.5px solid #CBD5E1;
       border-radius: 999px;
       padding: 8px 20px;
-      font-size: 0.82rem;
+      font-size: 0.8rem;
       font-weight: 800;
-      letter-spacing: 0.04em;
+      letter-spacing: 0.05em;
       cursor: pointer;
       transition: all 0.2s ease;
       white-space: nowrap;
@@ -316,57 +456,90 @@
     }
 
     .gallery-pill-btn.is-active {
-      background: #0A2454;
+      background: linear-gradient(135deg, #091E46 0%, #0D2D66 100%);
       color: #FDE047;
       border-color: #0284C7;
       box-shadow: 0 6px 16px rgba(10, 36, 84, 0.25);
     }
 
-    /* 4-Column Premium Album Card Grid */
+    /* 4-Column Premium Album Card Grid (With Optional 3-Column Cinema Mode) */
     .csk-album-grid {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
       gap: 22px;
+      transition: all 0.25s ease;
+    }
+
+    .csk-album-grid.is-cinema-grid {
+      grid-template-columns: repeat(3, 1fr);
+      gap: 26px;
     }
 
     @media (max-width: 1140px) {
-      .csk-album-grid {
+      .csk-album-grid,
+      .csk-album-grid.is-cinema-grid {
         grid-template-columns: repeat(3, 1fr);
         gap: 18px;
       }
     }
 
     @media (max-width: 768px) {
-      .csk-album-grid {
+      .csk-album-grid,
+      .csk-album-grid.is-cinema-grid {
         grid-template-columns: repeat(2, 1fr);
         gap: 14px;
       }
     }
 
     @media (max-width: 500px) {
-      .csk-album-grid {
+      .csk-album-grid,
+      .csk-album-grid.is-cinema-grid {
         grid-template-columns: 1fr;
         gap: 18px;
       }
     }
 
-    /* Individual Album Card */
+    /* Individual Album Card — Luxury Broadcast Frame */
     .csk-album-card {
       position: relative;
       border-radius: 16px;
       overflow: hidden;
       background: #061124;
-      aspect-ratio: 4 / 3.45;
+      aspect-ratio: 4 / 3.4;
       cursor: pointer;
-      border: 1.5px solid rgba(15, 23, 42, 0.1);
-      box-shadow: 0 8px 22px rgba(6, 21, 48, 0.09);
-      transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease, border-color 0.3s ease;
+      border: 1.5px solid rgba(15, 23, 42, 0.12);
+      box-shadow:
+        0 10px 26px -6px rgba(6, 21, 48, 0.14),
+        0 2px 6px rgba(6, 21, 48, 0.06);
+      transition: transform 0.32s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.32s ease, border-color 0.32s ease;
+    }
+
+    /* Top Gold/Cyan Broadcast Accent Line on Hover */
+    .csk-album-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3.5px;
+      background: linear-gradient(90deg, #F59E0B 0%, #FDE047 50%, #38BDF8 100%);
+      opacity: 0;
+      transform: scaleX(0.6);
+      transition: opacity 0.28s ease, transform 0.28s ease;
+      z-index: 5;
     }
 
     .csk-album-card:hover {
-      transform: translateY(-6px);
-      border-color: rgba(2, 132, 199, 0.55);
-      box-shadow: 0 18px 38px rgba(6, 21, 48, 0.24), 0 0 0 1px rgba(56, 189, 248, 0.25);
+      transform: translateY(-7px);
+      border-color: rgba(2, 132, 199, 0.65);
+      box-shadow:
+        0 22px 44px -10px rgba(6, 21, 48, 0.32),
+        0 0 0 1px rgba(56, 189, 248, 0.35);
+    }
+
+    .csk-album-card:hover::before {
+      opacity: 1;
+      transform: scaleX(1);
     }
 
     .csk-album-media-wrap {
@@ -382,7 +555,7 @@
       object-fit: cover;
       object-position: center 18%;
       display: block;
-      transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+      transition: transform 0.55s cubic-bezier(0.16, 1, 0.3, 1), filter 0.35s ease;
     }
 
     .csk-album-card.is-video-card .csk-album-img,
@@ -391,44 +564,83 @@
     }
 
     .csk-album-card:hover .csk-album-img {
-      transform: scale(1.06);
+      transform: scale(1.07);
+      filter: contrast(1.04) saturate(1.06);
     }
 
-    /* Top-Left Year / Video Badges */
+    /* Top-Left Media Type Badge & Top-Right Frame Index */
     .csk-photo-pill-badge {
       position: absolute;
       top: 12px;
       left: 12px;
       padding: 4px 10px;
       border-radius: 999px;
-      background: rgba(6, 15, 32, 0.72);
+      background: rgba(6, 15, 32, 0.76);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      color: #F8FAFC;
+      font-size: 0.66rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      z-index: 3;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+    }
+
+    .csk-photo-pill-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: #FACC15;
+    }
+
+    .csk-card-index-badge {
+      position: absolute;
+      top: 12px;
+      right: 12px;
+      padding: 3px 8px;
+      border-radius: 6px;
+      background: rgba(6, 15, 32, 0.68);
       backdrop-filter: blur(6px);
       -webkit-backdrop-filter: blur(6px);
-      border: 1px solid rgba(255, 255, 255, 0.18);
-      color: #E2E8F0;
-      font-size: 0.7rem;
+      border: 1px solid rgba(255, 255, 255, 0.16);
+      color: #94A3B8;
+      font-family: var(--font-display, monospace);
+      font-size: 0.66rem;
       font-weight: 800;
       letter-spacing: 0.06em;
       z-index: 3;
+      transition: all 0.25s ease;
+    }
+
+    .csk-album-card:hover .csk-card-index-badge {
+      background: rgba(2, 132, 199, 0.88);
+      border-color: #7DD3FC;
+      color: #FFFFFF;
     }
 
     .csk-video-badge {
       position: absolute;
       top: 12px;
       left: 12px;
-      padding: 4px 10px;
+      padding: 4px 11px;
       border-radius: 999px;
       background: rgba(6, 14, 29, 0.88);
-      backdrop-filter: blur(6px);
-      border: 1px solid rgba(56, 189, 248, 0.5);
+      backdrop-filter: blur(8px);
+      border: 1px solid rgba(56, 189, 248, 0.55);
       color: #38BDF8;
-      font-size: 0.7rem;
+      font-size: 0.68rem;
       font-weight: 800;
       letter-spacing: 0.06em;
       display: inline-flex;
       align-items: center;
       gap: 5px;
       z-index: 3;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.35);
     }
 
     .csk-video-duration {
@@ -440,11 +652,11 @@
     /* Video Play Overlay Indicator */
     .csk-card-play-btn {
       position: absolute;
-      top: 46%;
+      top: 45%;
       left: 50%;
       transform: translate(-50%, -50%);
-      width: 54px;
-      height: 54px;
+      width: 56px;
+      height: 56px;
       border-radius: 50%;
       background: rgba(10, 36, 84, 0.88);
       backdrop-filter: blur(6px);
@@ -475,44 +687,18 @@
       fill: #FDE047;
     }
 
-    /* Top Right Share Button */
-    .csk-card-share-btn {
-      position: absolute;
-      top: 12px;
-      right: 12px;
-      width: 32px;
-      height: 32px;
-      border-radius: 50%;
-      background: rgba(6, 15, 32, 0.62);
-      backdrop-filter: blur(6px);
-      -webkit-backdrop-filter: blur(6px);
-      border: 1px solid rgba(255, 255, 255, 0.22);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: #FFFFFF;
-      z-index: 3;
-      transition: background 0.2s ease, transform 0.2s ease, border-color 0.2s ease;
-    }
-
-    .csk-card-share-btn:hover {
-      background: #0284C7;
-      border-color: #7DD3FC;
-      transform: scale(1.1);
-    }
-
-    /* Bottom Gradient Overlay Strip (Clean Editorial Typography, No Whistle Icon) */
+    /* Bottom Gradient Overlay Strip */
     .csk-album-overlay {
       position: absolute;
       bottom: 0;
       left: 0;
       right: 0;
-      padding: 48px 16px 14px;
+      padding: 54px 16px 14px;
       background: linear-gradient(
         to top,
-        rgba(3, 10, 24, 0.96) 0%,
-        rgba(4, 14, 34, 0.82) 48%,
-        rgba(4, 14, 34, 0.28) 78%,
+        rgba(3, 10, 24, 0.98) 0%,
+        rgba(4, 14, 34, 0.86) 50%,
+        rgba(4, 14, 34, 0.3) 80%,
         transparent 100%
       );
       display: flex;
@@ -528,21 +714,38 @@
     .csk-album-meta-top {
       display: flex;
       align-items: center;
+      justify-content: space-between;
       gap: 6px;
       margin-bottom: 5px;
     }
 
     .csk-album-tag {
       color: #FACC15;
-      font-size: 0.66rem;
+      font-size: 0.65rem;
       font-weight: 800;
-      letter-spacing: 0.09em;
+      letter-spacing: 0.1em;
       text-transform: uppercase;
       display: inline-block;
     }
 
     .csk-album-tag.is-video-tag {
       color: #38BDF8;
+    }
+
+    .csk-album-hover-action {
+      font-size: 0.62rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: #7DD3FC;
+      opacity: 0;
+      transform: translateX(-6px);
+      transition: all 0.25s ease;
+    }
+
+    .csk-album-card:hover .csk-album-hover-action {
+      opacity: 1;
+      transform: translateX(0);
     }
 
     .csk-album-title {
@@ -840,12 +1043,19 @@
     <div class="container csk-gallery-hero__inner">
       <div class="csk-gallery-hero__pill">
         <span class="csk-gallery-hero__pill-dot"></span>
-        <span>OFFICIAL CLUB MEDIA ARCHIVE</span>
+        <span>OFFICIAL FRANCHISE MEDIA VAULT</span>
       </div>
       <h1 class="csk-gallery-hero__title">Official Photo &amp; <span>Video Gallery</span></h1>
       <p class="csk-gallery-hero__desc">
-        Explore authentic matchday photography, Cayman Super Kings player portraits, youth net sessions, and official club moments from Grand Cayman.
+        Explore authentic matchday photography, Cayman Super Kings player portraits, youth academy clinics, and official club footage from Grand Cayman.
       </p>
+      <div class="csk-gallery-hero__stats">
+        <div class="csk-gallery-stat-item"><strong id="hero-stat-total">47</strong> Total Archives</div>
+        <span class="csk-gallery-stat-sep"></span>
+        <div class="csk-gallery-stat-item"><strong id="hero-stat-photos">31</strong> HD Photos</div>
+        <span class="csk-gallery-stat-sep"></span>
+        <div class="csk-gallery-stat-item"><strong id="hero-stat-videos">16</strong> Matchday Videos</div>
+      </div>
     </div>
   </section>
 
@@ -859,20 +1069,37 @@
           <div class="gallery-media-types" id="gallery-media-types">
             <button class="gallery-type-btn is-active" data-type="all">
               <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
-              ALL MEDIA <span class="gallery-type-count" id="count-all">31</span>
+              ALL MEDIA <span class="gallery-type-count" id="count-all">47</span>
             </button>
             <button class="gallery-type-btn" data-type="photo">
               <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg>
-              PHOTOS <span class="gallery-type-count" id="count-photos">23</span>
+              PHOTOS <span class="gallery-type-count" id="count-photos">31</span>
             </button>
             <button class="gallery-type-btn" data-type="video">
               <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2" ry="2"/></svg>
-              VIDEOS <span class="gallery-type-count" id="count-videos">8</span>
+              VIDEOS <span class="gallery-type-count" id="count-videos">16</span>
             </button>
           </div>
 
-          <div class="gallery-results-summary" id="gallery-results-summary">
-            Showing 31 items in All Categories
+          <!-- Search + Grid Layout Switcher + Summary -->
+          <div class="gallery-dock-right-tools">
+            <div class="gallery-search-box">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+              <input type="search" id="gallery-search-input" class="gallery-search-input" placeholder="Search player or moment..." aria-label="Search media archive">
+            </div>
+
+            <div class="gallery-view-toggle" id="gallery-view-toggle" title="Switch Grid Density">
+              <button type="button" class="gallery-view-btn is-active" data-cols="4" aria-label="4-Column Grid">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+              </button>
+              <button type="button" class="gallery-view-btn" data-cols="3" aria-label="3-Column Cinema Grid">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><rect x="3" y="4" width="18" height="6" rx="1"/><rect x="3" y="14" width="18" height="6" rx="1"/></svg>
+              </button>
+            </div>
+
+            <div class="gallery-results-summary" id="gallery-results-summary">
+              Showing 47 items
+            </div>
           </div>
         </div>
 
@@ -921,7 +1148,7 @@
       <div class="lightbox-category-pill" id="lightbox-category">Club Archive</div>
       <div class="lightbox-caption-title" id="lightbox-title">Photo Title</div>
       <div class="lightbox-caption-desc" id="lightbox-desc">Photo Caption</div>
-      <div class="lightbox-counter" id="lightbox-counter">Photo 1 of 31</div>
+      <div class="lightbox-counter" id="lightbox-counter">Photo 1 of 47</div>
     </div>
   </div>
 
@@ -951,9 +1178,9 @@
     </div>
   </footer>
 
-  <script type="module" src="js/app.js?v=20261018_clean_v3"></script>
+  <script type="module" src="js/app.js?v=20261019_premium"></script>
   <script type="module">
-    import { initGalleryPage } from './js/gallery.js?v=20261018_clean_v3';
+    import { initGalleryPage } from './js/gallery.js?v=20261019_premium';
     initGalleryPage();
   </script>
 </body>

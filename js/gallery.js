@@ -9,6 +9,8 @@ export async function initGalleryPage() {
   const mediaTypesBar = document.getElementById('gallery-media-types');
   const btnShowAll = document.getElementById('btn-show-all-albums');
   const resultsSummary = document.getElementById('gallery-results-summary');
+  const searchInput = document.getElementById('gallery-search-input');
+  const viewToggle = document.getElementById('gallery-view-toggle');
 
   // Lightbox elements
   const lightboxModal = document.getElementById('lightbox-modal');
@@ -27,10 +29,11 @@ export async function initGalleryPage() {
   const items = await store.getGallery();
   let currentMediaType = 'all'; // 'all', 'photo', 'video'
   let currentCategory = 'all';  // 'all', 'Matchday Action', etc.
+  let searchQuery = '';
   let activeFiltered = [];
   let currentIndex = 0;
 
-  // Initialize Media Type Counts
+  // Initialize Media Type Counts & Hero Telemetry
   function updateCounts() {
     const totalAll = items.length;
     const totalPhotos = items.filter(p => (p.type || 'photo') === 'photo').length;
@@ -39,14 +42,21 @@ export async function initGalleryPage() {
     const elAll = document.getElementById('count-all');
     const elPhotos = document.getElementById('count-photos');
     const elVideos = document.getElementById('count-videos');
+    const heroTotal = document.getElementById('hero-stat-total');
+    const heroPhotos = document.getElementById('hero-stat-photos');
+    const heroVideos = document.getElementById('hero-stat-videos');
 
     if (elAll) elAll.textContent = totalAll;
     if (elPhotos) elPhotos.textContent = totalPhotos;
     if (elVideos) elVideos.textContent = totalVideos;
+    if (heroTotal) heroTotal.textContent = totalAll;
+    if (heroPhotos) heroPhotos.textContent = totalPhotos;
+    if (heroVideos) heroVideos.textContent = totalVideos;
   }
   updateCounts();
 
   function render() {
+    const q = searchQuery.trim().toLowerCase();
     activeFiltered = items.filter(item => {
       const itemType = item.type || 'photo';
       if (currentMediaType !== 'all' && itemType !== currentMediaType) {
@@ -54,6 +64,10 @@ export async function initGalleryPage() {
       }
       if (currentCategory !== 'all' && (item.category || '').toLowerCase() !== currentCategory.toLowerCase()) {
         return false;
+      }
+      if (q) {
+        const hay = `${item.title || ''} ${item.caption || ''} ${item.category || ''}`.toLowerCase();
+        if (!hay.includes(q)) return false;
       }
       return true;
     });
@@ -69,7 +83,7 @@ export async function initGalleryPage() {
 
     if (resultsSummary) {
       const catText = currentCategory === 'all' ? 'All Categories' : currentCategory;
-      resultsSummary.textContent = `Showing ${activeFiltered.length} ${activeFiltered.length === 1 ? 'item' : 'items'} in ${catText}`;
+      resultsSummary.textContent = `${activeFiltered.length} ${activeFiltered.length === 1 ? 'item' : 'items'} • ${catText}`;
     }
 
     if (activeFiltered.length === 0) {
@@ -81,7 +95,7 @@ export async function initGalleryPage() {
           emptyTitle.textContent = `No ${typeWord} Found for Selected Filter`;
         }
         if (emptyDesc) {
-          emptyDesc.textContent = `Try selecting "All Categories" or switching media types to view more club archives.`;
+          emptyDesc.textContent = `Try clearing your search or selecting "All Categories" to view all club archives.`;
         }
       }
       return;
@@ -95,6 +109,7 @@ export async function initGalleryPage() {
       const thumbSrc = isVideo ? (p.poster || p.src) : p.src;
       const isPersonPhoto = !isVideo && (p.title || '').startsWith('Image of');
       const categoryLabel = isPersonPhoto ? 'Cayman Super Kings' : (p.category || (isVideo ? 'Video Clip' : 'Club Archive'));
+      const indexStr = String(idx + 1).padStart(2, '0');
 
       return `
         <article class="csk-album-card cyber-reveal is-revealed ${isVideo ? 'is-video-card' : ''}" data-index="${idx}" tabindex="0" role="button" aria-label="${p.title}" style="animation-delay: ${Math.min(idx * 0.03, 0.35)}s;">
@@ -117,13 +132,21 @@ export async function initGalleryPage() {
                   <polygon points="6 4 20 12 6 20 6 4"/>
                 </svg>
               </div>
-            ` : ''}
+            ` : `
+              <div class="csk-photo-pill-badge">
+                <span class="csk-photo-pill-dot"></span>
+                <span>HD PHOTO</span>
+              </div>
+            `}
 
-            <!-- Bottom Gradient Overlay Strip (Zero Circular Icons on Photos) -->
+            <div class="csk-card-index-badge">#${indexStr}</div>
+
+            <!-- Bottom Gradient Overlay Strip -->
             <div class="csk-album-overlay">
               <div class="csk-album-info">
                 <div class="csk-album-meta-top">
                   <span class="csk-album-tag ${isVideo ? 'is-video-tag' : ''}">${categoryLabel}</span>
+                  <span class="csk-album-hover-action">${isVideo ? 'WATCH ▶' : 'VIEW HD ↗'}</span>
                 </div>
                 <h3 class="csk-album-title">${p.title}</h3>
                 ${p.caption ? `<p class="csk-album-caption">${p.caption}</p>` : ''}
@@ -159,6 +182,30 @@ export async function initGalleryPage() {
           e.preventDefault();
           const idx = parseInt(card.getAttribute('data-index'), 10);
           openLightbox(idx);
+        }
+      });
+    });
+  }
+
+  // Search Input Listener
+  if (searchInput) {
+    searchInput.addEventListener('input', (e) => {
+      searchQuery = e.target.value || '';
+      render();
+    });
+  }
+
+  // Grid Density Toggle Listener (4-col vs 3-col Cinema)
+  if (viewToggle) {
+    viewToggle.querySelectorAll('.gallery-view-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        viewToggle.querySelectorAll('.gallery-view-btn').forEach(b => b.classList.remove('is-active'));
+        btn.classList.add('is-active');
+        const cols = btn.getAttribute('data-cols');
+        if (cols === '3') {
+          grid.classList.add('is-cinema-grid');
+        } else {
+          grid.classList.remove('is-cinema-grid');
         }
       });
     });
@@ -202,6 +249,8 @@ export async function initGalleryPage() {
           else b.classList.remove('is-active');
         });
       }
+      if (searchInput) searchInput.value = '';
+      searchQuery = '';
       currentMediaType = 'all';
       currentCategory = 'all';
       render();

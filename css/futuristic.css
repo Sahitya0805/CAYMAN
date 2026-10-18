@@ -1723,29 +1723,45 @@ html, body {
   .card-delivers-centerpiece,
   .card-funds-transparency,
   .sponsors-cta-block {
-    padding: 24px 16px !important;
-    border-radius: 14px !important;
+    padding: 18px 16px !important;
+    border-radius: 10px !important;
+  }
+
+  .past-sponsors-rect-grid {
+    grid-template-columns: 1fr !important;
+    gap: 14px !important;
+  }
+
+  .past-sponsors-rect-grid > div {
+    border-right: none !important;
+    border-bottom: 1px solid #F1F5F9 !important;
+    padding-bottom: 12px !important;
+  }
+
+  .past-sponsors-rect-grid > div:last-child {
+    border-bottom: none !important;
+    padding-bottom: 0 !important;
   }
 
   #our-sponsors-section img[src*="tulsi"],
   #sponsors img[src*="tulsi"] {
-    height: 52px !important;
-    width: auto !important;
-    max-width: min(175px, 78vw) !important;
-  }
-
-  #our-sponsors-section img[src*="v2"],
-  #sponsors img[src*="v2"] {
-    height: 72px !important;
+    height: 44px !important;
     width: auto !important;
     max-width: min(160px, 75vw) !important;
   }
 
+  #our-sponsors-section img[src*="v2"],
+  #sponsors img[src*="v2"] {
+    height: 60px !important;
+    width: auto !important;
+    max-width: min(145px, 72vw) !important;
+  }
+
   #our-sponsors-section img[src*="ecosmart"],
   #sponsors img[src*="ecosmart"] {
-    height: 48px !important;
+    height: 44px !important;
     width: auto !important;
-    max-width: min(200px, 80vw) !important;
+    max-width: min(190px, 78vw) !important;
   }
 }
 
