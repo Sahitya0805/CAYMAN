@@ -1756,6 +1756,15 @@ html, body {
   overflow: hidden;
 }
 
+.section--navy {
+  text-align: center;
+}
+
+.section--navy .section-desc {
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
 .section--navy > .container,
 .csk-gallery-hero > .container,
 .csk-player-hero > .csk-player-hero-container,

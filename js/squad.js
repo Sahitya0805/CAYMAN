@@ -5,7 +5,7 @@
  * ─────────────────────────────────────────────────────────────
  */
 
-import { store } from './content-store.js?v=20261018_dock_smile';
+import { store } from './content-store.js?v=20261018_restored';
 
 export async function initSquadPage() {
   const container = document.getElementById('squad-grid') || document.getElementById('squad-container');

@@ -5,12 +5,12 @@
  * ─────────────────────────────────────────────────────────────
  */
 
-import { store } from './content-store.js?v=20261018_dock_smile';
+import { store } from './content-store.js?v=20261018_restored';
 import { initHeroSlider } from './hero-slider.js';
 import { initSplashLoader } from './splash-loader.js';
 import { initCricketCrazy } from './cricket-crazy.js';
-import { createStadiumPlayerCard, initSquadCard3DTilt } from './squad.js?v=20261018_dock_smile';
-import { initFuturisticSystem } from './futuristic.js?v=20261018_gallery_v2';
+import { createStadiumPlayerCard, initSquadCard3DTilt } from './squad.js?v=20261018_restored';
+import { initFuturisticSystem } from './futuristic.js?v=20261018_restored';
 
 // Initialize the 1st cricket matchday splash loader immediately
 initSplashLoader();
