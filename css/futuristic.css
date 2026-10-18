@@ -1761,6 +1761,7 @@ html, body {
 .csk-player-hero > .csk-player-hero-container,
 .sponsors-hero > .sponsors-hero-inner,
 .youth-hero-section > .container,
+.youth-hero-section > .youth-hero-container,
 .squad-stadium-hero > .container,
 .matches-hero-banner > .container {
   position: relative;

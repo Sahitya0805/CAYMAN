@@ -2771,11 +2771,11 @@ body.page-squad .site-header {
 
 .squad-stadium-hero {
   position: relative;
-  background: radial-gradient(circle at 50% 100%, rgba(9, 21, 43, 0.9) 0%, #030712 75%), #020617;
+  background: linear-gradient(135deg, #061530 0%, #0A2454 60%, #030C1C 100%);
   padding: 56px 20px 28px;
   text-align: center;
   overflow: hidden;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .squad-floodlight {

@@ -31,41 +31,25 @@
       overflow-x: hidden;
     }
 
-    /* Royal Blue Stadium Hero Banner (Seamless Zero-gap below Navbar) */
+    /* Deep Navy Stadium Hero Banner (Matching History & Other Pages) */
     .youth-hero-section {
       position: relative;
-      background: linear-gradient(135deg, #071630 0%, #153E75 55%, #0A1E42 100%) !important;
-      padding: 44px 0 60px;
+      background: linear-gradient(135deg, #061530 0%, #0A2454 60%, #030C1C 100%) !important;
+      padding: 56px 0 60px;
       margin: 0 !important;
-      border-bottom: 2px solid rgba(255, 255, 255, 0.15);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
       overflow: hidden;
       text-align: center;
     }
 
-    .youth-hero-section::before {
-      content: '';
-      position: absolute;
-      top: 0; left: 0; right: 0; bottom: 0;
-      background-image: radial-gradient(rgba(255, 255, 255, 0.08) 1px, transparent 1px);
-      background-size: 24px 24px;
-      pointer-events: none;
-    }
-
+    .youth-hero-section::before,
     .youth-hero-aurora {
-      position: absolute;
-      top: -100px;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 800px;
-      height: 350px;
-      background: radial-gradient(ellipse, rgba(56, 189, 248, 0.25) 0%, rgba(245, 158, 11, 0.15) 50%, transparent 70%);
-      filter: blur(50px);
-      pointer-events: none;
+      display: none !important;
     }
 
     .youth-hero-container {
       position: relative;
-      z-index: 1;
+      z-index: 2;
       max-width: 1140px;
       margin: 0 auto;
       padding: 0 24px;
