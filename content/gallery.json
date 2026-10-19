@@ -115,6 +115,28 @@
     "date": "October 2026"
   },
   {
+    "id": "photo-24",
+    "year": "2026",
+    "type": "photo",
+    "title": "Rahul Garg at MAX60 Caribbean T10",
+    "category": "Behind the Scenes",
+    "src": "assets/players/real/rahul-garg-max60-pavilion.jpg",
+    "caption": "CSK Captain Rahul Garg with overseas cricketer at the MAX60 Caribbean T10 Players Pavilion, Jimmy Powell Oval.",
+    "drive_folder": "",
+    "date": "October 2026"
+  },
+  {
+    "id": "photo-25",
+    "year": "2026",
+    "type": "photo",
+    "title": "Boca Raton Trailblazers MAX60 Squad",
+    "category": "Behind the Scenes",
+    "src": "assets/players/real/boca-raton-trailblazers-max60-squad.jpg",
+    "caption": "Official MAX60 Caribbean T10 Boca Raton Trailblazers tournament squad featuring David Warner and CSK Captain Rahul Garg.",
+    "drive_folder": "",
+    "date": "October 2026"
+  },
+  {
     "id": "photo-19",
     "year": "2026",
     "type": "photo",
