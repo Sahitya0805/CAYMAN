@@ -15,7 +15,7 @@ class ContentStore {
     if (!forceRefresh && this.cache[path]) return this.cache[path];
     try {
       const sep = path.includes('?') ? '&' : '?';
-      const url = forceRefresh ? `${path}${sep}_t=${Date.now()}` : `${path}${sep}v=20261019_gallery_v3`;
+      const url = forceRefresh ? `${path}${sep}_t=${Date.now()}` : `${path}${sep}v=20261019_gokul_keeper`;
       const res = await fetch(url);
       if (!res.ok) throw new Error(`HTTP error! status: ${res.status}`);
       const data = await res.json();
