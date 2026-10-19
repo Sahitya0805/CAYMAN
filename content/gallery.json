@@ -104,6 +104,45 @@
     "date": "April 2025"
   },
   {
+    "id": "video-09",
+    "year": "2026",
+    "type": "video",
+    "duration": "1:21",
+    "title": "Junior Academy Batting Practice",
+    "category": "Training & Youth",
+    "src": "video/csk-match-clip-09.mp4",
+    "poster": "assets/videos/posters/video-09.jpg",
+    "caption": "Junior Super King fine-tuning footwork and defensive technique in the outdoor practice cages.",
+    "drive_folder": "",
+    "date": "October 2026"
+  },
+  {
+    "id": "video-10",
+    "year": "2026",
+    "type": "video",
+    "duration": "1:07",
+    "title": "Junior Academy Crease Mechanics & Timing",
+    "category": "Training & Youth",
+    "src": "video/csk-match-clip-10.mp4",
+    "poster": "assets/videos/posters/video-10.jpg",
+    "caption": "Junior batter training forward stride balance and strokeplay execution with academy coaching staff.",
+    "drive_folder": "",
+    "date": "October 2026"
+  },
+  {
+    "id": "video-11",
+    "year": "2026",
+    "type": "video",
+    "duration": "0:23",
+    "title": "Junior Academy Powerplay Strokeplay",
+    "category": "Training & Youth",
+    "src": "video/csk-match-clip-11.mp4",
+    "poster": "assets/videos/posters/video-11.jpg",
+    "caption": "Focused batting drills emphasizing high elbow drive and aggressive front-foot bat flow.",
+    "drive_folder": "",
+    "date": "October 2026"
+  },
+  {
     "id": "photo-00",
     "year": "2026",
     "type": "photo",
