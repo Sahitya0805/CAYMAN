@@ -2989,6 +2989,13 @@ body.page-squad .site-header {
   box-shadow: 0 4px 14px rgba(0, 0, 0, 0.5), 0 0 12px rgba(16, 185, 129, 0.35) !important;
 }
 
+.squad-card-badge--youth {
+  background: linear-gradient(135deg, #081636 0%, #030814 100%) !important;
+  color: #F59E0B !important;
+  border-color: #F59E0B !important;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.5), 0 0 12px rgba(245, 158, 11, 0.35) !important;
+}
+
 .squad-card-badge--default {
   background: linear-gradient(135deg, #081636 0%, #030814 100%) !important;
   color: #E2E8F0 !important;

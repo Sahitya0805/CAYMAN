@@ -915,5 +915,159 @@
         "run_outs": 1
       }
     }
+  },
+  {
+    "id": "csk-19",
+    "priority": 19,
+    "name_full": "Kirubakaran Gnanasekaran",
+    "name_display": "Kirubakaran",
+    "role": "All-Rounder",
+    "badge": "ALL ROUNDER",
+    "group": "allrounders",
+    "groups": [
+      "allrounders",
+      "batters",
+      "bowlers"
+    ],
+    "jersey_display": "19",
+    "birthday": "19/09/1986",
+    "age": 40,
+    "battingStyle": "Right Handed",
+    "bowlingStyle": "Right Arm Medium Pacer",
+    "description": "Team player, flexible and able to support the team's success according to the game's demands. Likes to be a surprise factor for the opposing team.",
+    "didYouKnow": "Glad to work with the team from day one, happy to see each player and team succeed every year, willing to support to the best of my ability.",
+    "photo": "assets/players/real/Kirubakaran-Gnanasekaran-Real.jpg",
+    "photo_drive": "",
+    "national_team_experience": "No",
+    "stats": {
+      "batting": {
+        "matches": 0,
+        "innings": 0,
+        "runs": 0,
+        "highest_score": "—",
+        "average": "—",
+        "strike_rate": "—",
+        "fifties": 0,
+        "hundreds": 0,
+        "fours": 0,
+        "sixes": 0
+      },
+      "bowling": {
+        "overs": "0.0",
+        "maidens": 0,
+        "runs_conceded": 0,
+        "wickets": 0,
+        "best_bowling": "—",
+        "average": "—",
+        "economy": "—",
+        "four_wickets": 0
+      },
+      "fielding": {
+        "catches": 0,
+        "run_outs": 0
+      }
+    }
+  },
+  {
+    "id": "csk-20",
+    "priority": 20,
+    "name_full": "Kevyn Jonathan Kirubakaran",
+    "name_display": "Kevyn Kirubakaran",
+    "role": "Youth All-Rounder",
+    "badge": "YOUTH ACADEMY",
+    "group": "allrounders",
+    "groups": [
+      "allrounders",
+      "bowlers"
+    ],
+    "jersey_display": "20",
+    "birthday": "31/10/2014",
+    "age": 11,
+    "battingStyle": "Right Handed",
+    "bowlingStyle": "Right Arm Fast (Upcoming)",
+    "description": "Upcoming all-rounder with natural pace and raw talent emerging through the CSK Youth Academy pathway.",
+    "didYouKnow": "One of the youngest players ever to represent Cayman Super Kings, Kevyn is already making waves in junior cricket across the Cayman Islands.",
+    "photo": "assets/players/real/Kevyn-Kirubakaran-Trophy.jpg",
+    "photo_drive": "",
+    "national_team_experience": "No",
+    "stats": {
+      "batting": {
+        "matches": 0,
+        "innings": 0,
+        "runs": 0,
+        "highest_score": "—",
+        "average": "—",
+        "strike_rate": "—",
+        "fifties": 0,
+        "hundreds": 0,
+        "fours": 0,
+        "sixes": 0
+      },
+      "bowling": {
+        "overs": "0.0",
+        "maidens": 0,
+        "runs_conceded": 0,
+        "wickets": 0,
+        "best_bowling": "—",
+        "average": "—",
+        "economy": "—",
+        "four_wickets": 0
+      },
+      "fielding": {
+        "catches": 0,
+        "run_outs": 0
+      }
+    }
+  },
+  {
+    "id": "csk-21",
+    "priority": 21,
+    "name_full": "Rishab Dev Parthipan",
+    "name_display": "Rishab Dev",
+    "role": "Youth All-Rounder",
+    "badge": "YOUTH ACADEMY",
+    "group": "allrounders",
+    "groups": [
+      "allrounders",
+      "bowlers"
+    ],
+    "jersey_display": "21",
+    "birthday": "28/09/2018",
+    "age": 8,
+    "battingStyle": "Right Handed",
+    "bowlingStyle": "Right Arm Fast (Upcoming)",
+    "description": "Upcoming all-rounder with exceptional promise, developing pace and instincts under the CSK Youth Academy coaching programme.",
+    "didYouKnow": "At just 8 years old, Rishab Dev is the youngest member of the Cayman Super Kings family, embodying the club's commitment to nurturing grassroots cricket from the very beginning.",
+    "photo": "assets/players/real/Rishab-Dev-Parthipan-Real.jpg",
+    "photo_drive": "",
+    "national_team_experience": "No",
+    "stats": {
+      "batting": {
+        "matches": 0,
+        "innings": 0,
+        "runs": 0,
+        "highest_score": "—",
+        "average": "—",
+        "strike_rate": "—",
+        "fifties": 0,
+        "hundreds": 0,
+        "fours": 0,
+        "sixes": 0
+      },
+      "bowling": {
+        "overs": "0.0",
+        "maidens": 0,
+        "runs_conceded": 0,
+        "wickets": 0,
+        "best_bowling": "—",
+        "average": "—",
+        "economy": "—",
+        "four_wickets": 0
+      },
+      "fielding": {
+        "catches": 0,
+        "run_outs": 0
+      }
+    }
   }
 ]
