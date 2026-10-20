@@ -17,7 +17,7 @@ export async function initSquadPage() {
   const squad = await store.getSquad();
   let currentFilter = 'all';
 
-  // Strictly sort by priority 1 to 18
+  // Strictly sort by priority 1 to 21
   squad.sort((a, b) => (a.priority || 99) - (b.priority || 99));
 
   function render() {

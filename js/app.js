@@ -40,7 +40,7 @@ async function initHomepageRoster() {
   const squad = await store.getSquad();
   if (!squad || squad.length === 0) return;
 
-  // Strictly sort by priority 1 to 18
+  // Strictly sort by priority 1 to 21
   squad.sort((a, b) => (a.priority || 99) - (b.priority || 99));
 
   // In first page only first 4 players

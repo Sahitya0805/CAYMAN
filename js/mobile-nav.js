@@ -51,7 +51,7 @@
       '    <a href="squad.html" class="csk-drawer-link ' + (active === 'squad' ? 'is-active' : '') + '">',
       '      <span class="csk-drawer-icon">🏏</span>',
       '      <span class="csk-drawer-label">Squad</span>',
-      '      <span class="csk-drawer-pill">18 PLAYERS</span>',
+      '      <span class="csk-drawer-pill">21 PLAYERS</span>',
       '    </a>',
       '    <a href="matches.html" class="csk-drawer-link ' + (active === 'matches' ? 'is-active' : '') + '">',
       '      <span class="csk-drawer-icon">📅</span>',
