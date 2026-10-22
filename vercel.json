@@ -6,6 +6,28 @@
   "outputDirectory": ".",
   "cleanUrls": true,
   "trailingSlash": false,
+  "redirects": [
+    {
+      "source": "/matches",
+      "destination": "https://cricclubs.com/CaymanCricketAssociation",
+      "permanent": false
+    },
+    {
+      "source": "/matches.html",
+      "destination": "https://cricclubs.com/CaymanCricketAssociation",
+      "permanent": false
+    },
+    {
+      "source": "/match-detail",
+      "destination": "https://cricclubs.com/CaymanCricketAssociation",
+      "permanent": false
+    },
+    {
+      "source": "/match-detail.html",
+      "destination": "https://cricclubs.com/CaymanCricketAssociation",
+      "permanent": false
+    }
+  ],
   "headers": [
     {
       "source": "/(.*)",
