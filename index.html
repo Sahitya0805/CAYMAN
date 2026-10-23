@@ -13,7 +13,6 @@
   <link rel="stylesheet" href="css/components.css?v=20260923_10">
   <link rel="stylesheet" href="css/pages.css?v=20261018_4k">
   <link rel="stylesheet" href="css/futuristic.css?v=20261019_resp">
-  <link rel="stylesheet" href="css/team-lineup.css?v=20261023_1">
   <link rel="stylesheet" href="css/responsive.css?v=20261023_1">
   <style>
         /* ── Short & Attractive Sponsors Showcase (Dark Futuristic) ── */
@@ -350,12 +349,10 @@
 
     <main>
       <!-- 8K CINEMATIC SPORTS HERO VIEWPORT (SUNRISERS / IPL MATCHDAY FORMAT) -->
-      <section class="hero-cinematic-sports" id="hero-cinematic" aria-label="Official Cayman Super Kings Matchday">
+      <section class="hero-cinematic-sports hero--lineup" id="hero-cinematic" aria-label="Official Cayman Super Kings Matchday">
         <!-- Auto-Changing 8K Matchday Hero Slides -->
         <div class="hero-slides-wrapper" id="hero-slides-wrapper">
-          <div class="hero-slide active" style="background-image: url('assets/csk-official-team-hero.jpg?v=20261018_4k');"></div>
-          <div class="hero-slide" style="background-image: url('assets/csk-hero-batting.jpg?v=20261012_real');"></div>
-          <div class="hero-slide" style="background-image: url('assets/csk-hero-celebration.jpg?v=20261012_real');"></div>
+          <div class="hero-slide hero-slide--lineup active" role="img" aria-label="All 21 Cayman Super Kings players in their royal blue match jerseys" style="background-image: url('assets/team/csk-21-lineup.jpg?v=20261023_1');"></div>
           <!-- Atmospheric Vignette Overlay -->
           <div class="hero-cinematic-overlay"></div>
         </div>
@@ -382,39 +379,6 @@
           </div>
         </div>
       </section>
-
-    <!-- SECTION: ALL 21 KINGS — interactive team lineup -->
-    <section class="team21-section" id="team-21" aria-labelledby="team21-title">
-      <div class="team21-beam team21-beam--left" aria-hidden="true"></div>
-      <div class="team21-beam team21-beam--right" aria-hidden="true"></div>
-      <div class="container team21-container">
-        <div class="team21-head">
-          <span class="team21-eyebrow"><span class="team21-dot"></span> The 2026 Squad</span>
-          <h2 class="team21-title" id="team21-title">All 21 Kings. <span>One Team.</span></h2>
-          <p class="team21-sub">Tap or hover a face to meet the player &mdash; then jump straight to his profile.</p>
-        </div>
-
-        <figure class="team21-frame" id="team21-frame">
-          <picture>
-            <source type="image/webp" srcset="assets/team/csk-21-lineup-1200.webp 1200w, assets/team/csk-21-lineup.webp 2400w" sizes="(max-width: 1240px) 100vw, 1200px">
-            <img src="assets/team/csk-21-lineup.jpg" width="2400" height="1080" alt="All 21 Cayman Super Kings players in their royal blue match jerseys, lined up in three rows" class="team21-img" loading="lazy" decoding="async">
-          </picture>
-          <div class="team21-hotspots" id="team21-hotspots" role="list" aria-label="Players in the lineup"></div>
-          <div class="team21-tip" id="team21-tip" role="status" aria-live="polite" hidden>
-            <span class="team21-tip-role"></span>
-            <strong class="team21-tip-name"></strong>
-            <a class="team21-tip-link" href="#">View profile <span aria-hidden="true">&rarr;</span></a>
-          </div>
-          <span class="team21-corner team21-corner--tl" aria-hidden="true"></span>
-          <span class="team21-corner team21-corner--tr" aria-hidden="true"></span>
-          <span class="team21-corner team21-corner--bl" aria-hidden="true"></span>
-          <span class="team21-corner team21-corner--br" aria-hidden="true"></span>
-        </figure>
-        <p class="team21-note">Lineup composed from each player&rsquo;s official squad portrait.</p>
-
-        <div class="team21-chips" id="team21-chips" aria-label="Squad list"></div>
-      </div>
-    </section>
 
     <!-- SECTION 1: FIRST XI SQUAD ROSTER (Professional Futuristic White Theme) -->
     <section class="section editorial-section" id="squad-section" style="position: relative; overflow: hidden; background: #080E18; border-bottom: 1px solid rgba(255, 255, 255, 0.08);">
@@ -1239,6 +1203,5 @@
 
   <script type="module" src="js/app.js?v=20261018_gallery_v2"></script>
   <script src="js/journey-book.js?v=20260923_10"></script>
-  <script src="js/team-lineup.js?v=20261023_1" defer></script>
 </body>
 </html>

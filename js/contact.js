@@ -4,8 +4,8 @@
  * ─────────────────────────────────────────────────────────────
  */
 
-// Optional: Set your deployed Google Apps Script Web App URL if using Google Sheets
-export const GOOGLE_SHEET_WEBHOOK_URL = 'https://script.google.com/macros/s/AKfycbxdrEtosSOUijKfu7X-1a1KxT96iuScxyG5YWwk87xDCukycILrLo28se0GwPouOVUTDw/exec';
+// Google Sheets forwarding happens on the server (/api/contact) so the
+// sheet's webhook address is never exposed in the browser.
 
 export function initContactForm() {
   const form = document.getElementById('contact-form');
@@ -106,17 +106,9 @@ export function initContactForm() {
       name: name,
       email: email,
       subject: subject || 'General Club Enquiry',
-      message: message
+      message: message,
+      website: (form.querySelector('input[name="website"]') || {}).value || ''
     };
-
-    // Save to local storage for persistence & review
-    try {
-      const existing = JSON.parse(localStorage.getItem('csk_enquiries') || '[]');
-      existing.unshift(payload);
-      localStorage.setItem('csk_enquiries', JSON.stringify(existing.slice(0, 50)));
-    } catch (e) {
-      console.warn('LocalStorage save failed:', e);
-    }
 
     // UI Loading state
     if (submitBtn) {
@@ -169,16 +161,6 @@ export function initContactForm() {
           Message: payload.message
         })
       }).catch(err => console.warn('Email dispatch relay notice:', err));
-
-      // 3. Fallback direct dispatch to Google Sheets Webhook if serverless API didn't handle it
-      if (!apiHandled && GOOGLE_SHEET_WEBHOOK_URL && GOOGLE_SHEET_WEBHOOK_URL.startsWith('http')) {
-        await fetch(GOOGLE_SHEET_WEBHOOK_URL, {
-          method: 'POST',
-          mode: 'no-cors',
-          headers: { 'Content-Type': 'text/plain;charset=utf-8' },
-          body: JSON.stringify(payload)
-        }).catch(err => console.warn('Google Sheet dispatch notice:', err));
-      }
 
       // 4. Show Success State
       form.style.display = 'none';

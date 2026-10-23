@@ -23,3 +23,8 @@ out/
 *.pem
 *.key
 *.cert
+
+# Personal data from website forms must never be committed or deployed
+content/enquiries.json
+exports/*Enquiries*
+exports/*Complete_Database*

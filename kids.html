@@ -1517,6 +1517,7 @@
           <p>Fill out the quick form below. Our Junior Academy coordinator will contact you promptly with session details and trial information.</p>
 
           <form id="youth-enrollment-form" onsubmit="handleYouthEnrollment(event)">
+            <div aria-hidden="true" style="position:absolute;left:-10000px;width:1px;height:1px;overflow:hidden;"><label>Leave this empty <input type="text" name="website" tabindex="-1" autocomplete="off"></label></div>
             <div class="youth-input-group">
               <label class="youth-input-label" for="parent-name">Parent / Guardian Full Name *</label>
               <input type="text" id="parent-name" class="youth-input-field" placeholder="e.g. Michael Smith" required>
@@ -1715,7 +1716,8 @@
     });
 
     // Handle Enrollment Form Submit (API, Email, Google Sheets & Excel Registry)
-    const GOOGLE_SHEET_WEBHOOK_URL = 'https://script.google.com/macros/s/AKfycbyETv2XdvX7LimsrXNq0eRaK0RVRU2_nABhKRpofuTN4ec7FWL6dLlSPhNu2qgAPvtUag/exec';
+    // Google Sheets forwarding happens on the server (/api/contact).
+    function cskEsc(v) { return String(v).replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c])); }
 
     async function handleYouthEnrollment(e) {
       e.preventDefault();
@@ -1745,22 +1747,10 @@
         childInfo: childInfo,
         level: level,
         experienceLevel: level,
+        website: (document.querySelector('#youth-enrollment-form input[name="website"]') || {}).value || '',
         subject: `Youth Academy Enrollment - ${childInfo} (${level})`,
         message: `[YOUTH ACADEMY ENROLLMENT] Parent/Guardian: ${parentName} | Child & Age: ${childInfo} | Phone/WhatsApp: ${phone} | Email: ${email || 'Not provided'} | Level: ${level} | Venue: Smith Road Oval, George Town`
       };
-
-      // 1. Save to LocalStorage for persistent browser access
-      try {
-        const enrollments = JSON.parse(localStorage.getItem('csk_youth_enrollments') || '[]');
-        enrollments.unshift(payload);
-        localStorage.setItem('csk_youth_enrollments', JSON.stringify(enrollments.slice(0, 50)));
-
-        const clubEnquiries = JSON.parse(localStorage.getItem('csk_enquiries') || '[]');
-        clubEnquiries.unshift(payload);
-        localStorage.setItem('csk_enquiries', JSON.stringify(clubEnquiries.slice(0, 50)));
-      } catch (err) {
-        console.warn('LocalStorage save notice:', err);
-      }
 
       // 2. Dispatch to Serverless Database API (/api/contact -> content/enquiries.json -> Google Sheets & Excel export)
       let apiHandled = false;
@@ -1798,20 +1788,10 @@
         })
       }).catch(err => console.warn('Email dispatch notice:', err));
 
-      // 4. Direct dispatch to Google Sheets Webhook if serverless API didn't confirm sheet sync
-      if (!apiHandled && GOOGLE_SHEET_WEBHOOK_URL && GOOGLE_SHEET_WEBHOOK_URL.startsWith('http')) {
-        await fetch(GOOGLE_SHEET_WEBHOOK_URL, {
-          method: 'POST',
-          mode: 'no-cors',
-          headers: { 'Content-Type': 'text/plain;charset=utf-8' },
-          body: JSON.stringify(payload)
-        }).catch(err => console.warn('Google Sheet dispatch notice:', err));
-      }
-
       // 5. UI Confirmation
       feedback.style.display = 'block';
       feedback.style.color = '#059669';
-      feedback.innerHTML = '🎉 Thank you, <strong>' + parentName + '</strong>! Enrollment received for <strong>' + childInfo + '</strong>. Data is sent to coaching staff. Our team will WhatsApp / call <strong>' + phone + '</strong> within two business days.';
+      feedback.innerHTML = '🎉 Thank you, <strong>' + cskEsc(parentName) + '</strong>! Enrollment received for <strong>' + cskEsc(childInfo) + '</strong>. Data is sent to coaching staff. Our team will WhatsApp / call <strong>' + cskEsc(phone) + '</strong> within two business days.';
       submitBtn.innerHTML = '<span>Registration Confirmed ✓</span>';
       submitBtn.style.background = '#059669';
       submitBtn.disabled = false;

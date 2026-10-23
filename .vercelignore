@@ -1,0 +1,7 @@
+# Keep build tools, raw data exports and docs off the public website
+scripts/
+exports/
+*.py
+README.md
+pnpm-lock.yaml
+.gitignore

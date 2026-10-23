@@ -261,3 +261,22 @@ img, video, svg, canvas, iframe {
     column-gap: 0 !important;
   }
 }
+
+/* ── Homepage hero: single 21-player lineup image ──────────── */
+/* The lineup is 2400×1080 (2.22:1); size the banner to match so the
+   whole team is visible and the photo is never stretched. */
+.hero-cinematic-sports.hero--lineup {
+  aspect-ratio: 2400 / 1080;
+  min-height: 460px;
+}
+.hero--lineup .hero-slide--lineup {
+  opacity: 1 !important;
+  background-size: cover !important;
+  background-position: center top !important;
+}
+@media (max-width: 768px) {
+  .hero--lineup .hero-slides-wrapper {
+    aspect-ratio: 2400 / 1080 !important;
+    min-height: 0 !important;
+  }
+}
