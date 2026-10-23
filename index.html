@@ -13,6 +13,8 @@
   <link rel="stylesheet" href="css/components.css?v=20260923_10">
   <link rel="stylesheet" href="css/pages.css?v=20261018_4k">
   <link rel="stylesheet" href="css/futuristic.css?v=20261019_resp">
+  <link rel="stylesheet" href="css/lineup-hotspots.css?v=20261023_1">
+  <link rel="stylesheet" href="css/animations.css?v=20261023_1">
   <link rel="stylesheet" href="css/responsive.css?v=20261023_1">
   <style>
         /* ── Short & Attractive Sponsors Showcase (Dark Futuristic) ── */
@@ -203,6 +205,7 @@
     }
   </style>
   <script src="js/mobile-nav.js" defer></script>
+  <script src="js/animations.js?v=20261023_1" defer></script>
 </head>
 <body class="editorial-home">
     <!-- CSK CRICKET MATCHDAY POWERPLAY LOADER (CRICKET VIBES EDITION) -->
@@ -355,6 +358,13 @@
           <div class="hero-slide hero-slide--lineup active" role="img" aria-label="All 21 Cayman Super Kings players in their royal blue match jerseys" style="background-image: url('assets/team/csk-21-lineup.jpg?v=20261023_1');"></div>
           <!-- Atmospheric Vignette Overlay -->
           <div class="hero-cinematic-overlay"></div>
+          <!-- Point at / tap a face to see who it is -->
+          <div class="lineup-spots" id="lineup-spots" role="list" aria-label="Players in the team photo"></div>
+          <div class="lineup-tip" id="lineup-tip" role="status" aria-live="polite" hidden>
+            <span class="lineup-tip-role"></span>
+            <strong class="lineup-tip-name"></strong>
+            <a class="lineup-tip-link" href="#">View profile <span aria-hidden="true">&rarr;</span></a>
+          </div>
         </div>
 
         <!-- Hero Bottom Content Container -->
@@ -1203,5 +1213,6 @@
 
   <script type="module" src="js/app.js?v=20261018_gallery_v2"></script>
   <script src="js/journey-book.js?v=20260923_10"></script>
+  <script src="js/lineup-hotspots.js?v=20261023_1" defer></script>
 </body>
 </html>

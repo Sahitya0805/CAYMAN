@@ -1,0 +1,107 @@
+/* Homepage hero: point at (or tap) a face in the team lineup to see the player */
+.lineup-spots {
+  position: absolute;
+  inset: 0;
+  z-index: 6;
+  pointer-events: none;
+}
+.lineup-spot {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  min-width: 28px;
+  min-height: 28px;
+  padding: 0;
+  border-radius: 50%;
+  border: 2px solid transparent;
+  background: transparent;
+  cursor: pointer;
+  pointer-events: auto;
+  transition: border-color 0.2s ease, box-shadow 0.25s ease, background 0.25s ease;
+}
+.lineup-spot:focus { outline: none; }
+.lineup-spot:hover,
+.lineup-spot:focus-visible,
+.lineup-spot.is-active {
+  border-color: #FCD34D;
+  background: rgba(255, 255, 255, 0.05);
+  box-shadow: 0 0 0 4px rgba(252, 211, 77, 0.25), 0 0 28px rgba(252, 211, 77, 0.55);
+}
+
+.lineup-tip {
+  position: absolute;
+  z-index: 7;
+  transform: translate(-50%, calc(-100% - 14px));
+  min-width: 180px;
+  max-width: 240px;
+  padding: 11px 14px 12px;
+  border-radius: 14px;
+  background: rgba(6, 16, 36, 0.94);
+  border: 1px solid rgba(56, 189, 248, 0.45);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.5);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  text-align: left;
+  pointer-events: auto;
+  animation: lineup-tip-in 0.18s ease-out;
+}
+.lineup-tip[hidden] { display: none; }
+.lineup-tip::after {
+  content: "";
+  position: absolute;
+  left: var(--arrow, 50%);
+  bottom: -7px;
+  width: 12px;
+  height: 12px;
+  transform: translateX(-50%) rotate(45deg);
+  background: rgba(6, 16, 36, 0.94);
+  border-right: 1px solid rgba(56, 189, 248, 0.45);
+  border-bottom: 1px solid rgba(56, 189, 248, 0.45);
+}
+.lineup-tip.is-below { transform: translate(-50%, 14px); }
+.lineup-tip.is-below::after { bottom: auto; top: -7px; transform: translateX(-50%) rotate(225deg); }
+@keyframes lineup-tip-in { from { opacity: 0; margin-top: 6px; } to { opacity: 1; margin-top: 0; } }
+
+.lineup-tip-role {
+  display: block;
+  color: #38BDF8;
+  font-size: 0.66rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+.lineup-tip-name {
+  display: block;
+  margin: 3px 0 8px;
+  font-family: var(--font-display);
+  font-size: 1.3rem;
+  line-height: 1.05;
+  text-transform: uppercase;
+  color: #fff;
+}
+.lineup-tip-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 12px;
+  border-radius: 999px;
+  background: linear-gradient(135deg, #FCD34D, #F59E0B);
+  color: #0B1324 !important;
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+
+@media (max-width: 640px) {
+  .lineup-tip { min-width: 150px; padding: 9px 11px 10px; }
+  .lineup-tip-name { font-size: 1.05rem; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .lineup-tip { animation: none; }
+}
+
+/* Phones: the banner photo is short, so let the name card hang below it */
+@media (max-width: 768px) {
+  .hero--lineup .hero-slides-wrapper { overflow: visible !important; z-index: 6; }
+}

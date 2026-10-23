@@ -1,0 +1,159 @@
+/* ─────────────────────────────────────────────────────────────
+   SITEWIDE MOTION (paired with js/animations.js)
+   Hidden "before" states only apply once the script has added
+   .anim-on to <html>, and never for reduced-motion users.
+   ───────────────────────────────────────────────────────────── */
+:root {
+  --anim-ease: cubic-bezier(0.16, 1, 0.3, 1);
+  --anim-dur: 0.85s;
+}
+
+/* ── Scroll reveal variants ─────────────────────────────────── */
+.anim-on [data-anim]:not(.anim-in) { opacity: 0; }
+
+.anim-on [data-anim].anim-in:not(.anim-done) {
+  animation-duration: var(--anim-dur);
+  animation-timing-function: var(--anim-ease);
+  animation-delay: var(--ad, 0ms);
+  animation-fill-mode: both;
+}
+.anim-on [data-anim="fade"].anim-in:not(.anim-done) { animation-name: anim-fade-up; }
+.anim-on [data-anim="rise"].anim-in:not(.anim-done) { animation-name: anim-rise; }
+.anim-on [data-anim="card"].anim-in:not(.anim-done) { animation-name: anim-card; }
+.anim-on [data-anim="zoom"].anim-in:not(.anim-done) { animation-name: anim-zoom; animation-duration: 1.1s; }
+.anim-on [data-anim="left"].anim-in:not(.anim-done) { animation-name: anim-left; }
+.anim-on [data-anim="pop"].anim-in:not(.anim-done) { animation-name: anim-pop; }
+.anim-on [data-anim="drop"].anim-in:not(.anim-done) { animation-name: anim-drop; }
+
+@keyframes anim-fade-up {
+  from { opacity: 0; transform: translateY(18px); }
+  to   { opacity: 1; transform: none; }
+}
+@keyframes anim-rise {
+  from { opacity: 0; transform: translateY(26px); clip-path: inset(0 0 100% 0); }
+  to   { opacity: 1; transform: none; clip-path: inset(0 0 -20% 0); }
+}
+@keyframes anim-card {
+  from { opacity: 0; transform: translateY(34px) scale(0.97); }
+  to   { opacity: 1; transform: none; }
+}
+@keyframes anim-zoom {
+  from { opacity: 0; transform: scale(1.08); filter: saturate(0.6) brightness(0.8); }
+  to   { opacity: 1; transform: none; filter: none; }
+}
+@keyframes anim-left {
+  from { opacity: 0; transform: translateX(-18px); }
+  to   { opacity: 1; transform: none; }
+}
+@keyframes anim-pop {
+  0%   { opacity: 0; transform: scale(0.88); }
+  65%  { opacity: 1; transform: scale(1.03); }
+  100% { opacity: 1; transform: none; }
+}
+@keyframes anim-drop {
+  from { opacity: 0; transform: translateY(-12px); letter-spacing: 0.3em; }
+  to   { opacity: 1; transform: none; }
+}
+
+/* ── Hero headlines: words rise in one after another ────────── */
+.anim-on .anim-headline .anim-word {
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(0.6em) rotate(2deg);
+  filter: blur(6px);
+}
+.anim-on .anim-headline.anim-in .anim-word {
+  animation: anim-word 0.9s var(--anim-ease) both;
+  animation-delay: calc(250ms + var(--wi, 0) * 90ms);
+}
+@keyframes anim-word {
+  to { opacity: 1; transform: none; filter: none; }
+}
+
+/* ── Homepage hero: gentle light sweep across the team photo ── */
+.hero--lineup .hero-slide--lineup { overflow: hidden; }
+.hero--lineup .hero-slide--lineup::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+  background: linear-gradient(105deg, transparent 35%, rgba(255, 255, 255, 0.10) 48%, transparent 60%);
+  transform: translateX(-120%);
+  animation: anim-sweep 7s ease-in-out 1.2s infinite;
+}
+@keyframes anim-sweep {
+  0%   { transform: translateX(-120%); }
+  35%  { transform: translateX(120%); }
+  100% { transform: translateX(120%); }
+}
+
+/* ── Header tightens once scrolled ──────────────────────────── */
+.site-header { transition: transform 0.35s var(--anim-ease), filter 0.35s ease; }
+.site-header.is-scrolled .franchise-nav-bar {
+  box-shadow: 0 14px 34px rgba(0, 0, 0, 0.45), 0 0 0 1px rgba(56, 189, 248, 0.18);
+  transition: box-shadow 0.35s ease;
+}
+
+/* ── Hover micro-interactions ───────────────────────────────── */
+@media (hover: hover) and (pointer: fine) {
+  /* nav links: underline slides in */
+  .nav-link { position: relative; }
+  .nav-link::after {
+    content: "";
+    position: absolute;
+    left: 18%;
+    right: 18%;
+    bottom: 4px;
+    height: 2px;
+    border-radius: 2px;
+    background: linear-gradient(90deg, #FCD34D, #38BDF8);
+    transform: scaleX(0);
+    transform-origin: center;
+    transition: transform 0.3s var(--anim-ease);
+    pointer-events: none;
+  }
+  .nav-link:hover::after { transform: scaleX(1); }
+  .nav-link.active::after { transform: scaleX(0); }
+
+  /* buttons: glow + brighten (no transform: other scripts move them) */
+  .btn, a[class*="btn"], button[class*="btn"] {
+    transition: filter 0.25s ease, box-shadow 0.3s ease, background-color 0.25s ease, color 0.25s ease, border-color 0.25s ease;
+  }
+  .btn:hover, a[class*="btn"]:hover, button[class*="btn"]:hover {
+    filter: brightness(1.08) saturate(1.05);
+    box-shadow: 0 10px 28px rgba(56, 189, 248, 0.25);
+  }
+
+  /* photos inside cards ease in on hover */
+  [class*="-card"] img,
+  .card img,
+  figure img {
+    transition: transform 0.7s var(--anim-ease), filter 0.4s ease;
+  }
+  [class*="-card"]:hover img,
+  .card:hover img,
+  figure:hover img {
+    transform: scale(1.045);
+  }
+
+  /* footer & inline links: subtle colour sweep */
+  footer a:not([class*="btn"]) {
+    background: linear-gradient(90deg, #FCD34D, #FCD34D) left bottom / 0 1px no-repeat;
+    transition: background-size 0.3s var(--anim-ease), color 0.2s ease;
+  }
+  footer a:not([class*="btn"]):hover { background-size: 100% 1px; }
+}
+
+/* Squad / match cards are already tilted by script — keep images still there */
+.squad-player-stage-card img,
+.roster-stage-card img,
+.fixture-ticket img {
+  transform: none !important;
+}
+
+/* ── Respect reduced motion everywhere ─────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  .hero--lineup .hero-slide--lineup::after { animation: none; display: none; }
+  .nav-link::after { transition: none; }
+}

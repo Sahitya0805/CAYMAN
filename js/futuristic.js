@@ -235,12 +235,9 @@ function initLiveTelemetryHUD() {
  * 7. Cyber Stagger Scroll Reveal using IntersectionObserver
  */
 function initCyberScrollReveals() {
+  // Whole sections and headings are now animated element-by-element by
+  // js/animations.js, so only the card types below use this effect.
   const selectors = [
-    'section',
-    '.section',
-    '.section-head',
-    '.section-title',
-    '.section-subtitle',
     '.youth-photo-card',
     '.youth-cohort-card',
     '.squad-player-stage-card',

@@ -14,10 +14,909 @@
   <link rel="stylesheet" href="css/components.css?v=20260923_10">
   <link rel="stylesheet" href="css/pages.css?v=20261018_gallery_v2">
   <link rel="stylesheet" href="css/futuristic.css?v=20261019_resp">
-
-  <link rel="stylesheet" href="css/gallery.css?v=20261023_1">
+  <link rel="stylesheet" href="css/animations.css?v=20261023_1">
   <link rel="stylesheet" href="css/responsive.css?v=20261023_1">
+
+  <style>
+    /* ── CSK PREMIUM STADIUM GALLERY & MEDIA ARCHIVE UI/UX ── */
+    body.page-gallery {
+      background-color: #F8FAFC !important;
+      color: #0F172A;
+      font-family: var(--font-sans, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif);
+      margin: 0;
+      padding: 0;
+    }
+
+    /* Stadium Hero Header with 5-Bulb Floodlight Support */
+    .csk-gallery-hero {
+      position: relative;
+      overflow: hidden;
+      padding: 68px 0 94px !important;
+      background:
+        radial-gradient(circle at 50% 0%, rgba(2, 132, 199, 0.28) 0%, transparent 60%),
+        radial-gradient(circle at 85% 20%, rgba(250, 204, 21, 0.12) 0%, transparent 45%),
+        linear-gradient(135deg, #040D21 0%, #0A2454 55%, #030917 100%) !important;
+      border-bottom: 1px solid rgba(56, 189, 248, 0.22);
+      text-align: center;
+      margin: 0 !important;
+    }
+
+    .csk-gallery-hero__inner {
+      position: relative;
+      z-index: 2;
+      max-width: 880px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    .csk-gallery-hero__pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 18px;
+      border-radius: 999px;
+      background: rgba(14, 165, 233, 0.16);
+      border: 1px solid rgba(56, 189, 248, 0.45);
+      color: #7DD3FC;
+      font-size: 0.75rem;
+      font-weight: 800;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      margin-bottom: 16px;
+      box-shadow: 0 4px 20px rgba(2, 132, 199, 0.25);
+    }
+
+    .csk-gallery-hero__pill-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: #FACC15;
+      box-shadow: 0 0 10px #FACC15;
+    }
+
+    .csk-gallery-hero__title {
+      color: #FFFFFF;
+      font-family: var(--font-display, "Chakra Petch", sans-serif);
+      font-size: clamp(2.4rem, 5.2vw, 3.8rem);
+      font-weight: 900;
+      letter-spacing: 0.03em;
+      line-height: 1.06;
+      text-transform: uppercase;
+      margin: 0 0 14px;
+      text-shadow: 0 8px 28px rgba(0, 0, 0, 0.7);
+    }
+
+    .csk-gallery-hero__title span {
+      background: linear-gradient(135deg, #FDE047 0%, #F59E0B 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .csk-gallery-hero__desc {
+      color: #CBD5E1;
+      font-size: 1.04rem;
+      line-height: 1.65;
+      max-width: 660px;
+      margin: 0 auto 26px;
+    }
+
+    /* Hero Vault Telemetry Strip */
+    .csk-gallery-hero__stats {
+      display: inline-flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      gap: 10px 24px;
+      padding: 10px 24px;
+      border-radius: 999px;
+      background: rgba(6, 17, 38, 0.68);
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+    }
+
+    .csk-gallery-stat-item {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      font-size: 0.76rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: #E2E8F0;
+    }
+
+    .csk-gallery-stat-item strong {
+      color: #FDE047;
+      font-size: 0.88rem;
+      font-weight: 900;
+    }
+
+    .csk-gallery-stat-sep {
+      width: 4px;
+      height: 4px;
+      border-radius: 50%;
+      background: rgba(56, 189, 248, 0.55);
+    }
+
+    /* Main Gallery Viewport */
+    .gallery-main-viewport {
+      background:
+        radial-gradient(circle at 50% 0%, rgba(224, 242, 254, 0.7) 0%, transparent 50%),
+        linear-gradient(180deg, #EEF2F6 0%, #FFFFFF 260px, #F8FAFC 100%);
+      padding: 0 0 96px;
+      min-height: 75vh;
+    }
+
+    .gallery-container {
+      max-width: 1320px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* Unified Elevated Control Dock */
+    .gallery-control-dock {
+      position: relative;
+      z-index: 10;
+      margin-top: -46px;
+      margin-bottom: 38px;
+      background: rgba(255, 255, 255, 0.98);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1.5px solid rgba(15, 23, 42, 0.08);
+      border-top: 4px solid #0284C7;
+      border-radius: 20px;
+      padding: 22px 26px 20px;
+      box-shadow:
+        0 24px 50px -12px rgba(6, 21, 48, 0.16),
+        0 4px 16px rgba(6, 21, 48, 0.06);
+    }
+
+    .gallery-dock-top-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 16px;
+      padding-bottom: 16px;
+      margin-bottom: 16px;
+      border-bottom: 1px solid #E2E8F0;
+    }
+
+    /* Media Type Segmented Controls (All Media / Photos / Videos) */
+    .gallery-media-types {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: #071630;
+      padding: 5px;
+      border-radius: 999px;
+      border: 1px solid rgba(56, 189, 248, 0.28);
+      box-shadow: inset 0 2px 6px rgba(0, 0, 0, 0.4);
+      flex-wrap: wrap;
+    }
+
+    .gallery-type-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 9px 18px;
+      border-radius: 999px;
+      background: transparent;
+      border: 1px solid transparent;
+      color: #CBD5E1;
+      font-size: 0.8rem;
+      font-weight: 800;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: all 0.22s ease;
+      font-family: inherit;
+    }
+
+    .gallery-type-btn svg {
+      color: #38BDF8;
+      transition: transform 0.2s ease, color 0.2s ease;
+    }
+
+    .gallery-type-btn:hover {
+      color: #FFFFFF;
+      background: rgba(255, 255, 255, 0.08);
+    }
+
+    .gallery-type-btn.is-active {
+      background: linear-gradient(135deg, #0284C7 0%, #0369A1 100%);
+      border-color: rgba(125, 211, 252, 0.65);
+      color: #FFFFFF;
+      box-shadow: 0 4px 14px rgba(2, 132, 199, 0.45);
+    }
+
+    .gallery-type-btn.is-active svg {
+      color: #FDE047;
+    }
+
+    .gallery-type-count {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 24px;
+      height: 20px;
+      padding: 0 7px;
+      border-radius: 999px;
+      background: rgba(6, 15, 32, 0.6);
+      color: #FDE047;
+      font-size: 0.72rem;
+      font-weight: 800;
+    }
+
+    /* Right Dock Controls: Search + Density Switcher + Summary */
+    .gallery-dock-right-tools {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .gallery-search-box {
+      position: relative;
+      display: flex;
+      align-items: center;
+    }
+
+    .gallery-search-box svg {
+      position: absolute;
+      left: 12px;
+      color: #64748B;
+      pointer-events: none;
+    }
+
+    .gallery-search-input {
+      padding: 8px 14px 8px 34px;
+      border-radius: 999px;
+      border: 1.5px solid #CBD5E1;
+      background: #F8FAFC;
+      color: #0F172A;
+      font-size: 0.82rem;
+      font-weight: 600;
+      width: 210px;
+      transition: all 0.2s ease;
+      font-family: inherit;
+    }
+
+    .gallery-search-input:focus {
+      outline: none;
+      border-color: #0284C7;
+      background: #FFFFFF;
+      width: 240px;
+      box-shadow: 0 0 0 3px rgba(2, 132, 199, 0.14);
+    }
+
+    .gallery-view-toggle {
+      display: inline-flex;
+      background: #F1F5F9;
+      border: 1px solid #CBD5E1;
+      border-radius: 10px;
+      padding: 3px;
+      gap: 2px;
+    }
+
+    .gallery-view-btn {
+      border: none;
+      background: transparent;
+      color: #64748B;
+      width: 32px;
+      height: 30px;
+      border-radius: 7px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: all 0.18s ease;
+    }
+
+    .gallery-view-btn.is-active {
+      background: #0A2454;
+      color: #FDE047;
+      box-shadow: 0 2px 6px rgba(10, 36, 84, 0.2);
+    }
+
+    .gallery-results-summary {
+      font-size: 0.82rem;
+      font-weight: 800;
+      color: #475569;
+      letter-spacing: 0.02em;
+      background: #F1F5F9;
+      padding: 6px 12px;
+      border-radius: 999px;
+      border: 1px solid #E2E8F0;
+    }
+
+    /* Horizontal Capsule Category Filter Bar */
+    .gallery-pills-bar {
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin: 0;
+      padding: 0;
+    }
+
+    @media (max-width: 860px) {
+      .gallery-dock-top-row {
+        flex-direction: column;
+        align-items: stretch;
+      }
+      .gallery-media-types {
+        justify-content: center;
+      }
+      .gallery-dock-right-tools {
+        justify-content: space-between;
+      }
+      .gallery-search-box {
+        flex: 1;
+      }
+      .gallery-search-input,
+      .gallery-search-input:focus {
+        width: 100%;
+      }
+      .gallery-pills-bar {
+        overflow-x: auto;
+        flex-wrap: nowrap;
+        padding-bottom: 4px;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+      }
+      .gallery-pills-bar::-webkit-scrollbar {
+        display: none;
+      }
+    }
+
+    .gallery-pill-btn {
+      background: #F8FAFC;
+      color: #1E293B;
+      border: 1.5px solid #CBD5E1;
+      border-radius: 999px;
+      padding: 8px 20px;
+      font-size: 0.8rem;
+      font-weight: 800;
+      letter-spacing: 0.05em;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      white-space: nowrap;
+      font-family: inherit;
+    }
+
+    .gallery-pill-btn:hover {
+      background: #E2E8F0;
+      border-color: #94A3B8;
+      color: #0F172A;
+      transform: translateY(-1px);
+    }
+
+    .gallery-pill-btn.is-active {
+      background: linear-gradient(135deg, #091E46 0%, #0D2D66 100%);
+      color: #FDE047;
+      border-color: #0284C7;
+      box-shadow: 0 6px 16px rgba(10, 36, 84, 0.25);
+    }
+
+    @media (max-width: 640px) {
+      .csk-gallery-hero {
+        padding: 44px 0 68px !important;
+      }
+      .csk-gallery-hero__stats {
+        border-radius: 14px;
+        padding: 10px 14px;
+        gap: 8px 14px;
+      }
+      .csk-gallery-stat-sep {
+        display: none;
+      }
+      .gallery-container {
+        padding: 0 14px;
+      }
+      .gallery-control-dock {
+        margin-top: -32px;
+        margin-bottom: 24px;
+        padding: 14px 12px;
+        border-radius: 16px;
+      }
+      .gallery-dock-top-row {
+        gap: 12px;
+        padding-bottom: 12px;
+        margin-bottom: 12px;
+      }
+      .gallery-media-types {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        width: 100%;
+        gap: 4px;
+        padding: 4px;
+        border-radius: 14px;
+        box-sizing: border-box;
+      }
+      .gallery-type-btn {
+        justify-content: center;
+        padding: 8px 5px;
+        font-size: 0.7rem;
+        gap: 4px;
+        border-radius: 10px;
+        white-space: nowrap;
+      }
+      .gallery-type-btn svg {
+        width: 12px;
+        height: 12px;
+        flex-shrink: 0;
+      }
+      .gallery-type-count {
+        min-width: 18px;
+        height: 17px;
+        padding: 0 4px;
+        font-size: 0.65rem;
+      }
+      .gallery-dock-right-tools {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 8px;
+      }
+      .gallery-results-summary {
+        text-align: center;
+      }
+      .gallery-view-toggle {
+        display: none;
+      }
+      .gallery-pill-btn {
+        padding: 7px 14px;
+        font-size: 0.76rem;
+      }
+    }
+
+    /* 3-Column Premium Album Card Grid (3 Photos or Videos per Row) */
+    .csk-album-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      transition: all 0.25s ease;
+    }
+
+    @media (max-width: 960px) {
+      .csk-album-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 18px;
+      }
+    }
+
+    @media (max-width: 580px) {
+      .csk-album-grid {
+        grid-template-columns: 1fr;
+        gap: 18px;
+      }
+    }
+
+    /* Individual Album Card — Luxury Broadcast Frame */
+    .csk-album-card {
+      position: relative;
+      border-radius: 16px;
+      overflow: hidden;
+      background: #061124;
+      aspect-ratio: 4 / 3.4;
+      cursor: pointer;
+      border: 1.5px solid rgba(15, 23, 42, 0.12);
+      box-shadow:
+        0 10px 26px -6px rgba(6, 21, 48, 0.14),
+        0 2px 6px rgba(6, 21, 48, 0.06);
+      transition: transform 0.32s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.32s ease, border-color 0.32s ease;
+    }
+
+    /* Top Gold/Cyan Broadcast Accent Line on Hover */
+    .csk-album-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3.5px;
+      background: linear-gradient(90deg, #F59E0B 0%, #FDE047 50%, #38BDF8 100%);
+      opacity: 0;
+      transform: scaleX(0.6);
+      transition: opacity 0.28s ease, transform 0.28s ease;
+      z-index: 5;
+    }
+
+    .csk-album-card:hover {
+      transform: translateY(-7px);
+      border-color: rgba(2, 132, 199, 0.65);
+      box-shadow:
+        0 22px 44px -10px rgba(6, 21, 48, 0.32),
+        0 0 0 1px rgba(56, 189, 248, 0.35);
+    }
+
+    .csk-album-card:hover::before {
+      opacity: 1;
+      transform: scaleX(1);
+    }
+
+    .csk-album-media-wrap {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+    }
+
+    .csk-album-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 18%;
+      display: block;
+      transition: transform 0.55s cubic-bezier(0.16, 1, 0.3, 1), filter 0.35s ease;
+    }
+
+    .csk-album-card.is-video-card .csk-album-img,
+    .csk-album-img.csk-video-poster-img {
+      object-position: center 40%;
+    }
+
+    .csk-album-card:hover .csk-album-img {
+      transform: scale(1.07);
+      filter: contrast(1.04) saturate(1.06);
+    }
+
+    /* Top-Left Media Type Badge & Top-Right Frame Index */
+    .csk-photo-pill-badge {
+      position: absolute;
+      top: 12px;
+      left: 12px;
+      padding: 4px 10px;
+      border-radius: 999px;
+      background: rgba(6, 15, 32, 0.76);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      color: #F8FAFC;
+      font-size: 0.66rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      z-index: 3;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+    }
+
+    .csk-photo-pill-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: #FACC15;
+    }
+
+    .csk-card-index-badge {
+      position: absolute;
+      top: 12px;
+      right: 12px;
+      padding: 3px 8px;
+      border-radius: 6px;
+      background: rgba(6, 15, 32, 0.68);
+      backdrop-filter: blur(6px);
+      -webkit-backdrop-filter: blur(6px);
+      border: 1px solid rgba(255, 255, 255, 0.16);
+      color: #94A3B8;
+      font-family: var(--font-display, monospace);
+      font-size: 0.66rem;
+      font-weight: 800;
+      letter-spacing: 0.06em;
+      z-index: 3;
+      transition: all 0.25s ease;
+    }
+
+    .csk-album-card:hover .csk-card-index-badge {
+      background: rgba(2, 132, 199, 0.88);
+      border-color: #7DD3FC;
+      color: #FFFFFF;
+    }
+
+    .csk-video-badge {
+      position: absolute;
+      top: 12px;
+      left: 12px;
+      padding: 4px 11px;
+      border-radius: 999px;
+      background: rgba(6, 14, 29, 0.88);
+      backdrop-filter: blur(8px);
+      border: 1px solid rgba(56, 189, 248, 0.55);
+      color: #38BDF8;
+      font-size: 0.68rem;
+      font-weight: 800;
+      letter-spacing: 0.06em;
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      z-index: 3;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.35);
+    }
+
+    .csk-video-duration {
+      color: #FDE047;
+      font-weight: 800;
+      margin-left: 2px;
+    }
+
+    /* Video Play Overlay Indicator */
+    .csk-card-play-btn {
+      position: absolute;
+      top: 45%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      background: rgba(10, 36, 84, 0.88);
+      backdrop-filter: blur(6px);
+      border: 2px solid #38BDF8;
+      color: #FFFFFF;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.55), 0 0 16px rgba(56, 189, 248, 0.4);
+      transition: transform 0.25s ease, background 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+      z-index: 2;
+      pointer-events: none;
+    }
+
+    .csk-card-play-btn svg {
+      margin-left: 3px;
+      fill: #FFFFFF;
+    }
+
+    .csk-album-card:hover .csk-card-play-btn {
+      transform: translate(-50%, -50%) scale(1.14);
+      background: #0284C7;
+      border-color: #FDE047;
+      box-shadow: 0 12px 32px rgba(0, 0, 0, 0.65), 0 0 24px rgba(253, 224, 71, 0.6);
+    }
+
+    .csk-album-card:hover .csk-card-play-btn svg {
+      fill: #FDE047;
+    }
+
+    /* Bottom Gradient Overlay Strip */
+    .csk-album-overlay {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      padding: 54px 16px 14px;
+      background: linear-gradient(
+        to top,
+        rgba(3, 10, 24, 0.98) 0%,
+        rgba(4, 14, 34, 0.86) 50%,
+        rgba(4, 14, 34, 0.3) 80%,
+        transparent 100%
+      );
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      z-index: 2;
+    }
+
+    .csk-album-info {
+      width: 100%;
+    }
+
+    .csk-album-meta-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 6px;
+      margin-bottom: 5px;
+    }
+
+    .csk-album-tag {
+      color: #FACC15;
+      font-size: 0.65rem;
+      font-weight: 800;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      display: inline-block;
+    }
+
+    .csk-album-tag.is-video-tag {
+      color: #38BDF8;
+    }
+
+    .csk-album-hover-action {
+      font-size: 0.62rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: #7DD3FC;
+      opacity: 0;
+      transform: translateX(-6px);
+      transition: all 0.25s ease;
+    }
+
+    .csk-album-card:hover .csk-album-hover-action {
+      opacity: 1;
+      transform: translateX(0);
+    }
+
+    .csk-album-title {
+      color: #FFFFFF;
+      font-size: 0.96rem;
+      font-weight: 800;
+      line-height: 1.3;
+      margin: 0 0 4px;
+      text-shadow: 0 2px 6px rgba(0, 0, 0, 0.85);
+      display: -webkit-box;
+      -webkit-line-clamp: 1;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+
+    .csk-album-caption {
+      color: #CBD5E1;
+      font-size: 0.76rem;
+      line-height: 1.4;
+      margin: 0;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      opacity: 0.88;
+      transition: opacity 0.25s ease;
+    }
+
+    .csk-album-card:hover .csk-album-caption {
+      opacity: 1;
+      color: #F1F5F9;
+    }
+
+    /* Fullscreen Lightbox Modal */
+    .lightbox-modal {
+      position: fixed;
+      inset: 0;
+      background: rgba(3, 8, 20, 0.96);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+      z-index: 100000;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s ease;
+      padding: 24px;
+    }
+
+    .lightbox-modal.is-active {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .lightbox-close-btn {
+      position: absolute;
+      top: 24px;
+      right: 24px;
+      background: rgba(255, 255, 255, 0.12);
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      color: #FFFFFF;
+      width: 46px;
+      height: 46px;
+      border-radius: 50%;
+      font-size: 1.6rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: background 0.2s ease, transform 0.2s ease;
+      z-index: 10;
+    }
+
+    .lightbox-close-btn:hover {
+      background: rgba(239, 68, 68, 0.85);
+      transform: scale(1.1);
+    }
+
+    .lightbox-nav-btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(255, 255, 255, 0.12);
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      color: #FFFFFF;
+      width: 52px;
+      height: 52px;
+      border-radius: 50%;
+      font-size: 1.4rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: background 0.2s ease, transform 0.2s ease;
+      z-index: 10;
+    }
+
+    .lightbox-nav-btn:hover {
+      background: #F59E0B;
+      color: #040914;
+      transform: translateY(-50%) scale(1.1);
+    }
+
+    .lightbox-prev-btn { left: 24px; }
+    .lightbox-next-btn { right: 24px; }
+
+    @media (max-width: 640px) {
+      .lightbox-prev-btn { left: 10px; width: 42px; height: 42px; }
+      .lightbox-next-btn { right: 10px; width: 42px; height: 42px; }
+    }
+
+    .lightbox-img-wrap {
+      max-width: 90vw;
+      max-height: 74vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .lightbox-img {
+      max-width: 100%;
+      max-height: 74vh;
+      object-fit: contain;
+      border-radius: 14px;
+      box-shadow: 0 20px 56px rgba(0, 0, 0, 0.85);
+      border: 1px solid rgba(255, 255, 255, 0.16);
+    }
+
+    .lightbox-caption-bar {
+      margin-top: 18px;
+      text-align: center;
+      max-width: 720px;
+      padding: 0 16px;
+    }
+
+    .lightbox-category-pill {
+      display: inline-block;
+      padding: 3px 12px;
+      border-radius: 999px;
+      background: rgba(56, 189, 248, 0.16);
+      border: 1px solid rgba(56, 189, 248, 0.4);
+      color: #38BDF8;
+      font-size: 0.72rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+
+    .lightbox-caption-title {
+      font-size: 1.3rem;
+      font-weight: 800;
+      color: #FFFFFF;
+      margin-bottom: 6px;
+    }
+
+    .lightbox-caption-desc {
+      font-size: 0.96rem;
+      color: #CBD5E1;
+      line-height: 1.5;
+    }
+
+    .lightbox-counter {
+      margin-top: 8px;
+      font-size: 0.78rem;
+      font-weight: 800;
+      color: #FACC15;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+  </style>
   <script src="js/mobile-nav.js" defer></script>
+  <script src="js/animations.js?v=20261023_1" defer></script>
 </head>
 <body class="page-gallery">
   <!-- CSK CRICKET MATCHDAY POWERPLAY LOADER -->
@@ -143,125 +1042,103 @@
         <span class="csk-gallery-hero__pill-dot"></span>
         <span>OFFICIAL FRANCHISE MEDIA VAULT</span>
       </div>
-      <h1 class="csk-gallery-hero__title">The CSK <span>Media Vault</span></h1>
+      <h1 class="csk-gallery-hero__title">Official Photo &amp; <span>Video Gallery</span></h1>
       <p class="csk-gallery-hero__desc">
         Explore authentic matchday photography, Cayman Super Kings player portraits, youth academy clinics, and official club footage from Grand Cayman.
       </p>
       <div class="csk-gallery-hero__stats">
-        <div class="csk-gallery-stat-item"><strong id="hero-stat-total">36</strong> In the vault</div>
+        <div class="csk-gallery-stat-item"><strong id="hero-stat-total">36</strong> Total Archives</div>
         <span class="csk-gallery-stat-sep"></span>
         <div class="csk-gallery-stat-item"><strong id="hero-stat-photos">25</strong> Photos</div>
         <span class="csk-gallery-stat-sep"></span>
-        <div class="csk-gallery-stat-item"><strong id="hero-stat-videos">11</strong> Videos</div>
+        <div class="csk-gallery-stat-item"><strong id="hero-stat-videos">11</strong> Matchday Videos</div>
       </div>
     </div>
   </section>
 
-  <main class="vault-main" id="vault">
-    <div class="vault-wrap">
+  <main class="gallery-main-viewport">
+    <div class="gallery-container">
 
-      <!-- Spotlight reel -->
-      <section class="vault-spotlight" id="vault-spotlight" aria-roledescription="carousel" aria-label="Spotlight reel">
-        <div class="spot-stage" id="spot-stage" tabindex="0">
-          <div id="spot-slides"></div>
-          <div class="spot-shade"></div>
-          <div class="spot-progress" id="spot-progress"></div>
-          <div class="spot-copy" id="spot-copy" aria-live="polite"></div>
-          <div class="spot-arrows">
-            <button class="spot-arrow" id="spot-prev" type="button" aria-label="Previous highlight"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><polyline points="15 18 9 12 15 6"/></svg></button>
-            <button class="spot-arrow" id="spot-next" type="button" aria-label="Next highlight"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><polyline points="9 18 15 12 9 6"/></svg></button>
+      <!-- Unified Elevated Filter & Media Type Control Dock -->
+      <div class="gallery-control-dock">
+        <div class="gallery-dock-top-row">
+          <!-- Media Type Selector (All Media / Photos / Videos) -->
+          <div class="gallery-media-types" id="gallery-media-types">
+            <button class="gallery-type-btn is-active" data-type="all">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+              ALL MEDIA <span class="gallery-type-count" id="count-all">36</span>
+            </button>
+            <button class="gallery-type-btn" data-type="photo">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg>
+              PHOTOS <span class="gallery-type-count" id="count-photos">25</span>
+            </button>
+            <button class="gallery-type-btn" data-type="video">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2" ry="2"/></svg>
+              VIDEOS <span class="gallery-type-count" id="count-videos">11</span>
+            </button>
+          </div>
+
+          <!-- Search + Summary -->
+          <div class="gallery-dock-right-tools">
+            <div class="gallery-search-box">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+              <input type="search" id="gallery-search-input" class="gallery-search-input" placeholder="Search player or moment..." aria-label="Search media archive">
+            </div>
+
+            <div class="gallery-results-summary" id="gallery-results-summary">
+              Showing 49 items
+            </div>
           </div>
         </div>
-        <div class="spot-rail" id="spot-rail" aria-label="Highlights"></div>
-      </section>
 
-      <!-- Sticky control dock -->
-      <div class="vault-dock" id="vault-dock">
-        <div class="vault-seg" id="vault-seg" role="tablist" aria-label="Media type">
-          <span class="vault-seg-ind" aria-hidden="true"></span>
-          <button type="button" role="tab" class="is-active" data-type="all" aria-selected="true">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
-            All <em id="count-all">0</em>
-          </button>
-          <button type="button" role="tab" data-type="photo" aria-selected="false">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg>
-            Photos <em id="count-photos">0</em>
-          </button>
-          <button type="button" role="tab" data-type="video" aria-selected="false">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2" ry="2"/></svg>
-            Videos <em id="count-videos">0</em>
-          </button>
-        </div>
-
-        <div class="vault-chips" id="vault-chips" aria-label="Categories"></div>
-
-        <label class="vault-search" id="vault-search">
-          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
-          <input type="search" id="gallery-search-input" placeholder="Search a player or moment" aria-label="Search the media vault" autocomplete="off">
-          <kbd>/</kbd>
-          <button type="button" class="vault-clear" id="vault-clear" aria-label="Clear search">Clear</button>
-        </label>
-
-        <div class="vault-layout" id="vault-layout" aria-label="Layout">
-          <button type="button" class="is-active" data-layout="masonry" aria-label="Masonry layout" title="Masonry">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><rect x="3" y="3" width="8" height="11" rx="2"/><rect x="13" y="3" width="8" height="7" rx="2"/><rect x="3" y="16" width="8" height="5" rx="2"/><rect x="13" y="12" width="8" height="9" rx="2"/></svg>
-          </button>
-          <button type="button" data-layout="uniform" aria-label="Even grid layout" title="Even grid">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><rect x="3" y="3" width="8" height="8" rx="2"/><rect x="13" y="3" width="8" height="8" rx="2"/><rect x="3" y="13" width="8" height="8" rx="2"/><rect x="13" y="13" width="8" height="8" rx="2"/></svg>
-          </button>
+        <!-- Category Pill Filter Bar -->
+        <div class="gallery-pills-bar" id="gallery-pills-bar">
+          <button class="gallery-pill-btn is-active" data-category="all">ALL CATEGORIES</button>
+          <button class="gallery-pill-btn" data-category="Matchday Action">MATCHDAY ACTION</button>
+          <button class="gallery-pill-btn" data-category="Trophy Celebrations">TROPHY CELEBRATIONS</button>
+          <button class="gallery-pill-btn" data-category="Training & Youth">TRAINING &amp; ACADEMY</button>
+          <button class="gallery-pill-btn" data-category="Behind the Scenes">BEHIND THE SCENES</button>
         </div>
       </div>
 
-      <div class="vault-summary" id="gallery-results-summary" aria-live="polite"></div>
-
-      <div id="gallery-grid" class="vault-grid"></div>
-
-      <div class="vault-empty" id="gallery-empty">
-        <div style="font-size: 2.4rem;">📸</div>
-        <h3>Nothing matches that</h3>
-        <p>Try another name, or clear the filters to see the whole vault.</p>
-        <button type="button" class="vault-btn" id="btn-show-all-albums">Show everything</button>
+      <!-- 4-Column Album Grid -->
+      <div id="gallery-grid" class="csk-album-grid">
+        <!-- Rendered dynamically by js/gallery.js -->
       </div>
+
+      <!-- Empty State -->
+      <div id="gallery-empty" class="empty-state" style="display: none; padding: 60px 20px; text-align: center;">
+        <div style="font-size: 2.5rem; margin-bottom: 12px;">📸</div>
+        <h3 id="empty-title" style="color: #0E366C; font-size: 1.4rem; font-weight: 800; margin-bottom: 8px;">No Items for Selected Filter</h3>
+        <p id="empty-desc" style="color: #64748B; font-size: 0.95rem; max-width: 440px; margin: 0 auto 20px;">
+          Additional media from this category is being digitized from the club archives.
+        </p>
+        <button class="gallery-pill-btn is-active" id="btn-show-all-albums" style="margin: 0 auto;">
+          Show All CSK Media
+        </button>
+      </div>
+
     </div>
   </main>
 
-  <!-- Full-screen viewer -->
-  <div class="vlb" id="vlb" role="dialog" aria-modal="true" aria-label="Media viewer" aria-hidden="true">
-    <div class="vlb-bg" id="vlb-bg"></div>
-    <div class="vlb-top">
-      <div class="vlb-meta">
-        <span class="vlb-count" id="vlb-count">1 / 1</span>
-        <span class="vault-tag" id="vlb-tag"></span>
-      </div>
-      <div class="vlb-actions">
-        <button type="button" class="vlb-icon" id="vlb-play" aria-label="Play slideshow" title="Slideshow (space)">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><polygon points="6 4 20 12 6 20 6 4"/></svg>
-        </button>
-        <button type="button" class="vlb-icon" id="vlb-share" aria-label="Copy link to this item" title="Share">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
-        </button>
-        <a class="vlb-icon" id="vlb-download" aria-label="Download" title="Download" download>
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-        </a>
-        <button type="button" class="vlb-icon" id="vlb-close" aria-label="Close viewer" title="Close (Esc)">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
-        </button>
-      </div>
+  <!-- Fullscreen Click-to-Zoom Lightbox Modal -->
+  <div id="lightbox-modal" class="lightbox-modal" role="dialog" aria-modal="true" aria-label="Media Lightbox">
+    <button class="lightbox-close-btn" id="lightbox-close" aria-label="Close Lightbox">&times;</button>
+    <button class="lightbox-nav-btn lightbox-prev-btn" id="lightbox-prev" aria-label="Previous Item">&#10094;</button>
+    <button class="lightbox-nav-btn lightbox-next-btn" id="lightbox-next" aria-label="Next Item">&#10095;</button>
+
+    <div class="lightbox-img-wrap">
+      <img id="lightbox-img" class="lightbox-img" src="" alt="CSK Gallery High-Res Photo">
+      <video id="lightbox-video" class="lightbox-video" controls playsinline preload="metadata" style="display: none; max-width: 100%; max-height: 74vh; border-radius: 14px; box-shadow: 0 20px 56px rgba(0, 0, 0, 0.85); border: 1px solid rgba(255, 255, 255, 0.16); background: #000;"></video>
     </div>
-    <div class="vlb-stage" id="vlb-stage">
-      <button type="button" class="vlb-nav vlb-prev" id="vlb-prev" aria-label="Previous"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><polyline points="15 18 9 12 15 6"/></svg></button>
-      <div id="vlb-media"></div>
-      <button type="button" class="vlb-nav vlb-next" id="vlb-next" aria-label="Next"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><polyline points="9 18 15 12 9 6"/></svg></button>
-    </div>
-    <div class="vlb-bottom">
-      <div class="vlb-caption">
-        <h3 id="vlb-title"></h3>
-        <p id="vlb-desc"></p>
-      </div>
-      <div class="vlb-strip" id="vlb-strip" aria-label="All items in this view"></div>
+
+    <div class="lightbox-caption-bar">
+      <div class="lightbox-category-pill" id="lightbox-category">Club Archive</div>
+      <div class="lightbox-caption-title" id="lightbox-title">Photo Title</div>
+      <div class="lightbox-caption-desc" id="lightbox-desc">Photo Caption</div>
+      <div class="lightbox-counter" id="lightbox-counter">Photo 1 of 47</div>
     </div>
   </div>
-  <div class="vlb-toast" id="vlb-toast" role="status" aria-live="polite">Link copied</div>
 
   <!-- Site Footer -->
   <footer class="site-footer editorial-footer">
@@ -291,7 +1168,7 @@
 
   <script type="module" src="js/app.js?v=20261019_3col"></script>
   <script type="module">
-    import { initGalleryPage } from './js/gallery.js?v=20261023_vault';
+    import { initGalleryPage } from './js/gallery.js?v=20261019_3col';
     initGalleryPage();
   </script>
 </body>
