@@ -44,13 +44,9 @@ class ContentStore {
     return (await this.fetchJSON('content/fixtures.json', forceRefresh)) || [];
   }
 
-  getMatchesMetadata() {
-    return this.lastMatchesPayload || {
-      source: 'cricclubs_cica_live_sync',
-      sync_status: 'verified_live',
-      live_synced_at: new Date().toISOString(),
-      standings: []
-    };
+  async getMatchesMetadata() {
+    if (this.lastMatchesPayload) return this.lastMatchesPayload;
+    return (await this.fetchJSON('content/fixtures-meta.json')) || {};
   }
 
   async getSquad() {

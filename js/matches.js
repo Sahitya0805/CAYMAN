@@ -23,57 +23,57 @@ export async function initMatchesPage() {
   let currentSeason = seasonFilter ? seasonFilter.value : 'all';
   let currentResult = resultFilter ? resultFilter.value : 'all';
 
+  function populateFilterOptions() {
+    const played = fixtures.filter(isPlayed);
+    if (formatFilter) {
+      const series = [...new Set(played.map(f => f.competition).filter(Boolean))];
+      formatFilter.innerHTML = '<option value="all">All Competitions</option>' +
+        series.map(sr => `<option value="${escapeAttr(sr)}">${sr}</option>`).join('');
+      formatFilter.value = 'all';
+      currentFormat = 'all';
+    }
+    if (seasonFilter) {
+      const seasons = [...new Set(played.map(f => f.season).filter(Boolean))].sort().reverse();
+      seasonFilter.innerHTML = '<option value="all">All Seasons</option>' +
+        seasons.map(y => `<option value="${y}">${y} Season</option>`).join('');
+      seasonFilter.value = 'all';
+      currentSeason = 'all';
+    }
+  }
+
+  function applyBaseFilters(list) {
+    let pool = list.filter(isPlayed);
+    if (currentFormat !== 'all') pool = pool.filter(f => f.competition === currentFormat);
+    if (currentSeason !== 'all') pool = pool.filter(f => f.season === currentSeason);
+    return pool;
+  }
+
   function updateFilterCounts() {
-    let pool = fixtures.filter(f => f.status === 'result');
-    if (currentFormat !== 'all') {
-      pool = pool.filter(f => {
-        const comp = (f.competition || '').toLowerCase();
-        if (currentFormat === 'Super League T20') {
-          return comp.includes('super league') && f.format === 'T20';
-        }
-        if (currentFormat === 'Super League 40-Over') {
-          return comp.includes('super league') && (f.format === '40-Over' || f.format === '40 Over');
-        }
-        if (currentFormat === 'Elite 50-Over') {
-          return comp.includes('elite') && (f.format === '50-Over' || f.format === '50 Over');
-        }
-        if (currentFormat === 'Elite T20') {
-          return comp.includes('elite') && f.format === 'T20';
-        }
-        if (currentFormat === 'Daniel Morris T20') {
-          return comp.includes('daniel morris');
-        }
-        return f.format === currentFormat || comp.includes(currentFormat.toLowerCase());
-      });
-    }
-    if (currentSeason !== 'all') {
-      pool = pool.filter(f => f.season === currentSeason);
-    }
+    const pool = applyBaseFilters(fixtures);
     const wonCount = pool.filter(f => f.is_csk_win === true).length;
     const lostCount = pool.filter(f => f.is_csk_win === false).length;
     if (resultFilter) {
+      const allOpt = resultFilter.querySelector('option[value="all"]');
       const wonOpt = resultFilter.querySelector('option[value="won"]');
       const lostOpt = resultFilter.querySelector('option[value="lost"]');
+      if (allOpt) allOpt.textContent = `All Results (${pool.length})`;
       if (wonOpt) wonOpt.textContent = `CSK Won (${wonCount})`;
       if (lostOpt) lostOpt.textContent = `CSK Lost (${lostCount})`;
     }
   }
+  populateFilterOptions();
   updateFilterCounts();
 
-  function updateSyncTimeDisplay() {
-    if (syncTimestamp) {
-      const now = new Date();
-      const caymanTimeStr = now.toLocaleTimeString('en-US', {
-        timeZone: 'America/Cayman',
-        hour: '2-digit',
-        minute: '2-digit',
-        hour12: true
-      });
-      syncTimestamp.textContent = `Live Synced at ${caymanTimeStr} EST (Cayman Time) • Official CICA Portal`;
-    }
+  async function updateSyncTimeDisplay() {
+    if (!syncTimestamp) return;
+    const meta = await store.getMatchesMetadata();
+    const played = fixtures.filter(isPlayed).length;
+    const updated = meta && meta.updated_at
+      ? new Date(meta.updated_at + 'T00:00:00').toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })
+      : null;
+    syncTimestamp.textContent = `${played} official results from CICA CricClubs${updated ? ` • Updated ${updated}` : ''}`;
   }
   updateSyncTimeDisplay();
-  setInterval(updateSyncTimeDisplay, 30000);
 
   // Wire up dynamic Live Sync button
   if (syncBtn) {
@@ -86,6 +86,7 @@ export async function initMatchesPage() {
       
       try {
         fixtures = await store.getFixtures(true);
+        populateFilterOptions();
         updateSyncTimeDisplay();
         updateFilterCounts();
         render();
@@ -96,7 +97,7 @@ export async function initMatchesPage() {
           syncBtn.classList.remove('is-syncing');
           syncBtn.innerHTML = `
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21.5 2v6h-6M21.34 15.57a10 10 0 1 1-.57-8.38l5.67-5.67"/></svg>
-            <span>Sync Live</span>
+            <span>Refresh</span>
           `;
         }, 600);
       }
@@ -104,38 +105,11 @@ export async function initMatchesPage() {
   }
 
   function render() {
-    let filtered = fixtures.filter(f => f.status === 'result');
-    
-    if (currentFormat !== 'all') {
-      filtered = filtered.filter(f => {
-        const comp = (f.competition || '').toLowerCase();
-        if (currentFormat === 'Super League T20') {
-          return comp.includes('super league') && f.format === 'T20';
-        }
-        if (currentFormat === 'Super League 40-Over') {
-          return comp.includes('super league') && (f.format === '40-Over' || f.format === '40 Over');
-        }
-        if (currentFormat === 'Elite 50-Over') {
-          return comp.includes('elite') && (f.format === '50-Over' || f.format === '50 Over');
-        }
-        if (currentFormat === 'Elite T20') {
-          return comp.includes('elite') && f.format === 'T20';
-        }
-        if (currentFormat === 'Daniel Morris T20') {
-          return comp.includes('daniel morris');
-        }
-        return f.format === currentFormat || comp.includes(currentFormat.toLowerCase());
-      });
-    }
-    if (currentSeason !== 'all') {
-      filtered = filtered.filter(f => f.season === currentSeason);
-    }
-    if (currentResult !== 'all') {
-      if (currentResult === 'won') {
-        filtered = filtered.filter(f => f.is_csk_win === true);
-      } else if (currentResult === 'lost') {
-        filtered = filtered.filter(f => f.is_csk_win === false);
-      }
+    let filtered = applyBaseFilters(fixtures);
+    if (currentResult === 'won') {
+      filtered = filtered.filter(f => f.is_csk_win === true);
+    } else if (currentResult === 'lost') {
+      filtered = filtered.filter(f => f.is_csk_win === false);
     }
 
     if (filtered.length === 0) {
@@ -157,53 +131,29 @@ export async function initMatchesPage() {
   }
 
   function createMatchCardHTML(m, index) {
-    const isResult = m.status === 'result';
+    const noResult = m.is_csk_win !== true && m.is_csk_win !== false;
 
     // Parse date for ticket stub
     const dateObj = new Date(m.date + 'T00:00:00');
     const monthNames = ['JAN', 'FEB', 'MAR', 'APR', 'MAY', 'JUN', 'JUL', 'AUG', 'SEP', 'OCT', 'NOV', 'DEC'];
-    const month = !isNaN(dateObj.getTime()) ? monthNames[dateObj.getMonth()] : 'APR';
-    const day = !isNaN(dateObj.getTime()) ? String(dateObj.getDate()).padStart(2, '0') : '06';
+    const valid = !isNaN(dateObj.getTime());
+    const month = valid ? monthNames[dateObj.getMonth()] : '';
+    const day = valid ? String(dateObj.getDate()).padStart(2, '0') : '';
+    const year = valid ? String(dateObj.getFullYear()) : '';
 
-    const matchNum = `${index + 1}${getOrdinalSuffix(index + 1)} Match`;
+    const cskSide = { name: 'Cayman Super Kings', crest: teamCrestHTML('Cayman Super Kings', CSK_LOGO, 'ticket-team-crest'), score: m.score_csk, overs: m.overs_csk };
+    const oppSide = { name: m.opponent, crest: teamCrestHTML(m.opponent, m.opponent_logo, 'ticket-team-crest'), score: m.score_opp, overs: m.overs_opp };
+    const [first, second] = m.csk_batted_first === false ? [oppSide, cskSide] : [cskSide, oppSide];
 
-    // Opponent Logo mapper
-    const oppKey = (m.opponent_short || '').toLowerCase();
-    const oppLogoMap = {
-      vgc: 'assets/teams/vgc.png',
-      gtt: 'assets/teams/gtt.png',
-      sms: 'assets/teams/sms.png',
-      btcc: 'assets/teams/btcc.png',
-      wbw: 'assets/teams/wbw.png',
-      pcc: 'assets/teams/pcc.png',
-      nsxi: 'assets/teams/nsxi.png',
-      tncc: 'assets/teams/tncc.png'
-    };
-    const oppLogo = oppLogoMap[oppKey] || 'assets/teams/vgc.png';
-    const cskLogo = 'assets/csk-official-logo.png';
+    const scoreHTML = side => side.score
+      ? `<span class="ticket-team-score">${side.score}${side.overs ? ` <small style="opacity:.7;font-weight:600;">(${side.overs})</small>` : ''}</span>`
+      : '';
 
-    // Time formatting
-    let timeDisplay = m.time || '02:30pm';
-    if (timeDisplay && !timeDisplay.toLowerCase().includes('m')) {
-      const parts = timeDisplay.split(':');
-      if (parts.length >= 2) {
-        const hour = parseInt(parts[0], 10);
-        const ampm = hour >= 12 ? 'pm' : 'am';
-        const formattedHour = hour % 12 || 12;
-        timeDisplay = `${String(formattedHour).padStart(2, '0')}:${parts[1]}${ampm}`;
-      }
-    }
+    const outcome = noResult
+      ? '<span class="ticket-vs-result is-loss" style="background:#475569;">NO RESULT</span>'
+      : `<span class="ticket-vs-result ${m.is_csk_win ? 'is-win' : 'is-loss'}">${m.is_csk_win ? 'CSK WON' : 'CSK LOST'}</span>`;
 
-    const isHome = m.is_home !== false;
-    const team1Name = isHome ? 'Cayman Super Kings' : m.opponent;
-    const team1Logo = isHome ? cskLogo : oppLogo;
-    const team1Score = isHome ? m.score_csk : m.score_opp;
-
-    const team2Name = isHome ? m.opponent : 'Cayman Super Kings';
-    const team2Logo = isHome ? oppLogo : cskLogo;
-    const team2Score = isHome ? m.score_opp : m.score_csk;
-
-    const detailUrl = `match-detail.html?slug=${m.slug}`;
+    const detailUrl = `match-detail.html?slug=${encodeURIComponent(m.slug)}`;
 
     return `
       <div class="fixture-ticket futuristic-card">
@@ -212,7 +162,7 @@ export async function initMatchesPage() {
           <span class="ticket-notch-top"></span>
           <span class="ticket-month">${month}</span>
           <span class="ticket-day">${day}</span>
-          <span class="ticket-match-num">${matchNum}</span>
+          <span class="ticket-match-num">${year}</span>
           <span class="ticket-notch-bottom"></span>
         </div>
 
@@ -221,64 +171,58 @@ export async function initMatchesPage() {
           <!-- Top Tags Row -->
           <div style="display: flex; justify-content: space-between; align-items: center; width: 100%; margin-bottom: 8px;">
             <div style="display: flex; gap: 6px; align-items: center; flex-wrap: wrap;">
-              <span class="ticket-competition-tag">${m.competition || 'CICA Tournament'}</span>
-              <span class="ticket-format-tag">${m.format || 'T20'}</span>
+              <span class="ticket-competition-tag">${m.competition || ''}</span>
+              ${m.format ? `<span class="ticket-format-tag">${m.format}</span>` : ''}
             </div>
 
+            ${m.time ? `
             <!-- Slanted Time Pill -->
             <div class="ticket-time-pill">
-              <span>${timeDisplay}</span>
+              <span>${formatTime(m.time)}</span>
               <span class="ticket-time-stripes">///</span>
-            </div>
+            </div>` : ''}
           </div>
 
           <!-- Teams Matchup -->
           <div class="ticket-matchup">
-            <!-- Team 1 -->
             <div class="ticket-team">
-              <div class="ticket-crest-aura">
-                <img src="${team1Logo}" alt="${team1Name}" class="ticket-team-crest">
-              </div>
-              <span class="ticket-team-name">${team1Name}</span>
-              ${isResult && team1Score ? `<span class="ticket-team-score">${team1Score}</span>` : ''}
+              <div class="ticket-crest-aura">${first.crest}</div>
+              <span class="ticket-team-name">${first.name}</span>
+              ${scoreHTML(first)}
             </div>
 
-            <!-- VS Center -->
             <div class="ticket-vs">
               <span class="ticket-vs-text">VS</span>
-              ${isResult ? `<span class="ticket-vs-result ${m.is_csk_win ? 'is-win' : 'is-loss'}">${m.is_csk_win ? 'CSK WON' : 'CSK LOST'}</span>` : '<span class="ticket-vs-sub">MATCHDAY</span>'}
+              ${outcome}
             </div>
 
-            <!-- Team 2 -->
             <div class="ticket-team">
-              <div class="ticket-crest-aura">
-                <img src="${team2Logo}" alt="${team2Name}" class="ticket-team-crest">
-              </div>
-              <span class="ticket-team-name">${team2Name}</span>
-              ${isResult && team2Score ? `<span class="ticket-team-score">${team2Score}</span>` : ''}
+              <div class="ticket-crest-aura">${second.crest}</div>
+              <span class="ticket-team-name">${second.name}</span>
+              ${scoreHTML(second)}
             </div>
           </div>
 
-          <!-- Venue & Pitch -->
+          <!-- Result line -->
+          <div class="ticket-venue" style="font-weight: 700;">
+            <span>${m.result_text || ''}</span>
+          </div>
+
+          ${m.venue ? `
+          <!-- Venue -->
           <div class="ticket-venue">
             <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
-            <span>${m.venue || 'Jimmy Powell Oval, George Town'}</span>
-          </div>
+            <span>${m.venue}</span>
+          </div>` : ''}
 
           <!-- Overlapping Bottom Match Center Pill -->
           <a href="${detailUrl}" class="ticket-btn-pill">
-            <span>${isResult ? 'MATCH REPORT & SCORECARD' : 'MATCH CENTER'}</span>
+            <span>${m.scorecard ? 'MATCH REPORT & SCORECARD' : 'MATCH DETAILS'}</span>
             <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
           </a>
         </div>
       </div>
     `;
-  }
-
-  function getOrdinalSuffix(n) {
-    const s = ['th', 'st', 'nd', 'rd'];
-    const v = n % 100;
-    return s[(v - 20) % 10] || s[v] || s[0];
   }
 
   if (formatFilter) {
@@ -318,29 +262,91 @@ export async function initMatchDetail() {
   if (!container) return;
 
   const urlParams = new URLSearchParams(window.location.search);
-  const slug = urlParams.get('slug') || 'csk-vs-tamilnadu-daniel-morris-t20-final';
+  const slug = urlParams.get('slug');
 
-  const fixtures = await store.getFixtures();
-  const matchIndex = fixtures.findIndex(f => f.slug === slug);
-  const match = fixtures[matchIndex] || fixtures[0];
+  const fixtures = (await store.getFixtures()).filter(isPlayed);
+  let matchIndex = fixtures.findIndex(f => f.slug === slug || f.id === slug);
+  if (matchIndex < 0) matchIndex = 0;
+  const match = fixtures[matchIndex];
 
-  const prevMatch = matchIndex > 0 ? fixtures[matchIndex - 1] : null;
-  const nextMatch = matchIndex < fixtures.length - 1 ? fixtures[matchIndex + 1] : null;
+  if (!match) {
+    container.innerHTML = `<section class="section"><div class="container"><p>Match not found. <a href="matches.html">Back to all matches</a></p></div></section>`;
+    return;
+  }
+
+  // List is newest-first: "previous" = older match, "next" = newer match
+  const prevMatch = fixtures[matchIndex + 1] || null;
+  const nextMatch = matchIndex > 0 ? fixtures[matchIndex - 1] : null;
 
   document.title = `${match.competition}: CSK vs ${match.opponent} | Cayman Super Kings`;
 
-  const oppKey = (match.opponent_short || '').toLowerCase();
-  const oppLogoMap = {
-    vgc: 'assets/teams/vgc.png',
-    gtt: 'assets/teams/gtt.png',
-    sms: 'assets/teams/sms.png',
-    btcc: 'assets/teams/btcc.png',
-    wbw: 'assets/teams/wbw.png',
-    pcc: 'assets/teams/pcc.png',
-    nsxi: 'assets/teams/nsxi.png',
-    tncc: 'assets/teams/tncc.png'
-  };
-  const oppLogo = oppLogoMap[oppKey] || 'assets/teams/vgc.png';
+  const noResult = match.is_csk_win !== true && match.is_csk_win !== false;
+  const pillColor = noResult ? '#475569' : (match.is_csk_win ? '#0284C7' : '#DC2626');
+  const pillGlow = noResult ? 'rgba(71, 85, 105, 0.4)' : (match.is_csk_win ? 'rgba(56, 189, 248, 0.4)' : 'rgba(239, 68, 68, 0.4)');
+  const scorecardUrl = match.cricclubs_url;
+  const innings = (match.scorecard && match.scorecard.innings) || [];
+
+  const th = (label, align = 'center', color = '#CBD5E1') =>
+    `<th style="padding: 14px 16px; font-weight: 800; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.06em; color: ${color}; text-align: ${align};">${label}</th>`;
+  const td = (val, align = 'center', extra = 'color: #334155;') =>
+    `<td style="padding: 12px 16px; text-align: ${align}; ${extra}">${val}</td>`;
+
+  const inningsHTML = innings.map((inn, idx) => {
+    const bowlingSide = innings[idx === 0 ? 1 : 0];
+    return `
+      <h3 style="font-family: var(--font-display); font-size: 1.35rem; font-weight: 900; color: #09152B; text-transform: uppercase; margin-bottom: 14px; letter-spacing: 0.02em;">${inn.team || `Innings ${idx + 1}`} Batting</h3>
+      <div class="table-responsive" style="margin-bottom: 28px; border: 1.5px solid #CBD5E1; border-radius: 12px; box-shadow: 0 6px 20px rgba(9,21,43,0.06); background: #FFFFFF; overflow-x: auto;">
+        <table class="data-table" style="width: 100%; border-collapse: collapse; min-width: 520px;">
+          <thead>
+            <tr style="background: #09152B; color: #FFFFFF;">
+              ${th('Batter', 'left', '#F59E0B')}${th('Dismissal', 'left', '#94A3B8')}${th('R', 'center', '#FFFFFF')}${th('B')}${th('4s')}${th('6s')}${th('SR', 'right')}
+            </tr>
+          </thead>
+          <tbody>
+            ${inn.batting.map(b => `
+              <tr style="border-bottom: 1px solid #E2E8F0;">
+                ${td(b.player, 'left', 'font-weight: 800; color: #09152B;')}
+                ${td(b.dismissal, 'left', 'color: #64748B; font-size: 0.875rem;')}
+                ${td(b.runs, 'center', 'font-weight: 900; color: #09152B; font-size: 1rem;')}
+                ${td(b.balls)}${td(b.fours)}${td(b.sixes)}
+                ${td(b.sr, 'right', 'color: #0284C7; font-weight: 700;')}
+              </tr>`).join('')}
+          </tbody>
+        </table>
+      </div>
+
+      ${inn.bowling && inn.bowling.length ? `
+      <h3 style="font-family: var(--font-display); font-size: 1.1rem; font-weight: 900; color: #09152B; text-transform: uppercase; margin-bottom: 14px; letter-spacing: 0.02em;">${bowlingSide && bowlingSide.team ? bowlingSide.team : 'Opposition'} Bowling</h3>
+      <div class="table-responsive" style="margin-bottom: 40px; border: 1.5px solid #CBD5E1; border-radius: 12px; box-shadow: 0 6px 20px rgba(9,21,43,0.06); background: #FFFFFF; overflow-x: auto;">
+        <table class="data-table" style="width: 100%; border-collapse: collapse; min-width: 500px;">
+          <thead>
+            <tr style="background: #09152B; color: #FFFFFF;">
+              ${th('Bowler', 'left', '#F59E0B')}${th('O')}${th('M')}${th('R')}${th('W', 'center', '#EF4444')}${th('Econ', 'right', '#0284C7')}
+            </tr>
+          </thead>
+          <tbody>
+            ${inn.bowling.map(bw => `
+              <tr style="border-bottom: 1px solid #E2E8F0;">
+                ${td(bw.bowler, 'left', 'font-weight: 800; color: #09152B;')}
+                ${td(bw.overs)}${td(bw.maidens)}${td(bw.runs)}
+                ${td(bw.wickets, 'center', 'font-weight: 900; color: #DC2626; font-size: 1rem;')}
+                ${td(bw.econ, 'right', 'color: #0284C7; font-weight: 700;')}
+              </tr>`).join('')}
+          </tbody>
+        </table>
+      </div>` : ''}
+    `;
+  }).join('');
+
+  const scoreBlock = (name, crest, score, overs, align, nameColor, scoreColor) => `
+    <div class="team-score-block" style="text-align: ${align};">
+      <h3 style="color: ${nameColor}; font-family: var(--font-display); font-size: 1.45rem; font-weight: 900; margin-bottom: 6px; display: flex; align-items: center; gap: 10px; ${align === 'right' ? 'justify-content: flex-end;' : ''}">
+        ${align === 'right' ? `<span>${name}</span>${crest}` : `${crest}<span>${name}</span>`}
+      </h3>
+      <div class="score-large tabular-nums" style="font-size: 2.3rem; font-weight: 900; color: ${scoreColor};">${score || '—'}</div>
+      ${overs ? `<div class="overs" style="color: #94A3B8; font-size: 0.9rem; font-weight: 600;">${overs}${match.max_overs ? ` / ${match.max_overs}` : ''} Overs</div>` : ''}
+    </div>`;
+  const crestStyle = 'width: 36px; height: 36px; object-fit: contain; border-radius: 50%; background: #FFFFFF; padding: 2px;';
 
   container.innerHTML = `
     <!-- Header Hero -->
@@ -348,141 +354,66 @@ export async function initMatchDetail() {
       <div class="container">
         <div style="display: flex; gap: 12px; align-items: center; margin-bottom: 18px; flex-wrap: wrap;">
           <span class="badge badge--gold" style="font-weight: 800; letter-spacing: 0.06em; background: #09152B; border: 1px solid rgba(56, 189, 248, 0.35); color: #38BDF8;">${match.competition}</span>
-          <span class="badge" style="background: rgba(255,255,255,0.12); color: #FFFFFF; font-weight: 800;">${match.format}</span>
-          <span style="color: #94A3B8; font-size: 0.875rem; font-weight: 600;">${formatDate(match.date)} • ${match.venue}</span>
+          ${match.format ? `<span class="badge" style="background: rgba(255,255,255,0.12); color: #FFFFFF; font-weight: 800;">${match.format}</span>` : ''}
+          <span style="color: #94A3B8; font-size: 0.875rem; font-weight: 600;">${formatDate(match.date)}${match.time ? ` • ${formatTime(match.time)}` : ''}${match.venue ? ` • ${match.venue}` : ''}</span>
         </div>
 
         <div class="match-score-display" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 20px; background: rgba(13, 23, 44, 0.9); border: 1.5px solid rgba(56, 189, 248, 0.25); border-radius: 18px; padding: 30px 34px; box-shadow: 0 16px 48px rgba(0,0,0,0.45);">
-          <div class="team-score-block">
-            <h3 style="color: #38BDF8; font-family: var(--font-display); font-size: 1.45rem; font-weight: 900; margin-bottom: 6px; display: flex; align-items: center; gap: 10px;">
-              <img src="assets/csk-official-logo.png" alt="CSK" style="width: 36px; height: 36px; object-fit: contain;">
-              <span>Cayman Super Kings</span>
-            </h3>
-            <div class="score-large tabular-nums" style="font-size: 2.3rem; font-weight: 900; color: #FFFFFF;">${match.score_csk || 'Upcoming'}</div>
-            ${match.overs_csk ? `<div class="overs" style="color: #94A3B8; font-size: 0.9rem; font-weight: 600;">${match.overs_csk} Overs</div>` : ''}
-          </div>
+          ${scoreBlock('Cayman Super Kings', teamCrestHTML('Cayman Super Kings', CSK_LOGO, '', crestStyle), match.score_csk, match.overs_csk, 'left', '#38BDF8', '#FFFFFF')}
 
           <div style="text-align: center;">
-            <div class="match-result-pill ${match.is_csk_win ? 'is-win' : 'is-loss'}" style="display: inline-block; background: ${match.is_csk_win ? '#0284C7' : '#DC2626'}; color: #FFFFFF; font-weight: 800; font-size: 0.875rem; padding: 7px 20px; border-radius: 999px; text-transform: uppercase; letter-spacing: 0.06em; box-shadow: 0 0 16px ${match.is_csk_win ? 'rgba(56, 189, 248, 0.4)' : 'rgba(239, 68, 68, 0.4)'};">${match.result_text}</div>
-            ${match.player_of_match ? `<div style="font-size: 0.875rem; color: #F59E0B; margin-top: 10px; font-weight: 800;">★ Player of the Match: ${match.player_of_match}</div>` : ''}
+            <div class="match-result-pill" style="display: inline-block; background: ${pillColor}; color: #FFFFFF; font-weight: 800; font-size: 0.875rem; padding: 7px 20px; border-radius: 999px; text-transform: uppercase; letter-spacing: 0.06em; box-shadow: 0 0 16px ${pillGlow};">${match.result_text}</div>
+            <div style="font-size: 0.8rem; color: #94A3B8; margin-top: 10px; font-weight: 700;">${match.csk_batted_first === false ? `${match.opponent} batted first` : 'Cayman Super Kings batted first'}</div>
           </div>
 
-          <div class="team-score-block" style="text-align: right;">
-            <h3 style="color: #E2E8F0; font-family: var(--font-display); font-size: 1.45rem; font-weight: 900; margin-bottom: 6px; display: flex; align-items: center; justify-content: flex-end; gap: 10px;">
-              <span>${match.opponent}</span>
-              <img src="${oppLogo}" alt="${match.opponent}" style="width: 36px; height: 36px; object-fit: contain; border-radius: 50%; background: #FFFFFF; padding: 2px;">
-            </h3>
-            <div class="score-large tabular-nums" style="font-size: 2.3rem; font-weight: 900; color: #CBD5E1;">${match.score_opp || '—'}</div>
-            ${match.overs_opp ? `<div class="overs" style="color: #94A3B8; font-size: 0.9rem; font-weight: 600;">${match.overs_opp} Overs</div>` : ''}
-          </div>
+          ${scoreBlock(match.opponent, teamCrestHTML(match.opponent, match.opponent_logo, '', crestStyle), match.score_opp, match.overs_opp, 'right', '#E2E8F0', '#CBD5E1')}
         </div>
 
         <div style="margin-top: 22px; display: flex; justify-content: flex-end;">
-          <a href="${match.cricclubs_url}" target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="font-weight: 800; border-radius: 999px; padding: 10px 22px; box-shadow: 0 0 20px rgba(56, 189, 248, 0.35);">
+          <a href="${scorecardUrl}" target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="font-weight: 800; border-radius: 999px; padding: 10px 22px; box-shadow: 0 0 20px rgba(56, 189, 248, 0.35);">
             Official Scorecard on CricClubs ↗
           </a>
         </div>
       </div>
     </div>
 
-    <!-- Match Content (Tables & Report) -->
+    <!-- Match Content (Scorecards) -->
     <section class="section" style="padding: 48px 0;">
       <div class="container">
         <div class="grid" style="gap: 32px;">
           <div class="col-8">
-            <h2 style="font-family: var(--font-display); font-size: 1.85rem; font-weight: 900; color: #09152B; text-transform: uppercase; margin-bottom: 16px; letter-spacing: 0.02em;">Match Report &amp; Analysis</h2>
-            
-            <!-- Match Summary Lead Card -->
-            <div style="margin-bottom: 36px;">
-              <p class="lead" style="font-size: 1.15rem; font-weight: 500; color: #1E293B; line-height: 1.75; margin: 0; padding: 24px 28px; background: #FFFFFF; border-left: 5px solid ${match.is_csk_win ? '#0284C7' : '#DC2626'}; border-radius: 0 14px 14px 0; border-top: 1.5px solid #CBD5E1; border-right: 1.5px solid #CBD5E1; border-bottom: 1.5px solid #CBD5E1; box-shadow: 0 6px 20px rgba(9,21,43,0.06);">
-                ${match.summary || 'A competitive encounter from the Cayman Super Kings in this crucial league fixture.'}
-              </p>
-            </div>
-
-            <!-- Scorecard Tables -->
-            ${match.scorecard ? `
-              <h3 style="font-family: var(--font-display); font-size: 1.35rem; font-weight: 900; color: #09152B; text-transform: uppercase; margin-bottom: 14px; letter-spacing: 0.02em;">CSK Batting Card</h3>
-              <div class="table-responsive" style="margin-bottom: 36px; border: 1.5px solid #CBD5E1; border-radius: 12px; box-shadow: 0 6px 20px rgba(9,21,43,0.06); background: #FFFFFF; overflow-x: auto;">
-                <table class="data-table" style="width: 100%; border-collapse: collapse; min-width: 520px;">
-                  <thead>
-                    <tr style="background: #09152B; color: #FFFFFF;">
-                      <th style="padding: 14px 16px; font-weight: 800; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.06em; color: #F59E0B; text-align: left;">Batter</th>
-                      <th style="padding: 14px 16px; font-weight: 800; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.06em; color: #94A3B8; text-align: left;">Dismissal</th>
-                      <th style="padding: 14px 16px; font-weight: 800; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.06em; color: #FFFFFF; text-align: center;">R</th>
-                      <th style="padding: 14px 16px; font-weight: 800; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.06em; color: #CBD5E1; text-align: center;">B</th>
-                      <th style="padding: 14px 16px; font-weight: 800; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.06em; color: #CBD5E1; text-align: center;">4s</th>
-                      <th style="padding: 14px 16px; font-weight: 800; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.06em; color: #CBD5E1; text-align: center;">6s</th>
-                      <th style="padding: 14px 16px; font-weight: 800; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.06em; color: #CBD5E1; text-align: right;">SR</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    ${match.scorecard.csk_batting.map(b => `
-                      <tr style="border-bottom: 1px solid #E2E8F0; transition: background 0.2s;">
-                        <td style="padding: 12px 16px; font-weight: 800; color: #09152B;">${b.player}</td>
-                        <td style="padding: 12px 16px; color: #64748B; font-size: 0.875rem;">${b.dismissal}</td>
-                        <td style="padding: 12px 16px; text-align: center; font-weight: 900; color: #09152B; font-size: 1rem;">${b.runs}</td>
-                        <td style="padding: 12px 16px; text-align: center; color: #334155;">${b.balls}</td>
-                        <td style="padding: 12px 16px; text-align: center; color: #334155;">${b.fours}</td>
-                        <td style="padding: 12px 16px; text-align: center; color: #334155;">${b.sixes}</td>
-                        <td style="padding: 12px 16px; text-align: right; color: #0284C7; font-weight: 700;">${b.sr}</td>
-                      </tr>
-                    `).join('')}
-                  </tbody>
-                </table>
-              </div>
-
-              <h3 style="font-family: var(--font-display); font-size: 1.35rem; font-weight: 900; color: #09152B; text-transform: uppercase; margin-bottom: 14px; letter-spacing: 0.02em;">CSK Bowling Analysis</h3>
-              <div class="table-responsive" style="margin-bottom: 40px; border: 1.5px solid #CBD5E1; border-radius: 12px; box-shadow: 0 6px 20px rgba(9,21,43,0.06); background: #FFFFFF; overflow-x: auto;">
-                <table class="data-table" style="width: 100%; border-collapse: collapse; min-width: 500px;">
-                  <thead>
-                    <tr style="background: #09152B; color: #FFFFFF;">
-                      <th style="padding: 14px 16px; font-weight: 800; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.06em; color: #F59E0B; text-align: left;">Bowler</th>
-                      <th style="padding: 14px 16px; font-weight: 800; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.06em; color: #CBD5E1; text-align: center;">O</th>
-                      <th style="padding: 14px 16px; font-weight: 800; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.06em; color: #CBD5E1; text-align: center;">M</th>
-                      <th style="padding: 14px 16px; font-weight: 800; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.06em; color: #CBD5E1; text-align: center;">R</th>
-                      <th style="padding: 14px 16px; font-weight: 800; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.06em; color: #EF4444; text-align: center;">W</th>
-                      <th style="padding: 14px 16px; font-weight: 800; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.06em; color: #0284C7; text-align: right;">Econ</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    ${match.scorecard.csk_bowling.map(bow => `
-                      <tr style="border-bottom: 1px solid #E2E8F0; transition: background 0.2s;">
-                        <td style="padding: 12px 16px; font-weight: 800; color: #09152B;">${bow.bowler}</td>
-                        <td style="padding: 12px 16px; text-align: center; color: #334155;">${bow.overs}</td>
-                        <td style="padding: 12px 16px; text-align: center; color: #334155;">${bow.maidens}</td>
-                        <td style="padding: 12px 16px; text-align: center; color: #334155;">${bow.runs}</td>
-                        <td style="padding: 12px 16px; text-align: center; font-weight: 900; color: #DC2626; font-size: 1rem;">${bow.wickets}</td>
-                        <td style="padding: 12px 16px; text-align: right; color: #0284C7; font-weight: 700;">${bow.econ}</td>
-                      </tr>
-                    `).join('')}
-                  </tbody>
-                </table>
-              </div>
-            ` : ''}
+            <h2 style="font-family: var(--font-display); font-size: 1.85rem; font-weight: 900; color: #09152B; text-transform: uppercase; margin-bottom: 24px; letter-spacing: 0.02em;">Full Scorecard</h2>
+            ${inningsHTML || `
+              <p style="font-size: 1.05rem; color: #334155; padding: 24px 28px; background: #FFFFFF; border: 1.5px solid #CBD5E1; border-radius: 14px;">
+                ${noResult ? 'This match was not completed, so no scorecard was recorded.' : 'No detailed scorecard was published for this match.'}
+                <a href="${scorecardUrl}" target="_blank" rel="noopener noreferrer" style="font-weight: 800; color: #0284C7;">View it on CricClubs ↗</a>
+              </p>`}
           </div>
 
           <!-- Sidebar -->
           <div class="col-4">
-            <!-- Official Verification Card -->
             <div class="card card-body futuristic-card" style="background: #FFFFFF; border: 1.5px solid #CBD5E1; border-radius: 16px; padding: 26px; box-shadow: 0 6px 20px rgba(9,21,43,0.06); margin-bottom: 24px;">
-              <h4 style="color: #09152B; font-family: var(--font-display); font-size: 1.15rem; font-weight: 900; margin-bottom: 12px; text-transform: uppercase; letter-spacing: 0.04em;">Official Verification</h4>
+              <h4 style="color: #09152B; font-family: var(--font-display); font-size: 1.15rem; font-weight: 900; margin-bottom: 12px; text-transform: uppercase; letter-spacing: 0.04em;">Official Record</h4>
               <p style="font-size: 0.9rem; line-height: 1.65; color: #334155; margin-bottom: 18px; font-weight: 500;">
-                All match scores, ball-by-ball records, and official tournament points are certified by Cayman Islands Cricket Association umpires.
+                Scores and scorecards on this page come from the Cayman Islands Cricket Association's official CricClubs records for this match.
               </p>
-              <a href="${match.cricclubs_url}" target="_blank" rel="noopener noreferrer" class="btn btn-outline-navy btn-sm" style="font-weight: 800; border-radius: 999px; width: 100%; text-align: center; justify-content: center;">
-                Open CricClubs Portal ↗
+              <a href="${scorecardUrl}" target="_blank" rel="noopener noreferrer" class="btn btn-outline-navy btn-sm" style="font-weight: 800; border-radius: 999px; width: 100%; text-align: center; justify-content: center;">
+                Open This Match on CricClubs ↗
               </a>
             </div>
 
-            <!-- Match Details Card -->
             <div class="card card-body futuristic-card" style="background: #FFFFFF; border: 1.5px solid #CBD5E1; border-radius: 16px; padding: 26px; box-shadow: 0 6px 20px rgba(9,21,43,0.06);">
               <h4 style="color: #09152B; font-family: var(--font-display); font-size: 1.15rem; font-weight: 900; margin-bottom: 16px; text-transform: uppercase; letter-spacing: 0.04em;">Match Details</h4>
               <ul style="list-style: none; display: flex; flex-direction: column; gap: 12px; font-size: 0.9rem; padding: 0; margin: 0;">
-                <li style="display: flex; justify-content: space-between; border-bottom: 1px solid #E2E8F0; padding-bottom: 8px;"><strong style="color: #64748B;">Competition:</strong> <span style="color: #09152B; font-weight: 800;">${match.competition}</span></li>
-                <li style="display: flex; justify-content: space-between; border-bottom: 1px solid #E2E8F0; padding-bottom: 8px;"><strong style="color: #64748B;">Format:</strong> <span style="color: #09152B; font-weight: 800;">${match.format}</span></li>
-                <li style="display: flex; justify-content: space-between; border-bottom: 1px solid #E2E8F0; padding-bottom: 8px;"><strong style="color: #64748B;">Venue:</strong> <span style="color: #09152B; font-weight: 800;">${match.venue}</span></li>
-                <li style="display: flex; justify-content: space-between; border-bottom: 1px solid #E2E8F0; padding-bottom: 8px;"><strong style="color: #64748B;">Date:</strong> <span style="color: #09152B; font-weight: 800;">${formatDate(match.date)}</span></li>
-                <li style="display: flex; justify-content: space-between;"><strong style="color: #64748B;">Status:</strong> <span style="color: #0284C7; font-weight: 900;">${match.status.toUpperCase()}</span></li>
+                ${[
+                  ['Competition', match.competition],
+                  ['Format', match.format],
+                  ['Venue', match.venue],
+                  ['Date', formatDate(match.date)],
+                  ['Start', match.time ? formatTime(match.time) : ''],
+                  ['Result', match.result_text]
+                ].filter(([, v]) => v).map(([k, v], i, arr) => `
+                  <li style="display: flex; justify-content: space-between; gap: 12px; ${i < arr.length - 1 ? 'border-bottom: 1px solid #E2E8F0; padding-bottom: 8px;' : ''}"><strong style="color: #64748B;">${k}:</strong> <span style="color: #09152B; font-weight: 800; text-align: right;">${v}</span></li>`).join('')}
               </ul>
             </div>
           </div>
@@ -491,15 +422,15 @@ export async function initMatchDetail() {
         <!-- Prev / Next Navigation Footer -->
         <div class="match-nav-footer" style="margin-top: 40px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px;">
           ${prevMatch ? `
-            <a href="match-detail.html?slug=${prevMatch.slug}" class="btn btn-outline-navy btn-sm" style="font-weight: 800; border-radius: 999px;">
+            <a href="match-detail.html?slug=${encodeURIComponent(prevMatch.slug)}" class="btn btn-outline-navy btn-sm" style="font-weight: 800; border-radius: 999px;">
               ← Prev: vs ${prevMatch.opponent}
             </a>
           ` : '<div></div>'}
 
-          <a href="matches.html" class="btn btn-primary btn-sm" style="font-weight: 800; border-radius: 999px;">All Matches &amp; Fixtures</a>
+          <a href="matches.html" class="btn btn-primary btn-sm" style="font-weight: 800; border-radius: 999px;">All Matches</a>
 
           ${nextMatch ? `
-            <a href="match-detail.html?slug=${nextMatch.slug}" class="btn btn-outline-navy btn-sm" style="font-weight: 800; border-radius: 999px;">
+            <a href="match-detail.html?slug=${encodeURIComponent(nextMatch.slug)}" class="btn btn-outline-navy btn-sm" style="font-weight: 800; border-radius: 999px;">
               Next: vs ${nextMatch.opponent} →
             </a>
           ` : '<div></div>'}
@@ -507,6 +438,35 @@ export async function initMatchDetail() {
       </div>
     </section>
   `;
+}
+
+const CSK_LOGO = 'assets/csk-official-logo.png';
+
+function isPlayed(f) {
+  return f && (f.status === 'result' || f.status === 'no_result');
+}
+
+function initials(name) {
+  const words = String(name || '').split(/[\s']+/).filter(w => /^[A-Za-z0-9]/.test(w));
+  if (words.length === 1) return words[0].slice(0, 2).toUpperCase();
+  return words.slice(0, 2).map(w => w[0]).join('').toUpperCase();
+}
+
+function teamCrestHTML(name, logo, className = '', style = '') {
+  const badge = (hidden) => `<span class="${className}" style="${style} display: ${hidden ? 'none' : 'inline-flex'}; align-items: center; justify-content: center; border-radius: 50%; background: #1E3A8A; color: #FFFFFF; font-weight: 900; font-size: 0.95rem; letter-spacing: 0.02em;">${initials(name)}</span>`;
+  if (!logo) return badge(false);
+  return `<img src="${escapeAttr(logo)}" alt="${escapeAttr(name)}" class="${className}" style="${style}" loading="lazy" referrerpolicy="no-referrer" onerror="this.style.display='none';this.nextElementSibling.style.display='inline-flex';">${badge(true)}`;
+}
+
+function escapeAttr(s) {
+  return String(s).replace(/&/g, '&amp;').replace(/"/g, '&quot;').replace(/</g, '&lt;');
+}
+
+function formatTime(t) {
+  if (!t) return '';
+  const [h, mm] = t.split(':').map(Number);
+  if (isNaN(h)) return t;
+  return `${String(h % 12 || 12).padStart(2, '0')}:${String(mm || 0).padStart(2, '0')}${h >= 12 ? 'pm' : 'am'}`;
 }
 
 function formatDate(dateStr) {
