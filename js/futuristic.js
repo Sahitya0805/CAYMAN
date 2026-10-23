@@ -274,7 +274,9 @@ function initCyberScrollReveals() {
       }
     });
   }, {
-    threshold: 0.08,
+    // threshold 0: tall sections (e.g. the squad grid on phones) can never
+    // have 8% of their height on screen at once, so they would never reveal
+    threshold: 0,
     rootMargin: '0px 0px -40px 0px'
   });
 

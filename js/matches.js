@@ -299,14 +299,14 @@ export async function initMatchDetail() {
         <table class="data-table" style="width: 100%; border-collapse: collapse; min-width: 520px;">
           <thead>
             <tr style="background: #09152B; color: #FFFFFF;">
-              ${th('Batter', 'left', '#F59E0B')}${th('Dismissal', 'left', '#94A3B8')}${th('R', 'center', '#FFFFFF')}${th('B')}${th('4s')}${th('6s')}${th('SR', 'right')}
+              ${th('Batter', 'left', '#F59E0B')}${th('Dismissal', 'left', '#94A3B8').replace('<th ', '<th class="col-dismissal" ')}${th('R', 'center', '#FFFFFF')}${th('B')}${th('4s')}${th('6s')}${th('SR', 'right')}
             </tr>
           </thead>
           <tbody>
             ${inn.batting.map(b => `
               <tr style="border-bottom: 1px solid #E2E8F0;">
-                ${td(b.player, 'left', 'font-weight: 800; color: #09152B;')}
-                ${td(b.dismissal, 'left', 'color: #64748B; font-size: 0.875rem;')}
+                ${td(`${b.player}<span class="match-dismissal-inline">${b.dismissal}</span>`, 'left', 'font-weight: 800; color: #09152B;')}
+                ${td(b.dismissal, 'left', 'color: #64748B; font-size: 0.875rem;').replace('<td ', '<td class="col-dismissal" ')}
                 ${td(b.runs, 'center', 'font-weight: 900; color: #09152B; font-size: 1rem;')}
                 ${td(b.balls)}${td(b.fours)}${td(b.sixes)}
                 ${td(b.sr, 'right', 'color: #0284C7; font-weight: 700;')}
@@ -397,7 +397,7 @@ export async function initMatchDetail() {
               <p style="font-size: 0.9rem; line-height: 1.65; color: #334155; margin-bottom: 18px; font-weight: 500;">
                 Scores and scorecards on this page come from the Cayman Islands Cricket Association's official CricClubs records for this match.
               </p>
-              <a href="${scorecardUrl}" target="_blank" rel="noopener noreferrer" class="btn btn-outline-navy btn-sm" style="font-weight: 800; border-radius: 999px; width: 100%; text-align: center; justify-content: center;">
+              <a href="${scorecardUrl}" target="_blank" rel="noopener noreferrer" class="btn btn-outline-navy btn-sm" style="font-weight: 800; border-radius: 999px; width: 100%; text-align: center; justify-content: center; color: #09152B; border: 1.5px solid #09152B; background: #FFFFFF;">
                 Open This Match on CricClubs ↗
               </a>
             </div>
@@ -422,7 +422,7 @@ export async function initMatchDetail() {
         <!-- Prev / Next Navigation Footer -->
         <div class="match-nav-footer" style="margin-top: 40px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px;">
           ${prevMatch ? `
-            <a href="match-detail.html?slug=${encodeURIComponent(prevMatch.slug)}" class="btn btn-outline-navy btn-sm" style="font-weight: 800; border-radius: 999px;">
+            <a href="match-detail.html?slug=${encodeURIComponent(prevMatch.slug)}" class="btn btn-outline-navy btn-sm" style="font-weight: 800; border-radius: 999px; color: #09152B; border: 1.5px solid #09152B; background: #FFFFFF;">
               ← Prev: vs ${prevMatch.opponent}
             </a>
           ` : '<div></div>'}
@@ -430,7 +430,7 @@ export async function initMatchDetail() {
           <a href="matches.html" class="btn btn-primary btn-sm" style="font-weight: 800; border-radius: 999px;">All Matches</a>
 
           ${nextMatch ? `
-            <a href="match-detail.html?slug=${encodeURIComponent(nextMatch.slug)}" class="btn btn-outline-navy btn-sm" style="font-weight: 800; border-radius: 999px;">
+            <a href="match-detail.html?slug=${encodeURIComponent(nextMatch.slug)}" class="btn btn-outline-navy btn-sm" style="font-weight: 800; border-radius: 999px; color: #09152B; border: 1.5px solid #09152B; background: #FFFFFF;">
               Next: vs ${nextMatch.opponent} →
             </a>
           ` : '<div></div>'}

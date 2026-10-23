@@ -1,0 +1,263 @@
+/* ─────────────────────────────────────────────────────────────
+   SITEWIDE RESPONSIVE FIXES
+   Loaded last on every page so these rules win over earlier
+   page styles. Breakpoints: 900px (tablet), 640px (large phone),
+   480px (phone), 360px (small phone).
+   ───────────────────────────────────────────────────────────── */
+
+/* Never let a stray wide element create sideways page scrolling */
+html, body {
+  max-width: 100%;
+  overflow-x: clip;
+}
+
+img, video, svg, canvas, iframe {
+  max-width: 100%;
+}
+
+/* Grid/flex children default to min-width:auto, which lets wide
+   content (tables, long words) push columns past the screen edge */
+.grid > *,
+.col-8,
+.col-4 {
+  min-width: 0;
+}
+
+/* ── Squad player cards: name and role never collide ───────── */
+.squad-card-bottom-strip {
+  gap: 12px;
+}
+
+.squad-card-role-col {
+  flex: 0 1 auto;
+  min-width: 0;
+}
+
+.squad-card-name-col {
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+.squad-card-player-name {
+  overflow-wrap: anywhere;
+}
+
+@media (max-width: 480px) {
+  .squad-card-bottom-strip {
+    flex-direction: column-reverse;
+    align-items: flex-start !important;
+    gap: 6px;
+    padding: 36px 18px 16px !important;
+  }
+
+  .squad-card-name-col {
+    text-align: left !important;
+    width: 100%;
+  }
+
+  .squad-card-role-col {
+    flex-direction: row !important;
+    align-items: baseline;
+    gap: 8px;
+  }
+
+  .squad-card-num-small {
+    margin-bottom: 0 !important;
+  }
+}
+
+/* ── Footer Instagram button: keep the arrow on the same line ── */
+@media (max-width: 480px) {
+  .footer-action-btn {
+    letter-spacing: 0.03em !important;
+    font-size: 0.74rem !important;
+    padding: 10px 16px !important;
+    white-space: nowrap;
+  }
+}
+
+/* ── Matches page filter bar on tablets/phones ─────────────── */
+@media (max-width: 900px) {
+  .matches-filter-bar-wrap .filter-group > div {
+    justify-content: flex-start !important;
+    gap: 12px !important;
+  }
+
+  .matches-filter-bar-wrap .filter-group > div > label {
+    flex: 0 0 88px;
+  }
+
+  .matches-filter-select {
+    flex: 1 1 auto !important;
+    max-width: none !important;
+    min-width: 0 !important;
+    width: auto !important;
+  }
+}
+
+/* ── Match detail page ─────────────────────────────────────── */
+.match-dismissal-inline {
+  display: none;
+}
+
+@media (max-width: 860px) {
+  /* Two teams side by side, result underneath */
+  #match-detail-content .match-score-display {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px 16px !important;
+    padding: 22px 20px !important;
+  }
+
+  #match-detail-content .match-score-display > :nth-child(2) {
+    grid-column: 1 / -1;
+    grid-row: 2;
+  }
+
+  #match-detail-content .team-score-block h3 {
+    font-size: 1.1rem !important;
+  }
+
+  #match-detail-content .score-large {
+    font-size: 1.9rem !important;
+  }
+}
+
+@media (max-width: 640px) {
+  #match-detail-content .match-header-banner {
+    padding: 24px 0 !important;
+  }
+
+  #match-detail-content .match-score-display {
+    padding: 18px 14px !important;
+  }
+
+  #match-detail-content .team-score-block h3 {
+    font-size: 0.98rem !important;
+    gap: 8px !important;
+    line-height: 1.2;
+  }
+
+  #match-detail-content .team-score-block h3 img,
+  #match-detail-content .team-score-block h3 > span:not(:only-child)[style*="border-radius: 50%"] {
+    width: 28px !important;
+    height: 28px !important;
+    flex-shrink: 0;
+  }
+
+  #match-detail-content .score-large {
+    font-size: 1.6rem !important;
+  }
+
+  #match-detail-content .match-result-pill {
+    font-size: 0.75rem !important;
+    padding: 7px 14px !important;
+  }
+
+  /* Scorecard tables: fit the screen instead of scrolling sideways */
+  #match-detail-content .data-table {
+    min-width: 0 !important;
+    font-size: 0.85rem;
+  }
+
+  #match-detail-content .data-table th,
+  #match-detail-content .data-table td {
+    padding: 10px 7px !important;
+  }
+
+  #match-detail-content .data-table th:first-child,
+  #match-detail-content .data-table td:first-child {
+    padding-left: 12px !important;
+  }
+
+  #match-detail-content .data-table th:last-child,
+  #match-detail-content .data-table td:last-child {
+    padding-right: 12px !important;
+  }
+
+  #match-detail-content .col-dismissal {
+    display: none;
+  }
+
+  #match-detail-content .match-dismissal-inline {
+    display: block;
+    margin-top: 3px;
+    font-weight: 500;
+    font-size: 0.76rem;
+    color: #64748B;
+  }
+
+  #match-detail-content .card {
+    min-height: 0 !important;
+    height: auto !important;
+  }
+
+  #match-detail-content .match-nav-footer {
+    justify-content: center !important;
+  }
+
+  #match-detail-content .match-nav-footer > a {
+    flex: 1 1 100%;
+    justify-content: center;
+    text-align: center;
+  }
+}
+
+/* ── Player profile page ───────────────────────────────────── */
+.csk-back-btn {
+  position: relative;
+  z-index: 3;
+}
+
+.csk-about-section {
+  margin-bottom: 36px;
+}
+
+@media (max-width: 640px) {
+  .csk-back-btn {
+    background: rgba(6, 21, 48, 0.75);
+    border: 1px solid rgba(56, 189, 248, 0.3);
+    border-radius: 999px;
+    padding: 7px 14px;
+    font-size: 0.78rem !important;
+  }
+
+  /* Long centred paragraphs are hard to read on phones */
+  .csk-about-text {
+    text-align: left !important;
+  }
+}
+
+/* ── Gallery media-type tabs on very small phones ─────────── */
+@media (max-width: 360px) {
+  .gallery-type-btn {
+    min-width: 0;
+    font-size: 0.62rem !important;
+    letter-spacing: 0.02em !important;
+    padding: 8px 3px !important;
+  }
+
+  .gallery-type-btn svg {
+    display: none !important;
+  }
+}
+
+/* ── Small pill links: keep trailing arrows with their text ── */
+@media (max-width: 480px) {
+  .btn,
+  .btn-sm {
+    white-space: normal;
+    text-align: center;
+  }
+}
+
+/* ── 12-column grid on phones ──────────────────────────────── */
+/* Every column spans the full width below 768px, but 11 column
+   gaps of 20-32px still add up to more than a small phone's width.
+   Drop the column gaps (row gaps stay) so nothing overflows. */
+@media (max-width: 640px) {
+  .grid {
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+    column-gap: 0 !important;
+  }
+}

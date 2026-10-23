@@ -132,7 +132,7 @@ export async function initArticlePage() {
 
           <!-- Navigation Footer -->
           <div style="margin-top: 48px; padding-top: 24px; border-top: 1.5px solid #E2E8F0; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px;">
-            <a href="news.html" class="btn btn-outline-navy btn-sm" style="border-radius: 999px; font-weight: 800;">
+            <a href="news.html" class="btn btn-outline-navy btn-sm" style="border-radius: 999px; font-weight: 800; color: #09152B; border: 1.5px solid #09152B; background: #FFFFFF;">
               ← Back to Stories
             </a>
             <a href="about.html" class="btn btn-primary btn-sm" style="border-radius: 999px; font-weight: 800;">
