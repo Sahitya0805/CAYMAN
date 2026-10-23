@@ -256,6 +256,9 @@ export function initPageTransitionLinks() {
   window._cskPageTransitionsBound = true;
 
   document.addEventListener('click', (e) => {
+    // A handler already cancelled this navigation (e.g. first tap on a
+    // lineup chip only previews the player) — don't show the loader
+    if (e.defaultPrevented) return;
     const link = e.target.closest('a');
     if (!link) return;
 

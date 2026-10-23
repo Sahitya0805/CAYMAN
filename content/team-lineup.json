@@ -1,0 +1,170 @@
+[
+ {
+  "id": "csk-14",
+  "name": "Chris Donovan",
+  "role": "All-Rounder / Fast Bowler",
+  "x": 16.66,
+  "y": 18.38,
+  "r": 2.92
+ },
+ {
+  "id": "csk-19",
+  "name": "Kirubakaran",
+  "role": "All-Rounder",
+  "x": 83.33,
+  "y": 19.09,
+  "r": 2.92
+ },
+ {
+  "id": "csk-17",
+  "name": "Ganga Pranay",
+  "role": "All-Rounder",
+  "x": 29.96,
+  "y": 18.78,
+  "r": 2.92
+ },
+ {
+  "id": "csk-18",
+  "name": "Fahad Noushad",
+  "role": "All-Rounder",
+  "x": 70.0,
+  "y": 19.22,
+  "r": 2.92
+ },
+ {
+  "id": "csk-07",
+  "name": "Muthukumar Rajenderan",
+  "role": "Strike Bowler",
+  "x": 43.31,
+  "y": 19.03,
+  "r": 2.71
+ },
+ {
+  "id": "csk-13",
+  "name": "Muhammed Jazeem Keloth",
+  "role": "Bowler / Left-Arm Seamer",
+  "x": 56.64,
+  "y": 19.36,
+  "r": 2.92
+ },
+ {
+  "id": "csk-20",
+  "name": "Kevyn Kirubakaran",
+  "role": "Youth All-Rounder",
+  "x": 9.75,
+  "y": 35.3,
+  "r": 2.86
+ },
+ {
+  "id": "csk-21",
+  "name": "Rishab Dev",
+  "role": "Youth All-Rounder",
+  "x": 90.19,
+  "y": 35.08,
+  "r": 2.6
+ },
+ {
+  "id": "csk-08",
+  "name": "Viran Narayana",
+  "role": "All-Rounder / Finisher",
+  "x": 23.18,
+  "y": 34.58,
+  "r": 3.26
+ },
+ {
+  "id": "csk-15",
+  "name": "Ein Majin",
+  "role": "Bowler / Fast Bowler",
+  "x": 76.78,
+  "y": 33.81,
+  "r": 3.06
+ },
+ {
+  "id": "csk-06",
+  "name": "Rajasekhara Kalagotla",
+  "role": "All-Rounder / Wicket Keeper",
+  "x": 36.59,
+  "y": 34.58,
+  "r": 3.26
+ },
+ {
+  "id": "csk-10",
+  "name": "Ravneet Verma",
+  "role": "Bowler / Leg Spinner",
+  "x": 63.39,
+  "y": 34.4,
+  "r": 3.26
+ },
+ {
+  "id": "csk-12",
+  "name": "Jibin Moncy",
+  "role": "All-Rounder",
+  "x": 49.97,
+  "y": 35.24,
+  "r": 3.26
+ },
+ {
+  "id": "csk-11",
+  "name": "Praisewin Vincent",
+  "role": "All-Rounder",
+  "x": 6.08,
+  "y": 52.76,
+  "r": 3.62
+ },
+ {
+  "id": "csk-16",
+  "name": "Sahil Singh",
+  "role": "Bowler / Strike Fast Bowler",
+  "x": 93.95,
+  "y": 52.98,
+  "r": 3.62
+ },
+ {
+  "id": "csk-05",
+  "name": "Jason Edwards",
+  "role": "All-Rounder",
+  "x": 18.57,
+  "y": 53.11,
+  "r": 3.62
+ },
+ {
+  "id": "csk-09",
+  "name": "Sakthivel Shanmugasundaram",
+  "role": "All-Rounder",
+  "x": 81.38,
+  "y": 53.6,
+  "r": 3.62
+ },
+ {
+  "id": "csk-03",
+  "name": "Christopher Balraj",
+  "role": "Co-Founder & All-Rounder",
+  "x": 31.15,
+  "y": 53.6,
+  "r": 3.62
+ },
+ {
+  "id": "csk-04",
+  "name": "Majin Paul",
+  "role": "Co-Founder & Team Manager / All-Rounder",
+  "x": 68.81,
+  "y": 53.29,
+  "r": 3.62
+ },
+ {
+  "id": "csk-01",
+  "name": "Rahul Garg",
+  "role": "Captain & All-Rounder",
+  "x": 43.71,
+  "y": 53.56,
+  "r": 3.62
+ },
+ {
+  "id": "csk-02",
+  "name": "Gokul Krishnan",
+  "role": "Vice Captain & Batsman / Wicket Keeper",
+  "x": 56.25,
+  "y": 53.2,
+  "r": 3.62
+ }
+]
